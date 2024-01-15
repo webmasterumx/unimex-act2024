@@ -7,6 +7,7 @@ use App\Models\Banner;
 use App\Models\CLicenciaturas;
 use App\Models\LicenciaturaSua;
 use App\Models\Plantel;
+use App\Models\Posgrado;
 use App\Models\VentajasUnimex;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
@@ -75,6 +76,23 @@ class UnimexController extends Controller
             "licenciatura_sua" =>$licenciatura_sua,
             "temario" =>$temario,
             "campo_laboral" =>$campo_laboral 
+        ]);
+    }
+
+    public function getPosgrado($slug) : View {
+        $posgrado = Posgrado::where('slug', $slug)->first();
+        $extras = json_decode($posgrado->temario, true);
+        $temario_especialidad = $extras['extras']['temario_especialidad'];
+        $temario_maestria = $extras['extras']['temario_maestria'];
+        $rvoe_especialidad = $extras['extras']['rvoe_especialidad'];
+        $rvoe_maestria = $extras['extras']['rvoe_maestria'];
+
+        return view('posgrado', [
+            "posgrado" => $posgrado,
+            "temario_especialidad" => $temario_especialidad,
+            "temario_maestria" => $temario_maestria,
+            "rvoe_especialidad" => $rvoe_especialidad,
+            "rvoe_maestria" => $rvoe_maestria
         ]);
     }
 }

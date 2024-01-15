@@ -21,6 +21,7 @@ Route::get('/planteles/{slug}', [UnimexController::class, 'getPlanteles'])->name
 Route::get('/acerca-de-unimex/{alug}', [UnimexController::class, 'getAcercade'])->name('acercade');
 Route::get('/licenciatura/{slug}', [UnimexController::class, 'getLicenciatura'])->name('licenciatura');
 Route::get('/licenciatura/sua/{slug}', [UnimexController::class, 'getLicenciaturaSua'])->name('licenciatura.sua');
+Route::get('/posgrado/{slug}', [UnimexController::class, 'getPosgrado'])->name('posgrado');
 
 //? consumo de la api para formulario   
 Route::get('getPlanteles', [ApiConsumoController::class, 'getPlanteles'])->name('get.planteles');
