@@ -95,4 +95,10 @@ class UnimexController extends Controller
             "rvoe_maestria" => $rvoe_maestria
         ]);
     }
+
+    public function calculaTuCuota() : View {
+        
+        return view('calculaTuCuota');
+
+    }
 }
