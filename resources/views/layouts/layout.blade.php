@@ -411,7 +411,7 @@
                                 </li>
 
                                 <li>
-                                    <a href="licenciatura-en-administracion">
+                                    <a href="licenciatura/administracion">
                                         Administración
                                     </a>
                                 </li>
@@ -809,6 +809,8 @@
                 console.log("Algo salió mal");
             });
         }
+
+        
     </script>
 
     @yield('scripts')

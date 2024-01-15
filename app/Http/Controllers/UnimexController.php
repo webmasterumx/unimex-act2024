@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Acercade;
 use App\Models\Banner;
+use App\Models\CLicenciaturas;
 use App\Models\Plantel;
 use App\Models\VentajasUnimex;
 use Illuminate\Contracts\View\View;
@@ -45,6 +46,21 @@ class UnimexController extends Controller
         return view('acercade', [
             'acercadeFirst' => $acercadeFirst,
             "recomendaciones" => $recomendaciones
+        ]);
+    }
+
+    public function getLicenciatura($slug) : View {
+        $licenciatura = CLicenciaturas::where('slug', $slug)->first();
+        $extras = json_decode($licenciatura->extras, true);
+        $temario  = $extras['extras']['temario'];
+        $campo_laboral = $extras['extras']['campo_laboral'];
+        $disponibilidad = $extras['extras']['disponibilidad'];
+
+        return view('licenciatura', [
+            "licenciatura" => $licenciatura,
+            "temario" => $temario,
+            "campo_laboral" => $campo_laboral,
+            "disponibilidad" => $disponibilidad
         ]);
     }
 }

@@ -1,6 +1,6 @@
 <!-- Inicio de Formulario de Contacto -->
-<section class="py-3">
-    <div class="container p-5" style="background-color: #de951b;">
+<section class="py-3" style="background-color: #de951b;">
+    <div class="container p-5">
         <div class="row">
             <div class="col-12 col-md-6 bg_contacto">
 
