@@ -22,7 +22,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        /* $planteles = Plantel::all();
+        $planteles = Plantel::all();
         $acercade = Acercade::all();
 
         $data = array(
@@ -30,6 +30,6 @@ class AppServiceProvider extends ServiceProvider
             "acercade" => $acercade
         );
 
-        View::share('data', $data); */
+        View::share('data', $data); 
     }
 }
