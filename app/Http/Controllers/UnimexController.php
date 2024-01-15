@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Acercade;
 use App\Models\Banner;
 use App\Models\CLicenciaturas;
+use App\Models\LicenciaturaSua;
 use App\Models\Plantel;
 use App\Models\VentajasUnimex;
 use Illuminate\Contracts\View\View;
@@ -61,6 +62,19 @@ class UnimexController extends Controller
             "temario" => $temario,
             "campo_laboral" => $campo_laboral,
             "disponibilidad" => $disponibilidad
+        ]);
+    }
+
+    public function getLicenciaturaSua($slug) : View {
+        $licenciatura_sua = LicenciaturaSua::where('slug', $slug)->first();
+        $extras = json_decode($licenciatura_sua->extras, true);
+        $temario = $extras['extras']['temario'];
+        $campo_laboral = $extras['extras']['campo_laboral'];
+
+        return view('licenciaturasua', [
+            "licenciatura_sua" =>$licenciatura_sua,
+            "temario" =>$temario,
+            "campo_laboral" =>$campo_laboral 
         ]);
     }
 }
