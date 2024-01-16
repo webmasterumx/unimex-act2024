@@ -25,6 +25,9 @@ Route::get('/posgrado/{slug}', [UnimexController::class, 'getPosgrado'])->name('
 Route::get('/contacto', [UnimexController::class, 'contacto'])->name('contacto');
 Route::get('/calcula-tu-cuota', [UnimexController::class, 'calculaTuCuota'])->name('calcula_tu_cuota');
 Route::view('/examen-de-conocimientos', 'examen_de_conocimientos')->name('examen_de_conocimientos');
+Route::view('/resutados-examen', 'resultadosExamenConocimientos')->name('resultados_examen_conocimientos');
+Route::view('/calendarios-escolares', 'calendarios_escolares')->name('calendarios_escolares');
+Route::view('/opciones-de-titulacion', 'opciones_titulacion')->name('opciones_de_titulacion');
 Route::view('/aviso-de-privacidad', 'aviso-privacidad')->name('aviso_de_privacidad');
 
 //? consumo de la api para formulario   

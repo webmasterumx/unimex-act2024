@@ -62,7 +62,7 @@
                                 title="Conoce nuestras Licenciaturas, Maestrías y Posgrados">Oferta Académica</a>
                         </li>
                         <li>
-                            <a href="https://testing.unimex.edu.mx/calcula-tu-cuota" target="_blank" rel="noopener"
+                            <a href="{{ route('calcula_tu_cuota') }}" target="_blank" rel="noopener"
                                 title="Calcula tu Cuota">Calcula tu cuota</a>
                         </li>
                         <li>
@@ -73,12 +73,12 @@
                                 title="Servicios para nuestos Alumnos y Egresados">Alumnos Y Egresados</a>
                         </li>
                         <li>
-                            <a href="contacto" title="¿Necesitas ayuda?">Contacto</a>
+                            <a href="{{ route('contacto') }}" title="¿Necesitas ayuda?">Contacto</a>
                         </li>
                     </ul>
                 </div>
-                <a href="./contacto" id="anclaresgistrate">INFORMES</a>
-                <a href="./contacto" id="anclaresgistratepages">INFORMES</a>
+                <a href="{{ route('contacto') }}" id="anclaresgistrate">INFORMES</a>
+                <a href="{{ route('contacto') }}" id="anclaresgistratepages">INFORMES</a>
                 <a class="toggler-laravel" onclick="nav.show()"></a>
             </div>
         </nav>
