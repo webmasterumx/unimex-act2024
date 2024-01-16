@@ -101,4 +101,10 @@ class UnimexController extends Controller
         return view('calculaTuCuota');
 
     }
+
+    public function contacto() : View {
+        
+        return view('contacto');
+
+    }
 }
