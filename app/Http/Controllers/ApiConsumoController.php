@@ -24,12 +24,12 @@ class ApiConsumoController extends Controller
 
     public function getNiveles(Request $request)
     {
-        $plantel = $request->plantel;
-        $response = Http::post($this->base_url . 'oferta/niveles', [
-            'clavePlantel' => $plantel,
-        ]);
+            $plantel = $request->plantel;
+            $response = Http::post($this->base_url . 'oferta/niveles', [
+                'clavePlantel' => $plantel,
+            ]);
 
-        return $response->json();
+            return $response->json();
     }
 
     public function getPeriodos(Request $request)

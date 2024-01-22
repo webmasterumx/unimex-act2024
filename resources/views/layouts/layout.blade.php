@@ -419,65 +419,65 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="licenciatura-en-administracion-de-empresas-turisticas">
+                                    <a href="licenciatura/administracion-de-empresas-turisticas">
                                         Administración de Empresas Turísticas
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a href="licenciatura-en-comercio-internacional-y-aduanas">
+                                    <a href="licenciatura/comercio-internacional-y-aduanas">
                                         Comercio Internacional y Aduanas
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="licenciatura-en-comunicacion">
+                                    <a href="licenciatura/comunicacion">
                                         Comunicación
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="licenciatura-en-contaduria-publica">
+                                    <a href="licenciatura/contaduria-publica">
                                         Contaduría Pública
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="licenciatura-en-derecho">
+                                    <a href="licenciatura/derecho">
                                         Derecho
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="licenciatura-en-diseno-grafico">
+                                    <a href="licenciatura/diseno-grafico">
                                         Diseño Gráfico
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a href="licenciatura-en-idiomas">
+                                    <a href="licenciatura/idiomas">
                                         Idiomas
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="licenciatura-en-mercadotecnia-y-publicidad">
+                                    <a href="licenciatura/mercadotecnia-y-publicidad">
                                         Mercadotecnia y Publicidad
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a href="licenciatura-en-psicologia-social">
+                                    <a href="licenciatura/psicologia-social">
                                         Psicología Social
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="licenciatura-en-relaciones-internacionales-y-comercio-exterior">
+                                    <a href="licenciatura/relaciones-internacionales-y-comercio-exterior">
                                         Relaciones Internacionales y Comercio Exterior
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="licenciatura-en-sistemas-computacionales">
+                                    <a href="licenciatura/sistemas-computacionales">
                                         Sistemas Computacionales
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="licenciatura-en-turismo">
+                                    <a href="licenciatura/turismo">
                                         Turismo
                                     </a>
                                 </li>
@@ -486,12 +486,12 @@
                                 </li>
 
                                 <li>
-                                    <a href="licenciatura-en-informatica-administrativa">
+                                    <a href="licenciatura/informatica-administrativa">
                                         Informática Administrativa
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="licenciatura-en-pedagogia">
+                                    <a href="licenciatura/pedagogia">
                                         Pedagogía
                                     </a>
                                 </li>
@@ -500,12 +500,12 @@
                                 </li>
 
                                 <li>
-                                    <a href="licenciatura-en-ciencias-de-la-educacion">
+                                    <a href="licenciatura/ciencias-de-la-educacion">
                                         Ciencias de la Educación
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="licenciatura-en-gastronomia-internacional">
+                                    <a href="licenciatura/gastronomia-internacional">
                                         Gastronomía Internacional
                                     </a>
                                 </li>
@@ -520,17 +520,17 @@
                                     <span class="txtpequeno">DISPONIBLE SOLO EN PLANTEL VERACRUZ</span>
                                 </li>
                                 <li>
-                                    <a href="sua-licenciatura-en-administracion">
+                                    <a href="sua-licenciatura/sua/administracion">
                                         Administración
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="sua-licenciatura-en-contaduria-publica">
+                                    <a href="sua-licenciatura/sua/contaduria-publica">
                                         Contaduría Pública
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="sua-licenciatura-en-derecho">
+                                    <a href="sua-licenciatura/sua/derecho">
                                         Derecho
                                     </a>
                                 </li>
