@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ApiConsumoController;
+use App\Http\Controllers\FormController;
 use App\Http\Controllers\UnimexController;
 use Illuminate\Support\Facades\Route;
 
@@ -36,3 +37,6 @@ Route::post('getNiveles', [ApiConsumoController::class, 'getNiveles'])->name('ge
 Route::post('getPeriodos', [ApiConsumoController::class, 'getPeriodos'])->name('get.periodos');
 Route::post('getCarreras', [ApiConsumoController::class, 'getCarreras'])->name('get.carreras');
 Route::post('getHorarios', [ApiConsumoController::class, 'getHorarios'])->name('get.horarios');
+
+//* envio de formularios
+Route::post('form/servicio/alumno', [FormController::class, 'servicioAlumnos'])->name('form.servicio.alumno');

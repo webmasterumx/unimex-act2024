@@ -413,102 +413,42 @@
                                     <span class="txtpequeno">DISPONIBLE EN TODOS LOS PLANTELES</span>
                                 </li>
 
-                                <li>
-                                    <a href="licenciatura/administracion">
-                                        Administración
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="licenciatura/administracion-de-empresas-turisticas">
-                                        Administración de Empresas Turísticas
-                                    </a>
-                                </li>
+                                @foreach ($data['menus'] as $menu)
+                                    @if ($menu->estado == 1)
+                                        <li>
+                                            <a href="{{ route('licenciatura', $menu->slug) }}">
+                                                {{ $menu->nombre }}
+                                            </a>
+                                        </li>
+                                    @endif
+                                @endforeach
 
-                                <li>
-                                    <a href="licenciatura/comercio-internacional-y-aduanas">
-                                        Comercio Internacional y Aduanas
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="licenciatura/comunicacion">
-                                        Comunicación
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="licenciatura/contaduria-publica">
-                                        Contaduría Pública
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="licenciatura/derecho">
-                                        Derecho
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="licenciatura/diseno-grafico">
-                                        Diseño Gráfico
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="licenciatura/idiomas">
-                                        Idiomas
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="licenciatura/mercadotecnia-y-publicidad">
-                                        Mercadotecnia y Publicidad
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="licenciatura/psicologia-social">
-                                        Psicología Social
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="licenciatura/relaciones-internacionales-y-comercio-exterior">
-                                        Relaciones Internacionales y Comercio Exterior
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="licenciatura/sistemas-computacionales">
-                                        Sistemas Computacionales
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="licenciatura/turismo">
-                                        Turismo
-                                    </a>
-                                </li>
                                 <li style="background: none;">
                                     <span class="txtpequeno">DISPONIBLE SOLO EN PLANTELES METROPOLITANOS</span>
                                 </li>
 
-                                <li>
-                                    <a href="licenciatura/informatica-administrativa">
-                                        Informática Administrativa
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="licenciatura/pedagogia">
-                                        Pedagogía
-                                    </a>
-                                </li>
+                                @foreach ($data['menus'] as $menu)
+                                    @if ($menu->estado == 2)
+                                        <li>
+                                            <a href="{{ route('licenciatura', $menu->slug) }}">
+                                                {{ $menu->nombre }}
+                                            </a>
+                                        </li>
+                                    @endif
+                                @endforeach
                                 <li style="background: none;">
                                     <span class="txtpequeno">DISPONIBLE SOLO EN PLANTEL VERACRUZ</span>
                                 </li>
 
-                                <li>
-                                    <a href="licenciatura/ciencias-de-la-educacion">
-                                        Ciencias de la Educación
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="licenciatura/gastronomia-internacional">
-                                        Gastronomía Internacional
-                                    </a>
-                                </li>
+                                @foreach ($data['menus'] as $menu)
+                                    @if ($menu->estado == 3)
+                                        <li>
+                                            <a href="{{ route('licenciatura', $menu->slug) }}">
+                                                {{ $menu->nombre }}
+                                            </a>
+                                        </li>
+                                    @endif
+                                @endforeach
 
                             </ul>
                         </div>
@@ -520,17 +460,17 @@
                                     <span class="txtpequeno">DISPONIBLE SOLO EN PLANTEL VERACRUZ</span>
                                 </li>
                                 <li>
-                                    <a href="sua-licenciatura/sua/administracion">
+                                    <a href="{{ route('licenciatura.sua', 'administracion') }}">
                                         Administración
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="sua-licenciatura/sua/contaduria-publica">
+                                    <a href="{{ route('licenciatura.sua', 'contaduria-publica') }}">
                                         Contaduría Pública
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="sua-licenciatura/sua/derecho">
+                                    <a href="{{ route('licenciatura.sua', 'derecho') }}">
                                         Derecho
                                     </a>
                                 </li>
@@ -659,9 +599,13 @@
     <!-- slick-carousel js -->
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
+    <!-- Validate -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
+
     <!-- Template Main JS File -->
     <script src="{{ asset('assets/js/main.js') }}"></script>
     <script src="{{ asset('assets/js/custom.js') }}"></script>
+    <script src="{{ asset('assets/js/form.js') }}"></script>
 
     <script>
         $(document).ready(function() {
@@ -813,6 +757,11 @@
             }).fail(function() {
                 console.log("Algo salió mal");
             });
+        }
+
+        function setUrlBase() {
+            let urlBase = "{{ env('APP_URL') }}";
+            return urlBase;
         }
     </script>
 

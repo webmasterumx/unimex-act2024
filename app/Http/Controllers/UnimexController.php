@@ -6,6 +6,7 @@ use App\Models\Acercade;
 use App\Models\Banner;
 use App\Models\CLicenciaturas;
 use App\Models\LicenciaturaSua;
+use App\Models\Menu;
 use App\Models\Plantel;
 use App\Models\Posgrado;
 use App\Models\VentajasUnimex;
@@ -25,7 +26,7 @@ class UnimexController extends Controller
         return view('inicio', [
             "listaCarreras" => $listaCarreras, 
             "banners" => $banners,
-            "ventajas_unimex" => $ventajas_unimex
+            "ventajas_unimex" => $ventajas_unimex,
         ]);
     }
 
