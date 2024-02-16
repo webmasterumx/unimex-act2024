@@ -32,11 +32,12 @@ Route::view('/opciones-de-titulacion', 'opciones_titulacion')->name('opciones_de
 Route::view('/aviso-de-privacidad', 'aviso-privacidad')->name('aviso_de_privacidad');
 
 //? consumo de la api para formulario   
-Route::get('getPlanteles', [ApiConsumoController::class, 'getPlanteles'])->name('get.planteles');
-Route::post('getNiveles', [ApiConsumoController::class, 'getNiveles'])->name('get.niveles');
-Route::post('getPeriodos', [ApiConsumoController::class, 'getPeriodos'])->name('get.periodos');
-Route::post('getCarreras', [ApiConsumoController::class, 'getCarreras'])->name('get.carreras');
-Route::post('getHorarios', [ApiConsumoController::class, 'getHorarios'])->name('get.horarios');
+Route::get('/getPlanteles', [ApiConsumoController::class, 'getPlanteles'])->name('get.planteles');
+Route::post('/getNiveles', [ApiConsumoController::class, 'getNiveles'])->name('get.niveles');
+Route::post('/getPeriodos', [ApiConsumoController::class, 'getPeriodos'])->name('get.periodos');
+Route::post('/getCarreras', [ApiConsumoController::class, 'getCarreras'])->name('get.carreras');
+Route::post('/getHorarios', [ApiConsumoController::class, 'getHorarios'])->name('get.horarios');
 
 //* envio de formularios
-Route::post('form/servicio/alumno', [FormController::class, 'servicioAlumnos'])->name('form.servicio.alumno');
+Route::post('/contacto/prospecto', [FormController::class, 'contactoProspecto'])->name('contacto.prospecto');
+Route::post('/form/servicio/alumno', [FormController::class, 'servicioAlumnos'])->name('form.servicio.alumno');

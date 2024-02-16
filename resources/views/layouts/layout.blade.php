@@ -25,6 +25,8 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
 
+    <!-- SWAL JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!-- CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -603,161 +605,13 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
 
     <!-- Template Main JS File -->
+    <script src="{{ asset('assets/js/app.js') }}"></script>
     <script src="{{ asset('assets/js/main.js') }}"></script>
     <script src="{{ asset('assets/js/custom.js') }}"></script>
     <script src="{{ asset('assets/js/form.js') }}"></script>
+    <script src="{{ asset('assets/js/combos.js') }}"></script>
 
     <script>
-        $(document).ready(function() {
-
-            // Inicializar con todos los combos del formulario - Contacto -
-            // Desabilitados excepto el de Plantel
-            $("select[name=nivelSelect]").prop("disabled", true);
-            $("select[name=periodoSelect]").prop("disabled", true);
-            $("select[name=carreraSelect]").prop("disabled", true);
-            $("select[name=horarioSelect]").prop("disabled", true);
-
-            /*
-             * obtiene los planteles para el formulario de contacto.
-             * Paginas :
-             * - Inicio -
-             * - Todas las pagina de Licenciatura, Licenciatura SUA y Postgrado -
-             * - Pagina de Contacto -
-             */
-            $.ajax({
-                method: "GET",
-                url: "{{ route('get.planteles') }}",
-            }).done(function(data) {
-                //console.log(data);
-                $.each(data, function(index, value) {
-                    //console.log(value.clave);
-                    if (value.clave != 5) {
-                        $('#plantelSelect').prepend("<option value='" + value.clave + "'>" + value
-                            .descrip + "</option>");
-                    }
-                });
-
-            }).fail(function() {
-                console.log("Algo salió mal");
-            });
-
-            // Detecta el cambio de opcion en un select para actuar en otro
-            /*
-             * se activa al cambiar de plantel 
-             * y se muestran los niveles
-             */
-            $("select[name=plantelSelect]").change(function() {
-
-                let nivel = $('select[name=nivelSelect]').val();
-
-                let ruta = "{{ route('get.niveles') }}";
-                let plantel = $('select[name=plantelSelect]').val();
-                let data = {
-                    plantel: plantel
-                }
-                let element = '#nivelSelect';
-
-                postAjaxPeticionContact(ruta, data, element);
-
-                if (nivel != '' || nivel !== '' || nivel != null) {
-                    $("select[name=nivelSelect]").prop("disabled", false);
-                } else {
-                    /* $("select[name=periodoSelect]").prop("disabled", true);
-                    $("select[name=carreraSelect]").prop("disabled", true);
-                    $("select[name=horarioSelect]").prop("disabled", true); */
-                }
-
-            });
-
-            /**
-             * se activa cuando se cambia de nivel 
-             * y se muestran los periodos
-             */
-            $("select[name=nivelSelect]").change(function() {
-
-                let plantel = $('select[name=plantelSelect]').val();
-                let ruta = "{{ route('get.periodos') }}";
-                let data = {
-                    plantel: plantel
-                };
-                let element = '#periodoSelect';
-
-                postAjaxPeticionContact(ruta, data, element);
-
-                $("select[name=periodoSelect]").prop("disabled", false);
-
-            });
-
-            /**
-             * se activa cuando se cambia el periodo 
-             * y muestra las carreras segun: plantel, nivel y periodo
-             */
-            $("select[name=periodoSelect]").change(function() {
-
-                let plantel = $('select[name=plantelSelect]').val();
-                let nivel = $('select[name=nivelSelect]').val();
-                let periodo = $('select[name=periodoSelect]').val();
-
-                let ruta = "{{ route('get.carreras') }}";
-                let data = {
-                    plantel: plantel,
-                    nivel: nivel,
-                    periodo: periodo
-                };
-                let element = '#carreraSelect';
-
-                postAjaxPeticionContact(ruta, data, element);
-
-                $("select[name=carreraSelect]").prop("disabled", false);
-            });
-
-            /**
-             * se activa cuando se cambia la carrera seccionada
-             * y se muestran los horarios disponibles
-             */
-            $("select[name=carreraSelect]").change(function() {
-
-                let plantel = $('select[name=plantelSelect]').val();
-                let nivel = $('select[name=nivelSelect]').val();
-                let periodo = $('select[name=periodoSelect]').val();
-                let carrera = $('select[name=carreraSelect]').val();
-
-                let ruta = "{{ route('get.horarios') }}";
-                let data = {
-                    plantel: plantel,
-                    nivel: nivel,
-                    periodo: periodo,
-                    carrera: carrera
-                };
-                let element = '#horarioSelect';
-
-                postAjaxPeticionContact(ruta, data, element);
-
-                $("select[name=horarioSelect]").prop("disabled", false);
-
-            });
-        });
-
-        function postAjaxPeticionContact(ruta, data, element) {
-            $.ajax({
-                method: "POST",
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                },
-                url: ruta,
-                data: data
-            }).done(function(data) {
-                console.log(data);
-                $.each(data, function(index, value) {
-                    console.log(value.clave);
-                    $(element).prepend("<option value='" + value.clave + "'>" + value.descrip +
-                        "</option>");
-                });
-
-            }).fail(function() {
-                console.log("Algo salió mal");
-            });
-        }
 
         function setUrlBase() {
             let urlBase = "{{ env('APP_URL') }}";
