@@ -4,11 +4,21 @@
         <div class="row">
             <div class="col-12 col-md-6 bg_contacto">
                 <h5 class="text-center fw-normal" style="color: #de951b">Inscripciones</h5>
+                <p class="text-center">
+                    <span class="text-white"> Izcalli <br></span>
+                    <i class="bi bi-telephone-fill text-white"></i> <a href="tel:+525558739444">55 5873 9444</a><br>
+                    <span class="text-white"> Satélite <br></span>
+                    <i class="bi bi-telephone-fill text-white"></i> <a href="tel:+525553747480">55 5374 7480</a><br>
+                    <span class="text-white"> Polanco <br></span>
+                    <i class="bi bi-telephone-fill text-white"></i> <a href="tel:+525591380060">55 9138 0060</a><br>
+                    <span class="text-white"> Veracruz <br></span>
+                    <i class="bi bi-telephone-fill text-white"></i> <a href="tel:+522229323916">222 932 3916</a><br>
+                </p> 
             </div>
             <div class="col-12 col-md-6 p-0"> <!-- form_contacto -->
                 <form id="form_contacto" class="bg-white p-5">
                     @csrf
-                    <p class="text-center">
+                    <p style="color: #004b93; font-size: 1.5em;" class="text-center">
                         ¡Estamos para ayudarte! <br>
                         Deja tus datos y nos pondremos en contacto.
                     </p>
