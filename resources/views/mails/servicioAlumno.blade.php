@@ -7,6 +7,6 @@
     <title>Servicio Alumno</title>
 </head>
 <body>
-    
+    <h1>Hola tester de envio de correo</h1>
 </body>
 </html>

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ServicioAlumno;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class FormController extends Controller
 {
@@ -69,5 +71,12 @@ class FormController extends Controller
             "puesto_interes" => $request,
             "experiencia_laboral" => $request
         );
+    }
+
+    public function testerEnvio()
+    {
+        $recive = "lishanxime201099@gmail.com";
+        $envio =  Mail::to($recive)->send(new ServicioAlumno());
+        dd($envio);
     }
 }
