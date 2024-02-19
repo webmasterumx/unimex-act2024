@@ -34,7 +34,7 @@ class FormController extends Controller
             "websiteURL" => "https://unimex.edu.mx/",
         );
 
-        //$respuesta = app(ApiConsumoController::class)->agregarProspectoCRM($valores);
+        //$respuesta = app(ApiConsumoController::class)->agregarProspectoCRM($valores); //! envio de datos al WS
         $respuesta = array(
             "FolioCRM" => 1206174,
             "Mensaje" => "",
@@ -49,7 +49,7 @@ class FormController extends Controller
             "Email" => "rectoria_testing@gmial.com"
         );
         //$recive = "lishanxime201099@gmail.com";
-        //$envio =  Mail::to($recive)->bcc("umrec_web@unimex.edu.mx")->send(new ContactoProspecto($request, $envio));
+        //$envio =  Mail::to($recive)->bcc("umrec_web@unimex.edu.mx")->send(new ContactoProspecto($request, $envio)); //! envio del correo
 
         return view('registroExitoso', [
             "respuesta" => $respuesta,

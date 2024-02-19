@@ -1,5 +1,9 @@
 @extends('layouts.layout')
 
+@section('titulo')
+    Registro Exitoso | UNIMEX
+@endsection
+
 @section('content')
     <section class="container-fluid px-5 py-5">
         <div class="row">
@@ -10,7 +14,7 @@
             </div>
             <div class="col-12 col-md-9 col-lg-10 text-justify">
                 <p class="text-center">
-                    <img style="width: 40px;" src="{{ asset('assets/img/extras/good.png') }}" alt="Registro Exitoso"> <br>
+                    <img style="width: 40px;" src="{{ asset('assets/img/extras/good.png') }}" alt="Registro Exitoso"> <br> <br>
                     Gracias: {{ $datos->nombre_prospecto }}
                     Tus datos de registro son: <br>
                     Folio: <b>{{ $respuesta['FolioCRM'] }}</b> <br>

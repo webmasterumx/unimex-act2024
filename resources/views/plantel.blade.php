@@ -1,5 +1,9 @@
 @extends('layouts.layout')
 
+@section('metas')
+    @include('metas.planteles.definicion')
+@endsection
+
 @section('styles')
     <style>
         #plantel {

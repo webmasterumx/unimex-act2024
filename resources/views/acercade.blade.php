@@ -1,5 +1,9 @@
 @extends('layouts.layout')
 
+@section('metas')
+    @include('metas.acercade.definicion')
+@endsection
+
 @section('styles')
     <style>
         #historia {
