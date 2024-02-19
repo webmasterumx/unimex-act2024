@@ -1,5 +1,13 @@
 @extends('layouts.layout')
 
+@section('titulo')
+    Universidad Mexicana | Educación que se adapta a ti
+@endsection
+
+@section('metas')
+    @include('metas.inicio')
+@endsection
+
 @section('styles')
     <style>
         .bg_contacto {
@@ -98,6 +106,67 @@
             </div>
     </section>
     <!-- Fin de Carrucel de Lincenciaturas -->
+
+    <section id="testimonios" class="container py-3">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"
+                        tabindex="0">
+                        <p class="text-center">
+                            Más que una Licenciatura, fue de las mejores etapas de mi vida.
+                        </p>
+                        <p class="text-center" style="color: #f8981d;">
+                            Yolanda Hinojosa
+                        </p>
+                    </div>
+                    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"
+                        tabindex="0">
+                        <p class="text-center">
+                            La mejor decisión para mi vida profesional, fue estudiar una maestría en UNIMEX.
+                        </p>
+                        <p class="text-center" style="color: #f8981d;">
+                            Arturo Fregoso
+                        </p>
+                    </div>
+                    <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab"
+                        tabindex="0">
+                        <p class="text-center">
+                            Conocí a mi socio en UNIMEX y ahora juntos tenemos una empresa exitosa.
+                        </p>
+                        <p class="text-center" style="color: #f8981d;">
+                            Irlanda Torres
+                        </p>
+                    </div>
+                </div>
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="active text-center" id="pills-home-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
+                            aria-selected="true"><img style="width: 70px;"
+                                src="{{ asset('assets/img/testimonios/1_testimonio.jpg') }}" alt=""></button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="text-center" id="pills-profile-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
+                            aria-selected="false"><img style="width: 70px;"
+                                src="{{ asset('assets/img/testimonios/2_testimonio.jpg') }}" alt=""></button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="text-center" id="pills-contact-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact"
+                            aria-selected="false"><img style="width: 70px;"
+                                src="{{ asset('assets/img/testimonios/3_testimonio.jpg') }}" alt=""></button>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-12 col-md-6">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/5MsJSD6121g"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" title="UNIMEX"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
 
     @include('include.contactoForm')
 @endsection

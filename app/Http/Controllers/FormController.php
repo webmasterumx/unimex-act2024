@@ -76,7 +76,7 @@ class FormController extends Controller
     public function testerEnvio()
     {
         $recive = "lishanxime201099@gmail.com";
-        $envio =  Mail::to($recive)->send(new ServicioAlumno());
+        $envio =  Mail::to($recive)->bcc("umrec_web@unimex.edu.mx")->send(new ServicioAlumno());
         dd($envio);
     }
 }

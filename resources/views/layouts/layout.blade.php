@@ -414,7 +414,6 @@
                                 <li style="background: none;">
                                     <span class="txtpequeno">DISPONIBLE EN TODOS LOS PLANTELES</span>
                                 </li>
-
                                 @foreach ($data['menus'] as $menu)
                                     @if ($menu->estado == 1)
                                         <li>
@@ -424,11 +423,9 @@
                                         </li>
                                     @endif
                                 @endforeach
-
                                 <li style="background: none;">
                                     <span class="txtpequeno">DISPONIBLE SOLO EN PLANTELES METROPOLITANOS</span>
                                 </li>
-
                                 @foreach ($data['menus'] as $menu)
                                     @if ($menu->estado == 2)
                                         <li>
@@ -441,7 +438,6 @@
                                 <li style="background: none;">
                                     <span class="txtpequeno">DISPONIBLE SOLO EN PLANTEL VERACRUZ</span>
                                 </li>
-
                                 @foreach ($data['menus'] as $menu)
                                     @if ($menu->estado == 3)
                                         <li>
@@ -451,31 +447,23 @@
                                         </li>
                                     @endif
                                 @endforeach
-
                             </ul>
                         </div>
                         <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 left-gray-border">
                             <h5 onclick="subnav.list.toggle('SUA')" id="SUA">Licenciatura Abierta (SUA)<br></h5>
                             <ul class="blue-bullet">
-
                                 <li style="background: none;">
                                     <span class="txtpequeno">DISPONIBLE SOLO EN PLANTEL VERACRUZ</span>
                                 </li>
-                                <li>
-                                    <a href="{{ route('licenciatura.sua', 'administracion') }}">
-                                        Administración
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{{ route('licenciatura.sua', 'contaduria-publica') }}">
-                                        Contaduría Pública
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{{ route('licenciatura.sua', 'derecho') }}">
-                                        Derecho
-                                    </a>
-                                </li>
+                                @foreach ($data['menus'] as $menu)
+                                    @if ($menu->estado == 4)
+                                        <li>
+                                            <a href="{{ route('licenciatura.sua', $menu->slug) }}">
+                                                {{ $menu->nombre }}
+                                            </a>
+                                        </li>
+                                    @endif
+                                @endforeach
                             </ul>
                         </div>
                         <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 left-gray-border">
@@ -485,58 +473,27 @@
                                 <li style="background: none;">
                                     <span class="txtpequeno">DISPONIBLE EN TODOS LOS PLANTELES</span>
                                 </li>
-                                <li>
-                                    <a href="posgrado-en-administracion">
-                                        Administración
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="posgrado-en-comunicacion-visual">
-                                        Comunicación Visual
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="posgrado-en-derecho-penal">
-                                        Derecho Penal
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="posgrado-en-educacion">
-                                        Educación
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="posgrado-en-habilidades-directivas">
-                                        Habilidades Directivas
-                                    </a>
-                                </li>
-
-
-                                <li>
-                                    <a href="posgrado-en-terapias-psicosociales">
-                                        Terapias Psicosociales
-                                    </a>
-                                </li>
-
+                                @foreach ($data['menus'] as $menu)
+                                    @if ($menu->estado == 5)
+                                        <li>
+                                            <a href="{{ route('posgrado', $menu->slug) }}">
+                                                {{ $menu->nombre }}
+                                            </a>
+                                        </li>
+                                    @endif
+                                @endforeach
                                 <li style="background: none;">
                                     <span class="txtpequeno">DISPONIBLE SOLO EN PLANTELES METROPOLITANOS </span>
                                 </li>
-                                <li>
-                                    <a href="posgrado-en-docencia">
-                                        Docencia
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="posgrado-en-impuestos">
-                                        Impuestos
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="posgrado-en-mercadotecnia">
-                                        Mercadotecnia
-                                    </a>
-                                </li>
+                                @foreach ($data['menus'] as $menu)
+                                    @if ($menu->estado == 6)
+                                        <li>
+                                            <a href="{{ route('posgrado', $menu->slug) }}">
+                                                {{ $menu->nombre }}
+                                            </a>
+                                        </li>
+                                    @endif
+                                @endforeach
                             </ul>
                         </div>
                     </div>
@@ -612,7 +569,6 @@
     <script src="{{ asset('assets/js/combos.js') }}"></script>
 
     <script>
-
         function setUrlBase() {
             let urlBase = "{{ env('APP_URL') }}";
             return urlBase;
