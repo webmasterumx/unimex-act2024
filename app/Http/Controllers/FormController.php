@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ContactoProspecto;
 use App\Mail\ServicioAlumno;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -33,16 +34,27 @@ class FormController extends Controller
             "websiteURL" => "https://unimex.edu.mx/",
         );
 
-        $envio = app(ApiConsumoController::class)->agregarProspectoCRM($valores);
+        //$respuesta = app(ApiConsumoController::class)->agregarProspectoCRM($valores);
+        $respuesta = array(
+            "FolioCRM" => 1206174,
+            "Mensaje" => "",
+            "Nombre" => "prueba desde rectoria",
+            "Ciclo" => "Septiembre - 2024",
+            "Nivel" => "Licenciatura",
+            "Carrera" => "Administración de Empresas Turísticas",
+            "Turno" => "Sabatino B Sábado 07:00 a 16:00",
+            "Plantel" => "SATELITE",
+            "FechaVigenciaPromocion_Incio" => "Lunes 19 de Febrero del 2024",
+            "FechaVigenciaPromocion_Final" => "Domingo 24 de Diciembre del 2017",
+            "Email" => "rectoria_testing@gmial.com"
+        );
+        //$recive = "lishanxime201099@gmail.com";
+        //$envio =  Mail::to($recive)->bcc("umrec_web@unimex.edu.mx")->send(new ContactoProspecto($request, $envio));
 
-        if (isset($envio['FolioCRM'])) {
-            $respuesta['estado'] = true;
-            $respuesta['mensaje'] = "Datos enviados con éxito.";
-        } else {
-            $respuesta['estado'] = false;
-            $respuesta['mensaje'] = "Ocurrió un error intenta más tarde.";
-        }
-        return response()->json($respuesta);
+        return view('registroExitoso', [
+            "respuesta" => $respuesta,
+            "datos" => $request,
+        ]);
     }
 
     public function servicioAlumnos(Request $request)

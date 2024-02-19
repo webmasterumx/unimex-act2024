@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use App\Http\Controllers\ExtrasUnimexController;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -13,12 +14,20 @@ class ContactoProspecto extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $infoForm;
+    public $infoGenerada;
+    public $valores;
+
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public function __construct($infoForm, $infoGenerada)
     {
-        //
+        $this->infoForm = $infoForm;
+        $this->infoGenerada = $infoGenerada;
+
+        $valores = app(ExtrasUnimexController::class)->complementoMailContactoProspecto($this->infoGenerada);
+        $this->valores = $valores;
     }
 
     /**
@@ -27,7 +36,7 @@ class ContactoProspecto extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Contacto Prospecto',
+            subject: 'Registro Home Metro',
         );
     }
 
@@ -37,7 +46,7 @@ class ContactoProspecto extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'view.name',
+            view: 'mails.contactoProspecto',
         );
     }
 
