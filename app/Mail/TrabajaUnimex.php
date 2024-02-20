@@ -5,6 +5,7 @@ namespace App\Mail;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
+use Illuminate\Mail\Mailables\Attachment;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
@@ -13,12 +14,16 @@ class TrabajaUnimex extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $datos;
+    public $file;
+
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public function __construct($datos, $file)
     {
-        //
+        $this->datos = $datos;
+        $this->file = $file;
     }
 
     /**
@@ -27,7 +32,7 @@ class TrabajaUnimex extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Trabaja Unimex',
+            subject: 'Trabaja en UNIMEX Metro',
         );
     }
 
@@ -37,7 +42,7 @@ class TrabajaUnimex extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'view.name',
+            view: 'mails.trabajaUnimex',
         );
     }
 
@@ -48,6 +53,10 @@ class TrabajaUnimex extends Mailable
      */
     public function attachments(): array
     {
-        return [];
+        return [
+            Attachment::fromPath($this->file)
+                ->as('cv.pdf')
+                ->withMime('application/pdf'),
+        ];
     }
 }

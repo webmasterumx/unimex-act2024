@@ -1,10 +1,12 @@
-<form id="form_trabaja" class="row" action="#" method="GET">
+<form id="" class="row" enctype="multipart/form-data">
+    @csrf
     <div class="mb-3 col-6 input-group">
         <x-form-contact.span-form-contact>
             <i class="bi bi-person-fill"></i>
         </x-form-contact.span-form-contact>
         <div class="form-floating">
-            <input type="text" class="form-control" id="nombre_trabajo" name="nombre_trabajo" placeholder="Nombre Completo">
+            <input type="text" class="form-control" id="nombre_trabajo" name="nombre_trabajo"
+                placeholder="Nombre Completo">
             <label for="nombre_trabajo">Nombre Completo</label>
         </div>
     </div>
@@ -13,7 +15,8 @@
             <i class="bi bi-envelope-fill"></i>
         </x-form-contact.span-form-contact>
         <div class="form-floating">
-            <input type="text" class="form-control" id="email_trabaja" name="email_trabaja" placeholder="Correo Electronico">
+            <input type="email" class="form-control" id="email_trabaja" name="email_trabaja"
+                placeholder="Correo Electronico">
             <label for="email_trabaja">Correo Electronico</label>
         </div>
     </div>
@@ -22,7 +25,8 @@
             <i class="bi bi-telephone-fill"></i>
         </x-form-contact.span-form-contact>
         <div class="form-floating">
-            <input type="text" class="form-control" id="telefono_casa_trabaja" name="telefono_casa_trabaja" placeholder="Teléfono de Casa">
+            <input type="text" class="form-control" id="telefono_casa_trabaja" name="telefono_casa_trabaja"
+                placeholder="Teléfono de Casa">
             <label for="telefono_casa_trabaja">Teléfono de Casa</label>
         </div>
     </div>
@@ -31,7 +35,8 @@
             <i class="bi bi-phone-fill"></i>
         </x-form-contact.span-form-contact>
         <div class="form-floating">
-            <input type="text" class="form-control" id="telefono_movil_trabaja" name="telefono_movil_trabaja" placeholder="Teléfono celular">
+            <input type="text" class="form-control" id="telefono_movil_trabaja" name="telefono_movil_trabaja"
+                placeholder="Teléfono celular">
             <label for="telefono_movil_trabaja">Teléfono celular</label>
         </div>
     </div>
@@ -76,18 +81,23 @@
     </div>
     <div class="mb-3 col-12">
         <div class="form-floating">
-            <textarea rows="5" class="form-control" id="experiencia_trabaja" name="experiencia_trabaja" placeholder="Describe tu experiencia laboral(Experiencia)"></textarea>
+            <textarea rows="5" class="form-control" id="experiencia_trabaja" name="experiencia_trabaja"
+                placeholder="Describe tu experiencia laboral(Experiencia)"></textarea>
             <label for="experiencia_trabaja">Describe tu experiencia laboral(Experiencia)</label>
         </div>
     </div>
     <div class="mb-3 col-12">
-        <div class="mb-3 row">
-            <div class="col-1">
-                <label for="operacion_trabaja" class="form-label">8+2=</label>
+        <div class="mb-2 row">
+            <div class="col-2 d-flex">
+                <input disabled type="text" class="text-center" style="width: 40% !important;" id="number3"
+                    name="number3">
+                <div class="d-flex" style="width: 20% !important; align-items: center;">&nbsp;+</div>
+                <input disabled type="text" class="text-center" style="width: 40% !important;" id="number4"
+                    name="number4">
             </div>
             <div class="col-4">
                 <input type="number" class="form-control" id="operacion_trabaja" name="operacion_trabaja"
-                    placeholder="Introduce el resultadio aquí">
+                    placeholder="Introduce el resultadio aquí" maxlength="2">
             </div>
         </div>
     </div>

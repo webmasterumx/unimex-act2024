@@ -29,3 +29,22 @@ $('#aceptar_contacto').on('click', function () {
         $('#envio_contacto').attr('disabled', true);
     }
 });
+
+$("#telefono_casa_trabaja").bind('keypress', function (event) {
+    var regex = new RegExp("^[0-9]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+
+$("#telefono_movil_trabaja").bind('keypress', function (event) {
+    var regex = new RegExp("^[0-9]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});

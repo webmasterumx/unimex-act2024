@@ -232,3 +232,37 @@
         </div>
     </div>
 @endsection
+
+@section('scripts')
+    <script>
+        $(document).ready(function() {
+
+            // servico para alumnos
+            $('#number1').val(Math.floor(Math.random() * 10));
+            $('#number2').val(Math.floor(Math.random() * 10));
+
+            //trabaja en unimex
+            $('#number3').val(Math.floor(Math.random() * 10));
+            $('#number4').val(Math.floor(Math.random() * 10));
+
+        });
+
+        $("#phone_casa_service").bind('keypress', function(event) {
+            var regex = new RegExp("^[0-9]+$");
+            var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+            if (!regex.test(key)) {
+                event.preventDefault();
+                return false;
+            }
+        });
+
+        $("#movil_service").bind('keypress', function(event) {
+            var regex = new RegExp("^[0-9]+$");
+            var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+            if (!regex.test(key)) {
+                event.preventDefault();
+                return false;
+            }
+        });
+    </script>
+@endsection

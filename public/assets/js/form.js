@@ -7,6 +7,7 @@ $("#servicio_alumnos").validate({
         },
         email_service: {
             required: true,
+            email: true,
         },
         matricula_service: {
             required: true,
@@ -18,6 +19,7 @@ $("#servicio_alumnos").validate({
         },
         email_service: {
             required: "correo requerido",
+            email: "formato de correo incorrecto",
         },
         matricula_service: {
             required: "matricula requerida",
@@ -25,25 +27,46 @@ $("#servicio_alumnos").validate({
     },
     submitHandler: function (form) {
 
-        let ruta = setUrlBase() + "form/servicio/alumno";
-        let formData = new FormData(form);
+        //!validacion de operacion
+        let operacion = Number($('#number1').val()) + Number($('#number2').val());
+        let operacionUsuario = $('#operacion_service').val();
 
-        $.ajax({
-            method: "POST",
-            url: ruta,
-            dataType: "html",
-            data: formData,
-            cache: false,
-            contentType: false,
-            processData: false,
-        }).done(function (data) {
-            console.log(data);
+        if (operacion == operacionUsuario) {
+            let ruta = setUrlBase() + "form/servicio/alumno";
+            let formData = new FormData(form);
 
-        }).fail(function (e) {
-            console.log("Request: " + JSON.stringify(e));
-        });
+            $.ajax({
+                method: "POST",
+                url: ruta,
+                dataType: "html",
+                data: formData,
+                cache: false,
+                contentType: false,
+                processData: false,
+            }).done(function (data) {
+                console.log(data);
 
-        //form.reset();
+                Swal.fire({
+                    title: "¡REGISTRO EXITOSO!",
+                    text: "Datos enviados correctamente",
+                    icon: "success"
+                });
+
+            }).fail(function (e) {
+                console.log("Request: " + JSON.stringify(e));
+            });
+
+            //form.reset();
+        } else {
+            Swal.fire({
+                title: "Error!",
+                text: "Resultado de la operación es incorrecto!",
+                icon: "error"
+            });
+        }
+
+        form.reset();
+
     }
 });
 
@@ -140,7 +163,7 @@ $("#form_contacto").validate({
                     icon: "success"
                 });
             }
-            else{
+            else {
                 Swal.fire({
                     title: "Error!",
                     text: respuesta.mensaje,
@@ -153,5 +176,72 @@ $("#form_contacto").validate({
         });
 
         form.reset();
+    }
+});
+
+$("#form_trabaja").validate({
+    wrapper: "span",
+    rules: {
+        nombre_trabajo: {
+            required: true,
+        },
+        email_trabaja: {
+            required: true,
+            email: true,
+        },
+    },
+    messages: {
+        nombre_trabajo: {
+            required: "nombre requerido",
+        },
+        email_trabaja: {
+            required: "correo requerido",
+            email: "formato de correo incorrecto",
+        },
+    },
+    submitHandler: function (form) {
+
+         //!validacion de operacion
+        let operacion = Number($('#number3').val()) + Number($('#number4').val());
+        let operacionUsuario = $('#operacion_service').val();
+
+        if (operacion == operacionUsuario) {
+            let ruta = setUrlBase() + "form/servicio/alumno";
+            let formData = new FormData(form);
+
+            $.ajax({
+                method: "POST",
+                url: ruta,
+                dataType: "html",
+                data: formData,
+                cache: false,
+                contentType: false,
+                processData: false,
+            }).done(function (data) {
+                console.log(data);
+
+                Swal.fire({
+                    title: "¡REGISTRO EXITOSO!",
+                    text: "Datos enviados correctamente",
+                    icon: "success"
+                });
+
+                form.reset(); 
+
+            }).fail(function (e) {
+                console.log("Request: " + JSON.stringify(e));
+            });
+
+            //form.reset();
+        } else {
+            Swal.fire({
+                title: "Error!",
+                text: "Resultado de la operación es incorrecto!",
+                icon: "error"
+            });
+        }
+
+        
+
     }
 });

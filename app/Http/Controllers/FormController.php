@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Mail\ContactoProspecto;
 use App\Mail\ServicioAlumno;
+use App\Mail\TrabajaUnimex;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -69,26 +70,39 @@ class FormController extends Controller
             "matricula" => $request->matricula_service,
             "mensaje" => $request->mensaje_service
         );
+
+        $recive = "lishanxime201099@gmail.com";
+        $envio =  Mail::to($recive)->bcc("umrec_web@unimex.edu.mx")->send(new ServicioAlumno($valores));
+        
+        var_dump($envio);
+
     }
 
     public function trabajaUnimex(Request $request)
     {
         $valores = array(
-            "nombre" => $request,
-            "mail" => $request,
-            "telefono_casa" => $request,
-            "telefono_celular" => $request,
-            "plantel" => $request,
-            "nivel_estudios" => $request,
+            "nombre" => $request->nombre_trabajo,
+            "mail" => $request->email_trabaja,
+            "telefono_casa" => $request->telefono_casa_trabaja,
+            "telefono_celular" => $request->telefono_movil_trabaja,
+            "plantel" => $request->plantel_trabaja,
+            "nivel_estudios" => $request->nivel_est_trabaja,
             "puesto_interes" => $request,
-            "experiencia_laboral" => $request
+            "experiencia_laboral" => $request->experiencia_trabaja
         );
+
+        $file = $request->file('cv_trabaja');
+
+        $recive = "lishanxime201099@gmail.com";
+        $envio =  Mail::to($recive)->bcc("umrec_web@unimex.edu.mx")->send(new TrabajaUnimex($valores, $file));
+        
+        var_dump($envio);
     }
 
     public function testerEnvio()
     {
         $recive = "lishanxime201099@gmail.com";
-        $envio =  Mail::to($recive)->bcc("umrec_web@unimex.edu.mx")->send(new ServicioAlumno());
-        dd($envio);
+        //$envio =  Mail::to($recive)->bcc("umrec_web@unimex.edu.mx")->send(new ServicioAlumno());
+        //dd($envio);
     }
 }

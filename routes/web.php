@@ -41,6 +41,7 @@ Route::post('/getHorarios', [ApiConsumoController::class, 'getHorarios'])->name(
 //* envio de formularios
 Route::post('/contacto/prospecto', [FormController::class, 'contactoProspecto'])->name('contacto.prospecto');
 Route::post('/form/servicio/alumno', [FormController::class, 'servicioAlumnos'])->name('form.servicio.alumno');
+Route::post('/form/trabaja/unimex', [FormController::class, 'trabajaUnimex'])->name('form.trabaja.unimex');
 
 //!testing
 Route::get('testing', [FormController::class, 'testerEnvio'])->name('testing');

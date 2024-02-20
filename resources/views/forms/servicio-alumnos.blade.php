@@ -20,7 +20,7 @@
                 <i class="bi bi-envelope-fill"></i>
             </x-form-contact.span-form-contact>
             <div class="form-floating">
-                <input type="text" class="form-control" id="email_service" name="email_service" placeholder="Correo Electronico">
+                <input type="email" class="form-control" id="email_service" name="email_service" placeholder="Correo Electronico">
                 <label for="email_service">Correo Electronico</label>
             </div>
         </div>
@@ -31,7 +31,7 @@
                 <i class="bi bi-telephone-fill"></i>
             </x-form-contact.span-form-contact>
             <div class="form-floating">
-                <x-form-contact.input-contact-text id="phone_casa_service" name="phone_casa_service" placeholder="Teléfono de Casa"></x-form-contact.input-contact-text>
+                <x-form-contact.input-contact-text maxlength="10" minlength="10" id="phone_casa_service" name="phone_casa_service" placeholder="Teléfono de Casa"></x-form-contact.input-contact-text>
                 <label for="phone_casa_service">Teléfono de Casa</label>
             </div>
         </div>
@@ -42,7 +42,7 @@
                 <i class="bi bi-phone-fill"></i>
             </x-form-contact.span-form-contact>
             <div class="form-floating">
-                <x-form-contact.input-contact-text id="movil_service" name="movil_service" placeholder="Teléfono celular"></x-form-contact.input-contact-text>
+                <x-form-contact.input-contact-text maxlength="10" minlength="10" id="movil_service" name="movil_service" placeholder="Teléfono celular"></x-form-contact.input-contact-text>
                 <label for="movil_service">Teléfono celular</label>
             </div>
         </div>
@@ -76,7 +76,7 @@
                 <i class="bi bi-credit-card-fill"></i>
             </x-form-contact.span-form-contact>
             <div class="form-floating">
-                <x-form-contact.input-contact-text id="matricula_service" name="matricula_service" placeholder="Matricula"></x-form-contact.input-contact-text>
+                <x-form-contact.input-contact-text maxlength="15" id="matricula_service" name="matricula_service" placeholder="Matricula"></x-form-contact.input-contact-text>
                 <label for="matricula_service">Matricula</label>
             </div>
         </div>
@@ -89,12 +89,14 @@
     </div>
     <div class="mb-2 col-12">
         <div class="mb-2 row">
-            <div class="col-2">
-                <label for="operacion_service" class="form-label">8 + 2 =</label>
+            <div class="col-2 d-flex">
+                <input disabled type="text" class="text-center" style="width: 40% !important;" id="number1" name="number1" value="2"> 
+                <div class="d-flex" style="width: 20% !important; align-items: center;">&nbsp;+</div>
+                <input disabled type="text" class="text-center" style="width: 40% !important;" id="number2" name="number2" value="2">
             </div>
             <div class="col-4">
                 <input type="number" class="form-control" id="operacion_service" name="operacion_service"
-                    placeholder="Introduce el resultadio aquí">
+                    placeholder="Introduce el resultadio aquí" maxlength="2">
             </div>
         </div>
     </div>
