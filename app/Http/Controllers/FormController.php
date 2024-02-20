@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\ContactoProspecto;
+use App\Mail\QuejasSugerencias;
 use App\Mail\ServicioAlumno;
 use App\Mail\TrabajaUnimex;
 use Illuminate\Http\Request;
@@ -73,9 +74,8 @@ class FormController extends Controller
 
         $recive = "lishanxime201099@gmail.com";
         $envio =  Mail::to($recive)->bcc("umrec_web@unimex.edu.mx")->send(new ServicioAlumno($valores));
-        
-        var_dump($envio);
 
+        var_dump($envio);
     }
 
     public function trabajaUnimex(Request $request)
@@ -95,7 +95,25 @@ class FormController extends Controller
 
         $recive = "lishanxime201099@gmail.com";
         $envio =  Mail::to($recive)->bcc("umrec_web@unimex.edu.mx")->send(new TrabajaUnimex($valores, $file));
-        
+
+        var_dump($envio);
+    }
+
+    public function quejasYsugerencias(Request $request)
+    {
+        $valores = array(
+            "nombre" => $request->nombre_qys,
+            "mail" => $request->mail_qys,
+            "telefono_casa" => $request->telefono_casa_qys,
+            "telefono_celular" => $request->telefono_movil_qys,
+            "matricula" => $request->matricula_qys,
+            "asunto" => $request->asunto_qys,
+            "mensaje" => $request->mensaje_qys
+        );
+
+        $recive = "lishanxime201099@gmail.com";
+        $envio = Mail::to($recive)->bcc("umrec_web@unimex.edu.mx")->send(new QuejasSugerencias($valores));
+
         var_dump($envio);
     }
 

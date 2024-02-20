@@ -26,7 +26,7 @@
         </x-form-contact.span-form-contact>
         <div class="form-floating">
             <input type="text" class="form-control" id="telefono_casa_trabaja" name="telefono_casa_trabaja"
-                placeholder="Teléfono de Casa">
+                placeholder="Teléfono de Casa" maxlength="10">
             <label for="telefono_casa_trabaja">Teléfono de Casa</label>
         </div>
     </div>
@@ -36,7 +36,7 @@
         </x-form-contact.span-form-contact>
         <div class="form-floating">
             <input type="text" class="form-control" id="telefono_movil_trabaja" name="telefono_movil_trabaja"
-                placeholder="Teléfono celular">
+                placeholder="Teléfono celular" maxlength="10">
             <label for="telefono_movil_trabaja">Teléfono celular</label>
         </div>
     </div>

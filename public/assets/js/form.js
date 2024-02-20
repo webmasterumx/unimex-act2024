@@ -162,6 +162,8 @@ $("#form_contacto").validate({
                     text: respuesta.mensaje,
                     icon: "success"
                 });
+
+                form.reset();
             }
             else {
                 Swal.fire({
@@ -174,8 +176,6 @@ $("#form_contacto").validate({
         }).fail(function (e) {
             console.log("Request: " + JSON.stringify(e));
         });
-
-        form.reset();
     }
 });
 
@@ -201,7 +201,7 @@ $("#form_trabaja").validate({
     },
     submitHandler: function (form) {
 
-         //!validacion de operacion
+        //!validacion de operacion
         let operacion = Number($('#number3').val()) + Number($('#number4').val());
         let operacionUsuario = $('#operacion_trabaja').val();
 
@@ -226,13 +226,11 @@ $("#form_trabaja").validate({
                     icon: "success"
                 });
 
-                form.reset(); 
+                form.reset();
 
             }).fail(function (e) {
                 console.log("Request: " + JSON.stringify(e));
             });
-
-            //form.reset();
         } else {
             Swal.fire({
                 title: "Error!",
@@ -241,7 +239,76 @@ $("#form_trabaja").validate({
             });
         }
 
-        
 
+
+    }
+});
+
+$("#form_quejaSugerencia").validate({
+    wrapper: "span",
+    rules: {
+        nombre_qys: {
+            required: true,
+        },
+        mail_qys: {
+            required: true,
+            email: true,
+        },
+        matricula_qys: {
+            required: true
+        }
+    },
+    messages: {
+        nombre_qys: {
+            required: "nombre requerido",
+        },
+        mail_qys: {
+            required: "correo requerido",
+            email: "formato de correo incorrecto",
+        },
+        matricula_qys: {
+            required: "matricula obligatoria"
+        }
+    },
+    submitHandler: function (form) {
+
+        //!validacion de operacion
+        let operacion = Number($('#number5').val()) + Number($('#number6').val());
+        let operacionUsuario = $('#operacion_qys').val();
+
+        if (operacion == operacionUsuario) {
+            let ruta = setUrlBase() + "form/quejas/sugerencias";
+            let formData = new FormData(form);
+
+            $.ajax({
+                method: "POST",
+                url: ruta,
+                dataType: "html",
+                data: formData,
+                cache: false,
+                contentType: false,
+                processData: false,
+            }).done(function (data) {
+                console.log(data);
+
+                Swal.fire({
+                    title: "¡REGISTRO EXITOSO!",
+                    text: "Datos enviados correctamente",
+                    icon: "success"
+                });
+
+                form.reset();
+
+            }).fail(function (e) {
+                console.log("Request: " + JSON.stringify(e));
+            });
+        } else {
+            Swal.fire({
+                title: "Error!",
+                text: "Resultado de la operación es incorrecto!",
+                icon: "error"
+            });
+        }
+ 
     }
 });

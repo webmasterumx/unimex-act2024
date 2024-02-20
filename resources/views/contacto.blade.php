@@ -245,6 +245,10 @@
             $('#number3').val(Math.floor(Math.random() * 10));
             $('#number4').val(Math.floor(Math.random() * 10));
 
+            //quejas y sugerencias
+            $('#number5').val(Math.floor(Math.random() * 10));
+            $('#number6').val(Math.floor(Math.random() * 10));
+
         });
 
         $("#phone_casa_service").bind('keypress', function(event) {
