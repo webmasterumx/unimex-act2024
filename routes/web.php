@@ -43,6 +43,7 @@ Route::post('/contacto/prospecto', [FormController::class, 'contactoProspecto'])
 Route::post('/form/servicio/alumno', [FormController::class, 'servicioAlumnos'])->name('form.servicio.alumno');
 Route::post('/form/trabaja/unimex', [FormController::class, 'trabajaUnimex'])->name('form.trabaja.unimex');
 Route::post('/form/quejas/sugerencias', [FormController::class, 'quejasYsugerencias'])->name('form.quejas.sugerencias');
+Route::post('/form/empresas/occ', [FormController::class, 'empresasOCC'])->name('form.empresas.pcc');
 
 //!testing
 Route::get('testing', [FormController::class, 'testerEnvio'])->name('testing');

@@ -70,14 +70,14 @@
                         <div class="row">
                             <div class="col-6 text-center">
                                 <!-- Button trigger modal -->
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal">
+                                <button onclick="establecerTipoDeEmpresaOCC(1)" type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#empresasOCC">
                                     SÍ, YA TENEMOS UNA <br> CUENTA EN OCC
                                 </button>
                             </div>
                             <div class="col-6" text-center>
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal">
+                                <button onclick="establecerTipoDeEmpresaOCC(0)" type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#empresasOCC">
                                     AÚN NO, QUEREMOS OBTENER <br> UNA CUENTA GRATUITA PARA <br> PUBLICAR VACANTES PARA <br>
                                     UNIMEX
                                 </button>
@@ -96,142 +96,9 @@
             </div>
         </div>
     </section>
-
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <h1 class="modal-title text-center fs-5" id="exampleModalLabel">Empresas Registradas en OCC</h1>
-                    <div class="row">
-                        <div class="col-12">
-                            <p>
-                                Ingresa los datos de tu empresa para publicar tus vacantes.
-                            </p>
-                        </div>
-                        <div class="mb-3 col-12">
-                            <div class="input-group my-3">
-                                <span class="input-group-text text-white" style="background-color: #f8981d;">
-                                    <i class="bi bi-bank2"></i>
-                                </span>
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="company-contrata"
-                                        name="company-contrata">
-                                    <label for="company-contrata">Nombre de la Empresa</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mb-3 col-12">
-                            <div class="input-group my-3">
-                                <span class="input-group-text text-white" style="background-color: #f8981d;">
-                                    <i class="bi bi-person-fill"></i>
-                                </span>
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="name-contrata" name="name-contrata">
-                                    <label for="name-contrata">Nombre del Contacto</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mb-3 col-12">
-                            <div class="input-group my-3">
-                                <span class="input-group-text text-white" style="background-color: #f8981d;">
-                                    <i class="bi bi-envelope-fill"></i>
-                                </span>
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="email-contrata"
-                                        name="email-contrata">
-                                    <label for="email-contrata">Correo Electronico</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mb-3 col-6">
-                            <div class="input-group my-3">
-                                <span class="input-group-text text-white" style="background-color: #f8981d;">
-                                    <i class="bi bi-telephone-fill"></i>
-                                </span>
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="email-contrata"
-                                        name="email-contrata">
-                                    <label for="email-contrata">Telefono de Casa</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mb-3 col-6">
-                            <div class="input-group my-3">
-                                <span class="input-group-text text-white" style="background-color: #f8981d;">
-                                    <i class="bi bi-phone-fill"></i>
-                                </span>
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="email-contrata"
-                                        name="email-contrata">
-                                    <label for="email-contrata">Telefono Celular</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mb-3 col-12">
-                            <div class="input-group my-3">
-                                <span class="input-group-text text-white" style="background-color: #f8981d;">
-                                    <i class="bi bi-file-earmark-fill"></i>
-                                </span>
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="email-contrata"
-                                        name="email-contrata">
-                                    <label for="email-contrata">Razón Social</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mb-3 col-12">
-                            <div class="input-group my-3">
-                                <span class="input-group-text text-white" style="background-color: #f8981d;">
-                                    <i class="bi bi-folder-fill"></i>
-                                </span>
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="email-contrata"
-                                        name="email-contrata">
-                                    <label for="email-contrata">RFC</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mb-3 col-12">
-                            <div class="form-floating">
-                                <textarea rows="4" class="form-control" id="floatingTextarea"></textarea>
-                                <label for="floatingTextarea">Comentarios</label>
-                            </div>
-                        </div>
-                        <div class="mb-3 col-12">
-                            <div class="mb-3 row">
-                                <div class="col-2">
-                                    <label for="exampleFormControlInput1" class="form-label">8 + 2 =</label>
-                                </div>
-                                <div class="col-3">
-                                    <input type="number" class="form-control" id="exampleFormControlInput1"
-                                        placeholder="Introduce el resultadio aquí">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mb-3 col-12">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="flexCheckDefault" checked>
-                                <label class="form-check-label" for="flexCheckDefault">
-                                    Estoy de acuerdo en ser contactado por UNIMEX® y acepto el aviso de privacidad.
-                                </label>
-                            </div>
-                        </div>
-                        <div class="mb-4 col-4">
-                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">ENVIAR DATOS</button>
-                        </div>
-                        <div class="mb-4 col-4">
-                            <button type="button" class="btn btn-outline-danger">BORRAR DATOS</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 @endsection
+
+@include('modales.empresasOCC')
 
 @section('scripts')
     <script>

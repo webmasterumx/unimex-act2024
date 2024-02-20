@@ -309,6 +309,103 @@ $("#form_quejaSugerencia").validate({
                 icon: "error"
             });
         }
- 
+
+    }
+});
+
+$("#form_empresasOCC").validate({
+    rules: {
+        nombre_empresaOCC: {
+            required: true,
+        },
+        contacto_empresaOCC: {
+            required: true,
+        },
+        email_empresaOCC: {
+            required: true,
+            email: true,
+        },
+        telefono_empresaOCC: {
+            required: true,
+        },
+        celular_empresaOCC: {
+            required: true,
+        },
+        razon_empresaOCC: {
+            required: true
+        },
+        rfc_empresaOCC: {
+            required: true,
+        },
+        comentarios_empresaOCC: {
+            required: true,
+        }
+    },
+    messages: {
+        nombre_empresaOCC: {
+            required: "nombre requerido",
+        },
+        contacto_empresaOCC: {
+            required: "correo requerido",
+        },
+        email_empresaOCC: {
+            required: "matricula obligatoria",
+            email: "formato de correo incorrecto",
+        },
+        telefono_empresaOCC: {
+            required: "telefono requerido",
+        },
+        celular_empresaOCC: {
+            required: "celular requerido",
+        },
+        razon_empresaOCC: {
+            required: "razón social obligatoria"
+        },
+        rfc_empresaOCC: {
+            required: "rfc requerido",
+        },
+        comentarios_empresaOCC: {
+            required: "comentarios requeridos",
+        }
+    },
+    submitHandler: function (form) {
+
+        //!validacion de operacion
+        let operacion = Number($('#number7').val()) + Number($('#number8').val());
+        let operacionUsuario = $('#operacion_empresaOCC').val();
+
+        if (operacion == operacionUsuario) {
+            let ruta = setUrlBase() + "form/empresas/occ";
+            let formData = new FormData(form);
+
+            $.ajax({
+                method: "POST",
+                url: ruta,
+                dataType: "html",
+                data: formData,
+                cache: false,
+                contentType: false,
+                processData: false,
+            }).done(function (data) {
+                console.log(data);
+
+                Swal.fire({
+                    title: "¡REGISTRO EXITOSO!",
+                    text: "Datos enviados correctamente",
+                    icon: "success"
+                });
+
+                form.reset();
+
+            }).fail(function (e) {
+                console.log("Request: " + JSON.stringify(e));
+            });
+        } else {
+            Swal.fire({
+                title: "Error!",
+                text: "Resultado de la operación es incorrecto!",
+                icon: "error"
+            });
+        } 
     }
 });

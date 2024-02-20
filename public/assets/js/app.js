@@ -67,3 +67,42 @@ $("#telefono_movil_qys").bind('keypress', function (event) {
         return false;
     }
 });
+
+function establecerTipoDeEmpresaOCC(type) {
+
+    $('#type_empresaOCC').val(type);
+
+    $('#number7').val(Math.floor(Math.random() * 10));
+    $('#number8').val(Math.floor(Math.random() * 10));
+
+    if (type == 1) //si tiene cuenta
+    {
+        $('#empresasOCCLabel').html('Empresas Registradas en OCC');
+        $('#parrafoEmpresasOCC').html('Ingresa los datos de tu empresa para publicar tus vacantes.');
+    }
+    else // no tiene cuenta
+    {
+        $('#empresasOCCLabel').html('Registra tu Empresa en OCC');
+        $('#parrafoEmpresasOCC').html('Ingresa los datos de tu empresa para publicar tus vacantes. Regístrate como empresa aquí.');
+    }
+
+}
+
+$("#telefono_empresaOCC").bind('keypress', function (event) {
+    var regex = new RegExp("^[0-9]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+
+$("#celular_empresaOCC").bind('keypress', function (event) {
+    var regex = new RegExp("^[0-9]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});

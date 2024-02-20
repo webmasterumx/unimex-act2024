@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\ContactoProspecto;
+use App\Mail\EmpresasOcc;
 use App\Mail\QuejasSugerencias;
 use App\Mail\ServicioAlumno;
 use App\Mail\TrabajaUnimex;
@@ -113,6 +114,33 @@ class FormController extends Controller
 
         $recive = "lishanxime201099@gmail.com";
         $envio = Mail::to($recive)->bcc("umrec_web@unimex.edu.mx")->send(new QuejasSugerencias($valores));
+
+        var_dump($envio);
+    }
+
+    public function empresasOCC(Request $request)
+    {
+        $valores = array(
+            "empresa" => $request->nombre_empresaOCC,
+            "contacto" => $request->contacto_empresaOCC,
+            "email" => $request->email_empresaOCC,
+            "telefono" => $request->telefono_empresaOCC,
+            "celular" => $request->celular_empresaOCC,
+            "razon" => $request->razon_empresaOCC,
+            "rfc" => $request->rfc_empresaOCC,
+            "comentarios" => $request->comentarios_empresaOCC,
+        );
+
+        if ($request->type_empresaOCC == 1) //tiene cuenta en occ
+        {
+            $asunto = "Empresas Registradas en OCC";
+        } else //no tiene cuenta en occ
+        {
+            $asunto = "Empresas por Registrar en OCC";
+        }
+
+        $recive = "lishanxime201099@gmail.com";
+        $envio = Mail::to($recive)->bcc("umrec_web@unimex.edu.mx")->send(new EmpresasOcc($valores, $asunto));
 
         var_dump($envio);
     }
