@@ -191,12 +191,12 @@
                         </div>
                         <div class="col-xl-2 col-lg-2 col-md-3 col-sm-12 left-gray-border">
                             <h5 class="hide">
-                                <a href="https://testing.unimex.edu.mx/examen-de-conocimientos" target="_blank"
+                                <a href="{{ route('examen_de_conocimientos') }}" target="_blank"
                                     rel="noopener">Examen de Conocimientos</a>
                             </h5>
                             <div class="card" style="min-height: 150px;">
                                 <a target="_blank" rel="noopener"
-                                    href="https://testing.unimex.edu.mx/examen-de-conocimientos">
+                                    href="{{ route('examen_de_conocimientos') }}">
                                     <div class="parent" style="width: 150px;">
                                         <div class="children bg-examen">
                                             <span class="linka">Ver Más</span>
@@ -205,7 +205,7 @@
                                 </a>
                                 <div class="card-body">
                                     <p class="card-text" style="text-align: center;">
-                                        <a href="https://testing.unimex.edu.mx/examen-de-conocimientos"
+                                        <a href="{{ route('examen_de_conocimientos') }}"
                                             target="_blank" rel="noopener"><span class="blue-text">Examen de
                                                 Conocimientos</span></a>
                                     </p>
@@ -214,12 +214,12 @@
                         </div>
                         <div class="col-xl-2 col-lg-2 col-md-3 col-sm-12 left-gray-border">
                             <h5 class="hide">
-                                <a href="https://testing.unimex.edu.mx/resultados-examen/" target="_blank"
+                                <a href="{{ route('resultados_examen_conocimientos') }}" target="_blank"
                                     rel="noopener">Resultados
                                     del Examen de Conocimientos</a>
                             </h5>
                             <div class="card" style="min-height: 150px;">
-                                <a href="https://testing.unimex.edu.mx/resultados-examen/" target="_blank"
+                                <a href="{{ route('resultados_examen_conocimientos') }}" target="_blank"
                                     rel="noopener">
                                     <div class="parent" style="width: 150px;">
                                         <div class="children bg-resultadoexamen">
@@ -229,7 +229,7 @@
                                 </a>
                                 <div class="card-body">
                                     <p class="card-text">
-                                        <a href="https://testing.unimex.edu.mx/resultados-examen/" target="_blank"
+                                        <a href="{{ route('resultados_examen_conocimientos') }}" target="_blank"
                                             rel="noopener"><span class="blue-text">Resultados del Examen de
                                                 Conocimientos</span></a>
                                     </p>
@@ -239,11 +239,11 @@
                         <!--nuevo-->
                         <div class="col-xl-2 col-lg-2 col-md-3 col-sm-12  left-gray-border">
                             <h5 class="hide">
-                                <a href="/calendarios-escolares" target="_blank"
+                                <a href="{{ route('calendarios_escolares') }}" target="_blank"
                                     rel="noopener noreferrer">Calendarios Escolares</a>
                             </h5>
                             <div class="card" style="min-height: 150px;">
-                                <a href="/calendarios-escolares" target="_blank" rel="noopener noreferrer">
+                                <a href="{{ route('calendarios_escolares') }}" target="_blank" rel="noopener noreferrer">
                                     <div class="parent" style="width: 150px;">
                                         <div class="children bg-calendario">
                                             <span class="linka">Ver Más</span>
@@ -251,7 +251,7 @@
                                     </div>
                                     <div class="card-body">
                                         <p class="card-text" style="text-align: center;">
-                                            <a href="calendarios-escolares" target="_blank"
+                                            <a href="{{ route('calendarios_escolares') }}" target="_blank"
                                                 rel="noopener noreferrer">
                                                 <span class="blue-text">Calendarios Escolares</span></a>
                                         </p>

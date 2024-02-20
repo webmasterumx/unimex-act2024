@@ -90,7 +90,7 @@
                 <div class="col-12">
                     <div id="listCarreras">
                         @foreach ($listaCarreras as $carrera)
-                            <a href="/{{ $carrera->slug }}" class="card mx-2 h-100">
+                            <a href="{{ route('licenciatura', $carrera->slug) }}" class="card mx-2 h-100">
                                 <div class="card-body">
                                     <center>
                                         <img class="" src="{{ $carrera->icon }}" alt="{{ $carrera->slug }}"><br>

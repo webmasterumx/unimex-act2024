@@ -136,7 +136,7 @@
                         Especialidad con Reconocimiento de Validez Oficial de Estudios de la SEP:
                     </b>
                     <br><br>
-                    @for ($i = 0; $i < sizeof($rvoe_especialidad); $i++)
+                    @for ($i = 0; $i < sizeof($rvoe_maestria); $i++)
                         {{ $rvoe_maestria[$i] }} <br>
                     @endfor
                 </p>
