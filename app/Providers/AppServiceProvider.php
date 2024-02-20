@@ -23,7 +23,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        /* $planteles = Plantel::all();
+        $planteles = Plantel::all();
         $acercade = Acercade::all();
         $menus = Menu::all();
 
@@ -33,6 +33,6 @@ class AppServiceProvider extends ServiceProvider
             "menus" => $menus,
         );
 
-        View::share('data', $data);  */
+        View::share('data', $data); 
     }
 }
