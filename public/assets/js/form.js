@@ -203,10 +203,10 @@ $("#form_trabaja").validate({
 
          //!validacion de operacion
         let operacion = Number($('#number3').val()) + Number($('#number4').val());
-        let operacionUsuario = $('#operacion_service').val();
+        let operacionUsuario = $('#operacion_trabaja').val();
 
         if (operacion == operacionUsuario) {
-            let ruta = setUrlBase() + "form/servicio/alumno";
+            let ruta = setUrlBase() + "form/trabaja/unimex";
             let formData = new FormData(form);
 
             $.ajax({

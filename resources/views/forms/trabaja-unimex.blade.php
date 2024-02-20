@@ -1,4 +1,4 @@
-<form id="" class="row" enctype="multipart/form-data">
+<form id="form_trabaja" class="row" enctype="multipart/form-data">
     @csrf
     <div class="mb-3 col-6 input-group">
         <x-form-contact.span-form-contact>
@@ -77,6 +77,16 @@
             <label for="cv_trabaja" class="form-label">Adjunta tu CV:</label>
             <input class="form-control" type="file" id="cv_trabaja" name="cv_trabaja">
             *Se aceptan archivos Word y PDF
+        </div>
+    </div>
+    <div class="mb-3 col-12 input-group">
+        <x-form-contact.span-form-contact>
+            <i class="bi bi-person-workspace"></i>
+        </x-form-contact.span-form-contact>
+        <div class="form-floating">
+            <input type="text" class="form-control" id="puesto_interes" name="puesto_interes"
+                placeholder="¿Qué puesto te interesa?">
+            <label for="puesto_interes">¿Qué puesto te interesa?</label>
         </div>
     </div>
     <div class="mb-3 col-12">

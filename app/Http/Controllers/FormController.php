@@ -87,7 +87,7 @@ class FormController extends Controller
             "telefono_celular" => $request->telefono_movil_trabaja,
             "plantel" => $request->plantel_trabaja,
             "nivel_estudios" => $request->nivel_est_trabaja,
-            "puesto_interes" => $request,
+            "puesto_interes" => $request->puesto_interes,
             "experiencia_laboral" => $request->experiencia_trabaja
         );
 
