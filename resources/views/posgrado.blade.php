@@ -281,6 +281,7 @@
 @endsection
 
 @section('scripts')
+    <script src="{{ asset('assets/js/combosCarrera.js') }}"></script>
     <script>
         $('#temario_especialidad').slick({
             infinite: false,

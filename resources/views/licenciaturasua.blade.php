@@ -223,7 +223,8 @@
     <section class="container-fluid px-5 py-5 bg_planteles_dis">
         <div class="row">
             <div class="col-12 text-center p-0 mb-3">
-                <h1 class="fw-light" style="font-size: 1.438rem; color: #ffff;">ESTA LICENCIATURA ESTÁ DISPONIBLE EN LOS PLANTELES:</h1>
+                <h1 class="fw-light" style="font-size: 1.438rem; color: #ffff;">ESTA LICENCIATURA ESTÁ DISPONIBLE EN LOS
+                    PLANTELES:</h1>
                 <p class="text-white">
                     VERACRUZ <br>
                     {{ $licenciatura_sua->reconocimiento }}
@@ -235,6 +236,7 @@
 @endsection
 
 @section('scripts')
+    <script src="{{ asset('assets/js/combosCarrera.js') }}"></script>
     <script>
         $('#temario').slick({
             infinite: false,
