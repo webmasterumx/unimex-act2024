@@ -566,7 +566,6 @@
     <script src="{{ asset('assets/js/main.js') }}"></script>
     <script src="{{ asset('assets/js/custom.js') }}"></script>
     <script src="{{ asset('assets/js/form.js') }}"></script>
-    <script src="{{ asset('assets/js/combos.js') }}"></script>
 
     <script>
         function setUrlBase() {

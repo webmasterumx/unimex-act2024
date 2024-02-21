@@ -142,7 +142,7 @@ $("#form_contacto").validate({
     },
     submitHandler: function (form) {
 
-        let ruta = setUrlBase() + "contacto/prospecto";
+      /*   let ruta = setUrlBase() + "contacto/prospecto";
         let formData = new FormData(form);
 
         $.ajax({
@@ -175,7 +175,7 @@ $("#form_contacto").validate({
 
         }).fail(function (e) {
             console.log("Request: " + JSON.stringify(e));
-        });
+        }); */
     }
 });
 

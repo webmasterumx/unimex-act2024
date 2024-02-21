@@ -63,7 +63,7 @@ class UnimexController extends Controller
             "licenciatura" => $licenciatura,
             "temario" => $temario,
             "campo_laboral" => $campo_laboral,
-            "disponibilidad" => $disponibilidad
+            "disponibilidad" => $disponibilidad,
         ]);
     }
 
@@ -93,7 +93,7 @@ class UnimexController extends Controller
             "temario_especialidad" => $temario_especialidad,
             "temario_maestria" => $temario_maestria,
             "rvoe_especialidad" => $rvoe_especialidad,
-            "rvoe_maestria" => $rvoe_maestria
+            "rvoe_maestria" => $rvoe_maestria,
         ]);
     }
 

@@ -70,14 +70,14 @@
                         <div class="row">
                             <div class="col-6 text-center">
                                 <!-- Button trigger modal -->
-                                <button onclick="establecerTipoDeEmpresaOCC(1)" type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                    data-bs-target="#empresasOCC">
+                                <button onclick="establecerTipoDeEmpresaOCC(1)" type="button" class="btn btn-primary"
+                                    data-bs-toggle="modal" data-bs-target="#empresasOCC">
                                     SÍ, YA TENEMOS UNA <br> CUENTA EN OCC
                                 </button>
                             </div>
                             <div class="col-6" text-center>
-                                <button onclick="establecerTipoDeEmpresaOCC(0)" type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                    data-bs-target="#empresasOCC">
+                                <button onclick="establecerTipoDeEmpresaOCC(0)" type="button" class="btn btn-primary"
+                                    data-bs-toggle="modal" data-bs-target="#empresasOCC">
                                     AÚN NO, QUEREMOS OBTENER <br> UNA CUENTA GRATUITA PARA <br> PUBLICAR VACANTES PARA <br>
                                     UNIMEX
                                 </button>
@@ -101,6 +101,7 @@
 @include('modales.empresasOCC')
 
 @section('scripts')
+    <script src="{{ asset('assets/js/combos.js') }}"></script>
     <script>
         $(document).ready(function() {
 
@@ -135,5 +136,8 @@
                 return false;
             }
         });
+
+        $("#nivelSelect").append(`<option value="">Nivel</option>`);
+        $("#carreraSelect").append(`<option value="">Carrera</option>`);
     </script>
 @endsection

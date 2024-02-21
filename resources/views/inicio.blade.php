@@ -184,6 +184,9 @@
                 prevArrow: '<button type="button" class="slick-prev"><i class="bi bi-chevron-compact-left"></i></button>',
                 nextArrow: '<button type="button" class="slick-next"><i class="bi bi-chevron-compact-right"></i></button>',
             });
+
+            $("#nivelSelect").append(`<option value="">Nivel</option>`);
+            $("#carreraSelect").append(`<option value="">Carrera</option>`);
         });
     </script>
 @endsection

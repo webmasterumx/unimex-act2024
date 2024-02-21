@@ -13,10 +13,10 @@
                     <i class="bi bi-telephone-fill text-white"></i> <a href="tel:+525591380060">55 9138 0060</a><br>
                     <span class="text-white"> Veracruz <br></span>
                     <i class="bi bi-telephone-fill text-white"></i> <a href="tel:+522229323916">222 932 3916</a><br>
-                </p> 
+                </p>
             </div>
             <div class="col-12 col-md-6 p-0"> <!-- form_contacto -->
-                <form action="{{ route('contacto.prospecto') }}" method="POST" class="bg-white p-5">
+                <form id="form_contacto" action="{{ route('contacto.prospecto') }}" method="POST" class="bg-white p-5">
                     @csrf
                     <p style="color: #004b93; font-size: 1.5em;" class="text-center">
                         ¡Estamos para ayudarte! <br>
@@ -73,11 +73,29 @@
 
                             <select class="form-select rounded-0" aria-label="Default select example" id="nivelSelect"
                                 name="nivelSelect">
-                                <option value="" selected> Nivel </option>
+                                @isset($licenciatura)
+                                    <option value="Licenciatura" selected>Licenciatura</option>
+                                @endisset
+                                @isset($licenciatura_sua)
+                                    <option value="Licenciatura" selected>Licenciatura</option>
+                                @endisset
+                                @isset($posgrado)
+                                    <option value="Especialidad" selected>Especialidad</option>
+                                @endisset
                             </select>
                             <select class="form-select rounded-0" aria-label="Default select example" id="carreraSelect"
                                 name="carreraSelect">
-                                <option value="" selected> Carrera </option>
+                                @isset($licenciatura)
+                                    <option value="{{ $licenciatura->subtitulo }}"> {{ $licenciatura->subtitulo }} </option>
+                                @endisset
+                                @isset($licenciatura_sua)
+                                    <option value="{{ $licenciatura_sua->titulo }}" selected>{{ $licenciatura_sua->titulo }}</option>
+                                @endisset
+                                @isset($posgrado)
+                                    <option value="{{ $posgrado->titulo }}"> {{ $posgrado->titulo }} </option>
+                                @endisset
+
+
                             </select>
                         </div>
                     </div>
@@ -88,8 +106,8 @@
                         </select>
                     </div>
                     <div class="form-check mt-3">
-                        <input class="form-check-input" type="checkbox" id="aceptar_contacto" name="aceptar_contacto" checked
-                            style="margin-top: -2%;">
+                        <input class="form-check-input" type="checkbox" id="aceptar_contacto"
+                            name="aceptar_contacto" checked style="margin-top: -2%;">
                         <label class="form-check-label" for="aceptar_contacto"
                             style="margin-top: 11px; margin-left: 26px;">
                             He leído y acepto el <a href="#">aviso de privacidad.</a>
