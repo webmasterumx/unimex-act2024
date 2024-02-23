@@ -20,6 +20,36 @@
 
 
     <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
+    <style>
+        .style_prevu_kit {
+            /*display:inline-block;
+    border:0;
+    width:196px;
+    height:210px;
+    position: relative;*/
+            -webkit-transition: all 200ms ease-in;
+            -webkit-transform: scale(1);
+            -ms-transition: all 200ms ease-in;
+            -ms-transform: scale(1);
+            -moz-transition: all 200ms ease-in;
+            -moz-transform: scale(1);
+            transition: all 200ms ease-in;
+            transform: scale(1);
+        }
+
+        .style_prevu_kit:hover {
+            box-shadow: 0px 0px 150px #000000;
+            z-index: 2;
+            -webkit-transition: all 200ms ease-in;
+            -webkit-transform: scale(1.2);
+            -ms-transition: all 200ms ease-in;
+            -ms-transform: scale(1.2);
+            -moz-transition: all 200ms ease-in;
+            -moz-transform: scale(1.2);
+            transition: all 200ms ease-in;
+            transform: scale(1.2);
+        }
+    </style>
 </head>
 
 <body>
@@ -52,6 +82,13 @@
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
+    <script>
+        function setUrlBase() {
+            let urlBase = "{{ env('APP_URL') }}";
+            return urlBase;
+        }
     </script>
 
     @yield('scripts')

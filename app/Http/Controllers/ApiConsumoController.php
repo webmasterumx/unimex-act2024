@@ -9,6 +9,7 @@ class ApiConsumoController extends Controller
 {
 
     public $base_url = 'https://api-testing.unimexver.edu.mx/api/';
+    public $baseUrlProduccion = "https://api.unimexver.edu.mx/api/";
 
     /**
      * Metodo ocupado en:
@@ -73,6 +74,44 @@ class ApiConsumoController extends Controller
 
         return $response->json();
     }
+
+    //! inicio metodos de calculadora
+
+    public function calculadoraHorarios(Request $request)  
+    {
+
+        $response = Http::post($this->baseUrlProduccion . 'calculadora/horarios', [
+            "claveCarrera" => $request->claveCarrera,
+            "claveNivel" => $request->claveNivel,
+            "clavePeriodo" => $request->clavePeriodo,
+            "PlantelId" => $request->PlantelId,
+            "promedio" => 0,
+        ]);
+
+        return $response->json();
+    }
+
+    public function calculaDetalleHorarios(Request $request)  
+    {
+        $response = Http::post($this->baseUrlProduccion . 'calculadora/detalle-horario', [
+            "PlantelId" => $request->PlantelId,
+            "claveCarrera" => $request->claveCarrera,
+            "claveTurno" => $request->claveTurno,
+            "claveNivel" => $request->claveNivel,
+            "clavePeriodo" => $request->clavePeriodo,
+            "claveBeca" => $request->claveBeca,
+            "egresado" => $request->egresado,
+        ]);
+
+        return $response->json();
+    }
+
+    public function actualizaProspecto()  
+    {
+        
+    }
+
+    //! fin metodos de calculadora
 
     public function agregarProspectoCRM($valores)
     {

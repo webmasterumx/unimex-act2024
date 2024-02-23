@@ -4,55 +4,61 @@
     <section class="container-fluid pt-2 px-5">
         <div class="row">
             <div class="col-12 col-md-3 col-lg-3 px-3" style="background-color: rgba(0, 75, 174, 30%);">
-                <form class="row p-3" action="#">
+                <form id="form_calculadora" class="row p-3">
+                    @csrf
                     <h6>¿Cuándo te gustaría iniciar?</h6>
                     <hr>
-                    <select class="form-select form-select-sm col-12 mb-2" aria-label="Elegir plantel" name="selectPlantel" id="selectPlantel">
-                        <option selected disabled>Selecciona el Plantel</option>
+                    <select class="form-select form-select-sm col-12 mb-2" aria-label="Elegir plantel" name="selectPlantel"
+                        id="selectPlantel">
+                        <option value="" selected disabled>Selecciona el Plantel</option>
                     </select>
                     <select class="form-select form-select-sm col-12 mb-2" aria-label="Elegir periodo" name="selectPeriodo"
                         id="selectPeriodo">
-                        <option selected disabled>¿Cuándo deseas iniciar?</option>
+                        <option value="" selected disabled>¿Cuándo deseas iniciar?</option>
                     </select>
-                    <select class="form-select form-select-sm col-12 mb-5" aria-label="Elegir Nivel" name="selectNivel" id="selectNivel">
-                        <option selected disabled>Selecciona el Nivel</option>
+                    <select class="form-select form-select-sm col-12 mb-5" aria-label="Elegir Nivel" name="selectNivel"
+                        id="selectNivel">
+                        <option value="" selected disabled>Selecciona el Nivel</option>
                     </select>
 
                     <h5>Personaliza Tu Beca</h5>
                     <hr>
                     <div class="mb-2 p-0 col-6">
-                        <input type="text" class="form-control form-control-sm" id="exampleFormControlInput1"
-                            placeholder="Nombre (Obligatorio)">
+                        <input type="text" class="form-control form-control-sm" id="nombreProspecto"
+                            name="nombreProspecto" placeholder="Nombre (Obligatorio)">
                     </div>
                     <div class="mb-2 p-0 col-6">
-                        <input type="text" class="form-control form-control-sm" id="exampleFormControlInput1"
-                            placeholder="Apellidos (Obligatorio)">
+                        <input type="text" class="form-control form-control-sm" id="apellidosProspecto"
+                            name="apellidosProspecto" placeholder="Apellidos (Obligatorio)">
                     </div>
                     <div class="input-group mb-2 col-12 p-0 mb-1">
                         <div class="input-group-text">
                             <i class="bi bi-telephone-fill"></i> &nbsp;&nbsp;
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                            <label class="form-check-label" for="flexRadioDefault1">
+                            <input class="form-check-input" type="radio" name="typeTelefono[]" id="telefono_celular"
+                                value="1">
+                            <label class="form-check-label" for="telefono_celular">
                                 Cel
                             </label>
-                            <input class="form-check-input ms-3" type="radio" name="flexRadioDefault"
-                                id="flexRadioDefault2">
-                            <label class="form-check-label" for="flexRadioDefault2">
+                            <input class="form-check-input ms-3" type="radio" name="typeTelefono[]" id="telefono_fijo"
+                                value="2">
+                            <label class="form-check-label" for="telefono_fijo">
                                 Fijo
                             </label>
                         </div>
                         <input type="text" class="form-control form-control-sm" aria-label="Text input with radio button"
-                            placeholder="Telefono (Obligatorio)">
+                            id="telefonoProspecto" name="telefonoProspecto" placeholder="Telefono (Obligatorio)"
+                            maxlength="10">
                     </div>
                     <div class="input-group mb-2 col-12 p-0 mb-1">
                         <span class="input-group-text" id="basic-addon1">
                             <i class="bi bi-envelope-fill"></i>
                         </span>
-                        <input type="text" class="form-control form-control-sm" placeholder="E-mail (Obligatorio)" aria-label="Username"
-                            aria-describedby="basic-addon1">
+                        <input type="email" class="form-control form-control-sm" placeholder="E-mail (Obligatorio)"
+                            id="emailProspecto" name="emailProspecto" aria-label="Username" aria-describedby="basic-addon1">
                     </div>
                     <div class="form-check col-12">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
+                        <input class="form-check-input" type="checkbox" value="" id="terminosYcondiciones"
+                            name="terminosYcondiciones" checked>
                         <!-- Button trigger modal -->
                         <button type="button" class="btn btn-link p-0 text-start" data-bs-toggle="modal"
                             data-bs-target="#exampleModal" style="font-size: 14px;">
@@ -220,6 +226,9 @@
                             </div>
                         </div>
                     </div>
+                    <button id="envio_caluladora" class="btn btn-primary mt-3" type="submit">
+                        Calcular
+                    </button>
                 </form>
             </div>
             <div class="col-12 col-md-9 col-lg-9">
@@ -247,6 +256,102 @@
                         </div>
                     </div>
                 </div>
+                <div id="informacionCRM" class="row mt-3">
+                    <div class="col-12 col-md-3">
+                        <p id="folio_crm">
+                            Folio:
+                        </p>
+                    </div>
+                    <div class="col-12 col-md-9">
+                        <select id="selectCarrera" name="selectCarrera" class="form-select mx-auto w-50"
+                            aria-label="Default select example">
+                            <option selected disabled>- Selecciona una carrera -</option>
+                        </select>
+                    </div>
+                    <div class="col-12 row" id="grupoBotones">
+                    </div>
+                    <div class="col-12 row mt-3" id="grupoInformacion">
+                        <div class="col-12 col-md-4">
+                            <div class="card" style="border: 1px solid #004b93">
+                                <div class="card-header text-center text-white"
+                                    style="background: #004b93; font-size: 13px;">
+                                    INSCRIPCIÓN
+                                </div>
+                                <div class="card-body row">
+                                    <div class="col-12 col-md-7">
+                                        <p class="text-secondary">
+                                            Con tu promoción
+                                        </p>
+                                    </div>
+                                    <div class="col-12 col-md-5">
+                                        <p id="costoCnPromocion" class="text-center" style="color: #004b93">
+                                            $790.00
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <div class="card" style="border: 1px solid #004b93">
+                                <div class="card-header text-center text-white"
+                                    style="background: #004b93; font-size: 13px;">
+                                    4 PARCIALES DE
+                                </div>
+                                <div class="card-body row">
+                                    <div class="col-12 col-md-7">
+                                        <p class="text-secondary">
+                                            Beca del 60%
+                                        </p>
+                                    </div>
+                                    <div class="col-12 col-md-5">
+                                        <p id="costoBeca" class="text-center" style="color: #004b93">
+                                            $1,328.00
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <div class="card" style="border: 1px solid #004b93">
+                                <div class="card-header text-center text-white"
+                                    style="background: #004b93; font-size: 13px;">
+                                    TOTAL A PAGAR EN 1er CUATRIMESTRE
+                                </div>
+                                <div class="card-body row">
+                                    <div class="col-12 col-md-7">
+                                        <p class="text-secondary">
+                                            Promoción y Beca
+                                        </p>
+                                    </div>
+                                    <div class="col-12 col-md-5">
+                                        <p id="costoPromocion" class="text-center" style="color: #004b93">
+                                            $9,094.00
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="card mt-3" style="border: 1px solid #004b93">
+                                <div class="card-body">
+                                    <p class="text-secondary">
+                                        Tu selección ha sido: <span style="color: #004b93;"><b> LICENCIATURA EN DISEÑO
+                                                GRAFICO</b></span> <br>
+                                        Plantel: <span style="color: #004b93;"><b>VERACRUZ</b></span> en horario: <span
+                                            style="color: #004b93"><b>MATUTINO C</b></span> de <span
+                                            style="color: #004b93"><b>09:00 A 13:00 Hrs.</b></span> <br>
+                                        Inicio de clases <span style="color: #004b93"><b>ENERO</b></span><br>
+                                        Vigencia: <span style="color: #004b93"><b>21/10/2023</b></span><br>
+                                        Durante el cuatrimestre se deberan pagar 4 parcialidades indicadas en el Calendario
+                                        Escolar. <br>
+                                        Para mayor información de los costos de reinscripción, acude al plantel de tu
+                                        interes.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -254,80 +359,23 @@
 
 @section('scripts')
     <script>
-        $(document).ready(function() {
+        function selectHorario(valor) {
+            console.log('hola valor: ' + valor);
 
-            $.ajax({
-                method: "GET",
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                },
-                url: "{{ route('get.planteles') }}",
-            }).done(function(data) {
-                console.log(data);
-                $.each(data, function(index, value) {
-                    console.log(value.clave);
-                    $('#selectPlantel').prepend("<option value='" + value.clave + "'>" + value
-                        .descrip + "</option>");
-                });
+            let PlantelId =  $('select[name=selectNivel]').val();;
+            let claveCarrera = "";
+            let claveTurno = "";
+            let claveNivel = "";
+            let clavePeriodo = "";
+            let claveBeca = "";
+            let egresado = "";
+        }
 
-            }).fail(function() {
-                console.log("Algo salió mal");
-            });
-
-        });
-
-        $("select[name=selectPlantel]").change(function() {
-            console.log($('select[name=selectPlantel]').val());
-
-            let plantel = $('select[name=selectPlantel]').val();
-            console.log(plantel);
-            $.ajax({
-                method: "POST",
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                },
-                url: "{{ route('get.periodos') }}",
-                data: {
-                    plantel: plantel
-                }
-            }).done(function(data) {
-                console.log(data);
-                $.each(data, function(index, value) {
-                    console.log(value.clave);
-                    $('#selectPeriodo').prepend("<option value='" + value.clave + "'>" + value
-                        .descrip + "</option>");
-                });
-
-            }).fail(function() {
-                console.log("Algo salió mal");
-            });
-        });
-
-        $("select[name=selectPeriodo]").change(function() {
-
-            let plantel = $('select[name=selectPlantel]').val();
-
-            console.log(plantel);
-            $.ajax({
-                method: "POST",
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                },
-                url: "{{ route('get.niveles') }}",
-                data: {
-                    plantel: plantel
-                }
-            }).done(function(data) {
-                console.log(data);
-                $.each(data, function(index, value) {
-                    console.log(value.clave);
-                    $('#selectNivel').prepend("<option value='" + value.clave + "'>" + value
-                        .descrip + "</option>");
-                });
-
-            }).fail(function() {
-                console.log("Algo salió mal");
-            });
-        });
+        function setUrlBase() {
+            let urlBase = "{{ env('APP_URL') }}";
+            return urlBase;
+        }
     </script>
+    <script src="{{ asset('assets/js/calculadoraCuotas/combos_calculadora.js') }}"></script>
+    <script src="{{ asset('assets/js/calculadoraCuotas/validacion.js') }}"></script>
 @endsection

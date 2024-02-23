@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ApiConsumoController;
+use App\Http\Controllers\CalculadoraCuotasController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\UnimexController;
 use Illuminate\Support\Facades\Route;
@@ -37,6 +38,8 @@ Route::post('/getNiveles', [ApiConsumoController::class, 'getNiveles'])->name('g
 Route::post('/getPeriodos', [ApiConsumoController::class, 'getPeriodos'])->name('get.periodos');
 Route::post('/getCarreras', [ApiConsumoController::class, 'getCarreras'])->name('get.carreras');
 Route::post('/getHorarios', [ApiConsumoController::class, 'getHorarios'])->name('get.horarios');
+Route::post('/get/horarios/calculadora', [ApiConsumoController::class, 'calculadoraHorarios'])->name('get.horarios.calculadora');
+Route::post('/get/detalle/horario', [ApiConsumoController::class, 'calculaDetalleHorarios'])->name('get.detalle.horario');
 
 //* envio de formularios
 Route::post('/contacto/prospecto', [FormController::class, 'contactoProspecto'])->name('contacto.prospecto');
@@ -44,6 +47,8 @@ Route::post('/form/servicio/alumno', [FormController::class, 'servicioAlumnos'])
 Route::post('/form/trabaja/unimex', [FormController::class, 'trabajaUnimex'])->name('form.trabaja.unimex');
 Route::post('/form/quejas/sugerencias', [FormController::class, 'quejasYsugerencias'])->name('form.quejas.sugerencias');
 Route::post('/form/empresas/occ', [FormController::class, 'empresasOCC'])->name('form.empresas.pcc');
+//? peticiones de calculadora de cuotas
+Route::post('/insertar/prospecto/calculadora', [CalculadoraCuotasController::class, 'insertarProspecto'])->name('paso.uno');
 
 //!testing
 Route::get('testing', [FormController::class, 'testerEnvio'])->name('testing');
