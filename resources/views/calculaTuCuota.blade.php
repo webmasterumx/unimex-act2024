@@ -256,7 +256,7 @@
                         </div>
                     </div>
                 </div>
-                <div id="informacionCRM" class="row mt-3">
+                <div id="informacionCRM" class="row mt-3 d-none">
                     <div class="col-12 col-md-3">
                         <p id="folio_crm">
                             Folio:
@@ -268,9 +268,25 @@
                             <option selected disabled>- Selecciona una carrera -</option>
                         </select>
                     </div>
+                    <div id="cargador_horarios" class="col-12 text-center d-none mt-3">
+                        <div class="spinner-border" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <p>
+                            Opteniendo horarios disponibles...
+                        </p>
+                    </div>
                     <div class="col-12 row" id="grupoBotones">
                     </div>
-                    <div class="col-12 row mt-3" id="grupoInformacion">
+                    <div id="cargador_costos" class="col-12 text-center d-none mt-3">
+                        <div class="spinner-border" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <p>
+                            Opteniendo costos...
+                        </p>
+                    </div>
+                    <div class="col-12 row mt-3 d-none" id="grupoInformacion">
                         <div class="col-12 col-md-4">
                             <div class="card" style="border: 1px solid #004b93">
                                 <div class="card-header text-center text-white"
@@ -285,7 +301,6 @@
                                     </div>
                                     <div class="col-12 col-md-5">
                                         <p id="costoCnPromocion" class="text-center" style="color: #004b93">
-                                            $790.00
                                         </p>
                                     </div>
                                 </div>
@@ -299,13 +314,11 @@
                                 </div>
                                 <div class="card-body row">
                                     <div class="col-12 col-md-7">
-                                        <p class="text-secondary">
-                                            Beca del 60%
+                                        <p id="porcentajeBeca" class="text-secondary">
                                         </p>
                                     </div>
                                     <div class="col-12 col-md-5">
                                         <p id="costoBeca" class="text-center" style="color: #004b93">
-                                            $1,328.00
                                         </p>
                                     </div>
                                 </div>
@@ -325,7 +338,6 @@
                                     </div>
                                     <div class="col-12 col-md-5">
                                         <p id="costoPromocion" class="text-center" style="color: #004b93">
-                                            $9,094.00
                                         </p>
                                     </div>
                                 </div>
@@ -335,13 +347,17 @@
                             <div class="card mt-3" style="border: 1px solid #004b93">
                                 <div class="card-body">
                                     <p class="text-secondary">
-                                        Tu selección ha sido: <span style="color: #004b93;"><b> LICENCIATURA EN DISEÑO
+                                        Tu selección ha sido: <span id="carreraInfo" style="color: #004b93;"><b>
+                                                LICENCIATURA EN DISEÑO
                                                 GRAFICO</b></span> <br>
-                                        Plantel: <span style="color: #004b93;"><b>VERACRUZ</b></span> en horario: <span
-                                            style="color: #004b93"><b>MATUTINO C</b></span> de <span
-                                            style="color: #004b93"><b>09:00 A 13:00 Hrs.</b></span> <br>
-                                        Inicio de clases <span style="color: #004b93"><b>ENERO</b></span><br>
-                                        Vigencia: <span style="color: #004b93"><b>21/10/2023</b></span><br>
+                                        Plantel: <span id="plantelInfo" style="color: #004b93;"><b>VERACRUZ</b></span> en
+                                        horario: <span id="turnoInfo" style="color: #004b93"><b>MATUTINO C</b></span> de
+                                        <span id="horarioInfo" style="color: #004b93"><b>09:00 A 13:00 Hrs.</b></span>
+                                        <br>
+                                        Inicio de clases <span id="incioInfo"
+                                            style="color: #004b93"><b>ENERO</b></span><br>
+                                        Vigencia: <span id="vigenciaInfo"
+                                            style="color: #004b93"><b>21/10/2023</b></span><br>
                                         Durante el cuatrimestre se deberan pagar 4 parcialidades indicadas en el Calendario
                                         Escolar. <br>
                                         Para mayor información de los costos de reinscripción, acude al plantel de tu
@@ -359,16 +375,65 @@
 
 @section('scripts')
     <script>
-        function selectHorario(valor) {
-            console.log('hola valor: ' + valor);
+        function selectHorario(turno, beca) {
 
-            let PlantelId =  $('select[name=selectNivel]').val();;
-            let claveCarrera = "";
-            let claveTurno = "";
-            let claveNivel = "";
-            let clavePeriodo = "";
-            let claveBeca = "";
-            let egresado = "";
+            $('#cargador_costos').removeClass('d-none');
+
+            let PlantelId = $('select[name=selectPlantel]').val();
+            let claveCarrera = $('select[name=selectCarrera]').val();
+            let claveTurno = turno;
+            let claveNivel = $('select[name=selectNivel]').val();;;
+            let clavePeriodo = $('select[name=selectPeriodo]').val();;;
+            let claveBeca = beca;
+            let egresado = 0;
+
+            let data = {
+                "PlantelId": PlantelId,
+                "claveCarrera": claveCarrera,
+                "claveTurno": claveTurno,
+                "claveNivel": claveNivel,
+                "clavePeriodo": clavePeriodo,
+                "claveBeca": claveBeca,
+                "egresado": egresado,
+            };
+
+            console.log(data);
+
+            let ruta = setUrlBase() + "get/detalle/beca";
+
+            $.ajax({
+                method: "POST",
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                url: ruta,
+                data: data
+            }).done(function(data) {
+                console.log(data);
+                let nombreNivel = $('select[name="selectNivel"] option:selected').text();
+                let nombreCarrera = $('select[name="selectCarrera"] option:selected').text();
+                let nombrePlantel = $('select[name="selectPlantel"] option:selected').text();
+
+                //datos de costos
+                $('#costoCnPromocion').html(`$${data.InscCB}`);
+                $('#porcentajeBeca').html(`Beca del ${data.Beca}%`);
+                $('#costoBeca').html(`$${data.ParcCB}`);
+                $('#costoPromocion').html(`$${data.TotalCB}`);
+
+                //datos de informacion
+                $('#carreraInfo').html(`${nombreNivel} en ${nombreCarrera}`);
+                $('#plantelInfo').html(`${nombrePlantel}`);
+                $('#turnoInfo').html(`${data.Turno}`);
+                $('#horarioInfo').html(`${data.Horario}`);
+                $('#incioInfo').html(`${data.DescripPer}`);
+                $('#vigenciaInfo').html(`${data.Vigencia}`);
+
+                $('#cargador_costos').addClass('d-none');
+                $('#grupoInformacion').removeClass('d-none');
+
+            }).fail(function() {
+                console.log("Algo salió mal");
+            });
         }
 
         function setUrlBase() {

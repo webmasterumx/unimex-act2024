@@ -73,6 +73,8 @@ $("#form_calculadora").validate({
             let respuesta = JSON.parse(data);
             console.log(respuesta);
 
+            $('#carouselExampleIndicators').addClass('d-none');
+
             $('#folio_crm').html('Folio: ' + respuesta.FolioCRM);
 
             getCarreras();
@@ -80,6 +82,8 @@ $("#form_calculadora").validate({
             $('#envio_caluladora').html(`
                 Calcular
             `);
+
+            $('#informacionCRM').removeClass('d-none')
 
         }).fail(function () {
             console.log("Algo salió mal");

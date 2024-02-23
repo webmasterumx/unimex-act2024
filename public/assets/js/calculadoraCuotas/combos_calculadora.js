@@ -74,6 +74,8 @@ $("select[name=selectPeriodo]").change(function () {
 // detecta el cambio de carrera para mostrar horarios
 $("select[name=selectCarrera]").change(function () {
 
+    $('#cargador_horarios').removeClass('d-none');
+
     let carrera = $(this).val();
     let nivel = $('select[name=selectNivel]').val();
     let periodo = $('select[name=selectPeriodo]').val();
@@ -102,7 +104,7 @@ $("select[name=selectCarrera]").change(function () {
         $.each(data, function (index, value) {
             let option = `
             <div class="col-3 mt-3">
-                <button class="btn ${arrayColor[cont]} style_prevu_kit w-100" onclick="selectHorario(${value.ClaveBeca})">
+                <button class="btn ${arrayColor[cont]} style_prevu_kit w-100" onclick="selectHorario(${value.ClaveTurno}, ${value.ClaveBeca})">
                     ${value.Turno} <br>
                     ${value.Horario} <br>
                     Beca : ${value.ValorBeca}%
@@ -113,6 +115,8 @@ $("select[name=selectCarrera]").change(function () {
 
             cont = cont + 1;
         });
+
+        $('#cargador_horarios').addClass('d-none');
 
     }).fail(function () {
         console.log("Algo salió mal");

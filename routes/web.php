@@ -39,7 +39,7 @@ Route::post('/getPeriodos', [ApiConsumoController::class, 'getPeriodos'])->name(
 Route::post('/getCarreras', [ApiConsumoController::class, 'getCarreras'])->name('get.carreras');
 Route::post('/getHorarios', [ApiConsumoController::class, 'getHorarios'])->name('get.horarios');
 Route::post('/get/horarios/calculadora', [ApiConsumoController::class, 'calculadoraHorarios'])->name('get.horarios.calculadora');
-Route::post('/get/detalle/horario', [ApiConsumoController::class, 'calculaDetalleHorarios'])->name('get.detalle.horario');
+Route::post('/get/detalle/beca', [ApiConsumoController::class, 'calculaDetalleHorarios'])->name('get.detalle.horario');
 
 //* envio de formularios
 Route::post('/contacto/prospecto', [FormController::class, 'contactoProspecto'])->name('contacto.prospecto');
