@@ -67,9 +67,23 @@ $("select[name=selectPeriodo]").change(function () {
 
 $("select[name=selectNivel]").change(function () {
 
+    console.log($('select[name=selectNivel]').val());
+
+    if ($('select[name=selectNivel]').val() == 2 || $('select[name=selectNivel]').val() == 3) {
+        if ($("#selectEgresado").hasClass("d-none") === true) {
+            $('#selectEgresado').removeClass('d-none');
+        }
+    }
+    else {
+        if ($("#selectEgresado").hasClass("d-none") === false) {
+            $('#selectEgresado').addClass('d-none');
+        }
+    }
+
     $('#selectCarrera').empty();
     $('#grupoBotones').empty();
     $('#grupoInformacion').addClass('d-none');
+
 
     getCarreras();
 

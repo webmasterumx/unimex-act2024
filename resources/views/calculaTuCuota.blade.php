@@ -16,10 +16,26 @@
                         id="selectPeriodo">
                         <option value="" selected disabled>¿Cuándo deseas iniciar?</option>
                     </select>
-                    <select class="form-select form-select-sm col-12 mb-5" aria-label="Elegir Nivel" name="selectNivel"
+                    <select class="form-select form-select-sm col-12 mb-2" aria-label="Elegir Nivel" name="selectNivel"
                         id="selectNivel">
                         <option value="" selected disabled>Selecciona el Nivel</option>
                     </select>
+                    <div class="col-12 row mb-5 d-none" id="selectEgresado">
+                        <div class="col-7 p-0">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="typeProspecto" id="egresado"
+                                    value="1">
+                                <label style="font-size: 12px;" class="form-check-label" for="egresado">Soy Egresado Unimex</label>
+                            </div>
+                        </div>
+                        <div class="col-5 p-0 mb-3">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="typeProspecto" id="noEgresado"
+                                    value="0">
+                                <label style="font-size: 12px;" class="form-check-label" for="noEgresado">Otra Institución</label>
+                            </div>
+                        </div>
+                    </div>
 
                     <h5>Personaliza Tu Beca</h5>
                     <hr>
@@ -34,12 +50,12 @@
                     <div class="input-group mb-2 col-12 p-0 mb-1">
                         <div class="input-group-text">
                             <i class="bi bi-telephone-fill"></i> &nbsp;&nbsp;
-                            <input class="form-check-input" type="radio" name="typeTelefono[]" id="telefono_celular"
+                            <input class="form-check-input" type="radio" name="typeTelefono" id="telefono_celular"
                                 value="1">
                             <label class="form-check-label" for="telefono_celular">
                                 Cel
                             </label>
-                            <input class="form-check-input ms-3" type="radio" name="typeTelefono[]" id="telefono_fijo"
+                            <input class="form-check-input ms-3" type="radio" name="typeTelefono" id="telefono_fijo"
                                 value="2">
                             <label class="form-check-label" for="telefono_fijo">
                                 Fijo
