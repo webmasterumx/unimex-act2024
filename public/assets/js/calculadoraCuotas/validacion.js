@@ -73,16 +73,20 @@ $("#form_calculadora").validate({
             let respuesta = JSON.parse(data);
             console.log(respuesta);
 
-            $('#carouselExampleIndicators').addClass('d-none');
+            let nombreProspecto = $('#nombreProspecto').val() + " " + $('#apellidosProspecto').val();
+            let periodoProspecto = $('select[name="selectPeriodo"] option:selected').text();
+            let nivelProspecto = $('select[name="selectNivel"] option:selected').text();
 
-            $('#folio_crm').html('Folio: ' + respuesta.FolioCRM);
+            $('#folioCrm').val('Folio: ' + respuesta.FolioCRM);
+            $('#nombreCrm').val(nombreProspecto);
+            $('#periodoCrm').val(periodoProspecto);
+            $('#nivelCrm').val(nivelProspecto);
 
             getCarreras();
 
-            $('#envio_caluladora').html(`
-                Calcular
-            `);
+            $('#envio_caluladora').html(`Calcular`);
 
+            $('#carouselExampleIndicators').addClass('d-none');
             $('#informacionCRM').removeClass('d-none')
 
         }).fail(function () {
@@ -91,38 +95,3 @@ $("#form_calculadora").validate({
 
     }
 });
-
-function getCarreras() {
-    let clavePlantel = $('select[name=selectPlantel]').val();
-    let clavePeriodo = $('select[name=selectPeriodo]').val();
-    let claveNivel = $('select[name=selectNivel]').val();
-
-    let data = {
-        "plantel": clavePlantel,
-        "nivel": claveNivel,
-        "periodo": clavePeriodo
-    }
-    console.log(data);
-
-    let ruta = setUrlBase() + "getCarreras";
-
-    $.ajax({
-        method: "POST",
-        url: ruta,
-        dataType: "json",
-        data: data,
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        },
-    }).done(function (data) {
-        console.log(data);
-        for (let index = 0; index < data.length; index++) { //recorrer el array de carreras
-            const element = data[index]; // se establece un elemento por carrera optenida
-            let option = `<option value="${element.clave}">${element.descrip}</option>`; //se establece la opcion por carrera
-            $("#selectCarrera").append(option); // se inserta la carrera de cada elemento
-        }
-
-    }).fail(function () {
-        console.log("Algo salió mal");
-    });
-}

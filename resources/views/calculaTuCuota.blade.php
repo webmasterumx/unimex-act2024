@@ -257,15 +257,32 @@
                     </div>
                 </div>
                 <div id="informacionCRM" class="row mt-3 d-none">
+                    <h2 class="text-center mb-3" style="color: #004b93">¡Estás a un paso de ser UNIMEXITARIO!</h2>
                     <div class="col-12 col-md-3">
-                        <p id="folio_crm">
-                            Folio:
+                        <input disabled type="text" class="form-control text-center rounded-0" style="color: #004b93;"
+                            id="folioCrm" name="folioCrm">
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <input disabled type="text" class="form-control text-center rounded-0" style="color: #004b93;"
+                            id="nombreCrm" name="nombreCrm">
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <input disabled type="text" class="form-control text-center rounded-0" style="color: #004b93;"
+                            id="periodoCrm" name="periodoCrm">
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <input disabled type="text" class="form-control text-center rounded-0" style="color: #004b93;"
+                            id="nivelCrm" name="nivelCrm">
+                    </div>
+                    <div class="col-12 mt-3">
+                        <p class="text-center">
+                            Elige la Licenciatura de interes y despues el horario que prefieres
                         </p>
                     </div>
-                    <div class="col-12 col-md-9">
-                        <select id="selectCarrera" name="selectCarrera" class="form-select mx-auto w-50"
+                    <div class="col-12">
+                        <select id="selectCarrera" name="selectCarrera" class="form-select mx-auto w-75"
                             aria-label="Default select example">
-                            <option selected disabled>- Selecciona una carrera -</option>
+                            <option value="" selected disabled>- Selecciona una carrera -</option>
                         </select>
                     </div>
                     <div id="cargador_horarios" class="col-12 text-center d-none mt-3">
@@ -375,72 +392,12 @@
 
 @section('scripts')
     <script>
-        function selectHorario(turno, beca) {
-
-            $('#cargador_costos').removeClass('d-none');
-
-            let PlantelId = $('select[name=selectPlantel]').val();
-            let claveCarrera = $('select[name=selectCarrera]').val();
-            let claveTurno = turno;
-            let claveNivel = $('select[name=selectNivel]').val();;;
-            let clavePeriodo = $('select[name=selectPeriodo]').val();;;
-            let claveBeca = beca;
-            let egresado = 0;
-
-            let data = {
-                "PlantelId": PlantelId,
-                "claveCarrera": claveCarrera,
-                "claveTurno": claveTurno,
-                "claveNivel": claveNivel,
-                "clavePeriodo": clavePeriodo,
-                "claveBeca": claveBeca,
-                "egresado": egresado,
-            };
-
-            console.log(data);
-
-            let ruta = setUrlBase() + "get/detalle/beca";
-
-            $.ajax({
-                method: "POST",
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                },
-                url: ruta,
-                data: data
-            }).done(function(data) {
-                console.log(data);
-                let nombreNivel = $('select[name="selectNivel"] option:selected').text();
-                let nombreCarrera = $('select[name="selectCarrera"] option:selected').text();
-                let nombrePlantel = $('select[name="selectPlantel"] option:selected').text();
-
-                //datos de costos
-                $('#costoCnPromocion').html(`$${data.InscCB}`);
-                $('#porcentajeBeca').html(`Beca del ${data.Beca}%`);
-                $('#costoBeca').html(`$${data.ParcCB}`);
-                $('#costoPromocion').html(`$${data.TotalCB}`);
-
-                //datos de informacion
-                $('#carreraInfo').html(`${nombreNivel} en ${nombreCarrera}`);
-                $('#plantelInfo').html(`${nombrePlantel}`);
-                $('#turnoInfo').html(`${data.Turno}`);
-                $('#horarioInfo').html(`${data.Horario}`);
-                $('#incioInfo').html(`${data.DescripPer}`);
-                $('#vigenciaInfo').html(`${data.Vigencia}`);
-
-                $('#cargador_costos').addClass('d-none');
-                $('#grupoInformacion').removeClass('d-none');
-
-            }).fail(function() {
-                console.log("Algo salió mal");
-            });
-        }
-
         function setUrlBase() {
             let urlBase = "{{ env('APP_URL') }}";
             return urlBase;
         }
     </script>
+    <script src="{{ asset('assets/js/calculadoraCuotas/app_calculadora.js') }}"></script>
     <script src="{{ asset('assets/js/calculadoraCuotas/combos_calculadora.js') }}"></script>
     <script src="{{ asset('assets/js/calculadoraCuotas/validacion.js') }}"></script>
 @endsection
