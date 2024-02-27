@@ -22,11 +22,6 @@
     <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
     <style>
         .style_prevu_kit {
-            /*display:inline-block;
-    border:0;
-    width:196px;
-    height:210px;
-    position: relative;*/
             -webkit-transition: all 200ms ease-in;
             -webkit-transform: scale(1);
             -ms-transition: all 200ms ease-in;
@@ -48,6 +43,28 @@
             -moz-transform: scale(1.2);
             transition: all 200ms ease-in;
             transform: scale(1.2);
+        }
+    </style>
+
+    <style media="print">
+        #printButton,
+        #correoButton {
+            display: none;
+        }
+
+        .col-md-4 {
+            flex: 0 0 auto !important;
+            width: 33.33333333% !important;
+        }
+
+        .col-md-3 {
+            flex: 0 0 auto !important;
+            width: 25% !important;
+        }
+
+        .btn.active {
+            color: #ffffff !important;
+            background: #000000 !important;
         }
     </style>
 </head>
@@ -85,6 +102,7 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="{{ asset('assets/js/JQuery.print.js') }}"></script>
     <script>
         function setUrlBase() {
             let urlBase = "{{ env('APP_URL') }}";

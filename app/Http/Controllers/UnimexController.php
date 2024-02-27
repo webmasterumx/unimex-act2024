@@ -103,6 +103,10 @@ class UnimexController extends Controller
 
     }
 
+    public function preinscripcionEnLinea() : View {
+        return view('preinscripcionEnLinea');
+    }
+
     public function contacto() : View {
         
         return view('contacto');

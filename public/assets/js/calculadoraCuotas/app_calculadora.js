@@ -1,5 +1,7 @@
-function selectHorario(turno, beca) {
+function selectHorario(turno, beca, element) {
 
+    $('.style_prevu_kit').removeClass("active");
+    $(element).addClass('active');
     $('#cargador_costos').removeClass('d-none');
 
     let PlantelId = $('select[name=selectPlantel]').val();
@@ -82,7 +84,7 @@ function establecerValoresCosto(data) {
 function getCarreras() {
 
     $("#selectCarrera").empty();
-    $("#selectCarrera").append(`<option><div class="spinner-border" role="status"><span class="visually-hidden">Recalculando...</span></div></option>`);
+    $("#selectCarrera").append(`<option><div class="spinner-border" role="status"><span class="visually-hidden">Calculando...</span></div></option>`);
 
     let clavePlantel = $('select[name=selectPlantel]').val();
     let clavePeriodo = $('select[name=selectPeriodo]').val();
@@ -108,9 +110,10 @@ function getCarreras() {
     }).done(function (data) {
         console.log(data);
         $("#selectCarrera").empty();
+        $("#selectCarrera").append(`<option class="text-center" value=""> - Selecciona una Carrera - </option>`);
         for (let index = 0; index < data.length; index++) { //recorrer el array de carreras
             const element = data[index]; // se establece un elemento por carrera optenida
-            let option = `<option value="${element.clave}">${element.descrip}</option>`; //se establece la opcion por carrera
+            let option = `<option class="text-center" value="${element.clave}">${element.descrip}</option>`; //se establece la opcion por carrera
             $("#selectCarrera").append(option); // se inserta la carrera de cada elemento
         }
 
@@ -241,7 +244,7 @@ function obtenerHorariosBeca() {
         $.each(data, function (index, value) {
             let option = `
             <div class="col-3 mt-3">
-                <button class="btn ${arrayColor[cont]} style_prevu_kit w-100" onclick="selectHorario(${value.ClaveTurno}, ${value.ClaveBeca})">
+                <button class="btn ${arrayColor[cont]}  style_prevu_kit w-100" onclick="selectHorario(${value.ClaveTurno}, ${value.ClaveBeca}, this)">
                     ${value.Turno} <br>
                     ${value.Horario} <br>
                     Beca : ${value.ValorBeca}%

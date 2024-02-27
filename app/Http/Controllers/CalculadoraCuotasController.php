@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\CalculadoraCuotas;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class CalculadoraCuotasController extends Controller
 {
@@ -35,8 +37,16 @@ class CalculadoraCuotasController extends Controller
 
         //dd($valores);
 
+
         $respuesta = app(ApiConsumoController::class)->agregarProspectoCRM($valores);
+        $recive = "lishanxime201099@gmail.com";
+        //$envio =  Mail::to($recive)->bcc("umrec_web@unimex.edu.mx")->send(new CalculadoraCuotas($request));
 
         return response()->json($respuesta);
+    }
+
+    public function enviarCorreoCalculadora(Request $request)
+    {
+        
     }
 }

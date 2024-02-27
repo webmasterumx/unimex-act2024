@@ -25,14 +25,16 @@
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="typeProspecto" id="egresado"
                                     value="1">
-                                <label style="font-size: 12px;" class="form-check-label" for="egresado">Soy Egresado Unimex</label>
+                                <label style="font-size: 12px;" class="form-check-label" for="egresado">Soy Egresado
+                                    Unimex</label>
                             </div>
                         </div>
                         <div class="col-5 p-0 mb-3">
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="typeProspecto" id="noEgresado"
                                     value="0">
-                                <label style="font-size: 12px;" class="form-check-label" for="noEgresado">Otra Institución</label>
+                                <label style="font-size: 12px;" class="form-check-label" for="noEgresado">Otra
+                                    Institución</label>
                             </div>
                         </div>
                     </div>
@@ -311,7 +313,7 @@
                     </div>
                     <div class="col-12 row" id="grupoBotones">
                     </div>
-                    <div id="cargador_costos" class="col-12 text-center d-none mt-3">
+                    <div id="cargador_costos" class="col-12 text-center d-none mt-3 mb-3">
                         <div class="spinner-border" role="status">
                             <span class="visually-hidden">Loading...</span>
                         </div>
@@ -319,7 +321,20 @@
                             Opteniendo costos...
                         </p>
                     </div>
+                    <div class="col-12">
+                        <hr>
+                    </div>
                     <div class="col-12 row mt-3 d-none" id="grupoInformacion">
+                        <div class="col-12 text-end">
+                            <button id="printButton" onclick="imprimir()" type="button" class="btn mb-3">
+                                <i class="bi bi-printer" style="color: #de951b;"></i>
+                                Imprimir
+                            </button>
+                            <button id="correoButton" type="button" class="btn mb-3 ms-2">
+                                <i class="bi bi-envelope" style="color: #de951b;"></i>
+                                Enviar a correo
+                            </button>
+                        </div>
                         <div class="col-12 col-md-4">
                             <div class="card" style="border: 1px solid #004b93">
                                 <div class="card-header text-center text-white"
@@ -411,6 +426,24 @@
         function setUrlBase() {
             let urlBase = "{{ env('APP_URL') }}";
             return urlBase;
+        }
+
+
+        function imprimir() {
+            $.print("#informacionCRM", {
+                globalStyles: true,
+                mediaPrint: true,
+                stylesheet: null,
+                noPrintSelector: " .no-print ",
+                iframe: true,
+                append: null,
+                prepend: null,
+                manuallyCopyFormValues: true,
+                deferred: $.Deferred(),
+                timeout: 750,
+                title: 'Resumen de tu selección en la Calculadora de Becas UNIMEX',
+                doctype: ' <!doctype html> '
+            });
         }
     </script>
     <script src="{{ asset('assets/js/calculadoraCuotas/app_calculadora.js') }}"></script>

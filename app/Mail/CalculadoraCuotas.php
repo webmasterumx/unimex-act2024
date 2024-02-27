@@ -13,12 +13,14 @@ class CalculadoraCuotas extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $datos;
+
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public function __construct($datos)
     {
-        //
+        $this->datos = $datos;
     }
 
     /**
@@ -27,7 +29,7 @@ class CalculadoraCuotas extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Calculadora Cuotas',
+            subject: 'Calculadora de Cuotas',
         );
     }
 
@@ -37,7 +39,7 @@ class CalculadoraCuotas extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'view.name',
+            view: 'mails.calculadoraBecas',
         );
     }
 
