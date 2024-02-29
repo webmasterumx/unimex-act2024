@@ -41,6 +41,8 @@ Route::post('/getCarreras', [ApiConsumoController::class, 'getCarreras'])->name(
 Route::post('/getHorarios', [ApiConsumoController::class, 'getHorarios'])->name('get.horarios');
 Route::post('/get/horarios/calculadora', [ApiConsumoController::class, 'calculadoraHorarios'])->name('get.horarios.calculadora');
 Route::post('/get/detalle/beca', [ApiConsumoController::class, 'calculaDetalleHorarios'])->name('get.detalle.horario');
+Route::post('/valida/prospecto', [ApiConsumoController::class, 'verificaProspecto'])->name('valida.prospecto');
+Route::get('/getMunicipios/{estado}', [ApiConsumoController::class, 'getMunicipios'])->name('get.municipios');
 
 //* envio de formularios
 Route::post('/contacto/prospecto', [FormController::class, 'contactoProspecto'])->name('contacto.prospecto');
@@ -50,6 +52,8 @@ Route::post('/form/quejas/sugerencias', [FormController::class, 'quejasYsugerenc
 Route::post('/form/empresas/occ', [FormController::class, 'empresasOCC'])->name('form.empresas.pcc');
 //? peticiones de calculadora de cuotas
 Route::post('/insertar/prospecto/calculadora', [CalculadoraCuotasController::class, 'insertarProspecto'])->name('paso.uno');
+//* formulario de preinscripcion en linea
+Route::post('/validacion/preinscripcion', [FormController::class, 'preinscripcionLineaValidacion'])->name('validacion.preinscripcion.linea');
 
 //!testing
 Route::get('testing', [FormController::class, 'testerEnvio'])->name('testing');

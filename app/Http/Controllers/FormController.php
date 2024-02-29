@@ -9,6 +9,7 @@ use App\Mail\ServicioAlumno;
 use App\Mail\TrabajaUnimex;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Spatie\FlareClient\Api;
 
 class FormController extends Controller
 {
@@ -150,5 +151,56 @@ class FormController extends Controller
         $recive = "lishanxime201099@gmail.com";
         //$envio =  Mail::to($recive)->bcc("umrec_web@unimex.edu.mx")->send(new ServicioAlumno());
         //dd($envio);
+    }
+
+    /**
+     * Valida si el prospecto existe en base a su correo 
+     * si existe retorna 1
+     * si no retorna 0
+     */
+    public function preinscripcionLineaValidacion(Request $request)  
+    {
+
+        $apiConsumo = new ApiConsumoController();
+        $estados = $apiConsumo->getEstados();
+
+        $valores = array(
+            "correoElectronico" => $request->correo,
+            "idMicroSitio" => 20
+        );
+
+        $validacion = app(ApiConsumoController::class)->verificaProspecto($valores);
+
+        if ($validacion == 1) {
+            $infoProspecto = SELF::validarMatriculacion($request->correo);
+            
+        }
+        else {
+
+        }
+
+        return view('preinscripcionEnLineaForm', [
+            "datos" => $request, 
+            "estados" => $estados
+        ]);
+    }
+
+    /**
+     * valida si el prospecto que si existe tiene matricula
+     * esto se hace a travez de una busqeda por medio del correo 
+     * con esto se optiene su detalle de informacion
+     */
+    public function validarMatriculacion($correo)  
+    {
+        $valores = array(
+            "tipoBusqueda" => 4,
+            "textoBuscar" => $correo,
+            "clavePlantel" => 0
+        );
+
+        $busqueda = app(ApiConsumoController::class)->buscarProspectoPorCorreo($valores);
+
+        return response()->json($busqueda);
+
     }
 }

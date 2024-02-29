@@ -77,7 +77,7 @@ class ApiConsumoController extends Controller
 
     //! inicio metodos de calculadora
 
-    public function calculadoraHorarios(Request $request)  
+    public function calculadoraHorarios(Request $request)
     {
 
         $response = Http::post($this->baseUrlProduccion . 'calculadora/horarios', [
@@ -91,7 +91,7 @@ class ApiConsumoController extends Controller
         return $response->json();
     }
 
-    public function calculaDetalleHorarios(Request $request)  
+    public function calculaDetalleHorarios(Request $request)
     {
         $response = Http::post($this->base_url . 'calculadora/detalle-horario', [
             "PlantelId" => $request->PlantelId,
@@ -106,9 +106,8 @@ class ApiConsumoController extends Controller
         return $response->json();
     }
 
-    public function actualizaProspecto()  
+    public function actualizaProspecto()
     {
-        
     }
 
     //! fin metodos de calculadora
@@ -116,6 +115,37 @@ class ApiConsumoController extends Controller
     public function agregarProspectoCRM($valores)
     {
         $response = Http::post($this->base_url . 'agrega-prospecto', $valores);
+
+        return $response->json();
+    }
+
+    //* preinscripcion en linea
+    public function verificaProspecto($valores)
+    {
+        $response = Http::post($this->base_url . 'verifica-prospecto', $valores);
+
+        return $response->json();
+    }
+
+    public function buscarProspectoPorCorreo($valores)  
+    {
+        $response = Http::post($this->base_url . 'buscador/prospecto', $valores);
+
+        return $response->json();
+    }
+
+    public function getEstados()  
+    {
+        $response = Http::get($this->base_url . 'estados');
+
+        return $response->json();
+    }
+
+    public function  getMunicipios($estado)  
+    {
+        $response = Http::post($this->base_url . 'municipios', [
+            "estado" => $estado
+        ]);
 
         return $response->json();
     }
