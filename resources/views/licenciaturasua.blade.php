@@ -1,5 +1,9 @@
 @extends('layouts.layout')
 
+@section('metas')
+    @include('metas.licenciaturasSua.condicional')
+@endsection
+
 @section('styles')
     <style>
         #contraportada {

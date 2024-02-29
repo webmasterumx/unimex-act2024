@@ -1,5 +1,9 @@
 @extends('layouts.layout')
 
+@section('metas')
+    @include('metas.posgrados.condicional')
+@endsection
+
 <style>
     #contraportada {
         background-position: center;

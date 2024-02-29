@@ -137,41 +137,26 @@
                         <div class="col-2">
                             <select class="form-select" aria-label="Default select example">
                                 <option selected>Selecciona Plantel</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
                             </select>
                         </div>
                         <div class="col-2">
                             <select class="form-select" aria-label="Default select example">
                                 <option selected>Selecciona Ciclo</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
                             </select>
                         </div>
                         <div class="col-2">
                             <select class="form-select" aria-label="Default select example">
                                 <option selected>Selecciona el Nivel</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
                             </select>
                         </div>
                         <div class="col-3">
                             <select class="form-select" aria-label="Default select example">
                                 <option selected>Selecciona Carrera</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
                             </select>
                         </div>
                         <div class="col-3">
                             <select class="form-select" aria-label="Default select example">
                                 <option selected>Selecciona Horario</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
                             </select>
                         </div>
                     </div>
