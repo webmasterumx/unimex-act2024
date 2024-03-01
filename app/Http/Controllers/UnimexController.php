@@ -9,6 +9,8 @@ use App\Models\LicenciaturaSua;
 use App\Models\Menu;
 use App\Models\Plantel;
 use App\Models\Posgrado;
+use App\Models\PreguntasFrecuentes;
+use App\Models\Rvoe;
 use App\Models\VentajasUnimex;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
@@ -94,6 +96,26 @@ class UnimexController extends Controller
             "temario_maestria" => $temario_maestria,
             "rvoe_especialidad" => $rvoe_especialidad,
             "rvoe_maestria" => $rvoe_maestria,
+        ]);
+    }
+
+    public function preguntasFrecuentes() : View
+    {
+        
+        $preguntasFrecuentes = PreguntasFrecuentes::all();
+
+        return view('preguntasFrecuentes', [
+            "preguntasFrecuentes" => $preguntasFrecuentes
+        ]);
+
+    }
+
+    public function rvoe() : View
+    {
+        $rvoes = Rvoe::all();
+
+        return view('rvoes', [
+            "rvoes" => $rvoes
         ]);
     }
 

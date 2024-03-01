@@ -31,6 +31,10 @@
     <!-- CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!---  DateTable --->
+    <link rel="stylesheet" href="//cdn.datatables.net/2.0.1/css/dataTables.dataTables.min.css">
+
     <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/non-critical-styles10062022.min.css') }}">
 
@@ -531,10 +535,10 @@
                 <a class="text-white" href="#">BLOG SOY UNIMEX</a>
             </div>
             <div class="col-12 col-md-2 col-lg-2 mt-2">
-                <a class="text-white" href="#">AVISO DE <br> PRIVACIDAD</a>
+                <a class="text-white" href="{{ route('aviso_de_privacidad') }}">AVISO DE <br> PRIVACIDAD</a>
             </div>
             <div class="col-12 col-md-2 col-lg-2 mt-2">
-                <a class="text-white" href="#">PREGUNTAS <br> FRECUENTES</a>
+                <a class="text-white" href="{{ route('preguntas.frecuentes') }}">PREGUNTAS <br> FRECUENTES</a>
             </div>
             <div class="col-12 col-md-2 col-lg-2 mt-2">
                 <a class="text-white" href="#">RVOES</a>
@@ -560,6 +564,9 @@
 
     <!-- Validate -->
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
+
+    <!-- DataTables -->
+    <script src="//cdn.datatables.net/2.0.1/js/dataTables.min.js"></script>
 
     <!-- Template Main JS File -->
     <script src="{{ asset('assets/js/app.js') }}"></script>
