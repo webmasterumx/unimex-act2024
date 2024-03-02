@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Acercade;
 use App\Models\Banner;
 use App\Models\CLicenciaturas;
+use App\Models\Investigacion;
 use App\Models\LicenciaturaSua;
 use App\Models\Menu;
 use App\Models\Plantel;
@@ -119,17 +120,29 @@ class UnimexController extends Controller
         ]);
     }
 
-    public function calculaTuCuota() : View {
+    public function investigacion() : View
+    {
+        $investigaciones = Investigacion::all();
+
+        return view('investigacion', [
+            "investigaciones" => $investigaciones
+        ]);
+    }
+
+    public function calculaTuCuota() : View 
+    {
         
         return view('calculaTuCuota');
 
     }
 
-    public function preinscripcionEnLinea() : View {
+    public function preinscripcionEnLinea() : View 
+    {
         return view('preinscripcionEnLinea');
     }
 
-    public function contacto() : View {
+    public function contacto() : View 
+    {
         
         return view('contacto');
 

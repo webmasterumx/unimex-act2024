@@ -29,6 +29,7 @@ Route::get('/calcula-tu-cuota', [UnimexController::class, 'calculaTuCuota'])->na
 Route::get('/App/Preinscripcion-online', [UnimexController::class, 'preinscripcionEnLinea'])->name('preinscripcion.linea');
 Route::get('/preguntas-frecuentes', [UnimexController::class, 'preguntasFrecuentes'])->name('preguntas.frecuentes');
 Route::get('/rvoes', [UnimexController::class, 'rvoe'])->name('rvoe');
+Route::get('/investigacion', [UnimexController::class, 'investigacion'])->name('investigacion');
 Route::view('/opciones-de-titulacion', 'opciones_titulacion')->name('opciones_de_titulacion');
 Route::view('/examen-de-conocimientos', 'examen_de_conocimientos')->name('examen_de_conocimientos');
 Route::view('/resutados-examen', 'resultadosExamenConocimientos')->name('resultados_examen_conocimientos');
