@@ -14,7 +14,7 @@ $(document).ready(function () {
      * - Todas las pagina de Licenciatura, Licenciatura SUA y Postgrado -
      * - Pagina de Contacto -
      */
-    $.ajax({
+/*     $.ajax({
         method: "GET",
         url: setUrlBase() + "getPlanteles",
     }).done(function (data) {
@@ -27,7 +27,7 @@ $(document).ready(function () {
 
     }).fail(function () {
         console.log("Algo salió mal");
-    });
+    }); */
 
     // Detecta el cambio de opcion en un select para actuar en otro
     /*
@@ -61,6 +61,7 @@ $(document).ready(function () {
             data: data
         }).done(function (data) {
             console.log(data);
+            console.log(nivelInicalSelect);
             $.each(data, function (index, value) {
 
                 if (nivelInicalSelect == value.descrip) {

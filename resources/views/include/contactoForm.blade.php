@@ -3,7 +3,7 @@
     <div class="container p-5">
         <div class="row">
             <div class="col-12 col-md-6 bg_contacto">
-                <h5 class="text-center fw-normal" style="color: #de951b">Inscripciones</h5>
+                <h5 class="text-center fw-normal" style="color: #de951b; margin-top: 20rem !important;">Inscripciones</h5>
                 <p class="text-center">
                     <span class="text-white"> Izcalli <br></span>
                     <i class="bi bi-telephone-fill text-white"></i> <a href="tel:+525558739444">55 5873 9444</a><br>
@@ -11,8 +11,8 @@
                     <i class="bi bi-telephone-fill text-white"></i> <a href="tel:+525553747480">55 5374 7480</a><br>
                     <span class="text-white"> Polanco <br></span>
                     <i class="bi bi-telephone-fill text-white"></i> <a href="tel:+525591380060">55 9138 0060</a><br>
-                    <span class="text-white"> Veracruz <br></span>
-                    <i class="bi bi-telephone-fill text-white"></i> <a href="tel:+522229323916">222 932 3916</a><br>
+                {{--     <span class="text-white"> Veracruz <br></span>
+                    <i class="bi bi-telephone-fill text-white"></i> <a href="tel:+522229323916">222 932 3916</a><br> --}}
                 </p>
             </div>
             <div class="col-12 col-md-6 p-0"> <!-- form_contacto -->
