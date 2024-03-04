@@ -14,15 +14,15 @@
                     </div>
                     <div class="card-body">
                         <h3 class="card-title">Licenciaturas</h3>
-                        <a href="">
+                        <a target="_blank" href="{{ asset('assets/calendarios/2024-2/CALENDARIO_2024-2_ESC_METRO.pdf') }}">
                             <i class="bi bi-eye-fill"></i> Calendario Escolarizado
                         </a><br>
-                        <a href="">
+                        <a target="_blank" href="{{ asset('assets/calendarios/2024-2/CALENDARIO_2024-2_MIX_METRO.pdf') }}">
                             <i class="bi bi-eye-fill"></i> Calendario Sabatino
                         </a>
                         <hr style="border-top: 1px solid;">
                         <h5 class="card-title">Posgrados</h5>
-                        <a href="">
+                        <a target="_blank" href="{{ asset('assets/calendarios/2024-2/CALENDARIO_POSGRADOS_2024-2_METRO.pdf') }}">
                             <i class="bi bi-eye-fill"></i> Calendario Posgrados
                         </a>
                     </div>
@@ -34,19 +34,19 @@
                         <h3 class="card-title fw-normal">PLANTEL VERACRUZ</h3>
                     </div>
                     <div class="card-body">
-                        <a href="">
+                        <a target="_blank" href="{{ asset('assets/calendarios/2024-2/CALENDARIO_2024-2_ESC_VERACRUZ.pdf') }}">
                             <i class="bi bi-eye-fill"></i> Calendario Escolarizado
                         </a>
                         <hr style="border-top: 1px solid;">
-                        <a href="">
+                        <a target="_blank" href="{{ asset('assets/calendarios/2024-2/CALENDARIO_2024-2_MIX_VERACRUZ.pdf') }}">
                             <i class="bi bi-eye-fill"></i> Calendario Sabatino
                         </a>
                         <hr style="border-top: 1px solid;">
-                        <a href="">
+                        <a target="_blank" href="{{ asset('assets/calendarios/2024-2/CALENDARIO_POSGRADOS_2024-2_VERACRUZ.pdf') }}">
                             <i class="bi bi-eye-fill"></i> Calendario Posgrados
                         </a>
                         <hr style="border-top: 1px solid;">
-                        <a href="">
+                        <a target="_blank" href="{{ asset('assets/calendarios/2024-2/CALENDARIO_SUA_2024-2.pdf') }}">
                             <i class="bi bi-eye-fill"></i> Calendario SUA
                         </a>
                     </div>
