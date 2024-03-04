@@ -158,7 +158,7 @@ class FormController extends Controller
      * si existe retorna 1
      * si no retorna 0
      */
-    public function preinscripcionLineaValidacion(Request $request)  
+    public function preinscripcionLineaValidacion(Request $request)
     {
 
         $apiConsumo = new ApiConsumoController();
@@ -173,14 +173,11 @@ class FormController extends Controller
 
         if ($validacion == 1) {
             $infoProspecto = SELF::validarMatriculacion($request->correo);
-            
-        }
-        else {
-
+        } else {
         }
 
         return view('preinscripcionEnLineaForm', [
-            "datos" => $request, 
+            "datos" => $request,
             "estados" => $estados
         ]);
     }
@@ -190,7 +187,7 @@ class FormController extends Controller
      * esto se hace a travez de una busqeda por medio del correo 
      * con esto se optiene su detalle de informacion
      */
-    public function validarMatriculacion($correo)  
+    public function validarMatriculacion($correo)
     {
         $valores = array(
             "tipoBusqueda" => 4,
@@ -201,6 +198,16 @@ class FormController extends Controller
         $busqueda = app(ApiConsumoController::class)->buscarProspectoPorCorreo($valores);
 
         return response()->json($busqueda);
+    }
 
+    public function getResultadosExamen(Request $request)
+    {
+        $valores = array(
+            "Matricula" => $request->matriculaResultado
+        );
+
+        $resultados = app(ApiConsumoController::class)->resultadosExamen($valores);
+
+        return response()->json($resultados);
     }
 }

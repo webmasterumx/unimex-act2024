@@ -127,25 +127,32 @@ class ApiConsumoController extends Controller
         return $response->json();
     }
 
-    public function buscarProspectoPorCorreo($valores)  
+    public function buscarProspectoPorCorreo($valores)
     {
         $response = Http::post($this->base_url . 'buscador/prospecto', $valores);
 
         return $response->json();
     }
 
-    public function getEstados()  
+    public function getEstados()
     {
         $response = Http::get($this->base_url . 'estados');
 
         return $response->json();
     }
 
-    public function  getMunicipios($estado)  
+    public function  getMunicipios($estado)
     {
         $response = Http::post($this->base_url . 'municipios', [
             "estado" => $estado
         ]);
+
+        return $response->json();
+    }
+
+    public function resultadosExamen($valores)
+    {
+        $response = Http::post($this->base_url . 'resultados/conocimiento', $valores);
 
         return $response->json();
     }

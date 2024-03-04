@@ -18,7 +18,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [UnimexController::class, 'inicio'])->name('inicio');
-
 Route::get('/planteles/{slug}', [UnimexController::class, 'getPlanteles'])->name('plantel');
 Route::get('/acerca-de-unimex/{alug}', [UnimexController::class, 'getAcercade'])->name('acercade');
 Route::get('/licenciatura/{slug}', [UnimexController::class, 'getLicenciatura'])->name('licenciatura');
@@ -30,6 +29,7 @@ Route::get('/App/Preinscripcion-online', [UnimexController::class, 'preinscripci
 Route::get('/preguntas-frecuentes', [UnimexController::class, 'preguntasFrecuentes'])->name('preguntas.frecuentes');
 Route::get('/rvoes', [UnimexController::class, 'rvoe'])->name('rvoe');
 Route::get('/investigacion', [UnimexController::class, 'investigacion'])->name('investigacion');
+Route::get('/carta/resutado/{matricula}', [UnimexController::class, 'cartaResultados'])->name('carta.resultado');
 Route::view('/opciones-de-titulacion', 'opciones_titulacion')->name('opciones_de_titulacion');
 Route::view('/examen-de-conocimientos', 'examen_de_conocimientos')->name('examen_de_conocimientos');
 Route::view('/resutados-examen', 'resultadosExamenConocimientos')->name('resultados_examen_conocimientos');
@@ -50,6 +50,8 @@ Route::get('/getMunicipios/{estado}', [ApiConsumoController::class, 'getMunicipi
 
 //* envio de formularios
 Route::post('/contacto/prospecto', [FormController::class, 'contactoProspecto'])->name('contacto.prospecto');
+//* resultados de examen
+Route::post('/obtener/resultados/examen', [FormController::class, 'getResultadosExamen'])->name('obtener.resultdos.examen');
 Route::post('/form/servicio/alumno', [FormController::class, 'servicioAlumnos'])->name('form.servicio.alumno');
 Route::post('/form/trabaja/unimex', [FormController::class, 'trabajaUnimex'])->name('form.trabaja.unimex');
 Route::post('/form/quejas/sugerencias', [FormController::class, 'quejasYsugerencias'])->name('form.quejas.sugerencias');

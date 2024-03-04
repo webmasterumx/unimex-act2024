@@ -20,20 +20,21 @@ use Illuminate\Support\Facades\DB;
 class UnimexController extends Controller
 {
 
-    public function inicio() : View
+    public function inicio(): View
     {
         $listaCarreras = DB::table('c_carreras')->orderBy('titulo', 'asc')->get();
         $banners = Banner::all();
         $ventajas_unimex = VentajasUnimex::all();
 
         return view('inicio', [
-            "listaCarreras" => $listaCarreras, 
+            "listaCarreras" => $listaCarreras,
             "banners" => $banners,
             "ventajas_unimex" => $ventajas_unimex,
         ]);
     }
 
-    public function getPlanteles($slug) : View {
+    public function getPlanteles($slug): View
+    {
         $plantel = Plantel::where('nombre', $slug)->first();
         $galeria = json_decode($plantel->galeria);
         $plantelesInNot = Plantel::where('nombre', '!=', $slug)->get();
@@ -45,7 +46,8 @@ class UnimexController extends Controller
         ]);
     }
 
-    public function getAcercade($slug) : View {
+    public function getAcercade($slug): View
+    {
         $acercadeFirst = Acercade::where('slug', $slug)->first();
         $recomendaciones = Acercade::where('slug', '!=', $slug)->get();
 
@@ -55,7 +57,8 @@ class UnimexController extends Controller
         ]);
     }
 
-    public function getLicenciatura($slug) : View {
+    public function getLicenciatura($slug): View
+    {
         $licenciatura = CLicenciaturas::where('slug', $slug)->first();
         $extras = json_decode($licenciatura->extras, true);
         $temario  = $extras['extras']['temario'];
@@ -70,20 +73,22 @@ class UnimexController extends Controller
         ]);
     }
 
-    public function getLicenciaturaSua($slug) : View {
+    public function getLicenciaturaSua($slug): View
+    {
         $licenciatura_sua = LicenciaturaSua::where('slug', $slug)->first();
         $extras = json_decode($licenciatura_sua->extras, true);
         $temario = $extras['extras']['temario'];
         $campo_laboral = $extras['extras']['campo_laboral'];
 
         return view('licenciaturasua', [
-            "licenciatura_sua" =>$licenciatura_sua,
-            "temario" =>$temario,
-            "campo_laboral" =>$campo_laboral 
+            "licenciatura_sua" => $licenciatura_sua,
+            "temario" => $temario,
+            "campo_laboral" => $campo_laboral
         ]);
     }
 
-    public function getPosgrado($slug) : View {
+    public function getPosgrado($slug): View
+    {
         $posgrado = Posgrado::where('slug', $slug)->first();
         $extras = json_decode($posgrado->temario, true);
         $temario_especialidad = $extras['extras']['temario_especialidad'];
@@ -100,18 +105,17 @@ class UnimexController extends Controller
         ]);
     }
 
-    public function preguntasFrecuentes() : View
+    public function preguntasFrecuentes(): View
     {
-        
+
         $preguntasFrecuentes = PreguntasFrecuentes::all();
 
         return view('preguntasFrecuentes', [
             "preguntasFrecuentes" => $preguntasFrecuentes
         ]);
-
     }
 
-    public function rvoe() : View
+    public function rvoe(): View
     {
         $rvoes = Rvoe::all();
 
@@ -120,7 +124,7 @@ class UnimexController extends Controller
         ]);
     }
 
-    public function investigacion() : View
+    public function investigacion(): View
     {
         $investigaciones = Investigacion::all();
 
@@ -129,22 +133,36 @@ class UnimexController extends Controller
         ]);
     }
 
-    public function calculaTuCuota() : View 
+    public function calculaTuCuota(): View
     {
-        
-        return view('calculaTuCuota');
 
+        return view('calculaTuCuota');
     }
 
-    public function preinscripcionEnLinea() : View 
+    public function preinscripcionEnLinea(): View
     {
         return view('preinscripcionEnLinea');
     }
 
-    public function contacto() : View 
+    public function contacto(): View
     {
-        
-        return view('contacto');
 
+        return view('contacto');
+    }
+
+    public function cartaResultados($matricula): View
+    {
+        $valores = array(
+            "Matricula" => $matricula
+        );
+
+        $resultados = app(ApiConsumoController::class)->resultadosExamen($valores);
+        $fechaAcreditacion = $resultados['ResultadoExamen']['FechaAplicacion'];
+        $fecha = explode('T', $fechaAcreditacion);
+
+        return view('cartaResultados', [
+            "resultados" => $resultados,
+            "fecha" => $fecha
+        ]);
     }
 }
