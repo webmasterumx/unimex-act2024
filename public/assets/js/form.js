@@ -142,40 +142,16 @@ $("#form_contacto").validate({
     },
     submitHandler: function (form) {
 
-      /*   let ruta = setUrlBase() + "contacto/prospecto";
-        let formData = new FormData(form);
+        $('#envio_contacto').prop("disabled", true);
+        $('#envio_contacto').html(`
+            <div class="spinner-border" style="width: 20px; height: 20px;" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            &nbsp;Enviando Datos..
+        `);
+       
 
-        $.ajax({
-            method: "POST",
-            url: ruta,
-            dataType: "html",
-            data: formData,
-            cache: false,
-            contentType: false,
-            processData: false,
-        }).done(function (data) {
-            console.log(data);
-            let respuesta = JSON.parse(data);
-            if (respuesta.estado == true) {
-                Swal.fire({
-                    title: "Éxito!",
-                    text: respuesta.mensaje,
-                    icon: "success"
-                });
-
-                form.reset();
-            }
-            else {
-                Swal.fire({
-                    title: "Error!",
-                    text: respuesta.mensaje,
-                    icon: "error"
-                });
-            }
-
-        }).fail(function (e) {
-            console.log("Request: " + JSON.stringify(e));
-        }); */
+        form.submit();
     }
 });
 
@@ -406,6 +382,6 @@ $("#form_empresasOCC").validate({
                 text: "Resultado de la operación es incorrecto!",
                 icon: "error"
             });
-        } 
+        }
     }
 });
