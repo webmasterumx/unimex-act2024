@@ -38,8 +38,8 @@ class FormController extends Controller
             "websiteURL" => "https://unimex.edu.mx/",
         );
 
-        //$respuesta = app(ApiConsumoController::class)->agregarProspectoCRM($valores); //! envio de datos al WS
-        $respuesta = array(
+        $respuesta = app(ApiConsumoController::class)->agregarProspectoCRM($valores); //! envio de datos al WS
+        /* $respuesta = array(
             "FolioCRM" => 1206174,
             "Mensaje" => "",
             "Nombre" => "prueba desde rectoria",
@@ -51,9 +51,10 @@ class FormController extends Controller
             "FechaVigenciaPromocion_Incio" => "Lunes 19 de Febrero del 2024",
             "FechaVigenciaPromocion_Final" => "Domingo 24 de Diciembre del 2017",
             "Email" => "rectoria_testing@gmial.com"
-        );
-        //$recive = "lishanxime201099@gmail.com";
-        //$envio =  Mail::to($recive)->bcc("umrec_web@unimex.edu.mx")->send(new ContactoProspecto($request, $envio)); //! envio del correo
+        ); */
+        
+        $recive = $request->mail_prospecto;
+        $envio =  Mail::to($recive)->bcc("umrec_web@unimex.edu.mx")->send(new ContactoProspecto($request, $respuesta)); //! envio del correo
 
         return view('registroExitoso', [
             "respuesta" => $respuesta,
