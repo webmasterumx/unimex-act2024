@@ -22,25 +22,16 @@
     <!-- Inicio de Banner Inicial -->
     <section class="pb-2">
         <div class="container-fluid p-0">
-            <div id="bannerInicial" class="carousel slide">
-                <div class="carousel-inner">
-                    @foreach ($banners as $banner)
-                        <x-banner.item class="{{ $banner->clase }}">
-                            <img src="{{ asset($banner->url) }}" class="d-block w-100" alt="{{ $banner->alt }}">
-                        </x-banner.item>
-                    @endforeach
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#bannerInicial" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#bannerInicial" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
+            <div id="bannreInicial">
+                @foreach ($banners as $banner)
+                    <div style="height: 100vh;">
+                        <img src="{{ asset($banner->url) }}" class="d-block w-100" alt="{{ $banner->alt }}">
+                    </div>
+                @endforeach
             </div>
         </div>
     </section>
+
     <!-- Fin de Banner Inicial -->
 
     <!-- Inicio de Ventajas de Estudiar en UNIMEX  -->
@@ -111,8 +102,8 @@
         <div class="row">
             <div class="col-12 col-md-6">
                 <div class="tab-content" id="pills-tabContent">
-                    <div class="tab-pane fade show active text-center" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"
-                        tabindex="0">
+                    <div class="tab-pane fade show active text-center" id="pills-home" role="tabpanel"
+                        aria-labelledby="pills-home-tab" tabindex="0">
                         <img class="mb-3" src="{{ asset('assets/img/extras/quote.png') }}" alt="" srcset="">
                         <p class="text-center" style="color: #666666; font-size: 20px;">
                             Más que una Licenciatura, fue de las mejores etapas de mi vida.
@@ -121,8 +112,8 @@
                             Yolanda Hinojosa
                         </p>
                     </div>
-                    <div class="tab-pane fade text-center" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"
-                        tabindex="0">
+                    <div class="tab-pane fade text-center" id="pills-profile" role="tabpanel"
+                        aria-labelledby="pills-profile-tab" tabindex="0">
                         <img class="mb-3" src="{{ asset('assets/img/extras/quote.png') }}" alt="" srcset="">
                         <p class="text-center" style="color: #666666; font-size: 20px;">
                             La mejor decisión para mi vida profesional, fue estudiar una maestría en UNIMEX.
@@ -131,8 +122,8 @@
                             Arturo Fregoso
                         </p>
                     </div>
-                    <div class="tab-pane fade text-center" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab"
-                        tabindex="0">
+                    <div class="tab-pane fade text-center" id="pills-contact" role="tabpanel"
+                        aria-labelledby="pills-contact-tab" tabindex="0">
                         <img class="mb-3" src="{{ asset('assets/img/extras/quote.png') }}" alt="" srcset="">
                         <p class="text-center" style="color: #666666; font-size: 20px;">
                             Conocí a mi socio en UNIMEX y ahora juntos tenemos una empresa exitosa.
@@ -175,6 +166,7 @@
 @endsection
 
 @section('scripts')
+    <script src="{{ asset('assets/js/combos.js') }}"></script>
     <script>
         $(document).ready(function() {
             $('#listCarreras').slick({
@@ -186,6 +178,17 @@
                 autoplaySpeed: 2000,
                 prevArrow: '<button type="button" class="slick-prev"><i class="bi bi-chevron-compact-left"></i></button>',
                 nextArrow: '<button type="button" class="slick-next"><i class="bi bi-chevron-compact-right"></i></button>',
+            });
+
+            $('#bannreInicial').slick({
+                infinite: true,
+                autoplay: true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: true,
+                autoplaySpeed: 2000,
+                prevArrow: '<button type="button" class="slick-prev-banner"><i class="bi bi-chevron-compact-left"></i></button>',
+                nextArrow: '<button type="button" class="slick-next-banner"><i class="bi bi-chevron-compact-right"></i></button>',
             });
 
             $("#nivelSelect").append(`<option value="">Nivel</option>`);

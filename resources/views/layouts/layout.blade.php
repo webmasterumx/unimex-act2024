@@ -44,8 +44,6 @@
 
 <body>
 
-    <!-- Queda pendiente hacer dinamico la barra de navegación -->
-
     <!-- Inicio de Barra de navegacion -->
     <header class="sticky-top">
         <noscript>Por favor habilita JavaScript para usar este sitio</noscript>
@@ -572,8 +570,7 @@
     <script src="{{ asset('assets/js/app.js') }}"></script>
     <script src="{{ asset('assets/js/main.js') }}"></script>
     <script src="{{ asset('assets/js/custom.js') }}"></script>
-    <script src="{{ asset('assets/js/form.js') }}"></script>
-    <script src="{{ asset('assets/js/combos.js') }}"></script>
+    <script src="{{ asset('assets/js/form.js') }}"></script>    
 
     <script>
         function setUrlBase() {

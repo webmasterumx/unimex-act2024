@@ -104,6 +104,35 @@ body {
     border: 0;
 }
 
+.slick-prev-banner {
+    position: absolute;
+    top: 40%;
+    z-index: 10;
+    margin: -20px -13px 0px 0px;
+    width: 43px;
+    color: #ffff;
+    height: 100px;
+    font-size: 70px;
+    left: -12px;
+    background-color: transparent;
+    border: 0;
+}
+
+.slick-next-banner {
+    position: absolute;
+    top: 40%;
+    z-index: 10;
+    margin: -20px -13px 0px 0px;
+    width: 43px;
+    color: #ffff;
+    height: 100px;
+    font-size: 70px;
+    right: 29px;
+    background-color: transparent;
+    border: 0;
+}
+
+
 .input-unimex {
     height: 48px;
 }
