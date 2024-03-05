@@ -18,6 +18,7 @@ $(document).ready(function () {
         method: "GET",
         url: setUrlBase() + "getPlanteles",
     }).done(function (data) {
+        console.log(data);
         $.each(data, function (index, value) {
             let option = `<option value="${value.clave}">${value.descrip}</option>`;
             if (value.clave != 5) {
@@ -41,6 +42,7 @@ $(document).ready(function () {
         console.log(nivelInicalSelect);
 
         $('#nivelSelect').empty();
+        $("#nivelSelect").append(`<option value="" selected disabled>Recalculado..</option>`);
         $('#periodoSelect').empty();
         $("#periodoSelect").append(`<option value="" selected disabled>¿Cuándo deseas iniciar?  </option>`);
         $('#horarioSelect').empty();
@@ -145,6 +147,7 @@ $(document).ready(function () {
         };
         let element = '#carreraSelect';
         $('#carreraSelect').empty();
+        $("#carreraSelect").append(`<option value="" selected disabled>Recalulando..</option>`);
 
         $.ajax({
             method: "POST",
@@ -160,29 +163,30 @@ $(document).ready(function () {
                 console.log(carreraInicialSelect);
                 console.log(value.descrip);
 
-                if (carreraInicialSelect == value.descrip) {
+                if (carreraInicialSelect.trim() == value.descrip.trim()) {
                     option = `<option value="${value.clave}" selected>${value.descrip}</option>`;
 
-                    let plantel = $('select[name=plantelSelect]').val();
-                    let nivel = $('select[name=nivelSelect]').val();
-                    let periodo = $('select[name=periodoSelect]').val();
-                    let carrera = $('select[name=carreraSelect]').val();
-
-                    let ruta = setUrlBase() + "getHorarios";
-                    let data = {
-                        plantel: plantel,
-                        nivel: nivel,
-                        periodo: periodo,
-                        carrera: carrera
-                    };
-                    let element = '#horarioSelect';
-
-                    postAjaxPeticionContact(ruta, data, element);
                 } else {
                     option = `<option value="${value.clave}">${value.descrip}</option>`;
                 }
-                $(element).append(option);
+                $('#carreraSelect').append(option);
             });
+
+            let plantel = $('select[name=plantelSelect]').val();
+            let nivel = $('select[name=nivelSelect]').val();
+            let periodo = $('select[name=periodoSelect]').val();
+            let carrera = $('select[name=carreraSelect]').val();
+
+            let ruta = setUrlBase() + "getHorarios";
+            let campos = {
+                plantel: plantel,
+                nivel: nivel,
+                periodo: periodo,
+                carrera: carrera
+            };
+            let element = '#horarioSelect';
+
+            postAjaxPeticionContact(ruta, campos, element);
 
         }).fail(function () {
             console.log("Algo salió mal");
@@ -242,13 +246,13 @@ function postAjaxPeticionContact(ruta, data, element) {
 }
 
 function setNivelInicial() {
-    let valor = $('select[name=nivelSelect]').val();
+    let valor = $('select[name="nivelSelect"] option:selected').text();
 
     return valor;
 }
 
 function setCarreraInicial() {
-    let carrera = $('select[name=carreraSelect]').val();
+    let carrera = $('select[name="carreraSelect"] option:selected').text();
     console.log(carrera);
 
     return carrera;

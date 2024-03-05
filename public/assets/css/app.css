@@ -60,14 +60,12 @@ body {
 
 .slider .slick-arrow.slick-prev {
     left: 0;
-    background: url("https://img.icons8.com/ios/50/000000/long-arrow-left.png")
-        0 0 / 100% no-repeat;
+    background: url("https://img.icons8.com/ios/50/000000/long-arrow-left.png") 0 0 / 100% no-repeat;
 }
 
 .slider .slick-arrow.slick-next {
     right: 0;
-    background: url("https://img.icons8.com/ios/50/000000/long-arrow-right.png")
-        0 0 / 100% no-repeat;
+    background: url("https://img.icons8.com/ios/50/000000/long-arrow-right.png") 0 0 / 100% no-repeat;
 }
 
 .bg-footer {
@@ -268,3 +266,38 @@ body {
 .error {
     color: red;
 }
+
+
+@media  (min-width: 400px) and (max-width: 767.98px) {
+    .itemBannerInit {
+        height: 15vh !important;
+    }
+}
+
+
+@media (min-width: 767.98px) and (max-width: 991.98px) {
+    .itemBannerInit {
+        height: 20vh !important;
+    }
+}
+
+
+@media (min-width: 991.98px) and (max-width: 1199.98px) {
+    .itemBannerInit {
+        height: 40vh !important;
+    }
+}
+
+
+@media (min-width: 1199.98px) and (max-width: 1399.98px) {
+    .itemBannerInit {
+        height: 100vh !important;
+    }
+}
+
+
+@media (min-width: 1399.98px) and (max-width: 1500.99px) {
+    .itemBannerInit {
+        height: 100vh !important;
+    }
+} 

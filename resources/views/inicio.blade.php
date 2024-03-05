@@ -22,10 +22,10 @@
     <!-- Inicio de Banner Inicial -->
     <section class="pb-2">
         <div class="container-fluid p-0">
-            <div id="bannreInicial">
+            <div id="bannerInicial">
                 @foreach ($banners as $banner)
-                    <div style="height: 100vh;">
-                        <img src="{{ asset($banner->url) }}" class="d-block w-100" alt="{{ $banner->alt }}">
+                    <div class="itemBannerInit">
+                        <img style="height: auto;" src="{{ asset($banner->url) }}" class="d-block w-100" alt="{{ $banner->alt }}">
                     </div>
                 @endforeach
             </div>
@@ -175,14 +175,36 @@
                 slidesToShow: 3,
                 slidesToScroll: 3,
                 arrows: true,
+                responsive: [{
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 2,
+                        }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+                ],
                 autoplaySpeed: 2000,
                 prevArrow: '<button type="button" class="slick-prev"><i class="bi bi-chevron-compact-left"></i></button>',
                 nextArrow: '<button type="button" class="slick-next"><i class="bi bi-chevron-compact-right"></i></button>',
             });
 
-            $('#bannreInicial').slick({
-                infinite: true,
-                autoplay: true,
+            $('#bannerInicial').slick({
+                //infinite: true,
+                //autoplay: true,
                 slidesToShow: 1,
                 slidesToScroll: 1,
                 arrows: true,
