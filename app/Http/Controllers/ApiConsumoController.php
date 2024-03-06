@@ -80,7 +80,7 @@ class ApiConsumoController extends Controller
     public function calculadoraHorarios(Request $request)
     {
 
-        $response = Http::post($this->baseUrlProduccion . 'calculadora/horarios', [
+        $response = Http::post($this->base_url . 'calculadora/horarios', [
             "claveCarrera" => $request->claveCarrera,
             "claveNivel" => $request->claveNivel,
             "clavePeriodo" => $request->clavePeriodo,
