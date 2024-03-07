@@ -59,7 +59,7 @@
                                     aria-label="Username" aria-describedby="basic-addon1" name="correo" id="correo">
                             </div>
                         </div>
-                        <div class="col-12 col-md-6">
+                       {{--  <div class="col-12 col-md-6">
                             <p>
                                 Ingresa tu numero movil
                             </p>
@@ -70,7 +70,7 @@
                                 <input type="text" class="form-control" placeholder="Telefono movil" aria-label="Username"
                                     aria-describedby="basic-addon1" name="telefono" id="telefono">
                             </div>
-                        </div>
+                        </div> --}}
                         <div class="col-12  d-flex">
                             <!-- Button trigger modal -->
                             <input type="checkbox" id="avisoPrivacidad" name="avisoPrivacidad" checked>

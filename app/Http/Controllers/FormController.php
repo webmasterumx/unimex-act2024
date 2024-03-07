@@ -8,6 +8,7 @@ use App\Mail\QuejasSugerencias;
 use App\Mail\ServicioAlumno;
 use App\Mail\TrabajaUnimex;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Mail;
 use Spatie\FlareClient\Api;
 
@@ -181,6 +182,22 @@ class FormController extends Controller
             "datos" => $request,
             "estados" => $estados
         ]);
+    }
+
+    public function obtenerPromocionPreinscripcion(Request $request)  
+    {
+
+        $valores = array(
+            "clavePlantel" => $request->plantelSelect,
+            "clavePeriodo" => $request->periodoSelect,
+            "claveNivel" => $request->nivelSelect,
+            "claveTurno" => $request->horarioSelect,
+        );
+
+        $promo = app(ApiConsumoController::class)->preinscripcionPromociones($valores);
+
+        return response()->json($promo);
+
     }
 
     /**

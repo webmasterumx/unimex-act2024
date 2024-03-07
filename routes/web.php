@@ -60,6 +60,7 @@ Route::post('/form/empresas/occ', [FormController::class, 'empresasOCC'])->name(
 Route::post('/insertar/prospecto/calculadora', [CalculadoraCuotasController::class, 'insertarProspecto'])->name('paso.uno');
 //* formulario de preinscripcion en linea
 Route::post('/validacion/preinscripcion', [FormController::class, 'preinscripcionLineaValidacion'])->name('validacion.preinscripcion.linea');
+Route::post('/obtener/promo/preinscripcion', [FormController::class, 'obtenerPromocionPreinscripcion'])->name('obtener.promo.preinscripcion');
 
 //!testing
 Route::get('testing', [FormController::class, 'testerEnvio'])->name('testing');

@@ -10,8 +10,9 @@
                 </h1>
             </div>
             <div class="col-12">
-                <div class="card">
-                    <div class="card-header text-center">
+                <form id="formPromoPreinscripcion" class="card" style="border: 1px solid #337ab7;">
+                    @csrf
+                    <div class="card-header text-center" style="background-color: #337ab7; color: #fff;">
                         <i class="bi bi-person-vcard"></i>
                         Captura de Datos Personales
                     </div>
@@ -47,16 +48,18 @@
                         <div class="col-3 row">
                             <label for="" class="form-label">Fecha de Nacimiento</label>
                             <div class="col-4">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Dia</option>
-                                    @for ($i = 0; $i <= 31; $i++)
+                                <select id="diaNacimiento" name="diaNacimiento" class="form-select"
+                                    aria-label="Default select example">
+                                    <option value="" selected>Dia</option>
+                                    @for ($i = 1; $i <= 31; $i++)
                                         <option value="{{ $i }}"> {{ $i }} </option>
                                     @endfor
                                 </select>
                             </div>
                             <div class="col-4">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Mes</option>
+                                <select id="mesNacimiento" name="mesNacimiento" class="form-select"
+                                    aria-label="Default select example">
+                                    <option value="" selected>Mes</option>
                                     <option value="01">01</option>
                                     <option value="02">02</option>
                                     <option value="03">03</option>
@@ -72,8 +75,8 @@
                                 </select>
                             </div>
                             <div class="col-4">
-                                <select class="form-select" id="" name="">
-                                    <option selected>Año</option>
+                                <select id="yearNacimiento" name="yearNacimiento" class="form-select">
+                                    <option value="" selected>Año</option>
                                     @for ($i = 1970; $i <= 2004; $i++)
                                         <option value="{{ $i }}"> {{ $i }} </option>
                                     @endfor
@@ -84,21 +87,22 @@
                             <div class="mb-3">
                                 <label for="telefonoInscripcion" class="form-label">Telefono: ej.</label>
                                 <input type="text" class="form-control" id="telefonoInscripcion"
-                                    name="telefonoInscripcion">
+                                    name="telefonoInscripcion" maxlength="13">
                             </div>
                         </div>
                         <div class="col-3">
                             <div class="mb-3">
                                 <label for="telefonoCelInscripcion" class="form-label">Tel cel</label>
                                 <input type="text" class="form-control" id="telefonoCelInscripcion"
-                                    name="telefonoCelInscripcion">
+                                    name="telefonoCelInscripcion" maxlength="13">
                             </div>
                         </div>
                         <div class="col-6"></div>
                         <div class="col-3">
                             <div class="mb-3">
                                 <label for="calleInscripcion" class="form-label">Calle</label>
-                                <input type="text" class="form-control" id="calleInscripcion" name="calleInscripcion">
+                                <input type="text" class="form-control" id="calleInscripcion"
+                                    name="calleInscripcion">
                             </div>
                         </div>
                         <div class="col-1">
@@ -135,32 +139,74 @@
                             <hr>
                         </div>
                         <div class="col-2">
-                            <select class="form-select" aria-label="Default select example">
+                            <select id="plantelSelect" name="plantelSelect" class="form-select"
+                                aria-label="Default select example">
                                 <option selected>Selecciona Plantel</option>
                             </select>
                         </div>
                         <div class="col-2">
-                            <select class="form-select" aria-label="Default select example">
+                            <select id="periodoSelect" name="periodoSelect" class="form-select"
+                                aria-label="Default select example">
                                 <option selected>Selecciona Ciclo</option>
                             </select>
                         </div>
                         <div class="col-2">
-                            <select class="form-select" aria-label="Default select example">
+                            <select id="nivelSelect" name="nivelSelect" class="form-select"
+                                aria-label="Default select example">
                                 <option selected>Selecciona el Nivel</option>
                             </select>
                         </div>
                         <div class="col-3">
-                            <select class="form-select" aria-label="Default select example">
+                            <select id="carreraSelect" name="carreraSelect" class="form-select"
+                                aria-label="Default select example">
                                 <option selected>Selecciona Carrera</option>
                             </select>
                         </div>
                         <div class="col-3">
-                            <select class="form-select" aria-label="Default select example">
+                            <select id="horarioSelect" name="horarioSelect" class="form-select"
+                                aria-label="Default select example">
                                 <option selected>Selecciona Horario</option>
                             </select>
                         </div>
+                        <div class="col-9"></div>
+                        <div class="col-3">
+                            <button id="calcularPromo" type="submit" class="btn btn-primary mt-4">Continuar</button>
+                        </div>
+
+                        <div id="respuestaSuccess" class="col-12 mt-4 row d-none">
+                            <div class="col-12">
+                                <h3  style="color: rgba(241, 145, 29, 1.00);">Cuota de Incripción Preferencial</h3>
+                                <hr style="border: 1px solid rgba(241, 145, 29, 1.00);">
+                            </div>
+                            <div class="col-9">
+                                Gracias a tu Pre-Inscripción en Línea has apartado la Cuota de Inscripción Preferencial
+                                de
+                                este mes.
+
+                            </div>
+                            <div class="col-3"></div>
+                            <div class="col-9">
+                                Total al pagar:
+                            </div>
+                            <div id="precioPromo" class="col-3">
+
+                            </div>
+                            <div class="col-12">
+                                <hr style="border: 1px solid rgba(241, 145, 29, 1.00);">
+                            </div>
+                            <div class="col-9">
+                                Para conservar este descuento y tu lugar en el horario seleccionado, tu fecha límite para
+                                cubrir la totalidad de tu inscripción es:
+                            </div>
+                            <div id="fechaLimitePromo" class="col-3">
+
+                            </div>
+                        </div>
+                        <div id="respuestaError" class="col-12 mt-4 d-none">
+
+                        </div>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
     </div>

@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+    console.log('hola combos');
+
     // Inicializar con todos los combos del formulario - Contacto -
     // Desabilitados excepto el de Plantel
     $("select[name=nivelSelect]").prop("disabled", true);

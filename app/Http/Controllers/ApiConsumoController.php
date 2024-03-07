@@ -156,4 +156,12 @@ class ApiConsumoController extends Controller
 
         return $response->json();
     }
+
+    //! preincripcion en linea 
+    public function preinscripcionPromociones($valores)
+    {
+        $response = Http::post($this->base_url . 'preinscripcion/promociones', $valores);
+
+        return $response->json();
+    }
 }
