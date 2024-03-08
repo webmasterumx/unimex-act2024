@@ -26,6 +26,7 @@ Route::get('/posgrado/{slug}', [UnimexController::class, 'getPosgrado'])->name('
 Route::get('/contacto', [UnimexController::class, 'contacto'])->name('contacto');
 Route::get('/calcula-tu-cuota', [UnimexController::class, 'calculaTuCuota'])->name('calcula_tu_cuota');
 Route::get('/App/Preinscripcion-online', [UnimexController::class, 'preinscripcionEnLinea'])->name('preinscripcion.linea');
+Route::get('/preinscripcion/ficha/pdf', [UnimexController::class, 'fichaPDFGenerar'])->name('preinscripcion.fichs.pdf');
 Route::get('/preguntas-frecuentes', [UnimexController::class, 'preguntasFrecuentes'])->name('preguntas.frecuentes');
 Route::get('/rvoes', [UnimexController::class, 'rvoe'])->name('rvoe');
 Route::get('/investigacion', [UnimexController::class, 'investigacion'])->name('investigacion');
@@ -36,6 +37,8 @@ Route::view('/resutados-examen', 'resultadosExamenConocimientos')->name('resulta
 Route::view('/servicio-social', 'servicioSocial')->name('servicio.social');
 Route::view('/calendarios-escolares', 'calendarios_escolares')->name('calendarios_escolares');
 Route::view('/aviso-de-privacidad', 'aviso-privacidad')->name('aviso_de_privacidad');
+Route::view('/forma/pago/preinscripcion', 'preinscripcionEnLinea.formaDePago')->name('forma.pago.preinscripcion');
+Route::view('/datos/pago/preinscripcion', 'preinscripcionEnLinea.datosPago')->name('datos.pago');
 
 //? consumo de la api para formulario   
 Route::get('/getPlanteles', [ApiConsumoController::class, 'getPlanteles'])->name('get.planteles');

@@ -171,6 +171,9 @@
                         <div class="col-9"></div>
                         <div class="col-3">
                             <button id="calcularPromo" type="submit" class="btn btn-primary mt-4">Continuar</button>
+
+                            <a href="{{ route('forma.pago.preinscripcion') }}" id="continuarProceso" type="button" class="btn btn-primary mt-4 d-none">Continuar</a>
+                            <button id="corregirDatos" type="button" class="btn btn-primary mt-4 d-none">Corregir Datos</button>
                         </div>
 
                         <div id="respuestaSuccess" class="col-12 mt-4 row d-none">

@@ -178,7 +178,7 @@ class FormController extends Controller
         } else {
         }
 
-        return view('preinscripcionEnLineaForm', [
+        return view('preinscripcionEnLinea.formularioDatosGenerales', [
             "datos" => $request,
             "estados" => $estados
         ]);
@@ -186,7 +186,7 @@ class FormController extends Controller
 
     public function obtenerPromocionPreinscripcion(Request $request)  
     {
-
+        
         $valores = array(
             "clavePlantel" => $request->plantelSelect,
             "clavePeriodo" => $request->periodoSelect,
@@ -194,7 +194,34 @@ class FormController extends Controller
             "claveTurno" => $request->horarioSelect,
         );
 
+        $prospecto = array(
+            "Email" => $request->correoInscripcion,
+            "Nombre" => $request->nombreInscripcion,
+            "ApPaterno" => $request->apellidoPatInscripcion,
+            "ApMaterno" => $request->apellidoMatInscripcion,
+            "Telefono" => $request->telefonoInscripcion,
+            "Celular" => $request->telefonoCelInscripcion,
+            "Calle" => $request->calleInscripcion,
+            "NumeroCalle" => $request->numeroInscripcion,
+            "Colonia" => $request->coloniaInscripcion,
+            "EstadoID" => $request->estadoInscripcion,
+            "MunicipioID" => $request->municipioInscripcion,
+            "PlantelID" => $request->plantelSelect,
+            "ClavePeriodo" => $request->periodoSelect,
+            "ClaveNivel" => $request->nivelSelect,
+            "ClaveCarrera" => $request->carreraSelect,
+            "ClaveTurno" => $request->horarioSelect,
+            "UtpSource" => "",
+            "DescripCampPublicidad" => "",
+            "CampaignMedium" => "",
+            "CampaignTerm" => "",
+            "CampaignContent" => "",
+            "WebSiteURL" => "",
+            "FechaDeNacimiento" =>"",
+        );
+
         $promo = app(ApiConsumoController::class)->preinscripcionPromociones($valores);
+        //$agregar = app(ApiConsumoController::class)->registraProspectoCRMDesdePreinscripcionEnLinea($prospecto);
 
         return response()->json($promo);
 

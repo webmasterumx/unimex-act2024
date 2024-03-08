@@ -15,6 +15,7 @@ use App\Models\Rvoe;
 use App\Models\VentajasUnimex;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\PDF;
 use Illuminate\Support\Facades\DB;
 
 class UnimexController extends Controller
@@ -141,7 +142,7 @@ class UnimexController extends Controller
 
     public function preinscripcionEnLinea(): View
     {
-        return view('preinscripcionEnLinea');
+        return view('preinscripcionEnLinea.inicio');
     }
 
     public function contacto(): View
@@ -164,5 +165,11 @@ class UnimexController extends Controller
             "resultados" => $resultados,
             "fecha" => $fecha
         ]);
+    }
+
+    public function fichaPDFGenerar()
+    {
+        $pdf = \PDF::loadView('preinscripcionEnLinea.fichaPagoPDF');
+        return $pdf->stream ('pruebapdf.pdf');
     }
 }

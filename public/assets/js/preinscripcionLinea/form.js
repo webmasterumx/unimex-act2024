@@ -176,12 +176,15 @@ $("#formPromoPreinscripcion").validate({
             $('#calcularPromo').addClass("d-none");
 
             if (respuesta.Success == true) {
+                $('#continuarProceso').removeClass('d-none');
+                $('#corregirDatos').removeClass('d-none');
                 $("#respuestaSuccess").removeClass('d-none');
                 $('#precioPromo').html("$" + respuesta.Importe);
                 $('#fechaLimitePromo').html(respuesta.FechaFinalPromocion);
             }
             else {
                 $("#respuestaError").removeClass('d-none');
+                $('#corregirDatos').removeClass('d-none');
                 $("#respuestaError").html(respuesta.MensajeDeError);
             }
 
