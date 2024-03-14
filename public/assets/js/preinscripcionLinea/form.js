@@ -169,6 +169,7 @@ $("#formPromoPreinscripcion").validate({
             processData: false,
         }).done(function (data) {
             console.log(data);
+            estadoCampos(true);
 
             let respuesta = JSON.parse(data);
             console.log(respuesta);

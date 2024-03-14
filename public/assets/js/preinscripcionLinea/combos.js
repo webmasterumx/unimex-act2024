@@ -126,14 +126,11 @@ $("select[name=nivelSelect]").change(function () {
 
 });
 
-
-
 /**
  * se activa cuando se cambia la carrera seccionada
  * y se muestran los horarios disponibles
  */
 $("select[name=carreraSelect]").change(function () {
-
 
     $('#horarioSelect').empty();
     $("#horarioSelect").append(`<option value="" selected disabled>Selecciona un horario</option>`);

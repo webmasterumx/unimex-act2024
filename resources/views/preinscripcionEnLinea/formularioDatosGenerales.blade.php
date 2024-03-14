@@ -28,7 +28,8 @@
                         <div class="col-3">
                             <div class="mb-3">
                                 <label for="nombreInscripcion" class="form-label">* Nombre</label>
-                                <input type="text" class="form-control" id="nombreInscripcion" name="nombreInscripcion">
+                                <input type="text" class="form-control" id="nombreInscripcion" name="nombreInscripcion"
+                                    value="">
                             </div>
                         </div>
                         <div class="col-3">
@@ -172,20 +173,21 @@
                         <div class="col-3">
                             <button id="calcularPromo" type="submit" class="btn btn-primary mt-4">Continuar</button>
 
-                            <a href="{{ route('forma.pago.preinscripcion') }}" id="continuarProceso" type="button" class="btn btn-primary mt-4 d-none">Continuar</a>
-                            <button id="corregirDatos" type="button" class="btn btn-primary mt-4 d-none">Corregir Datos</button>
+                            <a href="{{ route('registrar.prospecto.preinscripcion') }}" id="continuarProceso" type="button"
+                                class="btn btn-primary mt-4 d-none">Continuar</a>
+                            <button onclick="correccionDatos()" id="corregirDatos" type="button"
+                                class="btn btn-primary mt-4 d-none">Corregir Datos</button>
                         </div>
 
                         <div id="respuestaSuccess" class="col-12 mt-4 row d-none">
                             <div class="col-12">
-                                <h3  style="color: rgba(241, 145, 29, 1.00);">Cuota de Incripción Preferencial</h3>
+                                <h3 style="color: rgba(241, 145, 29, 1.00);">Cuota de Incripción Preferencial</h3>
                                 <hr style="border: 1px solid rgba(241, 145, 29, 1.00);">
                             </div>
                             <div class="col-9">
                                 Gracias a tu Pre-Inscripción en Línea has apartado la Cuota de Inscripción Preferencial
                                 de
                                 este mes.
-
                             </div>
                             <div class="col-3"></div>
                             <div class="col-9">

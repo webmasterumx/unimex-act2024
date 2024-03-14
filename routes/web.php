@@ -3,6 +3,7 @@
 use App\Http\Controllers\ApiConsumoController;
 use App\Http\Controllers\CalculadoraCuotasController;
 use App\Http\Controllers\FormController;
+use App\Http\Controllers\PreinscripcionEnLineaController;
 use App\Http\Controllers\UnimexController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,20 +26,26 @@ Route::get('/licenciatura/sua/{slug}', [UnimexController::class, 'getLicenciatur
 Route::get('/posgrado/{slug}', [UnimexController::class, 'getPosgrado'])->name('posgrado');
 Route::get('/contacto', [UnimexController::class, 'contacto'])->name('contacto');
 Route::get('/calcula-tu-cuota', [UnimexController::class, 'calculaTuCuota'])->name('calcula_tu_cuota');
-Route::get('/App/Preinscripcion-online', [UnimexController::class, 'preinscripcionEnLinea'])->name('preinscripcion.linea');
 Route::get('/preinscripcion/ficha/pdf', [UnimexController::class, 'fichaPDFGenerar'])->name('preinscripcion.fichs.pdf');
 Route::get('/preguntas-frecuentes', [UnimexController::class, 'preguntasFrecuentes'])->name('preguntas.frecuentes');
 Route::get('/rvoes', [UnimexController::class, 'rvoe'])->name('rvoe');
 Route::get('/investigacion', [UnimexController::class, 'investigacion'])->name('investigacion');
 Route::get('/carta/resutado/{matricula}', [UnimexController::class, 'cartaResultados'])->name('carta.resultado');
+Route::get('/forma/pago/preinscripcion/{folio}', [FormController::class, 'buscarProspectoForFolio'])->name('forma.pago.preinscripcion');
 Route::view('/opciones-de-titulacion', 'opciones_titulacion')->name('opciones_de_titulacion');
 Route::view('/examen-de-conocimientos', 'examen_de_conocimientos')->name('examen_de_conocimientos');
 Route::view('/resutados-examen', 'resultadosExamenConocimientos')->name('resultados_examen_conocimientos');
 Route::view('/servicio-social', 'servicioSocial')->name('servicio.social');
 Route::view('/calendarios-escolares', 'calendarios_escolares')->name('calendarios_escolares');
 Route::view('/aviso-de-privacidad', 'aviso-privacidad')->name('aviso_de_privacidad');
-Route::view('/forma/pago/preinscripcion', 'preinscripcionEnLinea.formaDePago')->name('forma.pago.preinscripcion');
 Route::view('/datos/pago/preinscripcion', 'preinscripcionEnLinea.datosPago')->name('datos.pago');
+
+//!modulo de preinscripcion en linea
+Route::get('/App/Preinscripcion-online', [PreinscripcionEnLineaController::class, 'index'])->name('preinscripcion.linea');
+Route::post('/validacion/preinscripcion', [PreinscripcionEnLineaController::class, 'validacionDeCorreo'])->name('validacion.preinscripcion.linea');
+Route::post('/obtener/promo/preinscripcion', [PreinscripcionEnLineaController::class, 'obtenerPromocion'])->name('obtener.promo.preinscripcion');
+Route::get('/registrar/prospecto/preinscripcion/linea', [PreinscripcionEnLineaController::class, 'registrarPreinscripcionEnLinea'])->name('registrar.prospecto.preinscripcion');
+Route::get('/ficha/generar/pdf', [PreinscripcionEnLineaController::class, 'fichaPDFGenerar'])->name('ficha.pdf');
 
 //? consumo de la api para formulario   
 Route::get('/getPlanteles', [ApiConsumoController::class, 'getPlanteles'])->name('get.planteles');
@@ -61,9 +68,6 @@ Route::post('/form/quejas/sugerencias', [FormController::class, 'quejasYsugerenc
 Route::post('/form/empresas/occ', [FormController::class, 'empresasOCC'])->name('form.empresas.pcc');
 //? peticiones de calculadora de cuotas
 Route::post('/insertar/prospecto/calculadora', [CalculadoraCuotasController::class, 'insertarProspecto'])->name('paso.uno');
-//* formulario de preinscripcion en linea
-Route::post('/validacion/preinscripcion', [FormController::class, 'preinscripcionLineaValidacion'])->name('validacion.preinscripcion.linea');
-Route::post('/obtener/promo/preinscripcion', [FormController::class, 'obtenerPromocionPreinscripcion'])->name('obtener.promo.preinscripcion');
 
 //!testing
 Route::get('testing', [FormController::class, 'testerEnvio'])->name('testing');

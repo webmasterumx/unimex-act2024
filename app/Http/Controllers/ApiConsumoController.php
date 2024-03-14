@@ -127,12 +127,13 @@ class ApiConsumoController extends Controller
         return $response->json();
     }
 
-    public function buscarProspectoPorCorreo($valores)
+    public function getProspectoPreinscripcionEnLinea($valores)
     {
-        $response = Http::post($this->base_url . 'buscador/prospecto', $valores);
+        $response = Http::post($this->base_url . 'ficha/prospecto', $valores);
 
         return $response->json();
     }
+
 
     public function getEstados()
     {
@@ -167,7 +168,7 @@ class ApiConsumoController extends Controller
 
     public function registraProspectoCRMDesdePreinscripcionEnLinea($valores)
     {
-        $response = Http::post($this->base_url . 'preinscripcion/agrega-prospecto', $valores);
+        $response = Http::post($this->base_url . 'preinscripcion/agrega-prospecto/sineroi', $valores);
 
         return $response->json();
     }

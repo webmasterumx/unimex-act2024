@@ -53,7 +53,7 @@ class FormController extends Controller
             "FechaVigenciaPromocion_Final" => "Domingo 24 de Diciembre del 2017",
             "Email" => "rectoria_testing@gmial.com"
         ); */
-        
+
         $recive = $request->mail_prospecto;
         $envio =  Mail::to($recive)->bcc("umrec_web@unimex.edu.mx")->send(new ContactoProspecto($request, $respuesta)); //! envio del correo
 
@@ -155,76 +155,28 @@ class FormController extends Controller
         //dd($envio);
     }
 
-    /**
-     * Valida si el prospecto existe en base a su correo 
-     * si existe retorna 1
-     * si no retorna 0
-     */
-    public function preinscripcionLineaValidacion(Request $request)
+    public function agregrarProspectoSinEroi(Request $request)  
     {
+        $params = $request->all();
 
-        $apiConsumo = new ApiConsumoController();
-        $estados = $apiConsumo->getEstados();
+        var_dump($params);
 
-        $valores = array(
-            "correoElectronico" => $request->correo,
-            "idMicroSitio" => 20
-        );
+        $agregar = app(ApiConsumoController::class)->registraProspectoCRMDesdePreinscripcionEnLinea($params);
 
-        $validacion = app(ApiConsumoController::class)->verificaProspecto($valores);
-
-        if ($validacion == 1) {
-            $infoProspecto = SELF::validarMatriculacion($request->correo);
-        } else {
-        }
-
-        return view('preinscripcionEnLinea.formularioDatosGenerales', [
-            "datos" => $request,
-            "estados" => $estados
-        ]);
+        var_dump($agregar);
     }
 
-    public function obtenerPromocionPreinscripcion(Request $request)  
+    public function buscarProspectoForFolio($folio)  
     {
-        
         $valores = array(
-            "clavePlantel" => $request->plantelSelect,
-            "clavePeriodo" => $request->periodoSelect,
-            "claveNivel" => $request->nivelSelect,
-            "claveTurno" => $request->horarioSelect,
+            "folioCRM" => $folio,
         );
 
-        $prospecto = array(
-            "Email" => $request->correoInscripcion,
-            "Nombre" => $request->nombreInscripcion,
-            "ApPaterno" => $request->apellidoPatInscripcion,
-            "ApMaterno" => $request->apellidoMatInscripcion,
-            "Telefono" => $request->telefonoInscripcion,
-            "Celular" => $request->telefonoCelInscripcion,
-            "Calle" => $request->calleInscripcion,
-            "NumeroCalle" => $request->numeroInscripcion,
-            "Colonia" => $request->coloniaInscripcion,
-            "EstadoID" => $request->estadoInscripcion,
-            "MunicipioID" => $request->municipioInscripcion,
-            "PlantelID" => $request->plantelSelect,
-            "ClavePeriodo" => $request->periodoSelect,
-            "ClaveNivel" => $request->nivelSelect,
-            "ClaveCarrera" => $request->carreraSelect,
-            "ClaveTurno" => $request->horarioSelect,
-            "UtpSource" => "",
-            "DescripCampPublicidad" => "",
-            "CampaignMedium" => "",
-            "CampaignTerm" => "",
-            "CampaignContent" => "",
-            "WebSiteURL" => "",
-            "FechaDeNacimiento" =>"",
-        );
+        $resultado = app(ApiConsumoController::class)->getProspectoPreinscripcionEnLinea($valores);
 
-        $promo = app(ApiConsumoController::class)->preinscripcionPromociones($valores);
-        //$agregar = app(ApiConsumoController::class)->registraProspectoCRMDesdePreinscripcionEnLinea($prospecto);
-
-        return response()->json($promo);
-
+        return view('preinscripcionEnLinea.formaDePago', [
+            "informacion" => $resultado
+        ]);
     }
 
     /**

@@ -59,20 +59,22 @@
                         <div class="col-4">
                             <div class="mb-3">
                                 <label for="cantidad" class="form-label">Cantidad</label>
-                                <input disabled type="text" class="form-control" id="cantidad" value="790.00">
+                                <input disabled type="text" class="form-control" id="cantidad"
+                                    value="{{ session('precio') }}">
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="mb-3">
                                 <label for="nombreAlumno" class="form-label">Nombre</label>
                                 <input disabled type="text" class="form-control" id="nombreAlumno"
-                                    value="Adriana Olivares Leal">
+                                    value="{{ session('Nombre') }}  {{ session('ApPaterno') }} {{ session('ApMaterno') }}">
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="mb-3">
                                 <label for="matricula" class="form-label">Matrícula</label>
-                                <input disabled type="text" class="form-control" id="matricula" value="3171">
+                                <input disabled type="text" class="form-control" id="matricula"
+                                    value="{{ session('Matricula') }}">
                             </div>
                         </div>
                         <div class="col-4">
@@ -81,15 +83,45 @@
                                 <input disabled type="text" class="form-control" id="cuatrimestre" value="Primero">
                             </div>
                         </div>
+                        @php
+                            $idPlantel = session('PlantelID');
+                        @endphp
+                        @switch($idPlantel)
+                            @case(2)
+                            @php
+                                $nombrePlantel = "IZCALLI";
+                            @endphp
+                            @break
+
+                            @case(3)
+                            @php
+                                $nombrePlantel = "SATÉLITE";
+                            @endphp
+                            @break
+
+                            @case(4)
+                            @php
+                                $nombrePlantel = "POLANCO";
+                            @endphp
+                            @break
+
+                            @case(5)
+                            @php
+                                $nombrePlantel = "VERACRUZ";
+                            @endphp
+                            @break
+
+                            @default
+                        @endswitch
                         <div class="col-4">
                             <div class="mb-3">
                                 <label for="plantel" class="form-label">Plantel</label>
-                                <input disabled type="text" class="form-control" id="plantel" value="IZCALLI">
+                                <input disabled type="text" class="form-control" id="plantel" value="{{ $nombrePlantel }}">
                             </div>
                         </div>
                         <div class="col-12 text-center">
-                            <button type="button" class="btn btn-primary"><i class="bi bi-printer-fill"></i>
-                                Imprimir</button>
+                            <a href="{{ route('ficha.pdf') }}" type="button" class="btn btn-primary"><i class="bi bi-printer-fill"></i>
+                                Imprimir</a>
                         </div>
                     </div>
                 </div>

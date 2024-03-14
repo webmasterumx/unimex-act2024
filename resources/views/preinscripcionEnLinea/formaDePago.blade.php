@@ -28,19 +28,18 @@
                             <div class="mb-3">
                                 <label for="matricula" class="form-label">Matricula</label>
                                 <input disabled type="text" class="form-control" id="matricula" name="matricula"
-                                    value="22497056-91">
+                                    value="{{ session('Matricula') }}">
                             </div>
                         </div>
                         <div class="col-3">
                             <div class="mb-3">
                                 <label for="cuota" class="form-label">Cuota de Inscripción</label>
                                 <input disabled type="text" class="form-control" id="cuota" name="cuota"
-                                    value="$790.00">
+                                    value="${{ session('precio') }}.00">
                             </div>
                         </div>
                         <div class="col-6">
-                            Recuerda que debes cubrir la totalidad de la cuota de inscripcion antes del <b>Sábado 9 de Marzo
-                                del 2024</b> para poder hacer válida la promoción.
+                            Recuerda que debes cubrir la totalidad de la cuota de inscripcion antes del <b>{{ session('fechaLimite') }}</b> para poder hacer válida la promoción.
                         </div>
                         <div class="col-12">
                             <div class="form-check">
