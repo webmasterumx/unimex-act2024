@@ -9,6 +9,8 @@ use Dompdf\Dompdf;
 class PreinscripcionEnLineaController extends Controller
 {
 
+    public $plantelInfo;
+
     public function index()
     {
         return view('preinscripcionEnLinea.inicio');
@@ -129,6 +131,7 @@ class PreinscripcionEnLineaController extends Controller
 
     public function fichaPDFGenerar()
     {
+        SELF::getPlantelInfo();
         $dompdf = new Dompdf(array('enable_remote' => true));
         $dompdf->loadHtml('
         <div id="content">
@@ -146,12 +149,8 @@ class PreinscripcionEnLineaController extends Controller
                                 </td>
                                 <td>
                                     <p>
-                                        <b>Plantel IZCALLI</b> <br>
-                                        Av. del Vidrio 15 <br>
-                                        Col Plaza Dorada <br>
-                                        Cuautitlan Izcalli <br>
-                                        Edo.Mex C.P 54760 <br>
-                                        R.F.C UME-901015-M13
+                                        <b>Plantel ' . $this->plantelInfo['nombre'] . '</b> <br>
+                                        ' . $this->plantelInfo['direccion'] . '
                                     </p>
                                 </td>
                             </tr>
@@ -243,7 +242,7 @@ class PreinscripcionEnLineaController extends Controller
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="text-align: center;">$'. session('precio'). '.00</td>
+                                        <td style="text-align: center;">$' . session('precio') . '.00</td>
                                     </tr>
                                 </table>
                             </div>
@@ -261,5 +260,33 @@ class PreinscripcionEnLineaController extends Controller
 
         // Output the generated PDF to Browser
         $dompdf->stream();
+    }
+
+    public function getPlantelInfo()
+    {
+        $idPlantel = session('PlantelID');
+
+        switch ($idPlantel) {
+            case 2:
+                $this->plantelInfo['nombre'] = "IZCALLI";
+                $this->plantelInfo['direccion'] = "Av. Del Vidrio 15  <br> Col. Plaza Dorada <br>  Cuautitlán Izcalli <br>  Edo. Méx. C.P. 54760 <br>  R.F.C. UME-901015-M13";
+                break;
+            case 3:
+                $this->plantelInfo['nombre'] = "SATÉLITE";
+                $this->plantelInfo['direccion'] = "Circuito Poetas 37 <br> Ciudad Satélite <br> Naucalpan de Juárez <br> Edo. Méx. C.P. 53100 <br> R.F.C. UMP-940128-2N5";
+                break;
+            case 4:
+                $this->plantelInfo['nombre'] = "POLANCO";
+                $this->plantelInfo['direccion'] = "Emilio Castelar 63 <br> Col. Polanco <br> Deleg. Miguel Hidalgo <br> Ciudad de México C.P. 11560 <br> R.F.C. UMP-000627-125";
+                break;
+            case 5:
+                $this->plantelInfo['nombre'] = "VERACRUZ";
+                $this->plantelInfo['direccion'] = "20 de Noviembre esq. Juan Enriquez 1004 <br> Colonia Ignacio Zaragoza <br> Veracruz <br> Veracruz de Ignacio de la Llave C.P. 91910 <br> R.F.C. UMP-970823-SCA";
+                break;
+
+            default:
+                # code...
+                break;
+        }
     }
 }
