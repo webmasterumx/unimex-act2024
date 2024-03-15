@@ -4,23 +4,31 @@ $("#formPreincripcion").validate({
             required: true,
             email: true,
         },
-        telefono: {
+        /* telefono: {
             required: true,
-        }
+        } */
     },
     messages: {
         correo: {
             required: "Ingresa tu correo",
             email: "Formato de correo incorrecto",
         },
-        telefono: {
+        /* telefono: {
             required: "Ingresa tu telefono",
-        }
+        } */
     },
     submitHandler: function (form) {
 
+        $("#validarCorreo").prop("disabled", true);
+        $('#validarCorreo').html(`
+        <div class="spinner-border me-1" style="width: 20px; height: 20px;" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        Validando Datos
+        `);
+
         let formData = new FormData(form);
-        let ruta = setUrlBase() + "";
+        let ruta = setUrlBase() + "validacion/preinscripcion";
 
         $.ajax({
             method: "POST",
@@ -32,6 +40,32 @@ $("#formPreincripcion").validate({
             processData: false,
         }).done(function (data) {
             console.log(data);
+
+            let respuesta = JSON.parse(data);
+
+            if (respuesta.estado == true) {
+                $('#validarCorreo').html(`
+                <div class="spinner-border me-1" style="width: 20px; height: 20px;" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                Redirigiendo
+                `);
+                let redireccion = setUrlBase() + "form/datos_gemerales/preinscripcion";
+
+                setTimeout(`location.href='${redireccion}'`, 3000);
+            } else {
+                Swal.fire({
+                    icon: "error",
+                    title: "Aviso!",
+                    html: respuesta.mensaje,
+                });
+
+                $("#validarCorreo").prop("disabled", false);
+                $('#validarCorreo').html(`
+                    <i class="bi bi-box-arrow-right"></i>
+                    Continuar
+                `);
+            }
 
         }).fail(function () {
             console.log("Algo salió mal");
@@ -156,6 +190,13 @@ $("#formPromoPreinscripcion").validate({
     },
     submitHandler: function (form) {
 
+        $('#calcularPromo').html(`
+        <div class="spinner-border me-1" style="width: 20px; height: 20px;" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        Calculando Promoción
+        `);
+
         let formData = new FormData(form);
         let ruta = setUrlBase() + "obtener/promo/preinscripcion";
 
@@ -168,6 +209,10 @@ $("#formPromoPreinscripcion").validate({
             contentType: false,
             processData: false,
         }).done(function (data) {
+            $('#calcularPromo').html(`
+            <i class="bi bi-box-arrow-right"></i>
+            Continuar
+            `);
             console.log(data);
             estadoCampos(true);
 

@@ -1,7 +1,7 @@
 @extends('layouts.layoutPreinscripcion')
 
 @section('content')
-    <div class="container">
+    <div class="container" style="margin-top: 8rem !important;">
         <div class="row">
             <div class="col-12">
                 <h1 class="text-center fw-normal" style="color: rgba(241,145,29,1.00);">
@@ -24,19 +24,19 @@
                     </h3>
                     <ul style="list-style: none;">
                         <li>
-                            <i class="bi bi-check-square"></i>
+                            <i class="bi bi-check-square fs-3" style="color: rgba(241, 145, 29, 1.00);"></i>
                             Apartas tu lugar en la Licenciatura o Posgrado y en el Horario deseado.
                         </li>
                         <li>
-                            <i class="bi bi-check-square"></i>
+                            <i class="bi bi-check-square fs-3" style="color: rgba(241, 145, 29, 1.00);"></i>
                             Apartas las cuotas de Inscripción preferenciales del momento.
                         </li>
                         <li>
-                            <i class="bi bi-check-square"></i>
+                            <i class="bi bi-check-square fs-3" style="color: rgba(241, 145, 29, 1.00);"></i>
                             Tienes más tiempo para pagar tu Inscripción y entregar tus documentos.
                         </li>
                         <li>
-                            <i class="bi bi-check-square"></i>
+                            <i class="bi bi-check-square fs-3" style="color: rgba(241, 145, 29, 1.00);"></i>
                             Puedes pre-inscribirte desde cualquier computadora.
                         </li>
                     </ul>
@@ -45,7 +45,7 @@
                         especificado.
                     </p>
                     <hr>
-                    <form class="row" action="{{ route('validacion.preinscripcion.linea') }}" method="POST">
+                    <form id="formPreincripcion" class="row">
                         <div class="col-12 col-md-6">
                             @csrf
                             <p>
@@ -56,7 +56,7 @@
                                     <i class="bi bi-envelope-fill"></i>
                                 </span>
                                 <input type="email" class="form-control" placeholder="Ejemplo: micorreo@dominio.com"
-                                    aria-label="Username" aria-describedby="basic-addon1" name="correo" id="correo">
+                                    aria-describedby="basic-addon1" name="correo" id="correo">
                             </div>
                         </div>
                        {{--  <div class="col-12 col-md-6">
@@ -80,7 +80,7 @@
                             </button>
                         </div>
                         <div class="col-12">
-                            <button type="submit" class="btn btn-primary mt-3">
+                            <button id="validarCorreo" type="submit" class="btn btn-primary mt-3">
                                 <i class="bi bi-box-arrow-right"></i>
                                 Continuar
                             </button>

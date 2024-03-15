@@ -26,8 +26,6 @@ class PreinscripcionEnLineaController extends Controller
     {
 
         session(['Email' => $request->correo]);
-        $apiConsumo = new ApiConsumoController();
-        $estados = $apiConsumo->getEstados();
 
         $valores = array(
             "correoElectronico" => $request->correo,
@@ -37,19 +35,25 @@ class PreinscripcionEnLineaController extends Controller
         $validacion = app(ApiConsumoController::class)->verificaProspecto($valores);
 
         if ($validacion == 1) {
-            /*$respuesta['estado'] = false;
-            $respuesta['mensaje'] = "La dirección de correo electrónico <b>'. $request->correo .'</b> ya fue registrada, favor de revisar."; */
+            $respuesta['estado'] = false;
+            $respuesta['mensaje'] = "La dirección de correo electrónico <b>$request->correo</b> ya fue registrada, favor de revisar."; 
 
-            return redirect()->back();
         } else {
-            /*$respuesta['estado'] = true;
-            $respuesta['mensaje'] = "si pasa"; */
-
-            return view('preinscripcionEnLinea.formularioDatosGenerales', [
-                "datos" => $request,
-                "estados" => $estados
-            ]);
+            $respuesta['estado'] = true;
+            $respuesta['mensaje'] = "si pasa";
         }
+
+        return response()->json($respuesta);
+    }
+
+    public function formDatosGenerales() 
+    {
+        $apiConsumo = new ApiConsumoController();
+        $estados = $apiConsumo->getEstados();
+
+        return view('preinscripcionEnLinea.formularioDatosGenerales', [
+            "estados" => $estados
+        ]);
     }
 
     public function obtenerPromocion(Request $request)
@@ -172,7 +176,7 @@ class PreinscripcionEnLineaController extends Controller
                                     </tr>
                                     <tr>
                                         <td style="width: 50%;">Plantel:</td>
-                                        <td style="width: 50%;"></td>
+                                        <td style="width: 50%;">' . $this->plantelInfo['nombre'] . '</td>
                                     </tr>
                                 </table>
                             </div>

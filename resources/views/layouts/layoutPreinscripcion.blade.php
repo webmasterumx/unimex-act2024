@@ -18,8 +18,25 @@
 </head>
 
 <body>
+    <nav class="navbar fixed-top navbar-expand-lg" style="background: #00539a !important;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img class="ms-5" width="255" src="{{ asset('assets/img/preinscripcion_linea/logo-2020.png') }}"
+                    alt="">
+            </a>
+        </div>
+    </nav>
 
     @yield('content')
+
+    <footer class="text-white text-center container-fluid p-4" style="background: #00539a !important;">
+        <p>
+            Tel: 55 1102 0290
+        </p>
+        <p class="m-0">
+            Universidad Mexicana {{ date('Y') }}
+        </p>
+    </footer>
 
     <!-- JS -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -27,6 +44,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
     <script>
         function setUrlBase() {

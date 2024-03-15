@@ -16,10 +16,6 @@ $("#telefonoCelInscripcion").bind('keypress', function (event) {
     }
 });
 
-window.onbeforeunload = function (e) {
-    e.preventDefault();
-};
-
 function estadoCampos(estado) {
     //disable campos 
     $("#nombreInscripcion").prop("disabled", estado);

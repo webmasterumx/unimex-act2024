@@ -43,6 +43,7 @@ Route::view('/datos/pago/preinscripcion', 'preinscripcionEnLinea.datosPago')->na
 //!modulo de preinscripcion en linea
 Route::get('/App/Preinscripcion-online', [PreinscripcionEnLineaController::class, 'index'])->name('preinscripcion.linea');
 Route::post('/validacion/preinscripcion', [PreinscripcionEnLineaController::class, 'validacionDeCorreo'])->name('validacion.preinscripcion.linea');
+Route::get('/form/datos_gemerales/preinscripcion', [PreinscripcionEnLineaController::class, 'formDatosGenerales'])->name('form.datos.generales.preinscripcion');
 Route::post('/obtener/promo/preinscripcion', [PreinscripcionEnLineaController::class, 'obtenerPromocion'])->name('obtener.promo.preinscripcion');
 Route::get('/registrar/prospecto/preinscripcion/linea', [PreinscripcionEnLineaController::class, 'registrarPreinscripcionEnLinea'])->name('registrar.prospecto.preinscripcion');
 Route::get('/ficha/generar/pdf', [PreinscripcionEnLineaController::class, 'fichaPDFGenerar'])->name('ficha.pdf');

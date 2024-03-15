@@ -1,7 +1,7 @@
 @extends('layouts.layoutPreinscripcion')
 
 @section('content')
-    <div class="container-fluid">
+    <div class="container-fluid" style="margin-top: 8rem !important;">
         <div class="row">
             <div class="col-12">
                 <h1 class="text-center fw-normal" style="color: rgba(241,145,29,1.00);">
@@ -28,7 +28,7 @@
                         Forma parte de UNIMEX®
                     </p>
                 </div>
-                <div class="col-7">
+                <div class="col-7 py-4">
                     <div class="row">
                         <div class="col-12">
                             <p>

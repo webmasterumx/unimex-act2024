@@ -1,7 +1,7 @@
 @extends('layouts.layoutPreinscripcion')
 
 @section('content')
-    <div class="container-fluid">
+    <div class="container-fluid"  style="margin-top: 8rem !important;">
         <div class="row px-5">
             <div class="col-12">
                 <h1 class="text-center fw-normal" style="color: rgba(241,145,29,1.00);">
@@ -21,7 +21,7 @@
                             <div class="mb-3">
                                 <label for="correoInscripcion" class="form-label">Correo Electronico</label>
                                 <input disabled type="email" class="form-control" id="correoInscripcion"
-                                    name="correoInscripcion" value="{{ $datos->correo }}">
+                                    name="correoInscripcion" value="{{ session('Email') }}">
                             </div>
                         </div>
                         <div class="col-8"></div>
@@ -173,8 +173,8 @@
                         <div class="col-3">
                             <button id="calcularPromo" type="submit" class="btn btn-primary mt-4">Continuar</button>
 
-                            <a href="{{ route('registrar.prospecto.preinscripcion') }}" id="continuarProceso" type="button"
-                                class="btn btn-primary mt-4 d-none">Continuar</a>
+                            <a href="{{ route('registrar.prospecto.preinscripcion') }}" id="continuarProceso"
+                                type="button" class="btn btn-primary mt-4 d-none">Continuar</a>
                             <button onclick="correccionDatos()" id="corregirDatos" type="button"
                                 class="btn btn-primary mt-4 d-none">Corregir Datos</button>
                         </div>
@@ -216,3 +216,9 @@
         </div>
     </div>
 @endsection
+
+<script>
+    window.onbeforeunload = function(e) {
+        e.preventDefault();
+    };
+</script>

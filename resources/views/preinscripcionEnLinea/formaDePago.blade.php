@@ -1,7 +1,7 @@
 @extends('layouts.layoutPreinscripcion')
 
 @section('content')
-    <div class="container-fluid">
+    <div class="container-fluid" style="margin-top: 8rem !important;">
         <div class="row">
             <div class="col-12">
                 <h1 class="text-center fw-normal" style="color: rgba(241,145,29,1.00);">
@@ -10,7 +10,7 @@
                 </h1>
             </div>
             <div class="col-12 row">
-                <div class="col-6 text-center">
+                <div class="col-5 text-center">
                     <img class="mt-5" src="{{ asset('assets/img/preinscripcion_linea/preinscripcion.png') }}"
                         alt="">
                     <br>
@@ -18,7 +18,7 @@
                         Forma parte de UNIMEX®
                     </p>
                 </div>
-                <div class="col-6">
+                <div class="col-7">
                     <div class="row">
                         <div class="col-12">
                             <p style="color: #00539B !important;"><i class="bi bi-credit-card-2-back"></i> Elige tu forma de
