@@ -56,6 +56,9 @@
                 <a href="" class="btn bg-unimex text-white">
                     Calcula tu Couta
                 </a>
+                <a href="{{ route('preinscripcion.linea') }}" class="btn text-white" style="background-color: #de951b;">
+                    Preinscripción En Línea
+                </a>
             </div>
         </div>
     </section>
