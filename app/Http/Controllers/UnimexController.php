@@ -38,73 +38,96 @@ class UnimexController extends Controller
     public function getPlanteles($slug): View
     {
         $plantel = Plantel::where('nombre', $slug)->first();
-        $galeria = json_decode($plantel->galeria);
-        $plantelesInNot = Plantel::where('nombre', '!=', $slug)->get();
+        if ($plantel != null) {
+            $galeria = json_decode($plantel->galeria);
+            $plantelesInNot = Plantel::where('nombre', '!=', $slug)->get();
 
-        return view('plantel', [
-            "plantel" => $plantel,
-            "galeria" => $galeria,
-            "plantelesInNot" => $plantelesInNot
-        ]);
+            return view('plantel', [
+                "plantel" => $plantel,
+                "galeria" => $galeria,
+                "plantelesInNot" => $plantelesInNot
+            ]);
+        } else {
+            return view('errors.404');
+        }
     }
 
     public function getAcercade($slug): View
     {
         $acercadeFirst = Acercade::where('slug', $slug)->first();
-        $recomendaciones = Acercade::where('slug', '!=', $slug)->get();
 
-        return view('acercade', [
-            'acercadeFirst' => $acercadeFirst,
-            "recomendaciones" => $recomendaciones
-        ]);
+        if ($acercadeFirst != null) {
+            $recomendaciones = Acercade::where('slug', '!=', $slug)->get();
+
+            return view('acercade', [
+                'acercadeFirst' => $acercadeFirst,
+                "recomendaciones" => $recomendaciones
+            ]);
+        } else {
+            return view('errors.404');
+        }
     }
 
     public function getLicenciatura($slug): View
     {
         $licenciatura = CLicenciaturas::where('slug', $slug)->first();
-        $extras = json_decode($licenciatura->extras, true);
-        $temario  = $extras['extras']['temario'];
-        $campo_laboral = $extras['extras']['campo_laboral'];
-        $disponibilidad = $extras['extras']['disponibilidad'];
 
-        return view('licenciatura', [
-            "licenciatura" => $licenciatura,
-            "temario" => $temario,
-            "campo_laboral" => $campo_laboral,
-            "disponibilidad" => $disponibilidad,
-        ]);
+        if ($licenciatura != null) {
+
+            $extras = json_decode($licenciatura->extras, true);
+            $temario  = $extras['extras']['temario'];
+            $campo_laboral = $extras['extras']['campo_laboral'];
+            $disponibilidad = $extras['extras']['disponibilidad'];
+
+            return view('licenciatura', [
+                "licenciatura" => $licenciatura,
+                "temario" => $temario,
+                "campo_laboral" => $campo_laboral,
+                "disponibilidad" => $disponibilidad,
+            ]);
+        } else {
+            return view('errors.404');
+        }
     }
 
     public function getLicenciaturaSua($slug): View
     {
         $licenciatura_sua = LicenciaturaSua::where('slug', $slug)->first();
-        $extras = json_decode($licenciatura_sua->extras, true);
-        $temario = $extras['extras']['temario'];
-        $campo_laboral = $extras['extras']['campo_laboral'];
+        if ($licenciatura_sua != null) {
+            $extras = json_decode($licenciatura_sua->extras, true);
+            $temario = $extras['extras']['temario'];
+            $campo_laboral = $extras['extras']['campo_laboral'];
 
-        return view('licenciaturasua', [
-            "licenciatura_sua" => $licenciatura_sua,
-            "temario" => $temario,
-            "campo_laboral" => $campo_laboral
-        ]);
+            return view('licenciaturasua', [
+                "licenciatura_sua" => $licenciatura_sua,
+                "temario" => $temario,
+                "campo_laboral" => $campo_laboral
+            ]);
+        } else {
+            return view('errors.404');
+        }
     }
 
     public function getPosgrado($slug): View
     {
         $posgrado = Posgrado::where('slug', $slug)->first();
-        $extras = json_decode($posgrado->temario, true);
-        $temario_especialidad = $extras['extras']['temario_especialidad'];
-        $temario_maestria = $extras['extras']['temario_maestria'];
-        $rvoe_especialidad = $extras['extras']['rvoe_especialidad'];
-        $rvoe_maestria = $extras['extras']['rvoe_maestria'];
+        if ($posgrado != null) {
+            $extras = json_decode($posgrado->temario, true);
+            $temario_especialidad = $extras['extras']['temario_especialidad'];
+            $temario_maestria = $extras['extras']['temario_maestria'];
+            $rvoe_especialidad = $extras['extras']['rvoe_especialidad'];
+            $rvoe_maestria = $extras['extras']['rvoe_maestria'];
 
-        return view('posgrado', [
-            "posgrado" => $posgrado,
-            "temario_especialidad" => $temario_especialidad,
-            "temario_maestria" => $temario_maestria,
-            "rvoe_especialidad" => $rvoe_especialidad,
-            "rvoe_maestria" => $rvoe_maestria,
-        ]);
+            return view('posgrado', [
+                "posgrado" => $posgrado,
+                "temario_especialidad" => $temario_especialidad,
+                "temario_maestria" => $temario_maestria,
+                "rvoe_especialidad" => $rvoe_especialidad,
+                "rvoe_maestria" => $rvoe_maestria,
+            ]);
+        } else {
+            return view('errors.404');
+        }
     }
 
     public function preguntasFrecuentes(): View
