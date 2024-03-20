@@ -6,6 +6,7 @@ use App\Http\Controllers\ExtrasUnimexController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\PreinscripcionEnLineaController;
 use App\Http\Controllers\UnimexController;
+use App\Mail\CalculadoraCuotas;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -76,4 +77,5 @@ Route::post('/form/empresas/occ', [FormController::class, 'empresasOCC'])->name(
 Route::post('/insertar/prospecto/calculadora', [CalculadoraCuotasController::class, 'insertarProspecto'])->name('paso.uno');
 
 //!testing
-Route::get('testing', [FormController::class, 'testerEnvio'])->name('testing');
+Route::get('/testing', [FormController::class, 'testerEnvio'])->name('testing');
+Route::get('/testing/calculadora/cuotas', [CalculadoraCuotasController::class, 'index'])->name('calculadora.becas.test');

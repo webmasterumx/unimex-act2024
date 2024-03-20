@@ -267,6 +267,12 @@ body {
     color: red;
 }
 
+#bannerCalculadoraInicial {
+    background-image: url('../img/calculadora_de_cuotas/unimex_banner_calculadora.jpg');
+    height: 50vh !important;
+    background-position: center !important;
+    background-size: cover !important;
+}
 
 @media  (min-width: 400px) and (max-width: 767.98px) {
     .itemBannerInit {

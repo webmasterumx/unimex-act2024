@@ -3,15 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Mail\CalculadoraCuotas;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
 class CalculadoraCuotasController extends Controller
 {
 
+    public function index() : View
+    {
+        return view('calculadoraDeBecas.inicio');
+    }
+
     public function insertarProspecto(Request $request)
     {
-
 
         $valores = array(
             "campaingContent" => "",
@@ -47,6 +52,5 @@ class CalculadoraCuotasController extends Controller
 
     public function enviarCorreoCalculadora(Request $request)
     {
-        
     }
 }
