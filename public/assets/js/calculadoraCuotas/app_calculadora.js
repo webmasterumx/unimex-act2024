@@ -239,22 +239,32 @@ function obtenerHorariosBeca() {
     }).done(function (data) {
         $('#grupoBotones').empty();
         console.log(data);
-        let arrayColor = ['btn-outline-primary', 'btn-outline-info', 'btn-outline-secondary', 'btn-outline-success', 'btn-outline-danger', 'btn-outline-warning', 'btn-outline-dark'];
-        let cont = 0;
-        $.each(data, function (index, value) {
+        if (data.error == undefined) {
+            let arrayColor = ['btn-outline-primary', 'btn-outline-info', 'btn-outline-secondary', 'btn-outline-success', 'btn-outline-danger', 'btn-outline-warning', 'btn-outline-dark'];
+            let cont = 0;
+            $.each(data, function (index, value) {
+                let option = `
+                <div class="col-3 mt-3">
+                    <button class="btn ${arrayColor[cont]}  style_prevu_kit w-100" onclick="selectHorario(${value.ClaveTurno}, ${value.ClaveBeca}, this)">
+                        ${value.Turno} <br>
+                        ${value.Horario} <br>
+                        Beca : ${value.ValorBeca}%
+                    </button>
+                </div>
+                `;
+                $('#grupoBotones').append(option);
+
+                cont = cont + 1;
+            });
+        }
+        else {
             let option = `
             <div class="col-3 mt-3">
-                <button class="btn ${arrayColor[cont]}  style_prevu_kit w-100" onclick="selectHorario(${value.ClaveTurno}, ${value.ClaveBeca}, this)">
-                    ${value.Turno} <br>
-                    ${value.Horario} <br>
-                    Beca : ${value.ValorBeca}%
-                </button>
+                <p class="text-danger">No hay horarios disponibles</p>
             </div>
             `;
             $('#grupoBotones').append(option);
-
-            cont = cont + 1;
-        });
+        }
 
         $('#cargador_horarios').addClass('d-none');
 

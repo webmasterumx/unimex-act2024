@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ApiConsumoController;
 use App\Http\Controllers\CalculadoraCuotasController;
+use App\Http\Controllers\ExtrasUnimexController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\PreinscripcionEnLineaController;
 use App\Http\Controllers\UnimexController;
@@ -39,6 +40,10 @@ Route::view('/servicio-social', 'servicioSocial')->name('servicio.social');
 Route::view('/calendarios-escolares', 'calendarios_escolares')->name('calendarios_escolares');
 Route::view('/aviso-de-privacidad', 'aviso-privacidad')->name('aviso_de_privacidad');
 Route::view('/datos/pago/preinscripcion', 'preinscripcionEnLinea.datosPago')->name('datos.pago');
+
+//* rutas de establecimiento de variables de session para calculadora de becas
+Route::get('/set/variables/calculadora/{nivel}/{carrera}', [ExtrasUnimexController::class, 'setVariablesPosicionamientoCalculadora'])->name("set.variables.calculadora");
+Route::get('/set/variables/preinscripcion/{nivel}/{carrera}', [ExtrasUnimexController::class, 'setVariablesPosicionamientoPreinscripcion'])->name('set.variables.preinscripcion');
 
 //!modulo de preinscripcion en linea
 Route::get('/App/Preinscripcion-online', [PreinscripcionEnLineaController::class, 'index'])->name('preinscripcion.linea');

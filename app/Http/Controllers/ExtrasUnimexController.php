@@ -117,4 +117,27 @@ class ExtrasUnimexController extends Controller
 
         return $valores;
     }
+
+    //? funciones de establecimiento de variables de posicionamiento por nivel y carrera
+    public function setVariablesPosicionamientoCalculadora($nivel, $carrera)
+    {
+        session(['nivel_calculadora' => $nivel]);
+        session(['carrera_calculadora' => $carrera]);
+
+        $respuesta['estado'] = true;
+        $respuesta['mensaje'] = "variables establecidas con exito";
+
+        return response()->json($respuesta);
+    }
+
+    public function setVariablesPosicionamientoPreinscripcion($nivel, $carrera)
+    {
+        session(['nivel_preinscripcion' => $nivel]);
+        session(['carrera_preinscripcion' => $carrera]);
+
+        $respuesta['estado'] = true;
+        $respuesta['mensaje'] = "variables establecidas con exito";
+
+        return response()->json($respuesta);
+    }
 }

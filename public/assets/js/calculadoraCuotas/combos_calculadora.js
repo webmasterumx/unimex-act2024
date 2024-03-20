@@ -21,6 +21,8 @@ $(document).ready(function () {
 
 $("select[name=selectPlantel]").change(function () {
 
+    $('#selectCarrera').empty();
+    
     //validar si ingresa al formulario desde cero o si ya tiene datos ingresados 
     console.log($('#folioCrm').val());
     if ($('#folioCrm').val() == "" || $('#folioCrm').val() == null) {
