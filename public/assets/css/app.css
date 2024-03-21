@@ -274,7 +274,18 @@ body {
     background-size: cover !important;
 }
 
-@media  (min-width: 400px) and (max-width: 767.98px) {
+::placeholder {
+    color: #004b93 !important;
+    opacity: 1;
+    /* Firefox */
+}
+
+::-ms-input-placeholder {
+    /* Edge 12-18 */
+    color: #004b93 !important;
+}
+
+@media (min-width: 400px) and (max-width: 767.98px) {
     .itemBannerInit {
         height: 15vh !important;
     }
@@ -306,4 +317,4 @@ body {
     .itemBannerInit {
         height: 100vh !important;
     }
-} 
+}
