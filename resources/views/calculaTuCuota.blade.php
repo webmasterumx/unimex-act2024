@@ -427,7 +427,6 @@
             return urlBase;
         }
 
-
         function imprimir() {
             $.print("#informacionCRM", {
                 globalStyles: true,

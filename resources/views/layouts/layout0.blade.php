@@ -3,10 +3,93 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Calculadora de Becas | UNIMEX</title>
+    <link rel="shortcut icon" href="{{ asset('assets/img/favicon.png') }}" type="image/x-icon">
+    <meta name="description"
+        content="Con la calculadora de becas obtén el valor de tu beca para licenciatura, especialidad o maestría. Ingresa y obtén la promoción especial">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta property="og:site_name" content="Universidad Mexicana">
+    <meta property="og:locale" content="es_MX">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Calculadora de Becas | UNIMEX">
+    <meta property="og:description"
+        content="Con la calculadora de becas obtén el valor de tu beca para licenciatura, especialidad o maestría. Ingresa y obtén la promoción especial">
+    <meta property="og:url" content="https://unimex.edu.mx/calcula-tu-cuota/">
+    <meta property="og:image" content="https://unimex.edu.mx/img/about/message/principal.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@soyunimex">
+    <meta name="twitter:title" content="Universidad Mexicana">
+    <meta name="twitter:description"
+        content="En UNIMEX contamos con 15 Licenciaturas, 6 Posgrados y 3 Licenciaturas Abiertas. Inscribite ya">
+    <meta name="twitter:image" content="https://unimexver.edu.mx/img/about/message/principal.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#004A92">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="shortcut icon" href="logo.ico" type="image/x-icon">
+    <link rel="canonical" href="https://unimex.edu.mx/calcula-tu-cuota/">
+    <link rel="alternate" href="https://unimex.edu.mx/calcula-tu-cuota/" hreflang="x-default">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Calculadora de Becas | UNIMEX",
+            "url": "https://unimex.edu.mx/calcula-tu-cuota/",
+            "alternateName": "Calculadora Becas",
+            "keywords": "calculadora de becas, becas licenciatura, becas maestria, becas posgrado, becas especialidad",
+            "image": "https://unimex.edu.mx/img/about/message/principal.png",
+            "about": {
+                "@type": "Thing",
+                "name": "Con la calculadora de becas obtén el valor de tu beca para licenciatura, especialidad o maestría. Ingresa y obtén la promoción especial"
+            }
+        }
+    </script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Universidad Mexicana",
+            "url": "https://unimex.edu.mx/",
+            "logo": "https://unimex.edu.mx/img/about/message/principal.png",
+            "sameAs": [
+                "https://www.facebook.com/unimex/",
+                "https://twitter.com/soyunimex",
+                "https://www.instagram.com/universidadmexicana",
+                "https://mx.linkedin.com/school/universidad-mexicana",
+                "https://www.youtube.com/user/SoyUNIMEX"
+            ]
+        }
+    </script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "CollegeOrUniversity",
+            "name": "Universidad Mexicana",
+            "url": "https://unimex.edu.mx/",
+            "alternateName": "UNIMEX",
+            "description": "En UNIMEX contamos con 17 Licenciaturas, 9 Posgrados y Licenciaturas Abiertas. Inscribete ya en cualquiera de nuestros planteles ubicados en Cuautitlán Izcalli, Satélite, Polanco y Veracruz",
+            "telephone": "+52 5511020250",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Emilio Castelar No. 63, esq. Eugenio Sue",
+                "addressLocality": "CDMX",
+                "addressRegion": "CDMX",
+                "postalCode": "11560",
+                "addressCountry": "México"
+            },
+            "hasMap": "https://www.google.com/maps/d/embed?mid=1DEonwKOkwsq1_zCMM-Nd6HFjXU9Gk3E7&ehbc=2E312F",
+            "logo": "https://unimex.edu.mx/img/about/message/principal.png",
+            "sameAs": [
+                "https://www.facebook.com/unimex/",
+                "https://twitter.com/soyunimex",
+                "https://www.instagram.com/universidadmexicana",
+                "https://mx.linkedin.com/school/universidad-mexicana",
+                "https://www.youtube.com/user/SoyUNIMEX"
+            ]
+        }
+    </script>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
