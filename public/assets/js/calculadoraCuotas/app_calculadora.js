@@ -3,12 +3,13 @@ function selectHorario(turno, beca, element) {
     $('.style_prevu_kit').removeClass("active");
     $(element).addClass('active');
     $('#cargador_costos').removeClass('d-none');
+    $('#grupoInformacion').addClass('d-none');
 
     let PlantelId = $('select[name=selectPlantel]').val();
     let claveCarrera = $('select[name=selectCarrera]').val();
     let claveTurno = turno;
-    let claveNivel = $('select[name=selectNivel]').val();;;
-    let clavePeriodo = $('select[name=selectPeriodo]').val();;;
+    let claveNivel = $('select[name=selectNivel]').val();
+    let clavePeriodo = $('select[name=selectPeriodo]').val();
     let claveBeca = beca;
     let egresado = 0;
 
@@ -23,6 +24,8 @@ function selectHorario(turno, beca, element) {
     };
 
     console.log(data);
+
+    actualizarProspectoCalculadora(turno);
 
     let ruta = setUrlBase() + "get/detalle/beca";
 
@@ -192,6 +195,9 @@ function recalculoDeCombos(carreraResguardo, nombreCarreraRes) {
         },
     }).done(function (data) {
         console.log(data);
+        $("#selectCarrera").empty();
+        $("#selectCarrera").append(`<option>- Selecciona una Carrera- </option>`); 
+
         for (let index = 0; index < data.length; index++) { //recorrer el array de carreras
             const element = data[index]; // se establece un elemento por carrera optenida
             if (element.clave == carreraResguardo || element.descrip == nombreCarreraRes) {
@@ -239,7 +245,19 @@ function obtenerHorariosBeca() {
     }).done(function (data) {
         $('#grupoBotones').empty();
         console.log(data);
-        if (data.error == undefined) {
+        if (data.ClaveBeca != undefined) {
+            let option = `
+            <div class="col-3 mt-3">
+                <button class="btn btn-outline-primary style_prevu_kit w-100" onclick="selectHorario(${data.ClaveTurno}, ${data.ClaveBeca}, this)">
+                    ${data.Turno} <br>
+                    ${data.Horario} <br>
+                    Beca : ${data.ValorBeca}%
+                </button>
+            </div>
+            `;
+            $('#grupoBotones').append(option);
+        }
+        else if (data.error == undefined) {
             let arrayColor = ['btn-outline-primary', 'btn-outline-info', 'btn-outline-secondary', 'btn-outline-success', 'btn-outline-danger', 'btn-outline-warning', 'btn-outline-dark'];
             let cont = 0;
             $.each(data, function (index, value) {
@@ -293,6 +311,45 @@ function getPeriodos() {
             $('#selectPeriodo').append("<option value='" + value.clave + "'>" + value
                 .descrip + "</option>");
         });
+
+    }).fail(function () {
+        console.log("Algo salió mal");
+    });
+}
+
+function actualizarProspectoCalculadora(turno) {
+    let rutaActualizar = setUrlBase() + 'actualiza/prospecto/calculadora';
+
+    let editor = $('#folioCrm').val();
+    let fagmentoCRM = editor.split(' ');
+
+    let data = {
+        clavePeriodo: $('select[name=selectPeriodo]').val(),
+        clavePlantel: $('select[name=selectPlantel]').val(),
+        claveNivel: $('select[name=selectNivel]').val(),
+        claveCarrera: $('select[name=selectCarrera]').val(),
+        claveTurno: turno,
+        folioCrm: fagmentoCRM[1],
+    };
+
+    /*  let data = {
+         clavePeriodo:108,
+         clavePlantel: 2,
+         claveNivel: 1,
+         claveCarrera: 10,
+         claveTurno: 6,
+         folioCrm: 1206180,
+     };  */
+
+    $.ajax({
+        method: "POST",
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        url: rutaActualizar,
+        data: data
+    }).done(function (data) {
+        console.log(data);
 
     }).fail(function () {
         console.log("Algo salió mal");

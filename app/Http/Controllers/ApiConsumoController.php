@@ -106,8 +106,18 @@ class ApiConsumoController extends Controller
         return $response->json();
     }
 
-    public function actualizaProspecto()
+    public function actualizaProspecto(Request $request)
     {
+        $response = Http::post($this->base_url . 'calculadora/actualiza', [
+            "clavePeriodo" => $request->clavePeriodo,
+            "clavePlantel" => $request->clavePlantel,
+            "claveNivel" => $request->claveNivel,
+            "claveCarrera" => $request->claveCarrera,
+            "claveTurno" => $request->claveTurno,
+            "folioCrm" => $request->folioCrm
+        ]);
+
+        return $response->json();
     }
 
     //! fin metodos de calculadora
@@ -133,7 +143,6 @@ class ApiConsumoController extends Controller
 
         return $response->json();
     }
-
 
     public function getEstados()
     {

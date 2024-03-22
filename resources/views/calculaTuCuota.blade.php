@@ -298,8 +298,7 @@
                         </p>
                     </div>
                     <div class="col-12">
-                        <select id="selectCarrera" name="selectCarrera" class="form-select mx-auto w-75"
-                            aria-label="Default select example">
+                        <select id="selectCarrera" name="selectCarrera" class="form-select mx-auto w-75 text-center">
                             <option value="" selected disabled>- Selecciona una carrera -</option>
                         </select>
                     </div>

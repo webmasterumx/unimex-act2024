@@ -8,6 +8,7 @@ use App\Http\Controllers\PreinscripcionEnLineaController;
 use App\Http\Controllers\UnimexController;
 use App\Mail\CalculadoraCuotas;
 use Illuminate\Support\Facades\Route;
+use Spatie\FlareClient\Api;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,6 +63,7 @@ Route::post('/getCarreras', [ApiConsumoController::class, 'getCarreras'])->name(
 Route::post('/getHorarios', [ApiConsumoController::class, 'getHorarios'])->name('get.horarios');
 Route::post('/get/horarios/calculadora', [ApiConsumoController::class, 'calculadoraHorarios'])->name('get.horarios.calculadora');
 Route::post('/get/detalle/beca', [ApiConsumoController::class, 'calculaDetalleHorarios'])->name('get.detalle.horario');
+Route::post('/actualiza/prospecto/calculadora', [ApiConsumoController::class, 'actualizaProspecto'])->name('actualiza.prospecto.calculadora');
 Route::post('/valida/prospecto', [ApiConsumoController::class, 'verificaProspecto'])->name('valida.prospecto');
 Route::get('/getMunicipios/{estado}', [ApiConsumoController::class, 'getMunicipios'])->name('get.municipios');
 

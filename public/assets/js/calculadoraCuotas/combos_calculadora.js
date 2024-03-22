@@ -21,26 +21,27 @@ $(document).ready(function () {
 
 $("select[name=selectPlantel]").change(function () {
 
-    $('#selectCarrera').empty();
-    
     //validar si ingresa al formulario desde cero o si ya tiene datos ingresados 
     console.log($('#folioCrm').val());
     if ($('#folioCrm').val() == "" || $('#folioCrm').val() == null) {
         console.log('es elprimer calculo');
+
         getPeriodos();
     }
     else {
         console.log('se hizo ya un calculo se requiere un recalculo');
         let carreraResguardo = setCarreraSeleccionada();
         let nombreCarreraRes = setNombreCarrreraSaleccionada();
-        $("#selectCarrera").empty();
-        $("#selectCarrera").append(`<option><div class="spinner-border" role="status"><span class="visually-hidden">Recalculando...</span></div></option>`);
-        $('#grupoBotones').empty();
-        $('#grupoInformacion').addClass('d-none');
-
         console.log(carreraResguardo);
         console.log(nombreCarreraRes);
+
+        $('#grupoBotones').empty();
+        $('#grupoInformacion').addClass('d-none');
+        $("#selectCarrera").empty();
+        $("#selectCarrera").append(`<option><div class="spinner-border" role="status"><span class="visually-hidden">Recalculando...</span></div></option>`); 
+
         recalculoDeCombos(carreraResguardo, nombreCarreraRes);
+
     }
 
 });
@@ -96,6 +97,7 @@ $("select[name=selectCarrera]").change(function () {
 
     $('#cargador_horarios').removeClass('d-none');
     $('#grupoBotones').empty();
+    $('#grupoInformacion').addClass('d-none');
 
     obtenerHorariosBeca();
 });
