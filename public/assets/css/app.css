@@ -277,12 +277,22 @@ body {
     color: #ffff !important;
 }
 
+.bg-outline-purple:active{
+    background-color: #6610f2 !important;
+    color: #ffff !important;
+}
+
 .bg-outline-orange{
     border-color: #fd7e14 !important;
     color: #fd7e14 !important;
 }
 
 .bg-outline-orange:hover{
+    background-color: #fd7e14 !important;
+    color: #000 !important;
+}
+
+.bg-outline-orange:active{
     background-color: #fd7e14 !important;
     color: #000 !important;
 }
@@ -298,12 +308,22 @@ body {
     color: #000 !important;
 }
 
+.bg-outline-teal:active{
+    background-color: #20c997 !important;
+    color: #000 !important;
+}
+
 .bg-outline-pink{
     border-color: #d63384 !important;
     color: #d63384 !important;
 }
 
 .bg-outline-pink:hover{
+    background-color: #d63384 !important;
+    color: #000 !important;
+}
+
+.bg-outline-pink:active{
     background-color: #d63384 !important;
     color: #000 !important;
 }
@@ -318,12 +338,22 @@ body {
     color: #fff !important;
 }
 
+.bg-outline-vine:active{
+    background-color: #581845 !important;
+    color: #fff !important;
+}
+
 .bg-outline-brisa{
     border-color: #3D74C2 !important;
     color: #3D74C2 !important;
 }
 
 .bg-outline-brisa:hover{
+    background-color: #3D74C2 !important;
+    color: #fff !important;
+}
+
+.bg-outline-brisa:active{
     background-color: #3D74C2 !important;
     color: #fff !important;
 }
@@ -338,6 +368,11 @@ body {
     color: #000 !important;
 }
 
+.bg-outline-durazno:active{
+    background-color: #EEA5A6 !important;
+    color: #000 !important;
+}
+
 .bg-outline-pasto{
     border-color: #43766C !important;
     color: #43766C !important;
@@ -348,12 +383,22 @@ body {
     color: #fff !important;
 }
 
+.bg-outline-pasto:active{
+    background-color: #43766C !important;
+    color: #fff !important;
+}
+
 .bg-outline-paleta{
     border-color: #2B2A4C !important;
     color: #2B2A4C !important;
 }
 
 .bg-outline-paleta:hover{
+    background-color: #2B2A4C !important;
+    color: #fff !important;
+}
+
+.bg-outline-paleta:active{
     background-color: #2B2A4C !important;
     color: #fff !important;
 }
