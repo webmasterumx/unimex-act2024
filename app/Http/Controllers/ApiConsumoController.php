@@ -105,9 +105,9 @@ class ApiConsumoController extends Controller
 
         app(CalculadoraCuotasController::class)->establecerVariablesPromocion($response);
         
-        var_dump(session('Beca'));
+        //var_dump(session('Beca'));
 
-        //return $response->json();
+        return $response->json();
     }
 
     public function actualizaProspecto(Request $request)
