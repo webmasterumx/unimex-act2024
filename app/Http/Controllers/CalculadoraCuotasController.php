@@ -55,7 +55,7 @@ class CalculadoraCuotasController extends Controller
     {
         //$recive = "lishanxime201099@gmail.com";
         $recive = session('datoCuatroCalculadora');
-        var_dump(session('Beca'));
+        var_dump(session(['Beca']));
         //Mail::to($recive)->send(new CalculadoraDetallesBeca());
     }
 
