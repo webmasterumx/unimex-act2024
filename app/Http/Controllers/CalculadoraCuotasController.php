@@ -55,7 +55,7 @@ class CalculadoraCuotasController extends Controller
     {
         //$recive = "lishanxime201099@gmail.com";
         $recive = session('datoCuatroCalculadora');
-        var_dump(session(['Beca']));
+        var_dump(session('idCarroCompra'));
         //Mail::to($recive)->send(new CalculadoraDetallesBeca());
     }
 
@@ -70,9 +70,7 @@ class CalculadoraCuotasController extends Controller
 
     public function establecerVariablesPromocion(Request $request)
     {
-
-
-        session(["Beca" => $request->Beca]);
+      /*   session(["Beca" => $request->Beca]);
         session(["Carrera" => $request->Carrera]);
         session(["ClaveCuoProm" => $request->ClaveCuoProm]);
         session(["ClaveNivel" => $request->ClaveNivel]);
@@ -94,8 +92,9 @@ class CalculadoraCuotasController extends Controller
         session(["TotalSB" => $request->TotalSB]);
         session(["Turno" => $request->Turno]);
         session(["Uniforme" => $request->Uniforme]);
-        session(["Vigencia" => $request->Vigencia]);
+        session(["Vigencia" => $request->Vigencia]); */
 
+        session(['idCarroCompra' => '15320']);
        
     }
 }
