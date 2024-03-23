@@ -379,7 +379,7 @@
                                     <tr>
                                         <td class="align-justify">
                                             <br />
-                                            <p>Número de Folio: <b> 2157215454</b><br /><br />
+                                            <p>Número de Folio: <b> {{ $datos->nombreProspecto }}</b><br /><br />
                                                 ¡Felicidades! <b> {{ $datos->nombreProspecto }} {{ $datos->apellidosProspecto }} </b> ya diste el primer paso para
                                                 cambiar tu vida.
                                                 <br /><br />Has enviado tu solicitud para cursar <b> {{ $datos->selectNivel }} </b> </b> <b></b> en el Plantel <b> {{ $datos->selectPlantel }} </b> para
@@ -449,11 +449,11 @@
 
                                                                             configuración para facilitar la
                                                                             recepción).<br><br>
-                                                                            Si deseas comunicarte con un asesor, marca
+                                                                           {{--  Si deseas comunicarte con un asesor, marca
                                                                             al:
                                                                             <strong><u>'.$telPlan.'</u></strong>.<br>
                                                                             Visítanos en:
-                                                                            <strong><u>'.$dirPlan.'</u></strong>
+                                                                            <strong><u>'.$dirPlan.'</u></strong> --}}
                                                                             <br>
                                                                         </td>
                                                                     </tr>

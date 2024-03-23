@@ -196,7 +196,7 @@ function recalculoDeCombos(carreraResguardo, nombreCarreraRes) {
     }).done(function (data) {
         console.log(data);
         $("#selectCarrera").empty();
-        $("#selectCarrera").append(`<option>- Selecciona una Carrera- </option>`); 
+        $("#selectCarrera").append(`<option>- Selecciona una Carrera- </option>`);
 
         for (let index = 0; index < data.length; index++) { //recorrer el array de carreras
             const element = data[index]; // se establece un elemento por carrera optenida
@@ -351,6 +351,24 @@ function actualizarProspectoCalculadora(turno) {
     }).done(function (data) {
         console.log(data);
 
+    }).fail(function () {
+        console.log("Algo salió mal");
+    });
+}
+
+function enviarDetallesHorarioBeca() {
+
+    let rutaActualizar = setUrlBase() + 'enviar/detalles/beca';
+
+    $.ajax({
+        method: "GET",
+        url: rutaActualizar,
+    }).done(function (data) {
+        console.log(data);
+        Swal.fire({
+            icon: "succes",
+            text: "Los detalles de tu beca han sido mandados a tu correo.", 
+        });
     }).fail(function () {
         console.log("Algo salió mal");
     });

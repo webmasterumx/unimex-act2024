@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\CalculadoraCuotas;
+use App\Mail\CalculadoraDetallesBeca;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -10,7 +11,7 @@ use Illuminate\Support\Facades\Mail;
 class CalculadoraCuotasController extends Controller
 {
 
-    public function index() : View
+    public function index(): View
     {
         return view('calculadoraDeBecas.inicio');
     }
@@ -41,16 +42,28 @@ class CalculadoraCuotasController extends Controller
         );
 
         //dd($valores);
-
-
         $respuesta = app(ApiConsumoController::class)->agregarProspectoCRM($valores);
-        $recive = "lishanxime201099@gmail.com";
-        //$envio =  Mail::to($recive)->bcc("umrec_web@unimex.edu.mx")->send(new CalculadoraCuotas($request));
+        //$recive = "lishanxime201099@gmail.com";
+
+        SELF::establecerVariablesCorreo($request, $respuesta);
+        //$envio =  Mail::to($request->emailProspecto)->bcc("umrec_web@unimex.edu.mx")->send(new CalculadoraCuotas($request));
 
         return response()->json($respuesta);
     }
 
-    public function enviarCorreoCalculadora(Request $request)
+    public function enviarCorreoCalculadoraDetalleBeca()
     {
+        //$recive = "lishanxime201099@gmail.com";
+        $recive = session('datoCuatroCalculadora');
+        Mail::to($recive)->send(new CalculadoraDetallesBeca());
+    }
+
+    public function establecerVariablesCorreo(Request $request, $respuesta)
+    {
+        session(["datoUnoCalculadora" => $request->nombreProspecto]);
+        session(["datoDosCalculadora" => $request->apellidosProspecto]);
+        session(["datoTresCalculadora" => $request->telefonoProspecto]);
+        session(["datoCuatroCalculadora" => $request->emailProspecto]);
+        session(["datoCincoCalculadora" => $respuesta['FolioCRM']]);
     }
 }

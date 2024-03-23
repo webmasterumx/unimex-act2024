@@ -103,6 +103,30 @@ class ApiConsumoController extends Controller
             "egresado" => $request->egresado,
         ]);
 
+        session(["Beca" => $response['Beca']]);
+        session(["Carrera" => $response['Carrera']]);
+        session(["ClaveCuoProm" => $response['ClaveCuoProm']]);
+        session(["ClaveNivel" => $response['ClaveNivel']]);
+        session(["ClavePer" => $response['ClavePer']]);
+        session(["Credencial" => $response['Credencial']]);
+        session(["DescripPer" => $response['DescripPer']]);
+        session(["Dias" => $response['Dias']]);
+        session(["Horario" => $response['Horario']]);
+        session(["InicioClases" => $response['InicioClases']]);
+        session(["InscCB" => $response['InscCB']]);
+        session(["InscSB" => $response['InscSB']]);
+        session(["ParcCB" => $response['ParcCB']]);
+        session(["ParcSB" => $response['ParcSB']]);
+        session(["Periodo" => $response['Periodo']]);
+        session(["Plantel" => $response['Plantel']]);
+        session(["ReinsCB" => $response['ReinsCB']]);
+        session(["ReinscSB" => $response['ReinscSB']]);
+        session(["TotalCB" => $response['TotalCB']]);
+        session(["TotalSB" => $response['TotalSB']]);
+        session(["Turno" => $response['Turno']]);
+        session(["Uniforme" => $response['Uniforme']]);
+        session(["Vigencia" => $response['Vigencia']]);
+
         return $response->json();
     }
 

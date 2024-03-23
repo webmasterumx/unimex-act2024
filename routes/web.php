@@ -77,6 +77,7 @@ Route::post('/form/quejas/sugerencias', [FormController::class, 'quejasYsugerenc
 Route::post('/form/empresas/occ', [FormController::class, 'empresasOCC'])->name('form.empresas.pcc');
 //? peticiones de calculadora de cuotas
 Route::post('/insertar/prospecto/calculadora', [CalculadoraCuotasController::class, 'insertarProspecto'])->name('paso.uno');
+Route::get('/enviar/detalles/beca', [CalculadoraCuotasController::class, 'enviarCorreoCalculadoraDetalleBeca']);
 
 //!testing
 Route::get('/testing', [FormController::class, 'testerEnvio'])->name('testing');
