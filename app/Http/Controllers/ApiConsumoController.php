@@ -103,6 +103,8 @@ class ApiConsumoController extends Controller
             "egresado" => $request->egresado,
         ]);
 
+        app(CalculadoraCuotasController::class)->establecerVariablesPromocion($response);
+
         return $response->json();
     }
 
