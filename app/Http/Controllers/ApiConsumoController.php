@@ -102,11 +102,7 @@ class ApiConsumoController extends Controller
             "claveBeca" => $request->claveBeca,
             "egresado" => $request->egresado,
         ]);
-
-        app(CalculadoraCuotasController::class)->establecerVariablesPromocion($response);
         
-        //var_dump(session('Beca'));
-
         return $response->json();
     }
 

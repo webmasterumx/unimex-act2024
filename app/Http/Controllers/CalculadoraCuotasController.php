@@ -55,7 +55,7 @@ class CalculadoraCuotasController extends Controller
     {
         //$recive = "lishanxime201099@gmail.com";
         $recive = session('datoCuatroCalculadora');
-        var_dump(session('ClaveNivel'));
+        var_dump(session('Beca'));
         //Mail::to($recive)->send(new CalculadoraDetallesBeca());
     }
 
@@ -68,31 +68,34 @@ class CalculadoraCuotasController extends Controller
         session(["datoCincoCalculadora" => $respuesta['FolioCRM']]);
     }
 
-    public function establecerVariablesPromocion($response)
+    public function establecerVariablesPromocion(Request $request)
     {
 
-        session(["Beca" => $response['Beca']]);
-        session(["Carrera" => $response['Carrera']]);
-        session(["ClaveCuoProm" => $response['ClaveCuoProm']]);
-        session(["ClaveNivel" => $response['ClaveNivel']]);
-        session(["ClavePer" => $response['ClavePer']]);
-        session(["Credencial" => $response['Credencial']]);
-        session(["DescripPer" => $response['DescripPer']]);
-        session(["Dias" => $response['Dias']]);
-        session(["Horario" => $response['Horario']]);
-        session(["InicioClases" => $response['InicioClases']]);
-        session(["InscCB" => $response['InscCB']]);
-        session(["InscSB" => $response['InscSB']]);
-        session(["ParcCB" => $response['ParcCB']]);
-        session(["ParcSB" => $response['ParcSB']]);
-        session(["Periodo" => $response['Periodo']]);
-        session(["Plantel" => $response['Plantel']]);
-        session(["ReinsCB" => $response['ReinsCB']]);
-        session(["ReinscSB" => $response['ReinscSB']]);
-        session(["TotalCB" => $response['TotalCB']]);
-        session(["TotalSB" => $response['TotalSB']]);
-        session(["Turno" => $response['Turno']]);
-        session(["Uniforme" => $response['Uniforme']]);
-        session(["Vigencia" => $response['Vigencia']]);
+
+        session(["Beca" => $request->Beca]);
+        session(["Carrera" => $request->Carrera]);
+        session(["ClaveCuoProm" => $request->ClaveCuoProm]);
+        session(["ClaveNivel" => $request->ClaveNivel]);
+        session(["ClavePer" => $request->ClavePer]);
+        session(["Credencial" => $request->Credencial]);
+        session(["DescripPer" => $request->DescripPer]);
+        session(["Dias" => $request->Dias]);
+        session(["Horario" => $request->Horario]);
+        session(["InicioClases" => $request->InicioClases]);
+        session(["InscCB" => $request->InscCB]);
+        session(["InscSB" => $request->InscSB]);
+        session(["ParcCB" => $request->ParcCB]);
+        session(["ParcSB" => $request->ParcSB]);
+        session(["Periodo" => $request->Periodo]);
+        session(["Plantel" => $request->Plantel]);
+        session(["ReinsCB" => $request->ReinsCB]);
+        session(["ReinscSB" => $request->ReinscSB]);
+        session(["TotalCB" => $request->TotalCB]);
+        session(["TotalSB" => $request->TotalSB]);
+        session(["Turno" => $request->Turno]);
+        session(["Uniforme" => $request->Uniforme]);
+        session(["Vigencia" => $request->Vigencia]);
+
+       
     }
 }

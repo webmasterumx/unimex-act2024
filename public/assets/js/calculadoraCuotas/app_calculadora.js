@@ -41,6 +41,7 @@ function selectHorario(turno, beca, element) {
 
         if (data.Beca != undefined) {
             establecerValoresCosto(data);
+            establecerVariablesPromo(data);
         }
         else {
             if ($("#grupoInformacion").hasClass("d-none") === false) {
@@ -356,6 +357,26 @@ function actualizarProspectoCalculadora(turno) {
     });
 }
 
+function establecerVariablesPromo(data) {
+
+    let ruta = setUrlBase() + 'establecer/variables/oferta';
+
+    $.ajax({
+        method: "POST",
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        url: ruta,
+        data: data
+    }).done(function (data) {
+        console.log(data);
+
+    }).fail(function () {
+        console.log("Algo salió mal");
+    });
+
+}
+
 function enviarDetallesHorarioBeca() {
 
     let rutaActualizar = setUrlBase() + 'enviar/detalles/beca';
@@ -367,7 +388,7 @@ function enviarDetallesHorarioBeca() {
         console.log(data);
         Swal.fire({
             icon: "success",
-            text: "Los detalles de tu beca han sido mandados a tu correo.", 
+            text: "Los detalles de tu beca han sido mandados a tu correo.",
         });
     }).fail(function () {
         console.log("Algo salió mal");
