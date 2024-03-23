@@ -104,8 +104,10 @@ class ApiConsumoController extends Controller
         ]);
 
         app(CalculadoraCuotasController::class)->establecerVariablesPromocion($response);
+        
+        var_dump(session('ClaveCuoProm'));
 
-        return response()->json($response);
+        //return $response->json();
     }
 
     public function actualizaProspecto(Request $request)
