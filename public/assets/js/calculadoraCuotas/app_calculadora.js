@@ -259,12 +259,12 @@ function obtenerHorariosBeca() {
             $('#grupoBotones').append(option);
         }
         else if (data.error == undefined) {
-            let arrayColor = ['btn-outline-primary', 'btn-outline-info', 'btn-outline-secondary', 'btn-outline-success', 'btn-outline-danger', 'btn-outline-warning', 'btn-outline-dark'];
+            let arrayColor = ['btn-outline-primary', 'btn-outline-info', 'btn-outline-secondary', 'btn-outline-success', 'btn-outline-danger', 'btn-outline-warning', 'btn-outline-dark', 'bg-outline-purple', 'bg-outline-orange', 'bg-outline-teal', 'bg-outline-pink', 'bg-outline-vine', 'bg-outline-brisa', 'bg-outline-durazno', 'bg-outline-pasto', 'bg-outline-paleta'];
             let cont = 0;
             $.each(data, function (index, value) {
                 let option = `
                 <div class="col-3 mt-3">
-                    <button class="btn ${arrayColor[cont]}  style_prevu_kit w-100" onclick="selectHorario(${value.ClaveTurno}, ${value.ClaveBeca}, this)">
+                    <button class="btn ${arrayColor[Math.floor(Math.random() * arrayColor.length)]}  style_prevu_kit w-100" onclick="selectHorario(${value.ClaveTurno}, ${value.ClaveBeca}, this)">
                         ${value.Turno} <br>
                         ${value.Horario} <br>
                         Beca : ${value.ValorBeca}%

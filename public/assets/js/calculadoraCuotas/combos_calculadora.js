@@ -48,6 +48,9 @@ $("select[name=selectPlantel]").change(function () {
 
 $("select[name=selectPeriodo]").change(function () {
 
+    let nombrePeriodo = $('select[name="selectPeriodo"] option:selected').text();
+    $('#periodoCrm').val(`${nombrePeriodo}`);
+
     //es la primera peticion o se limpio el combo de carreras
 
     if ($('#folioCrm').val() == "" || $('#folioCrm').val() == null) {
@@ -69,6 +72,9 @@ $("select[name=selectPeriodo]").change(function () {
 });
 
 $("select[name=selectNivel]").change(function () {
+
+    let nombreNivel = $('select[name="selectNivel"] option:selected').text();
+    $('#nivelCrm').val(`${nombreNivel}`);
 
     console.log($('select[name=selectNivel]').val());
 

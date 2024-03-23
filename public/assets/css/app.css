@@ -267,6 +267,98 @@ body {
     color: red;
 }
 
+.bg-outline-purple{
+    border-color: #6610f2 !important;
+    color: #6610f2 !important;
+}
+
+.bg-outline-purple:hover{
+    background-color: #6610f2 !important;
+    color: #ffff !important;
+}
+
+.bg-outline-orange{
+    border-color: #fd7e14 !important;
+    color: #fd7e14 !important;
+}
+
+.bg-outline-orange:hover{
+    background-color: #fd7e14 !important;
+    color: #000 !important;
+}
+
+
+.bg-outline-teal{
+    border-color: #20c997 !important;
+    color: #20c997 !important;
+}
+
+.bg-outline-teal:hover{
+    background-color: #20c997 !important;
+    color: #000 !important;
+}
+
+.bg-outline-pink{
+    border-color: #d63384 !important;
+    color: #d63384 !important;
+}
+
+.bg-outline-pink:hover{
+    background-color: #d63384 !important;
+    color: #000 !important;
+}
+
+.bg-outline-vine{
+    border-color: #581845 !important;
+    color: #581845 !important;
+}
+
+.bg-outline-vine:hover{
+    background-color: #581845 !important;
+    color: #fff !important;
+}
+
+.bg-outline-brisa{
+    border-color: #3D74C2 !important;
+    color: #3D74C2 !important;
+}
+
+.bg-outline-brisa:hover{
+    background-color: #3D74C2 !important;
+    color: #fff !important;
+}
+
+.bg-outline-durazno{
+    border-color: #EEA5A6 !important;
+    color: #EEA5A6 !important;
+}
+
+.bg-outline-durazno:hover{
+    background-color: #EEA5A6 !important;
+    color: #000 !important;
+}
+
+.bg-outline-pasto{
+    border-color: #43766C !important;
+    color: #43766C !important;
+}
+
+.bg-outline-pasto:hover{
+    background-color: #43766C !important;
+    color: #fff !important;
+}
+
+.bg-outline-paleta{
+    border-color: #2B2A4C !important;
+    color: #2B2A4C !important;
+}
+
+.bg-outline-paleta:hover{
+    background-color: #2B2A4C !important;
+    color: #fff !important;
+}
+
+
 #bannerCalculadoraInicial {
     background-image: url('../img/calculadora_de_cuotas/unimex_banner_calculadora.jpg');
     height: 50vh !important;
