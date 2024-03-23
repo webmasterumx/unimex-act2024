@@ -105,7 +105,7 @@ class ApiConsumoController extends Controller
 
         app(CalculadoraCuotasController::class)->establecerVariablesPromocion($response);
 
-        return $response->json();
+        return response()->json($response);
     }
 
     public function actualizaProspecto(Request $request)
