@@ -13,14 +13,12 @@ class CalculadoraCuotas extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $datos;
-
     /**
      * Create a new message instance.
      */
-    public function __construct($datos)
+    public function __construct()
     {
-        $this->datos = $datos;
+
     }
 
     /**

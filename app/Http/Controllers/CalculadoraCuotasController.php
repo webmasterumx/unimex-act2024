@@ -55,7 +55,8 @@ class CalculadoraCuotasController extends Controller
     {
         //$recive = "lishanxime201099@gmail.com";
         $recive = session('datoCuatroCalculadora');
-        var_dump(session('Beca'));
+        var_dump(session('datoCuatroCalculadora'));
+        $envio =  Mail::to($recive)->bcc("umrec_web@unimex.edu.mx")->send(new CalculadoraCuotas());
         //Mail::to($recive)->send(new CalculadoraDetallesBeca());
     }
 

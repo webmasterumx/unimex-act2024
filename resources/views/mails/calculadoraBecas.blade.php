@@ -379,11 +379,11 @@
                                     <tr>
                                         <td class="align-justify">
                                             <br />
-                                            <p>Número de Folio: <b> {{ $datos->nombreProspecto }}</b><br /><br />
-                                                ¡Felicidades! <b> {{ $datos->nombreProspecto }} {{ $datos->apellidosProspecto }} </b> ya diste el primer paso para
+                                            <p>Número de Folio: <b> {{ session('datoCincoCalculadora') }} </b><br /><br />
+                                                ¡Felicidades! <b> {{ session('datoUnoCalculadora') . ' ' .session('datoDosCalculadora') }} </b> ya diste el primer paso para
                                                 cambiar tu vida.
-                                                <br /><br />Has enviado tu solicitud para cursar <b> {{ $datos->selectNivel }} </b> </b> <b></b> en el Plantel <b> {{ $datos->selectPlantel }} </b> para
-                                                iniciar tus estudios en <b> {{ $datos->selectPeriodo }} </b>
+                                                <br /><br />Has enviado tu solicitud para cursar <b>  </b> </b> <b></b> en el Plantel <b>  </b> para
+                                                iniciar tus estudios en <b>  </b>
                                             </p><br>
                                             <table border="0" cellpadding="0" cellspacing="0">
                                                 <tbody>
