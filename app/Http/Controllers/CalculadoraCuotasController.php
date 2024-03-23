@@ -71,7 +71,7 @@ class CalculadoraCuotasController extends Controller
     public function establecerVariablesPromocion(Request $request)
     {
         echo $request->Beca;
-      session(["Beca" => $request->Beca]);
+        session(["Beca" => $request->Beca]);
         session(["Carrera" => $request->Carrera]);
         session(["ClaveCuoProm" => $request->ClaveCuoProm]);
         session(["ClaveNivel" => $request->ClaveNivel]);
@@ -93,9 +93,8 @@ class CalculadoraCuotasController extends Controller
         session(["TotalSB" => $request->TotalSB]);
         session(["Turno" => $request->Turno]);
         session(["Uniforme" => $request->Uniforme]);
-        session(["Vigencia" => $request->Vigencia]); 
+        session(["Vigencia" => $request->Vigencia]);
 
         echo session('Beca');
-       
     }
 }
