@@ -366,7 +366,7 @@ function enviarDetallesHorarioBeca() {
     }).done(function (data) {
         console.log(data);
         Swal.fire({
-            icon: "succes",
+            icon: "success",
             text: "Los detalles de tu beca han sido mandados a tu correo.", 
         });
     }).fail(function () {
