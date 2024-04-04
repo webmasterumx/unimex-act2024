@@ -140,4 +140,20 @@ class ExtrasUnimexController extends Controller
 
         return response()->json($respuesta);
     }
+
+    public function getVariablesPosicionamientoCalculadora()
+    {
+        $respuesta['nivel_calculadora'] = session('nivel_calculadora');
+        $respuesta['carrera_calculadora'] = session('carrera_calculadora');
+
+        return response()->json($respuesta);
+    }
+
+    public function getVariablesPosicionamientoPreinscripcion()
+    {
+        $respuesta['nivel_preinscripcion'] = session('nivel_preinscripcion');
+        $respuesta['carrera_preinscripcion'] = session('carrera_preinscripcion');
+
+        return response()->json($respuesta);
+    }
 }

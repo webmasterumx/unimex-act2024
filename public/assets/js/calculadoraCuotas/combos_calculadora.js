@@ -12,7 +12,7 @@ $(document).ready(function () {
             $('#selectPlantel').append("<option value='" + value.clave + "'>" + value
                 .descrip + "</option>");
         });
-
+   
     }).fail(function () {
         console.log("Algo salió mal");
     });

@@ -160,7 +160,6 @@ class UnimexController extends Controller
 
     public function calculaTuCuota(): View
     {
-
         return view('calculaTuCuota');
     }
 

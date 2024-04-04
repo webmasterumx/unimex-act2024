@@ -294,7 +294,7 @@
                     </div>
                     <div class="col-12 mt-3">
                         <p class="text-center">
-                            Elige la Licenciatura de interes y despues el horario que prefieres
+                            Elige la Licenciatura de interés y después el horario que prefieres.
                         </p>
                     </div>
                     <div class="col-12">
@@ -329,7 +329,8 @@
                                 <i class="bi bi-printer" style="color: #de951b;"></i>
                                 Imprimir
                             </button>
-                            <button onclick="enviarDetallesHorarioBeca()" id="correoButton" type="button" class="btn mb-3 ms-2">
+                            <button onclick="enviarDetallesHorarioBeca()" id="correoButton" type="button"
+                                class="btn mb-3 ms-2">
                                 <i class="bi bi-envelope" style="color: #de951b;"></i>
                                 Enviar a correo
                             </button>
@@ -357,7 +358,7 @@
                             <div class="card" style="border: 1px solid #004b93">
                                 <div class="card-header text-center text-white"
                                     style="background: #004b93; font-size: 13px;">
-                                    4 PARCIALES DE
+                                    4 PARCIALIDADES DE
                                 </div>
                                 <div class="card-body row">
                                     <div class="col-12 col-md-7">
@@ -401,14 +402,14 @@
                                         horario: <span id="turnoInfo" style="color: #004b93"><b>MATUTINO C</b></span> de
                                         <span id="horarioInfo" style="color: #004b93"><b>09:00 A 13:00 Hrs.</b></span>
                                         <br>
-                                        Inicio de clases <span id="incioInfo"
+                                        Inicio de clases: <span id="incioInfo"
                                             style="color: #004b93"><b>ENERO</b></span><br>
                                         Vigencia: <span id="vigenciaInfo"
                                             style="color: #004b93"><b>21/10/2023</b></span><br>
-                                        Durante el cuatrimestre se deberan pagar 4 parcialidades indicadas en el Calendario
+                                        Durante el cuatrimestre se deberán pagar 4 parcialidades indicadas en el Calendario
                                         Escolar. <br>
                                         Para mayor información de los costos de reinscripción, acude al plantel de tu
-                                        interes.
+                                        interés.
                                     </p>
                                 </div>
                             </div>
@@ -422,6 +423,24 @@
 
 @section('scripts')
     <script>
+        $.ajax({
+            method: "GET",
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            url: setUrlBase() + "get/variables/calculadora",
+        }).done(function(data) {
+            console.log(data);
+            if (data.nivel_calculadora != null) {
+                console.log('hay variable de session para este modulo');
+                $("#selectNivel").empty();
+                $('#selectNivel').append("<option selected value=''>" + data.nivel_calculadora + "</option>");
+            }
+
+        }).fail(function() {
+            console.log("Algo salió mal");
+        });
+
         function setUrlBase() {
             let urlBase = "{{ env('APP_URL') }}";
             return urlBase;

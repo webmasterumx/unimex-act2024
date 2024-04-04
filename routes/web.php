@@ -46,6 +46,7 @@ Route::view('/datos/pago/preinscripcion', 'preinscripcionEnLinea.datosPago')->na
 //* rutas de establecimiento de variables de session para calculadora de becas
 Route::get('/set/variables/calculadora/{nivel}/{carrera}', [ExtrasUnimexController::class, 'setVariablesPosicionamientoCalculadora'])->name("set.variables.calculadora");
 Route::get('/set/variables/preinscripcion/{nivel}/{carrera}', [ExtrasUnimexController::class, 'setVariablesPosicionamientoPreinscripcion'])->name('set.variables.preinscripcion');
+Route::get('/get/variables/calculadora', [ExtrasUnimexController::class, 'getVariablesPosicionamientoCalculadora'])->name('get.variables.calculadora');
 
 //!modulo de preinscripcion en linea
 Route::get('/App/Preinscripcion-online', [PreinscripcionEnLineaController::class, 'index'])->name('preinscripcion.linea');
