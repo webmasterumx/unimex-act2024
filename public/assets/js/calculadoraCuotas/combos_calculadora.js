@@ -12,7 +12,7 @@ $(document).ready(function () {
             $('#selectPlantel').append("<option value='" + value.clave + "'>" + value
                 .descrip + "</option>");
         });
-   
+
     }).fail(function () {
         console.log("Algo salió mal");
     });
@@ -38,7 +38,7 @@ $("select[name=selectPlantel]").change(function () {
         $('#grupoBotones').empty();
         $('#grupoInformacion').addClass('d-none');
         $("#selectCarrera").empty();
-        $("#selectCarrera").append(`<option><div class="spinner-border" role="status"><span class="visually-hidden">Recalculando...</span></div></option>`); 
+        $("#selectCarrera").append(`<option><div class="spinner-border" role="status"><span class="visually-hidden">Recalculando...</span></div></option>`);
 
         recalculoDeCombos(carreraResguardo, nombreCarreraRes);
 
@@ -54,8 +54,55 @@ $("select[name=selectPeriodo]").change(function () {
     //es la primera peticion o se limpio el combo de carreras
 
     if ($('#folioCrm').val() == "" || $('#folioCrm').val() == null) {
-        console.log('es elprimer calculo');
-        getNiveles();
+        console.log('es elprimer calculo, verificar si no hay variables de sesion para evitar perder la infirmacion');
+
+        $.ajax({
+            method: "GET",
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            url: setUrlBase() + "get/variables/calculadora",
+        }).done(function (data) {
+            console.log(data);
+            if (data.nivel_calculadora != null) {
+                $("#selectNivel").empty();
+                $("#selectNivel").append(`<option>Recalculado...</option>`);
+
+                let plantel = $('select[name=selectPlantel]').val();
+                $.ajax({
+                    method: "POST",
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    url: setUrlBase() + "getNiveles",
+                    data: {
+                        plantel: plantel
+                    }
+                }).done(function (info) {
+                    console.log(info);
+                    $.each(info, function (index, value) {
+                        console.log(value.descrip);
+                        console.log(data.nivel_calculadora);
+                        if (value.descrip == data.nivel_calculadora) {
+                            estado = "selected";
+                        } else {
+                            estado = "";
+                        }
+                        $('#selectNivel').append("<option value='" + value.clave + "' " + estado + ">" + value
+                            .descrip + "</option>");
+                    });
+
+                }).fail(function () {
+                    console.log("Algo salió mal");
+                });
+            }
+            else {
+                getNiveles();
+            }
+
+        }).fail(function () {
+            console.log("Algo salió mal");
+        });
     }
     else {
         console.log('se hizo ya un calculo');

@@ -92,12 +92,33 @@ $("#form_calculadora").validate({
                 $('#periodoCrm').val(periodoProspecto);
                 $('#nivelCrm').val(nivelProspecto);
 
-                getCarreras();
+
+
+                $.ajax({
+                    method: "GET",
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    url: setUrlBase() + "get/variables/calculadora",
+                }).done(function (data) {
+                    console.log(data);
+                    if (data.carrera_calculadora != null) {
+                        getCarrerasWithVariableEstablecida(data.carrera_calculadora);
+                    }
+                    else {
+                        getCarreras();
+                    }
+
+                }).fail(function () {
+                    console.log("Algo salió mal");
+                });
 
                 $('#envio_caluladora').html(`Calcular`);
 
                 $('#carouselExampleIndicators').addClass('d-none');
-                $('#informacionCRM').removeClass('d-none')
+                $('#informacionCRM').removeClass('d-none');
+
+
 
             }).fail(function () {
                 console.log("Algo salió mal");

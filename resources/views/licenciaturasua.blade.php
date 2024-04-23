@@ -59,10 +59,10 @@
                 <button class="btn bg-unimex text-white">
                     ¿Cómo obtengo mi Beca?
                 </button>
-                <a href="" class="btn bg-unimex text-white">
+                <a id="redireccionCTCL" href="#" class="btn bg-unimex text-white">
                     Calcula tu Couta
                 </a>
-                <a href="{{ route('preinscripcion.linea') }}" class="btn text-white" style="background-color: #de951b;">
+                <a id="redireccionPELL" href="#" class="btn text-white" style="background-color: #de951b;">
                     Preinscripción En Línea
                 </a>
             </div>
@@ -276,6 +276,42 @@
             autoplaySpeed: 2000,
             prevArrow: '<button type="button" class="slick-prev-requisitos"><i class="bi bi-arrow-left-circle-fill"></i></button>',
             nextArrow: '<button type="button" class="slick-next-requisitos"><i class="bi bi-arrow-right-circle-fill"></i></button>',
+        });
+
+        const enlaceCalculadora = document.getElementById("redireccionCTCL");
+        enlaceCalculadora.addEventListener('click', function() {
+            let nivel = "Licenciatura";
+            let carrera = "{{ $licenciatura_sua->titulo }}";
+            let carreraFinal = carrera.replace(/ /g, "_");
+
+            $.ajax({
+                method: "GET",
+                url: setUrlBase() + "set/variables/calculadora/" + nivel + "/" + carreraFinal,
+            }).done(function(data) {
+                console.log(data);
+
+            }).fail(function() {
+                console.log("Algo salió mal");
+            });
+            window.open("{{ route('calcula_tu_cuota') }}", '_blank');
+        });
+
+        const enlacePreinscripcion = document.getElementById("redireccionPELL");
+        enlacePreinscripcion.addEventListener('click', function() {
+            let nivel = "Licenciatura";
+            let carrera = "{{ $licenciatura_sua->titulo }}";
+            let carreraFinal = carrera.replace(/ /g, "_");
+
+            $.ajax({
+                method: "GET",
+                url: setUrlBase() + "set/variables/preinscripcion/" + nivel + "/" + carreraFinal,
+            }).done(function(data) {
+                console.log(data);
+
+            }).fail(function() {
+                console.log("Algo salió mal");
+            });
+            window.open("{{ route('preinscripcion.linea') }}", '_blank');
         });
     </script>
 @endsection

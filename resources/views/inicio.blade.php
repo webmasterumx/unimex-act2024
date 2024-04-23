@@ -25,7 +25,8 @@
             <div id="bannerInicial">
                 @foreach ($banners as $banner)
                     <a href="{{ route($banner->link) }}" target="_blank" class="itemBannerInit">
-                        <img style="height: auto;" src="{{ asset($banner->url) }}" class="d-block w-100" alt="{{ $banner->alt }}">
+                        <img style="height: auto;" src="{{ asset($banner->url) }}" class="d-block w-100"
+                            alt="{{ $banner->alt }}">
                     </a>
                 @endforeach
             </div>
@@ -163,6 +164,7 @@
     </section>
 
     @include('include.contactoForm')
+    @include('include.modales.modalCalculaTuCuota')
 @endsection
 
 @section('scripts')
@@ -215,6 +217,10 @@
 
             $("#nivelSelect").append(`<option value="">Nivel</option>`);
             $("#carreraSelect").append(`<option value="">Carrera</option>`);
+
+            $(document).ready(function() {
+                $('#exampleModal').modal('show')
+            });
         });
     </script>
 @endsection

@@ -197,8 +197,7 @@
                                     rel="noopener">Examen de Conocimientos</a>
                             </h5>
                             <div class="card" style="min-height: 150px;">
-                                <a target="_blank" rel="noopener"
-                                    href="{{ route('examen_de_conocimientos') }}">
+                                <a target="_blank" rel="noopener" href="{{ route('examen_de_conocimientos') }}">
                                     <div class="parent" style="width: 150px;">
                                         <div class="children bg-examen">
                                             <span class="linka">Ver Más</span>
@@ -207,8 +206,8 @@
                                 </a>
                                 <div class="card-body">
                                     <p class="card-text" style="text-align: center;">
-                                        <a href="{{ route('examen_de_conocimientos') }}"
-                                            target="_blank" rel="noopener"><span class="blue-text">Examen de
+                                        <a href="{{ route('examen_de_conocimientos') }}" target="_blank"
+                                            rel="noopener"><span class="blue-text">Examen de
                                                 Conocimientos</span></a>
                                     </p>
                                 </div>
@@ -245,7 +244,8 @@
                                     rel="noopener noreferrer">Calendarios Escolares</a>
                             </h5>
                             <div class="card" style="min-height: 150px;">
-                                <a href="{{ route('calendarios_escolares') }}" target="_blank" rel="noopener noreferrer">
+                                <a href="{{ route('calendarios_escolares') }}" target="_blank"
+                                    rel="noopener noreferrer">
                                     <div class="parent" style="width: 150px;">
                                         <div class="children bg-calendario">
                                             <span class="linka">Ver Más</span>
@@ -549,7 +549,6 @@
     </footer>
     <!-- Fin de Footer -->
 
-
     <!-- JS -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
@@ -570,7 +569,7 @@
     <script src="{{ asset('assets/js/app.js') }}"></script>
     <script src="{{ asset('assets/js/main.js') }}"></script>
     <script src="{{ asset('assets/js/custom.js') }}"></script>
-    <script src="{{ asset('assets/js/form.js') }}"></script>    
+    <script src="{{ asset('assets/js/form.js') }}"></script>
 
     <script>
         function setUrlBase() {

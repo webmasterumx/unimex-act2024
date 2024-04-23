@@ -8,15 +8,15 @@
                     @csrf
                     <h6>¿Cuándo te gustaría iniciar?</h6>
                     <hr>
-                    <select class="form-select form-select-sm col-12 mb-2" aria-label="Elegir plantel" name="selectPlantel"
+                    <select class="form-select form-select-sm col-12 mb-2" name="selectPlantel"
                         id="selectPlantel">
                         <option value="" selected disabled>Selecciona el Plantel</option>
                     </select>
-                    <select class="form-select form-select-sm col-12 mb-2" aria-label="Elegir periodo" name="selectPeriodo"
+                    <select class="form-select form-select-sm col-12 mb-2" name="selectPeriodo"
                         id="selectPeriodo">
                         <option value="" selected disabled>¿Cuándo deseas iniciar?</option>
                     </select>
-                    <select class="form-select form-select-sm col-12 mb-2" aria-label="Elegir Nivel" name="selectNivel"
+                    <select class="form-select form-select-sm col-12 mb-2" name="selectNivel"
                         id="selectNivel">
                         <option value="" selected disabled>Selecciona el Nivel</option>
                     </select>
@@ -398,14 +398,14 @@
                                         Tu selección ha sido: <span id="carreraInfo" style="color: #004b93;"><b>
                                                 LICENCIATURA EN DISEÑO
                                                 GRAFICO</b></span> <br>
-                                        Plantel: <span id="plantelInfo" style="color: #004b93;"><b>VERACRUZ</b></span> en
-                                        horario: <span id="turnoInfo" style="color: #004b93"><b>MATUTINO C</b></span> de
-                                        <span id="horarioInfo" style="color: #004b93"><b>09:00 A 13:00 Hrs.</b></span>
+                                        Plantel: <span id="plantelInfo" style="color: #004b93;"><b></b></span> en
+                                        horario: <span id="turnoInfo" style="color: #004b93"><b></b></span> de
+                                        <span id="horarioInfo" style="color: #004b93"><b></b></span>
                                         <br>
                                         Inicio de clases: <span id="incioInfo"
-                                            style="color: #004b93"><b>ENERO</b></span><br>
+                                            style="color: #004b93"><b></b></span><br>
                                         Vigencia: <span id="vigenciaInfo"
-                                            style="color: #004b93"><b>21/10/2023</b></span><br>
+                                            style="color: #004b93"><b></b></span><br>
                                         Durante el cuatrimestre se deberán pagar 4 parcialidades indicadas en el Calendario
                                         Escolar. <br>
                                         Para mayor información de los costos de reinscripción, acude al plantel de tu
