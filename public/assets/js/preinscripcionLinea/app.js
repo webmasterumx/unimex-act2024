@@ -90,3 +90,149 @@ function correccionDatos() {
     $("#respuestaSuccess").addClass('d-none');
     $('#calcularPromo').removeClass('d-none');
 }
+
+function setVariablesPrecargadas() {
+
+    $.ajax({
+        method: "GET",
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        url: setUrlBase() + "get/variables/preinscripcion",
+    }).done(function (data) {
+        console.log(data);
+        if (data.carrera_preinscripcion != null) {
+            console.log('hay variable de session para este modulo');
+
+            carreraFinal = data.carrera_preinscripcion.replaceAll("_", " ");
+
+            $("#nivelSelect").empty();
+            $('#nivelSelect').append("<option selected value=''>" + data.nivel_preinscripcion + "</option>");
+
+            $("#carreraSelect").empty();
+            $('#carreraSelect').append("<option selected value=''>" + carreraFinal + "</option>");
+        }
+        else {
+            $("#nivelSelect").empty();
+            $('#nivelSelect').append(`<option value="" selected disabled>Selecciona un nivel</option>`);
+
+            $("#carreraSelect").empty();
+            $('#carreraSelect').append(`<option value="" selected disabled>Selecciona una carrera</option>`);
+        }
+
+    }).fail(function () {
+        console.log("Algo salió mal");
+    });
+}
+
+function recalculoDeComboNivel(ruta, data, element, info) {
+    //! iniciamos los combos de nivel y carrera
+
+    $('#nivelSelect').empty();
+    $("#nivelSelect").append(`<option value="" selected>Recalculando..</option>`);
+    $('#carreraSelect').empty();
+    $("#carreraSelect").append(`<option value="" selected disabled>${info.carrera_preinscripcion.replaceAll("_", " ")}</option>`);
+
+    //! realizamos la peticion correspondiente para obtener los niveles
+    //! y hacer la comparacion con la variable precargada
+
+    $.ajax({
+        method: "POST",
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        url: ruta,
+        data: data
+    }).done(function (data) {
+        console.log(data);
+        $('#nivelSelect').empty();
+        $.each(data, function (index, value) {
+            if (info.nivel_preinscripcion == value.descrip) {
+                option = `<option value="${value.clave}" selected>${value.descrip}</option>`;
+            } else {
+                option = `<option value="${value.clave}">${value.descrip}</option>`;
+            }
+            $(element).append(option);
+        });
+
+        //! terminada la peticion calculamos las carreras y se hace la comparacion la variable precargada
+        let plantel = $('select[name=plantelSelect]').val();
+        let nivel = $('select[name=nivelSelect]').val();
+        let periodo = $('select[name=periodoSelect]').val();
+
+        let rutaGetCarreras = setUrlBase() + "getCarreras";
+
+        let dataCarreras = {
+            plantel: plantel,
+            nivel: nivel,
+            periodo: periodo
+        };
+        let elementCarreras = '#carreraSelect';
+
+        $.ajax({
+            method: "POST",
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            url: rutaGetCarreras,
+            data: dataCarreras
+        }).done(function (result) {
+
+            console.log(result);
+
+            $.each(result, function (index, value) {
+
+                if (info.carrera_preinscripcion.replaceAll('_', " ") == value.descrip) {
+                    option = `<option value="${value.clave}" selected>${value.descrip}</option>`;
+                } else {
+                    option = `<option value="${value.clave}">${value.descrip}</option>`;
+                }
+
+                $(elementCarreras).append(option);
+            });
+
+            $("select[name=carreraSelect]").prop("disabled", false);
+
+            //! calculo de lista de horarios 
+
+            let carrera = $('select[name=carreraSelect]').val();
+
+            let rutaCarrera = setUrlBase() + "getHorarios";
+            let dataCarrera = {
+                plantel: plantel,
+                nivel: nivel,
+                periodo: periodo,
+                carrera: carrera
+            };
+            let elementCarrera = '#horarioSelect';
+
+            $.ajax({
+                method: "POST",
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                url: rutaCarrera,
+                data: dataCarrera
+            }).done(function (list) {
+                console.log(list);
+                $.each(list, function (index, value) {
+                    let option = `<option value="${value.clave}">${value.descrip}</option>`;
+                    $(elementCarrera).append(option);
+                });
+
+                $("select[name=horarioSelect]").prop("disabled", false);
+
+            }).fail(function () {
+                console.log("Algo salió mal");
+            });
+
+        }).fail(function () {
+            console.log("Algo salió mal");
+        });
+
+
+
+    }).fail(function () {
+        console.log("Algo salió mal");
+    });
+}

@@ -36,8 +36,7 @@ class PreinscripcionEnLineaController extends Controller
 
         if ($validacion == 1) {
             $respuesta['estado'] = false;
-            $respuesta['mensaje'] = "La dirección de correo electrónico <b>$request->correo</b> ya fue registrada, favor de revisar."; 
-
+            $respuesta['mensaje'] = "La dirección de correo electrónico <b>$request->correo</b> ya fue registrada, favor de revisar.";
         } else {
             $respuesta['estado'] = true;
             $respuesta['mensaje'] = "si pasa";
@@ -46,7 +45,7 @@ class PreinscripcionEnLineaController extends Controller
         return response()->json($respuesta);
     }
 
-    public function formDatosGenerales() 
+    public function formDatosGenerales()
     {
         $apiConsumo = new ApiConsumoController();
         $estados = $apiConsumo->getEstados();
@@ -291,6 +290,33 @@ class PreinscripcionEnLineaController extends Controller
             default:
                 # code...
                 break;
+        }
+    }
+
+    public function getInfoProspecto()
+    {
+
+        if (session()->has('foliocrm') == true) {
+
+            //echo 'este viene de calculadora de cuotas';
+
+            $foliocrm = explode(' ', session('foliocrm'));
+
+            $valores = array(
+                "folioCRM" => $foliocrm[1]
+            );
+
+            //var_dump($valores);
+
+            $apiConsumo = new ApiConsumoController();
+            $infoProspecto = $apiConsumo->getInfoProspecto($valores);
+
+            //var_dump($infoProspecto);
+
+            return response()->json($infoProspecto);
+
+        } else {
+            echo "este viene de organico";
         }
     }
 }

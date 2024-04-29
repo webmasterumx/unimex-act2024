@@ -1,7 +1,7 @@
 @extends('layouts.layoutPreinscripcion')
 
 @section('content')
-    <div class="container-fluid"  style="margin-top: 8rem !important;">
+    <div class="container-fluid" style="margin-top: 8rem !important;">
         <div class="row px-5">
             <div class="col-12">
                 <h1 class="text-center fw-normal" style="color: rgba(241,145,29,1.00);">
@@ -217,8 +217,46 @@
     </div>
 @endsection
 
-<script>
-    window.onbeforeunload = function(e) {
-        e.preventDefault();
-    };
-</script>
+@section('scripts')
+    <script>
+        window.onbeforeunload = function(e) {
+            e.preventDefault();
+        };
+
+        $(document).ready(function() {
+            /*
+             * 
+             */
+            let ruta = setUrlBase() + "get/info/prospecto"
+            console.log(ruta);
+            $.ajax({
+                method: "GET",
+                url: ruta,
+            }).done(function(data) {
+                console.log(data);
+
+                $('#correoInscripcion').val(data.email);
+                $('#nombreInscripcion').val(data.nombre);
+                $('#apellidoPatInscripcion').val(data.apMaterno);
+                $('#apellidoMatInscripcion').val(data.apPaterno);
+                $('#telefonoInscripcion').val(data.telefono1);
+
+                let clavePlantel = data.clavePlantel;
+                let claveCampana = data.clavePeriodoIngreso;
+                let claveNivel = data.claveNivel;
+                let claveCarrera = data.claveCarrera;
+                let claveHorario = data.claveHorario;
+
+                llenaComboPlantel(clavePlantel);
+                llenarComboCampañas(claveCampana, clavePlantel);
+                llenarComboNivel(clavePlantel, claveNivel);
+                llenarCombosCarrera(claveCampana, clavePlantel, claveNivel, claveCarrera);
+                llenarComboHorarios(claveCampana, clavePlantel, claveNivel, claveCarrera, claveHorario);
+
+            }).fail(function() {
+                console.log("Algo salió mal");
+            });
+        });
+    </script>
+    <script src="{{ asset('assets/js/preinscripcionLinea/llenar_combos.js') }}"></script>
+@endsection

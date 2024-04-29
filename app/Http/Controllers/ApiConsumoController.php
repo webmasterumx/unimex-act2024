@@ -76,7 +76,6 @@ class ApiConsumoController extends Controller
     }
 
     //! inicio metodos de calculadora
-
     public function calculadoraHorarios(Request $request)
     {
 
@@ -178,6 +177,14 @@ class ApiConsumoController extends Controller
     public function registraProspectoCRMDesdePreinscripcionEnLinea($valores)
     {
         $response = Http::post($this->base_url . 'preinscripcion/agrega-prospecto/sineroi', $valores);
+
+        return $response->json();
+    }
+
+    //! obtner prospecto para preinscricion en linea
+    public function getInfoProspecto($valores)
+    {
+        $response = Http::post($this->base_url . 'ficha/prospecto', $valores);
 
         return $response->json();
     }

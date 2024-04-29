@@ -141,6 +141,16 @@ class ExtrasUnimexController extends Controller
         return response()->json($respuesta);
     }
 
+    public function setVariablesPosicionamientoFolioCrm($foliocrm)
+    {
+        session(['foliocrm' => $foliocrm]);
+
+        $respuesta['estado'] = true;
+        $respuesta['mensaje'] = "variable establecida correctamente";
+
+        return response()->json($respuesta);
+    }
+
     public function getVariablesPosicionamientoCalculadora()
     {
         $respuesta['nivel_calculadora'] = session('nivel_calculadora');
@@ -153,6 +163,13 @@ class ExtrasUnimexController extends Controller
     {
         $respuesta['nivel_preinscripcion'] = session('nivel_preinscripcion');
         $respuesta['carrera_preinscripcion'] = session('carrera_preinscripcion');
+
+        return response()->json($respuesta);
+    }
+
+    public function getVariablePosicionamientoFolioCrm()
+    {
+        $respuesta['foliocrm'] = session('foliocrm');
 
         return response()->json($respuesta);
     }

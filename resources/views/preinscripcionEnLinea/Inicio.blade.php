@@ -59,7 +59,7 @@
                                     aria-describedby="basic-addon1" name="correo" id="correo">
                             </div>
                         </div>
-                       {{--  <div class="col-12 col-md-6">
+                        <div class="col-12 col-md-6">
                             <p>
                                 Ingresa tu numero movil
                             </p>
@@ -67,10 +67,10 @@
                                 <span class="input-group-text" id="basic-addon1">
                                     <i class="bi bi-telephone-fill"></i>
                                 </span>
-                                <input type="text" class="form-control" placeholder="Telefono movil" aria-label="Username"
-                                    aria-describedby="basic-addon1" name="telefono" id="telefono">
+                                <input type="text" class="form-control" placeholder="Telefono movil"
+                                    aria-label="Username" aria-describedby="basic-addon1" name="telefono" id="telefono">
                             </div>
-                        </div> --}}
+                        </div>
                         <div class="col-12  d-flex">
                             <!-- Button trigger modal -->
                             <input type="checkbox" id="avisoPrivacidad" name="avisoPrivacidad" checked>
@@ -93,3 +93,28 @@
 @endsection
 
 @include('modales.preinscripcionAviso')
+
+@section('scripts')
+    <script>
+        $.ajax({
+            method: "GET",
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            url: setUrlBase() + "get/variables/preinscripcion",
+        }).done(function(data) {
+            console.log(data);
+            if (data.nivel_preinscripcion != null) {
+                console.log('hay variable de session para este modulo');
+            }
+
+        }).fail(function() {
+            console.log("Algo salió mal");
+        });
+
+        function setUrlBase() {
+            let urlBase = "{{ env('APP_URL') }}";
+            return urlBase;
+        }
+    </script>
+@endsection

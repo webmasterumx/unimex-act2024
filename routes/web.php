@@ -46,7 +46,10 @@ Route::view('/datos/pago/preinscripcion', 'preinscripcionEnLinea.datosPago')->na
 //* rutas de establecimiento de variables de session para calculadora de becas
 Route::get('/set/variables/calculadora/{nivel}/{carrera}', [ExtrasUnimexController::class, 'setVariablesPosicionamientoCalculadora'])->name("set.variables.calculadora");
 Route::get('/set/variables/preinscripcion/{nivel}/{carrera}', [ExtrasUnimexController::class, 'setVariablesPosicionamientoPreinscripcion'])->name('set.variables.preinscripcion');
+Route::get('/set/variables/foliocrm/{foliocrm}', [ExtrasUnimexController::class, 'setVariablesPosicionamientoFolioCrm'])->name('sat.variables.foliocrm');
 Route::get('/get/variables/calculadora', [ExtrasUnimexController::class, 'getVariablesPosicionamientoCalculadora'])->name('get.variables.calculadora');
+Route::get('/get/variables/preinscripcion', [ExtrasUnimexController::class, 'getVariablesPosicionamientoPreinscripcion'])->name('get.variables.preinscripcion');
+Route::get('/get/variables/foliocrm', [ExtrasUnimexController::class, 'getVariablePosicionamientoFolioCrm'])->name('get.variable.foliocrm');
 
 //!modulo de preinscripcion en linea
 Route::get('/App/Preinscripcion-online', [PreinscripcionEnLineaController::class, 'index'])->name('preinscripcion.linea');
@@ -55,6 +58,7 @@ Route::get('/form/datos_gemerales/preinscripcion', [PreinscripcionEnLineaControl
 Route::post('/obtener/promo/preinscripcion', [PreinscripcionEnLineaController::class, 'obtenerPromocion'])->name('obtener.promo.preinscripcion');
 Route::get('/registrar/prospecto/preinscripcion/linea', [PreinscripcionEnLineaController::class, 'registrarPreinscripcionEnLinea'])->name('registrar.prospecto.preinscripcion');
 Route::get('/ficha/generar/pdf', [PreinscripcionEnLineaController::class, 'fichaPDFGenerar'])->name('ficha.pdf');
+Route::get('/get/info/prospecto', [PreinscripcionEnLineaController::class, 'getInfoProspecto'])->name('get.info.prospecto');
 
 //? consumo de la api para formulario   
 Route::get('/getPlanteles', [ApiConsumoController::class, 'getPlanteles'])->name('get.planteles');

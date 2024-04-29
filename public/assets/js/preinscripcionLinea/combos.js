@@ -1,7 +1,5 @@
 $(document).ready(function () {
 
-    console.log('hola combos');
-
     // Inicializar con todos los combos del formulario - Contacto -
     // Desabilitados excepto el de Plantel
     $("select[name=nivelSelect]").prop("disabled", true);
@@ -40,12 +38,9 @@ $(document).ready(function () {
  */
 $("select[name=plantelSelect]").change(function () {
 
-    $("#nivelSelect").empty();
-    $("#nivelSelect").append(`<option value="" selected disabled>Selecciona un nivel</option>`);
+    setVariablesPrecargadas();
     $('#periodoSelect').empty();
     $("#periodoSelect").append(`<option value="" selected disabled>¿Cuándo deseas iniciar?  </option>`);
-    $('#carreraSelect').empty();
-    $("#carreraSelect").append(`<option value="" selected disabled>Selecciona una carrera</option>`);
     $('#horarioSelect').empty();
     $("#horarioSelect").append(`<option value="" selected disabled>Selecciona un horario</option>`);
     let plantel = $('select[name=plantelSelect]').val();
@@ -70,12 +65,10 @@ $("select[name=plantelSelect]").change(function () {
  */
 $("select[name=periodoSelect]").change(function () {
 
+    $('#nivelSelect').empty();
     $('#carreraSelect').empty();
-    $("#carreraSelect").append(`<option value="" selected disabled>Selecciona una carrera</option>`);
     $('#horarioSelect').empty();
     $("#horarioSelect").append(`<option value="" selected disabled>Selecciona un horario</option>`);
-    $('#nivelSelect').empty();
-    $("#nivelSelect").append(`<option value="" selected disabled>Selecciona un nivel</option>`);
     let nivel = $('select[name=nivelSelect]').val();
     let ruta = setUrlBase() + "getNiveles";
     let plantel = $('select[name=plantelSelect]').val();
@@ -84,7 +77,24 @@ $("select[name=periodoSelect]").change(function () {
     }
     let element = '#nivelSelect';
 
-    postAjaxPeticionContact(ruta, data, element);
+    $.ajax({
+        method: "GET",
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        url: setUrlBase() + "get/variables/preinscripcion",
+    }).done(function (info) {
+        if (info.carrera_preinscripcion != null) {
+            recalculoDeComboNivel(ruta, data, element, info)
+        }
+        else {
+
+            postAjaxPeticionContact(ruta, data, element);
+        }
+
+    }).fail(function () {
+        console.log("Algo salió mal");
+    });
 
     if (nivel != '' || nivel !== '' || nivel != null) {
         $("select[name=nivelSelect]").prop("disabled", false);

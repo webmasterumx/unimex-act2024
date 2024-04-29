@@ -8,16 +8,13 @@
                     @csrf
                     <h6>¿Cuándo te gustaría iniciar?</h6>
                     <hr>
-                    <select class="form-select form-select-sm col-12 mb-2" name="selectPlantel"
-                        id="selectPlantel">
+                    <select class="form-select form-select-sm col-12 mb-2" name="selectPlantel" id="selectPlantel">
                         <option value="" selected disabled>Selecciona el Plantel</option>
                     </select>
-                    <select class="form-select form-select-sm col-12 mb-2" name="selectPeriodo"
-                        id="selectPeriodo">
+                    <select class="form-select form-select-sm col-12 mb-2" name="selectPeriodo" id="selectPeriodo">
                         <option value="" selected disabled>¿Cuándo deseas iniciar?</option>
                     </select>
-                    <select class="form-select form-select-sm col-12 mb-2" name="selectNivel"
-                        id="selectNivel">
+                    <select class="form-select form-select-sm col-12 mb-2" name="selectNivel" id="selectNivel">
                         <option value="" selected disabled>Selecciona el Nivel</option>
                     </select>
                     <div class="col-12 row mb-5 d-none" id="selectEgresado">
@@ -402,10 +399,8 @@
                                         horario: <span id="turnoInfo" style="color: #004b93"><b></b></span> de
                                         <span id="horarioInfo" style="color: #004b93"><b></b></span>
                                         <br>
-                                        Inicio de clases: <span id="incioInfo"
-                                            style="color: #004b93"><b></b></span><br>
-                                        Vigencia: <span id="vigenciaInfo"
-                                            style="color: #004b93"><b></b></span><br>
+                                        Inicio de clases: <span id="incioInfo" style="color: #004b93"><b></b></span><br>
+                                        Vigencia: <span id="vigenciaInfo" style="color: #004b93"><b></b></span><br>
                                         Durante el cuatrimestre se deberán pagar 4 parcialidades indicadas en el Calendario
                                         Escolar. <br>
                                         Para mayor información de los costos de reinscripción, acude al plantel de tu
@@ -413,6 +408,12 @@
                                     </p>
                                 </div>
                             </div>
+                        </div>
+                        <div class="col-12 text-end mt-3">
+                            <button onclick="redireccionPreinscripcionEnLinea()" id="redireccionPEL" href="#" class="btn"
+                                style="background-color: #de951b;">
+                                PREINSCRIPCIÓN EN LINEA
+                            </button>
                         </div>
                     </div>
                 </div>

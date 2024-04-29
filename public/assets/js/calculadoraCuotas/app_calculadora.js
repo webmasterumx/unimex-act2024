@@ -399,6 +399,10 @@ function enviarDetallesHorarioBeca() {
 }
 
 function getCarrerasWithVariableEstablecida(carreraEnVariable) {
+
+    carreraFinal = carreraEnVariable.replaceAll("_", " ");
+    console.log(carreraFinal);
+
     $("#selectCarrera").empty();
     $("#selectCarrera").append(`<option><div class="spinner-border" role="status"><span class="visually-hidden">Calculando...</span></div></option>`);
 
@@ -429,7 +433,7 @@ function getCarrerasWithVariableEstablecida(carreraEnVariable) {
         $("#selectCarrera").append(`<option class="text-center" value=""> - Selecciona una Carrera - </option>`);
         for (let index = 0; index < data.length; index++) { //recorrer el array de carreras
             const element = data[index]; // se establece un elemento por carrera optenida
-            if(element.descrip == carreraEnVariable){
+            if (element.descrip == carreraFinal) {
                 estado = "selected";
             }
             else {
@@ -440,6 +444,92 @@ function getCarrerasWithVariableEstablecida(carreraEnVariable) {
         }
 
         obtenerHorariosBeca();
+
+    }).fail(function () {
+        console.log("Algo salió mal");
+    });
+}
+
+function redireccionPreinscripcionEnLinea() {
+
+    $("#redireccionPEL").prop("disabled", true);
+    $('#redireccionPEL').html(`
+        <div style="width: 20px !important; height: 20px !important;"
+            class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        Redirigiendo
+    `);
+
+    //! codigo de verificacion del prospecto dentro de preinscripcion en linea queda pendiente por mantenimiento
+    /* let formData = new FormData();
+    formData.append("correo", $('#emailProspecto').val());
+    let ruta = setUrlBase() + "validacion/preinscripcion";
+
+    $.ajax({
+        method: "POST",
+        url: ruta,
+        dataType: "html",
+        data: formData,
+        cache: false,
+        contentType: false,
+        processData: false,
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+    }).done(function (data) {
+        console.log(data);
+
+        let respuesta = JSON.parse(data);
+
+        if (respuesta.estado == true) {
+            $('#validarCorreo').html(`
+            <div class="spinner-border me-1" style="width: 20px; height: 20px;" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            Redirigiendo
+            `);
+            let redireccion = setUrlBase() + "form/datos_gemerales/preinscripcion";
+
+            setTimeout(`location.href='${redireccion}'`, 3000); 
+        } else {
+            Swal.fire({
+                icon: "error",
+                title: "Aviso!",
+                html: respuesta.mensaje,
+            });
+
+            $("#validarCorreo").prop("disabled", false);
+            $('#validarCorreo').html(`
+                <i class="bi bi-box-arrow-right"></i>
+                Continuar
+            `);
+        } 
+
+    }).fail(function () {
+        console.log("Algo salió mal");
+    }); */
+
+    //! peticion para establecer el folio crm como variable de session
+    let foliocrm = $('#folioCrm').val();
+
+    let ruta = setUrlBase() + "set/variables/foliocrm/" + foliocrm;
+
+    $.ajax({
+        method: "GET",
+        url: ruta,
+        dataType: "json",
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+    }).done(function (data) {
+        console.log(data);
+
+        //! se realiza la redireccion a la pagina del formulario de datos 
+        let redireccion = setUrlBase() + "form/datos_gemerales/preinscripcion";
+
+        setTimeout(`location.href='${redireccion}'`, 2000);
+
 
     }).fail(function () {
         console.log("Algo salió mal");

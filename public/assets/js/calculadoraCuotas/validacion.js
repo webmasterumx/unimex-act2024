@@ -92,8 +92,6 @@ $("#form_calculadora").validate({
                 $('#periodoCrm').val(periodoProspecto);
                 $('#nivelCrm').val(nivelProspecto);
 
-
-
                 $.ajax({
                     method: "GET",
                     headers: {

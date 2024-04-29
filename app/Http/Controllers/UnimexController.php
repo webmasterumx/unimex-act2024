@@ -25,7 +25,7 @@ class UnimexController extends Controller
     public function inicio(): View
     {
         $listaCarreras = DB::table('c_carreras')->orderBy('titulo', 'asc')->get();
-        $banners = Banner::all();
+        $banners = Banner::where('ubicacion', 0)->orWhere('ubicacion', 1)->orderBy('orden', 'ASC')->get();
         $ventajas_unimex = VentajasUnimex::all();
 
         return view('inicio', [
