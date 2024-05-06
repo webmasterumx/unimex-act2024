@@ -15,14 +15,14 @@ $("#servicio_alumnos").validate({
     },
     messages: {
         name_service: {
-            required: "nombre requerido",
+            required: "Nombre requerido.",
         },
         email_service: {
-            required: "correo requerido",
-            email: "formato de correo incorrecto",
+            required: "Correo requerido.",
+            email: "Formato de correo incorrecto.",
         },
         matricula_service: {
-            required: "matricula requerida",
+            required: "Matrícula requerida.",
         }
     },
     submitHandler: function (form) {
@@ -105,30 +105,30 @@ $("#form_contacto").validate({
     },
     messages: {
         nombre_prospecto: {
-            required: "Nombre requerido",
+            required: "Nombre requerido.",
         },
         apellidos_prospecto: {
-            required: "Apellidos requeridos",
+            required: "Apellidos requeridos.",
         },
         mail_prospecto: {
-            required: "Correo obligatorio",
-            email: "Ingresa un formato valido de correo"
+            required: "Correo obligatorio.",
+            email: "Ingresa un formato valido de correo."
         },
         celular_prospecto: {
-            required: "Teléfono celular obligatorio",
-            minlength: "Numero celular de 10 dig minimo",
-            minlength: "Numero celular de 10 dig maximo"
+            required: "Teléfono celular obligatorio.",
+            minlength: "Numero celular de 10 dig minimo.",
+            minlength: "Numero celular de 10 dig maximo."
         },
         telefono_prospecto: {
-            required: "Teléfono de casa obligatorio",
-            minlength: "Numero teléfonico de 10 dig minimo",
-            minlength: "Numero teléfonico de 10 dig maximo"
+            required: "Teléfono de casa obligatorio.",
+            minlength: "Numero teléfonico de 10 dig minimo.",
+            minlength: "Numero teléfonico de 10 dig maximo."
         },
         plantelSelect: {
-            required: "Selecciona un plantel",
+            required: "Selecciona un plantel.",
         },
         periodoSelect: {
-            required: "Por favor dinos cuando quieres empezar",
+            required: "Por favor, dinos cuando quieres empezar.",
         },
         nivelSelect: {
             required: "Selecciona un nivel",
@@ -168,11 +168,11 @@ $("#form_trabaja").validate({
     },
     messages: {
         nombre_trabajo: {
-            required: "nombre requerido",
+            required: "Nombre requerido.",
         },
         email_trabaja: {
-            required: "correo requerido",
-            email: "formato de correo incorrecto",
+            required: "Correo requerido.",
+            email: "Formato de correo incorrecto.",
         },
     },
     submitHandler: function (form) {
@@ -236,14 +236,14 @@ $("#form_quejaSugerencia").validate({
     },
     messages: {
         nombre_qys: {
-            required: "nombre requerido",
+            required: "Nombre requerido.",
         },
         mail_qys: {
-            required: "correo requerido",
-            email: "formato de correo incorrecto",
+            required: "Correo requerido.",
+            email: "formato de correo incorrecto.",
         },
         matricula_qys: {
-            required: "matricula obligatoria"
+            required: "Matrícula obligatoria."
         }
     },
     submitHandler: function (form) {
@@ -290,6 +290,7 @@ $("#form_quejaSugerencia").validate({
 });
 
 $("#form_empresasOCC").validate({
+    wrapper: "span",
     rules: {
         nombre_empresaOCC: {
             required: true,
@@ -319,29 +320,29 @@ $("#form_empresasOCC").validate({
     },
     messages: {
         nombre_empresaOCC: {
-            required: "nombre requerido",
+            required: "Nombre requerido.",
         },
         contacto_empresaOCC: {
-            required: "correo requerido",
+            required: "Nombre del contacto dentro de la empresa requerido.",
         },
         email_empresaOCC: {
-            required: "matricula obligatoria",
-            email: "formato de correo incorrecto",
+            required: "Matrícula obligatoria.",
+            email: "Formato de correo incorrecto.",
         },
         telefono_empresaOCC: {
-            required: "telefono requerido",
+            required: "Teléfono requerido.",
         },
         celular_empresaOCC: {
-            required: "celular requerido",
+            required: "Celular requerido.",
         },
         razon_empresaOCC: {
-            required: "razón social obligatoria"
+            required: "Razón social obligatoria."
         },
         rfc_empresaOCC: {
-            required: "rfc requerido",
+            required: "RFC requerido.",
         },
         comentarios_empresaOCC: {
-            required: "comentarios requeridos",
+            required: "Comentarios requeridos.",
         }
     },
     submitHandler: function (form) {

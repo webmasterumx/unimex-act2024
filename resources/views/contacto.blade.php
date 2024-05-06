@@ -1,5 +1,13 @@
 @extends('layouts.layout')
 
+@section('titulo')
+    Contacto | UNIMEX
+@endsection
+
+@section('metas')
+    @include('metas.contacto')
+@endsection
+
 @section('styles')
     <style>
         .bg_contacto {

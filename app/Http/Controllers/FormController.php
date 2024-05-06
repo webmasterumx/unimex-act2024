@@ -155,7 +155,7 @@ class FormController extends Controller
         //dd($envio);
     }
 
-    public function agregrarProspectoSinEroi(Request $request)  
+    public function agregrarProspectoSinEroi(Request $request)
     {
         $params = $request->all();
 
@@ -166,7 +166,7 @@ class FormController extends Controller
         var_dump($agregar);
     }
 
-    public function buscarProspectoForFolio($folio)  
+    public function buscarProspectoForFolio($folio)
     {
         $valores = array(
             "folioCRM" => $folio,
@@ -206,5 +206,42 @@ class FormController extends Controller
         $resultados = app(ApiConsumoController::class)->resultadosExamen($valores);
 
         return response()->json($resultados);
+    }
+
+    public function procesaFormularioFolletos(Request $request)
+    {
+
+        
+
+
+
+        /* $valores = array(
+            "campaingContent" => "",
+            "campaignMedium" => "",
+            "campaignTerm" => "",
+            "descripPublicidad" => "",
+            "folioReferido" => "0",
+            "pApMaterno" => "",
+            "pApPaterno" => $request->apellidos_prospecto,
+            "pCarrera" => $request->carreraSelect,
+            "pCelular" => $request->celularFolleto,
+            "pCorreo" => $request->correoFolleto,
+            "pHorario" => $request->horarioSelect,
+            "pNivel_Estudio" => $request->nivelSelect,
+            "pNombre" => $request->nombreFolleto,
+            "pOrigen" => 11,
+            "pPeriodoEscolar" => $request->periodoSelect,
+            "pPlantel" => $request->plantelSelect,
+            "pTelefono" => "",
+            "utpsource" => "",
+            "websiteURL" => "https://unimex.edu.mx/",
+        ); */
+
+
+    }
+
+    public function getIdentificadorNivel()  
+    {
+        
     }
 }

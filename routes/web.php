@@ -42,6 +42,7 @@ Route::view('/servicio-social', 'servicioSocial')->name('servicio.social');
 Route::view('/calendarios-escolares', 'calendarios_escolares')->name('calendarios_escolares');
 Route::view('/aviso-de-privacidad', 'aviso-privacidad')->name('aviso_de_privacidad');
 Route::view('/datos/pago/preinscripcion', 'preinscripcionEnLinea.datosPago')->name('datos.pago');
+Route::post('/procesa/datos/folleto', [FormController::class, 'procesaFormularioFolletos'])->name('procesa.datos.folleto');
 
 //* rutas de establecimiento de variables de session para calculadora de becas
 Route::get('/set/variables/calculadora/{nivel}/{carrera}', [ExtrasUnimexController::class, 'setVariablesPosicionamientoCalculadora'])->name("set.variables.calculadora");

@@ -142,14 +142,18 @@ body {
 }
 
 .etiqueta-titulo {
-    width: 35%;
-    text-align: center !important;
-    position: absolute;
-    bottom: 53px;
-    left: 20px;
+    display: inline-flex;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    position: relative;
     color: #fff;
     background-color: rgba(0, 0, 0, 0.5);
     font-weight: 400;
+    vertical-align: middle;
+    align-items: center;
+    justify-content: space-evenly;
+
 }
 
 .underlined-head {
@@ -157,6 +161,15 @@ body {
     margin-top: 0;
     padding-bottom: 13px;
     background: url(../img/extras/underlined.png) no-repeat left bottom;
+}
+
+.underlined_head_obj{
+    text-align: center;
+    margin-top: 0;
+    padding-bottom: 13px;
+    background: url(../img/extras/underlined.png) no-repeat left bottom;
+    background-position: center;
+    background-position-y: 76%;
 }
 
 .underlined-head-center {
@@ -267,138 +280,138 @@ body {
     color: red;
 }
 
-.bg-outline-purple{
+.bg-outline-purple {
     border-color: #6610f2 !important;
     color: #6610f2 !important;
 }
 
-.bg-outline-purple:hover{
+.bg-outline-purple:hover {
     background-color: #6610f2 !important;
     color: #ffff !important;
 }
 
-.bg-outline-purple:active{
+.bg-outline-purple:active {
     background-color: #6610f2 !important;
     color: #ffff !important;
 }
 
-.bg-outline-orange{
+.bg-outline-orange {
     border-color: #fd7e14 !important;
     color: #fd7e14 !important;
 }
 
-.bg-outline-orange:hover{
+.bg-outline-orange:hover {
     background-color: #fd7e14 !important;
     color: #000 !important;
 }
 
-.bg-outline-orange:active{
+.bg-outline-orange:active {
     background-color: #fd7e14 !important;
     color: #000 !important;
 }
 
 
-.bg-outline-teal{
+.bg-outline-teal {
     border-color: #20c997 !important;
     color: #20c997 !important;
 }
 
-.bg-outline-teal:hover{
+.bg-outline-teal:hover {
     background-color: #20c997 !important;
     color: #000 !important;
 }
 
-.bg-outline-teal:active{
+.bg-outline-teal:active {
     background-color: #20c997 !important;
     color: #000 !important;
 }
 
-.bg-outline-pink{
+.bg-outline-pink {
     border-color: #d63384 !important;
     color: #d63384 !important;
 }
 
-.bg-outline-pink:hover{
+.bg-outline-pink:hover {
     background-color: #d63384 !important;
     color: #000 !important;
 }
 
-.bg-outline-pink:active{
+.bg-outline-pink:active {
     background-color: #d63384 !important;
     color: #000 !important;
 }
 
-.bg-outline-vine{
+.bg-outline-vine {
     border-color: #581845 !important;
     color: #581845 !important;
 }
 
-.bg-outline-vine:hover{
+.bg-outline-vine:hover {
     background-color: #581845 !important;
     color: #fff !important;
 }
 
-.bg-outline-vine:active{
+.bg-outline-vine:active {
     background-color: #581845 !important;
     color: #fff !important;
 }
 
-.bg-outline-brisa{
+.bg-outline-brisa {
     border-color: #3D74C2 !important;
     color: #3D74C2 !important;
 }
 
-.bg-outline-brisa:hover{
+.bg-outline-brisa:hover {
     background-color: #3D74C2 !important;
     color: #fff !important;
 }
 
-.bg-outline-brisa:active{
+.bg-outline-brisa:active {
     background-color: #3D74C2 !important;
     color: #fff !important;
 }
 
-.bg-outline-durazno{
+.bg-outline-durazno {
     border-color: #EEA5A6 !important;
     color: #EEA5A6 !important;
 }
 
-.bg-outline-durazno:hover{
+.bg-outline-durazno:hover {
     background-color: #EEA5A6 !important;
     color: #000 !important;
 }
 
-.bg-outline-durazno:active{
+.bg-outline-durazno:active {
     background-color: #EEA5A6 !important;
     color: #000 !important;
 }
 
-.bg-outline-pasto{
+.bg-outline-pasto {
     border-color: #43766C !important;
     color: #43766C !important;
 }
 
-.bg-outline-pasto:hover{
+.bg-outline-pasto:hover {
     background-color: #43766C !important;
     color: #fff !important;
 }
 
-.bg-outline-pasto:active{
+.bg-outline-pasto:active {
     background-color: #43766C !important;
     color: #fff !important;
 }
 
-.bg-outline-paleta{
+.bg-outline-paleta {
     border-color: #2B2A4C !important;
     color: #2B2A4C !important;
 }
 
-.bg-outline-paleta:hover{
+.bg-outline-paleta:hover {
     background-color: #2B2A4C !important;
     color: #fff !important;
 }
 
-.bg-outline-paleta:active{
+.bg-outline-paleta:active {
     background-color: #2B2A4C !important;
     color: #fff !important;
 }

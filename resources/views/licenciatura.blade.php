@@ -35,31 +35,49 @@
 @section('content')
     <!-- Inicio de portada -->
     <section id="portada" style="background-image: url({{ asset($licenciatura->portada) }}); position: relative;">
-        <h1 class="etiqueta-titulo p-3 text-uppercase"> {{ $licenciatura->subtitulo }} </h1>
+        <h1 style="font-size: 30px !important;" class="etiqueta-titulo p-3 text-uppercase">
+            LICENCIATURA EN {{ $licenciatura->subtitulo }}
+        </h1>
     </section>
     <!-- Fin de portada -->
 
     <!-- Inicio de la sección de objetivo -->
     <section class="container-fluid px-5 py-5">
         <div class="row">
-            <div class="col-12 col-md-3 col-lg-2">
-                <h2 class="underlined-head">
+            <div class="col-12 mb-2">
+                <h2 class="underlined_head_obj">
                     OBJETIVO
                 </h2>
             </div>
-            <div class="col-12 col-md-9 col-lg-10 text-justify">
+            <div class="col-12 text-center mb-3">
                 {{ $licenciatura->objetivo }}
-                <br><br>
-                <button class="btn bg-unimex text-white">
-                    ¿Cómo obtengo mi Beca?
-                </button>
-                <a id="redireccionCTCL" href="#" class="btn bg-unimex text-white">
-                    Calcula tu Couta
-                </a>
-                <a id="redireccionPELL" href="#" class="btn text-white"
-                    style="background-color: #de951b;">
-                    Preinscripción En Línea
-                </a>
+            </div>
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-4">
+                        <div class="d-grid gap-2">
+                            <a id="redireccionCTCL" href="#" class="btn btn-outline-primary">
+                                Calcula de Becas
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="d-grid gap-2">
+                            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                                data-bs-target="#comoObtengoMiBecaModal">
+                                Más información
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="d-grid gap-2">
+                            <a id="redireccionPELL" href="#" class="btn text-white"
+                                style="background-color: #de951b;">
+                                Preinscripción En Línea
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -133,6 +151,55 @@
         </div>
     </section>
     <!-- Fin de temario -->
+
+    <!-- Incio descarga de folleto -->
+    <section class="py-2 bg-articule">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6 py-3">
+                    <img src="{{ asset('assets/img/folletos/img_brochure.png') }}" class="img-fluid" alt="">
+                </div>
+                <div class="col-12 col-md-6 py-3">
+                    <h1 class="fs-3" style="color: #004b93">
+                        Descarga el folleto
+                    </h1>
+                    <p>
+                        Conoce más de esta licenciatura, déjanos tus datos y descarga el brochure en formato pdf.
+                    </p>
+                    <form id="form_folleto">
+                        @csrf
+                        <select class="form-select mb-3" id="periodoSelectF" name="periodoSelectF">
+                            <option selected>Selecciona el periodo</option>
+                        </select>
+                        <select class="form-select mb-3" id="plantelSelectF" name="plantelSelectF">
+                            <option selected>Selecciona el plantel</option>
+                        </select>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="nombreFolleto" name="nombreFolleto"
+                                placeholder="Nombre *">
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" id="correoFolleto" name="correoFolleto"
+                                placeholder="Email *">
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="celularFolleto" name="celularFolleto"
+                                placeholder="Celular *">
+                        </div>
+                        <div class="form-check my-3">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
+                                style="width: 20px !important; height: 20px !important;">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                He leído y acepto el aviso de privacidad
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">¡DESCARGAR!</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Fin descarga de folleto -->
 
     <!-- Inicio de la Sección de Contacto -->
     @include('include.contactoForm')
@@ -262,6 +329,10 @@
         </div>
     </section>
     <!-- Fin de la Sección de disponibilidad -->
+
+    <!-- Inicio del Modal Como Obtengo Mi Beca -->
+    @include('modales.comoObtengoMiBeca')
+    <!-- Fin del Modal Como Obtengo Mi Beca --->
 @endsection
 
 @section('scripts')
@@ -335,5 +406,78 @@
             });
             window.open("{{ route('preinscripcion.linea') }}", '_blank');
         });
+
+
+        $("#form_folleto").validate({
+            rules: {
+                periodoSelectF: {
+                    required: true,
+                },
+                plantelSelectF: {
+                    required: true,
+                },
+                nombreFolleto: {
+                    required: true,
+                },
+                correoFolleto: {
+                    required: true,
+                    email: true
+                },
+                celularFolleto: {
+                    required: true,
+                }
+            },
+            messages: {
+                periodoSelectF: {
+                    required: "nombre requerido",
+                },
+                plantelSelectF: {
+                    required: "correo requerido",
+                },
+                nombreFolleto: {
+                    required: "nombre requerido",
+                },
+                correoFolleto: {
+                    required: "correo requerido",
+                    email: "formato de correo incorrecto"
+                },
+                celularFolleto: {
+                    required: "celular requerido",
+                }
+            },
+            submitHandler: function(form) {
+
+                let formData = new FormData(form);
+
+                let nivel = "Licenciatura";
+                let carrera = "{{ $licenciatura->subtitulo }}";
+
+                formData.append("nivelPosicion", nivel);
+                formData.append("carreraPosicion", carrera);
+
+                console.log(formData);
+
+                $.ajax({
+                    method: "POST",
+                    url: setUrlBase() + "procesa/datos/folleto",
+                    data: formData,
+                    dataType: "html",
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                }).done(function(data) {
+                    console.log(data);
+
+                }).fail(function() {
+                    console.log("Algo salió mal");
+                });
+
+            }
+        });
+
+        var nivelPosicionado = "Licenciatura";
+        var carreraPosicionado = "{{ $licenciatura->subtitulo }}";
     </script>
+
+    @include('include.redirecciones.inOfertaAcademica')
 @endsection

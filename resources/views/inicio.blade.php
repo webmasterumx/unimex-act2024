@@ -37,7 +37,7 @@
 
     <!-- Inicio de Ventajas de Estudiar en UNIMEX  -->
     <section>
-        <div class="container py-5">
+        <div class="container pb-3">
             <div class="row">
                 <div class="col-12">
                     <h2 class="color-unimex text-center fw-light">
@@ -164,7 +164,7 @@
     </section>
 
     @include('include.contactoForm')
-    @include('include.modales.modalCalculaTuCuota')
+    @include('modales.modalCalculaTuCuota')
 @endsection
 
 @section('scripts')
@@ -224,3 +224,4 @@
         });
     </script>
 @endsection
+

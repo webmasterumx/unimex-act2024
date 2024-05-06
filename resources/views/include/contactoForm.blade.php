@@ -3,16 +3,42 @@
     <div class="container p-5">
         <div class="row">
             <div class="col-12 col-md-6 bg_contacto">
-                <h5 class="text-center fw-normal" style="color: #de951b; margin-top: 20rem !important;">Inscripciones</h5>
+                <h5 class="text-center fw-normal" style="color: #de951b; margin-top: 10rem !important;">
+                    ¿Quieres hablar
+                    con un asesor o agendar cita para inscripción?
+                </h5>
                 <p class="text-center">
-                    <span class="text-white"> Izcalli <br></span>
-                    <i class="bi bi-telephone-fill text-white"></i> <a href="tel:+525558739444">55 5873 9444</a><br>
-                    <span class="text-white"> Satélite <br></span>
-                    <i class="bi bi-telephone-fill text-white"></i> <a href="tel:+525553747480">55 5374 7480</a><br>
-                    <span class="text-white"> Polanco <br></span>
-                    <i class="bi bi-telephone-fill text-white"></i> <a href="tel:+525591380060">55 9138 0060</a><br>
-                {{--     <span class="text-white"> Veracruz <br></span>
-                    <i class="bi bi-telephone-fill text-white"></i> <a href="tel:+522229323916">222 932 3916</a><br> --}}
+                    <i class="bi bi-telephone-fill" style="color: #ffff;"></i>
+                    <a href="tel:+525511020290" style="color: #ffff;">
+                        +52 1 55 1102 0290
+                    </a>
+                    <br>
+                    <img src="{{ asset('assets/img/flotante/whats-2.png') }}" alt="">
+                    <a href="https://wa.me/525511020290/?text=Hola!+Me+gustaría+recibir+más+información+sobre+los+programas,+cuotas+y+promociones+de+UNIMEX;+me+interesó+lo+que+vi+en+Página+Web+Metro+sobre+contacto+en+WhatsApp+(botón).+¡Gracias!"
+                        style="color: #ffff;">
+                        +52 1 55 1102 0290
+                    </a>
+                </p>
+                <p class="text-center" style="color: #de951b;">
+                    Visítanos en:
+                </p>
+                <p class="text-center">
+                    <a href="{{ route('plantel', 'izcalli') }}" style="color: #ffff;">
+                        Izcalli <br>
+                        Av. Del Vidrio #15, Col. Plaza Dorada, Centro Urbano, Cuautitlán Izcalli, Estado de México.
+                    </a> <br><br>
+                    <a href="{{ route('plantel', 'satelite') }}" style="color: #ffff;">
+                        Satélite <br>
+                        Circuito Poetas #37, Cd. Satélite, Naucalpan de Juárez, Estado de México.
+                    </a> <br><br>
+                    <a href="{{ route('plantel', 'polanco') }}" style="color: #ffff;">
+                        Polanco <br>
+                        Emilio Castelar #63 esquina Eugenio Sue, Col. Polanco-Chapultepec, México D.F.
+                    </a> <br><br>
+                    {{-- <a href="{{ route('') }}" style="color: #ffff;">
+                        Veracruz <br>
+                        Av. 20 de noviembre esq. Juan Enríquez No. 1004 Veracruz, Ver.
+                    </a> --}}
                 </p>
             </div>
             <div class="col-12 col-md-6 p-0"> <!-- form_contacto -->
@@ -86,10 +112,13 @@
                             <select class="form-select rounded-0" aria-label="Default select example" id="carreraSelect"
                                 name="carreraSelect">
                                 @isset($licenciatura)
-                                    <option value="{{ $licenciatura->subtitulo }}"> {{ $licenciatura->subtitulo }} </option>
+                                    <option value="{{ $licenciatura->subtitulo }}"> {{ $licenciatura->subtitulo }}
+                                    </option>
                                 @endisset
                                 @isset($licenciatura_sua)
-                                    <option value="{{ $licenciatura_sua->titulo }}" selected>{{ $licenciatura_sua->titulo }}</option>
+                                    <option value="{{ $licenciatura_sua->titulo }}" selected>
+                                        {{ $licenciatura_sua->titulo }}
+                                    </option>
                                 @endisset
                                 @isset($posgrado)
                                     <option value="{{ $posgrado->titulo }}"> {{ $posgrado->titulo }} </option>

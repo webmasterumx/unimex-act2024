@@ -26,26 +26,26 @@ $("#form_calculadora").validate({
     },
     messages: {
         selectPlantel: {
-            required: "selecciona un plantel",
+            required: "Selecciona un plantel",
         },
         selectPeriodo: {
-            required: "selecciona un periodo",
+            required: "Selecciona un periodo",
         },
         selectNivel: {
-            required: "selecciona un nivel",
+            required: "Selecciona un nivel",
         },
         nombreProspecto: {
-            required: "ingresa tu cnombre",
+            required: "Ingresa tu cnombre",
         },
         apellidosProspecto: {
-            required: "ingresa tus apellidos",
+            required: "Ingresa tus apellidos",
         },
         telefonoProspecto: {
-            required: "ingresa tu telefono",
+            required: "Ingresa tu telefono",
         },
         emailProspecto: {
-            required: "ingresa tu correo",
-            email: "formato de correo incorrecto",
+            required: "Ingresa tu correo",
+            email: "Formato de correo incorrecto",
         },
     },
     submitHandler: function (form) {

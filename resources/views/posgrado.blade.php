@@ -54,7 +54,7 @@
                 {!! $posgrado->objetivo !!}
                 <br><br>
                 <a id="redireccionCTCL" href="#" class="btn bg-unimex text-white">
-                    Calcula tu Couta
+                    Calculadora de Becas
                 </a>
                 <a id="redireccionPELL" href="#" class="btn text-white" style="background-color: #de951b;">
                     Preinscripción En Línea
@@ -347,5 +347,10 @@
             });
             window.open("{{ route('preinscripcion.linea') }}", '_blank');
         });
+
+        var nivelPosicionado = "Especialidad";
+        var carreraPosicionado = "{{ $posgrado->titulo }}";
     </script>
+
+    @include('include.redirecciones.inOfertaAcademica')
 @endsection
