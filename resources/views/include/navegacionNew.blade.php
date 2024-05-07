@@ -27,7 +27,7 @@
             </div>
         </div>
     </nav>
-    <nav class="navigation  d-flex">
+    <nav class="navigation d-flex" style="padding-top: 0.5rem; padding-bottom: 0.5rem;">
         <div class="wrapper d-flex w-25 ps-2" style="justify-content: flex-start;">
             <a href="{{ route('inicio') }}" rel="noopener noreferrer">
                 <img class="logo lazyload" src="{{ asset('assets/img/header/logo-2020.webp') }}" width="259"

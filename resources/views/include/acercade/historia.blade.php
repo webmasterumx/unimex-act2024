@@ -8,8 +8,8 @@
         </div>
         <div class="col-12 col-md-7 col-lg-8">
             <p class="text-justify">
-                <span>Universidad Mexicana</span> busca contribuir en el crecimiento del país por medio del desarrollo y
-                capacitación de su gente. <span>UNIMEX®</span> ha creado un plan educativo que cubra las necesidades
+                <span style="color: #004b93 !important;">Universidad Mexicana</span> busca contribuir en el crecimiento del país por medio del desarrollo y
+                capacitación de su gente. <span style="color: #004b93 !important;">UNIMEX®</span> ha creado un plan educativo que cubra las necesidades
                 que los jóvenes manifestaban para continuar sus estudios.
                 <br><br>
                 Uno de los principales obstáculos a los que se enfrentan, es el hecho de que las instituciones públicas
@@ -17,16 +17,16 @@
                 nos llevó a crear una nueva oportunidad escolar con excelencia educativa que sea adaptable a la economía
                 de nuestros estudiantes por su bajo costo.
                 <br><br>
-                La <span>Universidad Mexicana</span> está conformada por cuatro Planteles en la República Mexicana:
+                La <span style="color: #004b93 !important;">Universidad Mexicana</span> está conformada por cuatro Planteles en la República Mexicana:
                 Izcalli, Polanco,
                 Satélite y Veracruz; así como un corporativo donde se encuentra la Rectoría.
                 <br><br>
-                El primer día de clases en <span>UNIMEX®</span> inició en agosto de 1991 en el Plantel Izcalli, donde se
+                El primer día de clases en <span style="color: #004b93 !important;">UNIMEX®</span> inició en agosto de 1991 en el Plantel Izcalli, donde se
                 implementó
                 el nivel medio superior y profesional, con gran convocatoria tanto de alumnado como de personal
                 académico.
                 <br><br>
-                Sistema <span>UNIMEX®</span> se hace realidad con la misión de formar profesionales con ética y moral
+                Sistema <span style="color: #004b93 !important;">UNIMEX®</span> se hace realidad con la misión de formar profesionales con ética y moral
                 dentro de una
                 cultura de esfuerzo y trabajo que los convierta en personas comprometidas consigo mismas y con la
                 sociedad a la que pertenecen.
@@ -50,7 +50,7 @@
                     </center>
                 </div>
                 <div class="col-6">
-                    <p class="fs-5 text-white">
+                    <p class="fs-3 text-white">
                         15462 <br>
                         Alumnos
                     </p>
@@ -65,7 +65,7 @@
                     </center>
                 </div>
                 <div class="col-6">
-                    <p class="fs-5 text-white">
+                    <p class="fs-3 text-white">
                         + de 28 <br>
                         Años de experiencia
                     </p>
@@ -80,7 +80,7 @@
                     </center>
                 </div>
                 <div class="col-6">
-                    <p class="fs-5 text-white">
+                    <p class="fs-3 text-white">
                         4<br>
                         Planteles
                     </p>
@@ -95,7 +95,7 @@
                     </center>
                 </div>
                 <div class="col-6">
-                    <p class="fs-5 text-white">
+                    <p class="fs-3 text-white">
                         + de 68,000<br>
                         Egresados
                     </p>

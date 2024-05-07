@@ -21,7 +21,7 @@
                             <div class="mb-3">
                                 <label for="correoInscripcion" class="form-label">Correo Electronico</label>
                                 <input disabled type="email" class="form-control" id="correoInscripcion"
-                                    name="correoInscripcion" value="{{ session('Email') }}">
+                                    name="correoInscripcion" value="{{ session('email') }}">
                             </div>
                         </div>
                         <div class="col-8"></div>
@@ -86,14 +86,16 @@
                         </div>
                         <div class="col-3">
                             <div class="mb-3">
-                                <label for="telefonoInscripcion" class="form-label">Telefono: ej.</label>
+                                <label for="telefonoInscripcion" class="form-label">Telefono ej. 5512345674,
+                                    2291234567</label>
                                 <input type="text" class="form-control" id="telefonoInscripcion"
                                     name="telefonoInscripcion" maxlength="13">
                             </div>
                         </div>
                         <div class="col-3">
                             <div class="mb-3">
-                                <label for="telefonoCelInscripcion" class="form-label">Tel cel</label>
+                                <label for="telefonoCelInscripcion" class="form-label">Tel cel. ej 5512345674, 2291234567
+                                </label>
                                 <input type="text" class="form-control" id="telefonoCelInscripcion"
                                     name="telefonoCelInscripcion" maxlength="13">
                             </div>
@@ -174,7 +176,7 @@
                             <button id="calcularPromo" type="submit" class="btn btn-primary mt-4">Continuar</button>
 
                             <a href="{{ route('registrar.prospecto.preinscripcion') }}" id="continuarProceso"
-                                type="button" class="btn btn-primary mt-4 d-none">Continuar</a>
+                                type="button" class="btn btn-primary mt-4 d-none">Continuar </a>
                             <button onclick="correccionDatos()" id="corregirDatos" type="button"
                                 class="btn btn-primary mt-4 d-none">Corregir Datos</button>
                         </div>
@@ -218,45 +220,62 @@
 @endsection
 
 @section('scripts')
+    @if (session('estadoCRM') == 1)
+        <script>
+            $(document).ready(function() {
+                /*
+                 * 
+                 */
+
+                let estadoProspecto = "{{ session('estadoCRM') }}";
+                console.log(estadoProspecto);
+
+                let ruta = setUrlBase() + "get/info/prospecto"
+                console.log(ruta);
+                $.ajax({
+                    method: "GET",
+                    url: ruta,
+                }).done(function(data) {
+                    console.log(data);
+
+                    $('#correoInscripcion').val(data.email);
+                    $('#nombreInscripcion').val(data.nombre);
+                    $('#apellidoPatInscripcion').val(data.apMaterno);
+                    $('#apellidoMatInscripcion').val(data.apPaterno);
+                    $('#telefonoInscripcion').val(data.telefono1);
+
+                    let clavePlantel = data.clavePlantel;
+                    let claveCampana = data.clavePeriodoIngreso;
+                    let claveNivel = data.claveNivel;
+                    let claveCarrera = data.claveCarrera;
+                    let claveHorario = data.claveTurnoMilenio;
+
+                    llenaComboPlantel(clavePlantel);
+                    llenarComboCampañas(claveCampana, clavePlantel);
+                    llenarComboNivel(clavePlantel, claveNivel);
+                    llenarCombosCarrera(claveCampana, clavePlantel, claveNivel, claveCarrera);
+                    llenarComboHorarios(claveCampana, clavePlantel, claveNivel, claveCarrera, claveHorario);
+
+                    if (data.matricula = "") {
+                        estadoCampos(true);
+                    } else {
+                        estadoCampos(false);
+                    }
+
+                }).fail(function() {
+                    console.log("Algo salió mal");
+                });
+
+
+            });
+        </script>
+        <script src="{{ asset('assets/js/preinscripcionLinea/llenar_combos.js') }}"></script>
+    @else
+        
+    @endif
     <script>
         window.onbeforeunload = function(e) {
             e.preventDefault();
         };
-
-        $(document).ready(function() {
-            /*
-             * 
-             */
-            let ruta = setUrlBase() + "get/info/prospecto"
-            console.log(ruta);
-            $.ajax({
-                method: "GET",
-                url: ruta,
-            }).done(function(data) {
-                console.log(data);
-
-                $('#correoInscripcion').val(data.email);
-                $('#nombreInscripcion').val(data.nombre);
-                $('#apellidoPatInscripcion').val(data.apMaterno);
-                $('#apellidoMatInscripcion').val(data.apPaterno);
-                $('#telefonoInscripcion').val(data.telefono1);
-
-                let clavePlantel = data.clavePlantel;
-                let claveCampana = data.clavePeriodoIngreso;
-                let claveNivel = data.claveNivel;
-                let claveCarrera = data.claveCarrera;
-                let claveHorario = data.claveHorario;
-
-                llenaComboPlantel(clavePlantel);
-                llenarComboCampañas(claveCampana, clavePlantel);
-                llenarComboNivel(clavePlantel, claveNivel);
-                llenarCombosCarrera(claveCampana, clavePlantel, claveNivel, claveCarrera);
-                llenarComboHorarios(claveCampana, clavePlantel, claveNivel, claveCarrera, claveHorario);
-
-            }).fail(function() {
-                console.log("Algo salió mal");
-            });
-        });
     </script>
-    <script src="{{ asset('assets/js/preinscripcionLinea/llenar_combos.js') }}"></script>
 @endsection

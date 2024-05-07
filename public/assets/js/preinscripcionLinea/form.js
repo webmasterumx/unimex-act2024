@@ -1,21 +1,22 @@
 $("#formPreincripcion").validate({
+    wrapper: "span",
     rules: {
         correo: {
             required: true,
             email: true,
         },
-        /* telefono: {
+        telefono: {
             required: true,
-        } */
+        }
     },
     messages: {
         correo: {
             required: "Ingresa tu correo",
             email: "Formato de correo incorrecto",
         },
-        /* telefono: {
-            required: "Ingresa tu telefono",
-        } */
+        telefono: {
+            required: "Ingresa tu teléfono",
+        }
     },
     submitHandler: function (form) {
 
@@ -41,31 +42,15 @@ $("#formPreincripcion").validate({
         }).done(function (data) {
             console.log(data);
 
-            let respuesta = JSON.parse(data);
+            $('#validarCorreo').html(`
+            <div class="spinner-border me-1" style="width: 20px; height: 20px;" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            Redirigiendo
+            `);
+            let redireccion = setUrlBase() + "form/datos_gemerales/preinscripcion";
 
-            if (respuesta.estado == true) {
-                $('#validarCorreo').html(`
-                <div class="spinner-border me-1" style="width: 20px; height: 20px;" role="status">
-                    <span class="visually-hidden">Loading...</span>
-                </div>
-                Redirigiendo
-                `);
-                let redireccion = setUrlBase() + "form/datos_gemerales/preinscripcion";
-
-                setTimeout(`location.href='${redireccion}'`, 3000);
-            } else {
-                Swal.fire({
-                    icon: "error",
-                    title: "Aviso!",
-                    html: respuesta.mensaje,
-                });
-
-                $("#validarCorreo").prop("disabled", false);
-                $('#validarCorreo').html(`
-                    <i class="bi bi-box-arrow-right"></i>
-                    Continuar
-                `);
-            }
+            setTimeout(`location.href='${redireccion}'`, 3000);
 
         }).fail(function () {
             console.log("Algo salió mal");
@@ -137,13 +122,13 @@ $("#formPromoPreinscripcion").validate({
             required: "Ingresa tu correo",
         },
         apellidoPatInscripcion: {
-            required: "Ingresa tu telefono",
+            required: "Ingresa tu teléfono",
         },
         apellidoMatInscripcion: {
             required: "Ingresa tu correo",
         },
         diaNacimiento: {
-            required: "Ingresa tu telefono",
+            required: "Ingresa tu teléfono",
         },
         mesNacimiento: {
             required: "Ingresa tu correo",

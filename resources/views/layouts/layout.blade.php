@@ -68,13 +68,13 @@
                         src="{{ asset('assets/img/social_media/youtube.png') }}" alt=""></a>
             </div>
             <div class="col-12 col-md-2 col-lg-2 mt-2">
-                <a class="text-white" href="#">INVESTIGACIÓN</a>
+                <a class="text-white" href="{{ route('investigacion') }}" target="_blank">INVESTIGACIÓN</a>
             </div>
             <div class="col-12 col-md-2 col-lg-2 mt-2">
-                <a class="text-white" href="#">KIOSCO DE <br> PROFESIONISTAS</a>
+                <a class="text-white" href="http://comunimex.lat/KioscoProfesionistasInt/" target="_blank">KIOSCO DE <br> PROFESIONISTAS</a>
             </div>
             <div class="col-12 col-md-2 col-lg-2 mt-2">
-                <a class="text-white" href="#">BLOG SOY UNIMEX</a>
+                <a class="text-white" href="https://unimex.edu.mx/soyUNIMEX/" target="_blank">BLOG SOY UNIMEX</a>
             </div>
             <div class="col-12 col-md-2 col-lg-2 mt-2">
                 <a class="text-white" href="{{ route('aviso_de_privacidad') }}">AVISO DE <br> PRIVACIDAD</a>

@@ -169,10 +169,10 @@
                     <form id="form_folleto">
                         @csrf
                         <select class="form-select mb-3" id="periodoSelectF" name="periodoSelectF">
-                            <option selected>Selecciona el periodo</option>
+                            <option value="" selected>Selecciona el periodo</option>
                         </select>
                         <select class="form-select mb-3" id="plantelSelectF" name="plantelSelectF">
-                            <option selected>Selecciona el plantel</option>
+                            <option value="" selected>Selecciona el plantel</option>
                         </select>
                         <div class="mb-3">
                             <input type="text" class="form-control" id="nombreFolleto" name="nombreFolleto"
@@ -429,20 +429,20 @@
             },
             messages: {
                 periodoSelectF: {
-                    required: "nombre requerido",
+                    required: "Periodo requerido",
                 },
                 plantelSelectF: {
-                    required: "correo requerido",
+                    required: "Plantel requerido",
                 },
                 nombreFolleto: {
-                    required: "nombre requerido",
+                    required: "Nombre requerido",
                 },
                 correoFolleto: {
-                    required: "correo requerido",
-                    email: "formato de correo incorrecto"
+                    required: "Correo requerido",
+                    email: "Formato de correo incorrecto"
                 },
                 celularFolleto: {
-                    required: "celular requerido",
+                    required: "Teléfono celular requerido",
                 }
             },
             submitHandler: function(form) {

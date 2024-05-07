@@ -49,7 +49,7 @@
                         <div class="col-12 col-md-6">
                             @csrf
                             <p>
-                                Ingresa tu correo electronico
+                                Ingresa tu correo electrónico.
                             </p>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon1">
@@ -61,14 +61,14 @@
                         </div>
                         <div class="col-12 col-md-6">
                             <p>
-                                Ingresa tu numero movil
+                                Ingresa tu número móvil.
                             </p>
                             <div class="input-group mb-3">
-                                <span class="input-group-text" id="basic-addon1">
+                                <span class="input-group-text" id="inputPhone">
                                     <i class="bi bi-telephone-fill"></i>
                                 </span>
                                 <input type="text" class="form-control" placeholder="Telefono movil"
-                                    aria-label="Username" aria-describedby="basic-addon1" name="telefono" id="telefono">
+                                    aria-label="telefono" aria-describedby="inputPhone" name="telefono" id="telefono">
                             </div>
                         </div>
                         <div class="col-12  d-flex">

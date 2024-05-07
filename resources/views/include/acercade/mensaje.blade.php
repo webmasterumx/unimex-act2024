@@ -29,7 +29,7 @@
                 sector productivo y motivación constante para adquirir la actitud emprendedora que estos tiempos
                 demandan.
             </p>
-            <p class="f-4 text-center">
+            <p class="f-4 fs-5 text-center" style="color: black;">
                 “La fórmula que proponemos para el éxito es sencilla: el trabajo constante y el gran compromiso para
                 encarar los retos”
             </p>

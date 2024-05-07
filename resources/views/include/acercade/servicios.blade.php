@@ -24,7 +24,7 @@
         </div>
         <div class="col-6 p-5">
             <h2 class="underlined-head mt-5">
-                Sala de Usos Múltiples
+                Centro de Cómputo
             </h2>
             <p class="text-justify">
                 Existen <b>dos tipos</b> de centros de cómputo en <b>UNIMEX®</b>. El académico, donde se desarrollan las

@@ -103,14 +103,14 @@ function llenarComboNivel(clavePlantel, claveNivel) {
 }
 
 function llenarCombosCarrera(claveCampana, clavePlantel, claveNivel, claveCarrera) {
-    let ruta = setUrlBase() + 'getCarreras';
+    let ruta = setUrlBase() + 'preinscripcion/get/carreras';
 
     let data = {
         plantel: clavePlantel,
         nivel: claveNivel,
         periodo: claveCampana
     }
-
+    console.log(data);
     $.ajax({
         url: ruta,
         method: "POST",
@@ -120,7 +120,7 @@ function llenarCombosCarrera(claveCampana, clavePlantel, claveNivel, claveCarrer
         },
         data: data
     }).done(function (data) {
-        const carreras = data;
+        const carreras = data.CarerrasDTO;
         console.log(carreras);
         let option_default = `<option value="">Seleciona una Carrera</option>`;
         if (carreras != undefined) {
@@ -143,7 +143,8 @@ function llenarCombosCarrera(claveCampana, clavePlantel, claveNivel, claveCarrer
 }
 
 function llenarComboHorarios(claveCampana, clavePlantel, claveNivel, claveCarrera, claveHorario) {
-    let ruta = setUrlBase() + "getHorarios";
+    
+    let ruta = setUrlBase() + "preinscripcion/get/horarios";
 
     let data = {
         plantel: clavePlantel,
@@ -151,6 +152,7 @@ function llenarComboHorarios(claveCampana, clavePlantel, claveNivel, claveCarrer
         periodo: claveCampana,
         carrera: claveCarrera,
     }
+    console.log(data);
 
     $.ajax({
         url: ruta,
@@ -161,7 +163,7 @@ function llenarComboHorarios(claveCampana, clavePlantel, claveNivel, claveCarrer
         },
         data: data
     }).done(function (data) {
-        const horarios = data;
+        const horarios = data.TurnosDTO;
         console.log(data);
         let option_default = `<option value="">Seleciona un Horario</option>`;
         if (horarios != undefined) {

@@ -9,7 +9,7 @@
         #historia {
             background: no-repeat center center;
             background-size: cover;
-            height: 100vh;
+            height: 72vh;
             margin: auto;
         }
 
@@ -20,14 +20,20 @@
         }
 
         .etiqueta-titulo-acercade {
-            width: 35%;
             text-align: center !important;
             color: #fff;
             margin: auto;
             position: relative;
-            top: 50%;
+            top: 38%;
             background-color: rgba(0, 0, 0, 0.5);
             font-weight: 400;
+            font-size: 50px !important;
+        }
+
+        .quote {
+            font-size: 2.063rem;
+            background-color: #f8981d;
+            color: #fff;
         }
     </style>
 @endsection
@@ -35,7 +41,8 @@
 @section('content')
     <!-- Inicio de seccion de portada -->
     <section id="historia" style="background-image: url({{ asset($acercadeFirst->portada) }})">
-        <h1 class="etiqueta-titulo-acercade p-3 text-uppercase"> {{ $acercadeFirst->nombre }} </h1>
+        <h1 class="etiqueta-titulo-acercade p-3 text-uppercase" style="width: {{ $acercadeFirst->anchoTitulo }}% !important;">
+            {{ $acercadeFirst->titulo }} </h1>
     </section>
     <!-- Fin de seccion de portada -->
 
@@ -60,7 +67,8 @@
                                     {{ $recomendacion->nombre }} </h5>
                                 <p class="card-text"> {{ $recomendacion->descripcion_corta }} </p>
                                 <center>
-                                    <a href="{{ route('acercade', $recomendacion->slug) }}" class="btn btn-primary">VER MÁS</a>
+                                    <a href="{{ route('acercade', $recomendacion->slug) }}" class="btn btn-primary">VER MÁS
+                                        <i class="bi bi-arrow-right-circle-fill"></i></a>
                                 </center>
                             </div>
                         </div>

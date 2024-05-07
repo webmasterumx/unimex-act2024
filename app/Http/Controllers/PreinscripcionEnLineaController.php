@@ -24,22 +24,30 @@ class PreinscripcionEnLineaController extends Controller
 
     public function validacionDeCorreo(Request $request)
     {
-
-        session(['Email' => $request->correo]);
+        session(['email' => $request->correo]);
+        session(['telefono' => $request->correo]);
 
         $valores = array(
             "correoElectronico" => $request->correo,
-            "idMicroSitio" => 20
+            "numeroCelular" => $request->telefono,
         );
 
         $validacion = app(ApiConsumoController::class)->verificaProspecto($valores);
 
         if ($validacion == 1) {
-            $respuesta['estado'] = false;
-            $respuesta['mensaje'] = "La dirección de correo electrónico <b>$request->correo</b> ya fue registrada, favor de revisar.";
+            // esto significa que esta dentro del crm y se debe buscar con el metodo de la ficha+
+            // con los datos optenidos si llena el formulario de datos y tambien se valida si esta matriculado
+            // si esta matriculado se bloquean los datos
+            $respuesta['estado'] = 1;
+            $respuesta['mensaje'] = "El prospecto dueño del correo existe en CRM";
+
+            session(['estadoCRM' => 1]);
         } else {
-            $respuesta['estado'] = true;
-            $respuesta['mensaje'] = "si pasa";
+            // simplemente pasa al siguiente formulario
+            $respuesta['estado'] = 0;
+            $respuesta['mensaje'] = "El prospecto dueño del correo no existe en CRM";
+
+            session(['estadoCRM' => 0]);
         }
 
         return response()->json($respuesta);
@@ -305,18 +313,43 @@ class PreinscripcionEnLineaController extends Controller
             $valores = array(
                 "folioCRM" => $foliocrm[1]
             );
-
-            //var_dump($valores);
-
-            $apiConsumo = new ApiConsumoController();
-            $infoProspecto = $apiConsumo->getInfoProspecto($valores);
-
-            //var_dump($infoProspecto);
-
-            return response()->json($infoProspecto);
-
         } else {
-            echo "este viene de organico";
+            //echo "este viene de organico se debe consultar si esta en crm";
+
+            $valores = array(
+                "campaingContent" => "",
+                "campaignMedium" => "",
+                "campaignTerm" => "",
+                "descripPublicidad" => "",
+                "folioReferido" => "0",
+                "pApMaterno" => "",
+                "pApPaterno" => 0,
+                "pCarrera" => 0,
+                "pCelular" => "",
+                "pCorreo" => session('email'),
+                "pHorario" => 0,
+                "pNivel_Estudio" => 0,
+                "pNombre" => "",
+                "pOrigen" => 11,
+                "pPeriodoEscolar" => 0,
+                "pPlantel" => 0,
+                "pTelefono" => "",
+                "utpsource" => "",
+                "websiteURL" => "https://unimex.edu.mx/",
+            );
+
+            $respuesta = app(ApiConsumoController::class)->agregarProspectoCRM($valores);
+
+            $valores = array(
+                "folioCRM" => $respuesta['FolioCRM']
+            );
         }
+
+        $apiConsumo = new ApiConsumoController();
+        $infoProspecto = $apiConsumo->getInfoProspecto($valores);
+
+        //var_dump($infoProspecto);
+
+        return response()->json($infoProspecto);
     }
 }

@@ -101,7 +101,7 @@ class ApiConsumoController extends Controller
             "claveBeca" => $request->claveBeca,
             "egresado" => $request->egresado,
         ]);
-        
+
         return $response->json();
     }
 
@@ -131,7 +131,7 @@ class ApiConsumoController extends Controller
     //* preinscripcion en linea
     public function verificaProspecto($valores)
     {
-        $response = Http::post($this->base_url . 'verifica-prospecto', $valores);
+        $response = Http::post($this->base_url . 'preinscripcion/existe_prospecto_crm', $valores);
 
         return $response->json();
     }
@@ -177,6 +177,29 @@ class ApiConsumoController extends Controller
     public function registraProspectoCRMDesdePreinscripcionEnLinea($valores)
     {
         $response = Http::post($this->base_url . 'preinscripcion/agrega-prospecto/sineroi', $valores);
+
+        return $response->json();
+    }
+
+    public function preinscripcionGetCarreras(Request $request)
+    {
+        $response = Http::post($this->base_url . 'preinscripcion/get/catalogo/carreras', [
+            'clavePlantel' => $request->plantel,
+            'claveNivel' => $request->nivel,
+            'clavePeriodo' =>   $request->periodo
+        ]);
+
+        return $response->json();
+    }
+
+    public function preinscripcionGetHorarios(Request $request)
+    {
+        $response = Http::post($this->base_url . 'preinscripcion/get/catalogo/horarios', [
+            "clavePlantel" => $request->plantel,
+            "claveNivel" => $request->nivel,
+            "claveCarrera" => $request->carrera,
+            "clavePeriodo" => $request->periodo
+        ]);
 
         return $response->json();
     }

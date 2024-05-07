@@ -72,6 +72,8 @@ Route::post('/get/detalle/beca', [ApiConsumoController::class, 'calculaDetalleHo
 Route::post('/actualiza/prospecto/calculadora', [ApiConsumoController::class, 'actualizaProspecto'])->name('actualiza.prospecto.calculadora');
 Route::post('/valida/prospecto', [ApiConsumoController::class, 'verificaProspecto'])->name('valida.prospecto');
 Route::get('/getMunicipios/{estado}', [ApiConsumoController::class, 'getMunicipios'])->name('get.municipios');
+Route::post('/preinscripcion/get/carreras', [ApiConsumoController::class, 'preinscripcionGetCarreras'])->name('preinscripcion.get.carreras');
+Route::post('/preinscripcion/get/horarios', [ApiConsumoController::class, 'preinscripcionGetHorarios'])->name('preinscripcion.get.horarios');
 
 //* envio de formularios
 Route::post('/contacto/prospecto', [FormController::class, 'contactoProspecto'])->name('contacto.prospecto');

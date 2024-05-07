@@ -7,12 +7,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Preinscripción en Línea</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="icon" href="{{ asset('assets/img/favicon.png') }}" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
     <style>
         label {
             color: #00539B !important;
+        }
+
+        label .error {
+            color: red;
         }
     </style>
 </head>
@@ -21,7 +26,7 @@
     <nav class="navbar fixed-top navbar-expand-lg" style="background: #00539a !important;">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img class="ms-5" width="255" src="{{ asset('assets/img/preinscripcion_linea/logo-2020.png') }}"
+                <img class="ms-5" width="255" src="{{ asset('assets/img/header/logo-2020.webp') }}"
                     alt="">
             </a>
         </div>
