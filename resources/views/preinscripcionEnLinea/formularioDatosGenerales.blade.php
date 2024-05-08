@@ -47,7 +47,9 @@
                             </div>
                         </div>
                         <div class="col-3 row">
-                            <label for="" class="form-label">Fecha de Nacimiento</label>
+                            <div class="col-12" style="height: 12px;">
+                                <label for="" class="form-label m-0">Fecha de Nacimiento</label>
+                            </div>
                             <div class="col-4">
                                 <select id="diaNacimiento" name="diaNacimiento" class="form-select"
                                     aria-label="Default select example">
@@ -86,15 +88,14 @@
                         </div>
                         <div class="col-3">
                             <div class="mb-3">
-                                <label for="telefonoInscripcion" class="form-label">Telefono ej. 5512345674,
-                                    2291234567</label>
+                                <label for="telefonoInscripcion" class="form-label">Telefono ej. 5512345674</label>
                                 <input type="text" class="form-control" id="telefonoInscripcion"
                                     name="telefonoInscripcion" maxlength="13">
                             </div>
                         </div>
                         <div class="col-3">
                             <div class="mb-3">
-                                <label for="telefonoCelInscripcion" class="form-label">Tel cel. ej 5512345674, 2291234567
+                                <label for="telefonoCelInscripcion" class="form-label">Tel cel. ej 5512345674
                                 </label>
                                 <input type="text" class="form-control" id="telefonoCelInscripcion"
                                     name="telefonoCelInscripcion" maxlength="13">
@@ -271,7 +272,6 @@
         </script>
         <script src="{{ asset('assets/js/preinscripcionLinea/llenar_combos.js') }}"></script>
     @else
-        
     @endif
     <script>
         window.onbeforeunload = function(e) {

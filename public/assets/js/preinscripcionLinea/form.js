@@ -119,58 +119,58 @@ $("#formPromoPreinscripcion").validate({
     },
     messages: {
         nombreInscripcion: {
-            required: "Ingresa tu correo",
+            required: "Ingresa tu nombre(s).",
         },
         apellidoPatInscripcion: {
-            required: "Ingresa tu teléfono",
+            required: "Ingresa tu apellido paterno.",
         },
         apellidoMatInscripcion: {
-            required: "Ingresa tu correo",
+            required: "Ingresa tu apellido materno.",
         },
         diaNacimiento: {
-            required: "Ingresa tu teléfono",
+            required: "Día requerido.",
         },
         mesNacimiento: {
-            required: "Ingresa tu correo",
+            required: "Mes requerido.",
         },
         yearNacimiento: {
-            required: "Ingresa tu telefono",
+            required: "Año requerido.",
         },
         telefonoInscripcion: {
-            required: "Ingresa tu correo",
+            required: "Ingresa un número de teléfono.",
         },
         telefonoCelInscripcion: {
-            required: "Ingresa tu telefono",
+            required: "Ingresa un número de celular.",
         },
         calleInscripcion: {
-            required: "Ingresa tu correo",
+            required: "Calle requerida.",
         },
         numeroInscripcion: {
-            required: "Ingresa tu telefono",
+            required: "Número requerido.",
         },
         coloniaInscripcion: {
-            required: "Ingresa tu correo",
+            required: "Colonia requerida.",
         },
         estadoInscripcion: {
-            required: "Ingresa tu telefono",
+            required: "Estado requerido.",
         },
         municipioInscripcion: {
-            required: "Ingresa tu correo",
+            required: "Municipio requerido.",
         },
         plantelSelect: {
-            required: "Ingresa tu telefono",
+            required: "Plantel requerido.",
         },
         periodoSelect: {
-            required: "Ingresa tu correo",
+            required: "Periodo requerido.",
         },
         nivelSelect: {
-            required: "Ingresa tu telefono",
+            required: "Nivel requerido.",
         },
         carreraSelect: {
-            required: "Ingresa tu correo",
+            required: "Carrera requerida.",
         },
         horarioSelect: {
-            required: "Ingresa tu telefono",
+            required: "Horario requerido.",
         }
     },
     submitHandler: function (form) {

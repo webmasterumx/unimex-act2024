@@ -9,7 +9,7 @@
         #plantel {
             background: no-repeat center center;
             background-size: cover;
-            height: 100vh;
+            height: 74vh;
             margin: auto;
         }
 
@@ -43,7 +43,7 @@
     <section id="plantel" style="background-image: url({{ asset($plantel->portada) }})"></section>
     <!-- Fin de la portada del plantel -->
 
-    <section class="container-fluid px-5 py-3">
+    <section class="container-fluid px-5 py-5">
         <div class="row">
             <div class="col-12 col-md-3 col-lg-2">
                 <h2 class="underlined-head text-uppercase">
@@ -111,7 +111,7 @@
                     <div class="card h-100" style="width: 18rem;">
                         <img src="{{ asset($plantelInNot->portada) }}" class="card-img-top" alt="{{ $plantelInNot->nombre }}">
                         <div class="card-body">
-                            <h5 class="card-title underlined-head text-uppercase"> plantel {{ $plantelInNot->nombre }} </h5>
+                            <h5 class="card-title underlined-head text-uppercase"> plantel {{ $plantelInNot->titulo }} </h5>
                             <p class="card-text"> {{ $plantelInNot->descripcion_corta }} </p>
                             <center>
                                 <a href="{{ route('plantel', $plantelInNot->nombre) }}" class="btn btn-primary">VER MÁS</a>
