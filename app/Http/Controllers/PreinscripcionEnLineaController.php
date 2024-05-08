@@ -25,7 +25,7 @@ class PreinscripcionEnLineaController extends Controller
     public function validacionDeCorreo(Request $request)
     {
         session(['email' => $request->correo]);
-        session(['telefono' => $request->correo]);
+        session(['telefono' => $request->telefono]);
 
         $valores = array(
             "correoElectronico" => $request->correo,

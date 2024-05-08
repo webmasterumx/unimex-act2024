@@ -1,5 +1,5 @@
 $("#formPreincripcion").validate({
-    wrapper: "span",
+    
     rules: {
         correo: {
             required: true,
@@ -11,11 +11,11 @@ $("#formPreincripcion").validate({
     },
     messages: {
         correo: {
-            required: "Ingresa tu correo",
-            email: "Formato de correo incorrecto",
+            required: "Ingresa tu correo.",
+            email: "Formato de correo incorrecto.",
         },
         telefono: {
-            required: "Ingresa tu teléfono",
+            required: "Ingresa tu teléfono.",
         }
     },
     submitHandler: function (form) {

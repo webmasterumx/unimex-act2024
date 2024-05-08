@@ -1,4 +1,5 @@
 function llenaComboPlantel(clavePlantel) {
+    $('#textCargaPreinscripcion').html('Obteniendo oferta académica..');
     let ruta = setUrlBase() + 'getPlanteles';
 
     $.ajax({
@@ -143,7 +144,7 @@ function llenarCombosCarrera(claveCampana, clavePlantel, claveNivel, claveCarrer
 }
 
 function llenarComboHorarios(claveCampana, clavePlantel, claveNivel, claveCarrera, claveHorario) {
-    
+
     let ruta = setUrlBase() + "preinscripcion/get/horarios";
 
     let data = {
@@ -178,6 +179,8 @@ function llenarComboHorarios(claveCampana, clavePlantel, claveNivel, claveCarrer
             $("#horarioSelect").append(option_default);
         }
         $("#horarioSelect option[value=" + claveHorario + "]").attr("selected", true);
+
+        $('#modalCarga').modal('hide');
 
     }).fail(function (e) {
         console.log("Request: " + JSON.stringify(e));

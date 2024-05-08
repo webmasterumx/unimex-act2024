@@ -38,27 +38,47 @@
 @section('content')
     <!-- Inicio de portada -->
     <section id="portada" style="background-image: url({{ asset($posgrado->portada) }}); position: relative;">
-        <h1 class="etiqueta-titulo p-3 text-uppercase"> {{ $posgrado->titulo }} </h1>
+        <h1 class="etiqueta-titulo p-3 text-uppercase" style="font-size: 30px;"> {{ $posgrado->titulo }} </h1>
     </section>
     <!-- Fin de portada -->
 
     <!-- Inicio de la sección de objetivo -->
     <section class="container-fluid px-5 py-5">
         <div class="row">
-            <div class="col-12 col-md-3 col-lg-2">
-                <h2 class="underlined-head text-uppercase fw-normal" style="font-size: 1.438rem;">
-                    especialidad y <br> maestría en {{ $posgrado->titulo }}
+            <div class="col-12">
+                <h2 class="underlined_head_obj text-center text-uppercase fw-normal" style="font-size: 1.438rem;">
+                    especialidad y maestría en {{ $posgrado->titulo }}
                 </h2>
             </div>
-            <div class="col-12 col-md-9 col-lg-10 text-justify">
+            <div class="col-12">
                 {!! $posgrado->objetivo !!}
-                <br><br>
-                <a id="redireccionCTCL" href="#" class="btn bg-unimex text-white">
-                    Calculadora de Becas
-                </a>
-                <a id="redireccionPELL" href="#" class="btn text-white" style="background-color: #de951b;">
-                    Preinscripción En Línea
-                </a>
+            </div>
+            <div class="col-12 mt-3">
+                <div class="row">
+                    <div class="col-4">
+                        <div class="d-grid gap-2">
+                            <a id="redireccionCTCL" href="#" class="btn btn-outline-primary">
+                                Calcula de Becas
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="d-grid gap-2">
+                            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                                data-bs-target="#comoObtengoMiBecaModal">
+                                Más información
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="d-grid gap-2">
+                            <a id="redireccionPELL" href="#" class="btn text-white"
+                                style="background-color: #de951b;">
+                                Preinscripción En Línea
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

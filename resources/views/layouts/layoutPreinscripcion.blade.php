@@ -12,12 +12,9 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
     <style>
-        label {
-            color: #00539B !important;
-        }
-
-        label .error {
-            color: red;
+        .error {
+            color: red !important;
+            width: 100%;
         }
     </style>
 </head>
@@ -26,8 +23,7 @@
     <nav class="navbar fixed-top navbar-expand-lg" style="background: #00539a !important;">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img class="ms-5" width="255" src="{{ asset('assets/img/header/logo-2020.webp') }}"
-                    alt="">
+                <img class="ms-5" width="255" src="{{ asset('assets/img/header/logo-2020.webp') }}" alt="">
             </a>
         </div>
     </nav>

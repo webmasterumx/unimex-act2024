@@ -45,7 +45,7 @@
     <section class="container-fluid px-5 py-5">
         <div class="row">
             <div class="col-12 mb-2">
-                <h2 class="underlined_head_obj">
+                <h2 class="underlined_head_obj fw-normal" style="font-size: 1.438rem;">
                     OBJETIVO
                 </h2>
             </div>
@@ -89,10 +89,10 @@
             <div id="contraportada" class="col-12 col-md-6 col-lg-6">
             </div>
             <div class="col-12 col-md-6 col-lg-6 bg-articule p-5">
-                <h1 style="font-size: 1.25rem;" class="underlined-head">
+                <h2 style="font-size: 1.438rem;" class="underlined-head fw-normal">
                     Ventajas de estudiar la Licenciatura en <span class="text-capitalize">
                         {{ $licenciatura->subtitulo }}</span>
-                </h1>
+                </h2>
                 <ul class="text-justify">
                     <li>
                         <b>Beca anual renovable hasta del 60%.</b> Sin importar tu promedio, obtén una beca durante el
@@ -124,19 +124,19 @@
     <!-- Fin de la sección de ventajas -->
 
     <!-- Inicio de temario -->
-    <section class="py-3">
-        <div class="container px-5">
+    <section class="py-3 container-fluid px-5">
+        <div class="row">
             <div class="col-12">
-                <h2 class="text-center underlined-head-center">
+                <h2 style="font-size: 1.438rem;" class="text-center underlined-head-center fw-normal">
                     PLAN DE ESTUDIOS
                 </h2>
             </div>
             <div id="temario" class="col-12 mt-5">
                 @for ($i = 0; $i < sizeof($temario); $i++)
-                    <div class="card border-0 mx-3 h-100" style="max-height: 250px;">
+                    <div class="card border-0 mx-3 h-100" style="max-height: 300px;">
                         <h5 class="card-header bg-unimex text-white text-center">
                             {{ $temario[$i]['nombrecuatrimestre'] }}</h5>
-                        <div class="card-body bg-articule" style="min-height: 250px;">
+                        <div class="card-body bg-articule" style="min-height: 300px;">
                             <ul>
                                 @for ($j = 0; $j < sizeof($temario[$i]['temas']); $j++)
                                     <li class="py-1">
@@ -245,7 +245,7 @@
 
             </div>
             <div class="col-12 col-md-8 col-lg-9">
-                <h2 class="underlined-head">
+                <h2 class="underlined-head fw-normal" style="font-size: 1.438rem;">
                     REQUISITOS
                 </h2>
                 <div id="requisitos">
@@ -341,8 +341,8 @@
         $('#temario').slick({
             infinite: false,
             autoplay: false,
-            slidesToShow: 3,
-            slidesToScroll: 3,
+            slidesToShow: 4,
+            slidesToScroll: 4,
             arrows: true,
             autoplaySpeed: 2000,
             prevArrow: '<button type="button" class="slick-prev-tema"><i class="bi bi-chevron-compact-left"></i></button>',

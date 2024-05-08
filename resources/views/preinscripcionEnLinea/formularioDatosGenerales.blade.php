@@ -21,7 +21,7 @@
                             <div class="mb-3">
                                 <label for="correoInscripcion" class="form-label">Correo Electronico</label>
                                 <input disabled type="email" class="form-control" id="correoInscripcion"
-                                    name="correoInscripcion" value="{{ session('email') }}">
+                                    name="correoInscripcion" value="">
                             </div>
                         </div>
                         <div class="col-8"></div>
@@ -46,44 +46,46 @@
                                     name="apellidoMatInscripcion">
                             </div>
                         </div>
-                        <div class="col-3 row">
-                            <div class="col-12" style="height: 12px;">
-                                <label for="" class="form-label m-0">Fecha de Nacimiento</label>
-                            </div>
-                            <div class="col-4">
-                                <select id="diaNacimiento" name="diaNacimiento" class="form-select"
-                                    aria-label="Default select example">
-                                    <option value="" selected>Dia</option>
-                                    @for ($i = 1; $i <= 31; $i++)
-                                        <option value="{{ $i }}"> {{ $i }} </option>
-                                    @endfor
-                                </select>
-                            </div>
-                            <div class="col-4">
-                                <select id="mesNacimiento" name="mesNacimiento" class="form-select"
-                                    aria-label="Default select example">
-                                    <option value="" selected>Mes</option>
-                                    <option value="01">01</option>
-                                    <option value="02">02</option>
-                                    <option value="03">03</option>
-                                    <option value="04">04</option>
-                                    <option value="05">05</option>
-                                    <option value="06">06</option>
-                                    <option value="07">07</option>
-                                    <option value="08">08</option>
-                                    <option value="09">09</option>
-                                    <option value="10">10</option>
-                                    <option value="11">11</option>
-                                    <option value="12">12</option>
-                                </select>
-                            </div>
-                            <div class="col-4">
-                                <select id="yearNacimiento" name="yearNacimiento" class="form-select">
-                                    <option value="" selected>Año</option>
-                                    @for ($i = 1970; $i <= 2004; $i++)
-                                        <option value="{{ $i }}"> {{ $i }} </option>
-                                    @endfor
-                                </select>
+                        <div class="col-3">
+                            <div class="row">
+                                <div class="col-12 mb-2">
+                                    <label for="" class="form-label m-0">Fecha de Nacimiento</label>
+                                </div>
+                                <div class="col-4">
+                                    <select id="diaNacimiento" name="diaNacimiento" class="form-select"
+                                        aria-label="Default select example">
+                                        <option value="" selected>Dia</option>
+                                        @for ($i = 1; $i <= 31; $i++)
+                                            <option value="{{ $i }}"> {{ $i }} </option>
+                                        @endfor
+                                    </select>
+                                </div>
+                                <div class="col-4">
+                                    <select id="mesNacimiento" name="mesNacimiento" class="form-select"
+                                        aria-label="Default select example">
+                                        <option value="" selected>Mes</option>
+                                        <option value="01">01</option>
+                                        <option value="02">02</option>
+                                        <option value="03">03</option>
+                                        <option value="04">04</option>
+                                        <option value="05">05</option>
+                                        <option value="06">06</option>
+                                        <option value="07">07</option>
+                                        <option value="08">08</option>
+                                        <option value="09">09</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                    </select>
+                                </div>
+                                <div class="col-4">
+                                    <select id="yearNacimiento" name="yearNacimiento" class="form-select">
+                                        <option value="" selected>Año</option>
+                                        @for ($i = 1970; $i <= 2004; $i++)
+                                            <option value="{{ $i }}"> {{ $i }} </option>
+                                        @endfor
+                                    </select>
+                                </div>
                             </div>
                         </div>
                         <div class="col-3">
@@ -220,16 +222,12 @@
     </div>
 @endsection
 
+@include('modales.modalCargaPreinscripcion')
+
 @section('scripts')
-    @if (session('estadoCRM') == 1)
+    @if (session('estadoCRM') == 1 || session()->has('foliocrm') == true)
         <script>
             $(document).ready(function() {
-                /*
-                 * 
-                 */
-
-                let estadoProspecto = "{{ session('estadoCRM') }}";
-                console.log(estadoProspecto);
 
                 let ruta = setUrlBase() + "get/info/prospecto"
                 console.log(ruta);
@@ -263,6 +261,7 @@
                         estadoCampos(false);
                     }
 
+
                 }).fail(function() {
                     console.log("Algo salió mal");
                 });
@@ -272,10 +271,20 @@
         </script>
         <script src="{{ asset('assets/js/preinscripcionLinea/llenar_combos.js') }}"></script>
     @else
+        <script>
+            let correoGuardado = "{{ session('email') }}";
+            let telefonoGuardado = "{{ session('telefono') }}";
+            $('#correoInscripcion').val(correoGuardado);
+            $('#telefonoInscripcion').val(telefonoGuardado);
+        </script>
     @endif
     <script>
         window.onbeforeunload = function(e) {
             e.preventDefault();
         };
+
+        $(document).ready(function() {
+            $('#modalCarga').modal('show')
+        });
     </script>
 @endsection

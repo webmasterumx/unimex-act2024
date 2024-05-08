@@ -43,9 +43,9 @@
     <section class="container-fluid p-5">
         <div class="row">
             <div class="col-12 text-center">
-                <h1 class="underlined_head_obj text-uppercase fw-normal" style="font-size: 1.438rem;">
+                <h2 class="underlined_head_obj text-uppercase fw-normal" style="font-size: 1.438rem;">
                     LICENCIATURA ABIERTA EN {{ $licenciatura_sua->titulo }}
-                </h1>
+                </h2>
             </div>
             <div class="col-12 col-md-4 text-center">
                 <p style="color: #014B94 !important; font-size: 15px !important;">
@@ -116,9 +116,9 @@
                 </div>
             </div>
             <div id="text_ventajas" class="col-12 col-md-6 col-lg-6 bg-articule p-5">
-                <h1 style="font-size: 1.438rem;" class="underlined-head text-uppercase fw-normal">
+                <h2 style="font-size: 1.438rem;" class="underlined-head text-uppercase fw-normal">
                     VENTAJAS DE ESTUDIAR LA LICENCIATURA ABIERTA EN {{ $licenciatura_sua->titulo }}
-                </h1>
+                </h2>
                 <p>
                     <b>Se adapta a tu tiempo y tu vida.</b> Plan modular de 2 años 4 meses (7 cuatrimestres) que te permite
                     estudiar en tus tiempos cursando sólo 2 materias cada mes, ¡sin trabajos ni tareas! sólo un examen por
@@ -152,9 +152,9 @@
     <section class="py-3 container-fluid px-5">
         <div class="row">
             <div class="col-12">
-                <h1 class="text-center underlined-head-center fw-normal" style="font-size: 1.438rem;">
+                <h2 class="text-center underlined-head-center fw-normal" style="font-size: 1.438rem;">
                     ASEGURA TU LUGAR Y TU BECA, TENEMOS CUPO LIMITADO:
-                </h1>
+                </h2>
                 <p>
                     Debido a nuestro excelente Programa de Becas el cupo es limitado, así que te recomendamos completar tu
                     inscripción en el ciclo deseado para asegurar tu lugar y tu beca.
@@ -218,9 +218,9 @@
     <section class="py-3 container-fluid px-5">
         <div class="row">
             <div class="col-12">
-                <h1 class="text-center underlined-head-center fw-normal" style="font-size: 1.438rem;">
+                <h2 class="text-center underlined-head-center fw-normal" style="font-size: 1.438rem;">
                     PLAN DE ESTUDIOS
-                </h1>
+                </h2>
                 <p>
                     Plan modular de 2 años 4 meses (7 cuatrimestres) que te permite estudiar en tus tiempos cursando sólo 2
                     materias cada mes, ¡sin trabajos ni tareas! sólo un examen por materia. <br>
@@ -258,9 +258,9 @@
     <section class="bg_campo_laboral container-fluid px-5 py-5 text-white">
         <div class="row">
             <div class="col-12 col-md-6 col-lg-6">
-                <h1 style="font-size: 1.50rem;" class="underlined-head text-uppercase text-white">
+                <h2 style="font-size: 1.50rem;" class="underlined-head text-uppercase text-white">
                     LICENCIATURA ABIERTA EN {{ $licenciatura_sua->titulo }}
-                </h1>
+                </h2>
                 <p class="text-justify">
                     Campo Laboral <br>
                     {{ $licenciatura_sua->campo_laboral }}
@@ -294,13 +294,13 @@
 
             </div>
             <div class="col-12 col-md-8 col-lg-9">
-                <h2 class="underlined-head">
+                <h2 class="underlined-head fw-normal" style="font-size: 1.438rem;">
                     REQUISITOS
                 </h2>
                 <div id="requisitos">
                     <div class="card border-0">
                         <div class="card-body">
-                            <h2>Sólo necesitas:</h2>
+                            <p class="fw-bold">Sólo necesitas:</p>
                             <ul class="list-unstyled">
                                 <li>Comprobante de pago de inscripción.</li>
                                 <li>Acta de nacimiento o documento alternativo.</li>
@@ -318,7 +318,7 @@
                     </div>
                     <div class="card border-0">
                         <div class="card-body">
-                            <h2>Estudiantes Extranjeros Anexar:</h2>
+                            <p class="fw-bold">Estudiantes Extranjeros Anexar:</p>
                             <ul>
                                 <li>Copia de Pasaporte y visa.</li>
                                 <li>Formato FM3 (expedido por la Secretaría de Relaciones Exteriores) que Avale su
