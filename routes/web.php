@@ -31,7 +31,7 @@ Route::get('/contacto', [UnimexController::class, 'contacto'])->name('contacto')
 Route::get('/calcula-tu-cuota', [UnimexController::class, 'calculaTuCuota'])->name('calcula_tu_cuota');
 Route::get('/preinscripcion/ficha/pdf', [UnimexController::class, 'fichaPDFGenerar'])->name('preinscripcion.fichs.pdf');
 Route::get('/preguntas-frecuentes', [UnimexController::class, 'preguntasFrecuentes'])->name('preguntas.frecuentes');
-Route::get('/rvoes', [UnimexController::class, 'rvoe'])->name('rvoe');
+Route::get('/rvoes', [UnimexController::class, 'rvoe'])->name('rvoes');
 Route::get('/investigacion', [UnimexController::class, 'investigacion'])->name('investigacion');
 Route::get('/carta/resutado/{matricula}', [UnimexController::class, 'cartaResultados'])->name('carta.resultado');
 Route::get('/forma/pago/preinscripcion/{folio}', [FormController::class, 'buscarProspectoForFolio'])->name('forma.pago.preinscripcion');

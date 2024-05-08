@@ -6,13 +6,6 @@
 
 @section('styles')
     <style>
-        #contraportada {
-            background-position: 50% 97%;
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-image: url("{{ asset($licenciatura_sua->contraportada) }}");
-        }
-
         .bg_contacto {
             background: url("{{ asset('assets/img/extras/bg-01.webp') }}");
             background-position: center;
@@ -26,7 +19,7 @@
         }
 
         #text_ventajas {
-            height: 400px;
+            height: 518px;
             overflow-y: scroll;
         }
 
@@ -41,30 +34,63 @@
 @section('content')
     <!-- Inicio de portada -->
     <section id="portada" style="background-image: url({{ asset($licenciatura_sua->portada) }}); position: relative;">
-        <h1 class="etiqueta-titulo p-3 text-uppercase"> sua {{ $licenciatura_sua->titulo }} </h1>
+        <h1 class="etiqueta-titulo p-3 text-uppercase" style="font-size: 30px;"> LICENCIATURA ABIERTA EN
+            {{ $licenciatura_sua->titulo }} </h1>
     </section>
     <!-- Fin de portada -->
 
     <!-- Inicio de la sección de objetivo -->
     <section class="container-fluid p-5">
         <div class="row">
-            <div class="col-12 col-md-3 col-lg-2">
-                <h1 class="underlined-head text-uppercase fw-normal" style="font-size: 1.438rem;">
-                    (SUA) LICENCIATURA EN <br> {{ $licenciatura_sua->titulo }}
+            <div class="col-12 text-center">
+                <h1 class="underlined_head_obj text-uppercase fw-normal" style="font-size: 1.438rem;">
+                    LICENCIATURA ABIERTA EN {{ $licenciatura_sua->titulo }}
                 </h1>
             </div>
-            <div class="col-12 col-md-9 col-lg-10 text-justify">
+            <div class="col-12 col-md-4 text-center">
+                <p style="color: #014B94 !important; font-size: 15px !important;">
+                    SISTEMA UNIVERSITARIO ABIERTO
+                </p>
+            </div>
+            <div class="col-12 col-md-2 text-center">
+                <p style="color: #014B94 !important; font-size: 15px !important;">
+                    NO ESCOLARIZADO
+                </p>
+            </div>
+            <div class="col-12 col-md-6 text-center">
+                <p style="color: #014B94 !important; font-size: 15px !important;">
+                   {!! $licenciatura_sua->reconocimiento !!}
+                </p>
+            </div>
+            <div class="col-12  text-center">
                 {!! $licenciatura_sua->objetivo !!}
-                <br><br>
-                <button class="btn bg-unimex text-white">
-                    ¿Cómo obtengo mi Beca?
-                </button>
-                <a id="redireccionCTCL" href="#" class="btn bg-unimex text-white">
-                    Calculadora de Becas
-                </a>
-                <a id="redireccionPELL" href="#" class="btn text-white" style="background-color: #de951b;">
-                    Preinscripción En Línea
-                </a>
+            </div>
+            <div class="col-12 mt-3">
+                <div class="row">
+                    <div class="col-4">
+                        <div class="d-grid gap-2">
+                            <a id="redireccionCTCL" href="#" class="btn btn-outline-primary">
+                                Calcula de Becas
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="d-grid gap-2">
+                            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                                data-bs-target="#comoObtengoMiBecaModal">
+                                Más información
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="d-grid gap-2">
+                            <a id="redireccionPELL" href="#" class="btn text-white"
+                                style="background-color: #de951b;">
+                                Preinscripción En Línea
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -73,51 +99,142 @@
     <!-- Inicio de la sección de ventajas -->
     <section class="container-fluid">
         <div class="row">
-            <div id="contraportada" class="col-12 col-md-6 col-lg-6">
+            <div class="col-12 col-md-6 col-lg-6 p-0">
+                <div id="carrucelVentajas" style="height: 500px !important;">
+                    <div style="width: 100%; height: 90vh;">
+                        <img style="width: 100%;" src="{{ asset('assets/img/licenciaturasSua/TERMINA_EN_2.png') }}"
+                            class="lazyload" alt="Licenciatura UNIMEX" />
+                    </div>
+                    <div style="width: 100%; height: 90vh;">
+                        <img style="width: 100%;" src="{{ asset('assets/img/licenciaturasSua/HORARIOS_FLEXIBLES.png') }}"
+                            class="lazyload" alt="Licenciatura UNIMEX" />
+                    </div>
+                    <div style="width: 100%; height: 90vh;">
+                        <img style="width: 100%;" src="{{ asset('assets/img/licenciaturasSua/ASESORIA_VOLUNTARIA.png') }}"
+                            class="lazyload" alt="Licenciatura UNIMEX" />
+                    </div>
+                </div>
             </div>
             <div id="text_ventajas" class="col-12 col-md-6 col-lg-6 bg-articule p-5">
                 <h1 style="font-size: 1.438rem;" class="underlined-head text-uppercase fw-normal">
-                    ventajas de estudiar [sua] {{ $licenciatura_sua->titulo }}
+                    VENTAJAS DE ESTUDIAR LA LICENCIATURA ABIERTA EN {{ $licenciatura_sua->titulo }}
                 </h1>
                 <p>
-                    Asesorías voluntarias. No tienes que asistir a clases; puedes estudiar desde tu casa y si tienes dudas
-                    cuentas con asesorías sabatinas de asistencia opcional. Sólo se requiere tu asistencia para la
-                    evaluación de la materia.
+                    <b>Se adapta a tu tiempo y tu vida.</b> Plan modular de 2 años 4 meses (7 cuatrimestres) que te permite
+                    estudiar en tus tiempos cursando sólo 2 materias cada mes, ¡sin trabajos ni tareas! sólo un examen por
+                    materia. <br>
+                    El modelo es autodidacta y te brinda un avance programático claro y un Libro Base por materia que te
+                    permite crear tu propia rutina de estudio, tomando el control sobre tu tiempo y toda la responsabilidad
+                    sobre tu propia formación.
                     <br><br>
-                    Tú tienes el control. Es un modelo de estudio autodidacta, diseñado para personas mayores de 21 años que
-                    ya estén laborando. Te permite crear tu propia rutina de estudio, tomando el control sobre tu tiempo y
-                    toda la responsabilidad sobre tu propia formación.
+                    <b>Sin faltas.</b> Estudias por tu cuenta y en tus tiempos, sin compromiso de asistencia a clases. <br>
+                    Puedes aplicar tu examen en línea o en plantel.
                     <br><br>
-                    Terminas en 2 años 4 meses. Es un Plan de Estudios concentrado que abarca todos los contenidos
-                    necesarios en 7 cuatrimestres, para permitir que termines tu carrera universitaria antes que en otras
-                    universidades.
+                    <b>Estarás acompañad@.</b> Si necesitas ayuda con algún tema, puedes participar en asesorías
+                    presenciales o
+                    virtuales (en línea) los sábados entre 8 y 14:30 hrs.
+                    Tu Asesor y la Red de Apoyo te brindarán el acompañamiento académico que necesites durante la carrera.
                     <br><br>
-                    Libro Único de aprendizaje. Tu enseñanza se basará en el modelo de Libro Único de Aprendizaje, que
-                    garantiza que el contenido de tu materia y la evaluación se basarán en una fuente reconocida en el tema.
+                    <b>Beca del 40%</b> Te apoyamos con una beca académica desde el inicio de la carrera y cuotas muy
+                    accesibles.
+                    Sin gastos adicionales: incluye incorporación a la SEP, uso de plataformas, asesorías, servicio de
+                    biblioteca y primera credencial de alumno.
                     <br><br>
-                    RVOE. Reconocimiento de Validez Oficial de Estudios de la SEP que garantiza que tus estudios serán
-                    oficialmente válidos.
-                    <br><br>
+                    <b>Reconocimiento de Validez Oficial de Estudios</b> RVOE Federal otorgado por la SEP que garantiza que
+                    tus estudios serán oficialmente válidos.
                 </p>
             </div>
         </div>
     </section>
     <!-- Fin de la sección de ventajas -->
 
-    <!-- Inicio de temario -->
-    <section class="py-3">
-        <div class="container px-5">
+    <!-- Inicio de asegura tu lugar -->
+    <section class="py-3 container-fluid px-5">
+        <div class="row">
             <div class="col-12">
-                <h2 class="text-center underlined-head-center">
+                <h1 class="text-center underlined-head-center fw-normal" style="font-size: 1.438rem;">
+                    ASEGURA TU LUGAR Y TU BECA, TENEMOS CUPO LIMITADO:
+                </h1>
+                <p>
+                    Debido a nuestro excelente Programa de Becas el cupo es limitado, así que te recomendamos completar tu
+                    inscripción en el ciclo deseado para asegurar tu lugar y tu beca.
+                </p>
+                <ol class="ms-3">
+                    <li>
+                        <b>Solicita tu Beca y tu Matrícula UNIMEX® con tu asesor.</b>
+                        <ol class="ms-4" type="a">
+                            <li>
+                                Llama o envía mensaje de WhatsApp al <a target="_blank" style="color: #de951b"
+                                    href="https://wa.me/525511020290/?text=Hola!+Me+gustaría+recibir+más+información+sobre+los+programas,+cuotas+y+promociones+de+UNIMEX;+me+interesó+lo+que+vi+en+Página+Web+Metro+sobre+contacto+en+WhatsApp+(botón).+¡Gracias!">55
+                                    1102 0290.</a>
+                            </li>
+                            <li>
+                                Promoción Especial: Pregunta por la <u>cuota especial de inscripción si te inscribes el
+                                    mismo día de tu matriculación.</u>
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        <b>Realiza el pago de tu Inscripción.</b> <br>
+                        Estas son las formas de pago:
+                        <ol class="ms-4" type="a">
+                            <li>
+                                Transferencia SPEI: consulta los datos del plantel seleccionado
+                            </li>
+                            <li>
+                                Pago en sucursal Scotiabank, solicita la ficha con tu asesor o por WhatsApp al <a
+                                    target="_blank" style="color: #de951b"
+                                    href="https://wa.me/525511020290/?text=Hola!+Me+gustaría+recibir+más+información+sobre+los+programas,+cuotas+y+promociones+de+UNIMEX;+me+interesó+lo+que+vi+en+Página+Web+Metro+sobre+contacto+en+WhatsApp+(botón).+¡Gracias!">55
+                                    1102 0290.</a>
+                            </li>
+                            <li>
+                                Pago con tarjeta de débito o crédito en plantel, aceptamos Visa y Mastercard.
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        <b>Entrega tus documentos y completa tu inscripción.</b>
+                        <ol class="ms-4" type="a">
+                            <li>
+                                Acta de Nacimiento (original y una copia).
+                            </li>
+                            <li>
+                                Certificado de Preparatoria; si aún no lo tienes, coméntalo con tu asesor pues puedes
+                                inscribirte presentando documentos provisionales como la Carta de Terminación de Estudios y
+                                el Historial Académico (Original y una copia).
+                            </li>
+                            <li>
+                                Comprobante de Pago de inscripción (una copia)
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </section>
+    <!-- Fin de asegura tu lugar -->
+
+    <!-- Inicio de temario -->
+    <section class="py-3 container-fluid px-5">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="text-center underlined-head-center fw-normal" style="font-size: 1.438rem;">
                     PLAN DE ESTUDIOS
-                </h2>
+                </h1>
+                <p>
+                    Plan modular de 2 años 4 meses (7 cuatrimestres) que te permite estudiar en tus tiempos cursando sólo 2
+                    materias cada mes, ¡sin trabajos ni tareas! sólo un examen por materia. <br>
+                    El modelo es autodidacta y te brinda un avance programático claro y un Libro Base por materia que te
+                    permite crear tu propia rutina de estudio, tomando el control sobre tu tiempo y toda la responsabilidad
+                    sobre tu propia formación.
+                </p>
             </div>
             <div id="temario" class="col-12 mt-5">
                 @for ($i = 0; $i < sizeof($temario); $i++)
-                    <div class="card border-0 mx-3 h-100" style="max-height: 300px;">
+                    <div class="card border-0 mx-3 h-100" style="max-height: 400px;">
                         <h5 class="card-header bg-unimex text-white text-center">
                             {{ $temario[$i]['nombrecuatrimestre'] }}</h5>
-                        <div class="card-body bg-articule" style="min-height: 300px;">
+                        <div class="card-body bg-articule" style="min-height: 400px;">
                             <ul>
                                 @for ($j = 0; $j < sizeof($temario[$i]['temas']); $j++)
                                     <li class="py-1">
@@ -142,7 +259,7 @@
         <div class="row">
             <div class="col-12 col-md-6 col-lg-6">
                 <h1 style="font-size: 1.50rem;" class="underlined-head text-uppercase text-white">
-                    sua {{ $licenciatura_sua->subtitulo }}
+                    LICENCIATURA ABIERTA EN {{ $licenciatura_sua->titulo }}
                 </h1>
                 <p class="text-justify">
                     Campo Laboral <br>
@@ -183,41 +300,33 @@
                 <div id="requisitos">
                     <div class="card border-0">
                         <div class="card-body">
+                            <h2>Sólo necesitas:</h2>
+                            <ul class="list-unstyled">
+                                <li>Comprobante de pago de inscripción.</li>
+                                <li>Acta de nacimiento o documento alternativo.</li>
+                                <li>Certificado de Bachillerato o documento alternativo.</li>
+                                <li>En caso de ser menor de edad, solicita a uno de tus padres o tutores que te acompañen
+                                    con Identificación oficial.</li>
+                            </ul>
                             <p>
-                                <b>
-                                    Acude al Plantel Veracruz para iniciar tu trámite de inscripción. Un asesor resolverá
-                                    tus dudas y te ayudará con el proceso.
-                                </b>
-                                Estos son los pasos para inscribirte:
                                 <br>
-                                Realiza el pago de tu Inscripción en cualquier sucursal Banamex.
-                                <br>
-                                <br>
-                                Entrega tus documentos completos:
-                                <br>
-                                <br>
-                                Acta de Nacimiento (original y una copia). <br>
-                                Certificado de Preparatoria; si aún no te lo entregan, presenta la Carta de Terminación <br>
-                                de Estudios y tu Historial Académico (Original y una copia). <br>
-                                Una fotografía tamaño infantil. <br>
-                                Comprobante de Pago de inscripción (una copia). <br>
+                                Para apartar tu lugar y tu beca en Universidad Mexicana puedes inscribirte desde que inicias
+                                el último año del bachillerato, sólo considera que es indispensable tener aprobadas todas
+                                las materias del bachillerato antes del primer día de clases de tu Licenciatura.
                             </p>
                         </div>
                     </div>
                     <div class="card border-0">
                         <div class="card-body">
-                            <p>
-                                <b>Estudiantes Extranjeros Anexar:</b>
+                            <h2>Estudiantes Extranjeros Anexar:</h2>
                             <ul>
                                 <li>Copia de Pasaporte y visa.</li>
                                 <li>Formato FM3 (expedido por la Secretaría de Relaciones Exteriores) que Avale su
                                     residencia como estudiantes.</li>
                                 <li>Apostillado del Acta de Nacimiento.</li>
-                                <li>Revalidación de Estudios (Emitida por la SEP).</li>
-                                <li>Requisito indispensable: para iniciar tu carrera universitaria con nosotros debes tener
-                                    aprobadas todas tus materias del bachillerato.</li>
+                                <li>Revalidación de Estudios emitida por la SEP (en caso de haber cursado los estudios
+                                    previos en el extranjero).</li>
                             </ul>
-                            </p>
                         </div>
                     </div>
                 </div>
@@ -227,7 +336,7 @@
     <!-- Fin de la Sección de Requisitos -->
 
     <!-- Inicio de la Sección de disponibilidad -->
-    <section class="container-fluid px-5 py-5 bg_planteles_dis">
+    {{-- <section class="container-fluid px-5 py-5 bg_planteles_dis">
         <div class="row">
             <div class="col-12 text-center p-0 mb-3">
                 <h1 class="fw-light" style="font-size: 1.438rem; color: #ffff;">ESTA LICENCIATURA ESTÁ DISPONIBLE EN LOS
@@ -238,8 +347,12 @@
                 </p>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- Fin de la Sección de disponibilidad -->
+
+    <!-- Inicio del Modal Como Obtengo Mi Beca -->
+    @include('modales.comoObtengoMiBeca')
+    <!-- Fin del Modal Como Obtengo Mi Beca --->
 @endsection
 
 @section('scripts')
@@ -248,8 +361,8 @@
         $('#temario').slick({
             infinite: false,
             autoplay: false,
-            slidesToShow: 3,
-            slidesToScroll: 3,
+            slidesToShow: 4,
+            slidesToScroll: 4,
             arrows: true,
             autoplaySpeed: 2000,
             prevArrow: '<button type="button" class="slick-prev-tema"><i class="bi bi-chevron-compact-left"></i></button>',
@@ -316,6 +429,13 @@
 
         var nivelPosicionado = "Licenciatura";
         var carreraPosicionado = "{{ $licenciatura_sua->titulo }}";
+
+        $('#carrucelVentajas').slick({
+            autoplay: true,
+            autoplaySpeed: 1000,
+            dots: false,
+            arrows: false,
+        });
     </script>
 
     @include('include.redirecciones.inOfertaAcademica')
