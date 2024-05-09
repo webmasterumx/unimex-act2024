@@ -19,12 +19,12 @@
 @endsection
 
 @section('content')
-    <section class="container-fluid px-5 mt-5 mb-3">
+    <section class="container-fluid px-5 mt-3 mb-3">
         <div class="row">
             <div class="col-12 col-md-12 col-lg-12">
-                <h2 class="underlined-head">
+                <h1 style="font-size: 1.438rem;" class="underlined-head">
                     CONTACTO
-                </h2>
+                </h1>
             </div>
             <div class="col-12 col-md-12 col-lg-12">
                 <ul class="nav nav-tabs" id="myTab" role="tablist">

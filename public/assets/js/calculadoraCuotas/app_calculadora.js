@@ -528,8 +528,8 @@ function redireccionPreinscripcionEnLinea() {
         //! se realiza la redireccion a la pagina del formulario de datos 
         let redireccion = setUrlBase() + "form/datos_gemerales/preinscripcion";
 
-        setTimeout(`location.href='${redireccion}'`, 2000);
-
+        //setTimeout(`location.href='${redireccion}'`, 2000);
+        window.open(redireccion, '_blank');
 
     }).fail(function () {
         console.log("Algo salió mal");

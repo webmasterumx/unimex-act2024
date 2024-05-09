@@ -47,7 +47,10 @@
                                 {{ $investigacion->titulo }}
                             </td>
                             <td style="width: 20% !important;" class="text-center border-start border-primary">
-                                <a href="{{ $investigacion->ruta }}">
+                                @php
+                                    $ruta = "assets/DocInvestigacion/" . $investigacion->ruta;
+                                @endphp
+                                <a href="{{ asset($ruta) }}" target="_blank">
                                     <i class="bi bi-file-earmark-pdf-fill"></i>
                                 </a>
                             </td>

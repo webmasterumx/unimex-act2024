@@ -1,5 +1,8 @@
 function llenaComboPlantel(clavePlantel) {
     $('#textCargaPreinscripcion').html('Obteniendo oferta académica..');
+
+
+
     let ruta = setUrlBase() + 'getPlanteles';
 
     $.ajax({
@@ -7,6 +10,7 @@ function llenaComboPlantel(clavePlantel) {
         method: "GET",
         dataType: 'json',
     }).done(function (data) {
+        $("#plantelSelect").empty();
         const plateles = data;
         let option_default = `<option value="">Seleciona un plantel</option>`;
         if (plateles != undefined) {
@@ -43,6 +47,7 @@ function llenarComboCampañas(claveCampana, clavePlantel) {
         dataType: 'json',
         data: data,
     }).done(function (data) {
+        $("#periodoSelect").empty();
         const campañas = data;
         console.log(campañas);
         let option_default = `<option value="">Seleciona ciclo</option>`;
@@ -85,6 +90,7 @@ function llenarComboNivel(clavePlantel, claveNivel) {
         const niveles = data;
         let option_default = `<option value="">Seleciona un Nivel</option>`;
         if (niveles != undefined) {
+            $("#nivelSelect").empty();
             $("#nivelSelect").append(option_default); //se establece la campaña por defecto
             for (let index = 0; index < niveles.length; index++) { //recorrer el array de campañas
                 const element = niveles[index]; // se establece un elemento por campaña optenida
@@ -121,6 +127,7 @@ function llenarCombosCarrera(claveCampana, clavePlantel, claveNivel, claveCarrer
         },
         data: data
     }).done(function (data) {
+        $("#carreraSelect").empty();
         const carreras = data.CarerrasDTO;
         console.log(carreras);
         let option_default = `<option value="">Seleciona una Carrera</option>`;
@@ -164,6 +171,7 @@ function llenarComboHorarios(claveCampana, clavePlantel, claveNivel, claveCarrer
         },
         data: data
     }).done(function (data) {
+        $("#horarioSelect").empty();
         const horarios = data.TurnosDTO;
         console.log(data);
         let option_default = `<option value="">Seleciona un Horario</option>`;

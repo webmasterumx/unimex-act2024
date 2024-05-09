@@ -1,72 +1,58 @@
 <form id="form_trabaja" class="row" enctype="multipart/form-data">
     @csrf
-    <div class="mb-3 col-6 input-group">
-        <x-form-contact.span-form-contact>
-            <i class="bi bi-person-fill"></i>
-        </x-form-contact.span-form-contact>
-        <div class="form-floating">
-            <input type="text" class="form-control" id="nombre_trabajo" name="nombre_trabajo"
-                placeholder="Nombre Completo">
-            <label for="nombre_trabajo">Nombre Completo</label>
-        </div>
+    <div class="mb-3 col-12 col-md-6">
+        <label for="nombre_trabajo" class="form-label">
+            <i class="bi bi-person-fill" style="color: #004b93;"></i> Nombre Completo
+        </label>
+        <input style="height: 32px !important;" type="text" class="form-control form-control-sm" id="nombre_trabajo"
+            name="nombre_trabajo">
     </div>
-    <div class="mb-3 col-6 input-group">
-        <x-form-contact.span-form-contact>
-            <i class="bi bi-envelope-fill"></i>
-        </x-form-contact.span-form-contact>
-        <div class="form-floating">
-            <input type="email" class="form-control" id="email_trabaja" name="email_trabaja"
-                placeholder="Correo Electronico">
-            <label for="email_trabaja">Correo Electronico</label>
-        </div>
+    <div class="mb-3 col-12 col-md-6">
+        <label for="email_trabaja" class="form-label">
+            <i class="bi-envelope-fill" style="color: #004b93;"></i> Correo Electrónico
+        </label>
+        <input style="height: 32px !important;" type="text" class="form-control form-control-sm" id="email_trabaja"
+            name="email_trabaja">
     </div>
-    <div class="mb-3 col-3 input-group">
-        <x-form-contact.span-form-contact>
-            <i class="bi bi-telephone-fill"></i>
-        </x-form-contact.span-form-contact>
-        <div class="form-floating">
-            <input type="text" class="form-control" id="telefono_casa_trabaja" name="telefono_casa_trabaja"
-                placeholder="Teléfono de Casa" maxlength="10">
-            <label for="telefono_casa_trabaja">Teléfono de Casa</label>
-        </div>
+    <div class="mb-3 col-12 col-md-3">
+        <label for="telefono_casa_trabaja" class="form-label">
+            <i class="bi bi-telephone-fill" style="color: #004b93;"></i> Teléfono de Casa
+        </label>
+        <input style="height: 32px !important;" type="text" class="form-control form-control-sm"
+            id="telefono_casa_trabaja" name="telefono_casa_trabaja">
     </div>
-    <div class="mb-3 col-3 input-group">
-        <x-form-contact.span-form-contact>
-            <i class="bi bi-phone-fill"></i>
-        </x-form-contact.span-form-contact>
-        <div class="form-floating">
-            <input type="text" class="form-control" id="telefono_movil_trabaja" name="telefono_movil_trabaja"
-                placeholder="Teléfono celular" maxlength="10">
-            <label for="telefono_movil_trabaja">Teléfono celular</label>
-        </div>
+    <div class="mb-3 col-12 col-md-3">
+        <label for="telefono_movil_trabaja" class="form-label">
+            <i class="bi bi-phone-fill" style="color: #004b93;"></i> Teléfono celular
+        </label>
+        <input style="height: 32px !important;" type="text" class="form-control form-control-sm"
+            id="telefono_movil_trabaja" name="telefono_movil_trabaja">
     </div>
     <div class="mb-3 col-3">
-        <div class="form-floating">
-            <select class="form-select" id="plantel_trabaja" name="plantel_trabaja"
-                aria-label="Floating label select example">
-                <option selected>Plantel de interes:</option>
-                <option value="RECTORIA">RECTORÍA</option>
-                <option value="IZCALLI">IZCALLI</option>
-                <option value="SATELITE">SATÉLITE</option>
-                <option value="POLANCO">POLANCO</option>
-                <option value="VERACRUZ">VERACRUZ</option>
-            </select>
-            <label for="plantel_trabaja"> -Selecciona tu Plantel- </label>
-        </div>
+        <label for="select_plantel">
+            <i class="bi bi-bank" style="color: #004b93;"></i> Plantel de interes:
+        </label>
+        <select class="form-select" style="height: 32px !important;" id="plantel_trabaja" name="plantel_trabaja">
+            <option selected>Selecciona Plantel</option>
+            <option value="RECTORIA">RECTORÍA</option>
+            <option value="IZCALLI">IZCALLI</option>
+            <option value="SATÉLITE">SATÉLITE</option>
+            <option value="POLANCO">POLANCO</option>
+            <option value="VERACRUZ">VERACRUZ</option>
+        </select>
     </div>
     <div class="mb-3 col-3">
-        <div class="form-floating">
-            <select class="form-select" id="nivel_est_trabaja" name="nivel_est_trabaja"
-                aria-label="Floating label select example">
-                <option selected>Último Nivel de Estudios</option>
-                <option value="Secundaria">SECUNDARIA</option>
-                <option value="Preparatoria">PREPARATORIA</option>
-                <option value="Licenciatura Titulado">LICENCIATURA Titulado</option>
-                <option value="Licenciatura Pasante">LICENCIATURA Pasante</option>
-                <option value="Posgrado">POSGRADO</option>
-            </select>
-            <label for="nivel_est_trabaja"> -Selecciona Nivel- </label>
-        </div>
+        <label for="select_plantel">
+            <i class="bi bi-book-fill" style="color: #004b93;"></i>Último Nivel de Estudios
+        </label>
+        <select class="form-select" style="height: 32px !important;" id="nivel_est_trabaja" name="nivel_est_trabaja">
+            <option selected>Selecciona Nivel</option>
+            <option value="Secundaria">SECUNDARIA</option>
+            <option value="Preparatoria">PREPARATORIA</option>
+            <option value="Licenciatura Titulado">LICENCIATURA Titulado</option>
+            <option value="Licenciatura Pasante">LICENCIATURA Pasante</option>
+            <option value="Posgrado">POSGRADO</option>
+        </select>
     </div>
     <div class="col-12">
         <label class="form-label">Conoce nuestras vacantes: <a
@@ -79,21 +65,20 @@
             *Se aceptan archivos Word y PDF
         </div>
     </div>
-    <div class="mb-3 col-12 input-group">
-        <x-form-contact.span-form-contact>
-            <i class="bi bi-person-workspace"></i>
-        </x-form-contact.span-form-contact>
-        <div class="form-floating">
-            <input type="text" class="form-control" id="puesto_interes" name="puesto_interes"
-                placeholder="¿Qué puesto te interesa?">
-            <label for="puesto_interes">¿Qué puesto te interesa?</label>
-        </div>
+    <div class="mb-3">
+        <label for="puesto_interes" class="form-label">
+            <i class="bi bi-person-workspace" style="color: #004b93;"></i> ¿Qué puesto te interesa?
+        </label>
+        <input style="height: 32px !important;" type="text" class="form-control form-control-sm" id="puesto_interes"
+            name="puesto_interes">
     </div>
     <div class="mb-3 col-12">
-        <div class="form-floating">
-            <textarea rows="5" class="form-control" id="experiencia_trabaja" name="experiencia_trabaja"
-                placeholder="Describe tu experiencia laboral(Experiencia)"></textarea>
-            <label for="experiencia_trabaja">Describe tu experiencia laboral(Experiencia)</label>
+        <div class="mb-3">
+            <label for="mensaje_service" class="form-label">
+                <i class="bi bi-pencil-square" style="color: #004b93;"></i> Describe tu experiencia
+                laboral(Experiencia)
+            </label>
+            <textarea class="form-control" id="mensaje_service" name="mensaje_service" rows="4"></textarea>
         </div>
     </div>
     <div class="mb-3 col-12">

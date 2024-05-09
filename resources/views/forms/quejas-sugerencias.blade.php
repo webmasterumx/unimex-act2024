@@ -1,54 +1,52 @@
 <form id="form_quejaSugerencia" class="row">
     @csrf
-    <div class="mb-3 col-6 input-group">
-        <x-form-contact.span-form-contact><i class="bi bi-person-fill"></i></x-form-contact.span-form-contact>
-        <div class="form-floating">
-            <input type="text" class="form-control" id="nombre_qys" name="nombre_qys" placeholder="Nombre Completo">
-            <label for="nombre_qys">Nombre Completo</label>
-        </div>
+    <div class="mb-3 col-12 col-md-6">
+        <label for="nombre_qys" class="form-label">
+            <i class="bi bi-person-fill" style="color: #004b93;"></i> Nombre Completo
+        </label>
+        <input style="height: 32px !important;" type="text" class="form-control form-control-sm" id="nombre_qys"
+            name="nombre_qys">
     </div>
-    <div class="mb-3 col-6 input-group">
-        <x-form-contact.span-form-contact><i class="bi bi-envelope-fill"></i></x-form-contact.span-form-contact>
-        <div class="form-floating">
-            <input type="email" class="form-control" id="mail_qys" name="mail_qys" placeholder="Correo Electronico">
-            <label for="mail_qys">Correo Electronico</label>
-        </div>
+    <div class="mb-3 col-12 col-md-6">
+        <label for="mail_qys" class="form-label">
+            <i class="bi bi-envelope-fill" style="color: #004b93;"></i> Correo Electrónico
+        </label>
+        <input style="height: 32px !important;" type="text" class="form-control form-control-sm" id="mail_qys"
+            name="mail_qys">
     </div>
-    <div class="mb-3 col-4 input-group">
-        <x-form-contact.span-form-contact><i class="bi bi-telephone-fill"></i></x-form-contact.span-form-contact>
-        <div class="form-floating">
-            <input type="text" class="form-control" id="telefono_casa_qys" name="telefono_casa_qys"
-                placeholder="Teléfono de Casa" maxlength="10">
-            <label for="telefono_casa_qys">Teléfono de Casa</label>
-        </div>
+    <div class="mb-3 col-12 col-md-4">
+        <label for="telefono_casa_qys" class="form-label">
+            <i class="bi bi-telephone-fill" style="color: #004b93;"></i> Teléfono de Casa
+        </label>
+        <input style="height: 32px !important;" type="text" class="form-control form-control-sm"
+            id="telefono_casa_qys" name="telefono_casa_qys" maxlength="10" minlength="10">
     </div>
-    <div class="mb-3 col-4 input-group">
-        <x-form-contact.span-form-contact><i class="bi bi-phone-fill"></i></x-form-contact.span-form-contact>
-        <div class="form-floating">
-            <input type="text" class="form-control" id="telefono_movil_qys" name="telefono_movil_qys"
-                placeholder="Teléfono celular" maxlength="10">
-            <label for="telefono_movil_qys">Teléfono celular</label>
-        </div>
+    <div class="mb-3 col-12 col-md-4">
+        <label for="telefono_movil_qys" class="form-label">
+            <i class="bi bi-phone-fill" style="color: #004b93;"></i> Teléfono celular
+        </label>
+        <input style="height: 32px !important;" type="text" class="form-control form-control-sm"
+            id="telefono_movil_qys" name="telefono_movil_qys" maxlength="10" minlength="10">
     </div>
-    <div class="mb-3 col-4 input-group">
-        <x-form-contact.span-form-contact><i class="bi bi-credit-card-fill"></i></x-form-contact.span-form-contact>
-        <div class="form-floating">
-            <input type="text" class="form-control" id="matricula_qys" name="matricula_qys" placeholder="Matricula" maxlength="20">
-            <label for="matricula_qys">Matricula</label>
-        </div>
+    <div class="mb-3 col-12 col-md-4">
+        <label for="matricula_qys" class="form-label">
+            <i class="bi bi-credit-card-fill" style="color: #004b93;"></i> Matrícula
+        </label>
+        <input style="height: 32px !important;" type="text" class="form-control form-control-sm" id="matricula_qys"
+            name="matricula_qys">
     </div>
-    <div class="mb-3 col-6 input-group">
-        <x-form-contact.span-form-contact><i class="bi bi-bookmark-check-fill"></i></x-form-contact.span-form-contact>
-        <div class="form-floating">
-            <input type="text" class="form-control" id="asunto_qys" name="asunto_qys" placeholder="Asunto">
-            <label for="asunto_qys">Asunto</label>
-        </div>
+    <div class="mb-3 col-12 col-md-6">
+        <label for="asunto_qys" class="form-label">
+            <i class="bi bi-bookmark-check-fill" style="color: #004b93;"></i> Asunto
+        </label>
+        <input style="height: 32px !important;" type="text" class="form-control form-control-sm" id="asunto_qys"
+            name="asunto_qys">
     </div>
     <div class="mb-3 col-12">
-        <div class="form-floating">
-            <textarea rows="4" class="form-control" id="mensaje_qys" name="mensaje_qys" placeholder="Mensaje"></textarea>
-            <label for="mensaje_qys">Mensaje</label>
-        </div>
+        <label for="mensaje_qys" class="form-label">
+            <i class="bi bi-pencil-square" style="color: #004b93;"></i> Mensaje
+        </label>
+        <textarea class="form-control" id="mensaje_qys" name="mensaje_qys" rows="4"></textarea>
     </div>
     <div class="mb-3 col-12">
         <div class="mb-2 row">

@@ -1,3 +1,3 @@
-<span class="input-group-text text-white" style="background-color: #f8981d;">
+<span class="input-group-text text-white" style="color: #004b93;">
     {{ $slot }}
 </span>

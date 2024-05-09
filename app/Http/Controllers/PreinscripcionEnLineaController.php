@@ -149,7 +149,7 @@ class PreinscripcionEnLineaController extends Controller
             <table>
                 <tr>
                     <td style="width: 50%;">
-                        <h1>UNIVERSIDAD MEXICANA, S.C</h1>
+                        <h1>' . $this->plantelInfo['empresa'] . '</h1>
                         <table width="100%">
                             <tr>
                                 <td>
@@ -221,7 +221,7 @@ class PreinscripcionEnLineaController extends Controller
                                                 <td style="width: 50%;">
                                                     <input
                                                         style="border: 0; border-bottom: 2px solid #000; text-align: center;"
-                                                        type="text" value="08700071031">
+                                                        type="text" value="' . $this->plantelInfo["referencia"] . '">
                                                 </td>
                                             </tr>
                                             <tr>
@@ -281,18 +281,30 @@ class PreinscripcionEnLineaController extends Controller
             case 2:
                 $this->plantelInfo['nombre'] = "IZCALLI";
                 $this->plantelInfo['direccion'] = "Av. Del Vidrio 15  <br> Col. Plaza Dorada <br>  Cuautitlán Izcalli <br>  Edo. Méx. C.P. 54760 <br>  R.F.C. UME-901015-M13";
+                $this->plantelInfo['empresa'] = "UNIVERSIDAD MEXICANA, S.C.";
+                $this->plantelInfo['ns'] = "3171";
+                $this->plantelInfo["referencia"] = "08700071031";
                 break;
             case 3:
                 $this->plantelInfo['nombre'] = "SATÉLITE";
                 $this->plantelInfo['direccion'] = "Circuito Poetas 37 <br> Ciudad Satélite <br> Naucalpan de Juárez <br> Edo. Méx. C.P. 53100 <br> R.F.C. UMP-940128-2N5";
+                $this->plantelInfo['empresa'] = "UNIVERSIDAD MEXICANA PLANTEL SATELITE S.C.";
+                $this->plantelInfo['ns'] = "3172";
+                $this->plantelInfo["referencia"] = "08700534783";
                 break;
             case 4:
                 $this->plantelInfo['nombre'] = "POLANCO";
                 $this->plantelInfo['direccion'] = "Emilio Castelar 63 <br> Col. Polanco <br> Deleg. Miguel Hidalgo <br> Ciudad de México C.P. 11560 <br> R.F.C. UMP-000627-125";
+                $this->plantelInfo['empresa'] = "UNIVERSIDAD MEXICANA PLANTEL CENTRAL, S.C.";
+                $this->plantelInfo['ns'] = "3173";
+                $this->plantelInfo["referencia"] = "05055915891";
                 break;
             case 5:
                 $this->plantelInfo['nombre'] = "VERACRUZ";
                 $this->plantelInfo['direccion'] = "20 de Noviembre esq. Juan Enriquez 1004 <br> Colonia Ignacio Zaragoza <br> Veracruz <br> Veracruz de Ignacio de la Llave C.P. 91910 <br> R.F.C. UMP-970823-SCA";
+                $this->plantelInfo['empresa'] = "UNIVERSIDAD MEXICANA PLANTEL VERACRUZ, S.C.";
+                $this->plantelInfo['ns'] = "3376";
+                $this->plantelInfo["referencia"] = "04855288945";
                 break;
 
             default:
