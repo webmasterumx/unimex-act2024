@@ -3,7 +3,7 @@
     <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button onclick="resetFormEmpresaOCC()" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <h1 class="modal-title text-center fs-5" id="empresasOCCLabel">Empresas Registradas en OCC</h1>
@@ -14,80 +14,74 @@
                             Ingresa los datos de tu empresa para publicar tus vacantes.
                         </p>
                     </div>
-                    <div class="input-group my-3 col-12">
-                        <span class="input-group-text text-white" style="background-color: #f8981d;">
-                            <i class="bi bi-bank2"></i>
-                        </span>
-                        <div class="form-floating">
-                            <input type="text" class="form-control" id="nombre_empresaOCC" name="nombre_empresaOCC"
-                                placeholder="Nombre de la Empresa">
-                            <label for="nombre_empresaOCC">Nombre de la Empresa</label>
+                    <div class="mb-2 col-12">
+                        <div class="mb-3">
+                            <label for="nombre_empresaOCC" class="form-label">
+                                <i class="bi bi-bank2" style="color: #004b93;"></i> Nombre de la Empresa
+                            </label>
+                            <input style="height: 32px !important;" type="text" class="form-control form-control-sm"
+                                id="nombre_empresaOCC" name="nombre_empresaOCC">
                         </div>
                     </div>
-                    <div class="input-group my-3 col-12">
-                        <span class="input-group-text text-white" style="background-color: #f8981d;">
-                            <i class="bi bi-person-fill"></i>
-                        </span>
-                        <div class="form-floating">
-                            <input type="text" class="form-control" id="contacto_empresaOCC"
-                                name="contacto_empresaOCC" placeholder="Nombre del Contacto">
-                            <label for="contacto_empresaOCC">Nombre del Contacto</label>
+                    <div class="mb-2 col-12">
+                        <div class="mb-3">
+                            <label for="contacto_empresaOCC" class="form-label">
+                                <i class="bi bi-person-fill" style="color: #004b93;"></i> Nombre del Contacto
+                            </label>
+                            <input style="height: 32px !important;" type="text" class="form-control form-control-sm"
+                                id="contacto_empresaOCC" name="contacto_empresaOCC">
                         </div>
                     </div>
-                    <div class="input-group my-3 col-12">
-                        <span class="input-group-text text-white" style="background-color: #f8981d;">
-                            <i class="bi bi-envelope-fill"></i>
-                        </span>
-                        <div class="form-floating">
-                            <input type="email" class="form-control" id="email_empresaOCC" name="email_empresaOCC"
-                                placeholder="Correo Electronico">
-                            <label for="email_empresaOCC">Correo Electronico</label>
+                    <div class="mb-2 col-12">
+                        <div class="mb-3">
+                            <label for="email_empresaOCC" class="form-label">
+                                <i class="bi bi-person-fill" style="color: #004b93;"></i> Correo Electrónico
+                            </label>
+                            <input style="height: 32px !important;" type="text" class="form-control form-control-sm"
+                                id="email_empresaOCC" name="email_empresaOCC">
                         </div>
                     </div>
-                    <div class="input-group my-3 col-6">
-                        <span class="input-group-text text-white" style="background-color: #f8981d;">
-                            <i class="bi bi-telephone-fill"></i>
-                        </span>
-                        <div class="form-floating">
-                            <input type="text" class="form-control" id="telefono_empresaOCC"
-                                name="telefono_empresaOCC" placeholder="Telefono de Casa" maxlength="10">
-                            <label for="telefono_empresaOCC">Telefono de Casa</label>
+                    <div class="mb-2 col-12">
+                        <div class="mb-3">
+                            <label for="telefono_empresaOCC" class="form-label">
+                                <i class="bi bi-telephone-fill" style="color: #004b93;"></i> Telefono de Casa
+                            </label>
+                            <input style="height: 32px !important;" type="text" class="form-control form-control-sm"
+                                id="telefono_empresaOCC" name="telefono_empresaOCC" maxlength="10" minlength="10">
                         </div>
                     </div>
-                    <div class="input-group my-3 col-6">
-                        <span class="input-group-text text-white" style="background-color: #f8981d;">
-                            <i class="bi bi-phone-fill"></i>
-                        </span>
-                        <div class="form-floating">
-                            <input type="text" class="form-control" id="celular_empresaOCC"
-                                name="celular_empresaOCC" placeholder="Telefono Celular" maxlength="10">
-                            <label for="celular_empresaOCC">Telefono Celular</label>
+                    <div class="mb-2 col-12">
+                        <div class="mb-3">
+                            <label for="celular_empresaOCC" class="form-label">
+                                <i class="bi bi-phone-fill" style="color: #004b93;"></i> Telefono Celular
+                            </label>
+                            <input style="height: 32px !important;" type="text" class="form-control form-control-sm"
+                                id="celular_empresaOCC" name="celular_empresaOCC" maxlength="10" minlength="10">
                         </div>
                     </div>
-                    <div class="input-group my-3 col-12">
-                        <span class="input-group-text text-white" style="background-color: #f8981d;">
-                            <i class="bi bi-file-earmark-fill"></i>
-                        </span>
-                        <div class="form-floating">
-                            <input type="text" class="form-control" id="razon_empresaOCC" name="razon_empresaOCC" placeholder="Razón Social">
-                            <label for="razon_empresaOCC">Razón Social</label>
+                    <div class="mb-2 col-12">
+                        <div class="mb-3">
+                            <label for="razon_empresaOCC" class="form-label">
+                                <i class="bi bi-file-earmark-fill" style="color: #004b93;"></i> Razón Social
+                            </label>
+                            <input style="height: 32px !important;" type="text" class="form-control form-control-sm"
+                                id="razon_empresaOCC" name="razon_empresaOCC">
                         </div>
                     </div>
-                    <div class="input-group my-3 col-12">
-                        <span class="input-group-text text-white" style="background-color: #f8981d;">
-                            <i class="bi bi-folder-fill"></i>
-                        </span>
-                        <div class="form-floating">
-                            <input type="text" class="form-control" id="rfc_empresaOCC"
-                                name="rfc_empresaOCC" placeholder="RFC" maxlength="13">
-                            <label for="rfc_empresaOCC">RFC</label>
+                    <div class="mb-2 col-12">
+                        <div class="mb-3">
+                            <label for="rfc_empresaOCC" class="form-label">
+                                <i class="bi bi-file-earmark-fill" style="color: #004b93;"></i> RFC
+                            </label>
+                            <input style="height: 32px !important;" type="text" class="form-control form-control-sm"
+                                id="rfc_empresaOCC" name="rfc_empresaOCC">
                         </div>
                     </div>
                     <div class="mb-3 col-12">
-                        <div class="form-floating">
-                            <textarea rows="4" class="form-control" id="comentarios_empresaOCC" name="comentarios_empresaOCC" placeholder="comentarios_empresaOCC"></textarea>
-                            <label for="comentarios_empresaOCC">Comentarios</label>
-                        </div>
+                        <label for="comentarios_empresaOCC" class="form-label">
+                            <i class="bi bi-pencil-square" style="color: #004b93;"></i> Comentarios
+                        </label>
+                        <textarea class="form-control" id="comentarios_empresaOCC" name="comentarios_empresaOCC" rows="4"></textarea>
                     </div>
                     <div class="mb-2 row col-12">
                         <div class="col-2 d-flex">

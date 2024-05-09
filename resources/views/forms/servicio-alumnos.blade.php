@@ -44,7 +44,7 @@
             <i class="bi bi-bank" style="color: #004b93;"></i> Plantel
         </label>
         <select class="form-select" style="height: 32px !important;" id="select_plantel" name="select_plantel">
-            <option selected>Selecciona tu Plantel</option>
+            <option value="" selected>Selecciona tu Plantel</option>
             <option value="IZCALLI">IZCALLI</option>
             <option value="SATÉLITE">SATÉLITE</option>
             <option value="POLANCO">POLANCO</option>

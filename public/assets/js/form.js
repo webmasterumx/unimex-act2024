@@ -9,17 +9,33 @@ $("#servicio_alumnos").validate({
             required: true,
             email: true,
         },
+        phone_casa_service: {
+            required: true,
+        },
         matricula_service: {
             required: true,
         }
     },
     messages: {
         name_service: {
-            required: "Nombre requerido.",
+            required: "Debes ingresar un nombre válido.",
         },
         email_service: {
-            required: "Correo requerido.",
+            required: "Debes ingresar un correo valido.",
             email: "Formato de correo incorrecto.",
+        },
+        phone_casa_service: {
+            required: "Teléfono requerido.",
+            minlength: "Debes ingresar el número a 10 digitos.",
+            maxlength: "Debes ingresar el número a 10 digitos."
+        },
+        movil_service: {
+            required: "Celular requerido.",
+            minlength: "Debes ingresar el número a 10 digitos.",
+            maxlength: "Debes ingresar el número a 10 digitos."
+        },
+        asunto_service : {
+            required: "",
         },
         matricula_service: {
             required: "Matrícula requerida.",
@@ -149,7 +165,7 @@ $("#form_contacto").validate({
             </div>
             &nbsp;Enviando Datos..
         `);
-       
+
 
         form.submit();
     }
