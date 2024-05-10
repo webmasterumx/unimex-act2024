@@ -531,6 +531,10 @@ function redireccionPreinscripcionEnLinea() {
         //setTimeout(`location.href='${redireccion}'`, 2000);
         window.open(redireccion, '_blank');
 
+        $('#redireccionPEL').html(`
+            Redirección exitosa.
+        `);
+
     }).fail(function () {
         console.log("Algo salió mal");
     });

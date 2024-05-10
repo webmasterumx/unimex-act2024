@@ -37,7 +37,7 @@ $("#servicio_alumnos").validate({
             required: "Debes ingresar un nombre válido.",
         },
         email_service: {
-            required: "Debes ingresar un correo valido.",
+            required: "Debes ingresar un correo válido.",
             email: "Ingrese una dirección de E-mail correcta.",
         },
         phone_casa_service: {
@@ -235,7 +235,7 @@ $("#form_trabaja").validate({
         puesto_interes: {
             required: "Debe de ingresar un puesto de interés.",
         },
-        experiencia_trabaja: {
+        experiencia_trabaja : {
             required: "Debes de ingresar tu experiencia laboral.",
         },
     },
