@@ -46,6 +46,7 @@
 
     <!-- Inicio de Barra de navegacion -->
     @include('include.navegacionNew')
+    @include('include.navegacion')
     <!-- Fin de Barra de navegacion -->
 
     <!-- Inico de Contenido -->
@@ -71,16 +72,19 @@
                 <a class="text-white" href="{{ route('investigacion') }}" target="_blank">INVESTIGACIÓN</a>
             </div>
             <div class="col-12 col-md-2 col-lg-2 mt-2">
-                <a class="text-white" href="http://comunimex.lat/KioscoProfesionistasInt/" target="_blank">KIOSCO DE <br> PROFESIONISTAS</a>
+                <a class="text-white" href="http://comunimex.lat/KioscoProfesionistasInt/" target="_blank">KIOSCO DE
+                    <br> PROFESIONISTAS</a>
             </div>
             <div class="col-12 col-md-2 col-lg-2 mt-2">
                 <a class="text-white" href="https://unimex.edu.mx/soyUNIMEX/" target="_blank">BLOG SOY UNIMEX</a>
             </div>
             <div class="col-12 col-md-2 col-lg-2 mt-2">
-                <a class="text-white" href="{{ route('aviso_de_privacidad') }}" target="_blank">AVISO DE <br> PRIVACIDAD</a>
+                <a class="text-white" href="{{ route('aviso_de_privacidad') }}" target="_blank">AVISO DE <br>
+                    PRIVACIDAD</a>
             </div>
             <div class="col-12 col-md-2 col-lg-2 mt-2">
-                <a class="text-white" href="{{ route('preguntas.frecuentes') }}" target="_blank">PREGUNTAS <br> FRECUENTES</a>
+                <a class="text-white" href="{{ route('preguntas.frecuentes') }}" target="_blank">PREGUNTAS <br>
+                    FRECUENTES</a>
             </div>
             <div class="col-12 col-md-2 col-lg-2 mt-2">
                 <a class="text-white" target="_blank" href="{{ route('rvoes') }}">RVOES</a>

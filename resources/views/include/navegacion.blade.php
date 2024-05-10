@@ -1,4 +1,4 @@
-<header class="sticky-top">
+<header class="sticky-top d-block d-md-none">
     <noscript>Por favor habilita JavaScript para usar este sitio</noscript>
     <nav class="navigation">
         <div class="wrapper d-flex">

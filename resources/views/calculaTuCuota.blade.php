@@ -246,7 +246,7 @@
                     </button>
                 </form>
             </div>
-            <div class="col-12 col-md-9 col-lg-9">
+            <div class="col-12 col-md-9 col-lg-9 mt-2 mt-md-0 p-0 px-md-3">
                 <div id="carouselExampleIndicators" class="carousel slide">
                     <div class="carousel-indicators">
                         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"

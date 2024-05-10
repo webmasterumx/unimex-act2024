@@ -164,7 +164,7 @@
                 </div>
                 <div class="col-4 text-center">
                     <a class="blog-header-logo text-decoration-none" href="#">
-                        <h1 class="text-white fw-normal">
+                        <h1 class="text-white fw-normal d-none d-md-block d-lg-block">
                             Calculadora de Becas
                         </h1>
                     </a>

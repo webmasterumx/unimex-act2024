@@ -1,4 +1,4 @@
-<header class="sticky-top">
+<header class="sticky-top d-none d-md-none d-lg-block">
     <noscript>Por favor habilita JavaScript para usar este sitio</noscript>
     <nav class="navigation" style="background-color: #013F7A !important; padding: 8px 0px !important;">
         <div class="wrapper d-flex">
