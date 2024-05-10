@@ -280,6 +280,10 @@ body {
     color: red;
 }
 
+#emailProspecto-error{
+    width: 100%;
+}
+
 .bg-outline-purple {
     border-color: #6610f2 !important;
     color: #6610f2 !important;

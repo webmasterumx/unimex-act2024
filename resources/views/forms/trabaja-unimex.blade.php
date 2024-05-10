@@ -74,11 +74,11 @@
     </div>
     <div class="mb-3 col-12">
         <div class="mb-3">
-            <label for="mensaje_service" class="form-label">
+            <label for="experiencia_trabaja" class="form-label">
                 <i class="bi bi-pencil-square" style="color: #004b93;"></i> Describe tu experiencia
                 laboral(Experiencia)
             </label>
-            <textarea class="form-control" id="mensaje_service" name="mensaje_service" rows="4"></textarea>
+            <textarea class="form-control" id="experiencia_trabaja" name="experiencia_trabaja" rows="4"></textarea>
         </div>
     </div>
     <div class="mb-3 col-12">

@@ -1,5 +1,5 @@
 $("#form_calculadora").validate({
-    wrapper: "span",
+    // wrapper: "span",
     rules: {
         selectPlantel: {
             required: true,
@@ -35,7 +35,7 @@ $("#form_calculadora").validate({
             required: "Selecciona un nivel",
         },
         nombreProspecto: {
-            required: "Ingresa tu cnombre",
+            required: "Ingresa tu nombre",
         },
         apellidosProspecto: {
             required: "Ingresa tus apellidos",
