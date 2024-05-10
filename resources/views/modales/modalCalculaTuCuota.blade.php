@@ -4,16 +4,22 @@
         <div class="modal-content bg-transparent border-0"> <!--  -->
             <div class="modal-header border-0" style="justify-content: flex-end !important">
                 {{--  <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1> --}}
-                <button type="button" style="color: #de951b" class="fs-3" data-bs-dismiss="modal" aria-label="Close">
-                    <strong>
-                        <i class="bi bi-x-lg"></i>
-                    </strong>
-                </button>
             </div>
-            <div class="modal-body text-center">
-                <a href="{{ route('calcula_tu_cuota') }}" target="_blank">
-                    <img class="" src="{{ asset('assets/img/popup/pop_up_unimex_texto.png') }}" alt="">
-                </a>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <button type="button"
+                            style="color: #de951b; position: relative; top: -42%; left: 73%;"
+                            class="fs-1" data-bs-dismiss="modal" aria-label="Close">
+                            <i class="bi bi-x-circle-fill"></i>
+                        </button>
+                        <a href="{{ route('calcula_tu_cuota') }}" target="_blank">
+                            <img class="" src="{{ asset('assets/img/popup/pop_up_unimex_texto.png') }}"
+                                alt="">
+                        </a>
+                    </div>
+                </div>
+
             </div>
             {{-- <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
