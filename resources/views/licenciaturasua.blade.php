@@ -67,22 +67,22 @@
             </div>
             <div class="col-12 mt-3">
                 <div class="row">
-                    <div class="col-4">
+                    <div class="col-6">
                         <div class="d-grid gap-2">
                             <a id="redireccionCTCL" href="#" class="btn btn-outline-primary">
                                 Calcula de Becas
                             </a>
                         </div>
                     </div>
-                    <div class="col-4">
+                    {{-- <div class="col-4">
                         <div class="d-grid gap-2">
                             <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
                                 data-bs-target="#comoObtengoMiBecaModal">
                                 Más información
                             </button>
                         </div>
-                    </div>
-                    <div class="col-4">
+                    </div> --}}
+                    <div class="col-6">
                         <div class="d-grid gap-2">
                             <a id="redireccionPELL" href="#" class="btn text-white"
                                 style="background-color: #de951b;">

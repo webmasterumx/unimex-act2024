@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Acercade;
 use App\Models\Banner;
+use App\Models\CCarreras;
 use App\Models\CLicenciaturas;
 use App\Models\Investigacion;
 use App\Models\LicenciaturaSua;
@@ -24,7 +25,8 @@ class UnimexController extends Controller
 
     public function inicio(): View
     {
-        $listaCarreras = DB::table('c_carreras')->orderBy('titulo', 'asc')->get();
+        //$listaCarreras = DB::table('c_carreras')->orderBy('titulo', 'asc')->get();
+        $listaCarreras = CCarreras::all();
         $banners = Banner::where('ubicacion', 0)->orWhere('ubicacion', 1)->orderBy('orden', 'ASC')->get();
         $ventajas_unimex = VentajasUnimex::all();
 

@@ -402,10 +402,10 @@
                         </ul>
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 left-gray-border">
-                        <h5 onclick="subnav.list.toggle('SUA')" id="SUA">Licenciatura Abierta (SUA)<br></h5>
+                        <h5 onclick="subnav.list.toggle('SUA')" id="SUA">Licenciaturas abiertas SUA<br></h5>
                         <ul class="blue-bullet">
                             <li style="background: none;">
-                                <span class="txtpequeno">DISPONIBLE SOLO EN PLANTEL VERACRUZ</span>
+                                <span class="txtpequeno">DISPONIBLE EN TODOS LOS PLANTELES</span>
                             </li>
                             @foreach ($data['menus'] as $menu)
                                 @if ($menu->estado == 4)

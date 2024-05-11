@@ -35,10 +35,10 @@
                         Polanco <br>
                         Emilio Castelar #63 esquina Eugenio Sue, Col. Polanco-Chapultepec, México D.F.
                     </a> <br><br>
-                    {{-- <a href="{{ route('') }}" style="color: #ffff;">
+                    <a href="{{ route('plantel', 'veracruz') }}" style="color: #ffff;">
                         Veracruz <br>
                         Av. 20 de noviembre esq. Juan Enríquez No. 1004 Veracruz, Ver.
-                    </a> --}}
+                    </a>
                 </p>
             </div>
             <div class="col-12 col-md-6 p-0"> <!-- form_contacto -->

@@ -33,6 +33,10 @@
         height: 550px;
         overflow-y: scroll;
     }
+
+    .slick-list {
+        max-height: 290px !important;
+    }
 </style>
 
 @section('content')
@@ -55,22 +59,22 @@
             </div>
             <div class="col-12 mt-3">
                 <div class="row">
-                    <div class="col-4">
+                    <div class="col-6">
                         <div class="d-grid gap-2">
                             <a id="redireccionCTCL" href="#" class="btn btn-outline-primary">
                                 Calcula de Becas
                             </a>
                         </div>
                     </div>
-                    <div class="col-4">
+                    {{--  <div class="col-4">
                         <div class="d-grid gap-2">
                             <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
                                 data-bs-target="#comoObtengoMiBecaModal">
                                 Más información
                             </button>
                         </div>
-                    </div>
-                    <div class="col-4">
+                    </div> --}}
+                    <div class="col-6">
                         <div class="d-grid gap-2">
                             <a id="redireccionPELL" href="#" class="btn text-white"
                                 style="background-color: #de951b;">
@@ -104,7 +108,8 @@
                     En Universidad Mexicana puedes estudiar tu Maestría como continuación de tu Especialidad UNIMEX®. Al
                     terminar los 3 ciclos escolares de la Especialidad, puedes solicitar tu equivalencia de materias para
                     continuar con la Maestría cursando únicamente los últimos dos ciclos del programa equivalente.
-                    Nota: Para más información consulta la sección <a href="#">Continúa con tu Maestría.</a>
+                    Nota: Para más información consulta la sección <button type="button" class="btn btn-link p-0"
+                        data-bs-toggle="modal" data-bs-target="#continuaConTuMaestria">Continúa con tu Maestría.</button>
                     <br><br>
                     Nota: La inscripción está sujeta a la apertura y cupo en el grupo seleccionado. La apertura de los
                     grupos está sujeta a la disponibilidad del programa en el plantel deseado y a un mínimo de 25 alumnos
@@ -114,8 +119,9 @@
                     Válido para titulación de Licenciatura vía estudios de Posgrado.
                     Si concluiste al 100% los créditos de tu Licenciatura y tienes disponible la opción de Titulación vía
                     Estudios de Posgrado, regístrate, llámanos o ven al plantel para brindarte mayor información.
-                    Consulta los requisitos en la sección <a href="">Titulación de Licenciatura vía estudios de
-                        Posgrado.</a>
+                    Consulta los requisitos en la sección <button type="button" class="btn btn-link p-0"
+                    data-bs-toggle="modal" data-bs-target="#titulacionEstudiosPosgrado">Titulación de Licenciatura vía estudios de
+                        Posgrado.</button>
                 </p>
             </div>
         </div>
@@ -305,6 +311,9 @@
         </div>
     </section>
     <!-- Fin de la Sección de disponibilidad -->
+
+    @include('modales.continuaConTuMaestria')
+    @include('modales.titulacionViaEstudiosPosgrado')
 @endsection
 
 @section('scripts')
