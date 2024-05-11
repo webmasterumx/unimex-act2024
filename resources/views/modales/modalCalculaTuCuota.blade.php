@@ -1,6 +1,6 @@
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl">
+    <div class="modal-dialog modal-md modal-lg modal-xl">
         <div class="modal-content bg-transparent border-0"> <!--  -->
             <div class="modal-header border-0" style="justify-content: flex-end !important">
                 {{--  <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1> --}}
