@@ -273,9 +273,12 @@
     @else
         <script>
             let correoGuardado = "{{ session('email') }}";
+            
             let telefonoGuardado = "{{ session('telefono') }}";
             $('#correoInscripcion').val(correoGuardado);
             $('#telefonoInscripcion').val(telefonoGuardado);
+
+            $('#modalCarga').modal('hide');
         </script>
     @endif
     <script>

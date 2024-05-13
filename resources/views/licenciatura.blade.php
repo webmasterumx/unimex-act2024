@@ -168,7 +168,7 @@
                     </p>
                     <form id="form_folleto">
                         @csrf
-                        <select class="form-select mb-3" id="periodoSelectF" name="periodoSelectF">
+                        <select class="form-select mb-3" id="peridoSelectFolleto" name="peridoSelectFolleto">
                             <option value="" selected>Selecciona el periodo</option>
                         </select>
                         <select class="form-select mb-3" id="plantelSelectF" name="plantelSelectF">
@@ -478,6 +478,7 @@
         var nivelPosicionado = "Licenciatura";
         var carreraPosicionado = "{{ $licenciatura->subtitulo }}";
     </script>
+    <script src="{{ asset('assets/js/folletoUnimex/combos.js') }}"></script>
 
     @include('include.redirecciones.inOfertaAcademica')
 @endsection
