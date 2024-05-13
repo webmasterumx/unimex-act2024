@@ -229,6 +229,8 @@
         <script>
             $(document).ready(function() {
 
+                $('#modalCarga').modal('show');
+
                 let ruta = setUrlBase() + "get/info/prospecto"
                 console.log(ruta);
                 $.ajax({
@@ -277,19 +279,11 @@
             let telefonoGuardado = "{{ session('telefono') }}";
             $('#correoInscripcion').val(correoGuardado);
             $('#telefonoInscripcion').val(telefonoGuardado);
-
-            $(document).ready(function() {
-                $('#modalCarga').modal('hide')
-            })
         </script>
     @endif
     <script>
         window.onbeforeunload = function(e) {
             e.preventDefault();
         };
-
-        $(document).ready(function() {
-            $('#modalCarga').modal('show')
-        });
     </script>
 @endsection
