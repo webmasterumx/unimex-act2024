@@ -109,8 +109,8 @@
                                     <option value="Especialidad" selected>Especialidad</option>
                                 @endisset
                             </select>
-                            <select class="form-select rounded-0" aria-label="Default select example" id="carreraSelect"
-                                name="carreraSelect">
+                            <select class="form-select rounded-0" aria-label="Default select example"
+                                id="carreraSelect" name="carreraSelect">
                                 @isset($licenciatura)
                                     <option value="{{ $licenciatura->subtitulo }}"> {{ $licenciatura->subtitulo }}
                                     </option>
@@ -139,7 +139,10 @@
                             name="aceptar_contacto" checked style="margin-top: -2%;">
                         <label class="form-check-label" for="aceptar_contacto"
                             style="margin-top: 11px; margin-left: 26px;">
-                            He leído y acepto el <a href="#">aviso de privacidad.</a>
+                            He leído y acepto el <a href="javascript:void(0);"
+                                onclick="window.open('{{ route('aviso_de_privacidad') }}','Privacidad','scrollbars=yes,width=1000,height=700')">
+                                aviso de privacidad.
+                                </a>
                         </label>
                     </div>
                     <div class="w-100 text-center mt-4">

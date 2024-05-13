@@ -35,6 +35,7 @@ Route::get('/rvoes', [UnimexController::class, 'rvoe'])->name('rvoes');
 Route::get('/investigacion', [UnimexController::class, 'investigacion'])->name('investigacion');
 Route::get('/carta/resutado/{matricula}', [UnimexController::class, 'cartaResultados'])->name('carta.resultado');
 Route::get('/forma/pago/preinscripcion/{folio}', [FormController::class, 'buscarProspectoForFolio'])->name('forma.pago.preinscripcion');
+Route::get('/bolsa-de-trabajo', [UnimexController::class, 'bolsaDeTrabajo'])->name('bolsa_de_trabajo');
 Route::view('/opciones-de-titulacion', 'opciones_titulacion')->name('opciones_de_titulacion');
 Route::view('/examen-de-conocimientos', 'examen_de_conocimientos')->name('examen_de_conocimientos');
 Route::view('/resutados-examen', 'resultadosExamenConocimientos')->name('resultados_examen_conocimientos');

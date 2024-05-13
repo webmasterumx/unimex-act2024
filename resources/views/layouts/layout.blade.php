@@ -53,6 +53,10 @@
     @yield('content')
     <!-- Fin de Contemido -->
 
+    <!-- Inicio de Modales -->
+    @include('modales.protocolo')
+    <!-- Fin de Modales -->
+
     <!-- Inicio de Footer -->
     <footer class="bg-footer container-fluid text-center px-5 text-white">
         <div class="row">

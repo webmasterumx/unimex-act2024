@@ -51,7 +51,7 @@
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-5 g-4">
                 @foreach ($ventajas_unimex as $ventaja_unimex)
                     <div class="col">
-                        <div class="card border-0 h-100">
+                        <a href="{{ route($ventaja_unimex->link) }}" target="_blank" class="card border-0 h-100">
                             <div class="card-body text-center">
                                 <img class="icono-Unimex" src="{{ asset($ventaja_unimex->url) }}"
                                     alt="{{ $ventaja_unimex->alt }}" srcset="{{ asset($ventaja_unimex->url) }}">
@@ -59,7 +59,7 @@
                                     {!! $ventaja_unimex->descripcion_corta !!}
                                 </p>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 @endforeach
             </div>

@@ -7,7 +7,7 @@
                     height="80" alt="Logo Institucional de Universidad Mexicana"
                     title="Universidad Mexicana, educación que se adapta a ti."> --}}
             </a>
-            <div class="menu" id="navigation">
+            <div class="menu" id="navigation1">
                 <a class="btn-close-nav" onclick="nav.hide()"></a>
                 <ul>
                     <li>
@@ -41,7 +41,7 @@
         </div>
 
         <div class="wrapper d-flex" style="justify-content: flex-end;">
-            <div class="menu" id="navigation">
+            <div class="menu" id="navigation1">
                 <a class="btn-close-nav" onclick="nav.hide()"></a>
                 <ul>
                     <li class="mt-2">
@@ -55,7 +55,8 @@
                         <button id="calculadoraHeader" class="btn btn-outline-warning">CALCULADORA DE BECAS</button>
                     </li>
                     <li class="text-center">
-                        <button id="preinscripcionHeader" class="btn btn-outline-warning">PREINSCRIPCIÓN EN LINEA</button>
+                        <button id="preinscripcionHeader" class="btn btn-outline-warning">PREINSCRIPCIÓN EN
+                            LINEA</button>
                     </li>
                 </ul>
             </div>
@@ -112,7 +113,8 @@
                                         <br>
                                     </p>
                                     <a href="{{ route('plantel', $plantel->nombre) }}"
-                                        class="btn btn-primary btn-arrow-go">Plantel {{ $plantel->titulo }} &nbsp; <i class="bi bi-arrow-right"></i> </a>
+                                        class="btn btn-primary btn-arrow-go">Plantel {{ $plantel->titulo }} &nbsp; <i
+                                            class="bi bi-arrow-right"></i> </a>
                                 </div>
                             </div>
                         </div>
@@ -360,12 +362,13 @@
                         <h5 class="hide"> <a id="modal-protocolo-click">Protocolo para el regreso a clases
                                 presenciales</a></h5>
                         <div class="card" style="min-height: 150px;">
-                            <a id="modal-protocolo-click">
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#protocoloRegresoClases"
+                                id="modal-protocolo-click">
                                 <div class="parent" style="width: 150px;">
                                     <div class="children bg-protocolo"> <span class="linka">Ver Más</span>
                                     </div>
                                 </div>
-                            </a>
+                            </button>
                             <div class="card-body">
                                 <p class="card-text" style="text-align: center;">
                                     <a id="modal-protocolo-click"> <span class="blue-text">Protocolo para el

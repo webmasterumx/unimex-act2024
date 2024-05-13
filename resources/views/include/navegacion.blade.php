@@ -36,7 +36,7 @@
             </div>
             <a href="{{ route('contacto') }}" id="anclaresgistrate">INFORMES</a>
             <a href="{{ route('contacto') }}" id="anclaresgistratepages">INFORMES</a>
-            <a class="toggler-laravel" onclick="nav.show()"></a>
+            <a class="toggler" onclick="nav.show()"></a>
         </div>
     </nav>
     <div class="wrapper">

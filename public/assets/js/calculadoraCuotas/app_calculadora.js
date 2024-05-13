@@ -251,7 +251,7 @@ function obtenerHorariosBeca() {
         console.log(data);
         if (data.ClaveBeca != undefined) {
             let option = `
-            <div class="col-12 col-md-6 col-lg-3 mt-3">
+            <div class="col-12 col-md-6 col-lg-3 mt-3"> 
                 <button class="btn btn-outline-primary style_prevu_kit w-100" onclick="selectHorario(${data.ClaveTurno}, ${data.ClaveBeca}, this)">
                     ${data.Turno} <br>
                     ${data.Horario} <br>

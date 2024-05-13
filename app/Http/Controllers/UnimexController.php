@@ -186,4 +186,10 @@ class UnimexController extends Controller
             "fecha" => $fecha
         ]);
     }
+
+    public function bolsaDeTrabajo() : View {
+        
+        return view('bolsa_de_trabajo');
+
+    }
 }
