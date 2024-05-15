@@ -2,7 +2,7 @@
 <section class="container-fluid py-0">
     <div class="row">
         <div class="col-6 p-5">
-            <h2 class="underlined-head mt-5">
+            <h2 class="underlined-head mt-5 fw-normal" style="font-size: 1.438rem;">
                 Sala de Usos Múltiples
             </h2>
             <p class="text-justify">
@@ -23,7 +23,7 @@
         <div class="fondoServicios col-6" style="background-image: url({{ asset('assets/img/extras/acercade/computer-room.jpg') }})">
         </div>
         <div class="col-6 p-5">
-            <h2 class="underlined-head mt-5">
+            <h2 class="underlined-head mt-5 fw-normal" style="font-size: 1.438rem;">
                 Centro de Cómputo
             </h2>
             <p class="text-justify">
@@ -46,7 +46,7 @@
             </p>
         </div>
         <div class="col-6 p-5">
-            <h2 class="underlined-head mt-5">
+            <h2 class="underlined-head mt-5 fw-normal" style="font-size: 1.438rem;">
                 Laboratorio Digital
             </h2>
             <p class="text-justify">
@@ -66,7 +66,7 @@
         </div>
         <div class="fondoServicios col-6" style="background-image: url({{ asset('assets/img/extras/acercade/cafeteria.jpg') }})"></div>
         <div class="col-6 p-5">
-            <h2 class="underlined-head mt-5">
+            <h2 class="underlined-head mt-5 fw-normal" style="font-size: 1.438rem;">
                 Cafetería
             </h2>
             <p class="text-justify">
@@ -77,7 +77,7 @@
             </p>
         </div>
         <div class="col-6 p-5">
-            <h2 class="underlined-head mt-5">
+            <h2 class="underlined-head mt-5 fw-normal" style="font-size: 1.438rem;">
                 Biblioteca UNIMEX®
             </h2>
             <p class="text-justify">

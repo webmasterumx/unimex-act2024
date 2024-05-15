@@ -46,9 +46,9 @@
     <section class="container-fluid px-5 py-5">
         <div class="row">
             <div class="col-12 col-md-3 col-lg-2">
-                <h2 class="underlined-head text-uppercase">
+                <h1 class="underlined-head text-uppercase fw-normal" style="font-size: 1.438rem;">
                     PLANTEL <br> {{ $plantel->titulo }}
-                </h2>
+                </h1>
             </div>
             <div class="col-12 col-md-7 col-lg-8">
                 <p>

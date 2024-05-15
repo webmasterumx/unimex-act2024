@@ -132,7 +132,7 @@
     <section class="py-3">
         <div class="container-fluid p-5">
             <div class="col-12">
-                <h2 class="underlined-head fw-normal">
+                <h2 class="underlined-head fw-normal" style="font-size: 1.438rem;">
                     PLAN DE ESTUDIOS Y RVOES
                 </h2>
                 <p>
@@ -240,7 +240,7 @@
 
             </div>
             <div class="col-12 col-md-8 col-lg-9">
-                <h2 class="underlined-head">
+                <h2 class="underlined-head fw-normal" style="font-size: 1.438rem;">
                     REQUISITOS
                 </h2>
                 <div id="requisitos">

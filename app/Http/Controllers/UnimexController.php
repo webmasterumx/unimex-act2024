@@ -144,11 +144,9 @@ class UnimexController extends Controller
 
     public function rvoe(): View
     {
-        $rvoes = Rvoe::all();
+        /* $rvoes = Rvoe::all(); */
 
-        return view('rvoes', [
-            "rvoes" => $rvoes
-        ]);
+        return view('rvoes');
     }
 
     public function investigacion(): View

@@ -2,7 +2,7 @@
 <section class="container-fluid px-5 py-5">
     <div class="row">
         <div class="col-12 col-md-7 col-lg-8">
-            <h2 class="underlined-head">
+            <h2 class="underlined-head fw-normal" style="font-size: 1.438rem;">
                 Mensaje del Rector
             </h2>
             <p class="text-justify">

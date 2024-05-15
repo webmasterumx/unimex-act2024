@@ -2,7 +2,7 @@
 <section class="container-fluid py-0">
     <div class="row">
         <div class="col-8 p-5">
-            <h3 class="underlined-head mt-5">
+            <h3 class="underlined-head mt-5 fw-normal" style="font-size: 1.438rem;">
                 VALORES INSTITUCIONALES <br>
                 Nuestra razón de ser es el alumno
             </h3>
