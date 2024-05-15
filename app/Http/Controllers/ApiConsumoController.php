@@ -58,6 +58,15 @@ class ApiConsumoController extends Controller
         return $response->json();
     }
 
+    // optimizar metodos
+
+    public function getCarrerasMethod($valores)
+    {
+        $response = Http::post($this->base_url . 'oferta/carreras', $valores);
+
+        return $response->json();
+    }
+
     public function getHorarios(Request $request)
     {
         $plantel = $request->plantel;
@@ -208,6 +217,14 @@ class ApiConsumoController extends Controller
     public function getInfoProspecto($valores)
     {
         $response = Http::post($this->base_url . 'ficha/prospecto', $valores);
+
+        return $response->json();
+    }
+
+    //! guardar actividad en bitacora de CRM
+    public function guardarActividadBitacora($valores)
+    {
+        $response = Http::post($this->base_url . 'registrar/bitacora', $valores);
 
         return $response->json();
     }

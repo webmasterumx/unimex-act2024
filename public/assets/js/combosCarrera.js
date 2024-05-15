@@ -21,9 +21,7 @@ $(document).ready(function () {
         console.log(data);
         $.each(data, function (index, value) {
             let option = `<option value="${value.clave}">${value.descrip}</option>`;
-            if (value.clave != 5) {
-                $('#plantelSelect').append(option);
-            }
+            $('#plantelSelect').append(option);
         });
 
     }).fail(function () {

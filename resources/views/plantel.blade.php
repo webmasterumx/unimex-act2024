@@ -47,7 +47,7 @@
         <div class="row">
             <div class="col-12 col-md-3 col-lg-2">
                 <h2 class="underlined-head text-uppercase">
-                    PLANTEL <br> {{ $plantel->nombre }}
+                    PLANTEL <br> {{ $plantel->titulo }}
                 </h2>
             </div>
             <div class="col-12 col-md-7 col-lg-8">

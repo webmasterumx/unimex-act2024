@@ -60,8 +60,10 @@
                 @foreach ($recomendaciones as $recomendacion)
                     <div class="col-12 col-md-4 col-lg-4">
                         <div class="card h-100" style="width: 18rem;">
-                            <img src="{{ asset($recomendacion->portada_pequeña) }}" class="card-img-top"
-                                alt="{{ $recomendacion->nombre }}" style="height: 140px !important;">
+                            <a href="{{ route('acercade', $recomendacion->slug) }}">
+                                <img src="{{ asset($recomendacion->portada_pequeña) }}" class="card-img-top"
+                                    alt="{{ $recomendacion->nombre }}" style="height: 140px !important;">
+                            </a>
                             <div class="card-body">
                                 <h5 class="card-title underlined-head text-uppercase fw-normal">
                                     {{ $recomendacion->nombre }} </h5>

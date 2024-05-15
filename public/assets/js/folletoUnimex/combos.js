@@ -16,24 +16,29 @@ $(document).ready(function () {
  * se activa cuando se cambia el periodo 
  * y muestra las carreras segun: plantel, nivel y periodo
  */
-$("select[name=periodoSelect]").change(function () {
-  /*   $('#carreraSelect').empty();
-    $("#carreraSelect").append(`<option value="" selected disabled>Selecciona una carrera</option>`);
-    $('#horarioSelect').empty();
-    $("#horarioSelect").append(`<option value="" selected disabled>Selecciona un horario</option>`); */
+$("select[name=peridoSelectFolleto]").change(function () {
+    
+    $('#plantelSelectFolleto').empty();
+    $("#plantelSelectFolleto").append(`<option value="" selected disabled>Selecciona el plantel</option>`);
+    
 
+    $.ajax({
+        method: "GET",
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        url: setUrlBase() + "getPlanteles",
+    }).done(function (data) {
+        console.log(data);
+        $.each(data, function (index, value) {
+            $('#plantelSelectFolleto').append("<option value='" + value.clave + "'>" + value
+                .descrip + "</option>");
+        });
 
-    let ruta = setUrlBase() + "getCarreras";
-    let data = {
-        plantel: plantel,
-        nivel: nivel,
-        periodo: periodo
-    };
-    let element = '#carreraSelect';
+    }).fail(function () {
+        console.log("Algo salió mal");
+    });
 
-    postAjaxPeticionContact(ruta, data, element);
-
-    $("select[name=carreraSelect]").prop("disabled", false);
 });
 
 function postAjaxPeticionContact(ruta, data, element) {

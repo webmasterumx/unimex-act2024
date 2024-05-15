@@ -236,3 +236,51 @@ function recalculoDeComboNivel(ruta, data, element, info) {
         console.log("Algo salió mal");
     });
 }
+
+/**
+ * este metodo se colocora despues del segundo click a continuar para el registro de la bitacora 
+ * de actividades 
+ * 
+ * comnetar cada cosa en nuestro diario de notas
+ * no perder detalle
+ * 
+ */
+function guardarBitacora() {
+    let folioCRM = "";
+    let actRealizada = "";
+    let estatusDetalle = "";
+    let tipoContacto = "";
+    let fechaAgenda = "";
+    let idRangoHr = "";
+    let asistioPlantel = "";
+    let actividad = "";
+    let claveUsuario = "";
+
+    let ruta = setUrlBase() + "guardar/bitacora/preinscripcion";
+
+    let data = {
+        folioCRM: folioCRM,
+        actRealizada: actRealizada,
+        estatusDetalle: estatusDetalle,
+        tipoContacto: tipoContacto,
+        fechaAgenda: fechaAgenda,
+        idRangoHr: idRangoHr,
+        asistioPlantel: asistioPlantel,
+        actividad: actividad,
+        claveUsuario: claveUsuario
+    };
+
+    $.ajax({
+        method: "POST",
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        url: ruta,
+        data: data
+    }).done(function (data) {
+        console.log(data);
+
+    }).fail(function () {
+        console.log("Algo salió mal");
+    });
+}

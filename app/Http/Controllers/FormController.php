@@ -211,37 +211,58 @@ class FormController extends Controller
     public function procesaFormularioFolletos(Request $request)
     {
 
-        
+        $licenciatura = $request->carreraPosicion;
+        $plantel = $request->plantelSelectFolleto;
+        $periodo = $request->peridoSelectFolleto;
+        $nivel  = $request->nivelPosicion;
+        $claveCarrera = SELF::getIdentificarCarrera($licenciatura, $plantel, $periodo, $nivel);
 
-
-
-        /* $valores = array(
+        $valores = array(
             "campaingContent" => "",
             "campaignMedium" => "",
             "campaignTerm" => "",
             "descripPublicidad" => "",
             "folioReferido" => "0",
             "pApMaterno" => "",
-            "pApPaterno" => $request->apellidos_prospecto,
-            "pCarrera" => $request->carreraSelect,
+            "pApPaterno" => "",
+            "pCarrera" => $claveCarrera,
             "pCelular" => $request->celularFolleto,
             "pCorreo" => $request->correoFolleto,
-            "pHorario" => $request->horarioSelect,
-            "pNivel_Estudio" => $request->nivelSelect,
+            "pHorario" => 0,
+            "pNivel_Estudio" => $nivel,
             "pNombre" => $request->nombreFolleto,
             "pOrigen" => 11,
-            "pPeriodoEscolar" => $request->periodoSelect,
-            "pPlantel" => $request->plantelSelect,
+            "pPeriodoEscolar" => $request->peridoSelectFolleto,
+            "pPlantel" => $request->plantelSelectFolleto,
             "pTelefono" => "",
             "utpsource" => "",
             "websiteURL" => "https://unimex.edu.mx/",
-        ); */
+        ); 
 
+        $agregarProspecto = app(ApiConsumoController::class)->agregarProspectoCRM($valores);
 
+        var_dump($agregarProspecto);
+
+        
     }
 
-    public function getIdentificadorNivel()  
+    public function getIdentificarCarrera($licenciatura, $plantel, $periodo, $nivel)
     {
-        
+
+        $valores = [
+            "clavePlantel" => $plantel,
+            "claveNivel" => $nivel,
+            "clavePeriodo" => $periodo,
+        ];
+
+        $catalogoCarreras = app(ApiConsumoController::class)->getCarrerasMethod($valores);
+
+        foreach ($catalogoCarreras as $carrera) {
+            if ($licenciatura == $carrera['descrip']) {
+                $claveCarrera = $carrera['clave'];
+            }
+        }
+
+        return $claveCarrera;
     }
 }

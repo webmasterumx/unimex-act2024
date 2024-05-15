@@ -75,6 +75,7 @@ Route::post('/valida/prospecto', [ApiConsumoController::class, 'verificaProspect
 Route::get('/getMunicipios/{estado}', [ApiConsumoController::class, 'getMunicipios'])->name('get.municipios');
 Route::post('/preinscripcion/get/carreras', [ApiConsumoController::class, 'preinscripcionGetCarreras'])->name('preinscripcion.get.carreras');
 Route::post('/preinscripcion/get/horarios', [ApiConsumoController::class, 'preinscripcionGetHorarios'])->name('preinscripcion.get.horarios');
+Route::post('/guardar/bitacora/preinscripcion', [ApiConsumoController::class, 'guardarActividadBitacora'])->name('guardar.bitacora.preinscripcion');
 
 //* envio de formularios
 Route::post('/contacto/prospecto', [FormController::class, 'contactoProspecto'])->name('contacto.prospecto');

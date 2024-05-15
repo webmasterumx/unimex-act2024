@@ -171,7 +171,7 @@
                         <select class="form-select mb-3" id="peridoSelectFolleto" name="peridoSelectFolleto">
                             <option value="" selected>Selecciona el periodo</option>
                         </select>
-                        <select class="form-select mb-3" id="plantelSelectF" name="plantelSelectF">
+                        <select class="form-select mb-3" id="plantelSelectFolleto" name="plantelSelectFolleto">
                             <option value="" selected>Selecciona el plantel</option>
                         </select>
                         <div class="mb-3">
@@ -190,7 +190,10 @@
                             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
                                 style="width: 20px !important; height: 20px !important;">
                             <label class="form-check-label" for="flexCheckDefault">
-                                He leído y acepto el aviso de privacidad
+                                He leído y acepto el <a href="javascript:void(0);"
+                                    onclick="window.open('{{ route('aviso_de_privacidad') }}','Privacidad','scrollbars=yes,width=1000,height=700')">
+                                    aviso de privacidad.
+                                </a>
                             </label>
                         </div>
                         <button type="submit" class="btn btn-primary">¡DESCARGAR!</button>
@@ -407,78 +410,23 @@
             window.open("{{ route('preinscripcion.linea') }}", '_blank');
         });
 
+        function getCarreraPosicion() {
+            let carreraPosicionado = "{{ $licenciatura->subtitulo }}";
 
-        $("#form_folleto").validate({
-            rules: {
-                periodoSelectF: {
-                    required: true,
-                },
-                plantelSelectF: {
-                    required: true,
-                },
-                nombreFolleto: {
-                    required: true,
-                },
-                correoFolleto: {
-                    required: true,
-                    email: true
-                },
-                celularFolleto: {
-                    required: true,
-                }
-            },
-            messages: {
-                periodoSelectF: {
-                    required: "Periodo requerido",
-                },
-                plantelSelectF: {
-                    required: "Plantel requerido",
-                },
-                nombreFolleto: {
-                    required: "Nombre requerido",
-                },
-                correoFolleto: {
-                    required: "Correo requerido",
-                    email: "Formato de correo incorrecto"
-                },
-                celularFolleto: {
-                    required: "Teléfono celular requerido",
-                }
-            },
-            submitHandler: function(form) {
+            return carreraPosicionado;
+        }
 
-                let formData = new FormData(form);
+        function getNivelPosicion() {
+            let nivelPosicionado = 1;
 
-                let nivel = "Licenciatura";
-                let carrera = "{{ $licenciatura->subtitulo }}";
-
-                formData.append("nivelPosicion", nivel);
-                formData.append("carreraPosicion", carrera);
-
-                console.log(formData);
-
-                $.ajax({
-                    method: "POST",
-                    url: setUrlBase() + "procesa/datos/folleto",
-                    data: formData,
-                    dataType: "html",
-                    cache: false,
-                    contentType: false,
-                    processData: false,
-                }).done(function(data) {
-                    console.log(data);
-
-                }).fail(function() {
-                    console.log("Algo salió mal");
-                });
-
-            }
-        });
+            return nivelPosicionado;
+        }
 
         var nivelPosicionado = "Licenciatura";
         var carreraPosicionado = "{{ $licenciatura->subtitulo }}";
     </script>
     <script src="{{ asset('assets/js/folletoUnimex/combos.js') }}"></script>
+    <script src="{{ asset('assets/js/folletoUnimex/form.js') }}"></script>
 
     @include('include.redirecciones.inOfertaAcademica')
 @endsection

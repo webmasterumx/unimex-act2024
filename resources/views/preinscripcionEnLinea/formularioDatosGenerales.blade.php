@@ -19,7 +19,7 @@
                     <div class="card-body row">
                         <div class="col-4">
                             <div class="mb-3">
-                                <label for="correoInscripcion" class="form-label">Correo Electronico</label>
+                                <label for="correoInscripcion" class="form-label">Correo Electrónico</label>
                                 <input disabled type="email" class="form-control" id="correoInscripcion"
                                     name="correoInscripcion" value="">
                             </div>
@@ -90,14 +90,14 @@
                         </div>
                         <div class="col-3">
                             <div class="mb-3">
-                                <label for="telefonoInscripcion" class="form-label">Telefono ej. 5512345674</label>
+                                <label for="telefonoInscripcion" class="form-label">Teléfono ej. 5512345674</label>
                                 <input type="text" class="form-control" id="telefonoInscripcion"
                                     name="telefonoInscripcion" maxlength="13">
                             </div>
                         </div>
                         <div class="col-3">
                             <div class="mb-3">
-                                <label for="telefonoCelInscripcion" class="form-label">Tel cel. ej 5512345674
+                                <label for="telefonoCelInscripcion" class="form-label">Teléfono cel. ej 5512345674
                                 </label>
                                 <input type="text" class="form-control" id="telefonoCelInscripcion"
                                     name="telefonoCelInscripcion" maxlength="13">
@@ -113,7 +113,7 @@
                         </div>
                         <div class="col-1">
                             <div class="mb-3">
-                                <label for="numeroInscripcion" class="form-label">Numero</label>
+                                <label for="numeroInscripcion" class="form-label">Número</label>
                                 <input type="text" class="form-control" id="numeroInscripcion"
                                     name="numeroInscripcion">
                             </div>
@@ -135,13 +135,13 @@
                             </select>
                         </div>
                         <div class="col-3">
-                            <label for="municipioInscripcion" class="form-label">* Municipio/Delegacion:</label>
+                            <label for="municipioInscripcion" class="form-label">* Municipio/Delegación:</label>
                             <select class="form-select" id="municipioInscripcion" name="municipioInscripcion">
                                 <option selected>Selecciona Delegacion</option>
                             </select>
                         </div>
                         <div class="col-12 text-center">
-                            <h5>Haz tu Seleccion Academica</h5>
+                            <h5>Haz tu Selección Académica</h5>
                             <hr>
                         </div>
                         <div class="col-2">
@@ -275,7 +275,6 @@
     @else
         <script>
             let correoGuardado = "{{ session('email') }}";
-
             let telefonoGuardado = "{{ session('telefono') }}";
             $('#correoInscripcion').val(correoGuardado);
             $('#telefonoInscripcion').val(telefonoGuardado);

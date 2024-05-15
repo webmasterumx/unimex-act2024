@@ -39,13 +39,13 @@ class PreinscripcionEnLineaController extends Controller
             // con los datos optenidos si llena el formulario de datos y tambien se valida si esta matriculado
             // si esta matriculado se bloquean los datos
             $respuesta['estado'] = 1;
-            $respuesta['mensaje'] = "El prospecto dueño del correo existe en CRM";
+            $respuesta['mensaje'] = "El prospecto dueño del correo y teléfono existe en CRM";
 
             session(['estadoCRM' => 1]);
         } else {
             // simplemente pasa al siguiente formulario
             $respuesta['estado'] = 0;
-            $respuesta['mensaje'] = "El prospecto dueño del correo no existe en CRM";
+            $respuesta['mensaje'] = "El prospecto dueño del correo y no existe en CRM";
 
             session(['estadoCRM' => 0]);
         }
