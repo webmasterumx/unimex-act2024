@@ -96,13 +96,19 @@
                     <div id="listCarreras">
                         @foreach ($listaCarreras as $carrera)
                             <a href="{{ route('licenciatura', $carrera->slug) }}" class="card mx-2 h-100">
-                                <div class="card-body">
+                                <div class="card-body p-1">
                                     <center>
-                                        <img class="" src="{{ $carrera->icon }}" alt="{{ $carrera->slug }}"><br>
+                                        <img style="min-height: 80px !important;" src="{{ $carrera->icon }}"
+                                            alt="{{ $carrera->slug }}">
                                     </center>
                                     {!! $carrera->titulo !!}
                                     <hr>
                                     <p class="card-text text-justify">{{ $carrera->descripcion }}</p>
+                                    @if ($carrera->veracruz == true)
+                                        <div class="w-100 d-flex" style="justify-content: flex-end;">
+                                            <img src="{{ asset('assets/img/extras/descarga.webp') }}" alt="">
+                                        </div>
+                                    @endif
                                 </div>
                             </a>
                         @endforeach
