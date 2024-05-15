@@ -336,11 +336,11 @@
                     <!--nueva bolsa de trabajo-->
                     <div class="col-xl-2 col-lg-2 col-md-3 col-sm-12 left-gray-border">
                         <h5 class="hide">
-                            <a href="https://testing.unimex.edu.mx/bolsa-de-trabajo" target="_blank" rel="noopener"
+                            <a href="{{ route('bolsa_de_trabajo') }}" target="_blank" rel="noopener"
                                 aria-label="Bolsa de Trabajo UNIMEX">Bolsa de Trabajo</a>
                         </h5>
                         <div class="card" style="min-height: 150px;">
-                            <a target="_blank" rel="noopener" href="https://testing.unimex.edu.mx/bolsa-de-trabajo"
+                            <a target="_blank" rel="noopener" href="{{ route('bolsa_de_trabajo') }}"
                                 aria-label="Bolsa de Trabajo UNIMEX">
                                 <div class="parent" style="width: 150px;">
                                     <div class="children bg-trabajo">
@@ -350,7 +350,7 @@
                             </a>
                             <div class="card-body">
                                 <p class="card-text" style="text-align: center;">
-                                    <a href="https://testing.unimex.edu.mx/bolsa-de-trabajo" target="_blank"
+                                    <a href="{{ route('bolsa_de_trabajo') }}" target="_blank"
                                         rel="noopener" aria-label="Bolsa de Trabajo UNIMEX">
                                         <span class="blue-text">Bolsa de Trabajo</span>
                                     </a>

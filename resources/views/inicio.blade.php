@@ -51,15 +51,28 @@
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-5 g-4">
                 @foreach ($ventajas_unimex as $ventaja_unimex)
                     <div class="col">
-                        <a @if ($ventaja_unimex->click == true) href="{{ route($ventaja_unimex->link) }}" target="_blank" @else href="#" @endif class="card border-0 h-100">
-                            <div class="card-body text-center">
-                                <img class="icono-Unimex" src="{{ asset($ventaja_unimex->url) }}"
-                                    alt="{{ $ventaja_unimex->alt }}" srcset="{{ asset($ventaja_unimex->url) }}">
-                                <p class="card-text text-center color-unimex fs-unimex2">
-                                    {!! $ventaja_unimex->descripcion_corta !!}
-                                </p>
+                        @if ($ventaja_unimex->click == true)
+                            <a href="{{ route($ventaja_unimex->link) }}" target="_blank" class="card border-0 h-100">
+                                <div class="card-body text-center">
+                                    <img class="icono-Unimex" src="{{ asset($ventaja_unimex->url) }}"
+                                        alt="{{ $ventaja_unimex->alt }}" srcset="{{ asset($ventaja_unimex->url) }}">
+                                    <p class="card-text text-center color-unimex fs-unimex2">
+                                        {!! $ventaja_unimex->descripcion_corta !!}
+                                    </p>
+                                </div>
+                            </a>
+                        @else
+                            <div class="card border-0 h-100">
+                                <div class="card-body text-center">
+                                    <img class="icono-Unimex" src="{{ asset($ventaja_unimex->url) }}"
+                                        alt="{{ $ventaja_unimex->alt }}" srcset="{{ asset($ventaja_unimex->url) }}">
+                                    <p class="card-text text-center color-unimex fs-unimex2">
+                                        {!! $ventaja_unimex->descripcion_corta !!}
+                                    </p>
+                                </div>
                             </div>
-                        </a>
+                        @endif
+
                     </div>
                 @endforeach
             </div>
@@ -224,4 +237,3 @@
         });
     </script>
 @endsection
-

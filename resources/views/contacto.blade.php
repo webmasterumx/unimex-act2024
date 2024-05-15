@@ -15,6 +15,17 @@
             background-position: center;
             background-size: cover;
         }
+
+        .nav-link.active {
+            color: #474747 !important;
+            background-color: #f8981d !important;
+        }
+
+        .nav-tabs .nav-link:hover {
+            color: white !important;
+            background-color: #004b93 !important;
+            border-color: transparent !important;
+        }
     </style>
 @endsection
 
@@ -149,8 +160,8 @@
         $("#carreraSelect").append(`<option value="">Carrera</option>`);
 
         function resetFormEmpresaOCC() {
-            
+
             document.getElementById("form_empresasOCC").reset();
         }
     </script>
-@endsection 
+@endsection

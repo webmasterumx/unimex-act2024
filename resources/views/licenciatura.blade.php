@@ -57,7 +57,7 @@
                     <div class="col-4">
                         <div class="d-grid gap-2">
                             <a id="redireccionCTCL" href="#" class="btn btn-outline-primary">
-                                Calcula de Becas
+                                Calculadora de Becas
                             </a>
                         </div>
                     </div>

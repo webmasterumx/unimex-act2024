@@ -109,7 +109,10 @@
             @foreach ($plantelesInNot as $plantelInNot)
                 <div class="col-12 col-md-4 col-lg-4">
                     <div class="card h-100" style="width: 18rem;">
-                        <img src="{{ asset($plantelInNot->portada) }}" class="card-img-top" alt="{{ $plantelInNot->nombre }}">
+                        <a href="{{ route('plantel', $plantelInNot->nombre) }}">
+                            <img src="{{ asset($plantelInNot->portada) }}" class="card-img-top"
+                                alt="{{ $plantelInNot->nombre }}">
+                        </a>
                         <div class="card-body">
                             <h5 class="card-title underlined-head text-uppercase"> plantel {{ $plantelInNot->titulo }} </h5>
                             <p class="card-text"> {{ $plantelInNot->descripcion_corta }} </p>

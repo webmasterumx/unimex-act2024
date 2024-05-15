@@ -37,6 +37,7 @@
 
     <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/non-critical-styles10062022.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/flotante.min.css') }}">
 
     @yield('styles')
 
@@ -101,6 +102,21 @@
     </footer>
     <!-- Fin de Footer -->
 
+    <span class="flotante-whats">
+        <button id="f-boton">
+            <img class=" lazyloaded" width="80" height="70" id="f-whats-boton" alt="iamgen-whats"
+                src="{{ asset('assets/img/extras/whats.webp') }}">
+        </button>
+        <div>
+        </div>
+        <div id="f-msj-boton">
+            <button id="contactanos" type="button" class="btn btn-secondary" data-bs-toggle="tooltip"
+                data-bs-placement="left" title="Tooltip on left" style="display: none;">
+                ¡Contáctanos vía<br>WhatsApp...!
+            </button>
+        </div>
+    </span>
+
     <!-- JS -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
@@ -128,6 +144,30 @@
             let urlBase = "{{ env('APP_URL') }}";
             return urlBase;
         }
+
+        const obtenHover = document.getElementById('f-boton'),
+            mensajeW = document.getElementById('f-msj'),
+            btnCerrar = document.getElementById('boton-cerrar');
+
+        obtenHover.addEventListener('mouseover', () => {
+            let mensaje = document.getElementById('f-msj-boton');
+            mensaje.innerHTML = `
+        <button id="contactanos" type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="left" title="Tooltip on left">
+            ¡Contáctanos vía<br>WhatsApp...!
+        </button>
+        `;
+        });
+        obtenHover.addEventListener('mouseout', (e) => {
+            let contactanos = document.getElementById('contactanos');
+            contactanos.style.display = 'none';
+        });
+
+        /*mostrar planteles y whats*/
+        obtenHover.addEventListener('click', () => {
+           
+            window.open(
+                'https://wa.me/525511020290/?text=Buenas+tardes%2C+me+pueden+ayudar+con+más+informaci%C3%B3n');
+        });
     </script>
 
     @yield('scripts')
