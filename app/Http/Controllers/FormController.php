@@ -54,8 +54,12 @@ class FormController extends Controller
             "Email" => "rectoria_testing@gmial.com"
         ); */
 
-        $recive = $request->mail_prospecto;
-        $envio =  Mail::to($recive)->bcc("umrec_web@unimex.edu.mx")->send(new ContactoProspecto($request, $respuesta)); //! envio del correo
+        //$recive = $request->mail_prospecto;
+        $correos = [
+            "umrec_cdbd@unimex.edu.mx",
+            "lishanxime201099@gmail.com"
+        ];
+        $envio =  Mail::to($correos)->bcc("umrec_web@unimex.edu.mx")->send(new ContactoProspecto($request, $respuesta)); //! envio del correo
 
         return view('registroExitoso', [
             "respuesta" => $respuesta,
@@ -77,7 +81,11 @@ class FormController extends Controller
         );
 
         $recive = "lishanxime201099@gmail.com";
-        $envio =  Mail::to($recive)->bcc("umrec_web@unimex.edu.mx")->send(new ServicioAlumno($valores));
+        $correos = [
+            "umrec_cdbd@unimex.edu.mx",
+            "lishanxime201099@gmail.com"
+        ];
+        $envio =  Mail::to($correos)->bcc("umrec_web@unimex.edu.mx")->send(new ServicioAlumno($valores));
 
         var_dump($envio);
     }
@@ -98,7 +106,11 @@ class FormController extends Controller
         $file = $request->file('cv_trabaja');
 
         $recive = "lishanxime201099@gmail.com";
-        $envio =  Mail::to($recive)->bcc("umrec_web@unimex.edu.mx")->send(new TrabajaUnimex($valores, $file));
+        $correos = [
+            "umrec_cdbd@unimex.edu.mx",
+            "lishanxime201099@gmail.com"
+        ];
+        $envio =  Mail::to($correos)->bcc("umrec_web@unimex.edu.mx")->send(new TrabajaUnimex($valores, $file));
 
         var_dump($envio);
     }
@@ -116,7 +128,11 @@ class FormController extends Controller
         );
 
         $recive = "lishanxime201099@gmail.com";
-        $envio = Mail::to($recive)->bcc("umrec_web@unimex.edu.mx")->send(new QuejasSugerencias($valores));
+        $correos = [
+            "umrec_cdbd@unimex.edu.mx",
+            "lishanxime201099@gmail.com"
+        ];
+        $envio = Mail::to($correos)->bcc("umrec_web@unimex.edu.mx")->send(new QuejasSugerencias($valores));
 
         var_dump($envio);
     }
@@ -143,7 +159,11 @@ class FormController extends Controller
         }
 
         $recive = "lishanxime201099@gmail.com";
-        $envio = Mail::to($recive)->bcc("umrec_web@unimex.edu.mx")->send(new EmpresasOcc($valores, $asunto));
+        $correos = [
+            "umrec_cdbd@unimex.edu.mx",
+            "lishanxime201099@gmail.com"
+        ];
+        $envio = Mail::to($correos)->bcc("umrec_web@unimex.edu.mx")->send(new EmpresasOcc($valores, $asunto));
 
         var_dump($envio);
     }

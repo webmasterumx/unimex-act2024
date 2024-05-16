@@ -1,5 +1,5 @@
 $("#formPreincripcion").validate({
-    
+
     rules: {
         correo: {
             required: true,
@@ -42,15 +42,23 @@ $("#formPreincripcion").validate({
         }).done(function (data) {
             console.log(data);
 
-            $('#validarCorreo').html(`
-            <div class="spinner-border me-1" style="width: 20px; height: 20px;" role="status">
-                <span class="visually-hidden">Loading...</span>
-            </div>
-            Redirigiendo
-            `);
-            let redireccion = setUrlBase() + "form/datos_gemerales/preinscripcion";
+          /*   let respuesta = JSON.parse(data);
+            console.log(respuesta);
 
-            setTimeout(`location.href='${redireccion}'`, 3000);
+            if (respuesta.acceso == true) {
+                $('#validarCorreo').html(`
+                <div class="spinner-border me-1" style="width: 20px; height: 20px;" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                Redirigiendo
+                `);
+                let redireccion = setUrlBase() + "form/datos_gemerales/preinscripcion";
+
+                setTimeout(`location.href='${redireccion}'`, 2000);
+            } else {
+
+            } */
+
 
         }).fail(function () {
             console.log("Algo salió mal");
