@@ -39,47 +39,50 @@ class PreinscripcionEnLineaController extends Controller
         $infoProspecto = app(ApiConsumoController::class)->verificaProspecto($valores);
         session(['folioCRM' => $infoProspecto['folioCRM']]);
 
-        //var_dump($infoProspecto);
-
-        if ($infoProspecto['folioCRM'] == 0 || $infoProspecto['folioCRM'] == null || $infoProspecto['folioCRM'] == "") {
-            /**
-             * el prospecto no esta en CRM
-             * por lo tanto se le dara acceso directo al formulario
-             * precargardo solo correo y telefono
-             * @return true
-             */
-
-            session(['estadoCRM' => 0]);
-
-            $respuesta['acceso'] = true;
-            $respuesta['mensaje'] = "El prospecto tiene acceso al formulario.";
-        } else {
-            /**
-             * el prospecto esta en CRM
-             * se debe validar si esta matriculado o no
-             */
-
-            if ($infoProspecto['matricula'] == "" || $infoProspecto['matricula'] == null) {
+        if ($infoProspecto['BanderaStd'] == "Considerar") {
+            if ($infoProspecto['folioCRM'] == 0 || $infoProspecto['folioCRM'] == null || $infoProspecto['folioCRM'] == "") {
                 /**
-                 * el prospecto no esta matriculado por lo cual se le dajara pasar al formulario de datos 
-                 * precargando los datos que trae el formulario
+                 * el prospecto no esta en CRM
+                 * por lo tanto se le dara acceso directo al formulario
+                 * precargardo solo correo y telefono
                  * @return true
                  */
 
-                session(['estadoCRM' => 1]);
+                session(['estadoCRM' => 0]);
 
                 $respuesta['acceso'] = true;
                 $respuesta['mensaje'] = "El prospecto tiene acceso al formulario.";
             } else {
                 /**
-                 * el prospecto esta matriculado por lo cual se le mostrara un mensaje para agendar llamada 
-                 * @return false
+                 * el prospecto esta en CRM
+                 * se debe validar si esta matriculado o no
                  */
 
-                $respuesta['acceso'] = false;
-                $respuesta['correoGuardado'] = $request->correo;
-                $respuesta['mensaje'] = "El prospecto ya esta matriculado, mandar mensaje para agendar llamada.";
+                if ($infoProspecto['matricula'] == "" || $infoProspecto['matricula'] == null) {
+                    /**
+                     * el prospecto no esta matriculado por lo cual se le dajara pasar al formulario de datos 
+                     * precargando los datos que trae el formulario
+                     * @return true
+                     */
+
+                    session(['estadoCRM' => 1]);
+
+                    $respuesta['acceso'] = true;
+                    $respuesta['mensaje'] = "El prospecto tiene acceso al formulario.";
+                } else {
+                    /**
+                     * el prospecto esta matriculado por lo cual se le mostrara un mensaje para agendar llamada 
+                     * @return false
+                     */
+
+                    $respuesta['acceso'] = false;
+                    $respuesta['correoGuardado'] = $request->correo;
+                    $respuesta['mensaje'] = "El prospecto ya esta matriculado, mandar mensaje para agendar llamada.";
+                }
             }
+        } elseif ($infoProspecto['BanderaStd'] == "Descartar") {
+            $respuesta['acceso'] = "Descartar";
+            $respuesta['mensaje'] = "El prospecto no tiene acceso al formulario.";
         }
 
         return response()->json($respuesta);

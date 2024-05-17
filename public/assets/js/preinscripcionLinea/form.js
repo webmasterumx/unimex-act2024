@@ -55,12 +55,23 @@ $("#formPreincripcion").validate({
                 let redireccion = setUrlBase() + "form/datos_gemerales/preinscripcion";
 
                 setTimeout(`location.href='${redireccion}'`, 2000);
-            } else {
+            } else if (respuesta.acceso == false) {
                 $('#validarCorreo').html(`
                 Respuesta Obtenida
                 `);
 
                 $('#statictConfirmPreinscripcion').modal('show');
+            } else if (respuesta.acceso = "Descartar") {
+                $("#validarCorreo").prop("disabled", false);
+                $('#validarCorreo').html(`
+                <i class="bi bi-box-arrow-right"></i>
+                Continuar
+                `);
+
+                Swal.fire({
+                    icon: "error",
+                    title: "Correo ya registrado",
+                });
             }
 
 
