@@ -68,7 +68,8 @@
                                     <i class="bi bi-telephone-fill"></i>
                                 </span>
                                 <input type="text" class="form-control" placeholder="Telefono movil"
-                                    aria-label="telefono" aria-describedby="inputPhone" name="telefono" id="telefono" minlength="10" maxlength="13">
+                                    aria-label="telefono" aria-describedby="inputPhone" name="telefono" id="telefono"
+                                    minlength="10" maxlength="13">
                             </div>
                         </div>
                         <div class="col-12  d-flex">
@@ -93,9 +94,15 @@
 @endsection
 
 @include('modales.preinscripcionAviso')
+@include('modales.confirmacion')
 
 @section('scripts')
     <script>
+        // A $( document ).ready() block.
+        /* $(document).ready(function() {
+            $('#statictConfirmPreinscripcion').modal('show');
+        }); */
+
         $.ajax({
             method: "GET",
             headers: {

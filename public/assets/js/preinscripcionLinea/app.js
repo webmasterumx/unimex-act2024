@@ -293,3 +293,24 @@ function guardarBitacora() {
         console.log("Algo salió mal");
     });
 }
+
+function aceptoAgendar() {
+
+    Swal.fire("Llamada agendada", "", "success");
+
+}
+
+function rechazoAgendar() {
+
+    $('#correo').val("");
+    $('#telefono').val("");
+
+    $('#validarCorreo').html(`
+        <i class="bi bi-box-arrow-right"></i>
+        Continuar
+    `);
+    $("#validarCorreo").prop("disabled", false);
+
+    Swal.fire("¡Proceso Terminado!", "", "error");
+
+}

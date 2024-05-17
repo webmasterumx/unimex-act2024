@@ -185,7 +185,7 @@ class ApiConsumoController extends Controller
 
     public function registraProspectoCRMDesdePreinscripcionEnLinea($valores)
     {
-        $response = Http::post($this->base_url . 'preinscripcion/agrega-prospecto/sineroi', $valores);
+        $response = Http::post($this->base_url . 'preinscripcion/registrar/prospecto', $valores);
 
         return $response->json();
     }

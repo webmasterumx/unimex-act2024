@@ -42,7 +42,7 @@ $("#formPreincripcion").validate({
         }).done(function (data) {
             console.log(data);
 
-          /*   let respuesta = JSON.parse(data);
+            let respuesta = JSON.parse(data);
             console.log(respuesta);
 
             if (respuesta.acceso == true) {
@@ -56,8 +56,12 @@ $("#formPreincripcion").validate({
 
                 setTimeout(`location.href='${redireccion}'`, 2000);
             } else {
+                $('#validarCorreo').html(`
+                Respuesta Obtenida
+                `);
 
-            } */
+                $('#statictConfirmPreinscripcion').modal('show');
+            }
 
 
         }).fail(function () {

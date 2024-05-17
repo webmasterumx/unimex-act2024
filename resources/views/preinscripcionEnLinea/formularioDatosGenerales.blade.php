@@ -241,15 +241,19 @@
 
                     $('#correoInscripcion').val(data.email);
                     $('#nombreInscripcion').val(data.nombre);
-                    $('#apellidoPatInscripcion').val(data.apMaterno);
-                    $('#apellidoMatInscripcion').val(data.apPaterno);
-                    $('#telefonoInscripcion').val(data.telefono1);
+                    $('#apellidoPatInscripcion').val(data.apellido_mat);
+                    $('#apellidoMatInscripcion').val(data.apellido_pat);
+                    $('#telefonoInscripcion').val(data.telefono);
+                    $('#telefonoCelInscripcion').val(data.celular);
+                    $('#calleInscripcion').val(data.calle);
+                    $('#numeroInscripcion').val(data.numero);
+                    $('#coloniaInscripcion').val(data.colonia);
 
-                    let clavePlantel = data.clavePlantel;
-                    let claveCampana = data.clavePeriodoIngreso;
-                    let claveNivel = data.claveNivel;
-                    let claveCarrera = data.claveCarrera;
-                    let claveHorario = data.claveTurnoMilenio;
+                    let clavePlantel = data.clave_empresa;
+                    let claveCampana = data.clave_periodo;
+                    let claveNivel = data.clave_nivel;
+                    let claveCarrera = data.clave_carrera;
+                    let claveHorario = data.clave_turno;
 
                     llenaComboPlantel(clavePlantel);
                     llenarComboCampañas(claveCampana, clavePlantel);

@@ -37,13 +37,15 @@ class PreinscripcionEnLineaController extends Controller
         );
 
         $infoProspecto = app(ApiConsumoController::class)->verificaProspecto($valores);
+        session(['folioCRM' => $infoProspecto['folioCRM']]);
 
-        var_dump($infoProspecto);
+        //var_dump($infoProspecto);
 
         if ($infoProspecto['folioCRM'] == 0 || $infoProspecto['folioCRM'] == null || $infoProspecto['folioCRM'] == "") {
             /**
              * el prospecto no esta en CRM
              * por lo tanto se le dara acceso directo al formulario
+             * precargardo solo correo y telefono
              * @return true
              */
 
@@ -51,8 +53,7 @@ class PreinscripcionEnLineaController extends Controller
 
             $respuesta['acceso'] = true;
             $respuesta['mensaje'] = "El prospecto tiene acceso al formulario.";
-        } 
-        else {
+        } else {
             /**
              * el prospecto esta en CRM
              * se debe validar si esta matriculado o no
@@ -76,11 +77,12 @@ class PreinscripcionEnLineaController extends Controller
                  */
 
                 $respuesta['acceso'] = false;
+                $respuesta['correoGuardado'] = $request->correo;
                 $respuesta['mensaje'] = "El prospecto ya esta matriculado, mandar mensaje para agendar llamada.";
             }
         }
 
-        //return response()->json($respuesta);
+        return response()->json($respuesta);
     }
 
     public function formDatosGenerales()
@@ -136,8 +138,11 @@ class PreinscripcionEnLineaController extends Controller
     public function registrarPreinscripcionEnLinea()
     {
 
+
+
         $valores = array(
-            "Email" => session("Email"),
+            "folioCRM" => session('folioCRM'),
+            "Email" => session("email"),
             "Nombre" => session("Nombre"),
             "ApPaterno" => session("ApPaterno"),
             "ApMaterno" => session("ApMaterno"),
@@ -163,6 +168,17 @@ class PreinscripcionEnLineaController extends Controller
         );
 
         $registro = app(ApiConsumoController::class)->registraProspectoCRMDesdePreinscripcionEnLinea($valores);
+
+        /**
+         *   "FolioCrm": 1083468,
+         * "Matricula": "22590169-64",
+         * "Success": true,
+         * "FailureMessage": ""
+         * 
+         * ya matriculados
+         * testing00_rectoria00@gmail.com
+         * prueba@gmail.com
+         */
 
         session(['Matricula' => $registro['Matricula']]);
         session(['FolioCrm' => $registro['FolioCrm']]);
@@ -236,7 +252,7 @@ class PreinscripcionEnLineaController extends Controller
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="text-align: center;">3171</td>
+                                        <td style="text-align: center;">' . $this->plantelInfo['ns'] . '</td>
                                     </tr>
                                 </table>
                             </div>
@@ -346,51 +362,13 @@ class PreinscripcionEnLineaController extends Controller
     public function getInfoProspecto()
     {
 
-        if (session()->has('foliocrm') == true) {
-
-            //echo 'este viene de calculadora de cuotas';
-
-            $foliocrm = explode(' ', session('foliocrm'));
-
-            $valores = array(
-                "folioCRM" => $foliocrm[1]
-            );
-        } else {
-            //echo "este viene de organico se debe consultar si esta en crm";
-
-            $valores = array(
-                "campaingContent" => "",
-                "campaignMedium" => "",
-                "campaignTerm" => "",
-                "descripPublicidad" => "",
-                "folioReferido" => "0",
-                "pApMaterno" => "",
-                "pApPaterno" => 0,
-                "pCarrera" => 0,
-                "pCelular" => "",
-                "pCorreo" => session('email'),
-                "pHorario" => 0,
-                "pNivel_Estudio" => 0,
-                "pNombre" => "",
-                "pOrigen" => 11,
-                "pPeriodoEscolar" => 0,
-                "pPlantel" => 0,
-                "pTelefono" => "",
-                "utpsource" => "",
-                "websiteURL" => "https://unimex.edu.mx/",
-            );
-
-            $respuesta = app(ApiConsumoController::class)->agregarProspectoCRM($valores);
-
-            $valores = array(
-                "folioCRM" => $respuesta['FolioCRM']
-            );
-        }
+        $data = [
+            "correoElectronico" => session('email'),
+            "numeroCelular" => session('telefono'),
+        ];
 
         $apiConsumo = new ApiConsumoController();
-        $infoProspecto = $apiConsumo->getInfoProspecto($valores);
-
-        //var_dump($infoProspecto);
+        $infoProspecto = $apiConsumo->verificaProspecto($data);
 
         return response()->json($infoProspecto);
     }
