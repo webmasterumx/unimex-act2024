@@ -322,6 +322,14 @@ function getPeriodos() {
 }
 
 function actualizarProspectoCalculadora(turno) {
+    /**
+     * este metodo solo actualiza la oferta academica que el prospecto eligio 
+     * no actualiza sus datos como nombre, telefono o apellidos
+     * esto pasa incluso si el prospecto ya esta matriculado
+     * 
+     * esto tambien hace que el prospecto    pase al estado matriculado pero con el estatus considerar para el 
+     * algirtimo de preinscripcion en linea
+     */
     let rutaActualizar = setUrlBase() + 'actualiza/prospecto/calculadora';
 
     let editor = $('#folioCrm').val();
@@ -462,8 +470,9 @@ function redireccionPreinscripcionEnLinea() {
     `);
 
     //! codigo de verificacion del prospecto dentro de preinscripcion en linea queda pendiente por mantenimiento
-    /* let formData = new FormData();
+    let formData = new FormData();
     formData.append("correo", $('#emailProspecto').val());
+    formData.append("telefono", $("#telefonoProspecto").val());
     let ruta = setUrlBase() + "validacion/preinscripcion";
 
     $.ajax({
@@ -480,62 +489,110 @@ function redireccionPreinscripcionEnLinea() {
     }).done(function (data) {
         console.log(data);
 
+        /**
+         * para este caso debe hacer la misma validacion
+         * @return true --> pasa al sig formulario
+         * @return false --> mensaje de agenda
+         * @eretun descartado --> no pasa a ningun lado y termian el proceso
+         * 
+         */
+
         let respuesta = JSON.parse(data);
 
-        if (respuesta.estado == true) {
-            $('#validarCorreo').html(`
-            <div class="spinner-border me-1" style="width: 20px; height: 20px;" role="status">
-                <span class="visually-hidden">Loading...</span>
-            </div>
-            Redirigiendo
-            `);
+        if (respuesta.acceso == true) {
+            // se hace la redireccion al formulario
             let redireccion = setUrlBase() + "form/datos_gemerales/preinscripcion";
 
-            setTimeout(`location.href='${redireccion}'`, 3000); 
-        } else {
+            //setTimeout(`location.href='${redireccion}'`, 2000);
+            window.open(redireccion, '_blank');
+
+            $('#redireccionPEL').html(`
+                <i class="bi bi-check-circle"></i>
+                Redirección exitosa.
+            `);
+
+        }
+        else if (respuesta.acceso == false) {
+            $('#redireccionPEL').html(`
+                <i class="bi bi-calendar2-check"></i>
+                Agendar llamada
+            `);
+
+            $('#statictConfirmPreinscripcion').modal('show');
+
+
+        }
+        else if (respuesta.acceso == "Descartar") {
+            $('#redireccionPEL').html(`
+            <i class="bi bi-x-circle"></i>
+            Redirección no permitida
+            `);
+
             Swal.fire({
                 icon: "error",
-                title: "Aviso!",
-                html: respuesta.mensaje,
+                title: "Correo ya registrado",
             });
+        }
 
-            $("#validarCorreo").prop("disabled", false);
-            $('#validarCorreo').html(`
-                <i class="bi bi-box-arrow-right"></i>
-                Continuar
-            `);
-        } 
-
-    }).fail(function () {
-        console.log("Algo salió mal");
-    }); */
-
-    //! peticion para establecer el folio crm como variable de session
-    let foliocrm = $('#folioCrm').val();
-
-    let ruta = setUrlBase() + "set/variables/foliocrm/" + foliocrm;
-
-    $.ajax({
-        method: "GET",
-        url: ruta,
-        dataType: "json",
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        },
-    }).done(function (data) {
-        console.log(data);
-
-        //! se realiza la redireccion a la pagina del formulario de datos 
-        let redireccion = setUrlBase() + "form/datos_gemerales/preinscripcion";
-
-        //setTimeout(`location.href='${redireccion}'`, 2000);
-        window.open(redireccion, '_blank');
-
-        $('#redireccionPEL').html(`
-            Redirección exitosa.
-        `);
 
     }).fail(function () {
         console.log("Algo salió mal");
     });
+
+
 }
+
+function aceptoAgendar() {
+
+    $("#aceptarActividad").prop("disabled", true);
+    $('#aceptarActividad').html(`
+        <div style="width: 20px !important; height: 20px !important;"
+        class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        Agendando Llamada
+    `);
+
+    let ruta = setUrlBase() + "agendar/actividad/preinscripcion";
+
+    $.ajax({
+        method: "GET",
+        url: ruta,
+        dataType: "html",
+    }).done(function (data) {
+        console.log(data);
+
+        $("#aceptarActividad").prop("disabled", false);
+        $('#aceptarActividad').html(`
+            Si
+        `);
+
+        $('#redireccionPEL').html(`
+            Preinscripción en Linea
+        `);
+
+
+
+        $('#statictConfirmPreinscripcion').modal('hide');
+
+        Swal.fire("Llamada agendada", "", "success");
+
+    }).fail(function () {
+        console.log("Algo salió mal");
+    });
+
+
+}
+
+function rechazoAgendar() {
+
+    $('#redireccionPEL').html(`
+        Preinscripción en Linea
+    `);
+
+    $('#statictConfirmPreinscripcion').modal('hide');
+
+    Swal.fire("¡Proceso Terminado!", "", "error");
+
+}
+

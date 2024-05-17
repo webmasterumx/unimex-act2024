@@ -141,8 +141,6 @@ class PreinscripcionEnLineaController extends Controller
     public function registrarPreinscripcionEnLinea()
     {
 
-
-
         $valores = array(
             "folioCRM" => session('folioCRM'),
             "Email" => session("email"),
@@ -186,6 +184,8 @@ class PreinscripcionEnLineaController extends Controller
         session(['Matricula' => $registro['Matricula']]);
         session(['FolioCrm' => $registro['FolioCrm']]);
 
+        SELF::getPlantelInfo();
+        
         return view('preinscripcionEnLinea.formaDePago');
     }
 
@@ -360,6 +360,11 @@ class PreinscripcionEnLineaController extends Controller
                 # code...
                 break;
         }
+
+        session(['empresa' => $this->plantelInfo['empresa']]);
+        session(['ns' => $this->plantelInfo['ns']]);
+        session(['referencia' => $this->plantelInfo['referencia']]);
+
     }
 
     public function getInfoProspecto()
@@ -374,5 +379,31 @@ class PreinscripcionEnLineaController extends Controller
         $infoProspecto = $apiConsumo->verificaProspecto($data);
 
         return response()->json($infoProspecto);
+    }
+
+    function insertarRegistroActividadParaMatriculado()
+    {
+        
+        $date_now = date('d-m-Y');
+        $date_future = strtotime('+1 day', strtotime($date_now));
+        $date_future = date('Y-d-m', $date_future);
+
+        $data = [
+            "folioCRM" => session('folioCRM'),
+            "actRealizada" => 2,
+            "estatusDetalle" => 10, // 10 es para interesado pero hay que preguntar cual es "Sin Atender"
+            "tipoContacto" => 2,
+            "fechaAgenda" => $date_future,
+            "idRangoHr" => 2,
+            "asistioPlantel" => false,
+            "actividad" => "Actualización de datos Preinscripción en Línea.",
+            "claveUsuario" => 90856, // por el momento se usuara este promotor en lo que nos definen al promotor por defecto
+        ];
+
+        var_dump($data);
+
+        $insertarActividad = app(ApiConsumoController::class)->guardarActividadBitacora($data);
+
+        var_dump($insertarActividad); 
     }
 }

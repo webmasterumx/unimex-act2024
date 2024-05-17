@@ -11,8 +11,12 @@
                     <b> {{ session('email') }} </b> ya fue registrada <br>
                     <b>¿Deseas que nos contactemos contigo?</b>
                 </p>
-                <button onclick="aceptoAgendar()" type="button" class="btn btn-success w-25 mt-4" data-bs-dismiss="modal">Sí</button>
-                <button onclick="rechazoAgendar()" type="button" class="btn btn-danger w-25 mt-4" data-bs-dismiss="modal">No</button>
+                <!--
+                    data-bs-dismiss="modal"
+                    data-bs-dismiss="modal"
+                -->
+                <button id="aceptarActividad" onclick="aceptoAgendar()" type="button" class="btn btn-success w-25 mt-4">Sí</button>
+                <button id="rechazarActividad" onclick="rechazoAgendar()" type="button" class="btn btn-danger w-25 mt-4">No</button>
             </div>
         </div>
     </div>

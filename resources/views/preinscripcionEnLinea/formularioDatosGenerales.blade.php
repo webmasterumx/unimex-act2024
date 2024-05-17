@@ -3,12 +3,12 @@
 @section('content')
     <div class="container-fluid" style="margin-top: 8rem !important;">
         <div class="row px-5">
-            <div class="col-12">
+            {{-- <div class="col-12">
                 <h1 class="text-center fw-normal" style="color: rgba(241,145,29,1.00);">
                     <i class="bi bi-card-list"></i>
                     PREINSCRIPCIÓN EN LÍNEA
                 </h1>
-            </div>
+            </div> --}}
             <div class="col-12">
                 <form id="formPromoPreinscripcion" class="card" style="border: 1px solid #337ab7;">
                     @csrf
@@ -128,7 +128,7 @@
                         <div class="col-2">
                             <label for="estadoInscripcion" class="form-label">* Estado:</label>
                             <select class="form-select" id="estadoInscripcion" name="estadoInscripcion">
-                                <option selected>Selecciona Estado</option>
+                                <option value="" selected>Selecciona Estado</option>
                                 @foreach ($estados as $estado)
                                     <option value="{{ $estado['clave'] }}"> {{ $estado['descrip'] }} </option>
                                 @endforeach
@@ -137,7 +137,7 @@
                         <div class="col-3">
                             <label for="municipioInscripcion" class="form-label">* Municipio/Delegación:</label>
                             <select class="form-select" id="municipioInscripcion" name="municipioInscripcion">
-                                <option selected>Selecciona Delegacion</option>
+                                <option value="" selected>Selecciona Delegacion</option>
                             </select>
                         </div>
                         <div class="col-12 text-center">
@@ -147,31 +147,31 @@
                         <div class="col-2">
                             <select id="plantelSelect" name="plantelSelect" class="form-select"
                                 aria-label="Default select example">
-                                <option selected>Selecciona Plantel</option>
+                                <option value="" selected>Selecciona Plantel</option>
                             </select>
                         </div>
                         <div class="col-2">
                             <select id="periodoSelect" name="periodoSelect" class="form-select"
                                 aria-label="Default select example">
-                                <option selected>Selecciona Ciclo</option>
+                                <option value="" selected>Selecciona Ciclo</option>
                             </select>
                         </div>
                         <div class="col-2">
                             <select id="nivelSelect" name="nivelSelect" class="form-select"
                                 aria-label="Default select example">
-                                <option selected>Selecciona el Nivel</option>
+                                <option value="" selected>Selecciona el Nivel</option>
                             </select>
                         </div>
                         <div class="col-3">
                             <select id="carreraSelect" name="carreraSelect" class="form-select"
                                 aria-label="Default select example">
-                                <option selected>Selecciona Carrera</option>
+                                <option value="" selected>Selecciona Carrera</option>
                             </select>
                         </div>
                         <div class="col-3">
                             <select id="horarioSelect" name="horarioSelect" class="form-select"
                                 aria-label="Default select example">
-                                <option selected>Selecciona Horario</option>
+                                <option value="" selected>Selecciona Horario</option>
                             </select>
                         </div>
                         <div class="col-9"></div>

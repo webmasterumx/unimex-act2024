@@ -410,8 +410,8 @@
                             </div>
                         </div>
                         <div class="col-12 text-end mt-3">
-                            <button onclick="redireccionPreinscripcionEnLinea()" id="redireccionPEL" href="#" class="btn"
-                                style="background-color: #de951b;">
+                            <button onclick="redireccionPreinscripcionEnLinea()" id="redireccionPEL" href="#"
+                                class="btn" style="background-color: #de951b;">
                                 PREINSCRIPCIÓN EN LINEA
                             </button>
                         </div>
@@ -420,6 +420,8 @@
             </div>
         </div>
     </section>
+
+    @include('modales.confirmacion')
 @endsection
 
 @section('scripts')

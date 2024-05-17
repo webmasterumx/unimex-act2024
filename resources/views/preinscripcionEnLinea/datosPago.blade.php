@@ -3,13 +3,13 @@
 @section('content')
     <div class="container-fluid" style="margin-top: 8rem !important;">
         <div class="row">
-            <div class="col-12">
+            {{-- <div class="col-12">
                 <h1 class="text-center fw-normal" style="color: rgba(241,145,29,1.00);">
                     <i class="bi bi-card-list"></i>
                     PREINSCRIPCIÓN EN LÍNEA
                 </h1>
                 <hr>
-            </div>
+            </div> --}}
             <div class="col-12 row">
                 <div class="col-5">
                     <p class="text-center">
@@ -41,19 +41,19 @@
                             <div class="mb-3">
                                 <label for="nombreEmpresa" class="form-label">A nombre de:</label>
                                 <input disabled type="email" class="form-control" id="nombreEmpresa"
-                                    value="UNIVERSIDAD MEXICANA, S.C.">
+                                    value="{{ session('empresa') }}">
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="mb-3">
                                 <label for="numeroServicio" class="form-label">Número de Servicio</label>
-                                <input disabled type="text" class="form-control" id="numeroServicio" value="3171">
+                                <input disabled type="text" class="form-control" id="numeroServicio" value="{{ session('ns') }}">
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="mb-3">
                                 <label for="referencia" class="form-label">Referencia</label>
-                                <input disabled type="text" class="form-control" id="referencia" value="08700071031">
+                                <input disabled type="text" class="form-control" id="referencia" value="{{ session('referencia') }}">
                             </div>
                         </div>
                         <div class="col-4">

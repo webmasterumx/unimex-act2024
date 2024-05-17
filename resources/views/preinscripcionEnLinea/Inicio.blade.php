@@ -3,12 +3,12 @@
 @section('content')
     <div class="container" style="margin-top: 8rem !important;">
         <div class="row">
-            <div class="col-12">
+            {{-- <div class="col-12">
                 <h1 class="text-center fw-normal" style="color: rgba(241,145,29,1.00);">
                     <i class="bi bi-card-list"></i>
                     PREINSCRIPCIÓN EN LÍNEA
                 </h1>
-            </div>
+            </div> --}}
             <div class="col-12 row">
                 <div class="col-4 text-center">
                     <img class="mt-5" src="{{ asset('assets/img/preinscripcion_linea/preinscripcion.png') }}"

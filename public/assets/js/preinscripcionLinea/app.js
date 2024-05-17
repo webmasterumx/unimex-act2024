@@ -296,20 +296,53 @@ function guardarBitacora() {
 
 function aceptoAgendar() {
 
-    Swal.fire("Llamada agendada", "", "success");
+    $("#aceptarActividad").prop("disabled", true);
+    $('#aceptarActividad').html(`
+        <div style="width: 20px !important; height: 20px !important;"
+        class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        Agendando Llamada
+    `);
+
+    let ruta = setUrlBase() + "agendar/actividad/preinscripcion";
+
+    $.ajax({
+        method: "GET",
+        url: ruta,
+        dataType: "html",
+    }).done(function (data) {
+        console.log(data);
+
+        $("#aceptarActividad").prop("disabled", false);
+        $('#aceptarActividad').html(`
+            Si
+        `);
+
+        $('#redireccionPEL').html(`
+            Preinscripción en Linea
+        `);
+
+
+
+        $('#statictConfirmPreinscripcion').modal('hide');
+
+        Swal.fire("Llamada agendada", "", "success");
+
+    }).fail(function () {
+        console.log("Algo salió mal");
+    });
+
 
 }
 
 function rechazoAgendar() {
 
-    $('#correo').val("");
-    $('#telefono').val("");
-
-    $('#validarCorreo').html(`
-        <i class="bi bi-box-arrow-right"></i>
-        Continuar
+    $('#redireccionPEL').html(`
+        Preinscripción en Linea
     `);
-    $("#validarCorreo").prop("disabled", false);
+
+    $('#statictConfirmPreinscripcion').modal('hide');
 
     Swal.fire("¡Proceso Terminado!", "", "error");
 

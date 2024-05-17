@@ -61,6 +61,7 @@ Route::post('/obtener/promo/preinscripcion', [PreinscripcionEnLineaController::c
 Route::get('/registrar/prospecto/preinscripcion/linea', [PreinscripcionEnLineaController::class, 'registrarPreinscripcionEnLinea'])->name('registrar.prospecto.preinscripcion');
 Route::get('/ficha/generar/pdf', [PreinscripcionEnLineaController::class, 'fichaPDFGenerar'])->name('ficha.pdf');
 Route::get('/get/info/prospecto', [PreinscripcionEnLineaController::class, 'getInfoProspecto'])->name('get.info.prospecto');
+Route::get('/agendar/actividad/preinscripcion', [PreinscripcionEnLineaController::class, 'insertarRegistroActividadParaMatriculado'])->name('agendar.actividad.preinscripcion');
 
 //? consumo de la api para formulario   
 Route::get('/getPlanteles', [ApiConsumoController::class, 'getPlanteles'])->name('get.planteles');

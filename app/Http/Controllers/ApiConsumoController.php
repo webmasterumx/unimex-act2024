@@ -221,7 +221,7 @@ class ApiConsumoController extends Controller
         return $response->json();
     }
 
-    //! guardar actividad en bitacora de CRM
+    //! guardar actividad en bitacora de CRM se usa para preinscripcion en linea
     public function guardarActividadBitacora($valores)
     {
         $response = Http::post($this->base_url . 'registrar/bitacora', $valores);
