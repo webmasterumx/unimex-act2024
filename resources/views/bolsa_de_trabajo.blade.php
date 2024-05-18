@@ -7,12 +7,31 @@
 @section('content')
     <section class="container-fluid py-3">
         <div class="row">
+            <div class="col-12">
+                <h2 class="underlined-head text-uppercase fw-normal" style="font-size: 1.438rem;">
+                    BOLSA DE TRABAJO
+                </h2>
+            </div>
             <div class="col-12 col-md-4">
                 <div id="occ-widget">
                 </div>
             </div>
             <div class="col-12 col-md-8">
-                <img src="{{ asset('assets/img/extras/BannerBolsadeTrabajo.webp') }}" alt="">
+                <div class="row">
+                    <div class="col-12 p-0">
+                        <img src="{{ asset('assets/img/extras/BannerBolsadeTrabajo.webp') }}" class="w-100" alt="">
+                    </div>
+                    <div class="col-9 p-0">
+                        <img src="{{ asset('assets/img/extras/BannerWebBolsadeTrabajo.webp') }}" class="w-100"
+                            alt="">
+                    </div>
+                    <div class="col-3 p-0">
+                        <a href="{{ route('contacto') }}">
+                            <img src="{{ asset('assets/img/extras/BannerWebBolsadeTrabajoboton.webp') }}"
+                                class="w-100 h-100" alt="">
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

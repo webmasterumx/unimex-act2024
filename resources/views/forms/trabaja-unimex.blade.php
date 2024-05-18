@@ -1,5 +1,8 @@
 <form id="form_trabaja" class="row" enctype="multipart/form-data">
     @csrf
+    <div class="col-12">
+        <h4 class="fw-normal">Bolsa de trabajo para Administrativos y Docentes</h4>
+    </div>
     <div class="mb-3 col-12 col-md-6">
         <label for="nombre_trabajo" class="form-label">
             <i class="bi bi-person-fill" style="color: #004b93;"></i> Nombre Completo
@@ -71,6 +74,7 @@
         </label>
         <input style="height: 32px !important;" type="text" class="form-control form-control-sm" id="puesto_interes"
             name="puesto_interes">
+        <label for="puesto_interes">Evita usar caracteres especiales.</label>
     </div>
     <div class="mb-3 col-12">
         <div class="mb-3">
@@ -79,6 +83,7 @@
                 laboral(Experiencia)
             </label>
             <textarea class="form-control" id="experiencia_trabaja" name="experiencia_trabaja" rows="4"></textarea>
+            <label for="experiencia_trabaja">Evita usar caracteres especiales.</label>
         </div>
     </div>
     <div class="mb-3 col-12">

@@ -26,7 +26,7 @@
                 @foreach ($banners as $banner)
                     <a href="{{ route($banner->link) }}" target="_blank" class="itemBannerInit">
                         <img style="height: auto;" src="{{ asset($banner->url) }}" class="d-block w-100"
-                            alt="{{ $banner->alt }}">
+                            alt="{{ $banner->alt }}"  title="{{ $banner->alt }}">
                     </a>
                 @endforeach
             </div>
@@ -55,7 +55,7 @@
                             <a href="{{ route($ventaja_unimex->link) }}" target="_blank" class="card border-0 h-100">
                                 <div class="card-body text-center">
                                     <img class="icono-Unimex" src="{{ asset($ventaja_unimex->url) }}"
-                                        alt="{{ $ventaja_unimex->alt }}" srcset="{{ asset($ventaja_unimex->url) }}">
+                                        alt="{{ $ventaja_unimex->alt }}" title="{{ $ventaja_unimex->alt }}" srcset="{{ asset($ventaja_unimex->url) }}">
                                     <p class="card-text text-center color-unimex fs-unimex2">
                                         {!! $ventaja_unimex->descripcion_corta !!}
                                     </p>
@@ -65,7 +65,7 @@
                             <div class="card border-0 h-100">
                                 <div class="card-body text-center">
                                     <img class="icono-Unimex" src="{{ asset($ventaja_unimex->url) }}"
-                                        alt="{{ $ventaja_unimex->alt }}" srcset="{{ asset($ventaja_unimex->url) }}">
+                                        alt="{{ $ventaja_unimex->alt }}" title="{{ $ventaja_unimex->alt }}" srcset="{{ asset($ventaja_unimex->url) }}">
                                     <p class="card-text text-center color-unimex fs-unimex2">
                                         {!! $ventaja_unimex->descripcion_corta !!}
                                     </p>
@@ -99,7 +99,7 @@
                                 <div class="card-body p-1">
                                     <center>
                                         <img style="min-height: 80px !important;" src="{{ $carrera->icon }}"
-                                            alt="{{ $carrera->slug }}">
+                                            alt="{{ $carrera->slug }}" title="Ver más">
                                     </center>
                                     {!! $carrera->titulo !!}
                                     <hr>

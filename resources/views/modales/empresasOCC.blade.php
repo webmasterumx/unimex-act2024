@@ -3,7 +3,8 @@
     <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header">
-                <button onclick="resetFormEmpresaOCC()" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button onclick="resetFormEmpresaOCC()" type="button" class="btn-close" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <h1 class="modal-title text-center fs-5" id="empresasOCCLabel">Empresas Registradas en OCC</h1>
@@ -66,6 +67,7 @@
                             </label>
                             <input style="height: 32px !important;" type="text" class="form-control form-control-sm"
                                 id="razon_empresaOCC" name="razon_empresaOCC">
+                            <label for="razon_empresaOCC">Evita usar caracteres especiales.</label>
                         </div>
                     </div>
                     <div class="mb-2 col-12">
@@ -75,6 +77,7 @@
                             </label>
                             <input style="height: 32px !important;" type="text" class="form-control form-control-sm"
                                 id="rfc_empresaOCC" name="rfc_empresaOCC">
+                            <label for="rfc_empresaOCC">Evita usar caracteres especiales.</label>
                         </div>
                     </div>
                     <div class="mb-3 col-12">
@@ -82,6 +85,7 @@
                             <i class="bi bi-pencil-square" style="color: #004b93;"></i> Comentarios
                         </label>
                         <textarea class="form-control" id="comentarios_empresaOCC" name="comentarios_empresaOCC" rows="4"></textarea>
+                        <label for="comentarios_empresaOCC">Evita usar caracteres especiales.</label>
                     </div>
                     <div class="mb-2 row col-12">
                         <div class="col-2 d-flex">

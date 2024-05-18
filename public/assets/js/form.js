@@ -24,9 +24,8 @@ $("#servicio_alumnos").validate({
         },
         matricula_service: {
             required: true,
-        },
-        matricula_service: {
-            required: true
+            minlength: 11,
+            maxlength: 11
         },
         mensaje_service: {
             required: true
@@ -55,6 +54,8 @@ $("#servicio_alumnos").validate({
         },
         matricula_service: {
             required: "Su matrícula es obligatoria.",
+            minlength: "Su matrícula debe tener mínimo 11 digitos.",
+            maxlength: "Su matrícula debe tener máximo 11 digitos."
         },
         mensaje_service: {
             required: "Debe de ingresar su mensaje.",
@@ -119,9 +120,13 @@ $("#form_contacto").validate({
         },
         celular_prospecto: {
             required: true,
+            minlength: 10,
+            maxlength: 10
         },
         telefono_prospecto: {
             required: true,
+            minlength: 10,
+            maxlength: 10
         },
         plantelSelect: {
             required: true,
@@ -203,9 +208,13 @@ $("#form_trabaja").validate({
         },
         telefono_casa_trabaja: {
             required: true,
+            minlength: 10,
+            maxlength: 10
         },
         telefono_movil_trabaja: {
             required: true,
+            minlength: 10,
+            maxlength: 10
         },
         puesto_interes: {
             required: true,
@@ -235,7 +244,7 @@ $("#form_trabaja").validate({
         puesto_interes: {
             required: "Debe de ingresar un puesto de interés.",
         },
-        experiencia_trabaja : {
+        experiencia_trabaja: {
             required: "Debes de ingresar tu experiencia laboral.",
         },
     },
@@ -302,6 +311,8 @@ $("#form_quejaSugerencia").validate({
         },
         matricula_qys: {
             required: true,
+            minlength: 11,
+            maxlength: 11
         },
         asunto_qys: {
             required: true,
@@ -330,6 +341,8 @@ $("#form_quejaSugerencia").validate({
         },
         matricula_qys: {
             required: "Su matrícula es obligatoria.",
+            minlength: "Su matrícula debe tener mínimo 11 digitos.",
+            maxlength: "Su matrícula debe tener máximo 11 digitos."
         },
         asunto_qys: {
             required: "Por favor, introduce un asunto.",
@@ -418,14 +431,18 @@ $("#form_empresasOCC").validate({
             required: "Debe de ingresar el nombre de su contacto.",
         },
         email_empresaOCC: {
-            required: "Matrícula obligatoria.",
+            required: "E-mail obligatoria.",
             email: "Formato de correo incorrecto.",
         },
         telefono_empresaOCC: {
             required: "Teléfono requerido.",
+            minlength: "El teléfono debe tener mínimo 8 o 10 digitos.",
+            maxlength: "El teléfono debe tener máximo 8 o 10 digitos."
         },
         celular_empresaOCC: {
             required: "Celular requerido.",
+            minlength: "El teléfono celular debe tener mínimo 8 o 10 digitos.",
+            maxlength: "El teléfono celular debe tener máximo 8 o 10 digitos."
         },
         razon_empresaOCC: {
             required: "Debe de ingresar su razón social."

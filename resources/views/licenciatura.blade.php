@@ -38,6 +38,12 @@
         <h1 style="font-size: 30px !important;" class="etiqueta-titulo p-3 text-uppercase">
             LICENCIATURA EN {{ $licenciatura->subtitulo }}
         </h1>
+        @if ($licenciatura->statusVer == true)
+            <button style="position: relative; bottom: 100%; left: 86%;" type="button" class="btn btn-primary">
+                SOLO EN PLANTEL <br>
+                VERACRUZ
+            </button>
+        @endif
     </section>
     <!-- Fin de portada -->
 

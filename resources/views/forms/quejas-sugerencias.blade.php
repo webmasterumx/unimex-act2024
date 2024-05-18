@@ -1,5 +1,8 @@
 <form id="form_quejaSugerencia" class="row">
     @csrf
+    <div class="col-12">
+        <h4 class="fw-normal">Quejas, Sugerencias y Felicitaciones</h4>
+    </div>
     <div class="mb-3 col-12 col-md-6">
         <label for="nombre_qys" class="form-label">
             <i class="bi bi-person-fill" style="color: #004b93;"></i> Nombre Completo
@@ -34,6 +37,7 @@
         </label>
         <input style="height: 32px !important;" type="text" class="form-control form-control-sm" id="matricula_qys"
             name="matricula_qys">
+        <label for="matricula_qys">Ingresa el formato correcto de tu matrícula. ej:(12345678-90)</label>
     </div>
     <div class="mb-3 col-12 col-md-6">
         <label for="asunto_qys" class="form-label">
@@ -41,12 +45,14 @@
         </label>
         <input style="height: 32px !important;" type="text" class="form-control form-control-sm" id="asunto_qys"
             name="asunto_qys">
+        <label for="asunto_qys">Evita usar caracteres especiales.</label>
     </div>
     <div class="mb-3 col-12">
         <label for="mensaje_qys" class="form-label">
             <i class="bi bi-pencil-square" style="color: #004b93;"></i> Mensaje
         </label>
         <textarea class="form-control" id="mensaje_qys" name="mensaje_qys" rows="4"></textarea>
+        <label for="mensaje_qys">Evita usar caracteres especiales.</label>
     </div>
     <div class="mb-3 col-12">
         <div class="mb-2 row">

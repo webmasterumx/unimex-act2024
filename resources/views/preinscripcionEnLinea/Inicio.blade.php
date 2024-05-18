@@ -10,7 +10,7 @@
                 </h1>
             </div> --}}
             <div class="col-12 row">
-                <div class="col-4 text-center">
+                <div class="col-12 col-md-12 col-lg-4 text-center">
                     <img class="mt-5" src="{{ asset('assets/img/preinscripcion_linea/preinscripcion.png') }}"
                         alt="">
                     <br>
@@ -18,7 +18,7 @@
                         Forma parte de UNIMEX®
                     </p>
                 </div>
-                <div class="col-8">
+                <div class="col-12 col-md-12 col-lg-8">
                     <h3>
                         Ventajas de la preinscripción en línea:
                     </h3>

@@ -51,13 +51,14 @@
                     </li>
                     <li class="nav-item" role="presentation">
                         <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contrata-pane"
-                            type="button" role="tab" aria-controls="contrata-pane" aria-selected="false">Contrata
-                            Alumnos y Egresados UNIMEX</button>
+                            type="button" role="tab" aria-controls="contrata-pane" aria-selected="false">
+                            Contrata Alumnos y Egresados UNIMEX®
+                        </button>
                     </li>
                     <li class="nav-item" role="presentation">
                         <button class="nav-link" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#trabaja-pane"
                             type="button" role="tab" aria-controls="trabaja-pane" aria-selected="false">Trabaja en
-                            UNIMEX</button>
+                            UNIMEX®</button>
                     </li>
                     <li class="nav-item" role="presentation">
                         <button class="nav-link" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#sugerencia-pane"
@@ -76,9 +77,9 @@
                     </div>
                     <div class="tab-pane fade px-5 py-3 border" id="contrata-pane" role="tabpanel"
                         aria-labelledby="contrata-tab" tabindex="0">
-                        <h2>
+                        <h4 class="fw-normal">
                             Contrata Alumnos y Egresados UNIMEX
-                        </h2>
+                        </h4>
                         <p>
                             UNIMEX® concentra las ofertas laborales para alumnos y egresados en una sección dedicada a
                             Universidad Mexicana en la Red Universitaria de Empleo de OCC.
@@ -156,11 +157,28 @@
             }
         });
 
+      /*   $("#matricula_service").bind('keypress', function(event) {
+            var regex = new RegExp("^[0-9]+$");
+            var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+            if (!regex.test(key)) {
+                event.preventDefault();
+                return false;
+            }
+        });
+
+        $("#matricula_qys").bind('keypress', function(event) {
+            var regex = new RegExp("^[0-9]+$");
+            var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+            if (!regex.test(key)) {
+                event.preventDefault();
+                return false;
+            }
+        }); */
+
         $("#nivelSelect").append(`<option value="">Nivel</option>`);
         $("#carreraSelect").append(`<option value="">Carrera</option>`);
 
         function resetFormEmpresaOCC() {
-
             document.getElementById("form_empresasOCC").reset();
         }
     </script>

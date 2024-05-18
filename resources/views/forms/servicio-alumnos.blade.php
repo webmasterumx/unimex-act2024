@@ -1,7 +1,7 @@
 <form id="servicio_alumnos" class="row">
     @csrf
     <div class="col-12">
-        <h2>Servicio para Alumnos</h2>
+        <h4 class="fw-normal">Servicio para Alumnos</h4>
     </div>
     <div class="mb-2 col-6">
         <div class="mb-3">
@@ -58,6 +58,7 @@
             </label>
             <input style="height: 32px !important;" type="text" class="form-control" id="asunto_service"
                 name="asunto_service">
+            <label for="asunto_service">Evita usar caracteres especiales.</label>
         </div>
     </div>
     <div class="mb-2 col-6">
@@ -67,6 +68,7 @@
             </label>
             <input style="height: 32px !important;" type="text" class="form-control" id="matricula_service"
                 name="matricula_service">
+            <label for="matricula_service">Ingresa el formato correcto de tu matrícula. ej:(12345678-90)</label>
         </div>
     </div>
     <div class="mb-2 col-12">
@@ -75,6 +77,7 @@
                 <i class="bi bi-pencil-square" style="color: #004b93;"></i> Mensaje
             </label>
             <textarea class="form-control" id="mensaje_service" name="mensaje_service" rows="4"></textarea>
+            <label for="mensaje_service">Evita usar caracteres especiales.</label>
         </div>
     </div>
     <div class="mb-3 col-12">
