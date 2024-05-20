@@ -76,7 +76,7 @@
             <label for="mensaje_service" class="form-label">
                 <i class="bi bi-pencil-square" style="color: #004b93;"></i> Mensaje
             </label>
-            <textarea class="form-control" id="mensaje_service" name="mensaje_service" rows="4"></textarea>
+            <textarea class="form-control" id="mensaje_service" name="mensaje_service" rows="4" required></textarea>
             <label for="mensaje_service">Evita usar caracteres especiales.</label>
         </div>
     </div>
@@ -104,9 +104,9 @@
         </div>
     </div>
     <div class="mb-4 col-4">
-        <button type="submit" class="btn btn-primary mt-3">ENVIAR DATOS</button>
+        <button id="enviarDatosServicio" type="submit" class="btn btn-primary mt-3">ENVIAR DATOS</button>
     </div>
     <div class="mb-4 col-4">
-        <button type="reset" class="btn btn-outline-danger mt-3">BORRAR DATOS</button>
+        <button onclick="resetForms(1)" type="button" class="btn btn-outline-danger mt-3">BORRAR DATOS</button>
     </div>
 </form>

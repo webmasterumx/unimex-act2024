@@ -36,7 +36,7 @@
             <i class="bi bi-credit-card-fill" style="color: #004b93;"></i> Matrícula
         </label>
         <input style="height: 32px !important;" type="text" class="form-control form-control-sm" id="matricula_qys"
-            name="matricula_qys">
+            name="matricula_qys" minlength="11" maxlength="11">
         <label for="matricula_qys">Ingresa el formato correcto de tu matrícula. ej:(12345678-90)</label>
     </div>
     <div class="mb-3 col-12 col-md-6">
@@ -76,9 +76,9 @@
         </label>
     </div>
     <div class="mb-4 col-4">
-        <button type="submit" class="btn btn-primary">ENVIAR DATOS</button>
+        <button id="enviarDatosAceptar" type="submit" class="btn btn-primary">ENVIAR DATOS</button>
     </div>
     <div class="mb-4 col-4">
-        <button type="reset" class="btn btn-outline-danger">BORRAR DATOS</button>
+        <button onclick=" resetForms(3);" type="button" class="btn btn-outline-danger">BORRAR DATOS</button>
     </div>
 </form>

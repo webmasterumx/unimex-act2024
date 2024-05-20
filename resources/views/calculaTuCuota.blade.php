@@ -465,6 +465,15 @@
                 doctype: ' <!doctype html> '
             });
         }
+
+        $("#telefonoProspecto").bind('keypress', function(event) {
+            var regex = new RegExp("^[0-9]+$");
+            var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+            if (!regex.test(key)) {
+                event.preventDefault();
+                return false;
+            }
+        });
     </script>
     <script src="{{ asset('assets/js/calculadoraCuotas/app_calculadora.js') }}"></script>
     <script src="{{ asset('assets/js/calculadoraCuotas/combos_calculadora.js') }}"></script>

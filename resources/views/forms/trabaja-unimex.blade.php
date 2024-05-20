@@ -22,21 +22,21 @@
             <i class="bi bi-telephone-fill" style="color: #004b93;"></i> Teléfono de Casa
         </label>
         <input style="height: 32px !important;" type="text" class="form-control form-control-sm"
-            id="telefono_casa_trabaja" name="telefono_casa_trabaja">
+            id="telefono_casa_trabaja" name="telefono_casa_trabaja" minlength="8" maxlength="10">
     </div>
     <div class="mb-3 col-12 col-md-3">
         <label for="telefono_movil_trabaja" class="form-label">
             <i class="bi bi-phone-fill" style="color: #004b93;"></i> Teléfono celular
         </label>
         <input style="height: 32px !important;" type="text" class="form-control form-control-sm"
-            id="telefono_movil_trabaja" name="telefono_movil_trabaja">
+            id="telefono_movil_trabaja" name="telefono_movil_trabaja" minlength="8" maxlength="10">
     </div>
     <div class="mb-3 col-3">
         <label for="select_plantel">
             <i class="bi bi-bank" style="color: #004b93;"></i> Plantel de interes:
         </label>
         <select class="form-select" style="height: 32px !important;" id="plantel_trabaja" name="plantel_trabaja">
-            <option selected>Selecciona Plantel</option>
+            <option value="" selected>Selecciona Plantel</option>
             <option value="RECTORIA">RECTORÍA</option>
             <option value="IZCALLI">IZCALLI</option>
             <option value="SATÉLITE">SATÉLITE</option>
@@ -49,11 +49,11 @@
             <i class="bi bi-book-fill" style="color: #004b93;"></i>Último Nivel de Estudios
         </label>
         <select class="form-select" style="height: 32px !important;" id="nivel_est_trabaja" name="nivel_est_trabaja">
-            <option selected>Selecciona Nivel</option>
+            <option value="" selected>Selecciona Nivel</option>
             <option value="Secundaria">SECUNDARIA</option>
             <option value="Preparatoria">PREPARATORIA</option>
-            <option value="Licenciatura Titulado">LICENCIATURA Titulado</option>
-            <option value="Licenciatura Pasante">LICENCIATURA Pasante</option>
+            <option value="Licenciatura Titulado">LICENCIATURA TITULADO</option>
+            <option value="Licenciatura Pasante">LICENCIATURA PASANTE</option>
             <option value="Posgrado">POSGRADO</option>
         </select>
     </div>
@@ -110,9 +110,9 @@
         </div>
     </div>
     <div class="mb-4 col-4 mt-3">
-        <button type="submit" class="btn btn-primary">ENVIAR DATOS</button>
+        <button id="enviarDatosTrabaja" type="submit" class="btn btn-primary">ENVIAR DATOS</button>
     </div>
     <div class="mb-4 col-4 mt-3">
-        <button type="reset" class="btn btn-outline-danger">BORRAR DATOS</button>
+        <button onclick="resetForms(2);" type="button" class="btn btn-outline-danger">BORRAR DATOS</button>
     </div>
 </form>

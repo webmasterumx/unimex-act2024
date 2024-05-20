@@ -3,7 +3,7 @@
     <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header">
-                <button onclick="resetFormEmpresaOCC()" type="button" class="btn-close" data-bs-dismiss="modal"
+                <button onclick="resetForms(4)" type="button" class="btn-close" data-bs-dismiss="modal"
                     aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -104,18 +104,18 @@
                     <input id="type_empresaOCC" name="type_empresaOCC" type="hidden">
                     <div class="mb-3 col-12">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="flexCheckDefault" checked>
-                            <label class="form-check-label ms-4 mt-3" for="flexCheckDefault">
+                            <input class="form-check-input" type="checkbox" id="aceptar_empresasocc" name="aceptar_empresasocc" checked>
+                            <label class="form-check-label ms-4 mt-3" for="aceptar_empresasocc">
                                 Estoy de acuerdo en ser contactado por UNIMEX® y acepto el aviso de privacidad.
                             </label>
                         </div>
                     </div>
                     <div class="mb-4 col-4">
-                        <button type="submit" class="btn btn-primary">ENVIAR DATOS</button>
+                        <button id="enviarDatosEmpresasOCC" type="submit" class="btn btn-primary">ENVIAR DATOS</button>
                         <!--  data-bs-dismiss="modal" -->
                     </div>
                     <div class="mb-4 col-4">
-                        <button type="reset" class="btn btn-outline-danger">BORRAR DATOS</button>
+                        <button onclick="resetForms(4)" type="button" class="btn btn-outline-danger">BORRAR DATOS</button>
                     </div>
                 </form>
             </div>

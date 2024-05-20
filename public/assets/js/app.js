@@ -115,3 +115,88 @@ $("#celular_empresaOCC").bind('keypress', function (event) {
         return false;
     }
 });
+
+function resetForms(formulario) {
+    switch (formulario) {
+        case 1:
+            $("#name_service").val("");
+            $("#email_service").val("");
+            $("#phone_casa_service").val("");
+            $("#movil_service").val("");
+            $("#asunto_service").val("");
+            $("#matricula_service").val("");
+            $("#mensaje_service").val("");
+            $("#operacion_service").val("");
+
+            $("#select_plantel").empty();
+            $("#select_plantel").append(`<option value="" selected>Selecciona tu Plantel</option>`);
+            $("#select_plantel").append(`<option value="IZCALLI">IZCALLI</option>`);
+            $("#select_plantel").append(`<option value="SATÉLITE">SATÉLITE</option>`);
+            $("#select_plantel").append(`<option value="POLANCO">POLANCO</option>`);
+            $("#select_plantel").append(`<option value="VERACRUZ">VERACRUZ</option>`);
+
+            $('#number1').val(Math.floor(Math.random() * 10));
+            $('#number2').val(Math.floor(Math.random() * 10));
+            break;
+
+        case 2:
+            $("#nombre_trabajo").val("");
+            $("#email_trabaja").val("");
+            $("#telefono_casa_trabaja").val("");
+            $("#telefono_movil_trabaja").val("");
+            $("#puesto_interes").val("");
+            $("#experiencia_trabaja").val("");
+            $("#cv_trabaja").val("");
+            $("#operacion_trabaja").val("");
+
+            $("#plantel_trabaja").empty();
+            $("#plantel_trabaja").append(`<option value="" selected>Selecciona tu Plantel</option>`);
+            $("#plantel_trabaja").append(`<option value="IZCALLI">IZCALLI</option>`);
+            $("#plantel_trabaja").append(`<option value="SATÉLITE">SATÉLITE</option>`);
+            $("#plantel_trabaja").append(`<option value="POLANCO">POLANCO</option>`);
+            $("#plantel_trabaja").append(`<option value="VERACRUZ">VERACRUZ</option>`);
+
+            $("#nivel_est_trabaja").empty();
+            $("#nivel_est_trabaja").append(`<option value="" selected>Selecciona Nivel</option>`);
+            $("#nivel_est_trabaja").append(`<option value="Secundaria">SECUNDARIA</option>`);
+            $("#nivel_est_trabaja").append(`<option value="Preparatoria">PREPARATORIA</option>`);
+            $("#nivel_est_trabaja").append(`<option value="Licenciatura Titulado">LICENCIATURA TITULADO</option>`);
+            $("#nivel_est_trabaja").append(`<option value="Licenciatura Pasante">LICENCIATURA PASANTE</option>`);
+            $("#nivel_est_trabaja").append(`<option value="Posgrado">POSGRADO</option>`);
+
+            $("#number3").val(Math.floor(Math.random() * 10));
+            $("#number4").val(Math.floor(Math.random() * 10));
+            break;
+
+        case 3:
+            $("#nombre_qys").val("");
+            $("#mail_qys").val("");
+            $("#telefono_casa_qys").val("");
+            $("#telefono_movil_qys").val("");
+            $("#matricula_qys").val("");
+            $("#asunto_qys").val("");
+            $("#mensaje_qys").val("");
+            $("#operacion_qys").val("");
+
+            $("#number5").val(Math.floor(Math.random() * 10));
+            $("#number6").val(Math.floor(Math.random() * 10));
+            break;
+
+        case 4:
+            $("#nombre_empresaOCC").val("");
+            $("#contacto_empresaOCC").val("");
+            $("#email_empresaOCC").val("");
+            $("#telefono_empresaOCC").val("");
+            $("#celular_empresaOCC").val("");
+            $("#razon_empresaOCC").val("");
+            $("#rfc_empresaOCC").val("");
+            $("#comentarios_empresaOCC").val("");
+            $("#operacion_empresaOCC").val("");
+
+            $("#number7").val(Math.floor(Math.random() * 10));
+            $("#number8").val(Math.floor(Math.random() * 10));
+            break;
+        default:
+            break;
+    }
+}
