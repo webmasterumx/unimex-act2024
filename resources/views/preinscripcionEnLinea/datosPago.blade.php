@@ -13,13 +13,16 @@
             <div class="col-12 row">
                 <div class="col-5">
                     <p class="text-center">
-                        Intrucciones
+                        Instrucciones
                     </p>
-                    <p class="px-5">
-                        <i class="bi bi-check2-square"></i> Imprime la ficha de deposito. <br>
-                        <i class="bi bi-check2-square"></i> Acude a la sucursal Scotiabank de tu preferencia. <br>
-                        <i class="bi bi-check2-square"></i> Realiza el o los abonos correspondientes de acuerdo a tu opcion
-                        de pago seleccionada (un solo pago o de 2 a 5 abonos)
+                    <p class="px-5" style="color: #00539a !important;">
+                        <i class="bi bi-check-square fs-3" style="color: rgba(241, 145, 29, 1.00);"></i> Imprime la ficha de
+                        depósito. <br>
+                        <i class="bi bi-check-square fs-3" style="color: rgba(241, 145, 29, 1.00);"></i> Acude a la sucursal
+                        Scotiabank de tu preferencia. <br>
+                        <i class="bi bi-check-square fs-3" style="color: rgba(241, 145, 29, 1.00);"></i> Realiza el o los
+                        abonos correspondientes de acuerdo a tu opción
+                        de pago seleccionada (un solo pago o de 2 a 5 abonos).
                     </p>
                     <p class="text-center">
                         <img style="max-width: 250px;"
@@ -30,56 +33,65 @@
                 </div>
                 <div class="col-7 py-4">
                     <div class="row">
-                        <div class="col-12">
-                            <p>
-                                Pago en Ventanilla
-                                <img class="mt-5" src="{{ asset('assets/img/preinscripcion_linea/scotiabank.png') }}"
-                                    alt="">
+                        <div class="col-3 mb-3">
+                            <p style="color: #00539a !important;">
+                                <b>Pago en Ventanilla</b>
                             </p>
+                        </div>
+                        <div class="col-9 p-0 mb-3">
+                            <img src="{{ asset('assets/img/preinscripcion_linea/scotiabank.png') }}" alt="">
                         </div>
                         <div class="col-12">
                             <div class="mb-3">
-                                <label for="nombreEmpresa" class="form-label">A nombre de:</label>
+                                <label style="color: #00539a !important;" for="nombreEmpresa" class="form-label">A nombre
+                                    de:</label>
                                 <input disabled type="email" class="form-control" id="nombreEmpresa"
                                     value="{{ session('empresa') }}">
                             </div>
                         </div>
-                        <div class="col-4">
+                        <div class="col-12 col-md-12 col-lg-4">
                             <div class="mb-3">
-                                <label for="numeroServicio" class="form-label">Número de Servicio</label>
-                                <input disabled type="text" class="form-control" id="numeroServicio" value="{{ session('ns') }}">
+                                <label style="color: #00539a !important;" for="numeroServicio" class="form-label">Número de
+                                    Servicio</label>
+                                <input disabled type="text" class="form-control" id="numeroServicio"
+                                    value="{{ session('ns') }}">
                             </div>
                         </div>
-                        <div class="col-4">
+                        <div class="col-12 col-md-12 col-lg-4">
                             <div class="mb-3">
-                                <label for="referencia" class="form-label">Referencia</label>
-                                <input disabled type="text" class="form-control" id="referencia" value="{{ session('referencia') }}">
+                                <label style="color: #00539a !important;" for="referencia"
+                                    class="form-label">Referencia</label>
+                                <input disabled type="text" class="form-control" id="referencia"
+                                    value="{{ session('referencia') }}">
                             </div>
                         </div>
-                        <div class="col-4">
+                        <div class="col-12 col-md-12 col-lg-4">
                             <div class="mb-3">
-                                <label for="cantidad" class="form-label">Cantidad</label>
+                                <label style="color: #00539a !important;" for="cantidad" class="form-label">Cantidad</label>
                                 <input disabled type="text" class="form-control" id="cantidad"
                                     value="{{ session('precio') }}">
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="mb-3">
-                                <label for="nombreAlumno" class="form-label">Nombre</label>
+                                <label style="color: #00539a !important;" for="nombreAlumno"
+                                    class="form-label">Nombre</label>
                                 <input disabled type="text" class="form-control" id="nombreAlumno"
                                     value="{{ session('Nombre') }}  {{ session('ApPaterno') }} {{ session('ApMaterno') }}">
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="mb-3">
-                                <label for="matricula" class="form-label">Matrícula</label>
+                                <label style="color: #00539a !important;" for="matricula"
+                                    class="form-label">Matrícula</label>
                                 <input disabled type="text" class="form-control" id="matricula"
                                     value="{{ session('Matricula') }}">
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="mb-3">
-                                <label for="cuatrimestre" class="form-label">Cuatrimestre</label>
+                                <label style="color: #00539a !important;" for="cuatrimestre"
+                                    class="form-label">Cuatrimestre</label>
                                 <input disabled type="text" class="form-control" id="cuatrimestre" value="Primero">
                             </div>
                         </div>
@@ -88,27 +100,27 @@
                         @endphp
                         @switch($idPlantel)
                             @case(2)
-                            @php
-                                $nombrePlantel = "IZCALLI";
-                            @endphp
+                                @php
+                                    $nombrePlantel = 'IZCALLI';
+                                @endphp
                             @break
 
                             @case(3)
-                            @php
-                                $nombrePlantel = "SATÉLITE";
-                            @endphp
+                                @php
+                                    $nombrePlantel = 'SATÉLITE';
+                                @endphp
                             @break
 
                             @case(4)
-                            @php
-                                $nombrePlantel = "POLANCO";
-                            @endphp
+                                @php
+                                    $nombrePlantel = 'POLANCO';
+                                @endphp
                             @break
 
                             @case(5)
-                            @php
-                                $nombrePlantel = "VERACRUZ";
-                            @endphp
+                                @php
+                                    $nombrePlantel = 'VERACRUZ';
+                                @endphp
                             @break
 
                             @default
@@ -116,11 +128,13 @@
                         <div class="col-4">
                             <div class="mb-3">
                                 <label for="plantel" class="form-label">Plantel</label>
-                                <input disabled type="text" class="form-control" id="plantel" value="{{ $nombrePlantel }}">
+                                <input disabled type="text" class="form-control" id="plantel"
+                                    value="{{ $nombrePlantel }}">
                             </div>
                         </div>
                         <div class="col-12 text-center">
-                            <a href="{{ route('ficha.pdf') }}" type="button" class="btn btn-primary"><i class="bi bi-printer-fill"></i>
+                            <a href="{{ route('ficha.pdf') }}" type="button" class="btn btn-primary"><i
+                                    class="bi bi-printer-fill"></i>
                                 Imprimir</a>
                         </div>
                     </div>

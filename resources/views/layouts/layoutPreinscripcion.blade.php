@@ -20,19 +20,17 @@
 </head>
 
 <body>
-    <div class="fixed-top p-2" style="background: #00539a !important;">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12 col-md-3">
-                    <a class="navbar-brand" href="#">
-                        <img class="ms-5" width="255" src="{{ asset('assets/img/header/logo-2020.webp') }}"
-                            alt="">
-                    </a>
-                </div>
-                <div class="col-12 col-md-9 d-none d-md-block d-lg-block fs-1 text-white text-center">
-                    <i class="bi bi-card-list"></i>
-                    PREINSCRIPCIÓN EN LÍNEA
-                </div>
+    <div class="container-fluid fixed-top p-2" style="background: #00539a !important;">
+        <div class="row">
+            <div class="col-12 col-md-3">
+                <a class="navbar-brand" href="#">
+                    <img class="ms-5" width="255" src="{{ asset('assets/img/header/logo-2020.webp') }}"
+                        alt="">
+                </a>
+            </div>
+            <div class="col-12 col-md-9 d-none d-md-none d-lg-block fs-1 text-white text-center">
+                <i class="bi bi-card-list"></i>
+                PREINSCRIPCIÓN EN LÍNEA
             </div>
         </div>
     </div>

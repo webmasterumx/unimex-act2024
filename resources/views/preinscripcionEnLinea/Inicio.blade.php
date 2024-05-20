@@ -11,14 +11,13 @@
             </div> --}}
             <div class="col-12 row">
                 <div class="col-12 col-md-12 col-lg-4 text-center">
-                    <img class="mt-5" src="{{ asset('assets/img/preinscripcion_linea/preinscripcion.png') }}"
-                        alt="">
+                    <img class="mt-5" src="{{ asset('assets/img/preinscripcion_linea/preinscripcion.png') }}" alt="">
                     <br>
                     <p class="fs-3" style="color: #00539a !important;">
                         Forma parte de UNIMEX®
                     </p>
                 </div>
-                <div class="col-12 col-md-12 col-lg-8">
+                <div class="col-12 col-md-12 col-lg-8" style="color: #00539a !important;">
                     <h3>
                         Ventajas de la preinscripción en línea:
                     </h3>
@@ -41,8 +40,10 @@
                         </li>
                     </ul>
                     <p>
-                        Al final completas tu trámite, entregando tu documentación en el Campus, dentro del plazo
-                        especificado.
+                        <b>
+                            Al final completas tu trámite, entregando tu documentación en el Campus, dentro del plazo
+                            especificado.
+                        </b>
                     </p>
                     <hr style="border: 1px rgb(226, 127, 7) solid;">
                     <form id="formPreincripcion" class="row">
@@ -69,7 +70,7 @@
                                 </span>
                                 <input type="text" class="form-control" placeholder="Telefono movil"
                                     aria-label="telefono" aria-describedby="inputPhone" name="telefono" id="telefono"
-                                    minlength="10" maxlength="13">
+                                    minlength="10" maxlength="10">
                             </div>
                         </div>
                         <div class="col-12  d-flex">

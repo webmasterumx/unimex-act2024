@@ -7,6 +7,8 @@ $("#formPreincripcion").validate({
         },
         telefono: {
             required: true,
+            minlength: 10,
+            maxlength: 10,
         }
     },
     messages: {
@@ -16,6 +18,8 @@ $("#formPreincripcion").validate({
         },
         telefono: {
             required: "Ingresa tu teléfono.",
+            minlength: "El teléfono celular debe tener mínimo 8 o 10 digitos.",
+            maxlength: "El teléfono celular debe tener máximo 8 o 10 digitos."
         }
     },
     submitHandler: function (form) {
@@ -105,9 +109,13 @@ $("#formPromoPreinscripcion").validate({
         },
         telefonoInscripcion: {
             required: true,
+            minlength: 10,
+            maxlength: 10
         },
         telefonoCelInscripcion: {
             required: true,
+            minlength: 10,
+            maxlength: 10
         },
         calleInscripcion: {
             required: true,
@@ -161,9 +169,13 @@ $("#formPromoPreinscripcion").validate({
         },
         telefonoInscripcion: {
             required: "Ingresa un número de teléfono.",
+            minlength: "El teléfono celular debe tener mínimo 8 o 10 digitos.",
+            maxlength: "El teléfono celular debe tener máximo 8 o 10 digitos."
         },
         telefonoCelInscripcion: {
             required: "Ingresa un número de celular.",
+            minlength: "El teléfono celular debe tener mínimo 8 o 10 digitos.",
+            maxlength: "El teléfono celular debe tener máximo 8 o 10 digitos."
         },
         calleInscripcion: {
             required: "Calle requerida.",
@@ -235,6 +247,7 @@ $("#formPromoPreinscripcion").validate({
                 $("#respuestaSuccess").removeClass('d-none');
                 $('#precioPromo').html("$" + respuesta.Importe);
                 $('#fechaLimitePromo').html(respuesta.FechaFinalPromocion);
+                $("#respuestaError").addClass('d-none');
             }
             else {
                 $("#respuestaError").removeClass('d-none');

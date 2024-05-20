@@ -38,7 +38,7 @@ $("select[name=plantelSelect]").change(function () {
 
     setVariablesPrecargadas();
     $('#periodoSelect').empty();
-    $("#periodoSelect").append(`<option value="" selected disabled>¿Cuándo deseas iniciar?  </option>`);
+    $("#periodoSelect").append(`<option value="" selected disabled>¿Cuándo deseas iniciar? </option>`);
     $('#horarioSelect').empty();
     $("#horarioSelect").append(`<option value="" selected disabled>Selecciona un horario</option>`);
     let plantel = $('select[name=plantelSelect]').val();
@@ -64,7 +64,9 @@ $("select[name=plantelSelect]").change(function () {
 $("select[name=periodoSelect]").change(function () {
 
     $('#nivelSelect').empty();
+    $("#nivelSelect").append(`<option value="" selected disabled>Selecciona el Nivel</option>`);
     $('#carreraSelect').empty();
+    $("#carreraSelect").append(`<option value="" selected disabled>Selecciona Carrera</option>`);
     $('#horarioSelect').empty();
     $("#horarioSelect").append(`<option value="" selected disabled>Selecciona un horario</option>`);
     let nivel = $('select[name=nivelSelect]').val();

@@ -361,6 +361,8 @@ class PreinscripcionEnLineaController extends Controller
                 break;
         }
 
+        session(['nombre' => $this->plantelInfo['nombre']]);
+        session(['direccion' => $this->plantelInfo['direccion']]);
         session(['empresa' => $this->plantelInfo['empresa']]);
         session(['ns' => $this->plantelInfo['ns']]);
         session(['referencia' => $this->plantelInfo['referencia']]);

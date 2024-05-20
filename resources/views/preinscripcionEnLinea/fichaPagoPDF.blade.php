@@ -25,7 +25,7 @@
                             </td>
                             <td>
                                 <p>
-                                    <b>Plantel IZCALLI</b> <br>
+                                    <b>Plantel {{ session('nombre') }}</b> <br>
                                     Av. del Vidrio 15 <br>
                                     Col Plaza Dorada <br>
                                     Cuautitlan Izcalli <br>
