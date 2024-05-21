@@ -6,7 +6,7 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="col-12 col-md-11 text-center">
-                        <h1>
+                        <h1 style="color: #004b93; font-size: 1.5em;">
                             TITULACIÓN VÍA ESTUDIOS DE <br>
                             POSGRADO
                         </h1>

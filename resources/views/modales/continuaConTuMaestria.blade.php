@@ -6,7 +6,7 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="col-11">
-                        <h1 class="modal-title fs-5 text-center" id="continuaConTuMaestriaLabel">
+                        <h1 style="color: #004b93;" class="modal-title fs-5 text-center" id="continuaConTuMaestriaLabel">
                             PROGRAMA <br>
                             “Continúa con tu maestría en UNIMEX®”
                         </h1>

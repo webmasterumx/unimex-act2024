@@ -11,7 +11,7 @@
                 <hr>
             </div> --}}
             <div class="col-12 row">
-                <div class="col-5">
+                <div class="col-12 col-md-12 col-lg-5">
                     <p class="text-center">
                         Instrucciones
                     </p>
@@ -31,14 +31,14 @@
                         Forma parte de UNIMEX®
                     </p>
                 </div>
-                <div class="col-7 py-4">
+                <div class="col-12 col-md-12 col-lg-7 py-4">
                     <div class="row">
-                        <div class="col-3 mb-3">
+                        <div class="col-12 col-md-12 col-lg-3 mb-3">
                             <p style="color: #00539a !important;">
                                 <b>Pago en Ventanilla</b>
                             </p>
                         </div>
-                        <div class="col-9 p-0 mb-3">
+                        <div class="col-12 col-md-12 col-lg-9 p-0 mb-3">
                             <img src="{{ asset('assets/img/preinscripcion_linea/scotiabank.png') }}" alt="">
                         </div>
                         <div class="col-12">
@@ -80,7 +80,7 @@
                                     value="{{ session('Nombre') }}  {{ session('ApPaterno') }} {{ session('ApMaterno') }}">
                             </div>
                         </div>
-                        <div class="col-4">
+                        <div class="col-12 col-md-12 col-lg-4">
                             <div class="mb-3">
                                 <label style="color: #00539a !important;" for="matricula"
                                     class="form-label">Matrícula</label>
@@ -88,7 +88,7 @@
                                     value="{{ session('Matricula') }}">
                             </div>
                         </div>
-                        <div class="col-4">
+                        <div class="col-12 col-md-12 col-lg-4">
                             <div class="mb-3">
                                 <label style="color: #00539a !important;" for="cuatrimestre"
                                     class="form-label">Cuatrimestre</label>
@@ -125,7 +125,7 @@
 
                             @default
                         @endswitch
-                        <div class="col-4">
+                        <div class="col-12 col-md-12 col-lg-4">
                             <div class="mb-3">
                                 <label for="plantel" class="form-label">Plantel</label>
                                 <input disabled type="text" class="form-control" id="plantel"

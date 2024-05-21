@@ -9,13 +9,13 @@
                 </h5>
                 <p class="text-center">
                     <i class="bi bi-telephone-fill" style="color: #ffff;"></i>
-                    <a href="tel:+525511020290" style="color: #ffff;">
+                    <a href="tel:+525511020290" target="_blank" style="color: #ffff;">
                         +52 1 55 1102 0290
                     </a>
                     <br>
                     <img src="{{ asset('assets/img/flotante/whats-2.png') }}" alt="">
                     <a href="https://wa.me/525511020290/?text=Hola!+Me+gustaría+recibir+más+información+sobre+los+programas,+cuotas+y+promociones+de+UNIMEX;+me+interesó+lo+que+vi+en+Página+Web+Metro+sobre+contacto+en+WhatsApp+(botón).+¡Gracias!"
-                        style="color: #ffff;">
+                        target="_blank" style="color: #ffff;">
                         +52 1 55 1102 0290
                     </a>
                 </p>

@@ -26,7 +26,7 @@
                 @foreach ($banners as $banner)
                     <a href="{{ route($banner->link) }}" target="_blank" class="itemBannerInit">
                         <img style="height: auto;" src="{{ asset($banner->url) }}" class="d-block w-100"
-                            alt="{{ $banner->alt }}"  title="{{ $banner->alt }}">
+                            alt="{{ $banner->alt }}" title="{{ $banner->alt }}">
                     </a>
                 @endforeach
             </div>
@@ -55,7 +55,8 @@
                             <a href="{{ route($ventaja_unimex->link) }}" target="_blank" class="card border-0 h-100">
                                 <div class="card-body text-center">
                                     <img class="icono-Unimex" src="{{ asset($ventaja_unimex->url) }}"
-                                        alt="{{ $ventaja_unimex->alt }}" title="{{ $ventaja_unimex->alt }}" srcset="{{ asset($ventaja_unimex->url) }}">
+                                        alt="{{ $ventaja_unimex->alt }}" title="{{ $ventaja_unimex->alt }}"
+                                        srcset="{{ asset($ventaja_unimex->url) }}">
                                     <p class="card-text text-center color-unimex fs-unimex2">
                                         {!! $ventaja_unimex->descripcion_corta !!}
                                     </p>
@@ -65,7 +66,8 @@
                             <div class="card border-0 h-100">
                                 <div class="card-body text-center">
                                     <img class="icono-Unimex" src="{{ asset($ventaja_unimex->url) }}"
-                                        alt="{{ $ventaja_unimex->alt }}" title="{{ $ventaja_unimex->alt }}" srcset="{{ asset($ventaja_unimex->url) }}">
+                                        alt="{{ $ventaja_unimex->alt }}" title="{{ $ventaja_unimex->alt }}"
+                                        srcset="{{ asset($ventaja_unimex->url) }}">
                                     <p class="card-text text-center color-unimex fs-unimex2">
                                         {!! $ventaja_unimex->descripcion_corta !!}
                                     </p>
@@ -155,22 +157,34 @@
                 </div>
                 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                     <li class="nav-item mx-auto" role="presentation">
-                        <button class="active text-center" id="pills-home-tab" data-bs-toggle="pill"
+                        <button onclick="cambioImagen(1, 'pills-home-tab')" class="active text-center" id="pills-home-tab" data-bs-toggle="pill"
                             data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
-                            aria-selected="true"><img style="width: 100px;"
-                                src="{{ asset('assets/img/testimonios/1_testimonio.jpg') }}" alt=""></button>
+                            aria-selected="true">
+                            <img id="opacity_1" class="d-none" style="width: 100px;" src="{{ asset('assets/img/testimonios/1_opacity.jpg') }}"
+                                alt="">
+                            <img id="testimonio_1" class="" style="width: 100px;" src="{{ asset('assets/img/testimonios/1_testimonio.jpg') }}"
+                                alt="">
+                        </button>
                     </li>
                     <li class="nav-item mx-auto" role="presentation">
-                        <button class="text-center" id="pills-profile-tab" data-bs-toggle="pill"
+                        <button onclick="cambioImagen(2, 'pills-profile-tab')" class="text-center" id="pills-profile-tab" data-bs-toggle="pill"
                             data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
-                            aria-selected="false"><img style="width: 100px;"
-                                src="{{ asset('assets/img/testimonios/2_testimonio.jpg') }}" alt=""></button>
+                            aria-selected="false">
+                            <img id="opacity_2" style="width: 100px;" src="{{ asset('assets/img/testimonios/2_opacity.jpg') }}"
+                                alt="">
+                            <img id="testimonio_2" class="d-none" style="width: 100px;" src="{{ asset('assets/img/testimonios/2_testimonio.jpg') }}"
+                                alt="">
+                        </button>
                     </li>
                     <li class="nav-item mx-auto" role="presentation">
-                        <button class="text-center" id="pills-contact-tab" data-bs-toggle="pill"
+                        <button onclick="cambioImagen(3, 'pills-contact-tab')" class="text-center" id="pills-contact-tab" data-bs-toggle="pill"
                             data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact"
-                            aria-selected="false"><img style="width: 100px;"
-                                src="{{ asset('assets/img/testimonios/3_testimonio.jpg') }}" alt=""></button>
+                            aria-selected="false">
+                            <img id="opacity_3" style="width: 100px;" src="{{ asset('assets/img/testimonios/3_opacity.jpg') }}"
+                                alt="">
+                            <img id="testimonio_3" class="d-none" style="width: 100px;" src="{{ asset('assets/img/testimonios/3_testimonio.jpg') }}"
+                                alt="">
+                        </button>
                     </li>
                 </ul>
             </div>

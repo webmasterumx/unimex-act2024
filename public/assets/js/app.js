@@ -200,3 +200,43 @@ function resetForms(formulario) {
             break;
     }
 }
+
+function cambioImagen(posicion, element) {
+
+    if (posicion == 1) {
+
+        $("#opacity_1").addClass('d-none');
+        $("#testimonio_1").removeClass('d-none');
+
+        $("#opacity_2").removeClass('d-none');
+        $("#testimonio_2").addClass('d-none');
+
+        $("#opacity_3").removeClass('d-none');
+        $("#testimonio_3").addClass('d-none');
+
+    }
+    else if (posicion == 2) {
+
+        $("#opacity_1").removeClass('d-none');
+        $("#testimonio_1").addClass('d-none');
+
+        $("#opacity_2").addClass('d-none');
+        $("#testimonio_2").removeClass('d-none');
+
+        $("#opacity_3").removeClass('d-none');
+        $("#testimonio_3").addClass('d-none');
+
+    }
+    else if (posicion == 3) {
+        $("#opacity_1").removeClass('d-none');
+        $("#testimonio_1").addClass('d-none');
+
+        $("#opacity_2").removeClass('d-none');
+        $("#testimonio_2").addClass('d-none');
+
+        $("#opacity_3").addClass('d-none');
+        $("#testimonio_3").removeClass('d-none');
+    }
+
+
+}

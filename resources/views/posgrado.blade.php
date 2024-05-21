@@ -4,6 +4,11 @@
     @include('metas.posgrados.condicional')
 @endsection
 
+@section('styles')
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+@endsection
+
 <style>
     #contraportada {
         background-position: center;
@@ -93,24 +98,50 @@
         <div class="row">
             <div id="contraportada" class="col-12 col-md-6 col-lg-6">
             </div>
-            <div id="text_ventajas" class="col-12 col-md-6 col-lg-6 bg-articule p-5">
-                <h1 style="font-size: 1.25rem;" class="underlined-head text-uppercase fw-normal">
-                    Ventajas de estudiar el posgrado en {{ $posgrado->titulo }}
-                </h1>
-                <p>
-                    Obtienes un nivel de preparación profesional superior que puede facilitarte alcanzar las mejores
-                    oportunidades.
-                    <br><br>
-                    Beca UNIMEX para Especialidades hasta del 35% y para Maestrías hasta del 20%. <br>
-                    Nota: Para conocer más acerca de las Becas UNIMEX consulta la sección Beca Posgrado.
-                    <br><br>
-                    Puedes aplicar el Programa “Continúa con tu Maestría en UNIMEX®”:
-                    En Universidad Mexicana puedes estudiar tu Maestría como continuación de tu Especialidad UNIMEX®. Al
-                    terminar los 3 ciclos escolares de la Especialidad, puedes solicitar tu equivalencia de materias para
-                    continuar con la Maestría cursando únicamente los últimos dos ciclos del programa equivalente.
-                    Nota: Para más información consulta la sección <button type="button" class="btn btn-link p-0"
-                        data-bs-toggle="modal" data-bs-target="#continuaConTuMaestria">Continúa con tu Maestría.</button>
-                    <br><br>
+            @if ($posgrado->titulo == 'Docencia' || $posgrado->titulo == 'Impuestos')
+                <div id="text_ventajas" class="col-12 col-md-6 col-lg-6 bg-articule p-5">
+                    <h1 style="font-size: 1.25rem;" class="underlined-head text-uppercase fw-normal">
+                        Ventajas de estudiar el posgrado en {{ $posgrado->titulo }}
+                    </h1>
+                    <p>
+                        Obtienes un nivel de preparación profesional superior que te permitirá alcanzar mejores
+                        oportunidades.
+                        <br><br>
+                        Estudia la Especialidad en Docencia en 1 año. <br><br>
+                        Válido para <button type="button" class="btn btn-link p-0" data-bs-toggle="modal"
+                            data-bs-target="#titulacionEstudiosPosgrado">Titulación de Licenciatura vía
+                            estudios de
+                            Posgrado.</button> <br><br>
+                        Horarios accesibles que te permiten estudiar y trabajar. <br><br>
+                        Beca especial para egresados de Licenciatura UNIMEX®.
+                    </p>
+                </div>
+            @else
+                <div id="text_ventajas" class="col-12 col-md-6 col-lg-6 bg-articule p-5">
+                    <h1 style="font-size: 1.25rem;" class="underlined-head text-uppercase fw-normal">
+                        Ventajas de estudiar el posgrado en {{ $posgrado->titulo }}
+                    </h1>
+                    <p>
+                        Obtienes un nivel de preparación profesional superior que puede facilitarte alcanzar las mejores
+                        oportunidades.
+                        <br><br>
+                        Beca UNIMEX para Especialidades hasta del 35% y para Maestrías hasta del 20%.
+                        <br><br>
+                        Puedes aplicar el Programa “Continúa con tu Maestría en UNIMEX®”:
+                        En Universidad Mexicana puedes estudiar tu Maestría como continuación de tu Especialidad UNIMEX®. Al
+                        terminar los 3 ciclos escolares de la Especialidad, puedes solicitar tu equivalencia de materias
+                        para
+                        continuar con la Maestría cursando únicamente los últimos dos ciclos del programa equivalente. <br>
+                        Nota: Para más información consulta la sección <button type="button" class="btn btn-link p-0"
+                            data-bs-toggle="modal" data-bs-target="#continuaConTuMaestria">Continúa con tu
+                            Maestría.</button>
+                        <br><br>
+                        Variedad de horarios que te permiten estudiar y trabajar.
+                        <br><br>
+                    <ul>
+                        <li>Sabatino: sólo sábados de 8:00 a 13:00 h.</li>
+                        <li>Vespertino: sólo 2 tardes entre semana de 19:30 a 22:00 h.</li>
+                    </ul>
                     Nota: La inscripción está sujeta a la apertura y cupo en el grupo seleccionado. La apertura de los
                     grupos está sujeta a la disponibilidad del programa en el plantel deseado y a un mínimo de 25 alumnos
                     inscritos por grupo, previo al inicio de clases. Consulta los programas que se impartirán en el ciclo de
@@ -118,12 +149,14 @@
                     <br><br>
                     Válido para titulación de Licenciatura vía estudios de Posgrado.
                     Si concluiste al 100% los créditos de tu Licenciatura y tienes disponible la opción de Titulación vía
-                    Estudios de Posgrado, regístrate, llámanos o ven al plantel para brindarte mayor información.
+                    Estudios de Posgrado, regístrate, llámanos o ven al plantel para brindarte mayor información. <br><br>
                     Consulta los requisitos en la sección <button type="button" class="btn btn-link p-0"
-                    data-bs-toggle="modal" data-bs-target="#titulacionEstudiosPosgrado">Titulación de Licenciatura vía estudios de
+                        data-bs-toggle="modal" data-bs-target="#titulacionEstudiosPosgrado">Titulación de Licenciatura vía
+                        estudios de
                         Posgrado.</button>
-                </p>
-            </div>
+                    </p>
+                </div>
+            @endif
         </div>
     </section>
     <!-- Fin de la sección de ventajas -->
@@ -199,8 +232,10 @@
                     Nota: La duración mencionada está sujeta al curso continuo de los estudios; consulta la programación de
                     aperturas en el plantel de tu elección.
                     <br><br>
-                    <button type="button" class="btn btn-primary">Continúa con tu maestría en UNIMEX</button>
-                    <button type="button" class="btn btn-primary">Titulación vía estudios de posgrados</button>
+                    <button data-bs-toggle="modal" data-bs-target="#continuaConTuMaestria" type="button"
+                        class="btn btn-primary">Continúa con tu maestría en UNIMEX</button>
+                    <button data-bs-toggle="modal" data-bs-target="#titulacionEstudiosPosgrado" type="button"
+                        class="btn btn-primary">Titulación vía estudios de posgrados</button>
                 </p>
             </div>
         </div>
@@ -226,6 +261,9 @@
             </div>
             <div class="col-12 col-md-6">
                 <p class="text-center text-white">
+                    <a target="_blank" href="https://unimex.occ.com.mx/Bolsa_Trabajo">
+                        <i class="fas fa-briefcase fa-5x text-white"></i>
+                    </a><br>
                     Consulta la Bolsa de Trabajo OCC-UNIMEX
                 </p>
             </div>
@@ -243,13 +281,13 @@
                 <h2 class="underlined-head fw-normal" style="font-size: 1.438rem;">
                     REQUISITOS
                 </h2>
-                <div id="requisitos">
+                <div id="requisitos" style="height: 390px;">
                     <div class="card border-0">
                         <div class="card-body">
                             <p>
                                 <b>
                                     Si cuentas con Título de Licenciatura
-                                </b>
+                                </b><br><br>
                                 Original y copia del Acta de Nacimiento. <br>
                                 Copia del Título o Cédula Profesional. <br>
                                 Original y una fotocopia del Certificado Total de Estudios de Licenciatura* <br><br>
@@ -263,14 +301,14 @@
                     <div class="card border-0">
                         <div class="card-body">
                             <p>
-                                <b>Si deseas titularte de Licenciatura mediante estudios de Posgrado</b>
-                                Original o copia certificada del Acta de Nacimiento y una fotocopia
-                                Original y una fotocopia del Certificado Total de Estudios de Licenciatura*
-                                En caso de cursar el Posgrado como medio de Titulación, presentar una Carta de Autorización
+                                <b>Si deseas titularte de Licenciatura mediante estudios de Posgrado</b> <br><br>
+                                Original o copia certificada del Acta de Nacimiento y una fotocopia. <br>
+                                Original y una fotocopia del Certificado Total de Estudios de Licenciatura* <br>
+                                En caso de cursar el Posgrado como medio de Titulación, presentar una Carta de Autorización. <br>
                                 para Titularse vía créditos de Posgrado, emitida por tu Universidad de origen**, indicando
                                 el porcentaje de créditos necesarios.
                                 <br><br>
-                                * Legalizado, en caso de Universidades no incorporadas a la S.E.P.
+                                * Legalizado, en caso de Universidades no incorporadas a la S.E.P. <br>
                                 ** únicamente para egresados de otras instituciones que desean estudiar un Posgrado en
                                 UNIMEX® como opción de titulación.
 
@@ -339,6 +377,17 @@
             autoplaySpeed: 2000,
             prevArrow: '<button type="button" class="slick-prev-tema"><i class="bi bi-chevron-compact-left"></i></button>',
             nextArrow: '<button type="button" class="slick-next-tema"><i class="bi bi-chevron-compact-right"></i></button>',
+        });
+
+        $('#requisitos').slick({
+            infinite: false,
+            autoplay: false,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: true,
+            autoplaySpeed: 2000,
+            prevArrow: '<button type="button" class="slick-prev-requisitos"><i class="bi bi-arrow-left-circle-fill"></i></button>',
+            nextArrow: '<button type="button" class="slick-next-requisitos"><i class="bi bi-arrow-right-circle-fill"></i></button>',
         });
 
         const enlaceCalculadora = document.getElementById("redireccionCTCL");

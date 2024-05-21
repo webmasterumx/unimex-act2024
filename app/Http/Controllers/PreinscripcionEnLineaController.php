@@ -247,7 +247,7 @@ class PreinscripcionEnLineaController extends Controller
                             <div style="width: 80%; border: 1px solid #000; border-radius: 30px; padding: 10px;">
                                 <table style="width: 100%">
                                     <tr>
-                                        <td style="text-align: center;">Numero de Servicio:</td>
+                                        <td style="text-align: center;">Número de Servicio:</td>
                                     </tr>
                                     <tr>
                                         <td>
@@ -278,7 +278,7 @@ class PreinscripcionEnLineaController extends Controller
                                                 <td style="width: 50%;"></td>
                                             </tr>
                                             <tr>
-                                                <td style="width: 50%;">Matricula (10 digitos) </td>
+                                                <td style="width: 50%;">Matrícula (10 digitos) </td>
                                                 <td style="width: 50%;">
                                                     <input
                                                         style="border: 0; border-bottom: 2px solid #000; text-align: center;"

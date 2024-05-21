@@ -329,7 +329,7 @@
                                 Escolarizado {{ $disponibilidad[$d]['escolarizado'] }} <br>
                                 Mixto {{ $disponibilidad[$d]['mixto'] }} <br>
                                 <a style="color: #fff !important;"
-                                    href=" {{ $disponibilidad[$d]['link'] }}">{{ $disponibilidad[$d]['url'] }}</a>
+                                    href=" {{ $disponibilidad[$d]['link'] }}" target="_blank">{{ $disponibilidad[$d]['url'] }}</a>
                             </p>
                         </div>
                     </div>
