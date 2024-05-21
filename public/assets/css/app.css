@@ -457,7 +457,7 @@ body {
 
 @media (min-width: 300px) and (max-width: 600.98px) {
     #bannerInicial {
-        height: 15rem;
+        height: 11rem;
     }
 
     #closeModalCalculadora {
