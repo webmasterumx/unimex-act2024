@@ -8,13 +8,13 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="col-12 text-center">
-                        <button type="button"
-                            style="color: #de951b; position: relative; top: -42%; left: 73%;"
+                        <button id="closeModalCalculadora" type="button"
+                            style="color: #de951b;"
                             class="fs-1" data-bs-dismiss="modal" aria-label="Close">
                             <i class="bi bi-x-circle-fill"></i>
                         </button>
                         <a href="{{ route('calcula_tu_cuota') }}" target="_blank">
-                            <img class="" src="{{ asset('assets/img/popup/pop_up_unimex_texto.png') }}"
+                            <img class="img-fluid" src="{{ asset('assets/img/popup/pop_up_unimex_texto.png') }}"
                                 alt="">
                         </a>
                     </div>

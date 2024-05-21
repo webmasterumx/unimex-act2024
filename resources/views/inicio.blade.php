@@ -22,7 +22,7 @@
     <!-- Inicio de Banner Inicial -->
     <section class="pb-2">
         <div class="container-fluid p-0">
-            <div id="bannerInicial" style="height: 90vh;">
+            <div id="bannerInicial">
                 @foreach ($banners as $banner)
                     <a href="{{ route($banner->link) }}" target="_blank" class="itemBannerInit">
                         <img style="height: auto;" src="{{ asset($banner->url) }}" class="d-block w-100"

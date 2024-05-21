@@ -163,7 +163,7 @@ body {
     background: url(../img/extras/underlined.png) no-repeat left bottom;
 }
 
-.underlined_head_obj{
+.underlined_head_obj {
     text-align: center;
     margin-top: 0;
     padding-bottom: 13px;
@@ -280,7 +280,7 @@ body {
     color: red;
 }
 
-#emailProspecto-error{
+#emailProspecto-error {
     width: 100%;
 }
 
@@ -440,6 +440,16 @@ body {
 }
 
 @media (min-width: 400px) and (max-width: 767.98px) {
+    #bannerInicial {
+        height: 54vh;
+    }
+
+    #closeModalCalculadora {
+        position: relative;
+        top: 13%;
+        left: 46%;
+    }
+
     .itemBannerInit {
         height: 15vh !important;
     }
@@ -447,6 +457,17 @@ body {
 
 
 @media (min-width: 767.98px) and (max-width: 991.98px) {
+
+    #bannerInicial {
+        height: 65vh;
+    }
+
+    #closeModalCalculadora {
+        position: relative;
+        top: 14%;
+        left: 46%;
+    }
+
     .itemBannerInit {
         height: 20vh !important;
     }
@@ -454,6 +475,17 @@ body {
 
 
 @media (min-width: 991.98px) and (max-width: 1199.98px) {
+
+    #bannerInicial {
+        height: 80vh;
+    }
+
+    #closeModalCalculadora {
+        position: relative;
+        top: 12%;
+        left: 46%;
+    }
+
     .itemBannerInit {
         height: 40vh !important;
     }
@@ -461,6 +493,17 @@ body {
 
 
 @media (min-width: 1199.98px) and (max-width: 1399.98px) {
+
+    #bannerInicial {
+        height: 90vh;
+    }
+
+    #closeModalCalculadora {
+        position: relative;
+        top: -42%;
+        left: 73%;
+    }
+
     .itemBannerInit {
         height: 100vh !important;
     }
@@ -468,6 +511,17 @@ body {
 
 
 @media (min-width: 1399.98px) and (max-width: 1500.99px) {
+
+    #bannerInicial {
+        height: 100vh;
+    }
+
+    #closeModalCalculadora {
+        position: relative;
+        top: -42%;
+        left: 73%;
+    }
+
     .itemBannerInit {
         height: 100vh !important;
     }
