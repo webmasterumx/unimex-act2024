@@ -188,8 +188,8 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-12 col-md-6">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/5MsJSD6121g"
+            <div class="ratio ratio-16x9 col-12 col-md-6"> <!--  width="560" height="315" -->
+                <iframe src="https://www.youtube.com/embed/5MsJSD6121g"
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" title="UNIMEX"
                     allowfullscreen></iframe>
             </div>

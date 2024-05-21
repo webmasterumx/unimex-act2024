@@ -527,7 +527,7 @@ body {
 @media (min-width: 1199.98px) and (max-width: 1399.98px) {
 
     #bannerInicial {
-        height: 30rem;
+        height: 31rem;
     }
 
     #closeModalCalculadora {
@@ -537,7 +537,7 @@ body {
     }
 
     .itemBannerInit {
-        height: 30rem;
+        height: 31rem;
     }
 }
 
@@ -545,7 +545,7 @@ body {
 @media (min-width: 1399.98px) and (max-width: 1500.99px) {
 
     #bannerInicial {
-        height: 15rem;
+        height: 32rem;
     }
 
     #closeModalCalculadora {
@@ -555,6 +555,6 @@ body {
     }
 
     .itemBannerInit {
-        height: 100vh !important;
+        height: 32rem !important;
     }
 }

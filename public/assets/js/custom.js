@@ -349,6 +349,124 @@ overlay = {
     }
 };
 
+nav1 = {
+    id: "navigation",
+    show: function () {
+        console.log('abre nav');
+        nav.reset();
+        subnav1.reset();
+        $("#" + this.id).animate({ right: '0' }, { duration: 500, easing: "swing" });
+    },
+    hide: function () {
+
+        var id = "#" + this.id;
+        var move = $(id).outerWidth() + 'px';
+
+        $(id).animate({ right: '-' + move }, { duration: 500, easing: "swing", complete: nav.reset });
+
+    },
+    reset: function () {
+        $("#" + nav.id).removeAttr("style");
+    },
+    normalize: function () {
+        var width = browser.width();
+
+        if (width > 1024) {
+            $("#" + nav.id).removeAttr("style");
+        }
+    }
+};
+
+window.addEventListener("resize", nav.normalize);
+// =================================================================================================
+// SUB NAVIGATION SCRIPT DEFINITION
+// =================================================================================================
+subnav1 = {
+    current: undefined,
+    show: function (selected) {
+
+        var current = this.current;
+        var width = browser.width();
+
+        enrollmentbox.hide();
+        loginbox.hide();
+
+        if (width > 1024) {
+
+            if (selected === current) {
+                $("#" + selected).slideToggle();
+
+                return;
+            }
+
+            $("#" + current).slideUp();
+            $("#" + selected).slideDown();
+
+        } else {
+
+            $("#" + selected).animate({ right: '0' }, { duration: 500, easing: "swing" });
+
+        }
+
+        this.current = selected;
+
+    },
+    hide: function (selected) {
+
+        var id = "#" + selected;
+        var move = $(id).outerWidth() + 'px';
+
+        this.current = selected;
+
+        $(id).animate({ right: '-' + move }, { duration: 500, easing: "swing", complete: subnav.reset });
+
+    },
+    hideAll: function () {
+
+        var width = browser.width();
+
+        if (width > 1024) {
+
+            $(".subnav").slideUp();
+            this.current = undefined;
+        }
+
+    },
+    reset: function () {
+        $(".subnav").removeAttr("style");
+        subnav.current = undefined;
+    },
+    normalize: function () {
+        var width = browser.width();
+
+        if (width > 1024) {
+            $(".subnav").removeAttr("style");
+            $('.subnav ul').removeAttr("style");
+        }
+    },
+    list: {
+        current: undefined,
+        toggle: function (selected) {
+
+            var width = browser.width();
+
+            if (width <= 1024) {
+
+                if (this.current !== selected) {
+                    $('#' + this.current).next().slideUp();
+                    this.current = selected;
+                }
+
+                $('#' + selected).next().slideToggle();
+
+            }
+
+        }
+
+    }
+};
+
+
 window.addEventListener("resize", overlay.detroy);
 // =================================================================================================
 // SLIDER SCRIPT DEFINITION

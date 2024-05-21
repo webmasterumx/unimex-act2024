@@ -64,7 +64,7 @@
         </div>
     </nav>
     <div class="wrapper">
-        <nav class="subnav" id="subnavAbout">
+        <nav class="subnav1" id="subnavAbout1">
             <a class="btn-close-nav" onclick="subnav.hide('subnavAbout')"></a>
             <div class="container">
                 <div class="row">
@@ -94,7 +94,7 @@
                 </div>
             </div>
         </nav>
-        <nav class="subnav" id="subnavSchools">
+        <nav class="subnav1" id="subnavSchools1">
             <a class="btn-close-nav" onclick="subnav.hide('subnavSchools')"></a>
             <div class="container">
                 <div class="row">
@@ -122,7 +122,7 @@
                 </div>
             </div>
         </nav>
-        <nav class="subnav" id="alumnosegresados">
+        <nav class="subnav1" id="alumnosegresados1">
             <a class="btn-close-nav" onclick="subnav.hide('alumnosegresados')"></a>
             <div class="container">
                 <div class="row">
@@ -381,12 +381,12 @@
                 </div>
             </div>
         </nav>
-        <nav class="subnav" id="subnavAcademicOffer">
-            <a class="btn-close-nav" onclick="subnav.hide('subnavAcademicOffer')"></a>
+        <nav class="subnav1" id="subnavAcademicOffer1">
+            <a class="btn-close-nav" onclick="subnav.hide('subnavAcademicOffer1')"></a>
             <div class="container">
                 <div class="row">
                     <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 ">
-                        <h5 onclick="subnav.list.toggle('bachelorsDegree')" id="bachelorsDegree">Licenciaturas
+                        <h5 onclick="subnav.list.toggle('bachelorsDegree1')" id="bachelorsDegree1">Licenciaturas
                         </h5>
                         <ul class="blue-bullet">
                             <li style="background: none;">
@@ -428,7 +428,7 @@
                         </ul>
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 left-gray-border">
-                        <h5 onclick="subnav.list.toggle('SUA')" id="SUA">Licenciaturas abiertas SUA<br></h5>
+                        <h5 onclick="subnav.list.toggle('SUA1')" id="SUA1">Licenciaturas abiertas SUA<br></h5>
                         <ul class="blue-bullet">
                             <li style="background: none;">
                                 <span class="txtpequeno">DISPONIBLE EN TODOS LOS PLANTELES</span>
@@ -445,7 +445,7 @@
                         </ul>
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 left-gray-border">
-                        <h5 onclick="subnav.list.toggle('masterDegree')" id="masterDegree">Posgrados</h5>
+                        <h5 onclick="subnav.list.toggle('masterDegree1')" id="masterDegree1">Posgrados</h5>
                         <ul class="blue-bullet">
 
                             <li style="background: none;">

@@ -76,6 +76,10 @@
                 <div class="row">
                     @foreach ($data['planteles'] as $plantel)
                         <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 left-gray-border">
+                            <h5 class="hide">
+                                <a href="{{ route('plantel', $plantel->nombre) }}">
+                                    {{ $plantel->nombre }}</a>
+                            </h5>
                             <div class="card" style="min-height: 1px;">
                                 <a href="{{ route('plantel', $plantel->nombre) }}">
                                     <div class="parent">
@@ -325,8 +329,8 @@
                             </a>
                             <div class="card-body">
                                 <p class="card-text" style="text-align: center;">
-                                    <a href="{{ route('bolsa_de_trabajo') }}" target="_blank"
-                                        rel="noopener" aria-label="Bolsa de Trabajo UNIMEX">
+                                    <a href="{{ route('bolsa_de_trabajo') }}" target="_blank" rel="noopener"
+                                        aria-label="Bolsa de Trabajo UNIMEX">
                                         <span class="blue-text">Bolsa de Trabajo</span>
                                     </a>
                                 </p>
