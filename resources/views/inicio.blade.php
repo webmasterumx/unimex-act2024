@@ -25,7 +25,7 @@
             <div id="bannerInicial">
                 @foreach ($banners as $banner)
                     <a href="{{ route($banner->link) }}" target="_blank" class="itemBannerInit">
-                        <img style="height: auto;" src="{{ asset($banner->url) }}" class="d-block w-100"
+                        <img  src="{{ asset($banner->url) }}" class="d-block w-100 img-fluid"
                             alt="{{ $banner->alt }}" title="{{ $banner->alt }}">
                     </a>
                 @endforeach

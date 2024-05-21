@@ -439,9 +439,9 @@ body {
     color: #004b93 !important;
 }
 
-@media (min-width: 400px) and (max-width: 767.98px) {
+@media (min-width: 300px) and (max-width: 600.98px) {
     #bannerInicial {
-        height: 54vh;
+        height: 15rem;
     }
 
     #closeModalCalculadora {
@@ -451,15 +451,31 @@ body {
     }
 
     .itemBannerInit {
-        height: 15vh !important;
+        height: 15rem;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 800.98px) {
+    #bannerInicial {
+        height: 20rem;
+    }
+
+    #closeModalCalculadora {
+        position: relative;
+        top: 13%;
+        left: 46%;
+    }
+
+    .itemBannerInit {
+        height: 20rem;
     }
 }
 
 
-@media (min-width: 767.98px) and (max-width: 991.98px) {
+@media (min-width: 800.98px) and (max-width: 900.98px) {
 
     #bannerInicial {
-        height: 65vh;
+        height: 24rem;
     }
 
     #closeModalCalculadora {
@@ -469,15 +485,15 @@ body {
     }
 
     .itemBannerInit {
-        height: 20vh !important;
+        height: 24rem;
     }
 }
 
 
-@media (min-width: 991.98px) and (max-width: 1199.98px) {
+@media (min-width: 900.98px) and (max-width: 1199.98px) {
 
     #bannerInicial {
-        height: 80vh;
+        height: 26rem;
     }
 
     #closeModalCalculadora {
@@ -487,7 +503,7 @@ body {
     }
 
     .itemBannerInit {
-        height: 40vh !important;
+        height: 26rem;
     }
 }
 
@@ -495,7 +511,7 @@ body {
 @media (min-width: 1199.98px) and (max-width: 1399.98px) {
 
     #bannerInicial {
-        height: 90vh;
+        height: 30rem;
     }
 
     #closeModalCalculadora {
@@ -505,7 +521,7 @@ body {
     }
 
     .itemBannerInit {
-        height: 100vh !important;
+        height: 30rem;
     }
 }
 
@@ -513,7 +529,7 @@ body {
 @media (min-width: 1399.98px) and (max-width: 1500.99px) {
 
     #bannerInicial {
-        height: 100vh;
+        height: 15rem;
     }
 
     #closeModalCalculadora {
