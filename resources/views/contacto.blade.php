@@ -150,7 +150,7 @@
 
         $("#movil_service").bind('keypress', function(event) {
             //var regex = new RegExp("^[0-9]+$"); 
-            var regex = new RegExp("^[0-9_-]{3,16}$"); 
+            var regex = new RegExp("^[0-9_-]{3,16}$");
             var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
             if (!regex.test(key)) {
                 event.preventDefault();
@@ -158,23 +158,23 @@
             }
         });
 
-      /*   $("#matricula_service").bind('keypress', function(event) {
-            var regex = new RegExp("^[0-9]+$");
-            var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
-            if (!regex.test(key)) {
-                event.preventDefault();
-                return false;
-            }
-        });
+        /*   $("#matricula_service").bind('keypress', function(event) {
+              var regex = new RegExp("^[0-9]+$");
+              var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+              if (!regex.test(key)) {
+                  event.preventDefault();
+                  return false;
+              }
+          });
 
-        $("#matricula_qys").bind('keypress', function(event) {
-            var regex = new RegExp("^[0-9]+$");
-            var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
-            if (!regex.test(key)) {
-                event.preventDefault();
-                return false;
-            }
-        }); */
+          $("#matricula_qys").bind('keypress', function(event) {
+              var regex = new RegExp("^[0-9]+$");
+              var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+              if (!regex.test(key)) {
+                  event.preventDefault();
+                  return false;
+              }
+          }); */
 
         $("#nivelSelect").append(`<option value="">Nivel</option>`);
         $("#carreraSelect").append(`<option value="">Carrera</option>`);
@@ -182,5 +182,37 @@
         function resetFormEmpresaOCC() {
             document.getElementById("form_empresasOCC").reset();
         }
+
+        $('#aceptar_qys').on('click', function() {
+            if ($(this).is(':checked')) {
+                $('#enviarDatosAceptar').attr('disabled', false);
+            } else {
+                $('#enviarDatosAceptar').attr('disabled', true);
+            }
+        });
+
+        $('#deacuerdo_service').on('click', function() {
+            if ($(this).is(':checked')) {
+                $('#enviarDatosServicio').attr('disabled', false);
+            } else {
+                $('#enviarDatosServicio').attr('disabled', true);
+            }
+        });
+
+        $('#aceptar_trabajar').on('click', function() {
+            if ($(this).is(':checked')) {
+                $('#enviarDatosTrabaja').attr('disabled', false);
+            } else {
+                $('#enviarDatosTrabaja').attr('disabled', true);
+            }
+        });
+
+        $('#aceptar_empresasocc').on('click', function() {
+            if ($(this).is(':checked')) {
+                $('#enviarDatosEmpresasOCC').attr('disabled', false);
+            } else {
+                $('#enviarDatosEmpresasOCC').attr('disabled', true);
+            }
+        });
     </script>
 @endsection

@@ -304,7 +304,7 @@
                             <span class="visually-hidden">Loading...</span>
                         </div>
                         <p>
-                            Opteniendo horarios disponibles...
+                            Obteniendo horarios disponibles...
                         </p>
                     </div>
                     <div class="col-12 row" id="grupoBotones">
@@ -314,7 +314,7 @@
                             <span class="visually-hidden">Loading...</span>
                         </div>
                         <p>
-                            Opteniendo costos...
+                            Obteniendo costos...
                         </p>
                     </div>
                     <div class="col-12">
@@ -417,7 +417,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> 
         </div>
     </section>
 
@@ -472,6 +472,18 @@
             if (!regex.test(key)) {
                 event.preventDefault();
                 return false;
+            }
+        });
+
+        $('#terminosYcondiciones').on('click', function() {
+            if ($(this).is(':checked')) {
+                // Hacer algo si el checkbox ha sido seleccionado
+                //console.log("El checkbox con valor " + $(this).val() + " ha sido seleccionado");
+                $('#envio_caluladora').attr('disabled', false);
+            } else {
+                // Hacer algo si el checkbox ha sido deseleccionado
+                //console.log("El checkbox con valor " + $(this).val() + " ha sido deseleccionado");
+                $('#envio_caluladora').attr('disabled', true);
             }
         });
     </script>

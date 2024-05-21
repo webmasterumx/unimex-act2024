@@ -124,5 +124,17 @@
             let urlBase = "{{ env('APP_URL') }}";
             return urlBase;
         }
+
+        $('#avisoPrivacidad').on('click', function() {
+            if ($(this).is(':checked')) {
+                // Hacer algo si el checkbox ha sido seleccionado
+                //console.log("El checkbox con valor " + $(this).val() + " ha sido seleccionado");
+                $('#validarCorreo').attr('disabled', false);
+            } else {
+                // Hacer algo si el checkbox ha sido deseleccionado
+                //console.log("El checkbox con valor " + $(this).val() + " ha sido deseleccionado");
+                $('#validarCorreo').attr('disabled', true);
+            }
+        });
     </script>
 @endsection

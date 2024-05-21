@@ -8,8 +8,8 @@
             <label for="name_service" class="form-label">
                 <i class="bi bi-person-fill" style="color: #004b93;"></i> Nombre Completo
             </label>
-            <input style="height: 32px !important;" type="text" class="form-control form-control-sm" id="name_service"
-                name="name_service">
+            <input style="height: 32px !important;" type="text" class="form-control form-control-sm"
+                id="name_service" name="name_service">
         </div>
     </div>
     <div class="mb-2 col-6">
@@ -99,7 +99,10 @@
         <div class="form-check">
             <input class="form-check-input" type="checkbox" id="deacuerdo_service" name="deacuerdo_service" checked>
             <label class="form-check-label ms-4 mt-3" for="deacuerdo_service">
-                Estoy de acuerdo en ser contactado por UNIMEX® y acepto el aviso de privacidad.
+                Estoy de acuerdo en ser contactado por UNIMEX® y acepto el <a href="javascript:void(0);"
+                    onclick="window.open('{{ route('aviso_de_privacidad') }}','Privacidad','scrollbars=yes,width=1000,height=700')">
+                    aviso de privacidad.
+                </a>
             </label>
         </div>
     </div>

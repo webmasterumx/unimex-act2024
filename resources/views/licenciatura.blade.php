@@ -193,16 +193,17 @@
                                 placeholder="Celular *">
                         </div>
                         <div class="form-check my-3">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
-                                style="width: 20px !important; height: 20px !important;">
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input" type="checkbox" value=""
+                                id="aceptarAvisoPrivacidadFolleto" style="width: 20px !important; height: 20px !important;"
+                                checked>
+                            <label class="form-check-label" for="aceptarAvisoPrivacidadFolleto">
                                 He leído y acepto el <a href="javascript:void(0);"
                                     onclick="window.open('{{ route('aviso_de_privacidad') }}','Privacidad','scrollbars=yes,width=1000,height=700')">
                                     aviso de privacidad.
                                 </a>
                             </label>
                         </div>
-                        <button type="submit" class="btn btn-primary">¡DESCARGAR!</button>
+                        <button id="descargaFolleto" type="submit" class="btn btn-primary">¡DESCARGAR!</button>
                     </form>
                 </div>
             </div>
@@ -328,8 +329,8 @@
                                 {{ $disponibilidad[$d]['palantel'] }} <br>
                                 Escolarizado {{ $disponibilidad[$d]['escolarizado'] }} <br>
                                 Mixto {{ $disponibilidad[$d]['mixto'] }} <br>
-                                <a style="color: #fff !important;"
-                                    href=" {{ $disponibilidad[$d]['link'] }}" target="_blank">{{ $disponibilidad[$d]['url'] }}</a>
+                                <a style="color: #fff !important;" href=" {{ $disponibilidad[$d]['link'] }}"
+                                    target="_blank">{{ $disponibilidad[$d]['url'] }}</a>
                             </p>
                         </div>
                     </div>
@@ -430,6 +431,18 @@
 
         var nivelPosicionado = "Licenciatura";
         var carreraPosicionado = "{{ $licenciatura->subtitulo }}";
+
+        $('#aceptarAvisoPrivacidadFolleto').on('click', function() {
+            if ($(this).is(':checked')) {
+                // Hacer algo si el checkbox ha sido seleccionado
+                //console.log("El checkbox con valor " + $(this).val() + " ha sido seleccionado");
+                $('#descargaFolleto').attr('disabled', false);
+            } else {
+                // Hacer algo si el checkbox ha sido deseleccionado
+                //console.log("El checkbox con valor " + $(this).val() + " ha sido deseleccionado");
+                $('#descargaFolleto').attr('disabled', true);
+            }
+        });
     </script>
     <script src="{{ asset('assets/js/folletoUnimex/combos.js') }}"></script>
     <script src="{{ asset('assets/js/folletoUnimex/form.js') }}"></script>
