@@ -439,6 +439,22 @@ body {
     color: #004b93 !important;
 }
 
+@media (min-width: 200px) and (max-width: 300px) {
+    #bannerInicial {
+        height: 8rem;
+    }
+
+    #closeModalCalculadora {
+        position: relative;
+        top: 13%;
+        left: 46%;
+    }
+
+    .itemBannerInit {
+        height: 15rem;
+    }
+}
+
 @media (min-width: 300px) and (max-width: 600.98px) {
     #bannerInicial {
         height: 15rem;
