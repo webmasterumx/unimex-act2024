@@ -76,28 +76,24 @@ body {
 
 .slick-prev {
     position: absolute;
-    top: 50%;
     z-index: 10;
     margin: -20px 0px 0px -55px;
     width: 40px;
     color: #004b93;
     height: 100px;
     font-size: 70px;
-    left: 0;
     background-color: transparent;
     border: 0;
 }
 
 .slick-next {
     position: absolute;
-    top: 50%;
     z-index: 10;
     margin: -20px -13px 0px 0px;
     width: 40px;
     color: #004b93;
     height: 100px;
     font-size: 70px;
-    right: 0;
     background-color: transparent;
     border: 0;
 }
@@ -460,6 +456,16 @@ body {
         height: 11rem;
     }
 
+    .slick-prev {
+        top: 50%;
+        left: 3%;
+    }
+
+    .slick-next {
+        top: 50%;
+        right: 4%;
+    }
+
     #closeModalCalculadora {
         position: relative;
         top: 13%;
@@ -480,6 +486,17 @@ body {
         position: relative;
         top: 13%;
         left: 46%;
+    }
+
+
+    .slick-prev {
+        top: 50%;
+        left: 3%;
+    }
+
+    .slick-next {
+        top: 50%;
+        right: 4%;
     }
 
     .itemBannerInit {

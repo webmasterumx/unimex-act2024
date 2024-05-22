@@ -140,6 +140,55 @@
     <script src="{{ asset('assets/js/form.js') }}"></script>
 
     <script>
+        $(document).ready(function() {
+            if ($(window).width() >= 200 && $(window).width() <= 300) {
+                $("#menuLG").remove();
+            }
+            if ($(window).width() >= 300 && $(window).width() <= 600.98) {
+                $("#menuLG").remove();
+            }
+            if ($(window).width() >= 600 && $(window).width() <= 800.98) {
+                $("#menuLG").remove();
+            }
+            if ($(window).width() >= 800 && $(window).width() <= 900.98) {
+                //$("#menuLG").remove();
+            }
+            if ($(window).width() >= 900 && $(window).width() <= 1199.98) {
+                //$("#menuLG").remove();
+            }
+            if ($(window).width() >= 1199.98 && $(window).width() <= 1399.98) {
+                //$("#menuLG").remove();
+            }
+            if ($(window).width() >= 1399.98 && $(window).width() <= 1500.98) {
+                //$("#menuLG").remove();
+            }
+
+        });
+
+        $(window).resize(function() {
+            if ($(window).width() >= 200 && $(window).width() <= 300) {
+                $("#menuLG").remove();
+            }
+            if ($(window).width() >= 300 && $(window).width() <= 600.98) {
+                $("#menuLG").remove();
+            }
+            if ($(window).width() >= 600 && $(window).width() <= 800.98) {
+                $("#menuLG").remove();
+            }
+            if ($(window).width() >= 800 && $(window).width() <= 900.98) {
+                //$("#menuLG").remove();
+            }
+            if ($(window).width() >= 900 && $(window).width() <= 1199.98) {
+                //$("#menuLG").remove();
+            }
+            if ($(window).width() >= 1199.98 && $(window).width() <= 1399.98) {
+                //$("#menuLG").remove();
+            }
+            if ($(window).width() >= 1399.98 && $(window).width() <= 1500.98) {
+                //$("#menuLG").remove();
+            }
+        });
+
         function setUrlBase() {
             let urlBase = "{{ env('APP_URL') }}";
             return urlBase;
@@ -164,7 +213,7 @@
 
         /*mostrar planteles y whats*/
         obtenHover.addEventListener('click', () => {
-           
+
             window.open(
                 'https://wa.me/525511020290/?text=Buenas+tardes%2C+me+pueden+ayudar+con+más+informaci%C3%B3n');
         });

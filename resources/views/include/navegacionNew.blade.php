@@ -1,4 +1,4 @@
-<header class="sticky-top d-none d-md-none d-lg-block">
+<header id="menuLG" class="sticky-top d-none d-md-none d-lg-block">
     <noscript>Por favor habilita JavaScript para usar este sitio</noscript>
     <nav class="navigation" style="background-color: #013F7A !important; padding: 8px 0px !important;">
         <div class="wrapper d-flex">
@@ -64,7 +64,7 @@
         </div>
     </nav>
     <div class="wrapper">
-        <nav class="subnav1" id="subnavAbout1">
+        <nav class="subnav" id="subnavAbout">
             <a class="btn-close-nav" onclick="subnav.hide('subnavAbout')"></a>
             <div class="container">
                 <div class="row">
@@ -94,7 +94,7 @@
                 </div>
             </div>
         </nav>
-        <nav class="subnav1" id="subnavSchools1">
+        <nav class="subnav" id="subnavSchools">
             <a class="btn-close-nav" onclick="subnav.hide('subnavSchools')"></a>
             <div class="container">
                 <div class="row">
@@ -122,7 +122,7 @@
                 </div>
             </div>
         </nav>
-        <nav class="subnav1" id="alumnosegresados1">
+        <nav class="subnav" id="alumnosegresados">
             <a class="btn-close-nav" onclick="subnav.hide('alumnosegresados')"></a>
             <div class="container">
                 <div class="row">
@@ -381,7 +381,7 @@
                 </div>
             </div>
         </nav>
-        <nav class="subnav1" id="subnavAcademicOffer1">
+        <nav class="subnav" id="subnavAcademicOffer">
             <a class="btn-close-nav" onclick="subnav.hide('subnavAcademicOffer1')"></a>
             <div class="container">
                 <div class="row">
