@@ -11,6 +11,19 @@
     }
 
     /*
+        Estilos de flechas para carrucel de carreras en pagina de incio
+    */
+    .slick-prev {
+        left: 6%;
+        top: 50%;
+    }
+
+    .slick-next {
+        right: 2%;
+        top: 50%;
+    }
+
+    /*
         Estilos del contenedor de cada item del carrucel inicial
     */
     .itemBannerInit {

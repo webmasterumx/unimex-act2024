@@ -464,7 +464,7 @@ body {
 }
 
 #estadisticas {
-    background-image: url(http://sistema.com:8000/assets/img/extras/acercade/bg.jpg);
+    background-image: url(../img/extras/acercade/bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
