@@ -36,6 +36,7 @@
     <link rel="stylesheet" href="//cdn.datatables.net/2.0.1/css/dataTables.dataTables.min.css">
 
     <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/mediaQuery.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/non-critical-styles10062022.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/flotante.min.css') }}">
 

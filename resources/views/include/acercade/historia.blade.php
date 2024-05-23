@@ -40,9 +40,9 @@
 <!-- Fin de historia de unimex -->
 
 <!-- Inicio de estadisticas -->
-<section id="estadisticas" class="container-fluid py-5" style="background-image: url({{ asset('assets/img/extras/acercade/bg.jpg') }})">
+<section id="estadisticas" class="container-fluid py-5">
     <div class="row">
-        <div class="col-12 col-md-3 col-lg-3">
+        <div class="col-12 col-md-6 col-lg-3">
             <div class="row">
                 <div class="col-6">
                     <center>
@@ -57,7 +57,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-12 col-md-3 col-lg-3">
+        <div class="col-12 col-md-6 col-lg-3 mt-3 mt-md-0 mt-lg-0">
             <div class="row">
                 <div class="col-6">
                     <center>
@@ -72,7 +72,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-12 col-md-3 col-lg-3">
+        <div class="col-12 col-md-6 col-lg-3 mt-3 mt-md-0 mt-lg-0">
             <div class="row">
                 <div class="col-6">
                     <center>
@@ -87,7 +87,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-12 col-md-3 col-lg-3">
+        <div class="col-12 col-md-6 col-lg-3 mt-3 mt-md-0 mt-lg-0">
             <div class="row">
                 <div class="col-6">
                     <center>

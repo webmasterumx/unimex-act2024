@@ -3,7 +3,7 @@
     <div class="col-12">
         <h4 class="fw-normal">Servicio para Alumnos</h4>
     </div>
-    <div class="mb-2 col-6">
+    <div class="mb-2 col-12 col-md-6">
         <div class="mb-3">
             <label for="name_service" class="form-label">
                 <i class="bi bi-person-fill" style="color: #004b93;"></i> Nombre Completo
@@ -12,7 +12,7 @@
                 id="name_service" name="name_service">
         </div>
     </div>
-    <div class="mb-2 col-6">
+    <div class="mb-2 col-12 col-md-6">
         <div class="mb-3">
             <label for="email_service" class="form-label">
                 <i class="bi bi-envelope-fill" style="color: #004b93;"></i> Correo Electrónico
@@ -21,7 +21,7 @@
                 name="email_service">
         </div>
     </div>
-    <div class="mb-2 col-4">
+    <div class="mb-2 col-12 col-md-4">
         <div class="mb-3">
             <label for="phone_casa_service" class="form-label">
                 <i class="bi bi-telephone-fill" style="color: #004b93;"></i>Teléfono de Casa
@@ -30,7 +30,7 @@
                 name="phone_casa_service" maxlength="10" minlength="10">
         </div>
     </div>
-    <div class="mb-2 col-4">
+    <div class="mb-2 col-12 col-md-4">
         <div class="mb-3">
             <label for="movil_service" class="form-label">
                 <i class="bi bi-phone-fill" style="color: #004b93;"></i> Teléfono celular
@@ -39,7 +39,7 @@
                 name="movil_service" maxlength="10" minlength="10">
         </div>
     </div>
-    <div class="mb-2 col-4">
+    <div class="mb-2 col-12 col-md-4">
         <label for="select_plantel">
             <i class="bi bi-bank" style="color: #004b93;"></i> Plantel
         </label>
@@ -51,7 +51,7 @@
             <option value="VERACRUZ">VERACRUZ</option>
         </select>
     </div>
-    <div class="mb-2 col-6">
+    <div class="mb-2 col-12 col-md-6">
         <div class="mb-3">
             <label for="asunto_service" class="form-label">
                 <i class="bi bi-bookmark-check-fill" style="color: #004b93;"></i> Asunto
@@ -61,7 +61,7 @@
             <label for="asunto_service">Evita usar caracteres especiales.</label>
         </div>
     </div>
-    <div class="mb-2 col-6">
+    <div class="mb-2 col-12 col-md-6">
         <div class="mb-3">
             <label for="matricula_service" class="form-label">
                 <i class="bi bi-credit-card-fill" style="color: #004b93;"></i> Matrícula
@@ -106,10 +106,10 @@
             </label>
         </div>
     </div>
-    <div class="mb-4 col-4">
+    <div class="mb-4 col-6 col-md-4">
         <button id="enviarDatosServicio" type="submit" class="btn btn-primary mt-3">ENVIAR DATOS</button>
     </div>
-    <div class="mb-4 col-4">
+    <div class="mb-4 col-6 col-md-4">
         <button onclick="resetForms(1)" type="button" class="btn btn-outline-danger mt-3">BORRAR DATOS</button>
     </div>
 </form>

@@ -74,7 +74,6 @@
                                 </div>
                             </div>
                         @endif
-
                     </div>
                 @endforeach
             </div>
@@ -98,7 +97,7 @@
                     <div id="listCarreras">
                         @foreach ($listaCarreras as $carrera)
                             <a href="{{ route('licenciatura', $carrera->slug) }}" class="card mx-2 h-100">
-                                <div class="card-body p-1">
+                                <div class="card-body p-3">
                                     <center>
                                         <img style="min-height: 80px !important;" src="{{ $carrera->icon }}"
                                             alt="{{ $carrera->slug }}" title="Ver más">

@@ -59,7 +59,7 @@
             </div>
             <div class="col-12 col-md-6 text-center">
                 <p style="color: #014B94 !important; font-size: 15px !important;">
-                   {!! $licenciatura_sua->reconocimiento !!}
+                    {!! $licenciatura_sua->reconocimiento !!}
                 </p>
             </div>
             <div class="col-12  text-center">
@@ -96,11 +96,11 @@
     </section>
     <!-- Fin de la sección de objetivo -->
 
-    <!-- Inicio de la sección de ventajas -->
+    <!-- Inicio de la sección de ventajas height: 500px !important; -->
     <section class="container-fluid">
         <div class="row">
             <div class="col-12 col-md-6 col-lg-6 p-0">
-                <div id="carrucelVentajas" style="height: 500px !important;">
+                <div id="carrucelVentajas">
                     <div style="width: 100%; height: 90vh;">
                         <img style="width: 100%;" src="{{ asset('assets/img/licenciaturasSua/TERMINA_EN_2.png') }}"
                             class="lazyload" alt="Licenciatura UNIMEX" />
@@ -267,7 +267,7 @@
                 </p>
             </div>
             <div class="col-12 col-md-6 col-lg-6 px-3">
-                <div id="campo_laboral" style="max-height: 100px !important">
+                <div id="campo_laboral">
                     @for ($z = 0; $z < sizeof($campo_laboral); $z++)
                         <div class="card bg-transparent border-0">
                             <div class="card-body text-center text-white">
@@ -297,7 +297,7 @@
                 <h2 class="underlined-head fw-normal" style="font-size: 1.438rem;">
                     REQUISITOS
                 </h2>
-                <div id="requisitos">
+                <div id="requisitosSUA">
                     <div class="card border-0">
                         <div class="card-body">
                             <p class="fw-bold">Sólo necesitas:</p>
@@ -359,12 +359,34 @@
     <script src="{{ asset('assets/js/combosCarrera.js') }}"></script>
     <script>
         $('#temario').slick({
-            infinite: false,
+            infinite: true,
             autoplay: false,
             slidesToShow: 4,
             slidesToScroll: 4,
             arrows: true,
             autoplaySpeed: 2000,
+            responsive: [{
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ],
             prevArrow: '<button type="button" class="slick-prev-tema"><i class="bi bi-chevron-compact-left"></i></button>',
             nextArrow: '<button type="button" class="slick-next-tema"><i class="bi bi-chevron-compact-right"></i></button>',
         });
@@ -376,11 +398,33 @@
             slidesToScroll: 3,
             arrows: true,
             autoplaySpeed: 2000,
+            responsive: [{
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ],
             prevArrow: '<button type="button" class="slick-prev-campo"><i class="bi bi-chevron-compact-left"></i></button>',
             nextArrow: '<button type="button" class="slick-next-campo"><i class="bi bi-chevron-compact-right"></i></button>',
         });
 
-        $('#requisitos').slick({
+        $('#requisitosSUA').slick({
             infinite: false,
             autoplay: false,
             slidesToShow: 1,
@@ -431,7 +475,7 @@
         var carreraPosicionado = "{{ $licenciatura_sua->titulo }}";
 
         $('#carrucelVentajas').slick({
-            autoplay: true,
+            autoplay: false,
             autoplaySpeed: 1000,
             dots: false,
             arrows: false,

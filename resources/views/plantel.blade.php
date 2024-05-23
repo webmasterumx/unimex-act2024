@@ -9,7 +9,6 @@
         #plantel {
             background: no-repeat center center;
             background-size: cover;
-            height: 74vh;
             margin: auto;
         }
 
@@ -62,12 +61,10 @@
     <!-- Inicipo de la sección de galería -->
     <section class="container-fluid py-5" style="background-color: #20324f;">
         <h2 class="text-center text-white">NUESTRO CAMPUS</h2><br>
-        <div class="row row-cols-1 row-cols-md-5 g-4">
+        <div id="nuestroCampus">
             @for ($i = 0; $i < count($galeria->galeria); $i++)
-                <div class="col">
-                    <div class="card">
-                        <img src="{{ asset($galeria->galeria[$i]) }}" class="card-img-top" alt="...">
-                    </div>
+                <div class="card p-md-3 p-lg-3 border-0" style="background-color: #20324f;">
+                    <img class="img-fluid m-auto" src="{{ asset($galeria->galeria[$i]) }}" class="card-img-top" alt="...">
                 </div>
             @endfor
         </div>
@@ -107,14 +104,15 @@
     <section class="container py-5">
         <div class="row">
             @foreach ($plantelesInNot as $plantelInNot)
-                <div class="col-12 col-md-4 col-lg-4">
-                    <div class="card h-100" style="width: 18rem;">
+                <div class="col-12 col-md-4 col-lg-4 mb-3">
+                    <div class="card h-100 m-auto" style="width: 18rem;">
                         <a href="{{ route('plantel', $plantelInNot->nombre) }}">
                             <img src="{{ asset($plantelInNot->portada) }}" class="card-img-top"
                                 alt="{{ $plantelInNot->nombre }}">
                         </a>
                         <div class="card-body">
-                            <h5 class="card-title underlined-head text-uppercase"> plantel {{ $plantelInNot->titulo }} </h5>
+                            <h5 class="card-title underlined-head text-uppercase"> plantel {{ $plantelInNot->titulo }}
+                            </h5>
                             <p class="card-text"> {{ $plantelInNot->descripcion_corta }} </p>
                             <center>
                                 <a href="{{ route('plantel', $plantelInNot->nombre) }}" class="btn btn-primary">VER MÁS</a>
@@ -126,4 +124,41 @@
         </div>
     </section>
     <!-- Fin de la sección de planteles diferentes al actual -->
+@endsection
+
+@section('scripts')
+    <script>
+        $('#nuestroCampus').slick({
+            infinite: true,
+            autoplay: false,
+            slidesToShow: 5,
+            slidesToScroll: 5,
+            arrows: true,
+            autoplaySpeed: 2000,
+            responsive: [{
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ],
+            prevArrow: '<button type="button" class="slick-prev-plantel"><i class="bi bi-chevron-compact-left"></i></button>',
+            nextArrow: '<button type="button" class="slick-next-plantel"><i class="bi bi-chevron-compact-right"></i></button>',
+        });
+    </script>
 @endsection

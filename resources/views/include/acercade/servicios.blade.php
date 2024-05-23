@@ -1,7 +1,7 @@
 <!-- Inicio de servicios -->
 <section class="container-fluid py-0">
     <div class="row">
-        <div class="col-6 p-5">
+        <div class="col-12 col-md-6 p-5">
             <h2 class="underlined-head mt-5 fw-normal" style="font-size: 1.438rem;">
                 Sala de Usos Múltiples
             </h2>
@@ -18,11 +18,16 @@
                 <br>
             </p>
         </div>
-        <div class="fondoServicios col-6" style="background-image: url({{ asset('assets/img/extras/acercade/multipurpose-room.jpg') }})">
+        <div class="fondoServiciosSm col-12 col-md-6"
+            style="background-image: url({{ asset('assets/img/extras/acercade/multipurpose-room.jpg') }})">
         </div>
-        <div class="fondoServicios col-6" style="background-image: url({{ asset('assets/img/extras/acercade/computer-room.jpg') }})">
+        <div class="fondoServicios col-12 col-md-6"
+            style="background-image: url({{ asset('assets/img/extras/acercade/multipurpose-room.jpg') }})">
         </div>
-        <div class="col-6 p-5">
+        <div class="fondoServicios col-12 col-md-6"
+            style="background-image: url({{ asset('assets/img/extras/acercade/computer-room.jpg') }})">
+        </div>
+        <div class="col-12 col-md-6 p-5">
             <h2 class="underlined-head mt-5 fw-normal" style="font-size: 1.438rem;">
                 Centro de Cómputo
             </h2>
@@ -45,7 +50,10 @@
                 </b>
             </p>
         </div>
-        <div class="col-6 p-5">
+        <div class="fondoServiciosSm col-12 col-md-6"
+            style="background-image: url({{ asset('assets/img/extras/acercade/computer-room.jpg') }})">
+        </div>
+        <div class="col-12 col-md-6 p-5">
             <h2 class="underlined-head mt-5 fw-normal" style="font-size: 1.438rem;">
                 Laboratorio Digital
             </h2>
@@ -62,10 +70,15 @@
                 multimedia para presentaciones y materiales didácticos que complementen las clases.
             </p>
         </div>
-        <div class="fondoServicios col-6" style="background-image: url({{ asset('assets/img/extras/acercade/digital-lab.jpg') }})">
+        <div class="fondoServiciosSm col-12 col-md-6"
+            style="background-image: url({{ asset('assets/img/extras/acercade/digital-lab.jpg') }})">
         </div>
-        <div class="fondoServicios col-6" style="background-image: url({{ asset('assets/img/extras/acercade/cafeteria.jpg') }})"></div>
-        <div class="col-6 p-5">
+        <div class="fondoServicios col-12 col-md-6"
+            style="background-image: url({{ asset('assets/img/extras/acercade/digital-lab.jpg') }})">
+        </div>
+        <div class="fondoServicios col-12 col-md-6"
+            style="background-image: url({{ asset('assets/img/extras/acercade/cafeteria.jpg') }})"></div>
+        <div class="col-12 col-md-6 p-5">
             <h2 class="underlined-head mt-5 fw-normal" style="font-size: 1.438rem;">
                 Cafetería
             </h2>
@@ -76,7 +89,9 @@
                 haces tú.
             </p>
         </div>
-        <div class="col-6 p-5">
+        <div class="fondoServiciosSm col-12 col-md-6"
+            style="background-image: url({{ asset('assets/img/extras/acercade/cafeteria.jpg') }})"></div>
+        <div class="col-12 col-md-6 p-5">
             <h2 class="underlined-head mt-5 fw-normal" style="font-size: 1.438rem;">
                 Biblioteca UNIMEX®
             </h2>
@@ -108,7 +123,10 @@
                 Horario de Atención Lunes a viernes: de 7:00 a 22:00 h, sábados: de 7:00 a 16:00 h.
             </p>
         </div>
-        <div class="fondoServicios col-6" style="background-image: url({{ asset('assets/img/extras/acercade/library.jpg') }})"></div>
+        <div class="fondoServiciosSm col-12 col-md-6"
+            style="background-image: url({{ asset('assets/img/extras/acercade/library.jpg') }})"></div>
+        <div class="fondoServicios col-12 col-md-6"
+            style="background-image: url({{ asset('assets/img/extras/acercade/library.jpg') }})"></div>
     </div>
 </section>
 <!-- Fin de servicios-->

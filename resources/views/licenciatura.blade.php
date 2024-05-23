@@ -35,7 +35,7 @@
 @section('content')
     <!-- Inicio de portada -->
     <section id="portada" style="background-image: url({{ asset($licenciatura->portada) }}); position: relative;">
-        <h1 style="font-size: 30px !important;" class="etiqueta-titulo p-3 text-uppercase">
+        <h1 class="etiqueta-titulo p-3 text-uppercase">
             LICENCIATURA EN {{ $licenciatura->subtitulo }}
         </h1>
         @if ($licenciatura->statusVer == true)
@@ -60,24 +60,24 @@
             </div>
             <div class="col-12">
                 <div class="row">
-                    <div class="col-4">
+                    <div class="col-12 col-md-4">
                         <div class="d-grid gap-2">
                             <a id="redireccionCTCL" href="#" class="btn btn-outline-primary">
                                 Calculadora de Becas
                             </a>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-md-4">
                         <div class="d-grid gap-2">
-                            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                            <button type="button" class="btn btn-outline-primary mt-2 mt-mb-0" data-bs-toggle="modal"
                                 data-bs-target="#comoObtengoMiBecaModal">
                                 Más información
                             </button>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-md-4">
                         <div class="d-grid gap-2">
-                            <a id="redireccionPELL" href="#" class="btn text-white"
+                            <a id="redireccionPELL" href="#" class="btn text-white mt-2 mt-mb-0"
                                 style="background-color: #de951b;">
                                 Preinscripción En Línea
                             </a>
@@ -228,7 +228,7 @@
                 </p>
             </div>
             <div class="col-12 col-md-6 col-lg-6 px-3">
-                <div id="campo_laboral" style="max-height: 100px !important">
+                <div id="campo_laboral" style="max-height: 164px !important">
                     @for ($z = 0; $z < sizeof($campo_laboral); $z++)
                         <div class="card bg-transparent border-0">
                             <div class="card-body text-center text-white">
@@ -354,6 +354,28 @@
             slidesToShow: 4,
             slidesToScroll: 4,
             arrows: true,
+            responsive: [{
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ],
             autoplaySpeed: 2000,
             prevArrow: '<button type="button" class="slick-prev-tema"><i class="bi bi-chevron-compact-left"></i></button>',
             nextArrow: '<button type="button" class="slick-next-tema"><i class="bi bi-chevron-compact-right"></i></button>',
@@ -366,6 +388,28 @@
             slidesToScroll: 3,
             arrows: true,
             autoplaySpeed: 2000,
+            responsive: [{
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ],
             prevArrow: '<button type="button" class="slick-prev-campo"><i class="bi bi-chevron-compact-left"></i></button>',
             nextArrow: '<button type="button" class="slick-next-campo"><i class="bi bi-chevron-compact-right"></i></button>',
         });

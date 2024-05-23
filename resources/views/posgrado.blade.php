@@ -304,7 +304,8 @@
                                 <b>Si deseas titularte de Licenciatura mediante estudios de Posgrado</b> <br><br>
                                 Original o copia certificada del Acta de Nacimiento y una fotocopia. <br>
                                 Original y una fotocopia del Certificado Total de Estudios de Licenciatura* <br>
-                                En caso de cursar el Posgrado como medio de Titulación, presentar una Carta de Autorización. <br>
+                                En caso de cursar el Posgrado como medio de Titulación, presentar una Carta de Autorización.
+                                <br>
                                 para Titularse vía créditos de Posgrado, emitida por tu Universidad de origen**, indicando
                                 el porcentaje de créditos necesarios.
                                 <br><br>
@@ -364,6 +365,28 @@
             slidesToScroll: 3,
             arrows: true,
             autoplaySpeed: 2000,
+            responsive: [{
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ],
             prevArrow: '<button type="button" class="slick-prev-tema"><i class="bi bi-chevron-compact-left"></i></button>',
             nextArrow: '<button type="button" class="slick-next-tema"><i class="bi bi-chevron-compact-right"></i></button>',
         });
@@ -375,6 +398,28 @@
             slidesToScroll: 3,
             arrows: true,
             autoplaySpeed: 2000,
+            responsive: [{
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ],
             prevArrow: '<button type="button" class="slick-prev-tema"><i class="bi bi-chevron-compact-left"></i></button>',
             nextArrow: '<button type="button" class="slick-next-tema"><i class="bi bi-chevron-compact-right"></i></button>',
         });

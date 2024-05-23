@@ -31,11 +31,11 @@
             </p>
             <p class="f-4 fs-5 text-center" style="color: black;">
                 “La fórmula que proponemos para el éxito es sencilla: el trabajo constante y el gran compromiso para
-                encarar los retos”
+                encarar los retos”.
             </p>
         </div>
-        <div class="col-12 col-md-3 col-lg-2">
-            <img src="{{ asset('assets/img/extras/acercade/principal.png') }}" alt="">
+        <div class="col-12 col-md-5 col-lg-4">
+            <img class="img-fluid m-auto" src="{{ asset('assets/img/extras/acercade/principal.png') }}" alt="">
         </div>
     </div>
 </section>

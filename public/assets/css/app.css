@@ -132,7 +132,6 @@ body {
 }
 
 #portada {
-    height: 90vh;
     background-position: center;
     background-size: cover;
 }
@@ -149,7 +148,6 @@ body {
     vertical-align: middle;
     align-items: center;
     justify-content: space-evenly;
-
 }
 
 .underlined-head {
@@ -162,7 +160,7 @@ body {
 .underlined_head_obj {
     text-align: center;
     margin-top: 0;
-    padding-bottom: 13px;
+    padding-bottom: 30px;
     background: url(../img/extras/underlined.png) no-repeat left bottom;
     background-position: center;
     background-position-y: 76%;
@@ -202,6 +200,33 @@ body {
     height: 100px;
     font-size: 70px;
     right: 0;
+    background-color: transparent;
+    border: 0;
+}
+
+
+.slick-prev-plantel {
+    position: absolute;
+    top: 30%;
+    z-index: 10;
+    margin: -20px 0px 0px -55px;
+    width: 40px;
+    color: #fff;
+    height: 100px;
+    font-size: 70px;
+    background-color: transparent;
+    border: 0;
+}
+
+.slick-next-plantel {
+    position: absolute;
+    top: 30%;
+    z-index: 10;
+    margin: -20px -13px 0px 0px;
+    width: 40px;
+    color: #fff;
+    height: 100px;
+    font-size: 70px;
     background-color: transparent;
     border: 0;
 }
@@ -416,6 +441,34 @@ body {
     color: #fff !important;
 }
 
+.etiqueta-titulo-acercade,
+.etiqueta-titulo-acercade-mensaje {
+    text-align: center !important;
+    color: #fff;
+    margin: auto;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-weight: 400;
+}
+
+.fondoServicios,
+.fondoServiciosSm {
+    background: no-repeat center center;
+    background-size: cover;
+}
+
+#historia {
+    background: no-repeat center center;
+    background-size: cover;
+    margin: auto;
+}
+
+#estadisticas {
+    background-image: url(http://sistema.com:8000/assets/img/extras/acercade/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
 
 #bannerCalculadoraInicial {
     background-image: url('../img/calculadora_de_cuotas/unimex_banner_calculadora.jpg');
@@ -435,143 +488,3 @@ body {
     color: #004b93 !important;
 }
 
-@media (min-width: 200px) and (max-width: 300px) {
-    #bannerInicial {
-        height: 8rem;
-    }
-
-    #closeModalCalculadora {
-        position: relative;
-        top: 13%;
-        left: 46%;
-    }
-
-    .itemBannerInit {
-        height: 15rem;
-    }
-}
-
-@media (min-width: 300px) and (max-width: 600.98px) {
-    #bannerInicial {
-        height: 11rem;
-    }
-
-    .slick-prev {
-        top: 50%;
-        left: 3%;
-    }
-
-    .slick-next {
-        top: 50%;
-        right: 4%;
-    }
-
-    #closeModalCalculadora {
-        position: relative;
-        top: 13%;
-        left: 46%;
-    }
-
-    .itemBannerInit {
-        height: 15rem;
-    }
-}
-
-@media (min-width: 600px) and (max-width: 800.98px) {
-    #bannerInicial {
-        height: 20rem;
-    }
-
-    #closeModalCalculadora {
-        position: relative;
-        top: 13%;
-        left: 46%;
-    }
-
-
-    .slick-prev {
-        top: 50%;
-        left: 3%;
-    }
-
-    .slick-next {
-        top: 50%;
-        right: 4%;
-    }
-
-    .itemBannerInit {
-        height: 20rem;
-    }
-}
-
-
-@media (min-width: 800.98px) and (max-width: 900.98px) {
-
-    #bannerInicial {
-        height: 24rem;
-    }
-
-    #closeModalCalculadora {
-        position: relative;
-        top: 14%;
-        left: 46%;
-    }
-
-    .itemBannerInit {
-        height: 24rem;
-    }
-}
-
-
-@media (min-width: 900.98px) and (max-width: 1199.98px) {
-
-    #bannerInicial {
-        height: 26rem;
-    }
-
-    #closeModalCalculadora {
-        position: relative;
-        top: 12%;
-        left: 46%;
-    }
-
-    .itemBannerInit {
-        height: 26rem;
-    }
-}
-
-
-@media (min-width: 1199.98px) and (max-width: 1399.98px) {
-
-    #bannerInicial {
-        height: 31rem;
-    }
-
-    #closeModalCalculadora {
-        position: relative;
-        top: -42%;
-        left: 73%;
-    }
-
-    .itemBannerInit {
-        height: 31rem;
-    }
-}
-
-
-@media (min-width: 1399.98px) and (max-width: 1500.99px) {
-
-    #bannerInicial {
-        height: 32rem;
-    }
-
-    #closeModalCalculadora {
-        position: relative;
-        top: -42%;
-        left: 73%;
-    }
-
-    .itemBannerInit {
-        height: 32rem !important;
-    }
-}

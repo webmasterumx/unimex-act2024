@@ -31,7 +31,7 @@
         <input style="height: 32px !important;" type="text" class="form-control form-control-sm"
             id="telefono_movil_trabaja" name="telefono_movil_trabaja" minlength="8" maxlength="10">
     </div>
-    <div class="mb-3 col-3">
+    <div class="mb-3 co-12 col-md-3">
         <label for="select_plantel">
             <i class="bi bi-bank" style="color: #004b93;"></i> Plantel de interes:
         </label>
@@ -44,7 +44,7 @@
             <option value="VERACRUZ">VERACRUZ</option>
         </select>
     </div>
-    <div class="mb-3 col-3">
+    <div class="mb-3 col-12 col-md-3">
         <label for="select_plantel">
             <i class="bi bi-book-fill" style="color: #004b93;"></i>Último Nivel de Estudios
         </label>
@@ -112,10 +112,10 @@
             </label>
         </div>
     </div>
-    <div class="mb-4 col-4 mt-3">
+    <div class="mb-4 col-6 col-md-4 mt-3">
         <button id="enviarDatosTrabaja" type="submit" class="btn btn-primary">ENVIAR DATOS</button>
     </div>
-    <div class="mb-4 col-4 mt-3">
+    <div class="mb-4 col-6 col-md-4 mt-3">
         <button onclick="resetForms(2);" type="button" class="btn btn-outline-danger">BORRAR DATOS</button>
     </div>
 </form>
