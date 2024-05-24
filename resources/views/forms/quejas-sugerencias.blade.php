@@ -78,10 +78,10 @@
             </a>
         </label>
     </div>
-    <div class="mb-4 col-6 col-md-4">
+    <div class="mb-4 col-12 col-md-4">
         <button id="enviarDatosAceptar" type="submit" class="btn btn-primary">ENVIAR DATOS</button>
     </div>
-    <div class="mb-4 col-6 col-md-4">
+    <div class="mb-4 col-12 col-md-4">
         <button onclick=" resetForms(3);" type="button" class="btn btn-outline-danger">BORRAR DATOS</button>
     </div>
 </form>

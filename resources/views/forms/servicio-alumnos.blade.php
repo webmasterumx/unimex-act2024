@@ -106,10 +106,10 @@
             </label>
         </div>
     </div>
-    <div class="mb-4 col-6 col-md-4">
+    <div class="mb-4 col-12 col-md-4">
         <button id="enviarDatosServicio" type="submit" class="btn btn-primary mt-3">ENVIAR DATOS</button>
     </div>
-    <div class="mb-4 col-6 col-md-4">
+    <div class="mb-4 col-12 col-md-4">
         <button onclick="resetForms(1)" type="button" class="btn btn-outline-danger mt-3">BORRAR DATOS</button>
     </div>
 </form>

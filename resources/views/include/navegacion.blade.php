@@ -19,10 +19,6 @@
                             title="Conoce nuestras Licenciaturas, Maestrías y Posgrados">Oferta Académica</a>
                     </li>
                     <li>
-                        <a href="{{ route('calcula_tu_cuota') }}" target="_blank" rel="noopener"
-                            title="Calcula tu Cuota">Calcula tu cuota</a>
-                    </li>
-                    <li>
                         <a onclick="subnav.show('subnavSchools')" title="Conoce nuestros 4 Planteles">Planteles</a>
                     </li>
                     <li>
@@ -31,6 +27,14 @@
                     </li>
                     <li>
                         <a href="{{ route('contacto') }}" title="¿Necesitas ayuda?">Contacto</a>
+                    </li>
+                    <li>
+                        <a  style="color: #004b93;" href="" target="_blank" rel="noopener"
+                            title="Calcula tu Cuota">Calculadora de becas</a>
+                    </li>
+                    <li>
+                        <a  style="color: #004b93;" href="" target="_blank" rel="noopener"
+                            title="Calcula tu Cuota">Preinscripción en línea</a>
                     </li>
                 </ul>
             </div>

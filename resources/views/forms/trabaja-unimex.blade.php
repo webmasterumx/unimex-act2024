@@ -112,10 +112,10 @@
             </label>
         </div>
     </div>
-    <div class="mb-4 col-6 col-md-4 mt-3">
+    <div class="mb-4 col-12 col-md-4 mt-3">
         <button id="enviarDatosTrabaja" type="submit" class="btn btn-primary">ENVIAR DATOS</button>
     </div>
-    <div class="mb-4 col-6 col-md-4 mt-3">
+    <div class="mb-4 col-12 col-md-4 mt-3">
         <button onclick="resetForms(2);" type="button" class="btn btn-outline-danger">BORRAR DATOS</button>
     </div>
 </form>

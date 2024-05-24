@@ -88,14 +88,14 @@
                             ¿Tu empresa está dada de alta en OCC para publicar vacantes?
                         </p>
                         <div class="row">
-                            <div class="col-6 text-center">
+                            <div class="col-12 col-md-6 text-center">
                                 <!-- Button trigger modal -->
                                 <button onclick="establecerTipoDeEmpresaOCC(1)" type="button" class="btn btn-primary"
                                     data-bs-toggle="modal" data-bs-target="#empresasOCC">
                                     SÍ, YA TENEMOS UNA <br> CUENTA EN OCC
                                 </button>
                             </div>
-                            <div class="col-6" text-center>
+                            <div class="col-12 col-md-6" text-center>
                                 <button onclick="establecerTipoDeEmpresaOCC(0)" type="button" class="btn btn-primary"
                                     data-bs-toggle="modal" data-bs-target="#empresasOCC">
                                     AÚN NO, QUEREMOS OBTENER <br> UNA CUENTA GRATUITA PARA <br> PUBLICAR VACANTES PARA <br>
