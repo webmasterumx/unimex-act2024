@@ -67,7 +67,7 @@
             </div>
             <div class="col-12 mt-3">
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-12 col-md-6 mb-3 mb-md-0">
                         <div class="d-grid gap-2">
                             <a id="redireccionCTCL" href="#" class="btn btn-outline-primary">
                                 Calculadora de Becas
@@ -82,7 +82,7 @@
                             </button>
                         </div>
                     </div> --}}
-                    <div class="col-6">
+                    <div class="col-12 col-md-6 mb-3 mb-md-0">
                         <div class="d-grid gap-2">
                             <a id="redireccionPELL" href="#" class="btn text-white"
                                 style="background-color: #de951b;">
@@ -475,7 +475,7 @@
         var carreraPosicionado = "{{ $licenciatura_sua->titulo }}";
 
         $('#carrucelVentajas').slick({
-            autoplay: false,
+            autoplay: true,
             autoplaySpeed: 1000,
             dots: false,
             arrows: false,

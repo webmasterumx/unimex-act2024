@@ -258,9 +258,9 @@
                 <h2 class="underlined-head fw-normal" style="font-size: 1.438rem;">
                     REQUISITOS
                 </h2>
-                <div id="requisitos">
+                <div class="p-0" id="requisitos">
                     <div class="card border-0">
-                        <div class="card-body">
+                        <div class="card-body p-0">
                             <p>
                                 <b>
                                     Paga tu Inscripción en Sucursal ScotiaBank o en Plantel (no efectivo, sólo tarjeta).
@@ -282,7 +282,7 @@
                         </div>
                     </div>
                     <div class="card border-0">
-                        <div class="card-body">
+                        <div class="card-body p-0">
                             <p>
                                 <b>
                                     Entrega de Documentación:

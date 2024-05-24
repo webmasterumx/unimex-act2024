@@ -64,7 +64,7 @@
             </div>
             <div class="col-12 mt-3">
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-12 col-md-6 mb-2 mb-md-0">
                         <div class="d-grid gap-2">
                             <a id="redireccionCTCL" href="#" class="btn btn-outline-primary">
                                 Calculadora de Becas
@@ -79,7 +79,7 @@
                             </button>
                         </div>
                     </div> --}}
-                    <div class="col-6">
+                    <div class="col-12 col-md-6 mb-2 mb-md-0">
                         <div class="d-grid gap-2">
                             <a id="redireccionPELL" href="#" class="btn text-white"
                                 style="background-color: #de951b;">
@@ -233,9 +233,9 @@
                     aperturas en el plantel de tu elección.
                     <br><br>
                     <button data-bs-toggle="modal" data-bs-target="#continuaConTuMaestria" type="button"
-                        class="btn btn-primary">Continúa con tu maestría en UNIMEX</button>
+                        class="btn btn-primary mb-2 mb-md-0">Continúa con tu maestría en UNIMEX</button>
                     <button data-bs-toggle="modal" data-bs-target="#titulacionEstudiosPosgrado" type="button"
-                        class="btn btn-primary">Titulación vía estudios de posgrados</button>
+                        class="btn btn-primary mb-2 mb-md-0">Titulación vía estudios de posgrados</button>
                 </p>
             </div>
         </div>
