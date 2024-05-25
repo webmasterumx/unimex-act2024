@@ -372,6 +372,39 @@
     #historia {
         height: 38vh;
     }
+
+    /*
+
+        ================> PAGINA ACERCA DE <=================
+
+        Estilos de la portada de esta pagina
+    */
+    #historia {
+        height: 70vh;
+    }
+
+    .etiqueta-titulo-acercade-mensaje {
+        top: 38%;
+        font-size: 32px;
+        width: 58%;
+    }
+
+    /*
+
+        =====================> Estilos en la Pagina de Plantel <============================
+
+    */
+    #plantel {
+        height: 68vh;
+    }
+
+    /*
+        ================> Paginas de oferta academica <===================
+
+    */
+    #portada {
+        height: 78vh;
+    }
 }
 
 @media (min-width: 600px) and (max-width: 800.98px) {
@@ -481,6 +514,39 @@
 
     .itemBannerInit {
         height: 24rem;
+    }
+
+    /*
+
+        ================> PAGINA ACERCA DE <=================
+
+        Estilos de la portada de esta pagina
+    */
+    #historia {
+        height: 70vh;
+    }
+
+    .etiqueta-titulo-acercade-mensaje {
+        top: 38%;
+        font-size: 32px;
+        width: 58%;
+    }
+
+    /*
+
+        =====================> Estilos en la Pagina de Plantel <============================
+
+    */
+    #plantel {
+        height: 68vh;
+    }
+
+    /*
+        ================> Paginas de oferta academica <===================
+
+    */
+    #portada {
+        height: 78vh;
     }
 }
 
