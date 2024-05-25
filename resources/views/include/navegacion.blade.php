@@ -26,14 +26,14 @@
                             title="Servicios para nuestos Alumnos y Egresados">Alumnos Y Egresados</a>
                     </li>
                     <li>
-                        <a href="{{ route('contacto') }}" title="¿Necesitas ayuda?">Contacto</a>
+                        <a id="linkSmContacto" href="#" title="¿Necesitas ayuda?">Contacto</a>
                     </li>
                     <li>
-                        <a  style="color: #004b93;" href="" target="_blank" rel="noopener"
+                        <a id="linkCalculaTuBeca" style="color: #004b93;" href="#" rel="noopener"
                             title="Calcula tu Cuota">Calculadora de becas</a>
                     </li>
                     <li>
-                        <a  style="color: #004b93;" href="" target="_blank" rel="noopener"
+                        <a id="linkPreinscripcionEnLinea" style="color: #004b93;" href="#" rel="noopener"
                             title="Calcula tu Cuota">Preinscripción en línea</a>
                     </li>
                 </ul>

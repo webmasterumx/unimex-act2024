@@ -147,6 +147,19 @@
         right: 4%;
     }
 
+    /*
+        Estilos para los inputs de catcha de los formularios de contacto
+    */
+    #number3,
+    #number4,
+    #number1,
+    #number2,
+    #number5,
+    #number6,
+    #number7,
+    #number8 {
+        width: 100%;
+    }
 }
 
 /*
@@ -299,6 +312,20 @@
         right: 4%;
     }
 
+    /*
+        Estilos para los inputs de catcha de los formularios de contacto
+    */
+    #number3,
+    #number4,
+    #number1,
+    #number2,
+    #number5,
+    #number6,
+    #number7,
+    #number8 {
+        width: 100%;
+    }
+
 }
 
 @media (min-width: 500px) and (max-width: 600.98px) {
@@ -449,7 +476,7 @@
 @media (min-width: 1199.98px) and (max-width: 1399.98px) {
 
     #bannerInicial {
-        height: 31rem;
+        height: 34rem;
     }
 
     #closeModalCalculadora {
@@ -469,7 +496,7 @@
     }
 
     .itemBannerInit {
-        height: 31rem;
+        height: 34rem;
     }
 
     #historia {
@@ -517,6 +544,20 @@
 
     #campo_laboral {
         height: 15rem;
+    }
+
+    /*
+        Estilos para los inputs de catcha de los formularios de contacto
+    */
+    #number3,
+    #number4,
+    #number1,
+    #number2,
+    #number5,
+    #number6,
+    #number7,
+    #number8 {
+        width: 40%;
     }
 }
 
@@ -579,5 +620,19 @@
 
     #campo_laboral {
         height: 15rem;
+    }
+
+    /*
+        Estilos para los inputs de catcha de los formularios de contacto
+    */
+    #number3,
+    #number4,
+    #number1,
+    #number2,
+    #number5,
+    #number6,
+    #number7,
+    #number8 {
+        width: 40%;
     }
 }

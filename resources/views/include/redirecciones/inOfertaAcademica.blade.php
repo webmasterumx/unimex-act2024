@@ -1,6 +1,24 @@
 <script>
     $("#calculadoraHeader").on('click', function() {
+        calculadoraHeader();
+    });
 
+    $("#preinscripcionHeader").on('click', function() {
+        preinscripcionHeader();
+    });
+
+
+    $('#linkCalculaTuBeca').click(function(event) {
+        console.log("click desde oferta");
+        calculadoraHeader();
+    });
+
+    $('#linkPreinscripcionEnLinea').click(function(event) {
+        console.log("click desde oferta");
+        preinscripcionHeader();
+    })
+
+    function calculadoraHeader() {
         let nivel = nivelPosicionado;
         let carrera = carreraPosicionado;
         let carreraFinal = carrera.replace(/ /g, "_");
@@ -15,9 +33,9 @@
             console.log("Algo salió mal");
         });
         window.open("{{ route('calcula_tu_cuota') }}", '_blank');
-    });
+    }
 
-    $("#preinscripcionHeader").on('click', function() {
+    function preinscripcionHeader() {
         let nivel = nivelPosicionado;
         let carrera = carreraPosicionado;
         let carreraFinal = carrera.replace(/ /g, "_");
@@ -32,5 +50,5 @@
             console.log("Algo salió mal");
         });
         window.open("{{ route('preinscripcion.linea') }}", '_blank');
-    });
+    }
 </script>

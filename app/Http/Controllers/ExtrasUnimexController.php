@@ -173,4 +173,22 @@ class ExtrasUnimexController extends Controller
 
         return response()->json($respuesta);
     }
+
+
+    public function setVariablesFormContacto($elemento) 
+    {
+        session(["elementPosicionContactForm" => $elemento]);
+
+        $respuesta['estado'] = true;
+        $respuesta['mensaje'] = "variable establecida correctamente";
+
+        return response()->json($respuesta);
+    }
+
+    public function getVariablesFormContacto()  
+    {
+        $respuesta['elementPosicionContactForm'] = session('elementPosicionContactForm');
+
+        return response()->json($respuesta);
+    }
 }

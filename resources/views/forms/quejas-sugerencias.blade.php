@@ -56,14 +56,12 @@
     </div>
     <div class="mb-3 col-12">
         <div class="mb-2 row">
-            <div class="col-2 d-flex">
-                <input disabled type="text" class="text-center" style="width: 40% !important;" id="number5"
-                    name="number5">
+            <div class="col-12 col-md-2 d-flex">
+                <input disabled type="text" class="text-center" id="number5" name="number5">
                 <div class="d-flex" style="width: 20% !important; align-items: center;">&nbsp;+</div>
-                <input disabled type="text" class="text-center" style="width: 40% !important;" id="number6"
-                    name="number6">
+                <input disabled type="text" class="text-center" id="number6" name="number6">
             </div>
-            <div class="col-4">
+            <div class="col-12 col-md-4">
                 <input type="number" class="form-control" id="operacion_qys" name="operacion_qys"
                     placeholder="Introduce el resultadio aquí" maxlength="2">
             </div>
@@ -73,8 +71,8 @@
         <input class="form-check-input" type="checkbox" id="aceptar_qys" name="aceptar_qys" checked>
         <label class="form-check-label ms-4 mt-2" for="aceptar_qys">
             Estoy de acuerdo en ser contactado por UNIMEX® y acepto el <a href="javascript:void(0);"
-            onclick="window.open('{{ route('aviso_de_privacidad') }}','Privacidad','scrollbars=yes,width=1000,height=700')">
-            aviso de privacidad.
+                onclick="window.open('{{ route('aviso_de_privacidad') }}','Privacidad','scrollbars=yes,width=1000,height=700')">
+                aviso de privacidad.
             </a>
         </label>
     </div>

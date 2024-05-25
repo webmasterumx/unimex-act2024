@@ -45,6 +45,10 @@ Route::view('/aviso-de-privacidad', 'aviso-privacidad')->name('aviso_de_privacid
 Route::view('/datos/pago/preinscripcion', 'preinscripcionEnLinea.datosPago')->name('datos.pago');
 Route::post('/procesa/datos/folleto', [FormController::class, 'procesaFormularioFolletos'])->name('procesa.datos.folleto');
 
+//? variables de establecimiento para fomulario de contacto
+Route::get('/set/variables/contactForm/{elemento}', [ExtrasUnimexController::class, 'setVariablesFormContacto'])->name('set.variables.contactForm');
+Route::get('/get/variables/contactForm', [ExtrasUnimexController::class, 'getVariablesFormContacto'])->name('get.variables.contactForm');
+
 //* rutas de establecimiento de variables de session para calculadora de becas
 Route::get('/set/variables/calculadora/{nivel}/{carrera}', [ExtrasUnimexController::class, 'setVariablesPosicionamientoCalculadora'])->name("set.variables.calculadora");
 Route::get('/set/variables/preinscripcion/{nivel}/{carrera}', [ExtrasUnimexController::class, 'setVariablesPosicionamientoPreinscripcion'])->name('set.variables.preinscripcion');

@@ -88,14 +88,12 @@
                         <label for="comentarios_empresaOCC">Evita usar caracteres especiales.</label>
                     </div>
                     <div class="mb-2 row col-12">
-                        <div class="col-2 d-flex">
-                            <input disabled type="text" class="text-center" style="width: 40% !important;"
-                                id="number7" name="number7">
+                        <div class="col-12 col-md-2 d-flex">
+                            <input disabled type="text" class="text-center" id="number7" name="number7">
                             <div class="d-flex" style="width: 20% !important; align-items: center;">&nbsp;+</div>
-                            <input disabled type="text" class="text-center" style="width: 40% !important;"
-                                id="number8" name="number8">
+                            <input disabled type="text" class="text-center" id="number8" name="number8">
                         </div>
-                        <div class="col-5">
+                        <div class="col-12 col-md-5">
                             <input type="number" class="form-control" id="operacion_empresaOCC"
                                 name="operacion_empresaOCC" placeholder="Introduce el resultadio aquí"
                                 maxlength="2">

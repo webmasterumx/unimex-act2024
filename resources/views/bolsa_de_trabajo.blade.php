@@ -26,7 +26,7 @@
                             alt="">
                     </div>
                     <div class="col-3 p-0">
-                        <a href="{{ route('contacto') }}">
+                        <a id="contactoBolsaTrabajo" href="#">
                             <img src="{{ asset('assets/img/extras/BannerWebBolsadeTrabajoboton.webp') }}"
                                 class="w-100 h-100" alt="">
                         </a>

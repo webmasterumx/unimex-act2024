@@ -218,11 +218,67 @@
             window.open(
                 'https://wa.me/525511020290/?text=Buenas+tardes%2C+me+pueden+ayudar+con+más+informaci%C3%B3n');
         });
+
+        /*
+         *   codigo de redireccionamiento dinamico para contacto 
+         *   #contactoHeader se asume que entra al formulario desde la parte de contacto que este en el menu
+         *   -> formularioContactanos
+         *   #contactoBolsaTrabajo se asume que entra al formulario desde la parte de bolsa de trabajo por ello
+         *   se hara enfasis en dicho formulario
+         *   -> formularioTrabajaUnimex
+         * 
+         */
+        $('#contactoHeader').click(function(event) {
+            console.log("entra al formulario desde la parte de contacto");
+            let elementForm = "formularioContactanos";
+
+            $.ajax({
+                method: "GET",
+                url: setUrlBase() + "set/variables/contactForm/" + elementForm,
+            }).done(function(data) {
+                console.log(data);
+
+            }).fail(function() {
+                console.log("Algo salió mal");
+            });
+            window.open("{{ route('contacto') }}", '_blank');
+        });
+
+        $('#linkSmContacto').click(function(event) {
+            console.log("entra al formulario desde la parte de contacto");
+            let elementForm = "formularioContactanos";
+
+            $.ajax({
+                method: "GET",
+                url: setUrlBase() + "set/variables/contactForm/" + elementForm,
+            }).done(function(data) {
+                console.log(data);
+
+            }).fail(function() {
+                console.log("Algo salió mal");
+            });
+            window.open("{{ route('contacto') }}", '_blank');
+        });
+
+        $('#contactoBolsaTrabajo').click(function(event) {
+            console.log("entra al formulario desde la parte de bolsa de trabajo");
+
+            let elementForm = "formularioTrabajaUnimex";
+
+            $.ajax({
+                method: "GET",
+                url: setUrlBase() + "set/variables/contactForm/" + elementForm,
+            }).done(function(data) {
+                console.log(data);
+
+            }).fail(function() {
+                console.log("Algo salió mal");
+            });
+            window.open("{{ route('contacto') }}", '_blank');
+        });
     </script>
 
     @yield('scripts')
-
-    @include('include.redirecciones.outOfertaAcademica')
 
 </body>
 

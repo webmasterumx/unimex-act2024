@@ -20,7 +20,7 @@
                             title="Servicios para nuestos Alumnos y Egresados">Alumnos Y Egresados</a>
                     </li>
                     <li>
-                        <a href="{{ route('contacto') }}"
+                        <a id="contactoHeader" href="#"
                             title="Servicios para nuestos Alumnos y Egresados">Informes</a>
                     </li>
                 </ul>

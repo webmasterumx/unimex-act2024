@@ -25,8 +25,8 @@
             <div id="bannerInicial">
                 @foreach ($banners as $banner)
                     <a href="{{ route($banner->link) }}" target="_blank" class="itemBannerInit">
-                        <img  src="{{ asset($banner->url) }}" class="d-block w-100 img-fluid"
-                            alt="{{ $banner->alt }}" title="{{ $banner->alt }}">
+                        <img src="{{ asset($banner->url) }}" class="d-block w-100 img-fluid" alt="{{ $banner->alt }}"
+                            title="{{ $banner->alt }}">
                     </a>
                 @endforeach
             </div>
@@ -97,7 +97,7 @@
                     <div id="listCarreras">
                         @foreach ($listaCarreras as $carrera)
                             <a href="{{ route('licenciatura', $carrera->slug) }}" class="card mx-2 h-100">
-                                <div class="card-body p-3">
+                                <div class="card-body p-3 p-md-2">
                                     <center>
                                         <img style="min-height: 80px !important;" src="{{ $carrera->icon }}"
                                             alt="{{ $carrera->slug }}" title="Ver más">
@@ -156,33 +156,33 @@
                 </div>
                 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                     <li class="nav-item mx-auto" role="presentation">
-                        <button onclick="cambioImagen(1, 'pills-home-tab')" class="active text-center" id="pills-home-tab" data-bs-toggle="pill"
-                            data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
-                            aria-selected="true">
-                            <img id="opacity_1" class="d-none" style="width: 100px;" src="{{ asset('assets/img/testimonios/1_opacity.jpg') }}"
-                                alt="">
-                            <img id="testimonio_1" class="" style="width: 100px;" src="{{ asset('assets/img/testimonios/1_testimonio.jpg') }}"
-                                alt="">
+                        <button onclick="cambioImagen(1, 'pills-home-tab')" class="active text-center"
+                            id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button"
+                            role="tab" aria-controls="pills-home" aria-selected="true">
+                            <img id="opacity_1" class="d-none" style="width: 100px;"
+                                src="{{ asset('assets/img/testimonios/1_opacity.jpg') }}" alt="">
+                            <img id="testimonio_1" class="" style="width: 100px;"
+                                src="{{ asset('assets/img/testimonios/1_testimonio.jpg') }}" alt="">
                         </button>
                     </li>
                     <li class="nav-item mx-auto" role="presentation">
-                        <button onclick="cambioImagen(2, 'pills-profile-tab')" class="text-center" id="pills-profile-tab" data-bs-toggle="pill"
-                            data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
-                            aria-selected="false">
-                            <img id="opacity_2" style="width: 100px;" src="{{ asset('assets/img/testimonios/2_opacity.jpg') }}"
-                                alt="">
-                            <img id="testimonio_2" class="d-none" style="width: 100px;" src="{{ asset('assets/img/testimonios/2_testimonio.jpg') }}"
-                                alt="">
+                        <button onclick="cambioImagen(2, 'pills-profile-tab')" class="text-center" id="pills-profile-tab"
+                            data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab"
+                            aria-controls="pills-profile" aria-selected="false">
+                            <img id="opacity_2" style="width: 100px;"
+                                src="{{ asset('assets/img/testimonios/2_opacity.jpg') }}" alt="">
+                            <img id="testimonio_2" class="d-none" style="width: 100px;"
+                                src="{{ asset('assets/img/testimonios/2_testimonio.jpg') }}" alt="">
                         </button>
                     </li>
                     <li class="nav-item mx-auto" role="presentation">
-                        <button onclick="cambioImagen(3, 'pills-contact-tab')" class="text-center" id="pills-contact-tab" data-bs-toggle="pill"
-                            data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact"
-                            aria-selected="false">
-                            <img id="opacity_3" style="width: 100px;" src="{{ asset('assets/img/testimonios/3_opacity.jpg') }}"
-                                alt="">
-                            <img id="testimonio_3" class="d-none" style="width: 100px;" src="{{ asset('assets/img/testimonios/3_testimonio.jpg') }}"
-                                alt="">
+                        <button onclick="cambioImagen(3, 'pills-contact-tab')" class="text-center" id="pills-contact-tab"
+                            data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab"
+                            aria-controls="pills-contact" aria-selected="false">
+                            <img id="opacity_3" style="width: 100px;"
+                                src="{{ asset('assets/img/testimonios/3_opacity.jpg') }}" alt="">
+                            <img id="testimonio_3" class="d-none" style="width: 100px;"
+                                src="{{ asset('assets/img/testimonios/3_testimonio.jpg') }}" alt="">
                         </button>
                     </li>
                 </ul>
@@ -237,8 +237,8 @@
             });
 
             $('#bannerInicial').slick({
-                //infinite: true,
-                //autoplay: true,
+                infinite: true,
+                autoplay: true,
                 slidesToShow: 1,
                 slidesToScroll: 1,
                 arrows: true,
@@ -255,4 +255,6 @@
             });
         });
     </script>
+
+    @include('include.redirecciones.outOfertaAcademica')
 @endsection
