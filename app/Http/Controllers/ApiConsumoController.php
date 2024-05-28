@@ -228,4 +228,12 @@ class ApiConsumoController extends Controller
 
         return $response->json();
     }
+
+    //? añadir prospectacion
+    public function addProspectacion($valores)
+    {
+        $response = Http::post($this->base_url . 'prospectacion', $valores);
+
+        return $response->json();
+    }
 }

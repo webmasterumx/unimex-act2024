@@ -26,7 +26,7 @@
                             alt="">
                     </div>
                     <div class="col-3 p-0">
-                        <a id="contactoBolsaTrabajo" href="#">
+                        <a id="contactoBolsaTrabajo" href="javascript:redirirgirContactoBolsa()">
                             <img src="{{ asset('assets/img/extras/BannerWebBolsadeTrabajoboton.webp') }}"
                                 class="w-100 h-100" alt="">
                         </a>

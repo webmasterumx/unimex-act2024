@@ -405,6 +405,10 @@
     #portada {
         height: 78vh;
     }
+
+    .navigation {
+        padding: 1px 0 !important;
+    }
 }
 
 @media (min-width: 600px) and (max-width: 800.98px) {
@@ -476,7 +480,9 @@
         height: 78vh;
     }
 
-
+    .navigation {
+        padding: 1px 0 !important;
+    }
 
 }
 

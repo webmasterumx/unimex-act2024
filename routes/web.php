@@ -5,6 +5,8 @@ use App\Http\Controllers\CalculadoraCuotasController;
 use App\Http\Controllers\ExtrasUnimexController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\PreinscripcionEnLineaController;
+use App\Http\Controllers\ProspectacionController;
+use App\Http\Controllers\ProyeccionProfesionalController;
 use App\Http\Controllers\UnimexController;
 use App\Mail\CalculadoraCuotas;
 use Illuminate\Support\Facades\Route;
@@ -57,6 +59,12 @@ Route::get('/get/variables/calculadora', [ExtrasUnimexController::class, 'getVar
 Route::get('/get/variables/preinscripcion', [ExtrasUnimexController::class, 'getVariablesPosicionamientoPreinscripcion'])->name('get.variables.preinscripcion');
 Route::get('/get/variables/foliocrm', [ExtrasUnimexController::class, 'getVariablePosicionamientoFolioCrm'])->name('get.variable.foliocrm');
 
+//! propectacion
+Route::get('/prospectacion', [ProspectacionController::class, 'index'])->name('prospectacion');
+
+//? proyeccion profesional
+Route::get("/proyeccion-profesional", [ProyeccionProfesionalController::class, 'index'])->name('proyeccion.profesional');
+
 //!modulo de preinscripcion en linea
 Route::get('/App/Preinscripcion-online', [PreinscripcionEnLineaController::class, 'index'])->name('preinscripcion.linea');
 Route::post('/validacion/preinscripcion', [PreinscripcionEnLineaController::class, 'validacionDeCorreo'])->name('validacion.preinscripcion.linea');
@@ -81,6 +89,7 @@ Route::get('/getMunicipios/{estado}', [ApiConsumoController::class, 'getMunicipi
 Route::post('/preinscripcion/get/carreras', [ApiConsumoController::class, 'preinscripcionGetCarreras'])->name('preinscripcion.get.carreras');
 Route::post('/preinscripcion/get/horarios', [ApiConsumoController::class, 'preinscripcionGetHorarios'])->name('preinscripcion.get.horarios');
 Route::post('/guardar/bitacora/preinscripcion', [ApiConsumoController::class, 'guardarActividadBitacora'])->name('guardar.bitacora.preinscripcion');
+Route::post('/add/prospectacion', [ApiConsumoController::class, 'addProspectacion'])->name('add.prospectacion');
 
 //* envio de formularios
 Route::post('/contacto/prospecto', [FormController::class, 'contactoProspecto'])->name('contacto.prospecto');
