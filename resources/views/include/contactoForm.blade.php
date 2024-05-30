@@ -44,11 +44,11 @@
             <div class="col-12 col-md-6 p-0"> <!-- form_contacto -->
                 <form id="form_contacto" action="{{ route('contacto.prospecto') }}" method="POST" class="bg-white p-4 p-md-5">
                     @csrf
-                    <p style="color: #004b93; font-size: 1.5em;" class="text-center">
+                    <p style="color: #004b93; font-size: 1.5em; line-height: normal;" class="text-center">
                         ¡Estamos para ayudarte! <br>
                         Deja tus datos y nos pondremos en contacto.
                     </p>
-                    <label class="border p-2 w-100 fw-light mb-0" for="nombre_prospecto"><i
+                    <label class="border p-1 w-100 fw-light mb-0" style="font-size: 15px !important; color: black;" for="nombre_prospecto"><i
                             class="bi bi-person-fill color-unimex"></i> NOMBRE *</label>
                     <div class="w-100 d-flex">
                         <div class="w-50">
@@ -61,14 +61,14 @@
                         </div>
                     </div>
 
-                    <label class="border p-2 w-100 fw-light mt-3 mb-0" for="mail_prospecto">
+                    <label class="border p-1 w-100 fw-light mt-2 mb-0" style="font-size: 15px !important; color: black;" for="mail_prospecto">
                         <i class="bi bi-envelope-fill color-unimex"></i> EMAIL *</label>
                     <div class="w-100">
                         <input class="rounded-0 form-control" type="email" name="mail_prospecto" id="mail_prospecto"
                             placeholder="nombre@email.com">
                     </div>
 
-                    <label class="border p-2 w-100 fw-light mt-3 mb-0" for="celular_prospecto">
+                    <label class="border p-1 w-100 fw-light mt-2 mb-0" style="font-size: 15px !important; color: black;" for="celular_prospecto">
                         <i class="bi bi-telephone-fill color-unimex"></i> TELÉFONOS DE CONTACTO *</label>
                     <div class="w-100 d-flex">
                         <div class="w-50">
@@ -81,7 +81,7 @@
                         </div>
                     </div>
 
-                    <label class="border p-2 w-100 fw-light mt-3 mb-0" for="plantelSelect">
+                    <label class="border p-1 w-100 fw-light mt-2 mb-0" style="font-size: 15px !important; color: black;" for="plantelSelect">
                         <i class="bi bi-bookmark-fill color-unimex"></i> QUIERO ESTUDIAR EN:</label>
                     <div class="w-100 d-flex">
                         <div class="w-50">
@@ -134,11 +134,11 @@
                             <option value="" selected> Horario </option>
                         </select>
                     </div>
-                    <div class="form-check mt-3">
+                    <div class="form-check mt-2">
                         <input class="form-check-input" type="checkbox" id="aceptar_contacto"
-                            name="aceptar_contacto" checked style="margin-top: -2%;">
+                            name="aceptar_contacto" checked style="width: 30px !important; height: 30px !important;">
                         <label class="form-check-label" for="aceptar_contacto"
-                            style="margin-top: 11px; margin-left: 26px;">
+                            style="margin-top: 11px; margin-left: 10px;">
                             He leído y acepto el <a href="javascript:void(0);"
                                 onclick="window.open('{{ route('aviso_de_privacidad') }}','Privacidad','scrollbars=yes,width=1000,height=700')">
                                 aviso de privacidad.

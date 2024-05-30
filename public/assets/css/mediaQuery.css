@@ -484,6 +484,26 @@
         padding: 1px 0 !important;
     }
 
+    #contraportada {
+        height: 36rem;
+    }
+
+    #requisitos {
+        height: 30rem;
+    }
+
+    #carrucelVentajas {
+        height: 592px !important;
+    }
+
+    #campo_laboral {
+        height: 10rem;
+    }
+
+    #requisitosSUA {
+        height: 28rem;
+    }
+
 }
 
 @media (min-width: 800.98px) and (max-width: 900.98px) {

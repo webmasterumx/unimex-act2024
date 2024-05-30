@@ -7,6 +7,7 @@ use App\Http\Controllers\FormController;
 use App\Http\Controllers\PreinscripcionEnLineaController;
 use App\Http\Controllers\ProspectacionController;
 use App\Http\Controllers\ProyeccionProfesionalController;
+use App\Http\Controllers\TestVocacionalController;
 use App\Http\Controllers\UnimexController;
 use App\Mail\CalculadoraCuotas;
 use Illuminate\Support\Facades\Route;
@@ -64,6 +65,10 @@ Route::get('/prospectacion', [ProspectacionController::class, 'index'])->name('p
 
 //? proyeccion profesional
 Route::get("/proyeccion-profesional", [ProyeccionProfesionalController::class, 'index'])->name('proyeccion.profesional');
+
+//* TestVocacional
+Route::get("/TestVocacional", [TestVocacionalController::class, 'index'])->name('test.vocacional.index');
+Route::get("/TestVocacional/App", [TestVocacionalController::class, 'iniciarTest']);
 
 //!modulo de preinscripcion en linea
 Route::get('/App/Preinscripcion-online', [PreinscripcionEnLineaController::class, 'index'])->name('preinscripcion.linea');
