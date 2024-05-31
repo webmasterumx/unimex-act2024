@@ -185,13 +185,13 @@ $("#form_contacto").validate({
         },
         celular_prospecto: {
             required: "Teléfono celular obligatorio.",
-            minlength: "Numero celular de 10 dig minimo.",
-            maxlength: "Numero celular de 10 dig maximo."
+            minlength: "Numero celular de 10 dig. minimo.",
+            maxlength: "Numero celular de 10 dig. maximo."
         },
         telefono_prospecto: {
             required: "Teléfono de casa obligatorio.",
-            minlength: "Numero teléfonico de 10 dig minimo.",
-            maxlength: "Numero teléfonico de 10 dig maximo."
+            minlength: "Numero teléfonico de 10 dig. minimo.",
+            maxlength: "Numero teléfonico de 10 dig. maximo."
         },
         plantelSelect: {
             required: "Selecciona un plantel.",
@@ -270,13 +270,13 @@ $("#form_trabaja").validate({
         },
         telefono_casa_trabaja: {
             required: "El teléfono es obligatorio.",
-            minlength: "El teléfono debe tener mínimo 8 o 10 digitos.",
-            maxlength: "El teléfono debe tener máximo 8 o 10 digitos."
+            minlength: "El teléfono debe tener mínimo 10 digitos.",
+            maxlength: "El teléfono debe tener máximo 10 digitos."
         },
         telefono_movil_trabaja: {
             required: "El teléfono celular es obligatorio.",
-            minlength: "El teléfono celular debe tener mínimo 8 o 10 digitos.",
-            maxlength: "El teléfono celular debe tener máximo 8 o 10 digitos."
+            minlength: "El teléfono celular debe tener mínimo 10 digitos.",
+            maxlength: "El teléfono celular debe tener máximo 10 digitos."
         },
         plantel_trabaja: {
             required: "Seleccione un plantel para continuar.",
@@ -407,13 +407,13 @@ $("#form_quejaSugerencia").validate({
         },
         telefono_casa_qys: {
             required: "El teléfono es obligatorio.",
-            minlength: "El teléfono celular debe tener mínimo 8 o 10 digitos.",
-            maxlength: "El teléfono celular debe tener máximo 8 o 10 digitos."
+            minlength: "El teléfono celular debe tener mínimo 10 digitos.",
+            maxlength: "El teléfono celular debe tener máximo 10 digitos."
         },
         telefono_movil_qys: {
             required: "El teléfono celular es obligatorio.",
-            minlength: "El teléfono celular debe tener mínimo 8 o 10 digitos.",
-            maxlength: "El teléfono celular debe tener máximo 8 o 10 digitos."
+            minlength: "El teléfono celular debe tener mínimo 10 digitos.",
+            maxlength: "El teléfono celular debe tener máximo 10 digitos."
         },
         matricula_qys: {
             required: "Su matrícula es obligatoria.",
@@ -543,13 +543,13 @@ $("#form_empresasOCC").validate({
         },
         telefono_empresaOCC: {
             required: "Teléfono requerido.",
-            minlength: "El teléfono debe tener mínimo 8 o 10 digitos.",
-            maxlength: "El teléfono debe tener máximo 8 o 10 digitos."
+            minlength: "El teléfono debe tener mínimo 10 digitos.",
+            maxlength: "El teléfono debe tener máximo 10 digitos."
         },
         celular_empresaOCC: {
             required: "Celular requerido.",
-            minlength: "El teléfono celular debe tener mínimo 8 o 10 digitos.",
-            maxlength: "El teléfono celular debe tener máximo 8 o 10 digitos."
+            minlength: "El teléfono celular debe tener mínimo 10 digitos.",
+            maxlength: "El teléfono celular debe tener máximo 10 digitos."
         },
         razon_empresaOCC: {
             required: "Debe de ingresar su razón social."
