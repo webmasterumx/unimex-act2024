@@ -62,7 +62,7 @@
                 <div class="row">
                     <div class="col-12 col-md-4">
                         <div class="d-grid gap-2">
-                            <a id="redireccionCTCL" href="#" class="btn btn-outline-primary">
+                            <a id="redireccionCTCL" href="#" class="btn btn-outline-primary mt-2 mt-mb-0">
                                 Calculadora de Becas
                             </a>
                         </div>
