@@ -607,7 +607,7 @@
     }
 
     #historia {
-        height: 40vh;
+        height: 80vh;
     }
 
     .etiqueta-titulo-acercade {
@@ -651,12 +651,11 @@
     .etiqueta-titulo-acercade-mensaje {
         top: 30%;
         font-size: 32px;
-        width: 92%;
+        width: 60%;
     }
 
-    .fondoServiciosSm {
+    .fondoServicios {
         display: block;
-        height: 200px;
     }
 }
 
