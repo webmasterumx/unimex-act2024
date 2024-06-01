@@ -176,7 +176,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        <div class="imgBorder"><img data-src="img/4.webp"
+                                        <div class="imgBorder"><img src="{{ asset('assets/img/testVocacional/4.webp') }}"
                                                 class="lazyload img-responsive"></div>
                                     </div>
                                     <div class="col-sm-6">
