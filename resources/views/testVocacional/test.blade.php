@@ -101,7 +101,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        <div class="imgBorder"><img data-src="img/2.webp"
+                                        <div class="imgBorder"><img src="{{ asset('assets/img/testVocacional/2.webp') }}"
                                                 class="lazyload img-responsive"></div>
                                     </div>
                                     <div class="col-sm-6">
@@ -138,7 +138,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        <div class="imgBorder"><img data-src="img/3.webp"
+                                        <div class="imgBorder"><img src="{{ asset('assets/img/testVocacional/3.webp') }}"
                                                 class="lazyload img-responsive"></div>
                                     </div>
                                     <div class="col-sm-6">
