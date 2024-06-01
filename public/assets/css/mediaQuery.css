@@ -574,6 +574,10 @@
     #portada {
         height: 78vh;
     }
+
+    #contraportada {
+        height: 30rem;
+    }
 }
 
 @media (min-width: 900.98px) and (max-width: 1199.98px) {
@@ -620,23 +624,23 @@
         height: 35vh;
     }
 
-    #text_ventajas{
-        height: 24rem !important;
+    #text_ventajas {
+        height: 23rem !important;
     }
 
     #carrucelVentajas {
         height: 24rem !important;
     }
 
-    #campo_laboral{
+    #campo_laboral {
         height: 5rem !important;
     }
 
-    .slick-prev-campo{
+    .slick-prev-campo {
         left: -20px !important;
     }
 
-    .slick-next-campo{
+    .slick-next-campo {
         right: -28px !important;
     }
 }
