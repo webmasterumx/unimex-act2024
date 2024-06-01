@@ -162,8 +162,9 @@
                 $('#menuSM').html(gerenerarMenuSm());
             }
             if ($(window).width() >= 900 && $(window).width() <= 1199.98) {
-                $("#menuSM").empty();
-                $('#menuLG').html(generarMenuLg());
+                $("#menuLG").empty();
+                console.log('entra table acostada');
+                $('#menuSM').html(gerenerarMenuSm());
             }
             if ($(window).width() >= 1199.98 && $(window).width() <= 1399.98) {
                 $("#menuSM").empty();
@@ -195,7 +196,7 @@
             }
             if ($(window).width() >= 900 && $(window).width() <= 1199.98) {
                 $("#menuSM").empty();
-                $('#menuLG').html(generarMenuLg());
+                $('#menuLG').html(gerenerarMenuSm());
             }
             if ($(window).width() >= 1199.98 && $(window).width() <= 1399.98) {
                 $("#menuSM").empty();
