@@ -576,7 +576,7 @@
     }
 
     #contraportada {
-        height: 30rem;
+        height: 28rem;
     }
 }
 
@@ -621,11 +621,11 @@
 
     */
     #portada {
-        height: 35vh;
+        height: 40vh;
     }
 
     #text_ventajas {
-        height: 23rem !important;
+        height: 23.6rem !important;
     }
 
     #carrucelVentajas {
@@ -642,6 +642,10 @@
 
     .slick-next-campo {
         right: -28px !important;
+    }
+
+    #requisitos{
+        height: 30rem !important;
     }
 }
 
