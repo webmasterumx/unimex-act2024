@@ -519,12 +519,12 @@
     }
 
     #historia {
-        height: 28vh;
+        height: 40vh;
     }
 
     .etiqueta-titulo-acercade {
-        top: 38%;
-        font-size: 44px;
+        top: 40%;
+        font-size: 42px;
         width: 34%;
     }
 
@@ -548,9 +548,6 @@
 
         Estilos de la portada de esta pagina
     */
-    #historia {
-        height: 70vh;
-    }
 
     .etiqueta-titulo-acercade-mensaje {
         top: 38%;
@@ -654,8 +651,8 @@
         width: 60%;
     }
 
-    .fondoServicios {
-        display: block;
+    .fondoServiciosSm {
+        display: none;
     }
 }
 
