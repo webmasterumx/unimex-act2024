@@ -37,8 +37,8 @@
     */
     #closeModalCalculadora {
         position: relative;
-        top: 13%;
-        left: 46%;
+        top: 12%;
+        left: 49%;
     }
 
     /*
@@ -418,8 +418,8 @@
 
     #closeModalCalculadora {
         position: relative;
-        top: 13%;
-        left: 46%;
+        top: 9%;
+        left: 49%;
     }
 
     .etiqueta-titulo-acercade {
@@ -477,7 +477,7 @@
 
     */
     #portada {
-        height: 78vh;
+        height: 35vh;
     }
 
     .navigation {
@@ -485,7 +485,7 @@
     }
 
     #contraportada {
-        height: 36rem;
+        height: 32rem;
     }
 
     #requisitos {
@@ -621,8 +621,8 @@
 
     #closeModalCalculadora {
         position: relative;
-        top: -42%;
-        left: 73%;
+        top: -46%;
+        left: 71%;
     }
 
     .slick-prev {
