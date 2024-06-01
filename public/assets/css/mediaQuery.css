@@ -501,6 +501,11 @@
         height: 28rem;
     }
 
+    #fondoServiciosSm{
+        display: block;
+        height: 200px;
+    }
+
 }
 
 @media (min-width: 800.98px) and (max-width: 900.98px) {
