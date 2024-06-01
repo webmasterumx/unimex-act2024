@@ -444,19 +444,19 @@
         Estilos de la portada de esta pagina
     */
     #historia {
-        height: 70vh;
+        height: 40vh;
     }
 
     .etiqueta-titulo-acercade-mensaje {
         top: 38%;
         font-size: 32px;
-        width: 58%;
+        width: 70%;
     }
 
     .etiqueta-titulo-acercade {
         top: 38%;
-        font-size: 38px;
-        width: 32%;
+        font-size: 36px;
+        width: 36%;
     }
 
 
