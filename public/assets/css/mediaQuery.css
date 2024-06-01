@@ -422,16 +422,6 @@
         left: 49%;
     }
 
-    .etiqueta-titulo-acercade {
-        top: 38%;
-        font-size: 44px;
-        width: 34%;
-    }
-
-    #historia {
-        height: 28vh;
-    }
-
     .slick-prev {
         top: 50%;
         left: 1%;
@@ -462,6 +452,13 @@
         font-size: 32px;
         width: 58%;
     }
+
+    .etiqueta-titulo-acercade {
+        top: 38%;
+        font-size: 38px;
+        width: 32%;
+    }
+
 
     /*
 
