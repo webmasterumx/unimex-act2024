@@ -611,6 +611,34 @@
         font-size: 44px;
         width: 34%;
     }
+
+    /*
+        ================> Paginas de oferta academica <===================
+
+    */
+    #portada {
+        height: 35vh;
+    }
+
+    #text_ventajas{
+        height: 24.6rem !important;
+    }
+
+    #carrucelVentajas {
+        height: 24rem !important;
+    }
+
+    #campo_laboral{
+        height: 5rem !important;
+    }
+
+    .slick-prev-campo{
+        left: -20px !important;
+    }
+
+    .slick-next-campo{
+        right: -28px !important;
+    }
 }
 
 @media (min-width: 1199.98px) and (max-width: 1399.98px) {

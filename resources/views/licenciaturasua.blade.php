@@ -366,10 +366,16 @@
             arrows: true,
             autoplaySpeed: 2000,
             responsive: [{
-                    breakpoint: 1024,
+                    breakpoint: 1100,
                     settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2,
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
+                    }
+                }, {
+                    breakpoint: 1000,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
                     }
                 },
                 {
