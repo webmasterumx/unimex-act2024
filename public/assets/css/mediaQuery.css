@@ -607,7 +607,7 @@
     }
 
     #historia {
-        height: 28vh;
+        height: 40vh;
     }
 
     .etiqueta-titulo-acercade {
@@ -621,11 +621,11 @@
 
     */
     #portada {
-        height: 40vh;
+        height: 50vh;
     }
 
     #text_ventajas {
-        height: 23.6rem !important;
+        height: 23.3rem !important;
     }
 
     #carrucelVentajas {
@@ -644,8 +644,19 @@
         right: -28px !important;
     }
 
-    #requisitos{
+    #requisitos {
         height: 30rem !important;
+    }
+
+    .etiqueta-titulo-acercade-mensaje {
+        top: 30%;
+        font-size: 32px;
+        width: 92%;
+    }
+
+    .fondoServiciosSm {
+        display: block;
+        height: 200px;
     }
 }
 

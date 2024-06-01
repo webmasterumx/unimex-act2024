@@ -283,7 +283,7 @@
                 </h2>
                 <div id="requisitos" style="height: 410px;">
                     <div class="card border-0">
-                        <div class="card-body">
+                        <div class="card-body" style="height: 410px">
                             <p>
                                 <b>
                                     Si cuentas con Título de Licenciatura
@@ -299,7 +299,7 @@
                         </div>
                     </div>
                     <div class="card border-0">
-                        <div class="card-body">
+                        <div class="card-body" style="height: 410px">
                             <p>
                                 <b>Si deseas titularte de Licenciatura mediante estudios de Posgrado</b> <br><br>
                                 Original o copia certificada del Acta de Nacimiento y una fotocopia. <br>
