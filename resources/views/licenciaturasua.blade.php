@@ -310,9 +310,8 @@
                             </ul>
                             <p>
                                 <br>
-                                Para apartar tu lugar y tu beca en Universidad Mexicana puedes inscribirte desde que inicias
-                                el último año del bachillerato, sólo considera que es indispensable tener aprobadas todas
-                                las materias del bachillerato antes del primer día de clases de tu Licenciatura.
+                                Es indispensable tener aprobadas todas las materias del bachillerato antes del primer día de
+                                clases de tu Licenciatura.
                             </p>
                         </div>
                     </div>

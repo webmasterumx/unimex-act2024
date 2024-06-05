@@ -174,10 +174,10 @@ $("#form_contacto").validate({
     },
     messages: {
         nombre_prospecto: {
-            required: "Nombre requerido.",
+            required: "Nombre obligatorio.",
         },
         apellidos_prospecto: {
-            required: "Apellidos requeridos.",
+            required: "Apellidos obligatorios.",
         },
         mail_prospecto: {
             required: "Correo obligatorio.",

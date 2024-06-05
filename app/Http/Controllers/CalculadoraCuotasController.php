@@ -54,7 +54,7 @@ class CalculadoraCuotasController extends Controller
         //$recive = "lishanxime201099@gmail.com";
 
         SELF::establecerVariablesCorreo($request, $respuesta);
-        //$envio =  Mail::to($request->emailProspecto)->bcc("umrec_web@unimex.edu.mx")->send(new CalculadoraCuotas($request));
+        $envio =  Mail::to($request->emailProspecto)->bcc("umrec_web@unimex.edu.mx")->send(new CalculadoraCuotas());
 
         return response()->json($respuesta); 
     }

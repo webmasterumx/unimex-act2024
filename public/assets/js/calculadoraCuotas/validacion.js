@@ -35,19 +35,19 @@ $("#form_calculadora").validate({
             required: "Selecciona un nivel",
         },
         nombreProspecto: {
-            required: "Ingresa tu nombre",
+            required: "Nombre obligatorio.",
         },
         apellidosProspecto: {
-            required: "Ingresa tus apellidos",
+            required: "Apellidos obligatorios",
         },
         telefonoProspecto: {
-            required: "Ingresa tu telefono",
+            required: "Ingresa tu teléfono",
             minlength: "El teléfono celular debe tener mínimo 10 digitos.",
             maxlength: "El teléfono celular debe tener máximo 10 digitos."
         },
         emailProspecto: {
-            required: "Ingresa tu correo",
-            email: "Formato de correo incorrecto",
+            required: "Correo obligatorio.",
+            email: "Ingresa un formato valido de correo."
         },
     },
     submitHandler: function (form) {

@@ -1349,4 +1349,5 @@
 
         });
     </script>
+    @include('include.redirecciones.outOfertaAcademica')
 @endsection
