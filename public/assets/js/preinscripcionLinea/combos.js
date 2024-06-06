@@ -149,7 +149,7 @@ $("select[name=carreraSelect]").change(function () {
     let periodo = $('select[name=periodoSelect]').val();
     let carrera = $('select[name=carreraSelect]').val();
 
-    let ruta = setUrlBase() + "getHorarios";
+    let ruta = setUrlBase() + "preinscripcion/get/horarios";
     let data = {
         plantel: plantel,
         nivel: nivel,
