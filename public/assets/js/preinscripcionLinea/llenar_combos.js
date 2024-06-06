@@ -172,7 +172,7 @@ function llenarComboHorarios(claveCampana, clavePlantel, claveNivel, claveCarrer
         data: data
     }).done(function (data) {
         $("#horarioSelect").empty();
-        const horarios = data.TurnosDTO;
+        const horarios = data;
         console.log(data);
         let option_default = `<option value="">Seleciona un Horario</option>`;
         if (horarios != undefined) {
