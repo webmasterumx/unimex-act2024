@@ -158,7 +158,23 @@ $("select[name=carreraSelect]").change(function () {
     };
     let element = '#horarioSelect';
 
-    postAjaxPeticionContact(ruta, data, element);
+    $.ajax({
+        method: "POST",
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        url: ruta,
+        data: data
+    }).done(function (data) {
+        console.log(data);
+        $.each(data.TurnosDTO, function (index, value) {
+            let option = `<option value="${value.clave}">${value.descrip}</option>`;
+            $(element).append(option);
+        });
+
+    }).fail(function () {
+        console.log("Algo salió mal");
+    });
 
     $("select[name=horarioSelect]").prop("disabled", false);
 
