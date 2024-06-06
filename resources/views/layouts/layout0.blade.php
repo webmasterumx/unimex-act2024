@@ -158,7 +158,7 @@
         <header class="border-bottom lh-1 py-3">
             <div class="row flex-nowrap justify-content-between align-items-center">
                 <div class="col-4 pt-1">
-                    <a href="{{ route('inicio') }}" ><img class="ms-4"
+                    <a href="{{ route('inicio') }}"><img class="ms-4"
                             src="{{ asset('assets/img/header/logo-2020.webp') }}" alt=""
                             style="width: 200px;"></a>
                 </div>
@@ -176,6 +176,14 @@
     </div>
 
     @yield('content')
+
+    <div class="container-fluid mt-3" style="background-color: #004b93;">
+        <footer class="d-flex flex-wrap">
+            <p class="col-md-4 mb-0 text-center text-white w-100">
+                Universidad Mexicana. Derechos Reservados {{ date('Y') }}.
+            </p>
+        </footer>
+    </div>
 
     <!-- JS -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"

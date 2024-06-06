@@ -4,7 +4,7 @@
     <section class="container py-4">
         <div class="row">
             <div class="col-12 col-md-3">
-                <h2 class="underlined-head">
+                <h2 class="underlined-head text-uppercase fw-normal "  style="font-size: 1.438rem;">
                     SERVICIO SOCIAL
                 </h2>
             </div>
