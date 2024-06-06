@@ -222,7 +222,7 @@
                 <h1 style="font-size: 1.50rem;" class="underlined-head text-uppercase text-white">
                     licenciatura en {{ $licenciatura->subtitulo }}
                 </h1>
-                <p class="text-center">
+                <p>
                     Campo Laboral
                 </p>
                 <p class="text-justify">

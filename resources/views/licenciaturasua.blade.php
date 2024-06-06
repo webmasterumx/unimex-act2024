@@ -261,7 +261,7 @@
                 <h2 style="font-size: 1.50rem;" class="underlined-head text-uppercase text-white">
                     LICENCIATURA ABIERTA EN {{ $licenciatura_sua->titulo }}
                 </h2>
-                <p class="text-center">
+                <p>
                     Campo Laboral
                 </p>
                 <p class="text-justify">

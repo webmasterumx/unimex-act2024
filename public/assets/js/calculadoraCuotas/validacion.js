@@ -56,7 +56,7 @@ $("#form_calculadora").validate({
             Swal.fire({
                 icon: "error",
                 title: "Campo obligatorio",
-                text: "Por favor indica de que tipo es tu telefono",
+                text: "Por favor indica de que tipo es tu teléfono",
                 showConfirmButton: true,
             });
 
