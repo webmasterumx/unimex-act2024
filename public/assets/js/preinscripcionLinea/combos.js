@@ -149,7 +149,7 @@ $("select[name=carreraSelect]").change(function () {
     let periodo = $('select[name=periodoSelect]').val();
     let carrera = $('select[name=carreraSelect]').val();
 
-    let ruta = setUrlBase() + "preinscripcion/get/horarios";
+    let ruta = setUrlBase() + "getHorarios";
     let data = {
         plantel: plantel,
         nivel: nivel,
@@ -158,23 +158,7 @@ $("select[name=carreraSelect]").change(function () {
     };
     let element = '#horarioSelect';
 
-    $.ajax({
-        method: "POST",
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        },
-        url: ruta,
-        data: data
-    }).done(function (data) {
-        console.log(data);
-        $.each(data.TurnosDTO, function (index, value) {
-            let option = `<option value="${value.clave}">${value.descrip}</option>`;
-            $(element).append(option);
-        });
-
-    }).fail(function () {
-        console.log("Algo salió mal");
-    });
+    postAjaxPeticionContact(ruta, data, element);
 
     $("select[name=horarioSelect]").prop("disabled", false);
 

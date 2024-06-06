@@ -152,7 +152,7 @@ function llenarCombosCarrera(claveCampana, clavePlantel, claveNivel, claveCarrer
 
 function llenarComboHorarios(claveCampana, clavePlantel, claveNivel, claveCarrera, claveHorario) {
 
-    let ruta = setUrlBase() + "preinscripcion/get/horarios";
+    let ruta = setUrlBase() + "getHorarios";
 
     let data = {
         plantel: clavePlantel,
