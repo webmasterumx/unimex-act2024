@@ -117,7 +117,7 @@
             </div>
             <div id="text_ventajas" class="col-12 col-md-6 col-lg-6 bg-articule p-5">
                 <h2 style="font-size: 1.438rem;" class="underlined-head text-uppercase fw-normal">
-                    VENTAJAS DE ESTUDIAR LA LICENCIATURA ABIERTA EN {{ $licenciatura_sua->titulo }}
+                    VENTAJAS DE ESTUDIAR LA LICENCIATURA ABIERTA EN {{ $licenciatura_sua->titulo }} (SUA)
                 </h2>
                 <p>
                     <b>Se adapta a tu tiempo y tu vida.</b> Plan modular de 2 años 4 meses (7 cuatrimestres) que te permite
@@ -132,8 +132,7 @@
                     <br><br>
                     <b>Estarás acompañad@.</b> Si necesitas ayuda con algún tema, puedes participar en asesorías
                     presenciales o
-                    virtuales (en línea) los sábados entre 8 y 14:30 hrs.
-                    Tu Asesor y la Red de Apoyo te brindarán el acompañamiento académico que necesites durante la carrera.
+                    virtuales (en línea) los sábados entre 8 y 14:30 hrs. Tu Asesor y la Red de Apoyo te brindarán el acompañamiento académico que necesites durante la carrera.
                     <br><br>
                     <b>Beca del 40%</b> Te apoyamos con una beca académica desde el inicio de la carrera y cuotas muy
                     accesibles.
@@ -259,7 +258,7 @@
         <div class="row">
             <div class="col-12 col-md-6 col-lg-6">
                 <h2 style="font-size: 1.50rem;" class="underlined-head text-uppercase text-white">
-                    LICENCIATURA ABIERTA EN {{ $licenciatura_sua->titulo }}
+                    LICENCIATURA ABIERTA EN {{ $licenciatura_sua->titulo }} 
                 </h2>
                 <p>
                     Campo Laboral
