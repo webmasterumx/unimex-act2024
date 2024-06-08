@@ -25,7 +25,24 @@ class UnimexController extends Controller
 
     public function inicio(): View
     {
-        //$listaCarreras = DB::table('c_carreras')->orderBy('titulo', 'asc')->get();
+
+        if (isset($_REQUEST['utm_source']) && isset($_REQUEST['utm_medium']) && isset($_REQUEST['utm_campaign']) && isset($_REQUEST['utm_term']) && isset($_REQUEST['utm_content']) && isset($_REQUEST['gad_source'])) {
+            ////dd($_REQUEST['utm_source']);
+            session(["utm_source" => $_REQUEST['utm_source']]);
+            session(["utm_medium" => $_REQUEST['utm_medium']]);
+            session(["utm_campaign" => $_REQUEST['utm_campaign']]);
+            session(["utm_term" => $_REQUEST['utm_term']]);
+            session(["utm_content" => $_REQUEST['utm_content']]);
+            session(["gad_source" => $_REQUEST['gad_source']]);
+        } else {
+            session(["utm_source" => "organico"]);
+            session(["utm_medium" => 0]);
+            session(["utm_campaign" => 0]);
+            session(["utm_term" => 0]);
+            session(["utm_content" => 0]);
+            session(["gad_source" => 0]);
+        }
+
         $listaCarreras = CCarreras::all();
         $banners = Banner::where('ubicacion', 0)->orWhere('ubicacion', 1)->orderBy('orden', 'ASC')->get();
         $ventajas_unimex = VentajasUnimex::all();
@@ -160,6 +177,26 @@ class UnimexController extends Controller
 
     public function calculaTuCuota(): View
     {
+
+        if (isset($_REQUEST['utm_source']) && isset($_REQUEST['utm_medium']) && isset($_REQUEST['utm_campaign']) && isset($_REQUEST['utm_term']) && isset($_REQUEST['utm_content']) && isset($_REQUEST['gad_source'])) {
+      
+            session(["utm_source" => $_REQUEST['utm_source']]);
+            session(["utm_medium" => $_REQUEST['utm_medium']]);
+            session(["utm_campaign" => $_REQUEST['utm_campaign']]);
+            session(["utm_term" => $_REQUEST['utm_term']]);
+            session(["utm_content" => $_REQUEST['utm_content']]);
+            session(["gad_source" => $_REQUEST['gad_source']]);
+        } else {
+
+            session(["utm_source" => "organico"]);
+            session(["utm_medium" => 0]);
+            session(["utm_campaign" => 0]);
+            session(["utm_term" => 0]);
+            session(["utm_content" => 0]);
+            session(["gad_source" => 0]);
+        }
+
+
         return view('calculaTuCuota');
     }
 
@@ -185,9 +222,9 @@ class UnimexController extends Controller
         ]);
     }
 
-    public function bolsaDeTrabajo() : View {
-        
-        return view('bolsa_de_trabajo');
+    public function bolsaDeTrabajo(): View
+    {
 
+        return view('bolsa_de_trabajo');
     }
 }

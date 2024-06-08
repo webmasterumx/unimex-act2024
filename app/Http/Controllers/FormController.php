@@ -17,27 +17,44 @@ class FormController extends Controller
 
     public function contactoProspecto(Request $request)
     {
+        /**
+         * utm_source
+         * utm_medium
+         * utm_campaign
+         * utm_term
+         * utm_content
+         * gad_source
+         */
+
+        $source = session("utm_source");
+        $medium = session("utm_medium");
+        $content = session("utm_content");
+        $campaign = session("utm_campaign");
+        $term = session("utm_term");
+
         $valores = array(
-            "campaingContent" => "",
-            "campaignMedium" => "",
-            "campaignTerm" => "",
-            "descripPublicidad" => "",
-            "folioReferido" => "0",
-            "pApMaterno" => "",
+            "pNombre" => $request->nombre_prospecto,
             "pApPaterno" => $request->apellidos_prospecto,
-            "pCarrera" => $request->carreraSelect,
+            "pApMaterno" => "",
+            "pTelefono" => $request->telefono_prospecto,
             "pCelular" => $request->celular_prospecto,
             "pCorreo" => $request->mail_prospecto,
-            "pHorario" => $request->horarioSelect,
-            "pNivel_Estudio" => $request->nivelSelect,
-            "pNombre" => $request->nombre_prospecto,
-            "pOrigen" => 11,
             "pPeriodoEscolar" => $request->periodoSelect,
             "pPlantel" => $request->plantelSelect,
-            "pTelefono" => $request->telefono_prospecto,
-            "utpsource" => "",
+            "pNivel_Estudio" => $request->nivelSelect,
+            "pCarrera" => $request->carreraSelect,
+            "pHorario" => $request->horarioSelect,
+            "pOrigen" => 11,
+            "utpsource" =>  $source,
+            "descripPublicidad" => $campaign,
+            "campaignMedium" => $medium,
+            "campaignTerm" => $term,
+            "campaignContent" => $content,
             "websiteURL" => "https://unimex.edu.mx/",
+            "folioReferido" => "0"
         );
+
+        //dd($valores);
 
         $respuesta = app(ApiConsumoController::class)->agregarProspectoCRM($valores); //! envio de datos al WS
         /* $respuesta = array(
@@ -257,13 +274,11 @@ class FormController extends Controller
             "pTelefono" => "",
             "utpsource" => "",
             "websiteURL" => "https://unimex.edu.mx/",
-        ); 
+        );
 
         $agregarProspecto = app(ApiConsumoController::class)->agregarProspectoCRM($valores);
 
         var_dump($agregarProspecto);
-
-        
     }
 
     public function getIdentificarCarrera($licenciatura, $plantel, $periodo, $nivel)

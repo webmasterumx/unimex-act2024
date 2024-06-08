@@ -19,6 +19,12 @@ class CalculadoraCuotasController extends Controller
     public function insertarProspecto(Request $request)
     {
 
+        $source = session("utm_source");
+        $medium = session("utm_medium");
+        $content = session("utm_content");
+        $campaign = session("utm_campaign");
+        $term = session("utm_term");
+
         if ($request->typeTelefono == 1) {
             $telefono_valor = "";
             $celular_valor = $request->telefonoProspecto;
@@ -28,25 +34,26 @@ class CalculadoraCuotasController extends Controller
         }
 
         $valores = array(
-            "campaingContent" => "",
-            "campaignMedium" => "",
-            "campaignTerm" => "",
-            "descripPublicidad" => "",
-            "folioReferido" => "0",
-            "pApMaterno" => "",
+
+            "pNombre" => $request->nombreProspecto,
             "pApPaterno" => $request->apellidosProspecto,
-            "pCarrera" => 1,
+            "pApMaterno" => "",
+            "pTelefono" => $telefono_valor,
             "pCelular" => $celular_valor,
             "pCorreo" => $request->emailProspecto,
-            "pHorario" => 0,
-            "pNivel_Estudio" => $request->selectNivel,
-            "pNombre" => $request->nombreProspecto,
-            "pOrigen" => 23,
             "pPeriodoEscolar" => $request->selectPeriodo,
             "pPlantel" => $request->selectPlantel,
-            "pTelefono" => $telefono_valor,
-            "utpsource" => "",
-            "websiteURL" => "https://unimex.edu.mx/",
+            "pNivel_Estudio" => $request->selectNivel,
+            "pCarrera" => 1,
+            "pHorario" => 0,
+            "pOrigen" => 23,
+            "utpsource" =>  $source,
+            "descripPublicidad" => $campaign,
+            "campaignMedium" => $medium,
+            "campaignTerm" => $term,
+            "campaignContent" => $content,
+            "websiteURL" => "https://unimex.edu.mx/calcula-tu-cuota",
+            "folioReferido" => "0",
         );
 
         //dd($valores);
@@ -56,7 +63,7 @@ class CalculadoraCuotasController extends Controller
         SELF::establecerVariablesCorreo($request, $respuesta);
         $envio =  Mail::to($request->emailProspecto)->bcc("umrec_web@unimex.edu.mx")->send(new CalculadoraCuotas());
 
-        return response()->json($respuesta); 
+        return response()->json($respuesta);
     }
 
     public function enviarCorreoCalculadoraDetalleBeca()

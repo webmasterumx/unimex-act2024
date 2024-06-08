@@ -407,8 +407,8 @@ $("#form_quejaSugerencia").validate({
         },
         telefono_casa_qys: {
             required: "Teléfono obligatorio.",
-            minlength: "El teléfono celular debe tener mínimo 10 digitos.",
-            maxlength: "El teléfono celular debe tener máximo 10 digitos."
+            minlength: "El teléfono debe tener mínimo 10 digitos.",
+            maxlength: "El teléfono debe tener máximo 10 digitos."
         },
         telefono_movil_qys: {
             required: "Teléfono celular obligatorio.",

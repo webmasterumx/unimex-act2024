@@ -230,7 +230,7 @@
                 </p>
             </div>
             <div class="col-12 col-md-6 col-lg-6 px-3">
-                <div id="campo_laboral" style="max-height: 164px !important">
+                <div id="campo_laboral">
                     @for ($z = 0; $z < sizeof($campo_laboral); $z++)
                         <div class="card bg-transparent border-0">
                             <div class="card-body text-center text-white">

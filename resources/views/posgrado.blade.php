@@ -127,6 +127,8 @@
                         <br><br>
                         Beca UNIMEX para Especialidades hasta del 35% y para Maestrías hasta del 20%.
                         <br><br>
+                        Nota: Para conocer más acerca de las Becas UNIMEX consulta la sección Beca Posgrado.
+                        <br><br>
                         Puedes aplicar el Programa “Continúa con tu Maestría en UNIMEX®”:
                         En Universidad Mexicana puedes estudiar tu Maestría como continuación de tu Especialidad UNIMEX®. Al
                         terminar los 3 ciclos escolares de la Especialidad, puedes solicitar tu equivalencia de materias

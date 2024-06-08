@@ -13,6 +13,24 @@ class PreinscripcionEnLineaController extends Controller
 
     public function index()
     {
+
+        if (isset($_REQUEST['utm_source']) && isset($_REQUEST['utm_medium']) && isset($_REQUEST['utm_campaign']) && isset($_REQUEST['utm_term']) && isset($_REQUEST['utm_content']) && isset($_REQUEST['gad_source'])) {
+            session(["utm_source" => $_REQUEST['utm_source']]);
+            session(["utm_medium" => $_REQUEST['utm_medium']]);
+            session(["utm_campaign" => $_REQUEST['utm_campaign']]);
+            session(["utm_term" => $_REQUEST['utm_term']]);
+            session(["utm_content" => $_REQUEST['utm_content']]);
+            session(["gad_source" => $_REQUEST['gad_source']]);
+        } else {
+
+            session(["utm_source" => "organico"]);
+            session(["utm_medium" => 0]);
+            session(["utm_campaign" => 0]);
+            session(["utm_term" => 0]);
+            session(["utm_content" => 0]);
+            session(["gad_source" => 0]);
+        }
+
         return view('preinscripcionEnLinea.inicio');
     }
 
@@ -159,11 +177,11 @@ class PreinscripcionEnLineaController extends Controller
             "ClaveNivel" => session("ClaveNivel"),
             "ClaveCarrera" => session("ClaveCarrera"),
             "ClaveTurno" => session("ClaveTurno"),
-            "UtpSource" => session("UtpSource"),
-            "DescripCampPublicidad" => session("DescripCampPublicidad"),
-            "CampaignMedium" => session("CampaignMedium"),
-            "CampaignTerm" => session("CampaignTerm"),
-            "CampaignContent" => session("CampaignContent"),
+            "UtpSource" => session("utm_source"),
+            "DescripCampPublicidad" => session("utm_campaign"),
+            "CampaignMedium" => session("utm_medium"),
+            "CampaignTerm" => session("utm_term"),
+            "CampaignContent" => session("utm_content"),
             "WebSiteURL" => session("WebSiteURL"),
             "FechaDeNacimiento" => session("FechaDeNacimiento"),
         );
@@ -185,7 +203,7 @@ class PreinscripcionEnLineaController extends Controller
         session(['FolioCrm' => $registro['FolioCrm']]);
 
         SELF::getPlantelInfo();
-        
+
         return view('preinscripcionEnLinea.formaDePago');
     }
 
@@ -366,7 +384,6 @@ class PreinscripcionEnLineaController extends Controller
         session(['empresa' => $this->plantelInfo['empresa']]);
         session(['ns' => $this->plantelInfo['ns']]);
         session(['referencia' => $this->plantelInfo['referencia']]);
-
     }
 
     public function getInfoProspecto()
@@ -385,7 +402,7 @@ class PreinscripcionEnLineaController extends Controller
 
     function insertarRegistroActividadParaMatriculado()
     {
-        
+
         $date_now = date('d-m-Y');
         $date_future = strtotime('+1 day', strtotime($date_now));
         $date_future = date('Y-d-m', $date_future);
@@ -406,6 +423,6 @@ class PreinscripcionEnLineaController extends Controller
 
         $insertarActividad = app(ApiConsumoController::class)->guardarActividadBitacora($data);
 
-        var_dump($insertarActividad); 
+        var_dump($insertarActividad);
     }
 }
