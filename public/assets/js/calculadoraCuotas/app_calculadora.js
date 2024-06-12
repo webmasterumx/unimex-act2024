@@ -78,6 +78,7 @@ function establecerValoresCosto(data) {
     $('#plantelInfo').html(`${nombrePlantel}`);
     $('#turnoInfo').html(`${data.Turno}`);
     $('#horarioInfo').html(`${data.Horario}`);
+    $('#infoBeca').html(`${data.Beca}%`);
     $('#incioInfo').html(`${data.DescripPer}`);
     $('#vigenciaInfo').html(`${data.Vigencia}`);
 

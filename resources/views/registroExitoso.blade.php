@@ -50,7 +50,7 @@
                 manuallyCopyFormValues: true,
                 deferred: $.Deferred(),
                 timeout: 750,
-                title: 'Resumen de tu selección en la Calculadora de Becas UNIMEX',
+                title: 'Registro Exitoso',
                 doctype: ' <!doctype html> '
             });
         }

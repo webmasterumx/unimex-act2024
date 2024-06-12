@@ -109,6 +109,9 @@ $("#form_calculadora").validate({
                         getCarreras();
                     }
 
+                    $('#terminosCondicionesText').html(respuesta.legales);
+                    $('#terminosCondiciones').removeClass('d-none');
+
                 }).fail(function () {
                     console.log("Algo salió mal");
                 });
