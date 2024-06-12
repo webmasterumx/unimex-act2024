@@ -24,7 +24,12 @@ class CalculadoraCuotasController extends Controller
         $content = session("utm_content");
         $campaign = session("utm_campaign");
         $term = session("utm_term");
-
+        session(['nombreNivel' => $request->nombreNivel]);
+        session(['nombrePlantel' => $request->nombrePlantel]);
+        session(['nombrePeriodo' => $request->nombrePeriodo]);
+        SELF::telefonoAndDireccionPlantel($request->selectPlantel);
+        $legales = SELF::definirLegales($request->selectNivel);
+        session(["legales" => $legales]);
 
         if ($request->typeTelefono == 1) {
             $telefono_valor = "";
@@ -74,7 +79,7 @@ class CalculadoraCuotasController extends Controller
         //$recive = "lishanxime201099@gmail.com";
         $recive = session('datoCuatroCalculadora');
         var_dump(session('datoCuatroCalculadora'));
-        $envio =  Mail::to($recive)->bcc("umrec_web@unimex.edu.mx")->send(new CalculadoraCuotas());
+        //$envio =  Mail::to($recive)->bcc("umrec_web@unimex.edu.mx")->send(new CalculadoraCuotas());
         //Mail::to($recive)->send(new CalculadoraDetallesBeca());
     }
 
@@ -87,34 +92,34 @@ class CalculadoraCuotasController extends Controller
         session(["datoCincoCalculadora" => $respuesta['FolioCRM']]);
     }
 
-    public function establecerVariablesPromocion(Request $request)
+    public function establecerVariablesPromocion($response)
     {
-        echo $request->Beca;
-        session(["Beca" => $request->Beca]);
-        session(["Carrera" => $request->Carrera]);
-        session(["ClaveCuoProm" => $request->ClaveCuoProm]);
-        session(["ClaveNivel" => $request->ClaveNivel]);
-        session(["ClavePer" => $request->ClavePer]);
-        session(["Credencial" => $request->Credencial]);
-        session(["DescripPer" => $request->DescripPer]);
-        session(["Dias" => $request->Dias]);
-        session(["Horario" => $request->Horario]);
-        session(["InicioClases" => $request->InicioClases]);
-        session(["InscCB" => $request->InscCB]);
-        session(["InscSB" => $request->InscSB]);
-        session(["ParcCB" => $request->ParcCB]);
-        session(["ParcSB" => $request->ParcSB]);
-        session(["Periodo" => $request->Periodo]);
-        session(["Plantel" => $request->Plantel]);
-        session(["ReinsCB" => $request->ReinsCB]);
-        session(["ReinscSB" => $request->ReinscSB]);
-        session(["TotalCB" => $request->TotalCB]);
-        session(["TotalSB" => $request->TotalSB]);
-        session(["Turno" => $request->Turno]);
-        session(["Uniforme" => $request->Uniforme]);
-        session(["Vigencia" => $request->Vigencia]);
+        //echo $response['Beca'];
+        session(["Beca" => $response['Beca']]);
+        session(["Carrera" => $response['Carrera']]);
+        session(["ClaveCuoProm" => $response['ClaveCuoProm']]);
+        session(["ClaveNivel" => $response['ClaveNivel']]);
+        session(["ClavePer" => $response['ClavePer']]);
+        session(["Credencial" => $response['Credencial']]);
+        session(["DescripPer" => $response['DescripPer']]);
+        session(["Dias" => $response['Dias']]);
+        session(["Horario" => $response['Horario']]);
+        session(["InicioClases" => $response['InicioClases']]);
+        session(["InscCB" => $response['InscCB']]);
+        session(["InscSB" => $response['InscSB']]);
+        session(["ParcCB" => $response['ParcCB']]);
+        session(["ParcSB" => $response['ParcSB']]);
+        session(["Periodo" => $response['Periodo']]);
+        session(["Plantel" => $response['Plantel']]);
+        session(["ReinsCB" => $response['ReinsCB']]);
+        session(["ReinscSB" => $response['ReinscSB']]);
+        session(["TotalCB" => $response['TotalCB']]);
+        session(["TotalSB" => $response['TotalSB']]);
+        session(["Turno" => $response['Turno']]);
+        session(["Uniforme" => $response['Uniforme']]);
+        session(["Vigencia" => $response['Vigencia']]);
 
-        echo session('Beca');
+        //echo session('ClavePer'); 
     }
 
     public function definirLegales($idNivel)
@@ -149,6 +154,45 @@ class CalculadoraCuotasController extends Controller
             default:
                 return $prepa;
                 break;
+        }
+    }
+
+    function telefonoAndDireccionPlantel($idPlantel)
+    {
+        $izcalli  = '5864 9660 / 5873 9444';
+        $satelite = '5374 7480 / 5393 1326 / 5562 2259 <br /> 5562 6347 /5562 4852';
+        $polanco  = '9138 0060';
+        $veracruz = '(229) 9231300 / (229) 9323916';
+
+        $izcalliDir  = 'Av. Del Vidrio No. 15, Col. Plaza Dorada, Centro Urbano (Frente a la FES Cuautitlán) Campo 1, C.P. 54760 Cuautitlán Izcalli, Estado de México ';
+        $sateliteDir = 'Circuito Poetas No. 37 (frente a Circuito Novelistas No. 41) Cd. Satélite C.P. 53100 Naucalpan de Juárez, Estado de México. ';
+        $polancoDir  = 'Emilio Castelar No. 63, esq. Eugenio Sue, (Polanco o Auditorio). Col. Polanco-Chapultepec, C.P.11560, Ciudad de México';
+        $veracruzDir = 'Av. 20 de noviembre esq. Juan Enríquez No. 1004 Veracruz, Ver.';
+
+        $izcalliEmail = 'umizc_resprelaciones@unimex.edu.mx';
+        $sateliteEmail = 'umsat_coorrelaciones@unimex.edu.mx';
+        $polancoEmail  = 'umpol_coorrelaciones@unimex.edu.mx';
+        $veracruzEmail = 'umver_relaciones@unimex.edu.mx';
+
+        if ($idPlantel == '2') {
+            session(['telefonoPlanCorreo' => $izcalli]);
+            session(['plantelDir' => $izcalliDir]);
+            session(['emailPlantel' => $izcalliEmail]);
+        }
+        if ($idPlantel == '3') {
+            session(['telefonoPlanCorreo' => $satelite]);
+            session(['plantelDir' => $sateliteDir]);
+            session(['emailPlantel' => $sateliteEmail]);
+        }
+        if ($idPlantel == '4') {
+            session(['telefonoPlanCorreo' => $polanco]);
+            session(['plantelDir' => $polancoDir]);
+            session(['emailPlantel' => $polancoEmail]);
+        }
+        if ($idPlantel == '5') {
+            session(['telefonoPlanCorreo' => $veracruz]);
+            session(['plantelDir' => $veracruzDir]);
+            session(['emailPlantel' => $veracruzEmail]);
         }
     }
 }

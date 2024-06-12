@@ -25,7 +25,7 @@ function selectHorario(turno, beca, element) {
 
     console.log(data);
 
-    actualizarProspectoCalculadora(turno);
+    //actualizarProspectoCalculadora(turno);
 
     let ruta = setUrlBase() + "get/detalle/beca";
 
@@ -41,7 +41,6 @@ function selectHorario(turno, beca, element) {
 
         if (data.Beca != undefined) {
             establecerValoresCosto(data);
-            establecerVariablesPromo(data);
         }
         else {
             if ($("#grupoInformacion").hasClass("d-none") === false) {
@@ -57,7 +56,8 @@ function selectHorario(turno, beca, element) {
             });
         }
 
-    }).fail(function () {
+    }).fail(function (error) {
+        console.log(error);
         console.log("Algo salió mal");
     });
 }
@@ -373,26 +373,6 @@ function actualizarProspectoCalculadora(turno) {
     }).fail(function () {
         console.log("Algo salió mal");
     });
-}
-
-function establecerVariablesPromo(data) {
-
-    let ruta = setUrlBase() + 'establecer/variables/oferta';
-
-    $.ajax({
-        method: "POST",
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        },
-        url: ruta,
-        data: data
-    }).done(function (data) {
-        console.log(data);
-
-    }).fail(function () {
-        console.log("Algo salió mal");
-    });
-
 }
 
 function enviarDetallesHorarioBeca() {

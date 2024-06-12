@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use Mockery\Undefined;
 
 class ApiConsumoController extends Controller
 {
@@ -110,6 +111,10 @@ class ApiConsumoController extends Controller
             "claveBeca" => $request->claveBeca,
             "egresado" => $request->egresado,
         ]);
+
+        if (isset($response['Beca'])) {
+            app(CalculadoraCuotasController::class)->establecerVariablesPromocion($response);
+        }
 
         return $response->json();
     }

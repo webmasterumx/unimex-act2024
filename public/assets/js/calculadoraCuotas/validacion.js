@@ -69,8 +69,15 @@ $("#form_calculadora").validate({
                 Calculando
             `);
 
+            let nombreNivel = $('select[name="selectNivel"] option:selected').text();
+            let nombrePlantel = $('select[name="selectPlantel"] option:selected').text();
+            let nombrePeriodo = $('select[name="selectPeriodo"] option:selected').text();
 
             let formData = new FormData(form);
+            formData.append('nombreNivel', nombreNivel);
+            formData.append('nombrePlantel', nombrePlantel);
+            formData.append('nombrePeriodo', nombrePeriodo);
+
             let ruta = setUrlBase() + "insertar/prospecto/calculadora";
 
             $.ajax({
