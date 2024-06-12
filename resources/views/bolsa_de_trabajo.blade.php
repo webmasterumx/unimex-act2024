@@ -65,4 +65,6 @@
             document.getElementsByTagName("head")[0].appendChild(mf);
         })();
     </script>
+    
+    @include('include.redirecciones.outOfertaAcademica')
 @endsection

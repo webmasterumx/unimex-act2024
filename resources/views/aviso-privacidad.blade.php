@@ -128,3 +128,5 @@
     </section>
     <!-- Fin de Aviso de Privacidad -->
 @endsection
+
+@include('include.redirecciones.outOfertaAcademica')

@@ -34,7 +34,6 @@ class CalculadoraCuotasController extends Controller
         }
 
         $valores = array(
-
             "pNombre" => $request->nombreProspecto,
             "pApPaterno" => $request->apellidosProspecto,
             "pApMaterno" => "",

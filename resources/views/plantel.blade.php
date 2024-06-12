@@ -64,7 +64,8 @@
         <div id="nuestroCampus">
             @for ($i = 0; $i < count($galeria->galeria); $i++)
                 <div class="card p-md-3 p-lg-3 border-0" style="background-color: #20324f;">
-                    <img class="img-fluid m-auto" src="{{ asset($galeria->galeria[$i]) }}" class="card-img-top" alt="...">
+                    <img class="img-fluid m-auto" src="{{ asset($galeria->galeria[$i]) }}" class="card-img-top"
+                        alt="...">
                 </div>
             @endfor
         </div>
@@ -161,4 +162,6 @@
             nextArrow: '<button type="button" class="slick-next-plantel"><i class="bi bi-chevron-compact-right"></i></button>',
         });
     </script>
+
+    @include('include.redirecciones.outOfertaAcademica')
 @endsection

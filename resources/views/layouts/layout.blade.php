@@ -308,7 +308,7 @@
             }).fail(function() {
                 console.log("Algo salió mal");
             });
-            window.open("{{ route('contacto') }}", '_blank');
+            window.open("{{ route('contacto') }}", '_self');
         }
 
         function redirirgirContactoBolsa() {
@@ -325,7 +325,7 @@
             }).fail(function() {
                 console.log("Algo salió mal");
             });
-            window.open("{{ route('contacto') }}", '_blank');
+            window.open("{{ route('contacto') }}", '_self');
         }
 
         function gerenerarMenuSm() {

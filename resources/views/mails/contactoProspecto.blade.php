@@ -383,7 +383,7 @@
                                                 ¡Felicidades! <b> {{ $infoForm->nombre_prospecto }} </b> ya diste el primer paso para
                                                 iniciar tu proyecto de vida en UNIMEX.
                                                 <br /><br />Has enviado tu solicitud para cursar la <b> {{ $infoGenerada['Nivel'] }}
-                                                    '</b> </b> <b></b> en el Plantel <b> {{ $infoGenerada['Plantel'] }} </b> para
+                                                    </b> </b> <b></b> en el Plantel <b> {{ $infoGenerada['Plantel'] }} </b> para
                                                 iniciar tus estudios en el ciclo de <b> {{ $infoGenerada['Ciclo'] }} </b>
                                             </p><br>
                                             <table border="0" cellpadding="0" cellspacing="0">

@@ -146,7 +146,8 @@
                     if (respuesta.ResultadoExamen != undefined) {
                         //se obtuvo un resultado 
                         $("#resultadoACreditado").removeClass('d-none');
-                        let linkImpresion = setUrlBase() + "carta/resutado/" + respuesta.ResultadoExamen.Matricula;
+                        let linkImpresion = setUrlBase() + "carta/resutado/" + respuesta.ResultadoExamen
+                            .Matricula;
                         $('#nombreAcreditado').html(respuesta.ResultadoExamen.Nombre);
 
                         $('#linkImpresion').attr("href", linkImpresion);
@@ -163,4 +164,6 @@
             }
         });
     </script>
+
+    @include('include.redirecciones.outOfertaAcademica')
 @endsection
