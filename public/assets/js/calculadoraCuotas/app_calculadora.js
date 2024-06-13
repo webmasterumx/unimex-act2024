@@ -5,13 +5,21 @@ function selectHorario(turno, beca, element) {
     $('#cargador_costos').removeClass('d-none');
     $('#grupoInformacion').addClass('d-none');
 
+    let egresadoDefoult = 0;
+
+    if ($('input:radio[name=typeProspecto]:checked').val() == undefined) {
+        egresadoDefoult = 0;
+    } else {
+        egresadoDefoult = $('input:radio[name=typeProspecto]:checked').val();
+    }
+
     let PlantelId = $('select[name=selectPlantel]').val();
     let claveCarrera = $('select[name=selectCarrera]').val();
     let claveTurno = turno;
     let claveNivel = $('select[name=selectNivel]').val();
     let clavePeriodo = $('select[name=selectPeriodo]').val();
     let claveBeca = beca;
-    let egresado = 0;
+    let egresado = egresadoDefoult;
 
     let data = {
         "PlantelId": PlantelId,
@@ -582,4 +590,3 @@ function rechazoAgendar() {
     Swal.fire("¡Proceso Terminado!", "", "error");
 
 }
-

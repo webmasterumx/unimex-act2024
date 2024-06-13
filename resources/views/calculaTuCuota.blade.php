@@ -261,7 +261,7 @@
                     </div>
                 </div>
             </div>
-            <hr class="mt-3" style="border-top: 1px solid #DC9A00; opacity: 1;">
+            <hr id="separacionTerminosCondiciones" class="mt-3 d-none" style="border-top: 1px solid #DC9A00; opacity: 1;">
             <div id="terminosCondiciones" class="col-12 d-none">
                 <div class="accordion" id="accordionExample">
                     <div class="accordion-item border-0">
