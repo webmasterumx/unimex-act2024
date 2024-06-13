@@ -244,6 +244,8 @@
     </section>
     <!-- Fin de temario de especialidad y maestria -->
 
+    @include('include.folletoForm')
+
     <!-- Inicio de la Sección de Contacto -->
     @include('include.contactoForm')
     <!-- Fin de la Sección de Contacto -->
@@ -473,9 +475,26 @@
             window.open("{{ route('preinscripcion.linea') }}", '_blank');
         });
 
+        function getCarreraPosicion() {
+            let carreraPosicionado = "{{ $posgrado->titulo }}";
+
+            return carreraPosicionado;
+        }
+
+        function getNivelPosicion() {
+            let nivelPosicionado = 2;
+
+            return nivelPosicionado;
+        }
+
+
         var nivelPosicionado = "Especialidad";
         var carreraPosicionado = "{{ $posgrado->titulo }}";
+        var turnoPosicionado = 31;
     </script>
+
+    <script src="{{ asset('assets/js/folletoUnimex/combos.js') }}"></script>
+    <script src="{{ asset('assets/js/folletoUnimex/form.js') }}"></script>
 
     @include('include.redirecciones.inOfertaAcademica')
 @endsection

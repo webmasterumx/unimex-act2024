@@ -37,22 +37,22 @@ $("#form_folleto").validate({
     },
     submitHandler: function (form) {
 
-        $("#redireccionPEL").prop("disabled", true);
-        $('#redireccionPEL').html(`
-            <div style="width: 20px !important; height: 20px !important;"
-                class="spinner-border" role="status">
-                <span class="visually-hidden">Loading...</span>
-            </div>
-            Descargando..
-        `);
+        $("#descargaFolleto").prop("disabled", true);
+        $('#descargaFolleto').html(`
+              <div style="width: 20px !important; height: 20px !important;"
+                  class="spinner-border" role="status">
+                  <span class="visually-hidden">Loading...</span>
+              </div>
+              Cargando Archivo
+          `);
 
         let formData = new FormData(form);
-
         let nivel = getNivelPosicion();
         let carrera = getCarreraPosicion();
 
         formData.append("nivelPosicion", nivel);
         formData.append("carreraPosicion", carrera);
+        formData.append("turnoPosicionado", turnoPosicionado);
 
         $.ajax({
             method: "POST",
@@ -64,8 +64,26 @@ $("#form_folleto").validate({
             processData: false,
         }).done(function (data) {
             console.log(data);
+            let respuesta = JSON.parse(data);
+            console.log(respuesta);
 
-        }).fail(function () {
+            if (respuesta.ruta == " " || respuesta.ruta == "") {
+                Swal.fire({
+                    icon: "error",
+                    title: "¡Lo sentimos!",
+                    text: "Folleto no disponible",
+                });
+            } else {
+                window.open(respuesta.ruta, '_blank');
+            }
+
+            $("#descargaFolleto").prop("disabled", false);
+            $('#descargaFolleto').html(`
+                  ¡DESCARGAR!
+              `);
+
+        }).fail(function (error) {
+            console.log(error);
             console.log("Algo salió mal");
         });
 

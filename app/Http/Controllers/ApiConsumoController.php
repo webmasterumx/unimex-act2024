@@ -241,4 +241,12 @@ class ApiConsumoController extends Controller
 
         return $response->json();
     }
+
+    //? obtiene la ruta del documento para los folletos
+    public function getDocumentosFolleto($valores)  
+    {
+        $response = Http::post($this->base_url . 'kontux/obtener-documentos', $valores);
+
+        return $response->json();
+    }
 }

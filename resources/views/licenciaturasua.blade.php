@@ -132,7 +132,8 @@
                     <br><br>
                     <b>Estarás acompañad@.</b> Si necesitas ayuda con algún tema, puedes participar en asesorías
                     presenciales o
-                    virtuales (en línea) los sábados entre 8 y 14:30 hrs. Tu Asesor y la Red de Apoyo te brindarán el acompañamiento académico que necesites durante la carrera.
+                    virtuales (en línea) los sábados entre 8 y 14:30 hrs. Tu Asesor y la Red de Apoyo te brindarán el
+                    acompañamiento académico que necesites durante la carrera.
                     <br><br>
                     <b>Beca del 40%</b> Te apoyamos con una beca académica desde el inicio de la carrera y cuotas muy
                     accesibles.
@@ -249,6 +250,8 @@
     </section>
     <!-- Fin de temario -->
 
+    @include('include.folletoForm')
+
     <!-- Inicio de la Sección de Contacto -->
     @include('include.contactoForm')
     <!-- Fin de la Sección de Contacto -->
@@ -258,7 +261,7 @@
         <div class="row">
             <div class="col-12 col-md-6 col-lg-6">
                 <h2 style="font-size: 1.50rem;" class="underlined-head text-uppercase text-white">
-                    LICENCIATURA ABIERTA EN {{ $licenciatura_sua->titulo }} 
+                    LICENCIATURA ABIERTA EN {{ $licenciatura_sua->titulo }}
                 </h2>
                 <p>
                     Campo Laboral
@@ -487,6 +490,7 @@
 
         var nivelPosicionado = "Licenciatura";
         var carreraPosicionado = "{{ $licenciatura_sua->titulo }}";
+        var turnoPosicionado = 5;
 
         $('#carrucelVentajas').slick({
             autoplay: true,
@@ -495,6 +499,9 @@
             arrows: false,
         });
     </script>
+
+    <script src="{{ asset('assets/js/folletoUnimex/combos.js') }}"></script>
+    <script src="{{ asset('assets/js/folletoUnimex/form.js') }}"></script>
 
     @include('include.redirecciones.inOfertaAcademica')
 @endsection

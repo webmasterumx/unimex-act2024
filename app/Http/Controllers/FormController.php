@@ -252,7 +252,26 @@ class FormController extends Controller
         $plantel = $request->plantelSelectFolleto;
         $periodo = $request->peridoSelectFolleto;
         $nivel  = $request->nivelPosicion;
+        $horario = $request->turnoPosicionado;
         $claveCarrera = SELF::getIdentificarCarrera($licenciatura, $plantel, $periodo, $nivel);
+
+        //echo $claveCarrera;
+
+        if ($claveCarrera == 0) {
+
+            $respuesta['estado'] = false;
+            $respuesta['ruta'] = "";
+
+        } else {
+
+            $archivo = SELF::getRutaFolleto($plantel, $nivel, $horario, $claveCarrera);
+
+            $respuesta['estado'] = true;
+            $respuesta['ruta'] = $archivo['ruta_archivo'];
+
+        }
+
+        //var_dump($rutaArchivo);
 
         $valores = array(
             "campaingContent" => "",
@@ -275,20 +294,24 @@ class FormController extends Controller
             "utpsource" => "",
             "websiteURL" => "https://unimex.edu.mx/",
         );
-
+ 
         $agregarProspecto = app(ApiConsumoController::class)->agregarProspectoCRM($valores);
 
-        var_dump($agregarProspecto);
+        return response()->json($respuesta);
     }
 
     public function getIdentificarCarrera($licenciatura, $plantel, $periodo, $nivel)
     {
+
+        $claveCarrera = 0;
 
         $valores = [
             "clavePlantel" => $plantel,
             "claveNivel" => $nivel,
             "clavePeriodo" => $periodo,
         ];
+
+        //var_dump($valores);
 
         $catalogoCarreras = app(ApiConsumoController::class)->getCarrerasMethod($valores);
 
@@ -299,5 +322,22 @@ class FormController extends Controller
         }
 
         return $claveCarrera;
+    }
+
+    public function getRutaFolleto($plantel, $nivel, $horario, $claveCarrera)
+    {
+        $valores = [
+            "clavePlantel" => $plantel,
+            "claveNivel" => $nivel,
+            "claveCarrera" => $claveCarrera,
+            "claveTurno" => $horario,
+            "tipoDocumento" => 1
+        ];
+
+        //var_dump($valores);
+
+        $rutaArchivo = app(ApiConsumoController::class)->getDocumentosFolleto($valores);
+
+        return $rutaArchivo;
     }
 }
