@@ -49,6 +49,28 @@ $("#form_folleto").validate({
         let formData = new FormData(form);
         let nivel = getNivelPosicion();
         let carrera = getCarreraPosicion();
+        var plantelSelectFolleto = $('select[name=plantelSelectFolleto]').val();
+        console.log(plantelSelectFolleto);
+
+        switch (nivel) {
+            case 1:
+                if (plantelSelectFolleto > 2) {
+                    turnoPosicionado = 1;
+                } else {
+                    turnoPosicionado = 5;
+                }
+                break;
+            case 2:
+                matriz = ["", "", "31", "20", "30", "27"];
+                turnoPosicionado = matriz[plantelSelectFolleto];
+
+                break;
+
+            default:
+                break;
+        }
+
+        console.log(turnoPosicionado);
 
         formData.append("nivelPosicion", nivel);
         formData.append("carreraPosicion", carrera);
@@ -79,8 +101,8 @@ $("#form_folleto").validate({
 
             $("#descargaFolleto").prop("disabled", false);
             $('#descargaFolleto').html(`
-                  ¡DESCARGAR!
-              `);
+                   ¡DESCARGAR!
+               `);
 
         }).fail(function (error) {
             console.log(error);

@@ -340,4 +340,9 @@ class FormController extends Controller
 
         return $rutaArchivo;
     }
+
+    public function getClaveHorarioForPlantel()  
+    {
+        $matHorarios = [""];
+    }
 }

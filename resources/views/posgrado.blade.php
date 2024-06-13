@@ -487,10 +487,8 @@
             return nivelPosicionado;
         }
 
-
         var nivelPosicionado = "Especialidad";
         var carreraPosicionado = "{{ $posgrado->titulo }}";
-        var turnoPosicionado = 31;
     </script>
 
     <script src="{{ asset('assets/js/folletoUnimex/combos.js') }}"></script>

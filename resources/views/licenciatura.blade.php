@@ -433,7 +433,7 @@
 
         var nivelPosicionado = "Licenciatura";
         var carreraPosicionado = "{{ $licenciatura->subtitulo }}";
-        var turnoPosicionado = 5;
+
 
         $('#aceptarAvisoPrivacidadFolleto').on('click', function() {
             if ($(this).is(':checked')) {

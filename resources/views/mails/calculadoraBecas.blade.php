@@ -374,7 +374,7 @@
                             <td class="wrapper">
                                 <table border="0" cellpadding="0" cellspacing="0">
                                     <tr>
-                                        <td> <img src="" style="width:35%;" /></td>
+                                        <td> <img src="{{ asset('assets/img/header/logo-2020.webp') }}" style="width:35%;" /></td>
                                     </tr>
                                     <tr>
                                         <td class="align-justify">
