@@ -10,7 +10,7 @@
                     Descarga el folleto
                 </h1>
                 <p>
-                    Conoce más de esta licenciatura, déjanos tus datos y descarga el brochure en formato pdf.
+                    Conoce más de esta licenciatura, déjanos tus datos y descarga el folleto en formato pdf.
                 </p>
                 <form id="form_folleto">
                     @csrf

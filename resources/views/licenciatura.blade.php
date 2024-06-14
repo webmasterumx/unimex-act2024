@@ -431,6 +431,12 @@
             return nivelPosicionado;
         }
 
+        function getNivelPagina() {
+            let nivelPosicionado = 1;
+
+            return nivelPosicionado;
+        }
+
         var nivelPosicionado = "Licenciatura";
         var carreraPosicionado = "{{ $licenciatura->subtitulo }}";
 

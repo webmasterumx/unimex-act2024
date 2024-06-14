@@ -68,11 +68,11 @@
             <div class="col-12 col-md-12 mb-4">
                 <a href="https://www.facebook.com/UNIMEX/" target="_blank"><img
                         src="{{ asset('assets/img/social_media/facebook.png') }}" alt=""></a>
-                <a class="ms-2" href="https://twitter.com/soyUNIMEX/" target="_blank"><img
-                        src="{{ asset('assets/img/social_media/instagram.png') }}" alt=""></a>
                 <a class="ms-2" href="https://www.instagram.com/universidadmexicana/" target="_blank"><img
-                        src="{{ asset('assets/img/social_media/linkedin.png') }}" alt=""></a>
+                        src="{{ asset('assets/img/social_media/instagram.png') }}" alt=""></a>
                 <a class="ms-2" href="https://mx.linkedin.com/school/universidad-mexicana/" target="_blank"><img
+                        src="{{ asset('assets/img/social_media/linkedin.png') }}" alt=""></a>
+                <a class="ms-2" href="https://twitter.com/soyUNIMEX/" target="_blank"><img
                         src="{{ asset('assets/img/social_media/twitter.png') }}" alt=""></a>
                 <a class="ms-2" href="https://www.youtube.com/user/SoyUNIMEX" target="_blank"><img
                         src="{{ asset('assets/img/social_media/youtube.png') }}" alt=""></a>
@@ -234,7 +234,7 @@
         obtenHover.addEventListener('click', () => {
 
             window.open(
-                'https://wa.me/525511020290/?text=Buenas+tardes%2C+me+pueden+ayudar+con+más+informaci%C3%B3n');
+                'https://wa.me/525511020290/?text=Hola!+Me+gustaría+recibir+más+información+sobre+los+programas,+cuotas+y+promociones+de+UNIMEX;+me+interesó+lo+que+vi+en+Página+Web+Metro+sobre+contacto+en+WhatsApp+(botón).+¡Gracias!');
         });
 
         /*

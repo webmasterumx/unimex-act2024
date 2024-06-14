@@ -488,6 +488,24 @@
             window.open("{{ route('preinscripcion.linea') }}", '_blank');
         });
 
+        function getCarreraPosicion() {
+            let carreraPosicionado = "{{ $licenciatura_sua->titulo }}";
+
+            return carreraPosicionado;
+        }
+
+        function getNivelPosicion() {
+            let nivelPosicionado = 1;
+
+            return nivelPosicionado;
+        }
+
+        function getNivelPagina() {
+            let nivelPosicionado = 2;
+
+            return nivelPosicionado;
+        }
+
         var nivelPosicionado = "Licenciatura";
         var carreraPosicionado = "{{ $licenciatura_sua->titulo }}";
         var turnoPosicionado = 5;

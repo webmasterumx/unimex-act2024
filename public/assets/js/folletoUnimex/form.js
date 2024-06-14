@@ -15,6 +15,8 @@ $("#form_folleto").validate({
         },
         celularFolleto: {
             required: true,
+            minlength: 10,
+            maxlength: 10
         }
     },
     messages: {
@@ -33,6 +35,8 @@ $("#form_folleto").validate({
         },
         celularFolleto: {
             required: "Teléfono obligatorio.",
+            minlength: "El teléfono celular debe tener mínimo 10 digitos.",
+            maxlength: "El teléfono celular debe tener máximo 10 digitos."
         }
     },
     submitHandler: function (form) {
@@ -49,23 +53,28 @@ $("#form_folleto").validate({
         let formData = new FormData(form);
         let nivel = getNivelPosicion();
         let carrera = getCarreraPosicion();
+        let nivelPagina = getNivelPagina();
         var plantelSelectFolleto = $('select[name=plantelSelectFolleto]').val();
         console.log(plantelSelectFolleto);
 
-        switch (nivel) {
-            case 1:
+        switch (nivelPagina) {
+            case 1: //licenciatura
                 if (plantelSelectFolleto > 2) {
                     turnoPosicionado = 1;
                 } else {
                     turnoPosicionado = 5;
                 }
                 break;
-            case 2:
+            case 2: //! licenciatura sua
+                matriz = ["", "", "53", "48", "58", "1"];
+                turnoPosicionado = matriz[plantelSelectFolleto];
+
+                break;
+            case 3: //? posgrado
                 matriz = ["", "", "31", "20", "30", "27"];
                 turnoPosicionado = matriz[plantelSelectFolleto];
 
                 break;
-
             default:
                 break;
         }
