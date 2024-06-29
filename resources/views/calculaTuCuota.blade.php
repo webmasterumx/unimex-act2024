@@ -98,15 +98,15 @@
                     </div>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="{{ asset('assets/img/calculadora_de_cuotas/1.webp') }}" class="d-block w-100"
+                            <img src="{{ asset('assets/img/calculadora_de_cuotas/2024/2024_1.jpg') }}" class="d-block w-100"
                                 alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img src="{{ asset('assets/img/calculadora_de_cuotas/2.webp') }}" class="d-block w-100"
+                            <img src="{{ asset('assets/img/calculadora_de_cuotas/2024/2024_2.jpg') }}" class="d-block w-100"
                                 alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img src="{{ asset('assets/img/calculadora_de_cuotas/3.webp') }}" class="d-block w-100"
+                            <img src="{{ asset('assets/img/calculadora_de_cuotas/2024/2024_3.jpg') }}" class="d-block w-100"
                                 alt="...">
                         </div>
                     </div>
