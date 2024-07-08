@@ -72,13 +72,13 @@ $("#form_calculadora").validate({
                     });
             
                 } else {
-                    $("#envio_caluladora").prop("disabled", true);
+                    /* $("#envio_caluladora").prop("disabled", true);
                     $('#envio_caluladora').html(`
                         <div class="spinner-border me-1" style="width: 20px; height: 20px;" role="status">
                             <span class="visually-hidden">Loading...</span>
                         </div>
                         Calculando
-                    `);
+                    `); */
             
                     let nombreNivel = $('select[name="selectNivel"] option:selected').text();
                     let nombrePlantel = $('select[name="selectPlantel"] option:selected').text();
@@ -157,13 +157,13 @@ $("#form_calculadora").validate({
                 });
         
             } else {
-                $("#envio_caluladora").prop("disabled", true);
+                /* $("#envio_caluladora").prop("disabled", true);
                 $('#envio_caluladora').html(`
                     <div class="spinner-border me-1" style="width: 20px; height: 20px;" role="status">
                         <span class="visually-hidden">Loading...</span>
                     </div>
                     Calculando
-                `);
+                `); */
         
                 let nombreNivel = $('select[name="selectNivel"] option:selected').text();
                 let nombrePlantel = $('select[name="selectPlantel"] option:selected').text();

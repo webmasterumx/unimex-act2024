@@ -61,8 +61,14 @@ $("#formPreincripcion").validate({
                 setTimeout(`location.href='${redireccion}'`, 2000);
             } else if (respuesta.acceso == false) {
                 $('#validarCorreo').html(`
-                Respuesta Obtenida
+                    <i class="bi bi-box-arrow-right"></i>
+                    Continuar
                 `);
+                $("#validarCorreo").prop("disabled", false);
+
+                $("#correo").val("");
+                $("#telefono").val("");
+
 
                 $('#statictConfirmPreinscripcion').modal('show');
             } else if (respuesta.acceso = "Descartar") {

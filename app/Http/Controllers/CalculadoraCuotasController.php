@@ -71,7 +71,7 @@ class CalculadoraCuotasController extends Controller
 
         $respuesta['legales'] = $legales;
 
-        return response()->json($respuesta); 
+        return response()->json($respuesta);  
         
     }
 

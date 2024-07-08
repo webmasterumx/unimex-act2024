@@ -98,16 +98,16 @@
                     </div>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="{{ asset('assets/img/calculadora_de_cuotas/2024/2024_1.jpg') }}" class="d-block w-100"
-                                alt="...">
+                            <img src="{{ asset('assets/img/calculadora_de_cuotas/2024/2024_1.jpg') }}"
+                                class="d-block w-100" alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img src="{{ asset('assets/img/calculadora_de_cuotas/2024/2024_2.jpg') }}" class="d-block w-100"
-                                alt="...">
+                            <img src="{{ asset('assets/img/calculadora_de_cuotas/2024/2024_2.jpg') }}"
+                                class="d-block w-100" alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img src="{{ asset('assets/img/calculadora_de_cuotas/2024/2024_3.jpg') }}" class="d-block w-100"
-                                alt="...">
+                            <img src="{{ asset('assets/img/calculadora_de_cuotas/2024/2024_3.jpg') }}"
+                                class="d-block w-100" alt="...">
                         </div>
                     </div>
                 </div>
@@ -261,7 +261,8 @@
                     </div>
                 </div>
             </div>
-            <hr id="separacionTerminosCondiciones" class="mt-3 d-none" style="border-top: 1px solid #DC9A00; opacity: 1;">
+            <hr id="separacionTerminosCondiciones" class="mt-3 d-none"
+                style="border-top: 1px solid #DC9A00; opacity: 1;">
             <div id="terminosCondiciones" class="col-12 d-none">
                 <div class="accordion" id="accordionExample">
                     <div class="accordion-item border-0">
@@ -273,9 +274,9 @@
                                 <b>Términos y Condiciones</b>
                             </button>
                         </h2>
-                        <div id="collapseOne" class="accordion-collapse collapse"
-                            data-bs-parent="#accordionExample">
-                            <div style="color: #004b93 !important;" id="terminosCondicionesText" class="accordion-body"></div>
+                        <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div style="color: #004b93 !important;" id="terminosCondicionesText" class="accordion-body">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -347,6 +348,16 @@
                 //console.log("El checkbox con valor " + $(this).val() + " ha sido deseleccionado");
                 $('#envio_caluladora').attr('disabled', true);
             }
+        });
+
+        $('#nombreProspecto').keypress(function(tecla) {
+            if ((tecla.charCode < 97 || tecla.charCode > 122) && (tecla.charCode < 65 || tecla
+                    .charCode > 90) && (tecla.charCode != 45)) return false;
+        });
+
+        $('#apellidosProspecto').keypress(function(tecla) {
+            if ((tecla.charCode < 97 || tecla.charCode > 122) && (tecla.charCode < 65 || tecla
+                    .charCode > 90) && (tecla.charCode != 45)) return false;
         });
     </script>
     <script src="{{ asset('assets/js/calculadoraCuotas/app_calculadora.js') }}"></script>

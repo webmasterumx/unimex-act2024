@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Confirmación de registro en: UNIMEX.MX</title>
     <style>
-
+        body {
+            color: #00245D;
+        }
     </style>
 </head>
 
@@ -26,6 +28,20 @@
             </td>
         </tr>
     </table>
+    {{-- <table>
+        <tr>
+            <td>
+                INSCRIPCIÓN
+            </td>
+            <td>
+                <table>
+                    <tr>
+
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table> --}}
     <table>
         <tr>
             <td>
@@ -92,7 +108,7 @@
             <td>
                 <p>
                     Tu selección ha sido: Licenciatura en {{ session('Carrera') }} <br>
-                    Plantel: {{ session('Plantel') }} en horario: {{ session('Turno') }} de {{ session('Turno') }} <br>
+                    Plantel: {{ session('Plantel') }} en horario: {{ session('Turno') }} <br>
                     Inicio de clases {{ session('DescripPer') }} <br>
                     Vigencia: {{ session('Vigencia') }} <br>
                     Durante el cuatrimestre se deberan pagar 4 parcialidades indicadas en el Calendario Escolar. <br>

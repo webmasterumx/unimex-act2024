@@ -89,7 +89,8 @@ $(document).ready(function () {
                                 $(element).append(option);
                             });
                         } else {
-                            let option = `<option value="${data.clave}">${data.descrip}</option>`;
+                            //selected
+                            let option = `<option  value="${data.clave}">${data.descrip}</option>`;
                             $(element).append(option);
                         }
 
@@ -198,6 +199,10 @@ $(document).ready(function () {
             data: data
         }).done(function (data) {
             console.log(data);
+
+            $('#carreraSelect').empty();
+            $("#carreraSelect").append(`<option value="" selected disabled>Selecciona una carrera</option>`);
+
             $.each(data, function (index, value) {
 
                 console.log(carreraInicialSelect);

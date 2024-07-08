@@ -50,14 +50,27 @@ function llenarComboCampañas(claveCampana, clavePlantel) {
         $("#periodoSelect").empty();
         const campañas = data;
         console.log(campañas);
-        let option_default = `<option value="">Seleciona ciclo</option>`;
+        let option_default = `<option value="">Selecciona ciclo</option>`;
         if (campañas != undefined) {
-            $("#periodoSelect").append(option_default); //se establece la campaña por defecto
-            for (let index = 0; index < campañas.length; index++) { //recorrer el array de campañas
-                const element = campañas[index]; // se establece un elemento por campaña optenida
-                let option = `<option value="${element.clave}">${element.descrip}</option>`; //se establece la opcion por campaña
+            console.log(campañas.clave);
+
+            if (campañas.clave == undefined || campañas.clave == null) {
+
+                $("#periodoSelect").append(option_default); //se establece la campaña por defecto
+                for (let index = 0; index < campañas.length; index++) { //recorrer el array de campañas
+                    const element = campañas[index]; // se establece un elemento por campaña optenida
+                    let option = `<option value="${element.clave}">${element.descrip}</option>`; //se establece la opcion por campaña
+                    $("#periodoSelect").append(option); // se inserta la campaña de cada elemen  to
+                }
+
+            } else {
+                
+                let option = `<option value="${campañas.clave}">${campañas.descrip}</option>`; //se establece la opcion por campaña
                 $("#periodoSelect").append(option); // se inserta la campaña de cada elemen  to
+                
             }
+
+
         }
         else {
             $("#periodoSelect").append(option_default);

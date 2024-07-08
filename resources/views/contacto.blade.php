@@ -185,24 +185,6 @@
             }
         });
 
-        /*   $("#matricula_service").bind('keypress', function(event) {
-              var regex = new RegExp("^[0-9]+$");
-              var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
-              if (!regex.test(key)) {
-                  event.preventDefault();
-                  return false;
-              }
-          });
-
-          $("#matricula_qys").bind('keypress', function(event) {
-              var regex = new RegExp("^[0-9]+$");
-              var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
-              if (!regex.test(key)) {
-                  event.preventDefault();
-                  return false;
-              }
-          }); */
-
         $("#nivelSelect").append(`<option value="">Nivel</option>`);
         $("#carreraSelect").append(`<option value="">Carrera</option>`);
 
@@ -241,6 +223,18 @@
                 $('#enviarDatosEmpresasOCC').attr('disabled', true);
             }
         });
+
+
+        limitarInputLetras("name_service");
+        limitarInputLetras("asunto_service");
+        limitarInputLetras("nombre_empresaOCC");
+        limitarInputLetras("contacto_empresaOCC");
+        limitarInputLetras("razon_empresaOCC");
+        limitarInputLetras("nombre_trabajo");
+        limitarInputLetras("puesto_interes");
+        limitarInputLetras("nombre_qys");
+        limitarInputLetras("asunto_qys");
+
     </script>
 
     @include('include.redirecciones.outOfertaAcademica')

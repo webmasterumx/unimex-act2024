@@ -74,7 +74,7 @@ class FormController extends Controller
         //$recive = $request->mail_prospecto;
         $correos = [
             "umrec_cdbd@unimex.edu.mx",
-            "lishanxime201099@gmail.com"
+            "umrec_web@unimex.edu.mx"
         ];
         $envio =  Mail::to($correos)->bcc("umrec_web@unimex.edu.mx")->send(new ContactoProspecto($request, $respuesta)); //! envio del correo
 

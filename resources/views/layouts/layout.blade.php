@@ -234,7 +234,8 @@
         obtenHover.addEventListener('click', () => {
 
             window.open(
-                'https://wa.me/525511020290/?text=Hola!+Me+gustaría+recibir+más+información+sobre+los+programas,+cuotas+y+promociones+de+UNIMEX;+me+interesó+lo+que+vi+en+Página+Web+Metro+sobre+contacto+en+WhatsApp+(botón).+¡Gracias!');
+                'https://wa.me/525511020290/?text=Hola!+Me+gustaría+recibir+más+información+sobre+los+programas,+cuotas+y+promociones+de+UNIMEX;+me+interesó+lo+que+vi+en+Página+Web+Metro+sobre+contacto+en+WhatsApp+(botón).+¡Gracias!'
+                );
         });
 
         /*
@@ -327,6 +328,21 @@
             });
             window.open("{{ route('contacto') }}", '_self');
         }
+
+        $('#nombre_prospecto').keypress(function(tecla) {
+            if ((tecla.charCode < 97 || tecla.charCode > 122) && (tecla.charCode < 65 || tecla
+                    .charCode > 90) && (tecla.charCode != 45)) return false;
+        });
+
+        $('#apellidos_prospecto').keypress(function(tecla) {
+            if ((tecla.charCode < 97 || tecla.charCode > 122) && (tecla.charCode < 65 || tecla
+                    .charCode > 90) && (tecla.charCode != 45)) return false;
+        });
+
+        $('#nombreFolleto').keypress(function(tecla) {
+            if ((tecla.charCode < 97 || tecla.charCode > 122) && (tecla.charCode < 65 || tecla
+                    .charCode > 90) && (tecla.charCode != 45)) return false;
+        });
 
         function gerenerarMenuSm() {
             let menu = `
