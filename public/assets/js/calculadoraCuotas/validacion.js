@@ -26,24 +26,24 @@ $("#form_calculadora").validate({
     },
     messages: {
         selectPlantel: {
-            required: "Selecciona un plantel",
+            required: "Selecciona un plantel.",
         },
         selectPeriodo: {
-            required: "Selecciona un periodo",
+            required: "Selecciona un periodo.",
         },
         selectNivel: {
-            required: "Selecciona un nivel",
+            required: "Selecciona un nivel.",
         },
         nombreProspecto: {
             required: "Nombre obligatorio.",
         },
         apellidosProspecto: {
-            required: "Apellidos obligatorios",
+            required: "Apellidos obligatorios.",
         },
         telefonoProspecto: {
-            required: "Ingresa tu teléfono",
-            minlength: "El teléfono celular debe tener mínimo 10 digitos.",
-            maxlength: "El teléfono celular debe tener máximo 10 digitos."
+            required: "Teléfono obligatorio.",
+            minlength: "El teléfono celular debe tener mínimo 10 dígitos.",
+            maxlength: "El teléfono celular debe tener máximo 10 dígitos."
         },
         emailProspecto: {
             required: "Correo obligatorio.",
@@ -63,89 +63,7 @@ $("#form_calculadora").validate({
                     showConfirmButton: true,
                 });
             } else {
-                if ($('input:radio[name=typeTelefono]:checked').val() == undefined) {
-                    Swal.fire({
-                        icon: "error",
-                        title: "Campo obligatorio",
-                        text: "Por favor indica de que tipo es tu teléfono",
-                        showConfirmButton: true,
-                    });
-            
-                } else {
-                    /* $("#envio_caluladora").prop("disabled", true);
-                    $('#envio_caluladora').html(`
-                        <div class="spinner-border me-1" style="width: 20px; height: 20px;" role="status">
-                            <span class="visually-hidden">Loading...</span>
-                        </div>
-                        Calculando
-                    `); */
-            
-                    let nombreNivel = $('select[name="selectNivel"] option:selected').text();
-                    let nombrePlantel = $('select[name="selectPlantel"] option:selected').text();
-                    let nombrePeriodo = $('select[name="selectPeriodo"] option:selected').text();
-            
-                    let formData = new FormData(form);
-                    formData.append('nombreNivel', nombreNivel);
-                    formData.append('nombrePlantel', nombrePlantel);
-                    formData.append('nombrePeriodo', nombrePeriodo);
-            
-                    let ruta = setUrlBase() + "insertar/prospecto/calculadora";
-            
-                    $.ajax({
-                        method: "POST",
-                        url: ruta,
-                        dataType: "html",
-                        data: formData,
-                        cache: false,
-                        contentType: false,
-                        processData: false,
-                    }).done(function (data) {
-                        let respuesta = JSON.parse(data);
-                        console.log(respuesta);
-            
-                        let nombreProspecto = $('#nombreProspecto').val() + " " + $('#apellidosProspecto').val();
-                        let periodoProspecto = $('select[name="selectPeriodo"] option:selected').text();
-                        let nivelProspecto = $('select[name="selectNivel"] option:selected').text();
-            
-                        $('#folioCrm').val('Folio: ' + respuesta.FolioCRM);
-                        $('#nombreCrm').val(nombreProspecto);
-                        $('#periodoCrm').val(periodoProspecto);
-                        $('#nivelCrm').val(nivelProspecto);
-            
-                        $.ajax({
-                            method: "GET",
-                            headers: {
-                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                            },
-                            url: setUrlBase() + "get/variables/calculadora",
-                        }).done(function (data) {
-                            console.log(data);
-                            if (data.carrera_calculadora != null) {
-                                getCarrerasWithVariableEstablecida(data.carrera_calculadora);
-                            }
-                            else {
-                                getCarreras();
-                            }
-            
-                            $('#terminosCondicionesText').html(respuesta.legales);
-                            $('#terminosCondiciones').removeClass('d-none');
-                            $('#separacionTerminosCondiciones').removeClass('d-none');
-            
-                        }).fail(function () {
-                            console.log("Algo salió mal");
-                        });
-            
-                        $('#envio_caluladora').html(`Calcular`);
-            
-                        $('#carouselExampleIndicators').addClass('d-none');
-                        $('#informacionCRM').removeClass('d-none');
-            
-            
-            
-                    }).fail(function () {
-                        console.log("Algo salió mal");
-                    });
-                }
+               envioFormularioCalculadora(form);
             }
         } else {
             if ($('input:radio[name=typeTelefono]:checked').val() == undefined) {
@@ -155,81 +73,8 @@ $("#form_calculadora").validate({
                     text: "Por favor indica de que tipo es tu teléfono",
                     showConfirmButton: true,
                 });
-        
             } else {
-                /* $("#envio_caluladora").prop("disabled", true);
-                $('#envio_caluladora').html(`
-                    <div class="spinner-border me-1" style="width: 20px; height: 20px;" role="status">
-                        <span class="visually-hidden">Loading...</span>
-                    </div>
-                    Calculando
-                `); */
-        
-                let nombreNivel = $('select[name="selectNivel"] option:selected').text();
-                let nombrePlantel = $('select[name="selectPlantel"] option:selected').text();
-                let nombrePeriodo = $('select[name="selectPeriodo"] option:selected').text();
-        
-                let formData = new FormData(form);
-                formData.append('nombreNivel', nombreNivel);
-                formData.append('nombrePlantel', nombrePlantel);
-                formData.append('nombrePeriodo', nombrePeriodo);
-        
-                let ruta = setUrlBase() + "insertar/prospecto/calculadora";
-        
-                $.ajax({
-                    method: "POST",
-                    url: ruta,
-                    dataType: "html",
-                    data: formData,
-                    cache: false,
-                    contentType: false,
-                    processData: false,
-                }).done(function (data) {
-                    let respuesta = JSON.parse(data);
-                    console.log(respuesta);
-        
-                    let nombreProspecto = $('#nombreProspecto').val() + " " + $('#apellidosProspecto').val();
-                    let periodoProspecto = $('select[name="selectPeriodo"] option:selected').text();
-                    let nivelProspecto = $('select[name="selectNivel"] option:selected').text();
-        
-                    $('#folioCrm').val('Folio: ' + respuesta.FolioCRM);
-                    $('#nombreCrm').val(nombreProspecto);
-                    $('#periodoCrm').val(periodoProspecto);
-                    $('#nivelCrm').val(nivelProspecto);
-        
-                    $.ajax({
-                        method: "GET",
-                        headers: {
-                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                        },
-                        url: setUrlBase() + "get/variables/calculadora",
-                    }).done(function (data) {
-                        console.log(data);
-                        if (data.carrera_calculadora != null) {
-                            getCarrerasWithVariableEstablecida(data.carrera_calculadora);
-                        }
-                        else {
-                            getCarreras();
-                        }
-        
-                        $('#terminosCondicionesText').html(respuesta.legales);
-                        $('#terminosCondiciones').removeClass('d-none');
-                        $('#separacionTerminosCondiciones').removeClass('d-none');
-        
-                    }).fail(function () {
-                        console.log("Algo salió mal");
-                    });
-        
-                    $('#envio_caluladora').html(`Calcular`);
-        
-                    $('#carouselExampleIndicators').addClass('d-none');
-                    $('#informacionCRM').removeClass('d-none');
-        
-        
-        
-                }).fail(function () {
-                    console.log("Algo salió mal");
-                });
+                envioFormularioCalculadora(form);
             }
         }
 
