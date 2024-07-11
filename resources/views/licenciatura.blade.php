@@ -297,7 +297,7 @@
 @endsection
 
 @section('scripts')
-    <script src="{{ asset('assets/js/combosCarrera.js') }}"></script>
+    <script src="{{ asset('assets/js/combosCarrera.js') }}"></script> 
     <script>
         $('#temario').slick({
             infinite: false,
