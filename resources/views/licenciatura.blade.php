@@ -62,7 +62,7 @@
                 <div class="row">
                     <div class="col-12 col-md-4">
                         <div class="d-grid gap-2">
-                            <a id="redireccionCTCL" href="#" class="btn btn-outline-primary mt-2 mt-mb-0">
+                            <a id="redireccionCTCL" href="javascript:calculadoraHeader()" class="btn btn-outline-primary mt-2 mt-mb-0">
                                 Calculadora de Becas
                             </a>
                         </div>
@@ -383,7 +383,7 @@
             nextArrow: '<button type="button" class="slick-next-requisitos"><i class="bi bi-arrow-right-circle-fill"></i></button>',
         });
 
-        const enlaceCalculadora = document.getElementById("redireccionCTCL");
+       /*  const enlaceCalculadora = document.getElementById("redireccionCTCL");
         enlaceCalculadora.addEventListener('click', function() {
             let nivel = "Licenciatura";
             let carrera = "{{ $licenciatura->subtitulo }}";
@@ -399,7 +399,7 @@
                 console.log("Algo salió mal");
             });
             window.open("{{ route('calcula_tu_cuota') }}", '_blank');
-        });
+        }); */
 
         const enlacePreinscripcion = document.getElementById("redireccionPELL");
         enlacePreinscripcion.addEventListener('click', function() {

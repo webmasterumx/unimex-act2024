@@ -119,7 +119,7 @@ function selectHorario(turno, beca, element) {
 
     console.log(data);
 
-    //actualizarProspectoCalculadora(turno);
+    actualizarProspectoCalculadora(turno);
 
     let ruta = setUrlBase() + "get/detalle/beca";
 

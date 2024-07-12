@@ -3,10 +3,13 @@
         calculadoraHeader();
     });
 
+    $("#redireccionCTCL").on('click', function() {
+        calculadoraHeader();
+    });
+
     $("#preinscripcionHeader").on('click', function() {
         preinscripcionHeader();
     });
-
 
     $('#linkCalculaTuBeca').click(function(event) {
         console.log("click desde oferta");
