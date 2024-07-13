@@ -246,6 +246,6 @@ function limitarInputLetras(element) {
     let elemento = "#" +  element;
 
     $(elemento).keypress(function(tecla) {
-        if ((tecla.charCode < 97 || tecla.charCode > 122) && (tecla.charCode < 65 || tecla.charCode > 90) && (tecla.charCode != 45)) return false;
+        if ((tecla.charCode < 97 || tecla.charCode > 122) && (tecla.charCode < 65 || tecla.charCode > 90) && (tecla.charCode != 45) && (tecla.charCode != 32)) return false;
     });
 }

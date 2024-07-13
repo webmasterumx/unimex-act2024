@@ -5,6 +5,7 @@
         <div class="row">
             <div class="col-12 col-md-3 col-lg-3 px-3" style="background-color: rgba(0, 75, 174, 30%);">
                 <form id="form_calculadora" class="row p-3">
+                    @method('PUT')
                     @csrf
                     <h6>¿Cuándo te gustaría iniciar?</h6>
                     <hr>
@@ -352,12 +353,12 @@
 
         $('#nombreProspecto').keypress(function(tecla) {
             if ((tecla.charCode < 97 || tecla.charCode > 122) && (tecla.charCode < 65 || tecla
-                    .charCode > 90) && (tecla.charCode != 45)) return false;
+                    .charCode > 90) && (tecla.charCode != 45) && (tecla.charCode != 32)) return false;
         });
 
         $('#apellidosProspecto').keypress(function(tecla) {
             if ((tecla.charCode < 97 || tecla.charCode > 122) && (tecla.charCode < 65 || tecla
-                    .charCode > 90) && (tecla.charCode != 45)) return false;
+                    .charCode > 90) && (tecla.charCode != 45) && (tecla.charCode != 32)) return false;
         });
     </script>
     <script src="{{ asset('assets/js/calculadoraCuotas/app_calculadora.js') }}"></script>
