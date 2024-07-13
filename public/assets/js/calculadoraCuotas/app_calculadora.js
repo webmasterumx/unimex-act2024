@@ -39,8 +39,12 @@ function envioFormularioCalculadora(form) {
         }).done(function (data) {
             //console.log(data);
 
-            let estatusCorreo = data.estadoCorreo;
+            let respuesta = JSON.parse(data);
+            console.log(respuesta);
+
+            let estatusCorreo = respuesta.estadoCorreo;
             if (estatusCorreo == true) {
+                console.log("correo enviado correctamente");
                 $('#mensajeCorrreo').html(`
                     <div id="alertSuccess" class="alert alert-success alert-dismissible fade show" role="alert">
                         ¡Correo enviado correctamente!
@@ -48,6 +52,7 @@ function envioFormularioCalculadora(form) {
                     </div>
                 `);
             } else {
+                console.log("error en el envio del correo ");
                 $('#mensajeCorrreo').html(`
                     <div id="alertError" class="alert alert-danger alert-dismissible fade show" role="alert">
                         ¡Error al enviar correo!
@@ -55,9 +60,6 @@ function envioFormularioCalculadora(form) {
                     </div>
                 `);
             }
-
-            let respuesta = JSON.parse(data);
-            console.log(respuesta);
 
             let nombreProspecto = $('#nombreProspecto').val() + " " + $('#apellidosProspecto').val();
             let periodoProspecto = $('select[name="selectPeriodo"] option:selected').text();
