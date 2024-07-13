@@ -105,7 +105,7 @@ Route::post('/form/trabaja/unimex', [FormController::class, 'trabajaUnimex'])->n
 Route::post('/form/quejas/sugerencias', [FormController::class, 'quejasYsugerencias'])->name('form.quejas.sugerencias');
 Route::post('/form/empresas/occ', [FormController::class, 'empresasOCC'])->name('form.empresas.pcc');
 //? peticiones de calculadora de cuotas
-Route::put('/insertar/prospecto/calculadora', [CalculadoraCuotasController::class, 'insertarProspecto'])->name('paso.uno');
+Route::any('/insertar/prospecto/calculadora', [CalculadoraCuotasController::class, 'insertarProspecto'])->name('paso.uno');
 Route::get('/enviar/detalles/beca', [CalculadoraCuotasController::class, 'enviarCorreoCalculadoraDetalleBeca']);
 
 //!testing
