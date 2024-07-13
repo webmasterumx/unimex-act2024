@@ -67,11 +67,11 @@ class CalculadoraCuotasController extends Controller
 
         SELF::establecerVariablesCorreo($request, $respuesta);
         $envio =  Mail::to($request->emailProspecto)->bcc("umrec_web@unimex.edu.mx")->send(new CalculadoraCuotas());
-        $legales = SELF::definirLegales($request->selectNivel);
+        /*$legales = SELF::definirLegales($request->selectNivel);
 
         $respuesta['legales'] = $legales;
 
-        return response()->json($respuesta);  
+        return response()->json($respuesta);  */  
         
     }
 

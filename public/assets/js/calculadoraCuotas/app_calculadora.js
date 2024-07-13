@@ -8,13 +8,13 @@ function envioFormularioCalculadora(form) {
         });
 
     } else {
-        $("#envio_caluladora").prop("disabled", true);
+        /* $("#envio_caluladora").prop("disabled", true);
         $('#envio_caluladora').html(`
             <div class="spinner-border me-1" style="width: 20px; height: 20px;" role="status">
                 <span class="visually-hidden">Loading...</span>
             </div>
             Calculando
-        `);
+        `); */
 
         let nombreNivel = $('select[name="selectNivel"] option:selected').text();
         let nombrePlantel = $('select[name="selectPlantel"] option:selected').text();
@@ -27,6 +27,7 @@ function envioFormularioCalculadora(form) {
 
         let ruta = setUrlBase() + "insertar/prospecto/calculadora";
 
+    
         $.ajax({
             method: "POST",
             url: ruta,
@@ -36,7 +37,9 @@ function envioFormularioCalculadora(form) {
             contentType: false,
             processData: false,
         }).done(function (data) {
-            let respuesta = JSON.parse(data);
+            console.log(data);
+
+            /*let respuesta = JSON.parse(data);
             console.log(respuesta);
 
             let nombreProspecto = $('#nombreProspecto').val() + " " + $('#apellidosProspecto').val();
@@ -56,7 +59,7 @@ function envioFormularioCalculadora(form) {
                 url: setUrlBase() + "get/variables/calculadora",
             }).done(function (data) {
                 console.log(data);
-                if (data.carrera_calculadora != null) {
+              if (data.carrera_calculadora != null) {
                     getCarrerasWithVariableEstablecida(data.carrera_calculadora);
                 }
                 else {
@@ -74,13 +77,13 @@ function envioFormularioCalculadora(form) {
             $('#envio_caluladora').html(`Calcular`);
 
             $('#carouselExampleIndicators').addClass('d-none');
-            $('#informacionCRM').removeClass('d-none');
+            $('#informacionCRM').removeClass('d-none'); */
 
 
 
         }).fail(function () {
             console.log("Algo salió mal");
-        });
+        }); 
     }
 }
 

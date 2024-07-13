@@ -4,7 +4,7 @@
     <section class="container-fluid pt-2 px-5">
         <div class="row">
             <div class="col-12 col-md-3 col-lg-3 px-3" style="background-color: rgba(0, 75, 174, 30%);">
-                <form id="form_calculadora" class="row p-3">
+                <form id="" action="{{ route('paso.uno') }}" method="POST" class="row p-3"> <!-- form_calculadora --> 
                     @method('PUT')
                     @csrf
                     <h6>¿Cuándo te gustaría iniciar?</h6>
