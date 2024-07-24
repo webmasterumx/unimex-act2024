@@ -102,9 +102,31 @@ class CalculadoraCuotasController extends Controller
     public function enviarCorreoCalculadoraDetalleBeca()
     {
         //$recive = "lishanxime201099@gmail.com";
-        $recive = session('datoCuatroCalculadora');
-        var_dump(session('ClaveCuoProm'));
-        $envio =  Mail::to($recive)->bcc("umrec_web@unimex.edu.mx")->send(new CalculadoraDetallesBeca());
+        
+        try {
+
+            $recive = session('datoCuatroCalculadora');
+            //var_dump(session('ClaveCuoProm'));
+            $envio =  Mail::to($recive)->bcc("umrec_web@unimex.edu.mx")->send(new CalculadoraDetallesBeca());
+
+            $statusCode     = 200;
+            $this->message  = "Correo enviado correctamente.";
+            $this->result   = true;
+        } catch (\Throwable $th) {
+            $statusCode     = 200;
+            $this->message  = $th->getMessage();
+            //$this->message  = "Error al enviar correo.";
+        } finally {
+            $response = [
+                'message'   => $this->message,
+                'result'    => $this->result,
+                'records'   => $this->records
+            ];
+
+            return response()->json($response);
+
+            //dd($response);
+        }
         //Mail::to($recive)->send(new CalculadoraDetallesBeca());
     }
 
@@ -218,6 +240,30 @@ class CalculadoraCuotasController extends Controller
             session(['telefonoPlanCorreo' => $veracruz]);
             session(['plantelDir' => $veracruzDir]);
             session(['emailPlantel' => $veracruzEmail]);
+        }
+    }
+
+    public function testingCorreo()
+    {
+        try {
+
+            Mail::to('pruebaRectoria0001Esp@ldfslfd44.com')->bcc("umrec_web@unimex.edu.mx")->send(new CalculadoraCuotas());
+
+            $statusCode     = 200;
+            $this->message  = "Correo enviado correctamente.";
+            $this->result   = true;
+        } catch (\Throwable $th) {
+            $statusCode     = 200;
+            $this->message  = $th->getMessage();
+            //$this->message  = "Error al enviar correo.";
+        } finally {
+            $response = [
+                'message'   => $this->message,
+                'result'    => $this->result,
+                'records'   => $this->records
+            ];
+
+            dd($response);
         }
     }
 }

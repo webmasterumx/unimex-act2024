@@ -92,7 +92,7 @@ function envioFormularioCalculadora(form) {
                 $("#apellidosProspecto").prop("disabled", true);
                 $("#telefonoProspecto").prop("disabled", true);
                 $("#emailProspecto").prop("disabled", true);
-                
+
                 $('#terminosCondicionesText').html(respuesta.legales);
                 $('#terminosCondiciones').removeClass('d-none');
                 $('#separacionTerminosCondiciones').removeClass('d-none');
@@ -551,6 +551,14 @@ function actualizarProspectoCalculadora(turno) {
 
 function enviarDetallesHorarioBeca() {
 
+    $("#correoButton").prop("disabled", true);
+    $('#correoButton').html(`
+        <div class="spinner-border me-1" style="width: 20px; height: 20px; color: #de951b;" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        Enviando correo
+    `);
+
     let rutaActualizar = setUrlBase() + 'enviar/detalles/beca';
 
     $.ajax({
@@ -558,10 +566,24 @@ function enviarDetallesHorarioBeca() {
         url: rutaActualizar,
     }).done(function (data) {
         console.log(data);
-        Swal.fire({
-            icon: "success",
-            text: "Los detalles de tu Beca se han enviado a tu correo.",
-        });
+        if (data.result == true) {
+            Swal.fire({
+                icon: "success",
+                text: "Los detalles de tu Beca se han enviado a tu correo.",
+            });
+        } else {
+            Swal.fire({
+                icon: "error",
+                text: "¡Error al enviar correo!",
+            });
+        }
+
+        $("#correoButton").prop("disabled", false);
+        $('#correoButton').html(`
+            <i class="bi bi-envelope" style="color: #de951b;"></i>
+            Enviar a correo
+        `);
+
     }).fail(function () {
         console.log("Algo salió mal");
     });

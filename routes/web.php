@@ -114,3 +114,4 @@ Route::get('/get/variables/combos/calculadora/', [ExtrasUnimexController::class,
 //!testing
 Route::get('/testing', [FormController::class, 'testerEnvio'])->name('testing');
 Route::get('/testing/calculadora/cuotas', [CalculadoraCuotasController::class, 'index'])->name('calculadora.becas.test');
+Route::get('/testing/correo', [CalculadoraCuotasController::class, 'testingCorreo']);
