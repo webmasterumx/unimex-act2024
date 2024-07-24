@@ -15,11 +15,6 @@ function envioFormularioCalculadora(form) {
             </div>
             Calculando
         `);
-        $("#nombreProspecto").prop("disabled", true);
-        $("#apellidosProspecto").prop("disabled", true);
-        $("#telefonoProspecto").prop("disabled", true);
-        $("#emailProspecto").prop("disabled", true);
-
 
         let nombreNivel = $('select[name="selectNivel"] option:selected').text();
         let nombrePlantel = $('select[name="selectPlantel"] option:selected').text();
@@ -31,7 +26,6 @@ function envioFormularioCalculadora(form) {
         formData.append('nombrePeriodo', nombrePeriodo);
 
         let ruta = setUrlBase() + "insertar/prospecto/calculadora";
-
 
         $.ajax({
             method: "POST",
@@ -94,6 +88,11 @@ function envioFormularioCalculadora(form) {
                     getCarreras();
                 }
 
+                $("#nombreProspecto").prop("disabled", true);
+                $("#apellidosProspecto").prop("disabled", true);
+                $("#telefonoProspecto").prop("disabled", true);
+                $("#emailProspecto").prop("disabled", true);
+                
                 $('#terminosCondicionesText').html(respuesta.legales);
                 $('#terminosCondiciones').removeClass('d-none');
                 $('#separacionTerminosCondiciones').removeClass('d-none');
