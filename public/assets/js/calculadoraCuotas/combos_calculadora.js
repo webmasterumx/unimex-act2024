@@ -29,7 +29,7 @@ $("select[name=selectPlantel]").change(function () {
         getPeriodos();
     }
     else {
-        console.log('se hizo ya un calculo se requiere un recalculo');
+        /* console.log('se hizo ya un calculo se requiere un recalculo');
         let carreraResguardo = setCarreraSeleccionada();
         let nombreCarreraRes = setNombreCarrreraSaleccionada();
         console.log(carreraResguardo);
@@ -40,7 +40,16 @@ $("select[name=selectPlantel]").change(function () {
         $("#selectCarrera").empty();
         $("#selectCarrera").append(`<option><div class="spinner-border" role="status"><span class="visually-hidden">Recalculando...</span></div></option>`);
 
-        recalculoDeCombos(carreraResguardo, nombreCarreraRes);
+        recalculoDeCombos(carreraResguardo, nombreCarreraRes); */
+
+        console.log('se hizo ya un calculo se requiere un recalculo');
+
+        $('#grupoBotones').empty();
+        $('#grupoInformacion').addClass('d-none');
+        $("#selectCarrera").empty();
+        $("#selectCarrera").append(`<option><div class="spinner-border" role="status"><span class="visually-hidden">Recalculando...</span></div></option>`);
+
+        getVariablesCombosResguardadas();
 
     }
 
@@ -54,7 +63,7 @@ $("select[name=selectPeriodo]").change(function () {
     //es la primera peticion o se limpio el combo de carreras
 
     if ($('#folioCrm').val() == "" || $('#folioCrm').val() == null) {
-        console.log('es elprimer calculo, verificar si no hay variables de sesion para evitar perder la infirmacion');
+        console.log('es elprimer calculo, verificar si no hay variables de sesion para evitar perder la informacion');
 
         $.ajax({
             method: "GET",
@@ -110,15 +119,15 @@ $("select[name=selectPeriodo]").change(function () {
         });
     }
     else {
-        console.log('se hizo ya un calculo');
+        /* console.log('se hizo ya un calculo');
         let carreraResguardo = setCarreraSeleccionada();
-        let nombreCarreraRes = setNombreCarrreraSaleccionada();
+        let nombreCarreraRes = setNombreCarrreraSaleccionada(); */
         $('#selectCarrera').empty();
-        $('#selectCarrera').append(`<option value="">Selecciona un Carrera</option>`);
+        $('#selectCarrera').append(`<option><div class="spinner-border" role="status"><span class="visually-hidden">Recalculando...</span></div></option>`);
         $('#grupoBotones').empty();
         $('#grupoInformacion').addClass('d-none');
 
-        recalculoDeCombos(carreraResguardo, nombreCarreraRes);
+        getVariablesCombosResguardadas();
     }
 
 });
@@ -141,17 +150,36 @@ $("select[name=selectNivel]").change(function () {
         }
     }
 
-    $('#selectCarrera').empty();
-    $('#grupoBotones').empty();
-    $('#grupoInformacion').addClass('d-none');
+    if ($('#folioCrm').val() == "" || $('#folioCrm').val() == null) {
+        $('#selectCarrera').empty();
+        $('#grupoBotones').empty();
+        $('#grupoInformacion').addClass('d-none');
 
 
-    getCarreras();
+        getCarreras();
+    }
+    else {
+
+        $('#selectCarrera').empty();
+        $('#selectCarrera').append(`<option><div class="spinner-border" role="status"><span class="visually-hidden">Recalculando...</span></div></option>`);
+        $('#grupoBotones').empty();
+        $('#grupoInformacion').addClass('d-none');
+
+        getVariablesCombosResguardadas();
+
+    }
+
+
 
 });
 
 // detecta el cambio de carrera para mostrar horarios
 $("select[name=selectCarrera]").change(function () {
+
+    let carrera = $('select[name=selectCarrera]').val();
+    let nombre = $('select[name="selectCarrera"] option:selected').text();
+
+    setVariablesCombosReguardadas(carrera, nombre);
 
     $('#cargador_horarios').removeClass('d-none');
     $('#grupoBotones').empty();

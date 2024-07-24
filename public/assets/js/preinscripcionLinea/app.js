@@ -190,18 +190,25 @@ function recalculoDeComboNivel(ruta, data, element, info) {
             data: dataCarreras
         }).done(function (result) {
 
+            $('#carreraSelect').empty();
+            $("#carreraSelect").append(`<option value="" selected disabled>Selecciona Carrera</option>`);
+
             console.log(result);
 
-            $.each(result, function (index, value) {
+            if (result.error == undefined || result.error == null) {
+                $.each(result, function (index, value) {
 
-                if (info.carrera_preinscripcion.replaceAll('_', " ") == value.descrip) {
-                    option = `<option value="${value.clave}" selected>${value.descrip}</option>`;
-                } else {
-                    option = `<option value="${value.clave}">${value.descrip}</option>`;
-                }
+                    if (info.carrera_preinscripcion.replaceAll('_', " ") == value.descrip) {
+                        option = `<option value="${value.clave}" selected>${value.descrip}</option>`;
+                    } else {
+                        option = `<option value="${value.clave}">${value.descrip}</option>`;
+                    }
 
-                $(elementCarreras).append(option);
-            });
+                    $(elementCarreras).append(option);
+                });
+            } else {
+                
+            }
 
             $("select[name=carreraSelect]").prop("disabled", false);
 

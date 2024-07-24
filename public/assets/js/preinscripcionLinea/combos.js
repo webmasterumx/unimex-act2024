@@ -201,14 +201,18 @@ function postAjaxPeticionContact(ruta, data, element) {
     }).done(function (data) {
         console.log(data);
 
-        if (data.clave == undefined || data.clave == null) {
-            $.each(data, function (index, value) {
-                let option = `<option value="${value.clave}">${value.descrip}</option>`;
+        if (data.error == undefined || data.error == null) {
+            if (data.clave == undefined || data.clave == null) {
+                $.each(data, function (index, value) {
+                    let option = `<option value="${value.clave}">${value.descrip}</option>`;
+                    $(element).append(option);
+                });
+            } else {
+                let option = `<option value="${data.clave}">${data.descrip}</option>`;
                 $(element).append(option);
-            });
+            }
         } else {
-            let option = `<option value="${data.clave}">${data.descrip}</option>`;
-            $(element).append(option);
+
         }
 
 

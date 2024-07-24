@@ -15,6 +15,11 @@ function envioFormularioCalculadora(form) {
             </div>
             Calculando
         `);
+        $("#nombreProspecto").prop("disabled", true);
+        $("#apellidosProspecto").prop("disabled", true);
+        $("#telefonoProspecto").prop("disabled", true);
+        $("#emailProspecto").prop("disabled", true);
+
 
         let nombreNivel = $('select[name="selectNivel"] option:selected').text();
         let nombrePlantel = $('select[name="selectPlantel"] option:selected').text();
@@ -60,6 +65,10 @@ function envioFormularioCalculadora(form) {
                     </div>
                 `);
             }
+
+            setTimeout(function () {
+                $('#alertSuccess').addClass('d-none')
+            }, 3000);
 
             let nombreProspecto = $('#nombreProspecto').val() + " " + $('#apellidosProspecto').val();
             let periodoProspecto = $('select[name="selectPeriodo"] option:selected').text();
@@ -230,7 +239,7 @@ function getCarreras() {
     }).done(function (data) {
         console.log(data);
         $("#selectCarrera").empty();
-        $("#selectCarrera").append(`<option class="text-center" value=""> - Selecciona una Carrera - </option>`);
+        $("#selectCarrera").append(`<option class="text-center" value="0"> - Selecciona una Carrera - </option>`);
         for (let index = 0; index < data.length; index++) { //recorrer el array de carreras
             const element = data[index]; // se establece un elemento por carrera optenida
             let option = `<option class="text-center" value="${element.clave}">${element.descrip}</option>`; //se establece la opcion por carrera
@@ -281,6 +290,48 @@ function setNombreCarrreraSaleccionada() {
     return nombre;
 }
 
+/**
+ * Esta funcion permite establcer ls varibles carrera para hacer recalculos
+ */
+function setVariablesCombosReguardadas(carrera, nombre) {
+
+    let ruta = setUrlBase() + "set/variables/combos/calculadora/" + carrera + "/" + nombre;
+
+    $.ajax({
+        method: "GET",
+        url: ruta,
+        dataType: "html",
+    }).done(function (data) {
+
+        console.log(data);
+
+    }).fail(function () {
+        console.log("Algo salió mal");
+    });
+}
+
+function getVariablesCombosResguardadas() {
+
+    let ruta = setUrlBase() + "get/variables/combos/calculadora/";
+
+    $.ajax({
+        method: "GET",
+        url: ruta,
+        dataType: "json",
+    }).done(function (data) {
+
+        console.log(data);
+
+        let carreraResguardo = data.id;
+        let nombreCarreraRes = data.nombre;
+
+        recalculoDeCombos(carreraResguardo, nombreCarreraRes);
+
+    }).fail(function () {
+        console.log("Algo salió mal");
+    });
+}
+
 function recalculoDeCombos(carreraResguardo, nombreCarreraRes) {
     // se resguarda la carrera previamente seleccinada
 
@@ -313,24 +364,30 @@ function recalculoDeCombos(carreraResguardo, nombreCarreraRes) {
     }).done(function (data) {
         console.log(data);
         $("#selectCarrera").empty();
-        $("#selectCarrera").append(`<option>- Selecciona una Carrera- </option>`);
+        $("#selectCarrera").append(`<option value="0"> - Selecciona una Carrera - </option>`);
 
-        for (let index = 0; index < data.length; index++) { //recorrer el array de carreras
-            const element = data[index]; // se establece un elemento por carrera optenida
-            if (element.clave == carreraResguardo || element.descrip == nombreCarreraRes) {
-                cont = cont + 1;
-                console.log('la carrera esta en el catalogo nuevo');
-                option = `<option value="${element.clave}" selected>${element.descrip}</option>`; //se establece la opcion por carrera
+        if (data.error == undefined || data.error == null) {
 
-            } else {
-                console.log('la carrera no esta en el catalogo nuevo');
-                option = `<option value="${element.clave}">${element.descrip}</option>`; //se establece la opcion por carrera
+            for (let index = 0; index < data.length; index++) { //recorrer el array de carreras
+                const element = data[index]; // se establece un elemento por carrera optenida
+                if (element.clave == carreraResguardo || element.descrip == nombreCarreraRes) {
+                    cont = cont + 1;
+                    console.log('la carrera esta en el catalogo nuevo');
+                    option = `<option value="${element.clave}" selected>${element.descrip}</option>`; //se establece la opcion por carrera
+
+                } else {
+                    console.log('la carrera no esta en el catalogo nuevo');
+                    option = `<option value="${element.clave}">${element.descrip}</option>`; //se establece la opcion por carrera
+                }
+                $("#selectCarrera").append(option); // se inserta la carrera de cada elemento
+
             }
-            $("#selectCarrera").append(option); // se inserta la carrera de cada elemento
+
+            obtenerHorariosBeca();
+        } else {
 
         }
 
-        obtenerHorariosBeca();
 
     }).fail(function () {
         console.log("Algo salió mal");
@@ -540,7 +597,7 @@ function getCarrerasWithVariableEstablecida(carreraEnVariable) {
     }).done(function (data) {
         console.log(data);
         $("#selectCarrera").empty();
-        $("#selectCarrera").append(`<option class="text-center" value=""> - Selecciona una Carrera - </option>`);
+        $("#selectCarrera").append(`<option class="text-center" value="0"> - Selecciona una Carrera - </option>`);
         for (let index = 0; index < data.length; index++) { //recorrer el array de carreras
             const element = data[index]; // se establece un elemento por carrera optenida
             if (element.descrip == carreraFinal) {
@@ -553,6 +610,7 @@ function getCarrerasWithVariableEstablecida(carreraEnVariable) {
             $("#selectCarrera").append(option); // se inserta la carrera de cada elemento
         }
 
+        setVariablesCombosReguardadas(0, carreraFinal);
         obtenerHorariosBeca();
 
     }).fail(function () {
