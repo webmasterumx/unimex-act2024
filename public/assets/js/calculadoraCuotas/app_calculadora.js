@@ -68,7 +68,7 @@ function envioFormularioCalculadora(form) {
 
             setTimeout(function () {
                 $('#alertSuccess').addClass('d-none')
-            }, 3000);
+            }, 5000);
 
             let nombreProspecto = $('#nombreProspecto').val() + " " + $('#apellidosProspecto').val();
             let periodoProspecto = $('select[name="selectPeriodo"] option:selected').text();
@@ -294,6 +294,9 @@ function setNombreCarrreraSaleccionada() {
  * Esta funcion permite establcer ls varibles carrera para hacer recalculos
  */
 function setVariablesCombosReguardadas(carrera, nombre) {
+
+    console.log(carrera);
+    console.log(nombre);
 
     let ruta = setUrlBase() + "set/variables/combos/calculadora/" + carrera + "/" + nombre;
 
