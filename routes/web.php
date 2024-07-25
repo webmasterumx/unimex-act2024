@@ -76,6 +76,7 @@ Route::post('/validacion/preinscripcion', [PreinscripcionEnLineaController::clas
 Route::get('/form/datos_generales/preinscripcion', [PreinscripcionEnLineaController::class, 'formDatosGenerales'])->name('form.datos.generales.preinscripcion');
 Route::post('/obtener/promo/preinscripcion', [PreinscripcionEnLineaController::class, 'obtenerPromocion'])->name('obtener.promo.preinscripcion');
 Route::get('/registrar/prospecto/preinscripcion/linea', [PreinscripcionEnLineaController::class, 'registrarPreinscripcionEnLinea'])->name('registrar.prospecto.preinscripcion');
+Route::view('/preinscripcionEnLinea/forma_de_pago', 'preinscripcionEnLinea.formaDePago')->name("preinscripcionEnLinea.formaPago");
 Route::get('/ficha/generar/pdf', [PreinscripcionEnLineaController::class, 'fichaPDFGenerar'])->name('ficha.pdf');
 Route::get('/get/info/prospecto', [PreinscripcionEnLineaController::class, 'getInfoProspecto'])->name('get.info.prospecto');
 Route::get('/agendar/actividad/preinscripcion', [PreinscripcionEnLineaController::class, 'insertarRegistroActividadParaMatriculado'])->name('agendar.actividad.preinscripcion');

@@ -185,8 +185,11 @@ class PreinscripcionEnLineaController extends Controller
             "WebSiteURL" => session("WebSiteURL"),
             "FechaDeNacimiento" => session("FechaDeNacimiento"),
         );
+        //dd($valores);
 
         $registro = app(ApiConsumoController::class)->registraProspectoCRMDesdePreinscripcionEnLinea($valores);
+
+        //dd($registro);
 
         /**
          *   "FolioCrm": 1083468,
@@ -199,14 +202,33 @@ class PreinscripcionEnLineaController extends Controller
          * prueba@gmail.com
          */
 
+        if (isset($registro['Success'])) {
+            //echo 'el procedimieto paso';
+            if (isset($registro['Matricula'])) {
+                //echo 'se matriculo correctamente';
 
-        session(['Matricula' => $registro['Matricula']]);
-        session(['FolioCrm' => $registro['FolioCrm']]);
+                session(['Matricula' => $registro['Matricula']]);
+                session(['FolioCrm' => $registro['FolioCrm']]);
 
+                SELF::getPlantelInfo();
 
-        SELF::getPlantelInfo();
+                $response['estado'] = true;
+                $response['mensaje'] = "Registro completado";
+            } else {
+                $response['estado'] = false;
+                $response['mensaje'] = "Ocurrio un error al realizar el registro intenta de nuevo";
+            }
+        } else {
+            $response['estado'] = false;
+            $response['mensaje'] = "Ocurrio un error al realizar el registro intenta de nuevo";
+        }
 
-        return view('preinscripcionEnLinea.formaDePago');
+        return response()->json($response);
+        /* 
+
+        
+
+        return view('preinscripcionEnLinea.formaDePago'); */
     }
 
     public function fichaPDFGenerar()

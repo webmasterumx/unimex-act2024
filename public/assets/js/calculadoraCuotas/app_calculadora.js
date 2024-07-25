@@ -61,7 +61,8 @@ function envioFormularioCalculadora(form) {
             }
 
             setTimeout(function () {
-                $('#alertSuccess').addClass('d-none')
+                $('#alertSuccess').addClass('d-none');
+                $('#alertError').addClass('d-none');
             }, 5000);
 
             let nombreProspecto = $('#nombreProspecto').val() + " " + $('#apellidosProspecto').val();
