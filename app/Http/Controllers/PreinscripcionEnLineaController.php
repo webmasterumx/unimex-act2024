@@ -185,11 +185,11 @@ class PreinscripcionEnLineaController extends Controller
             "WebSiteURL" => session("WebSiteURL"),
             "FechaDeNacimiento" => session("FechaDeNacimiento"),
         );
-        //dd($valores);
+        //var_dump($valores);
 
         $registro = app(ApiConsumoController::class)->registraProspectoCRMDesdePreinscripcionEnLinea($valores);
 
-        //dd($registro);
+        //var_dump($registro);
 
         /**
          *   "FolioCrm": 1083468,
@@ -205,30 +205,39 @@ class PreinscripcionEnLineaController extends Controller
         if (isset($registro['Success'])) {
             //echo 'el procedimieto paso';
             if (isset($registro['Matricula'])) {
+
+                if ($registro['Matricula'] == "" || $registro['FolioCrm'] == 0) {
+                    //echo "matriculacion fallida";
+
+                    $response['estado'] = false;
+                    $response['mensaje'] = "Lo sentimos, ocurro un error inesperado, favor de verificar los datos introducidos";
+
+                } else {
+                    //echo "matriculacion exitosa";
+
+                    session(['Matricula' => $registro['Matricula']]);
+                    session(['FolioCrm' => $registro['FolioCrm']]);
+
+                    SELF::getPlantelInfo();
+
+                    $response['estado'] = true;
+                    $response['matricula'] = session('Matricula');
+                    $response['mensaje'] = "Registro completado";
+                }
+
                 //echo 'se matriculo correctamente';
 
-                session(['Matricula' => $registro['Matricula']]);
-                session(['FolioCrm' => $registro['FolioCrm']]);
-
-                SELF::getPlantelInfo();
-
-                $response['estado'] = true;
-                $response['mensaje'] = "Registro completado";
             } else {
                 $response['estado'] = false;
-                $response['mensaje'] = "Ocurrio un error al realizar el registro intenta de nuevo";
+                $response['mensaje'] = "Lo sentimos, ocurro un error inesperado, favor de verificar los datos introducidos";
             }
         } else {
             $response['estado'] = false;
-            $response['mensaje'] = "Ocurrio un error al realizar el registro intenta de nuevo";
+            $response['mensaje'] = "Lo sentimos, ocurro un error inesperado, favor de verificar los datos introducidos";
         }
 
-        return response()->json($response);
-        /* 
+        return response()->json($response);  
 
-        
-
-        return view('preinscripcionEnLinea.formaDePago'); */
     }
 
     public function fichaPDFGenerar()
