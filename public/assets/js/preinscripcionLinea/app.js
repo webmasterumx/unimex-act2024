@@ -333,11 +333,9 @@ function aceptoAgendar() {
             Preinscripción en Linea
         `);
 
-
-
         $('#statictConfirmPreinscripcion').modal('hide');
 
-        Swal.fire("Llamada agendada", "", "success");
+        Swal.fire("Llamada agendada, más tarde uno de nuestros asesores se comunicara contigo.", "", "success");
 
     }).fail(function () {
         console.log("Algo salió mal");
