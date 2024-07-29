@@ -298,6 +298,8 @@ function setVariablesCombosReguardadas(carrera, nombre) {
     console.log(carrera);
     console.log(nombre);
 
+    sessionStorage.setItem("nombreCarrera", nombre);
+
     let ruta = setUrlBase() + "set/variables/combos/calculadora/" + carrera + "/" + nombre;
 
     $.ajax({
@@ -315,7 +317,7 @@ function setVariablesCombosReguardadas(carrera, nombre) {
 
 function getVariablesCombosResguardadas() {
 
-    let ruta = setUrlBase() + "get/variables/combos/calculadora/";
+    /* let ruta = setUrlBase() + "get/variables/combos/calculadora/";
 
     $.ajax({
         method: "GET",
@@ -325,14 +327,21 @@ function getVariablesCombosResguardadas() {
 
         console.log(data);
 
-        let carreraResguardo = data.id;
-        let nombreCarreraRes = data.nombre;
-
-        recalculoDeCombos(carreraResguardo, nombreCarreraRes);
+        
 
     }).fail(function () {
         console.log("Algo salió mal");
-    });
+    }); */
+
+
+    let carreraResguardo = 0;
+    //let nombreCarreraRes = data.nombre;
+
+    let nombreCarreraRes = sessionStorage.getItem("nombreCarrera");
+    console.log(nombreCarreraRes);
+
+    recalculoDeCombos(carreraResguardo, nombreCarreraRes);
+
 }
 
 function recalculoDeCombos(carreraResguardo, nombreCarreraRes) {
