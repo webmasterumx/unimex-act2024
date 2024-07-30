@@ -108,7 +108,7 @@ class CalculadoraCuotasController extends Controller
 
             $recive = session('datoCuatroCalculadora');
             //var_dump(session('ClaveCuoProm'));
-            //$envio =  Mail::to($recive)->bcc("umrec_web@unimex.edu.mx")->send(new CalculadoraDetallesBeca());
+            $envio =  Mail::to($recive)->bcc("umrec_web@unimex.edu.mx")->send(new CalculadoraDetallesBeca());
 
             $statusCode     = 200;
             $this->message  = "Correo enviado correctamente.";
@@ -124,7 +124,7 @@ class CalculadoraCuotasController extends Controller
                 'records'   => $this->records
             ];
 
-            //return response()->json($response);
+            return response()->json($response);
 
             //dd($response);
         }
