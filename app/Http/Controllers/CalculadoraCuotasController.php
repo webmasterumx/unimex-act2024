@@ -104,14 +104,14 @@ class CalculadoraCuotasController extends Controller
         //$recive = "lishanxime201099@gmail.com";
         
         try {
-            $Carrera = session('Carrera');
+            $carrera = session('Carrera');
             $nombrePlantel = session('nombrePlantel');
-            $Turno = session('Turno');
-            $DescripPer = session('DescripPer');
-            $Beca = session('Beca');
-            $Vigencia = session('Vigencia');
+            $turno = session('Turno');
+            $descripPer = session('DescripPer');
+            $beca = session('Beca');
+            $vigencia = session('Vigencia');
 
-            var_dump(session('Beca'));
+            var_dump(session('Vigencia'));
 
             $recive = session('datoCuatroCalculadora');
             //var_dump(session('ClaveCuoProm')); ->bcc("umrec_web@unimex.edu.mx")
