@@ -19,11 +19,12 @@ class CalculadoraDetallesBeca extends Mailable
     public $descripPer;
     public $beca;
     public $vigencia;
+    public $horario;
 
     /**
      * Create a new message instance.
      */
-    public function __construct($carrera, $nombrePlantel, $turno, $descripPer, $beca, $vigencia)
+    public function __construct($carrera, $nombrePlantel, $turno, $descripPer, $beca, $vigencia, $horario)
     {
         $this->carrera = $carrera;
         $this->nombrePlantel = $nombrePlantel;
@@ -31,6 +32,7 @@ class CalculadoraDetallesBeca extends Mailable
         $this->descripPer = $descripPer;
         $this->beca = $beca;
         $this->vigencia = $vigencia;
+        $this->horario = $horario;
     }
 
     /**
