@@ -104,11 +104,18 @@ class CalculadoraCuotasController extends Controller
         //$recive = "lishanxime201099@gmail.com";
         
         try {
-            var_dump(session('Beca'));
+            $Carrera = session('Carrera');
+            $nombrePlantel = session('nombrePlantel');
+            $Turno = session('Turno');
+            $DescripPer = session('DescripPer');
+            $Beca = session('Beca');
+            $Vigencia = session('Vigencia');
+
+            echo $Vigencia;
 
             $recive = session('datoCuatroCalculadora');
-            //var_dump(session('ClaveCuoProm'));
-            $envio =  Mail::to($recive)->bcc("umrec_web@unimex.edu.mx")->send(new CalculadoraDetallesBeca());
+            //var_dump(session('ClaveCuoProm')); ->bcc("umrec_web@unimex.edu.mx")
+            $envio =  Mail::to($recive)->send(new CalculadoraDetallesBeca());
 
             $statusCode     = 200;
             $this->message  = "Correo enviado correctamente.";
