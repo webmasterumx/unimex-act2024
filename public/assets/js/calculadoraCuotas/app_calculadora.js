@@ -574,7 +574,7 @@ function enviarDetallesHorarioBeca() {
     $.ajax({
         method: "GET",
         url: rutaActualizar,
-        dataType : html,
+        dataType : "html",
     }).done(function (data) {
         console.log(data);
         if (data.result == true) {
