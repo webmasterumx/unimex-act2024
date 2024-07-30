@@ -391,7 +391,7 @@
                                                 Tu selección ha sido: <b>{{ session('nombreNivel') }}</b> en <b>{{ session('Carrera') }}</b> <br>
                                                 Plantel: <b>{{ session('nombrePlantel') }}</b> en horario: <b>{{ session('Turno') }}</b> de <b>{{ session('Horario') }}</b> <br>
                                                 Inicio de clases: <b>{{ session('DescripPer') }}</b> <br>
-                                                Beca: <b>{{ session('Beca') }}%</b> <br>
+                                                Beca: <b>{{ session('Beca') }}%</b> <br> 
                                                 Vigencia: <b>{{ session('Vigencia') }}</b> <br>
                                                 Durante el cuatrimestre se deberán pagar 4 parcialidades indicadas en el
                                                 Calendario Escolar. <br>
