@@ -75,7 +75,11 @@
         <div class="row">
             <div class="col-12">
                 <h2 class="underlined_head_obj text-center text-uppercase fw-normal" style="font-size: 1.438rem;">
-                    especialidad y maestría en {{ $posgrado->titulo }}
+                    @if ($posgrado->titulo == 'Docencia')
+                        especialidad en {{ $posgrado->titulo }}
+                    @else
+                        especialidad y maestría en {{ $posgrado->titulo }}
+                    @endif
                 </h2>
             </div>
             <div class="col-12">
@@ -217,39 +221,46 @@
                     </div>
                 @endfor
             </div>
-            <div class="col-12">
-                <p>
-                    <b>
-                        Especialidad con Reconocimiento de Validez Oficial de Estudios de la SEP:
-                    </b>
-                    <br><br>
-                    @for ($i = 0; $i < sizeof($rvoe_maestria); $i++)
-                        {{ $rvoe_maestria[$i] }} <br>
-                    @endfor
-                </p>
-            </div>
-            <div id="temario_maestria" class="col-12 mt-1">
-                @for ($i = 0; $i < sizeof($temario_maestria); $i++)
-                    <div class="card border-0 mx-3 h-100" style="max-height: 240px;">
-                        <h5 class="card-header bg-unimex text-white text-center">
-                            {{ $temario_maestria[$i]['nombrecuatrimestre'] }}</h5>
-                        <div class="card-body bg-articule" style="min-height: 240px;">
-                            <ul>
-                                @for ($j = 0; $j < sizeof($temario_maestria[$i]['temas']); $j++)
-                                    <li class="py-1">
-                                        {{ $temario_maestria[$i]['temas'][$j] }}
-                                    </li>
-                                @endfor
-                            </ul>
+
+            @if ($posgrado->titulo != 'Docencia')
+                <div class="col-12">
+                    <p>
+                        <b>
+                            Especialidad con Reconocimiento de Validez Oficial de Estudios de la SEP:
+                        </b>
+                        <br><br>
+                        @for ($i = 0; $i < sizeof($rvoe_maestria); $i++)
+                            {{ $rvoe_maestria[$i] }} <br>
+                        @endfor
+                    </p>
+                </div>
+                <div id="temario_maestria" class="col-12 mt-1">
+                    @for ($i = 0; $i < sizeof($temario_maestria); $i++)
+                        <div class="card border-0 mx-3 h-100" style="max-height: 240px;">
+                            <h5 class="card-header bg-unimex text-white text-center">
+                                {{ $temario_maestria[$i]['nombrecuatrimestre'] }}</h5>
+                            <div class="card-body bg-articule" style="min-height: 240px;">
+                                <ul>
+                                    @for ($j = 0; $j < sizeof($temario_maestria[$i]['temas']); $j++)
+                                        <li class="py-1">
+                                            {{ $temario_maestria[$i]['temas'][$j] }}
+                                        </li>
+                                    @endfor
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                @endfor
-            </div>
+                    @endfor
+                </div>
+            @endif
+
+
             <div class="col-12">
                 <p>
                     <b>Duración:</b> <br>
                     Duración de la Especialidad: 3 Ciclos (1 año) <br>
-                    Duración de la Maestría: 5 ciclos (1 año 8 meses) <br>
+                    @if ($posgrado->titulo != 'Docencia')
+                        Duración de la Maestría: 5 ciclos (1 año 8 meses) <br>
+                    @endif
                     Nota: La duración mencionada está sujeta al curso continuo de los estudios; consulta la programación de
                     aperturas en el plantel de tu elección.
                     <br><br>
