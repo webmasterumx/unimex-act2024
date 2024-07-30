@@ -26,13 +26,13 @@ class CalculadoraDetallesBeca extends Mailable
      */
     public function __construct($carrera, $nombrePlantel, $turno, $descripPer, $beca, $vigencia, $horario)
     {
-        $this->carrera = session('Carrera');
-        $this->nombrePlantel = session('nombrePlantel');
-        $this->turno = session('Turno');
-        $this->descripPer = session('DescripPer');
-        $this->beca = session('Beca');
-        $this->vigencia = session('Vigencia');
-        $this->horario = session('Horario');
+        $this->carrera = $carrera;
+        $this->nombrePlantel = $nombrePlantel;
+        $this->turno = $turno;
+        $this->descripPer = $descripPer;
+        $this->beca = $beca;
+        $this->vigencia = $vigencia;
+        $this->horario = $horario;
     }
 
     /**

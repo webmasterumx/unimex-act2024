@@ -514,6 +514,18 @@
 
         var nivelPosicionado = "Especialidad";
         var carreraPosicionado = "{{ $posgrado->titulo }}";
+
+        $('#aceptarAvisoPrivacidadFolleto').on('click', function() {
+            if ($(this).is(':checked')) {
+                // Hacer algo si el checkbox ha sido seleccionado
+                //console.log("El checkbox con valor " + $(this).val() + " ha sido seleccionado");
+                $('#descargaFolleto').attr('disabled', false);
+            } else {
+                // Hacer algo si el checkbox ha sido deseleccionado
+                //console.log("El checkbox con valor " + $(this).val() + " ha sido deseleccionado");
+                $('#descargaFolleto').attr('disabled', true);
+            }
+        });
     </script>
 
     <script src="{{ asset('assets/js/folletoUnimex/combos.js') }}"></script>
