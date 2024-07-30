@@ -111,7 +111,7 @@ class CalculadoraCuotasController extends Controller
             $Beca = session('Beca');
             $Vigencia = session('Vigencia');
 
-            var_dump(session('Vigencia'));
+            var_dump(session('Beca'));
 
             $recive = session('datoCuatroCalculadora');
             //var_dump(session('ClaveCuoProm')); ->bcc("umrec_web@unimex.edu.mx")
