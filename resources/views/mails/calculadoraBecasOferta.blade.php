@@ -388,7 +388,7 @@
                                                 cambiar tu vida.
                                             </p><br>
                                             <p>
-                                                Tu selección ha sido: <b>{{ session('nombreNivel') }}</b> en <b>{{ $carrera }}</b> <br>
+                                                Tu selección ha sido: <b>{{ session('nombreNivel') }}</b> en <b>{{ session('Carrera') }}</b> <br>
                                                 Plantel: <b>{{ $nombrePlantel }}</b> en horario: <b>{{ $turno }}</b> de <b>{{ $horario }}</b> <br>
                                                 Inicio de clases: <b>{{ $descripPer }}</b> <br>
                                                 Beca: <b>{{ $beca }}%</b> <br> 
