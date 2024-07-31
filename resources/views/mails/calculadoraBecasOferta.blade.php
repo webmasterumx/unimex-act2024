@@ -388,11 +388,11 @@
                                                 cambiar tu vida.
                                             </p><br>
                                             <p>
-                                                Tu selección ha sido: <b>{{ session('nombreNivel') }}</b> en <b>{{ session('Carrera') }}</b> <br>
-                                                Plantel: <b>{{ session('nombrePlantel') }}</b> en horario: <b>{{ session('Turno') }}</b> de <b>{{ session('DescripPer') }}</b> <br>
-                                                Inicio de clases: <b>{{ session('Beca') }}</b> <br>
-                                                Beca: <b>{{ session('Vigencia') }}%</b> <br> 
-                                                Vigencia: <b>{{ session('Horario') }}</b> <br>
+                                                Tu selección ha sido: <b>{{ session('nombreNivel') }}</b> en <b>{{ $carrera }}</b> <br>
+                                                Plantel: <b>{{ $nombrePlantel }}</b> en horario: <b>{{ $turno }}</b> de <b>{{ $horario }}</b> <br>
+                                                Inicio de clases: <b>{{ $descripPer }}</b> <br>
+                                                Beca: <b>{{ $beca }}%</b> <br> 
+                                                Vigencia: <b>{{ $vigencia }}</b> <br>
                                                 Durante el cuatrimestre se deberán pagar 4 parcialidades indicadas en el
                                                 Calendario Escolar. <br>
                                                 Para mayor información de los costos de reinscripción, acude al plantel

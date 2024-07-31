@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Mail\CalculadoraCuotas;
 use App\Mail\CalculadoraDetallesBeca;
+use GuzzleHttp\Psr7\Response;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -64,7 +65,7 @@ class CalculadoraCuotasController extends Controller
             "websiteURL" => "https://unimex.edu.mx/calcula-tu-cuota",
             "folioReferido" => "0",
         );
-        
+
         //dd($valores);
         $respuesta = app(ApiConsumoController::class)->agregarProspectoCRM($valores);
         //$recive = "lishanxime201099@gmail.com";
@@ -102,7 +103,7 @@ class CalculadoraCuotasController extends Controller
     public function enviarCorreoCalculadoraDetalleBeca()
     {
         //$recive = "lishanxime201099@gmail.com";
-        
+
         try {
             $carrera = session('Carrera');
             $nombrePlantel = session('nombrePlantel');
@@ -116,7 +117,48 @@ class CalculadoraCuotasController extends Controller
 
             $recive = session('datoCuatroCalculadora');
             //var_dump(session('ClaveCuoProm')); ->bcc("umrec_web@unimex.edu.mx")
-            $envio =  Mail::to($recive)->send(new CalculadoraDetallesBeca($carrera,$nombrePlantel,$turno,$descripPer,$beca,$vigencia,$horario));
+            $envio =  Mail::to($recive)->send(new CalculadoraDetallesBeca($carrera, $nombrePlantel, $turno, $descripPer, $beca, $vigencia, $horario));
+
+            $statusCode     = 200;
+            $this->message  = "Correo enviado correctamente.";
+            $this->result   = true;
+        } catch (\Throwable $th) {
+            $statusCode     = 200;
+            $this->message  = $th->getMessage();
+            //$this->message  = "Error al enviar correo.";
+        } finally {
+            $response = [
+                'message'   => $this->message,
+                'result'    => $this->result,
+                'records'   => $this->records
+            ];
+
+            return response()->json($response);
+
+            //dd($response);
+        }
+        //Mail::to($recive)->send(new CalculadoraDetallesBeca());
+    }
+
+    public function enviarCorreoDetallesBeca(Request $request)
+    {
+        //$recive = "lishanxime201099@gmail.com";
+
+        try {
+            $nombreNivel = $request->nombreNivel;
+            $carrera = $request->nombreCarrera;
+            $nombrePlantel = $request->nombrePlantel;
+            $turno = $request->Turno;
+            $horario = $request->Horario;
+            $beca = $request->Beca;
+            $descripPer = $request->DescripPer;
+            $vigencia = $request->Vigencia;
+
+            //var_dump(session('Vigencia'));
+
+            $recive = session('datoCuatroCalculadora');
+            //var_dump(session('ClaveCuoProm')); ->bcc("umrec_web@unimex.edu.mx")
+            $envio =  Mail::to($recive)->send(new CalculadoraDetallesBeca($carrera, $nombrePlantel, $turno, $descripPer, $beca, $vigencia, $horario));
 
             $statusCode     = 200;
             $this->message  = "Correo enviado correctamente.";

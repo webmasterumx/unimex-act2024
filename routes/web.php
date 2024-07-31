@@ -10,6 +10,7 @@ use App\Http\Controllers\ProyeccionProfesionalController;
 use App\Http\Controllers\TestVocacionalController;
 use App\Http\Controllers\UnimexController;
 use App\Mail\CalculadoraCuotas;
+use Brick\Math\Internal\Calculator;
 use Illuminate\Support\Facades\Route;
 use Spatie\FlareClient\Api;
 
@@ -108,6 +109,7 @@ Route::post('/form/empresas/occ', [FormController::class, 'empresasOCC'])->name(
 //? peticiones de calculadora de cuotas
 Route::any('/insertar/prospecto/calculadora', [CalculadoraCuotasController::class, 'insertarProspecto'])->name('paso.uno');
 Route::get('/enviar/detalles/beca', [CalculadoraCuotasController::class, 'enviarCorreoCalculadoraDetalleBeca']);
+Route::post('enviar/correo/detalles/beca', [CalculadoraCuotasController::class, 'enviarCorreoDetallesBeca'])->name('enviar.detalles.beca.calculadora');
 //* variables de establecimiento para calculadora de cuotas
 Route::get('/set/variables/combos/calculadora/{carrera}/{id}', [ExtrasUnimexController::class, 'setVariableCarreraCombo'])->name('set.variables.combos.carrera');
 Route::get('/get/variables/combos/calculadora/', [ExtrasUnimexController::class, 'getVariableCarreraCombo'])->name('get.variables.combos.carrera');
