@@ -838,7 +838,8 @@ function enviarCorreoConVariablesGuardadas() {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         },
         url: ruta,
-        data: data
+        data: data,
+        dataType: 'html',
     }).done(function (data) {
 
         console.log(data);
