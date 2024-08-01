@@ -839,7 +839,7 @@ function enviarCorreoConVariablesGuardadas() {
         },
         url: ruta,
         data: data,
-        dataType: 'html',
+        dataType: 'html'
     }).done(function (data) {
 
         console.log(data);
@@ -861,8 +861,9 @@ function enviarCorreoConVariablesGuardadas() {
             Enviar a correo
         `);
 
-    }).fail(function () {
+    }).fail(function (e) {
         console.log("Algo salió mal");
+        console.log(e);
     });
 
 }
