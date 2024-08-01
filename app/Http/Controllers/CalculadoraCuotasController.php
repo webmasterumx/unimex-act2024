@@ -154,7 +154,7 @@ class CalculadoraCuotasController extends Controller
             $descripPer = $request->DescripPer;
             $vigencia = $request->Vigencia;
 
-            //var_dump(session('Vigencia'));
+            var_dump($vigencia);
 
             $recive = session('datoCuatroCalculadora');
             //var_dump(session('ClaveCuoProm')); ->bcc("umrec_web@unimex.edu.mx")
