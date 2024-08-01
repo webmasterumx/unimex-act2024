@@ -834,9 +834,7 @@ function enviarCorreoConVariablesGuardadas() {
 
     $.ajax({
         method: "POST",
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        },
+       
         url: ruta,
         data: data,
         dataType: 'html'
