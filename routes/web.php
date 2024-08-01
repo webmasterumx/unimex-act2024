@@ -108,7 +108,7 @@ Route::post('/form/quejas/sugerencias', [FormController::class, 'quejasYsugerenc
 Route::post('/form/empresas/occ', [FormController::class, 'empresasOCC'])->name('form.empresas.pcc');
 //? peticiones de calculadora de cuotas
 Route::any('/insertar/prospecto/calculadora', [CalculadoraCuotasController::class, 'insertarProspecto'])->name('paso.uno');
-Route::post('enviar/correo/detalles/beca', [CalculadoraCuotasController::class, 'enviarCorreoDetallesBeca'])->name('enviar.detalles.beca.calculadora');
+Route::any('/enviar/correo/detalles/beca', [CalculadoraCuotasController::class, 'enviarCorreoDetallesBeca'])->name('enviar.detalles.beca.calculadora');
 //* variables de establecimiento para calculadora de cuotas
 Route::get('/set/variables/combos/calculadora/{carrera}/{id}', [ExtrasUnimexController::class, 'setVariableCarreraCombo'])->name('set.variables.combos.carrera');
 Route::get('/get/variables/combos/calculadora/', [ExtrasUnimexController::class, 'getVariableCarreraCombo'])->name('get.variables.combos.carrera');
