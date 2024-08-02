@@ -44,6 +44,13 @@ class CalculadoraCuotasController extends Controller
             $celular_valor = "";
         }
 
+        if ($request->selectPlantel == 2) {
+            $horarioDefault = 5;
+        } else {
+            $horarioDefault = 1;
+        }
+
+
         $valores = array(
             "pNombre" => $request->nombreProspecto,
             "pApPaterno" => $request->apellidosProspecto,
@@ -55,7 +62,7 @@ class CalculadoraCuotasController extends Controller
             "pPlantel" => $request->selectPlantel,
             "pNivel_Estudio" => $request->selectNivel,
             "pCarrera" => 1,
-            "pHorario" => 0,
+            "pHorario" => $horarioDefault,
             "pOrigen" => 23,
             "utpsource" =>  $source,
             "descripPublicidad" => $campaign,
@@ -66,38 +73,46 @@ class CalculadoraCuotasController extends Controller
             "folioReferido" => "0",
         );
 
-        //dd($valores);
+        //var_dump($valores);
         $respuesta = app(ApiConsumoController::class)->agregarProspectoCRM($valores);
-        //$recive = "lishanxime201099@gmail.com";
+        //var_dump($respuesta);
+        
+        if ($respuesta['FolioCRM'] != 0) {
 
-        SELF::establecerVariablesCorreo($request, $respuesta);
+            SELF::establecerVariablesCorreo($request, $respuesta);
 
-        try {
+            try {
 
-            Mail::to($request->emailProspecto)->bcc("umrec_web@unimex.edu.mx")->send(new CalculadoraCuotas());
+                Mail::to($request->emailProspecto)->bcc("umrec_web@unimex.edu.mx")->send(new CalculadoraCuotas());
 
-            $statusCode     = 200;
-            $this->message  = "Correo enviado correctamente.";
-            $this->result   = true;
-        } catch (\Throwable $th) {
-            $statusCode     = 200;
-            //$this->message  = $th->getMessage();
-            $this->message  = "Error al enviar correo.";
-        } finally {
-            $response = [
-                'message'   => $this->message,
-                'result'    => $this->result,
-                'records'   => $this->records
-            ];
+                $statusCode     = 200;
+                $this->message  = "Correo enviado correctamente.";
+                $this->result   = true;
+            } catch (\Throwable $th) {
+                $statusCode     = 200;
+                //$this->message  = $th->getMessage();
+                $this->message  = "Error al enviar correo.";
+            } finally {
+                $response = [
+                    'message'   => $this->message,
+                    'result'    => $this->result,
+                    'records'   => $this->records
+                ];
+            }
+
+            $legales = SELF::definirLegales($request->selectNivel);
+
+            $respuesta['legales'] = $legales;
+            $respuesta['estadoCorreo'] = $this->result;
+            $respuesta['mensajeCorreo'] =  $this->message;
+        }
+        else
+        {
+            $respuesta['estadoCorreo'] = false;
+            $respuesta['mensajeCorreo'] =  "Correo no enviado";
         }
 
-        $legales = SELF::definirLegales($request->selectNivel);
-
-        $respuesta['legales'] = $legales;
-        $respuesta['estadoCorreo'] = $this->result;
-        $respuesta['mensajeCorreo'] =  $this->message;
-
-        return response()->json($respuesta);
+        return response()->json($respuesta); 
     }
 
     public function enviarCorreoCalculadoraDetalleBeca()
