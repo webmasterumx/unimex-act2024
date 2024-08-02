@@ -26,26 +26,13 @@ class UnimexController extends Controller
     public function inicio(): View
     {
 
-        if (isset($_REQUEST['utm_source']) && isset($_REQUEST['utm_medium']) && isset($_REQUEST['utm_campaign']) && isset($_REQUEST['utm_term']) && isset($_REQUEST['utm_content']) && isset($_REQUEST['gad_source'])) {
-            ////dd($_REQUEST['utm_source']);
-            session(["utm_source" => $_REQUEST['utm_source']]);
-            session(["utm_medium" => $_REQUEST['utm_medium']]);
-            session(["utm_campaign" => $_REQUEST['utm_campaign']]);
-            session(["utm_term" => $_REQUEST['utm_term']]);
-            session(["utm_content" => $_REQUEST['utm_content']]);
-            session(["gad_source" => $_REQUEST['gad_source']]);
-        } else {
-            session(["utm_source" => "organico"]);
-            session(["utm_medium" => 0]);
-            session(["utm_campaign" => 0]);
-            session(["utm_term" => 0]);
-            session(["utm_content" => 0]);
-            session(["gad_source" => 0]);
-        }
+        SELF::setUtmCookies();
 
         $listaCarreras = CCarreras::all();
         $banners = Banner::where('ubicacion', 0)->orWhere('ubicacion', 1)->orderBy('orden', 'ASC')->get();
         $ventajas_unimex = VentajasUnimex::all();
+
+        //dd(session('utm_source'));
 
         return view('inicio', [
             "listaCarreras" => $listaCarreras,
@@ -179,7 +166,7 @@ class UnimexController extends Controller
     {
 
         if (isset($_REQUEST['utm_source']) && isset($_REQUEST['utm_medium']) && isset($_REQUEST['utm_campaign']) && isset($_REQUEST['utm_term']) && isset($_REQUEST['utm_content']) && isset($_REQUEST['gad_source'])) {
-      
+
             session(["utm_source" => $_REQUEST['utm_source']]);
             session(["utm_medium" => $_REQUEST['utm_medium']]);
             session(["utm_campaign" => $_REQUEST['utm_campaign']]);
@@ -226,5 +213,69 @@ class UnimexController extends Controller
     {
 
         return view('bolsa_de_trabajo');
+    }
+
+    public function setUtmCookies()
+    {
+        
+
+        if (isset($_REQUEST['utm_source'])) { //*determina si la ur contiene la variable
+            if (!empty($_REQUEST['utm_source'])) { //! determina si la variable esta vacia
+                session(["utm_source" => $_REQUEST['utm_source']]);
+            }
+        } else { //? decision si la variable no se encuentra en la cadena
+            session(["utm_source" => "organico"]);
+        }
+
+
+        if (isset($_REQUEST['utm_medium'])) { //*determina si la url contiene la variable
+            if (!empty($_REQUEST['utm_medium'])) { //! determina si la variable esta vacia
+                session(["utm_medium" => $_REQUEST['utm_medium']]);
+            }
+        } else { //? decision si la variable no se encuentra en la cadena de la url
+            session(["utm_medium" => 0]);
+        }
+
+        if (isset($_REQUEST['utm_campaign'])) { //*determina si la url contiene la variable
+            if (!empty($_REQUEST['utm_campaign'])) { //! determina si la variable esta vacia
+                session(["utm_campaign" => $_REQUEST['utm_campaign']]);
+            }
+        } else { //? decision si la variable no se encuentra en la cadena de la url
+            session(["utm_campaign" => 0]);
+        }
+
+        if (isset($_REQUEST['utm_term'])) { //*determina si la url contiene la variable
+            if (!empty($_REQUEST['utm_term'])) { //! determina si la variable esta vacia
+                session(["utm_term" => $_REQUEST['utm_term']]);
+            }
+        } else { //? decision si la variable no se encuentra en la cadena de la url
+            session(["utm_term" => 0]);
+        }
+
+        if (isset($_REQUEST['utm_content'])) { //*determina si la url contiene la variable
+            if (!empty($_REQUEST['utm_content'])) { //! determina si la variable esta vacia
+                session(["utm_content" => $_REQUEST['utm_content']]);
+            }
+        } else { //? decision si la variable no se encuentra en la cadena de la url
+            session(["utm_content" => 0]);
+        }
+
+        if (isset($_REQUEST['gad_source'])) { //*determina si la url contiene la variable
+            if (!empty($_REQUEST['gad_source'])) { //! determina si la variable esta vacia
+                session(["gad_source" => $_REQUEST['gad_source']]);
+            }
+        } else { //? decision si la variable no se encuentra en la cadena de la url
+            session(["gad_source" => 0]);
+        }
+
+        $dataUTM["utm_source"] = session('utm_source');
+        $dataUTM["utm_medium"] = session('utm_medium');
+        $dataUTM["utm_campaign"] = session('utm_campaign');
+        $dataUTM["utm_term"] = session('utm_term');
+        $dataUTM["utm_content"] = session('utm_content');
+        $dataUTM["gad_source"] = session('gad_source');
+
+        //dd($dataUTM);
+
     }
 }
