@@ -157,9 +157,10 @@ class CalculadoraCuotasController extends Controller
 
     public function enviarCorreoDetallesBeca(Request $request)
     {
+
         //$recive = "lishanxime201099@gmail.com";
 
-        try {
+       try {
             $nombreNivel = $request->nombreNivel;
             $carrera = $request->nombreCarrera;
             $nombrePlantel = $request->nombrePlantel;
@@ -169,33 +170,29 @@ class CalculadoraCuotasController extends Controller
             $descripPer = $request->DescripPer;
             $vigencia = $request->Vigencia;
 
-            echo $nombreNivel;
-/* 
-            var_dump($request);
-
             $recive = session('datoCuatroCalculadora');
             //var_dump(session('ClaveCuoProm')); ->bcc("umrec_web@unimex.edu.mx")
             $envio =  Mail::to($recive)->send(new CalculadoraDetallesBeca($carrera, $nombrePlantel, $turno, $descripPer, $beca, $vigencia, $horario));
 
             $statusCode     = 200;
             $this->message  = "Correo enviado correctamente.";
-            $this->result   = true; */
+            $this->result   = true; 
         } catch (\Throwable $th) {
             $statusCode     = 200;
             $this->message  = $th->getMessage();
             //$this->message  = "Error al enviar correo.";
         } finally {
-            /* $response = [
+             $response = [
                 'message'   => $this->message,
                 'result'    => $this->result,
                 'records'   => $this->records
             ];
 
-            return response()->json($response); */
+            return response()->json($response); 
 
             //dd($response);
         }
-        //Mail::to($recive)->send(new CalculadoraDetallesBeca());
+        //Mail::to($recive)->send(new CalculadoraDetallesBeca()); 
     }
 
     public function establecerVariablesCorreo(Request $request, $respuesta)

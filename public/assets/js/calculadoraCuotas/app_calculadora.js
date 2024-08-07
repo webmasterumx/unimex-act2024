@@ -822,15 +822,18 @@ function conservarVariablesDetalleCalculadora(nombreNivel, nombreCarrera, nombre
 }
 
 function enviarCorreoConVariablesGuardadas() {
-    $("#correoButton").prop("disabled", true);
+    /* $("#correoButton").prop("disabled", true);
     $('#correoButton').html(`
         <div class="spinner-border me-1" style="width: 20px; height: 20px; color: #de951b;" role="status">
             <span class="visually-hidden">Loading...</span>
         </div>
         Enviando correo
     `);
-
+ */
     let ruta = setUrlBase() + "enviar/correo/detalles/beca";
+
+    console.log(ruta);
+    
 
     let data = {
         nombreNivel: sessionStorage.getItem("nombreNivel"),
