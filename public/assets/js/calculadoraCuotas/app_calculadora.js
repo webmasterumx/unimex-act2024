@@ -830,7 +830,7 @@ function enviarCorreoConVariablesGuardadas() {
         Enviando correo
     `);
 
-    let ruta = setUrlBase() + "enviar/correo/detalles/beca/";
+    let ruta = setUrlBase() + "enviar/correo/detalles/beca";
 
     let data = {
         nombreNivel: sessionStorage.getItem("nombreNivel"),
@@ -847,10 +847,9 @@ function enviarCorreoConVariablesGuardadas() {
 
     $.ajax({
         method: "POST",
-
         url: ruta,
         data: data,
-        dataType: 'html'
+        dataType: 'json'
     }).done(function (data) {
 
         console.log(data);
