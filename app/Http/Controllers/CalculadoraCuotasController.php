@@ -169,6 +169,8 @@ class CalculadoraCuotasController extends Controller
             $descripPer = $request->DescripPer;
             $vigencia = $request->Vigencia;
 
+            echo $nombreNivel;
+/* 
             var_dump($request);
 
             $recive = session('datoCuatroCalculadora');
@@ -177,19 +179,19 @@ class CalculadoraCuotasController extends Controller
 
             $statusCode     = 200;
             $this->message  = "Correo enviado correctamente.";
-            $this->result   = true;
+            $this->result   = true; */
         } catch (\Throwable $th) {
             $statusCode     = 200;
             $this->message  = $th->getMessage();
             //$this->message  = "Error al enviar correo.";
         } finally {
-            $response = [
+            /* $response = [
                 'message'   => $this->message,
                 'result'    => $this->result,
                 'records'   => $this->records
             ];
 
-            return response()->json($response);
+            return response()->json($response); */
 
             //dd($response);
         }
