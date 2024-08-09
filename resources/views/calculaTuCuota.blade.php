@@ -44,7 +44,7 @@
                     <hr>
                     <div class="mb-2 p-0 col-6">
                         <input type="text" class="form-control form-control-sm" id="nombreProspecto"
-                            name="nombreProspecto" placeholder="Nombre (Obligatorio)">
+                            name="nombreProspecto" placeholder="Nombre (Obligatorio)" onpaste="">
                     </div>
                     <div class="mb-2 p-0 col-6">
                         <input type="text" class="form-control form-control-sm" id="apellidosProspecto"
@@ -258,7 +258,7 @@
                         </div>
                         <div class="col-12 text-end mt-3">
                             <button onclick="redireccionPreinscripcionEnLinea()" id="redireccionPEL" href="#"
-                                class="btn" style="background-color: #de951b;">
+                                class="btn mt-3" style="background-color: #de951b;">
                                 PREINSCRIPCIÓN EN LINEA
                             </button>
                         </div>
@@ -292,6 +292,10 @@
 @endsection
 
 @section('scripts')
+    <script type="text/javascript"
+        src="https://rawcdn.githack.com/franz1628/validacionKeyCampo/bce0e442ee71a4cf8e5954c27b44bc88ff0a8eeb/validCampoFranz.js">
+    </script>
+    <script src="{{ asset('assets/js/validarCampos.js') }}"></script>
     <script>
         $.ajax({
             method: "GET",
@@ -354,15 +358,8 @@
             }
         });
 
-        $('#nombreProspecto').keypress(function(tecla) {
-            if ((tecla.charCode < 97 || tecla.charCode > 122) && (tecla.charCode < 65 || tecla
-                    .charCode > 90) && (tecla.charCode != 45) && (tecla.charCode != 32) && (tecla.charCode != 241)) return false;
-        });
-
-        $('#apellidosProspecto').keypress(function(tecla) {
-            if ((tecla.charCode < 97 || tecla.charCode > 122) && (tecla.charCode < 65 || tecla
-                    .charCode > 90) && (tecla.charCode != 45) && (tecla.charCode != 32) && (tecla.charCode != 241)) return false;
-        });
+        $('#nombreProspecto').validCampoFranz(' abcdefghijklmnñopqrstuvwxyzáéiou');
+        $('#apellidosProspecto').validCampoFranz(' abcdefghijklmnñopqrstuvwxyzáéiou');
     </script>
     <script src="{{ asset('assets/js/calculadoraCuotas/app_calculadora.js') }}"></script>
     <script src="{{ asset('assets/js/calculadoraCuotas/combos_calculadora.js') }}"></script>

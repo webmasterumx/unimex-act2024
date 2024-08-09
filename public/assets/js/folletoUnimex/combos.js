@@ -39,10 +39,6 @@ $(document).ready(function () {
  */
 $("select[name=peridoSelectFolleto]").change(function () {
 
-    $('#plantelSelectFolleto').empty();
-    $("#plantelSelectFolleto").append(`<option value="" selected disabled>Selecciona el plantel</option>`);
-
-
     $.ajax({
         method: "GET",
         headers: {
@@ -50,6 +46,10 @@ $("select[name=peridoSelectFolleto]").change(function () {
         },
         url: setUrlBase() + "getPlanteles",
     }).done(function (data) {
+
+        $('#plantelSelectFolleto').empty();
+        $("#plantelSelectFolleto").append(`<option value="" selected disabled>Selecciona el plantel</option>`);
+
         console.log(data);
         $.each(data, function (index, value) {
             $('#plantelSelectFolleto').append("<option value='" + value.clave + "'>" + value
@@ -61,23 +61,3 @@ $("select[name=peridoSelectFolleto]").change(function () {
     });
 
 });
-
-function postAjaxPeticionContact(ruta, data, element) {
-    $.ajax({
-        method: "POST",
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        },
-        url: ruta,
-        data: data
-    }).done(function (data) {
-        console.log(data);
-        $.each(data, function (index, value) {
-            let option = `<option value="${value.clave}">${value.descrip}</option>`;
-            $(element).append(option);
-        });
-
-    }).fail(function () {
-        console.log("Algo salió mal");
-    });
-}

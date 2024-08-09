@@ -95,6 +95,7 @@ function envioFormularioCalculadora(form) {
                     $("#apellidosProspecto").prop("disabled", true);
                     $("#telefonoProspecto").prop("disabled", true);
                     $("#emailProspecto").prop("disabled", true);
+                    $("#terminosYcondiciones").prop("disabled", true);
 
                     $('#terminosCondicionesText').html(respuesta.legales);
                     $('#terminosCondiciones').removeClass('d-none');
@@ -268,9 +269,6 @@ function getCarreras() {
 
 function getNiveles() {
 
-    $("#selectNivel").empty();
-    $("#selectNivel").append(`<option>Selecciona el nivel</option>`);
-
     let plantel = $('select[name=selectPlantel]').val();
     $.ajax({
         method: "POST",
@@ -282,6 +280,10 @@ function getNiveles() {
             plantel: plantel
         }
     }).done(function (data) {
+
+        $("#selectNivel").empty();
+        $("#selectNivel").append(`<option>Selecciona el nivel</option>`);
+
         console.log(data);
         $.each(data, function (index, value) {
             $('#selectNivel').append("<option value='" + value.clave + "'>" + value
@@ -332,21 +334,6 @@ function setVariablesCombosReguardadas(carrera, nombre) {
 
 function getVariablesCombosResguardadas() {
 
-    /* let ruta = setUrlBase() + "get/variables/combos/calculadora/";
-
-    $.ajax({
-        method: "GET",
-        url: ruta,
-        dataType: "json",
-    }).done(function (data) {
-
-        console.log(data);
-
-        
-
-    }).fail(function () {
-        console.log("Algo salió mal");
-    }); */
 
 
     let carreraResguardo = 0;
@@ -496,8 +483,6 @@ function obtenerHorariosBeca() {
 }
 
 function getPeriodos() {
-    $("#selectPeriodo").empty();
-    $("#selectPeriodo").append(`<option>¿Cuándo deseas iniciar?</option>`);
 
     let plantel = $('select[name=selectPlantel]').val();
     $.ajax({
@@ -510,6 +495,9 @@ function getPeriodos() {
             plantel: plantel
         }
     }).done(function (data) {
+        $("#selectPeriodo").empty();
+        $("#selectPeriodo").append(`<option>¿Cuándo deseas iniciar?</option>`);
+
         console.log(data);
         if (data.clave == undefined || data.clave == null) {
             $.each(data, function (index, value) {
@@ -822,18 +810,18 @@ function conservarVariablesDetalleCalculadora(nombreNivel, nombreCarrera, nombre
 }
 
 function enviarCorreoConVariablesGuardadas() {
-    /* $("#correoButton").prop("disabled", true);
+    $("#correoButton").prop("disabled", true);
     $('#correoButton').html(`
         <div class="spinner-border me-1" style="width: 20px; height: 20px; color: #de951b;" role="status">
             <span class="visually-hidden">Loading...</span>
         </div>
         Enviando correo
     `);
- */
+
     let ruta = setUrlBase() + "enviar/correo/detalles/beca";
 
     console.log(ruta);
-    
+
 
     let data = {
         nombreNivel: sessionStorage.getItem("nombreNivel"),

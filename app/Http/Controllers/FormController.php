@@ -261,17 +261,15 @@ class FormController extends Controller
 
             $respuesta['estado'] = false;
             $respuesta['ruta'] = "";
-
         } else {
 
             $archivo = SELF::getRutaFolleto($plantel, $nivel, $horario, $claveCarrera);
 
             $respuesta['estado'] = true;
             $respuesta['ruta'] = $archivo['ruta_archivo'];
-
         }
 
-        //var_dump($rutaArchivo);
+        //var_dump($respuesta);
 
         $valores = array(
             "campaingContent" => "",
@@ -315,11 +313,21 @@ class FormController extends Controller
 
         $catalogoCarreras = app(ApiConsumoController::class)->getCarrerasMethod($valores);
 
-        foreach ($catalogoCarreras as $carrera) {
-            if ($licenciatura == $carrera['descrip']) {
-                $claveCarrera = $carrera['clave'];
+        //var_dump($catalogoCarreras);
+
+        if (isset($catalogoCarreras["error"])) {
+            //echo "no hay carreras disponibles";
+            $claveCarrera = 0;
+        } else {
+            //echo "hay carreras disponibles";
+            foreach ($catalogoCarreras as $carrera) {
+                if ($licenciatura == $carrera['descrip']) {
+                    $claveCarrera = $carrera['clave'];
+                }
             }
         }
+
+        //echo $claveCarrera;
 
         return $claveCarrera;
     }
@@ -341,7 +349,7 @@ class FormController extends Controller
         return $rutaArchivo;
     }
 
-    public function getClaveHorarioForPlantel()  
+    public function getClaveHorarioForPlantel()
     {
         $matHorarios = [""];
     }

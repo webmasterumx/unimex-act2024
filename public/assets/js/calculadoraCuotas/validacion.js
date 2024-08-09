@@ -52,31 +52,50 @@ $("#form_calculadora").validate({
     },
     submitHandler: function (form) {
 
-        let selectNivelComp = $('select[name=selectNivel]').val();
+        let nombreProspecto = $('#nombreProspecto').val().replace(/ /g, "");
+        let apellidosProspecto = $('#apellidosProspecto').val().replace(/ /g, "");
 
-        if (selectNivelComp > 1) {
-            if ($('input:radio[name=typeProspecto]:checked').val() == undefined) {
-                Swal.fire({
-                    icon: "error",
-                    title: "Campo obligatorio",
-                    text: "Por favor indica si eres egresado o no.",
-                    showConfirmButton: true,
-                });
+        if (nombreProspecto == "") {
+            Swal.fire({
+                icon: "error",
+                text: "El campo de nombre no puede estar vacio",
+            });
+        }
+        else if (apellidosProspecto == "") {
+            Swal.fire({
+                icon: "error",
+                text: "El campo de apellidos no puede estar vacio",
+            });
+        }
+        else {
+
+            let selectNivelComp = $('select[name=selectNivel]').val();
+
+            if (selectNivelComp > 1) {
+                if ($('input:radio[name=typeProspecto]:checked').val() == undefined) {
+                    Swal.fire({
+                        icon: "error",
+                        title: "Campo obligatorio",
+                        text: "Por favor indica si eres egresado o no.",
+                        showConfirmButton: true,
+                    });
+                } else {
+                    envioFormularioCalculadora(form);
+                }
             } else {
-               envioFormularioCalculadora(form);
-            }
-        } else {
-            if ($('input:radio[name=typeTelefono]:checked').val() == undefined) {
-                Swal.fire({
-                    icon: "error",
-                    title: "Campo obligatorio",
-                    text: "Por favor indica de que tipo es tu teléfono",
-                    showConfirmButton: true,
-                });
-            } else {
-                envioFormularioCalculadora(form);
+                if ($('input:radio[name=typeTelefono]:checked').val() == undefined) {
+                    Swal.fire({
+                        icon: "error",
+                        title: "Campo obligatorio",
+                        text: "Por favor indica de que tipo es tu teléfono",
+                        showConfirmButton: true,
+                    });
+                } else {
+                    envioFormularioCalculadora(form);
+                }
             }
         }
+
 
     }
 });

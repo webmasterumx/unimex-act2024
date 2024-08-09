@@ -29,18 +29,6 @@ $("select[name=selectPlantel]").change(function () {
         getPeriodos();
     }
     else {
-        /* console.log('se hizo ya un calculo se requiere un recalculo');
-        let carreraResguardo = setCarreraSeleccionada();
-        let nombreCarreraRes = setNombreCarrreraSaleccionada();
-        console.log(carreraResguardo);
-        console.log(nombreCarreraRes);
-
-        $('#grupoBotones').empty();
-        $('#grupoInformacion').addClass('d-none');
-        $("#selectCarrera").empty();
-        $("#selectCarrera").append(`<option><div class="spinner-border" role="status"><span class="visually-hidden">Recalculando...</span></div></option>`);
-
-        recalculoDeCombos(carreraResguardo, nombreCarreraRes); */
 
         console.log('se hizo ya un calculo se requiere un recalculo');
 
@@ -90,7 +78,7 @@ $("select[name=selectPeriodo]").change(function () {
                 }).done(function (info) {
 
                     $("#selectNivel").empty();
-                    $("#selectNivel").append(`<option>Selecciona el Nivel</option>`);
+                    $("#selectNivel").append(`<option>Selecciona el nivel</option>`);
                     console.log(info);
                     $.each(info, function (index, value) {
                         console.log(value.descrip);
