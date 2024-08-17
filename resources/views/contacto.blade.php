@@ -150,6 +150,9 @@
 
 @section('scripts')
     <script src="{{ asset('assets/js/combos.js') }}"></script>
+    <script
+        src="https://rawcdn.githack.com/franz1628/validacionKeyCampo/bce0e442ee71a4cf8e5954c27b44bc88ff0a8eeb/validCampoFranz.js">
+    </script>
     <script>
         $(document).ready(function() {
 
@@ -224,17 +227,18 @@
             }
         });
 
-
-        limitarInputLetras("name_service");
-        limitarInputLetras("asunto_service");
-        limitarInputLetras("nombre_empresaOCC");
-        limitarInputLetras("contacto_empresaOCC");
-        limitarInputLetras("razon_empresaOCC");
-        limitarInputLetras("nombre_trabajo");
-        limitarInputLetras("puesto_interes");
-        limitarInputLetras("nombre_qys");
-        limitarInputLetras("asunto_qys");
-
+        $('#name_service').validCampoFranz(' abcdefghijklmnñopqrstuvwxyzáéiíoóuú');
+        $('#asunto_service').validCampoFranz(' abcdefghijklmnñopqrstuvwxyzáéiíoóuú');
+        $('#nombre_empresaOCC').validCampoFranz(' abcdefghijklmnñopqrstuvwxyzáéiíoóuú');
+        $('#contacto_empresaOCC').validCampoFranz(' abcdefghijklmnñopqrstuvwxyzáéiíoóuú');
+        $('#razon_empresaOCC').validCampoFranz(' abcdefghijklmnñopqrstuvwxyzáéiíoóuú');
+        $('#nombre_trabajo').validCampoFranz(' abcdefghijklmnñopqrstuvwxyzáéiíoóuú');
+        $('#puesto_interes').validCampoFranz(' abcdefghijklmnñopqrstuvwxyzáéiíoóuú');
+        $('#nombre_qys').validCampoFranz(' abcdefghijklmnñopqrstuvwxyzáéiíoóuú');
+        $('#asunto_qys').validCampoFranz(' abcdefghijklmnñopqrstuvwxyzáéiíoóuú');
+        $('#matricula_service').validCampoFranz('123456789-');
+        $('#matricula_qys').validCampoFranz('123456789-');
+        $('#rfc_empresaOCC').validCampoFranz(' abcdefghijklmnñopqrstuvwxyzáéiíoóuú1234567890');
     </script>
 
     @include('include.redirecciones.outOfertaAcademica')

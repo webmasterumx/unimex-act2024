@@ -383,24 +383,6 @@
             nextArrow: '<button type="button" class="slick-next-requisitos"><i class="bi bi-arrow-right-circle-fill"></i></button>',
         });
 
-       /*  const enlaceCalculadora = document.getElementById("redireccionCTCL");
-        enlaceCalculadora.addEventListener('click', function() {
-            let nivel = "Licenciatura";
-            let carrera = "{{ $licenciatura->subtitulo }}";
-            let carreraFinal = carrera.replace(/ /g, "_");
-
-            $.ajax({
-                method: "GET",
-                url: setUrlBase() + "set/variables/calculadora/" + nivel + "/" + carreraFinal,
-            }).done(function(data) {
-                console.log(data);
-
-            }).fail(function() {
-                console.log("Algo salió mal");
-            });
-            window.open("{{ route('calcula_tu_cuota') }}", '_blank');
-        }); */
-
         const enlacePreinscripcion = document.getElementById("redireccionPELL");
         enlacePreinscripcion.addEventListener('click', function() {
             let nivel = "Licenciatura";

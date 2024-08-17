@@ -7,6 +7,10 @@ $(document).ready(function () {
     $("select[name=carreraSelect]").prop("disabled", true);
     $("select[name=horarioSelect]").prop("disabled", true);
 
+    //! llamamos a a la funcion que precarga el nombre de la carrera en posicion
+    //! guaradandola en una variable de session de javascript
+    setCarreraInicial();
+
     /*
      * obtiene los planteles para el formulario de contacto.
      * Paginas :
@@ -27,6 +31,8 @@ $(document).ready(function () {
     }).fail(function () {
         console.log("Algo salió mal");
     });
+
+
 
     // Detecta el cambio de opcion en un select para actuar en otro
     /*
@@ -64,6 +70,8 @@ $(document).ready(function () {
             $("#periodoSelect").append(`<option value="" selected disabled>¿Cuándo deseas iniciar?  </option>`);
             $('#horarioSelect').empty();
             $("#horarioSelect").append(`<option value="" selected disabled>Selecciona un horario</option>`);
+            $("select[name=horarioSelect]").prop("disabled", true);
+            $("select[name=carreraSelect]").prop("disabled", true);
 
             console.log(data);
             $.each(data, function (index, value) {
@@ -175,7 +183,7 @@ $(document).ready(function () {
      * y muestra las carreras segun: plantel, nivel y periodo
      */
     $("select[name=periodoSelect]").change(function () {
-        let carreraInicialSelect = setCarreraInicial();
+        let carreraInicialSelect = sessionStorage.getItem("carreraPrecargada");
         $('#horarioSelect').empty();
         $("#horarioSelect").append(`<option value="" selected disabled>Horario</option>`);
 
@@ -299,6 +307,32 @@ function setNivelInicial() {
 function setCarreraInicial() {
     let carrera = $('select[name="carreraSelect"] option:selected').text();
     console.log(carrera);
+    sessionStorage.setItem("carreraPrecargada", carrera);
+}
 
-    return carrera;
+function postAjaxPeticionContact(ruta, data, element) {
+    $.ajax({
+        method: "POST",
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        url: ruta,
+        data: data
+    }).done(function (data) {
+        console.log(data);
+        if (data.error == undefined || data.error == null) {
+            if (data.clave == undefined || data.clave == null) {
+                $.each(data, function (index, value) {
+                    let option = `<option value="${value.clave}">${value.descrip}</option>`;
+                    $(element).append(option);
+                });
+            } else {
+                let option = `<option value="${data.clave}">${data.descrip}</option>`;
+                $(element).append(option);
+            }
+        }
+
+    }).fail(function () {
+        console.log("Algo salió mal");
+    });
 }

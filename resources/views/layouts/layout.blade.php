@@ -137,6 +137,11 @@
     <!-- DataTables -->
     <script src="//cdn.datatables.net/2.0.1/js/dataTables.min.js"></script>
 
+    <!-- script de validacion de entrada de caracteres a inputs -->
+    <script
+        src="https://rawcdn.githack.com/franz1628/validacionKeyCampo/bce0e442ee71a4cf8e5954c27b44bc88ff0a8eeb/validCampoFranz.js">
+    </script>
+
     <!-- Template Main JS File -->
     <script src="{{ asset('assets/js/app.js') }}"></script>
     <script src="{{ asset('assets/js/main.js') }}"></script>
@@ -329,21 +334,9 @@
             window.open("{{ route('contacto') }}", '_self');
         }
 
-        $('#nombre_prospecto').keypress(function(tecla) {
-
-            if ((tecla.charCode < 97 || tecla.charCode > 122) && (tecla.charCode < 65 || tecla
-                    .charCode > 90) && (tecla.charCode != 45) && (tecla.charCode != 32)) return false;
-        });
-
-        $('#apellidos_prospecto').keypress(function(tecla) {
-            if ((tecla.charCode < 97 || tecla.charCode > 122) && (tecla.charCode < 65 || tecla
-                    .charCode > 90) && (tecla.charCode != 45) && (tecla.charCode != 32)) return false;
-        });
-
-        $('#nombreFolleto').keypress(function(tecla) {
-            if ((tecla.charCode < 97 || tecla.charCode > 122) && (tecla.charCode < 65 || tecla
-                    .charCode > 90) && (tecla.charCode != 45) && (tecla.charCode != 32)) return false;
-        });
+        $('#nombre_prospecto').validCampoFranz(' abcdefghijklmnñopqrstuvwxyzáéiíoóuú');
+        $('#apellidos_prospecto').validCampoFranz(' abcdefghijklmnñopqrstuvwxyzáéiíoóuú');
+        $('#nombreFolleto').validCampoFranz(' abcdefghijklmnñopqrstuvwxyzáéiíoóuú');
 
         function gerenerarMenuSm() {
             let menu = `

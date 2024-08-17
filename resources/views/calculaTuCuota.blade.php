@@ -358,8 +358,8 @@
             }
         });
 
-        $('#nombreProspecto').validCampoFranz(' abcdefghijklmnñopqrstuvwxyzáéiou');
-        $('#apellidosProspecto').validCampoFranz(' abcdefghijklmnñopqrstuvwxyzáéiou');
+        $('#nombreProspecto').validCampoFranz(' abcdefghijklmnñopqrstuvwxyzáéiíoóuú');
+        $('#apellidosProspecto').validCampoFranz(' abcdefghijklmnñopqrstuvwxyzáéiíoóuú');
     </script>
     <script src="{{ asset('assets/js/calculadoraCuotas/app_calculadora.js') }}"></script>
     <script src="{{ asset('assets/js/calculadoraCuotas/combos_calculadora.js') }}"></script>
