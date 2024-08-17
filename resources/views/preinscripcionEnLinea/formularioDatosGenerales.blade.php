@@ -325,6 +325,9 @@
         $('#nombreInscripcion').validCampoFranz(' abcdefghijklmnñopqrstuvwxyzáéíóúiou');
         $('#apellidoPatInscripcion').validCampoFranz(' abcdefghijklmnñopqrstuvwxyzáéíóúiou');
         $('#apellidoMatInscripcion').validCampoFranz(' abcdefghijklmnñopqrstuvwxyzáéíóúiou');
+        $('#calleInscripcion').validCampoFranz(' abcdefghijklmnñopqrstuvwxyzáéíóúiou')
+        $('#numeroInscripcion').validCampoFranz(' abcdefghijklmnñopqrstuvwxyzáéíóúiou')
+        $('#coloniaInscripcion').validCampoFranz(' abcdefghijklmnñopqrstuvwxyzáéíóúiou')
 
         validarCamposLetrasOnPasteV1('#nombreInscripcion');
         validarCamposLetrasOnPasteV1('#apellidoPatInscripcion');
