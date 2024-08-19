@@ -124,7 +124,8 @@ $("select[name=selectPeriodo]").change(function () {
 });
 
 $("select[name=selectNivel]").change(function () {
-
+    
+    establecerTextoComboCarrera();
     let nombreNivel = $('select[name="selectNivel"] option:selected').text();
     $('#nivelCrm').val(`${nombreNivel}`);
 
