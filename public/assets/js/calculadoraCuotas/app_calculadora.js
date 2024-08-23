@@ -97,6 +97,8 @@ function envioFormularioCalculadora(form) {
                     $("#telefonoProspecto").prop("disabled", true);
                     $("#emailProspecto").prop("disabled", true);
                     $("#terminosYcondiciones").prop("disabled", true);
+                    $("#telefono_celular").prop("disabled", true);
+                    $("#telefono_fijo").prop("disabled", true);
 
                     $('#terminosCondicionesText').html(respuesta.legales);
                     $('#terminosCondiciones').removeClass('d-none');
