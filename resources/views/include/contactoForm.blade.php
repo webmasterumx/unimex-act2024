@@ -53,11 +53,11 @@
                     <div class="w-100 d-flex">
                         <div class="w-50">
                             <input class="w-100 rounded-0 form-control" type="text" name="nombre_prospecto"
-                                id="nombre_prospecto" placeholder="Nombre">
+                                id="nombre_prospecto" placeholder="Nombre" maxlength="50">
                         </div>
                         <div class="w-50">
                             <input class="rounded-0 form-control" type="text" name="apellidos_prospecto"
-                                id="apellidos_prospecto" placeholder="Apellidos">
+                                id="apellidos_prospecto" placeholder="Apellidos" maxlength="60">
                         </div>
                     </div>
 
@@ -65,7 +65,7 @@
                         <i class="bi bi-envelope-fill color-unimex"></i> EMAIL *</label>
                     <div class="w-100">
                         <input class="rounded-0 form-control" type="email" name="mail_prospecto" id="mail_prospecto"
-                            placeholder="nombre@email.com">
+                            placeholder="nombre@email.com" maxlength="50">
                     </div>
 
                     <label class="border p-1 w-100 fw-light mt-2 mb-0" style="font-size: 15px !important; color: black;" for="celular_prospecto">

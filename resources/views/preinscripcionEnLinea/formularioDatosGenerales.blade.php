@@ -154,7 +154,7 @@
                             <label style="color: #00539a !important;" for="municipioInscripcion" class="form-label"><span
                                     style="color: red !important;">*</span> Municipio/Delegación:</label>
                             <select class="form-select" id="municipioInscripcion" name="municipioInscripcion">
-                                <option value="" selected>Selecciona Delegacion</option>
+                                <option value="" selected>Selecciona Delegación</option>
                             </select>
                         </div>
                         <div class="col-12 text-center" style="color: rgba(241, 145, 29, 1.00);">

@@ -17,7 +17,7 @@
                     I. Titulación por créditos <br>
                     II. Estudios de Grado <br>
                     III. Examen de Conocimientos UNIMEX <br>
-                    IV. >Examen General de Egreso (EGEL) <br><br>
+                    IV. Examen General de Egreso (EGEL) <br><br>
 
                     <b>I. Titulación por créditos.</b><br><br>
                     Para titularte por esta modalidad necesitas acreditar todas tus materias de la licenciatura y presentar
@@ -65,7 +65,8 @@
                     <b>REQUISITOS GENERALES PARA CUALQUIER OPCIÓN DE TITULACIÓN:</b>
                 </p>
                 <ul>
-                    <li>Haber cursado y aprobado el 100% de los créditos establecidos en el plan de estudios de la licenciatura.</li>
+                    <li>Haber cursado y aprobado el 100% de los créditos establecidos en el plan de estudios de la
+                        licenciatura.</li>
                     <li>Haber obtenido la carta de liberación del Servicio Social.</li>
                     <li>Presentar Certificado de Estudios Totales de Licenciatura (o en trámite).</li>
                     <li>Acta de Nacimiento, original.</li>

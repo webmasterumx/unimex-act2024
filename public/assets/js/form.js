@@ -45,28 +45,28 @@ $("#servicio_alumnos").validate({
         },
         phone_casa_service: {
             required: "Teléfono requerido.",
-            minlength: "Debes ingresar el número a 10 digitos.",
-            maxlength: "Debes ingresar el número a 10 digitos."
+            minlength: "Debes ingresar el número a 10 dígitos..",
+            maxlength: "Debes ingresar el número a 10 dígitos."
         },
         movil_service: {
             required: "Celular requerido.",
-            minlength: "Debes ingresar el número a 10 digitos.",
-            maxlength: "Debes ingresar el número a 10 digitos."
+            minlength: "Debes ingresar el número a 10 dígitos.",
+            maxlength: "Debes ingresar el número a 10 dígitos."
         },
         asunto_service: {
             required: "Asunto obligatorio.",
         },
         matricula_service: {
             required: "Su matrícula es obligatoria.",
-            minlength: "Su matrícula debe tener mínimo 11 digitos.",
-            maxlength: "Su matrícula debe tener máximo 11 digitos."
+            minlength: "Su matrícula debe tener mínimo 11 dígitos.",
+            maxlength: "Su matrícula debe tener máximo 11 dígitos."
         },
         mensaje_service: {
             required: "Mensaje obligatorio.",
         },
         operacion_service: {
-            required: "Resultado de la operacion requerido.",
-            maxlength: "Solo se permiten resultados de dos digitos.",
+            required: "Resultado de la operación requerido.",
+            maxlength: "Solo se permiten resultados de dos dígitos.",
         }
     },
     submitHandler: function (form) {
@@ -77,13 +77,13 @@ $("#servicio_alumnos").validate({
         if (name_service == "") {
             Swal.fire({
                 icon: "error",
-                text: "El campo nombre no puede estar vacio",
+                text: "El campo nombre no puede estar vacío",
             });
         }
         else if (asunto_service == "") {
             Swal.fire({
                 icon: "error",
-                text: "El campo asunto no puede estar vacio",
+                text: "El campo asunto no puede estar vacío",
             });
         }
         else {
@@ -167,12 +167,15 @@ $("#form_contacto").validate({
     rules: {
         nombre_prospecto: {
             required: true,
+            maxlength: 50
         },
         apellidos_prospecto: {
             required: true,
+            maxlength: 60
         },
         mail_prospecto: {
             required: true,
+            maxlength: 50
         },
         celular_prospecto: {
             required: true,
@@ -203,23 +206,26 @@ $("#form_contacto").validate({
     messages: {
         nombre_prospecto: {
             required: "Nombre obligatorio.",
+            maxlength: "El número de caracteres máximo es 50."
         },
         apellidos_prospecto: {
             required: "Apellidos obligatorios.",
+            maxlength: "El número de caracteres máximo es 60."
         },
         mail_prospecto: {
             required: "Correo obligatorio.",
-            email: "Ingresa un formato valido de correo."
+            email: "Ingresa un formato valido de correo.",
+            maxlength: "El número de caracteres máximo es 60."
         },
         celular_prospecto: {
             required: "Teléfono celular obligatorio.",
-            minlength: "Numero celular de 10 dig. minimo.",
-            maxlength: "Numero celular de 10 dig. maximo."
+            minlength: "Número celular de 10 dig. mínimo.",
+            maxlength: "Número celular de 10 dig. máximo."
         },
         telefono_prospecto: {
             required: "Teléfono de casa obligatorio.",
-            minlength: "Numero teléfonico de 10 dig. minimo.",
-            maxlength: "Numero teléfonico de 10 dig. maximo."
+            minlength: "Número teléfonico de 10 dig. mínimo.",
+            maxlength: "Número teléfonico de 10 dig. máximo."
         },
         plantelSelect: {
             required: "Selecciona un plantel.",
@@ -242,33 +248,72 @@ $("#form_contacto").validate({
         let nombreProspecto = $('#nombre_prospecto').val().replace(/ /g, "");
         let apellidosProspecto = $('#apellidos_prospecto').val().replace(/ /g, "");
 
-        console.log(nombreProspecto);
-
-
         if (nombreProspecto == "") {
             Swal.fire({
                 icon: "error",
-                text: "El campo de nombre no puede estar vacio",
+                text: "El campo de nombre no puede estar vacío",
             });
         }
         else if (apellidosProspecto == "") {
             Swal.fire({
                 icon: "error",
-                text: "El campo de apellidos no puede estar vacio",
+                text: "El campo de apellidos no puede estar vacío",
             });
         }
         else {
 
             $('#envio_contacto').prop("disabled", true);
             $('#envio_contacto').html(`
-                <div class="spinner-border" style="width: 20px; height: 20px;" role="status">
-                    <span class="visually-hidden">Loading...</span>
-                </div>
-                &nbsp;Enviando Datos..
-            `);
+                 <div class="spinner-border" style="width: 20px; height: 20px;" role="status">
+                     <span class="visually-hidden">Loading...</span>
+                 </div>
+                 &nbsp;Enviando Datos..
+             `);
+
+            //* creacion de variable form data para envio de datos
+            let formData = new FormData(form);
+            let ruta = setUrlBase() + "procesa/datos/form/contacto";
+
+            //! se agregan valores de seleccion para la vista de exito
+            let plantelSeleccion = $('select[name="plantelSelect"] option:selected').text();
+            let nivelSeleccion = $('select[name="nivelSelect"] option:selected').text();
+            let carreraSeleccion = $('select[name="carreraSelect"] option:selected').text();
+
+            formData.append("plantelSeleccion", plantelSeleccion);
+            formData.append("nivelSeleccion", nivelSeleccion);
+            formData.append("carreraSeleccion", carreraSeleccion);
+
+            $.ajax({
+                method: "POST",
+                url: ruta,
+                dataType: "html",
+                data: formData,
+                cache: false,
+                contentType: false,
+                processData: false,
+            }).done(function (data) {
+
+                console.log(data);
+
+                let respuesta = JSON.parse(data);
+
+                let rutaRedireccion = setUrlBase() + respuesta.ruta;
+
+                setTimeout("location.href='" + rutaRedireccion + "'", 2000);
 
 
-            form.submit();
+            }).fail(function (e) {
+
+                console.log(e.status);
+
+                if (e.status == 500) {
+                    console.log("Error en el servidor");
+                } else {
+                    console.log("Error desconocido");
+                }
+
+                console.log("Request: " + JSON.stringify(e.status));
+            });
 
         }
 
@@ -326,13 +371,13 @@ $("#form_trabaja").validate({
         },
         telefono_casa_trabaja: {
             required: "Teléfono obligatorio.",
-            minlength: "El teléfono debe tener mínimo 10 digitos.",
-            maxlength: "El teléfono debe tener máximo 10 digitos."
+            minlength: "El teléfono debe tener mínimo 10 dígitos.",
+            maxlength: "El teléfono debe tener máximo 10 dígitos."
         },
         telefono_movil_trabaja: {
             required: "Teléfono celular obligatorio.",
-            minlength: "El teléfono celular debe tener mínimo 10 digitos.",
-            maxlength: "El teléfono celular debe tener máximo 10 digitos."
+            minlength: "El teléfono celular debe tener mínimo 10 dígitos.",
+            maxlength: "El teléfono celular debe tener máximo 10 dígitos."
         },
         plantel_trabaja: {
             required: "Seleccione un plantel para continuar.",
@@ -350,8 +395,8 @@ $("#form_trabaja").validate({
             required: "Experiencia laboral obligatoria.",
         },
         operacion_trabaja: {
-            required: "Resultado de la operacion requerido.",
-            maxlength: "Solo se permiten resultados de dos digitos.",
+            required: "Resultado de la operación requerido.",
+            maxlength: "Solo se permiten resultados de dos dígitos.",
         }
     },
     submitHandler: function (form) {
@@ -362,13 +407,13 @@ $("#form_trabaja").validate({
         if (nombre_trabajo == "") {
             Swal.fire({
                 icon: "error",
-                text: "El campo nombre no puede estar vacio",
+                text: "El campo nombre no puede estar vacío",
             });
         }
         else if (puesto_interes == "") {
             Swal.fire({
                 icon: "error",
-                text: "El campo asunto no puede estar vacio",
+                text: "El campo asunto no puede estar vacío",
             });
         }
         else {
@@ -489,18 +534,18 @@ $("#form_quejaSugerencia").validate({
         },
         telefono_casa_qys: {
             required: "Teléfono obligatorio.",
-            minlength: "El teléfono debe tener mínimo 10 digitos.",
-            maxlength: "El teléfono debe tener máximo 10 digitos."
+            minlength: "El teléfono debe tener mínimo 10 dígitos.",
+            maxlength: "El teléfono debe tener máximo 10 dígitos."
         },
         telefono_movil_qys: {
             required: "Teléfono celular obligatorio.",
-            minlength: "El teléfono celular debe tener mínimo 10 digitos.",
-            maxlength: "El teléfono celular debe tener máximo 10 digitos."
+            minlength: "El teléfono celular debe tener mínimo 10 dígitos.",
+            maxlength: "El teléfono celular debe tener máximo 10 dígitos."
         },
         matricula_qys: {
             required: "Matrícula obligatoria.",
-            minlength: "Su matrícula debe tener mínimo 11 digitos.",
-            maxlength: "Su matrícula debe tener máximo 11 digitos."
+            minlength: "Su matrícula debe tener mínimo 11 dígitos.",
+            maxlength: "Su matrícula debe tener máximo 11 dígitos."
         },
         asunto_qys: {
             required: "Asunto obligatorio.",
@@ -509,8 +554,8 @@ $("#form_quejaSugerencia").validate({
             required: "Mensaje obligatorio.",
         },
         operacion_qys: {
-            required: "Resultado de la operacion requerido.",
-            maxlength: "Solo se permiten resultados de dos digitos.",
+            required: "Resultado de la operación requerido.",
+            maxlength: "Solo se permiten resultados de dos dígitos.",
         }
     },
     submitHandler: function (form) {
@@ -521,13 +566,13 @@ $("#form_quejaSugerencia").validate({
         if (nombre_qys == "") {
             Swal.fire({
                 icon: "error",
-                text: "El campo nombre no puede estar vacio",
+                text: "El campo nombre no puede estar vacío",
             });
         }
         else if (asunto_qys == "") {
             Swal.fire({
                 icon: "error",
-                text: "El campo asunto no puede estar vacio",
+                text: "El campo asunto no puede estar vacío",
             });
         }
         else {
@@ -652,13 +697,13 @@ $("#form_empresasOCC").validate({
         },
         telefono_empresaOCC: {
             required: "Teléfono obligatorio.",
-            minlength: "El teléfono debe tener mínimo 10 digitos.",
-            maxlength: "El teléfono debe tener máximo 10 digitos."
+            minlength: "El teléfono debe tener mínimo 10 dígitos.",
+            maxlength: "El teléfono debe tener máximo 10 dígitos."
         },
         celular_empresaOCC: {
             required: "Teléfono celular obligatorio.",
-            minlength: "El teléfono celular debe tener mínimo 10 digitos.",
-            maxlength: "El teléfono celular debe tener máximo 10 digitos."
+            minlength: "El teléfono celular debe tener mínimo 10 dígitos.",
+            maxlength: "El teléfono celular debe tener máximo 10 dígitos."
         },
         razon_empresaOCC: {
             required: "Razón social obligatoria."
@@ -670,8 +715,8 @@ $("#form_empresasOCC").validate({
             required: "Comentarios obligatorios.",
         },
         operacion_empresaOCC: {
-            required: "Resultado de la operacion requerido.",
-            maxlength: "Solo se permiten resultados de dos digitos.",
+            required: "Resultado de la operación requerido.",
+            maxlength: "Solo se permiten resultados de dos dígitos.",
         }
     },
     submitHandler: function (form) {

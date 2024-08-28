@@ -15,6 +15,7 @@ use Spatie\FlareClient\Api;
 class FormController extends Controller
 {
 
+    /** Anterior codigo de procesamiento de datos para formulario de contacto */
     public function contactoProspecto(Request $request)
     {
         /**
@@ -82,6 +83,90 @@ class FormController extends Controller
             "respuesta" => $respuesta,
             "datos" => $request,
         ]);
+    }
+
+    /** nueva funcion de procesamiento de datos para formulario de contacto */
+    public function procesaFormularioContacto(Request $request)
+    {
+
+        //! establecimiento de variables para utm
+        $baseUrl = env('APP_URL');
+        $source = session("utm_source");
+        $medium = session("utm_medium");
+        $content = session("utm_content");
+        $campaign = session("utm_campaign");
+        $term = session("utm_term");
+
+        //! creando array de datos a procesar
+        $valores = array(
+            "pNombre" => $request->nombre_prospecto,
+            "pApPaterno" => $request->apellidos_prospecto,
+            "pApMaterno" => "",
+            "pTelefono" => $request->telefono_prospecto,
+            "pCelular" => $request->celular_prospecto,
+            "pCorreo" => $request->mail_prospecto,
+            "pPeriodoEscolar" => $request->periodoSelect,
+            "pPlantel" => $request->plantelSelect,
+            "pNivel_Estudio" => $request->nivelSelect,
+            "pCarrera" => $request->carreraSelect,
+            "pHorario" => $request->horarioSelect,
+            "pOrigen" => 11,
+            "utpsource" =>  $source,
+            "descripPublicidad" => $campaign,
+            "campaignMedium" => $medium,
+            "campaignTerm" => $term,
+            "campaignContent" => $content,
+            "websiteURL" => $baseUrl,
+            "folioReferido" => "0"
+        );
+
+        //var_dump($valores);
+
+        //! envio de datos al WS
+        $respuesta = app(ApiConsumoController::class)->agregarProspectoCRM($valores); //! envio de datos al WS
+
+        /**
+         * Evalua la respuesta del web service 
+         *! Si el folio es 0 ocurrio un error y se redirigira a la vista de error 
+         *? Si es diferente a 0 se enviara un correo y redireccionara a la vista de exito
+         */
+        if ($respuesta['FolioCRM'] != 0) {
+
+            //? se intenta enviar el correo
+            try {
+                $correos = [
+                    "umrec_cdbd@unimex.edu.mx",
+                    "umrec_web@unimex.edu.mx"
+                ];
+
+                Mail::to($correos)->bcc($request->mail_prospecto)->send(new ContactoProspecto($request, $respuesta)); //! envio del correo
+
+                $messageCorreo  = "Correo enviado correctamente.";
+                $resultCorreo  = true;
+            } catch (\Throwable $th) {
+                //resguardar variables por si necerita
+                $messageCorreo = "Error al enviar correo.";
+                $resultCorreo = false;
+            }
+
+            //* se establecen variables de session para imprimir datos en la vista de registro exitoso
+            session(["registroExitNombre" => $request->nombre_prospecto]);
+            session(["registroExitFolio" => $respuesta['FolioCRM']]);
+            session(["registroExitPlantel" => $request->plantelSeleccion]);
+            session(["registroExitNivel" => $request->nivelSeleccion]);
+            session(["registroExitCarrera" => $request->carreraSeleccion]);
+
+            $respuestaFinal['estado'] = true;
+            $respuestaFinal['ruta'] = "registro_exitoso";
+
+        } else {
+
+            $respuestaFinal['estado'] = false;
+            $respuestaFinal['ruta'] = "error_de_registro";
+
+        }
+
+        return response()->json($respuestaFinal);
     }
 
     public function servicioAlumnos(Request $request)
@@ -292,7 +377,7 @@ class FormController extends Controller
             "utpsource" => "",
             "websiteURL" => "https://unimex.edu.mx/",
         );
- 
+
         $agregarProspecto = app(ApiConsumoController::class)->agregarProspectoCRM($valores);
 
         return response()->json($respuesta);

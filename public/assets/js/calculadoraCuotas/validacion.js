@@ -12,9 +12,11 @@ $("#form_calculadora").validate({
         },
         nombreProspecto: {
             required: true,
+            maxlength: 50
         },
         apellidosProspecto: {
             required: true,
+            maxlength: 60
         },
         telefonoProspecto: {
             required: true,
@@ -22,6 +24,7 @@ $("#form_calculadora").validate({
         emailProspecto: {
             required: true,
             email: true,
+            maxlength: 50
         },
     },
     messages: {
@@ -36,9 +39,11 @@ $("#form_calculadora").validate({
         },
         nombreProspecto: {
             required: "Nombre obligatorio.",
+            maxlength: "El número de caracteres máximo es 50."
         },
         apellidosProspecto: {
             required: "Apellidos obligatorios.",
+            maxlength: "El número de caracteres máximo es 60."
         },
         telefonoProspecto: {
             required: "Teléfono obligatorio.",
@@ -47,7 +52,8 @@ $("#form_calculadora").validate({
         },
         emailProspecto: {
             required: "Correo obligatorio.",
-            email: "Ingresa un formato valido de correo."
+            email: "Ingresa un formato válido de correo.",
+            maxlength: "El número de caracteres máximo es 50."
         },
     },
     submitHandler: function (form) {
@@ -58,13 +64,13 @@ $("#form_calculadora").validate({
         if (nombreProspecto == "") {
             Swal.fire({
                 icon: "error",
-                text: "El campo de nombre no puede estar vacio",
+                text: "El campo de nombre no puede estar vacío",
             });
         }
         else if (apellidosProspecto == "") {
             Swal.fire({
                 icon: "error",
-                text: "El campo de apellidos no puede estar vacio",
+                text: "El campo de apellidos no puede estar vacío",
             });
         }
         else {
@@ -87,7 +93,7 @@ $("#form_calculadora").validate({
                     Swal.fire({
                         icon: "error",
                         title: "Campo obligatorio",
-                        text: "Por favor indica de que tipo es tu teléfono",
+                        text: "Por favor indica de qué tipo es tu teléfono",
                         showConfirmButton: true,
                     });
                 } else {
