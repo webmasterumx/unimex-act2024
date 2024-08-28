@@ -77,9 +77,11 @@ class UnimexController extends Controller
     public function getLicenciatura($slug): View
     {
 
-        SELF::setUtmCookies();
+        $utmSource = new UtmController();
 
         $licenciatura = CLicenciaturas::where('slug', $slug)->first();
+
+        $utmSource->initUtmSourceOferta($licenciatura->abreviatura);
 
         if ($licenciatura != null) {
 
