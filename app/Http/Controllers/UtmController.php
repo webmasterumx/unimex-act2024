@@ -67,14 +67,14 @@ class UtmController extends Controller
         if (isset($_REQUEST['origen'])) {
             if ($_REQUEST['origen'] == "menu") {
                 $campaignCalculadora = "Home+header";
-                $contentCalculadora = "Oacademica+L" + $abreviatura + "+body+boton+calculadora";
+                $contentCalculadora = "Oacademica+L" . $abreviatura . "+body+boton+calculadora";
             } else if ($_REQUEST['origen'] == "slider") {
                 $campaignCalculadora = "Home+body";
-                $contentCalculadora = "SliderL" + $abreviatura + "+boton+calculadora";
+                $contentCalculadora = "SliderL" . $abreviatura . "+boton+calculadora";
             }
         } else {
             $campaignCalculadora = "Oacademica+body";
-            $contentCalculadora = "L" + $abreviatura + "+boton+calculadora";
+            $contentCalculadora = "L" . $abreviatura . "+boton+calculadora";
         }
 
         session(["utm_campaign" => $campaignCalculadora]);
