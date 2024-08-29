@@ -1204,7 +1204,7 @@
                                     @foreach ($data['menus'] as $menu)
                                         @if ($menu->estado == 1)
                                             <li>
-                                                <a href="{{ env('APP_URL') }}/licenciatura/{{ $menu->slug . $menu->urlUTM }}">
+                                                <a href="{{ env('APP_URL') }}licenciatura/{{ $menu->slug . $menu->urlUTM }}">
                                                     {{ $menu->nombre }}
                                                 </a>
                                             </li>
