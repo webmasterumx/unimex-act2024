@@ -69,7 +69,7 @@ class CalculadoraCuotasController extends Controller
             "campaignMedium" => $medium,
             "campaignTerm" => $term,
             "campaignContent" => $content,
-            "websiteURL" => "https://unimex.edu.mx/calcula-tu-cuota",
+            "websiteURL" => env('APP_URL') . "calcula-tu-cuota?utm_source=" . $source . "&utm_medium=" . $medium . "&utm_campaign=" . $campaign . "&utm_term=" . $term . "&utm_content=" . $content,
             "folioReferido" => "0",
         );
 
