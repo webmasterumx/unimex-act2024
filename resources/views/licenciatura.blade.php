@@ -62,7 +62,8 @@
                 <div class="row">
                     <div class="col-12 col-md-4">
                         <div class="d-grid gap-2">
-                            <a id="redireccionCTCL" href="javascript:calculadoraHeader()" class="btn btn-outline-primary mt-2 mt-mb-0">
+                            <a id="redireccionCTCL" href="javascript:calculadoraHeader()"
+                                class="btn btn-outline-primary mt-2 mt-mb-0">
                                 Calculadora de Becas
                             </a>
                         </div>
@@ -297,7 +298,7 @@
 @endsection
 
 @section('scripts')
-    <script src="{{ asset('assets/js/combosCarrera.js') }}"></script> 
+    <script src="{{ asset('assets/js/combosCarrera.js') }}"></script>
     <script>
         $('#temario').slick({
             infinite: false,
@@ -388,6 +389,13 @@
             let nivel = "Licenciatura";
             let carrera = "{{ $licenciatura->subtitulo }}";
             let carreraFinal = carrera.replace(/ /g, "_");
+            let utm_source = "{{ session('utm_source') }}";
+            let utm_medium = "{{ session('utm_medium') }}";
+            let utm_campaign = "{{ session('utm_campaign') }}";
+            let utm_term = "Preinscrip";
+            let utm_content = "{{ session('utm_contentPreinscripcion') }}";
+            let rutaRedireccionPreinscripcion = setUrlBase() +
+                `App/Preinscripcion-online?utm_source=${utm_source}&utm_medium=${utm_medium}&utm_campaign=${utm_campaign}&utm_term=${utm_term}&utm_content=${utm_content}`;
 
             $.ajax({
                 method: "GET",
@@ -398,7 +406,7 @@
             }).fail(function() {
                 console.log("Algo salió mal");
             });
-            window.open("{{ route('preinscripcion.linea') }}", '_blank');
+            window.open(rutaRedireccionPreinscripcion, '_blank');
         });
 
         function getCarreraPosicion() {
