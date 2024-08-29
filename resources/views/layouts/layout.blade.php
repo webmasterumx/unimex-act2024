@@ -1216,7 +1216,7 @@
                                     @foreach ($data['menus'] as $menu)
                                         @if ($menu->estado == 2 && $menu->mostrar == 1)
                                             <li>
-                                                <a href="{{ route('licenciatura', $menu->slug) }}">
+                                                <a href="{{ env('APP_URL') }}licenciatura/{{ $menu->slug . $menu->urlUTM }}">
                                                     {{ $menu->nombre }}
                                                 </a>
                                             </li>
@@ -1228,7 +1228,7 @@
                                     @foreach ($data['menus'] as $menu)
                                         @if ($menu->estado == 3)
                                             <li>
-                                                <a href="{{ route('licenciatura', $menu->slug) }}">
+                                                <a href="{{ env('APP_URL') }}licenciatura/{{ $menu->slug . $menu->urlUTM }}">
                                                     {{ $menu->nombre }}
                                                 </a>
                                             </li>
@@ -1245,7 +1245,7 @@
                                     @foreach ($data['menus'] as $menu)
                                         @if ($menu->estado == 4)
                                             <li>
-                                                <a href="{{ route('licenciatura.sua', $menu->slug) }}">
+                                                <a href="{{ env('APP_URL') }}licenciatura/sua/{{ $menu->slug . $menu->urlUTM }}">
                                                     {{ $menu->nombre }}
                                                 </a>
                                             </li>
@@ -1263,7 +1263,7 @@
                                     @foreach ($data['menus'] as $menu)
                                         @if ($menu->estado == 5)
                                             <li>
-                                                <a href="{{ route('posgrado', $menu->slug) }}">
+                                                <a href="{{ env('APP_URL') }}posgrado/{{ $menu->slug . $menu->urlUTM }}">
                                                     {{ $menu->nombre }}
                                                 </a>
                                             </li>
@@ -1275,7 +1275,7 @@
                                     @foreach ($data['menus'] as $menu)
                                         @if ($menu->estado == 6)
                                             <li>
-                                                <a href="{{ route('posgrado', $menu->slug) }}">
+                                                <a href="{{ env('APP_URL') }}posgrado/{{ $menu->slug . $menu->urlUTM }}">
                                                     {{ $menu->nombre }}
                                                 </a>
                                             </li>
