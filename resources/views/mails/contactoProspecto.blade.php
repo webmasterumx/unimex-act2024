@@ -383,11 +383,11 @@
                                             <p>Número de Folio: <b> {{ $data['folio'] }} </b><br /><br />
                                                 ¡Felicidades! <b> {{ $data['nombre'] }} </b> ya diste el primer paso
                                                 para iniciar tu proyecto de vida en UNIMEX.
-                                                <br><br>Has enviado tu solicitud para cursar la <b> {{ $data['nivel'] }}
-                                                    en {{ $data['carrera'] }}
-                                                    dentro del Plantel <b> {{ $data['plantel'] }} </b> para
+                                                <br><br>Has enviado tu solicitud para cursar la <b> {{ $data['nivel'] }} </b>
+                                                    en {{ $data['carrera'] }} </b>
+                                                    dentro del Plantel &nbsp; <b> {{ $data['plantel'] }} </b> &nbsp; para
                                                     iniciar tus estudios en el ciclo de <b> {{ $data['ciclo'] }} </b>
-                                                    con el horario de {{ $data['horario'] }}
+                                                    con el horario de <b>{{ $data['horario'] }}</b>
                                             </p><br>
                                             <table border="0" cellpadding="0" cellspacing="0">
                                                 <tbody>
