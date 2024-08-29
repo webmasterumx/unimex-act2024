@@ -195,6 +195,14 @@ class UnimexController extends Controller
     public function contacto(): View
     {
 
+        $_REQUEST['utm_source'] = "Website+Metro";
+        $_REQUEST['utm_medium'] = "Organico";
+        $_REQUEST['utm_campaign'] = "Contacto+body";
+        $_REQUEST['utm_term'] = "Informes";
+        $_REQUEST['utm_content'] = "Form+Informes";
+
+        SELF::setUtmCookies();
+
         return view('contacto');
     }
 
