@@ -66,19 +66,30 @@ class UtmController extends Controller
 
         if (isset($_REQUEST['origen'])) {
             if ($_REQUEST['origen'] == "menu") {
+
                 $campaignCalculadora = "Home+header";
-                $contentCalculadora = "Oacademica+L" . $abreviatura . "+body+boton+calculadora";
+                $contentCalculadora = "Oacademica+" . $abreviatura . "+body+boton+calculadora";
+                $contentPreinscripcion = "Oacademica+" . $abreviatura . "+body+boton+preinscrip";
+
             } else if ($_REQUEST['origen'] == "slider") {
+
                 $campaignCalculadora = "Home+body";
-                $contentCalculadora = "SliderL" . $abreviatura . "+boton+calculadora";
+                $contentCalculadora = "Slider" . $abreviatura . "+boton+calculadora";
+                $contentPreinscripcion = "Slider" . $abreviatura . "+boton+preinscrip";
+
             }
         } else {
+
             $campaignCalculadora = "Oacademica+body";
-            $contentCalculadora = "L" . $abreviatura . "+boton+calculadora";
+            $contentCalculadora = $abreviatura . "+boton+calculadora";
+            $contentPreinscripcion = $abreviatura . "+boton+preinscrip";
+
         }
 
         session(["utm_campaign" => $campaignCalculadora]);
         session(["utm_content" => $contentCalculadora]);
+        session(["utm_contentPreinscripcion" => $contentPreinscripcion]);
+        
 
         if (isset($_REQUEST['utm_source'])) { //*determina si la ur contiene la variable
             if (!empty($_REQUEST['utm_source'])) { //! determina si la variable esta vacia

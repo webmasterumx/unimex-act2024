@@ -9,7 +9,7 @@
         let utm_term = "Calculadora";
         let utm_content = "{{ session('utm_content') }}";
         let rutaRedireccionCalculadora = setUrlBase() +
-        `calcula-tu-cuota?utm_source=${utm_source}&utm_medium=${utm_medium}&utm_campaign=${utm_campaign}&utm_term=${utm_term}&utm_content=${utm_content}`;
+            `calcula-tu-cuota?utm_source=${utm_source}&utm_medium=${utm_medium}&utm_campaign=${utm_campaign}&utm_term=${utm_term}&utm_content=${utm_content}`;
 
         $.ajax({
             method: "GET",
@@ -22,7 +22,7 @@
         });
 
         //console.log(rutaRedireccionCalculadora);
-        
+
         window.open(rutaRedireccionCalculadora, '_blank');
     }
 
@@ -30,6 +30,13 @@
         let nivel = nivelPosicionado;
         let carrera = carreraPosicionado;
         let carreraFinal = carrera.replace(/ /g, "_");
+        let utm_source = "{{ session('utm_source') }}";
+        let utm_medium = "{{ session('utm_medium') }}";
+        let utm_campaign = "{{ session('utm_campaign') }}";
+        let utm_term = "Preinscrip";
+        let utm_content = "{{ session('utm_contentPreinscripcion') }}";
+        let rutaRedireccionPreinscripcion = setUrlBase() +
+            `App/Preinscripcion-online?utm_source=${utm_source}&utm_medium=${utm_medium}&utm_campaign=${utm_campaign}&utm_term=${utm_term}&utm_content=${utm_content}`;
 
         $.ajax({
             method: "GET",
@@ -40,6 +47,6 @@
         }).fail(function() {
             console.log("Algo salió mal");
         });
-        window.open("{{ route('preinscripcion.linea') }}", '_blank');
+        window.open(rutaRedireccionPreinscripcion, '_blank');
     }
 </script>
