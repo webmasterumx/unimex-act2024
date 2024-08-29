@@ -97,7 +97,7 @@
                     <div id="listCarreras">
                         @foreach ($listaCarreras as $carrera)
                             @if ($carrera->mostrar == true)
-                                <a href="{{ env('APP_URL') }}/licenciatura/{{ $carrera->slug . $carrera->urlUTM }}" class="card mx-2 h-100">
+                                <a href="{{ env('APP_URL') }}licenciatura/{{ $carrera->slug . $carrera->urlUTM }}" class="card mx-2 h-100">
                                     <div class="card-body p-3 p-md-2">
                                         <center>
                                             <img style="min-height: 80px !important;" src="{{ $carrera->icon }}"
