@@ -103,7 +103,12 @@ class UnimexController extends Controller
 
     public function getLicenciaturaSua($slug): View
     {
+        $utmSource = new UtmController();
+
         $licenciatura_sua = LicenciaturaSua::where('slug', $slug)->first();
+
+        $utmSource->initUtmSourceOferta($licenciatura_sua->abreviatura);
+        
         if ($licenciatura_sua != null) {
             $extras = json_decode($licenciatura_sua->extras, true);
             $temario = $extras['extras']['temario'];
@@ -121,7 +126,13 @@ class UnimexController extends Controller
 
     public function getPosgrado($slug): View
     {
+
+        $utmSource = new UtmController();
+
         $posgrado = Posgrado::where('slug', $slug)->first();
+
+        $utmSource->initUtmSourceOferta($posgrado->abreviatura);
+
         if ($posgrado != null) {
             $extras = json_decode($posgrado->temario, true);
             $temario_especialidad = $extras['extras']['temario_especialidad'];
@@ -205,7 +216,7 @@ class UnimexController extends Controller
 
     public function setUtmCookies()
     {
-        
+
 
         if (isset($_REQUEST['utm_source'])) { //*determina si la ur contiene la variable
             if (!empty($_REQUEST['utm_source'])) { //! determina si la variable esta vacia
