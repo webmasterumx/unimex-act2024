@@ -13,7 +13,7 @@
                             class="fs-1" data-bs-dismiss="modal" aria-label="Close">
                             <i class="bi bi-x-circle-fill"></i>
                         </button>
-                        <a href="{{ route('calcula_tu_cuota') }}" target="_blank">
+                        <a href="{{ env('APP_URL') }}calcula-tu-cuota?utm_source=Website+Metro&utm_medium=Organico&utm_campaign=Home+body&utm_term=Calculadora&utm_content=Modal+Body+Calculadora" target="_blank">
                             <img class="img-fluid" src="{{ asset('assets/img/popup/pop_up_unimex_texto.png') }}"
                                 alt="">
                         </a>
