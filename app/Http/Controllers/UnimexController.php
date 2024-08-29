@@ -26,6 +26,12 @@ class UnimexController extends Controller
     public function inicio(): View
     {
 
+        $_REQUEST['utm_source'] = "Website+Metro";
+        $_REQUEST['utm_medium'] = "Organico";
+        $_REQUEST['utm_campaign'] = "Home+body";
+        $_REQUEST['utm_term'] = "Informes";
+        $_REQUEST['utm_content'] = "Form+Informes";
+
         SELF::setUtmCookies();
 
         $listaCarreras = CCarreras::all();

@@ -46,7 +46,7 @@ $("#form_folleto").validate({
         if (nombreFolleto == "") {
             Swal.fire({
                 icon: "error",
-                text: "El campo de nombre no puede estar vacio",
+                text: "El campo de nombre no puede estar vacío",
             });
         } else {
             $("#descargaFolleto").prop("disabled", true);
