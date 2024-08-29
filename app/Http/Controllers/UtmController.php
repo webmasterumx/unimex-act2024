@@ -85,7 +85,7 @@ class UtmController extends Controller
                 session(["utm_source" => $_REQUEST['utm_source']]);
             }
         } else { //? decision si la variable no se encuentra en la cadena
-            session(["utm_source" => "organico"]);
+            session(["utm_source" => "Website+Metro"]);
         }
 
 
@@ -94,7 +94,7 @@ class UtmController extends Controller
                 session(["utm_medium" => $_REQUEST['utm_medium']]);
             }
         } else { //? decision si la variable no se encuentra en la cadena de la url
-            session(["utm_medium" => 0]);
+            session(["utm_medium" => "Organico"]);
         }
 
         /*    if (isset($_REQUEST['utm_campaign'])) { //*determina si la url contiene la variable
@@ -110,7 +110,7 @@ class UtmController extends Controller
                 session(["utm_term" => $_REQUEST['utm_term']]);
             }
         } else { //? decision si la variable no se encuentra en la cadena de la url
-            session(["utm_term" => 0]);
+            session(["utm_term" => "Calculadora"]);
         }
 
         /* if (isset($_REQUEST['utm_content'])) { //*determina si la url contiene la variable
