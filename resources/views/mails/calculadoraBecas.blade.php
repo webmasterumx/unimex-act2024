@@ -400,7 +400,7 @@
                                                     {{ session('datoUnoCalculadora') . ' ' . session('datoDosCalculadora') }}
                                                 </b> ya diste el primer paso para
                                                 cambiar tu vida.
-                                                <br /><br />Has enviado tu solicitud para cursar algunas de nuestras <b> {{ $nivel }}
+                                                <br /><br />Has enviado tu solicitud para cursar alguna de nuestras <b> {{ $nivel }}
                                                 </b> en el Plantel <b>
                                                     {{ session('nombrePlantel') }}
                                                 </b> para
@@ -460,7 +460,7 @@
                                                                             &nbsp; &nbsp; &nbsp;¿ESTUDIASTE LA
                                                                             LICENCIATURA O PREPARATORIA EN UNIMEX?<br />
                                                                             &nbsp; &nbsp; &nbsp; Asiste a tu plantel más
-                                                                            cercano y pregunta por el benefico de ser
+                                                                            cercano y pregunta por el beneficio de ser
                                                                             parte de la familia UNIMEX.<br><br>
 
                                                                             Pronto recibirás la llamada de un asesor
