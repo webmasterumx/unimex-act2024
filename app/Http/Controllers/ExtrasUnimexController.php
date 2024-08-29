@@ -8,6 +8,7 @@ class ExtrasUnimexController extends Controller
 {
     public function complementoMailContactoProspecto($infoGenerada)
     {
+
         //! telefonos
         $telizc = "55 5864 9660 / 55 5873 9444";
         $telsat = "55 5374 7480 / 55 5393 1326 / 55 5562 2259 <br /> 55 5562 6347 / 55 5562 4852";
@@ -62,16 +63,14 @@ class ExtrasUnimexController extends Controller
 
         $prepaleg = "<div class='legal' >Beneficios, becas y promociones válidas sólo para inscritos de nuevo ingreso a cuarto año de preparatoria en el ciclo 2017-2018. Promoción en inscripción válida hasta el 17 de agosto de 2017. Prepa Unimex disponible sólo en Plantel Izcalli. Plan de estudios incorporados a la UNAM con el acuerdo No. 6850. Los grupos se abren con un mínimo 25 alumnos inscritos; en caso de no apertura puede solicitar tu reembolso (consulta en el plantel el procedimiento). Becas: aplica sólo en parcialidades; la beca de 50% se otorga a los primeros 50 inscritos que cuenten con promedio general mínimo de siete (7.0) en el Certificado Total de Secundaria; becas del 40% sólo para inscritos de nuevo ingreso con promedio general mínimo de siete (7.0) en el Certificado Total de Secundaria. Las becas se renuevan anualmente, contando con promedio general mínimo de ocho (8.0); no son acumulables. Consulta las políticas de becas y requisitos en el Plantel. Duración: este programa se cursa 3 en ciclos anuales (tres años). Horarios. Clases de Lunes a Viernes en turno matutino de 7:10 a 14:20 h. Para mayor información, consulta en Plantel o en www.unimex.edu.mx</div>";
 
-
-
-        switch ($infoGenerada['Plantel']) {
+        switch ($infoGenerada['plantel']) {
             case 'IZCALLI':
                 $Ftelcontacto = $telizc;
                 $correocontacto = 'umizc_resprelaciones@unimex.edu.mx';
                 $face = 'https://www.facebook.com/unimex/';
                 $dirPlantel = "Av. Del Vidrio No. 15, Col. Plaza Dorada, Centro Urbano (Frente a la FES Cuautitlán) Campo 1, C.P. 54760 Cuautitlán Izcalli, Estado de México";
                 break;
-            case 'SATELITE':
+            case 'SATÉLITE':
                 $Ftelcontacto = $telsat;
                 $correocontacto = 'umsat_coorrelaciones@unimex.edu.mx';
                 $face = 'https://www.facebook.com/unimex/';
@@ -94,16 +93,17 @@ class ExtrasUnimexController extends Controller
                 # code...
                 break;
         }
-        if ($infoGenerada['Plantel'] != 'VERACRUZ' && $infoGenerada['Nivel'] == 'Licenciatura') {
+
+        if ($infoGenerada['plantel'] != 'VERACRUZ' && $infoGenerada['nivel'] == 'Licenciatura') {
             $legales = $licmetroleg;
         }
-        if ($infoGenerada['Plantel'] != 'VERACRUZ' && $infoGenerada['Nivel'] != 'Licenciatura') {
+        if ($infoGenerada['plantel'] != 'VERACRUZ' && $infoGenerada['nivel'] != 'Licenciatura') {
             $legales = $posmetroleg;
         }
-        if ($infoGenerada['Plantel'] == 'VERACRUZ' && $infoGenerada['Nivel'] != '') {
+        if ($infoGenerada['plantel'] == 'VERACRUZ' && $infoGenerada['nivel'] != '') {
             $legales = $verleg;
         }
-        if ($infoGenerada['Plantel'] == 'IZCALLI' && $infoGenerada['Nivel'] == 'Medio Superior') {
+        if ($infoGenerada['plantel'] == 'IZCALLI' && $infoGenerada['nivel'] == 'Medio Superior') {
             $legales = $prepaleg;
         }
 

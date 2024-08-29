@@ -15,7 +15,7 @@
             <div class="col-12 col-md-9 col-lg-10 text-justify">
                 <p class="text-center">
                     <img style="width: 40px;" src="{{ asset('assets/img/extras/good.png') }}" alt="Registro Exitoso"> <br> <br>
-                    Gracias: {{ session('registroExitNombre') }}
+                    Gracias: {{ session('registroExitNombre') }} <br>
                     Tus datos de registro son: <br>
                     Folio: <b>{{ session('registroExitFolio') }}</b> <br>
                     Plantel: <b>{{ session('registroExitPlantel') }}</b> <br>

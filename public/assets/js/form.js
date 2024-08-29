@@ -262,13 +262,13 @@ $("#form_contacto").validate({
         }
         else {
 
-            $('#envio_contacto').prop("disabled", true);
+            /* $('#envio_contacto').prop("disabled", true);
             $('#envio_contacto').html(`
                  <div class="spinner-border" style="width: 20px; height: 20px;" role="status">
                      <span class="visually-hidden">Loading...</span>
                  </div>
                  &nbsp;Enviando Datos..
-             `);
+             `); */
 
             //* creacion de variable form data para envio de datos
             let formData = new FormData(form);
@@ -278,10 +278,14 @@ $("#form_contacto").validate({
             let plantelSeleccion = $('select[name="plantelSelect"] option:selected').text();
             let nivelSeleccion = $('select[name="nivelSelect"] option:selected').text();
             let carreraSeleccion = $('select[name="carreraSelect"] option:selected').text();
+            let periodoSeleccion = $('select[name="periodoSelect"] option:selected').text();
+            let horarioSeleccion = $('select[name="horarioSelect"] option:selected').text();
 
             formData.append("plantelSeleccion", plantelSeleccion);
             formData.append("nivelSeleccion", nivelSeleccion);
             formData.append("carreraSeleccion", carreraSeleccion);
+            formData.append("periodoSeleccion", periodoSeleccion);
+            formData.append("horarioSeleccion", horarioSeleccion);
 
             $.ajax({
                 method: "POST",
@@ -299,7 +303,7 @@ $("#form_contacto").validate({
 
                 let rutaRedireccion = setUrlBase() + respuesta.ruta;
 
-                setTimeout("location.href='" + rutaRedireccion + "'", 2000);
+                //setTimeout("location.href='" + rutaRedireccion + "'", 2000);
 
 
             }).fail(function (e) {

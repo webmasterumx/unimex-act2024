@@ -139,7 +139,16 @@ class FormController extends Controller
                     "umrec_web@unimex.edu.mx"
                 ];
 
-                Mail::to($correos)->bcc($request->mail_prospecto)->send(new ContactoProspecto($request, $respuesta)); //! envio del correo
+                $dataCorreo["folio"] = $respuesta['FolioCRM'];
+                $dataCorreo["nombre"] = $request->nombre_prospecto . " " . $request->apellidos_prospecto;
+                $dataCorreo["nivel"] = $request->nivelSeleccion;
+                $dataCorreo["plantel"] = $request->plantelSeleccion;
+                $dataCorreo['carrera'] = $request->carreraSeleccion;
+                $dataCorreo["ciclo"] = $request->periodoSeleccion;
+                $dataCorreo["horario"] = $request->horarioSeleccion;
+
+
+                Mail::to($correos)->bcc($request->mail_prospecto)->send(new ContactoProspecto($dataCorreo)); //! envio del correo
 
                 $messageCorreo  = "Correo enviado correctamente.";
                 $resultCorreo  = true;
@@ -155,13 +164,16 @@ class FormController extends Controller
             session(["registroExitPlantel" => $request->plantelSeleccion]);
             session(["registroExitNivel" => $request->nivelSeleccion]);
             session(["registroExitCarrera" => $request->carreraSeleccion]);
+            session(["registroExitPeriodo" => $request->periodoSeleccion]);
 
             $respuestaFinal['estado'] = true;
+            $respuestaFinal['estadoCorreo'] = $resultCorreo;
             $respuestaFinal['ruta'] = "registro_exitoso";
 
         } else {
 
             $respuestaFinal['estado'] = false;
+            $respuestaFinal['estadoCorreo'] = false;
             $respuestaFinal['ruta'] = "error_de_registro";
 
         }
