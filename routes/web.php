@@ -101,8 +101,6 @@ Route::post('/preinscripcion/get/horarios', [ApiConsumoController::class, 'prein
 Route::post('/guardar/bitacora/preinscripcion', [ApiConsumoController::class, 'guardarActividadBitacora'])->name('guardar.bitacora.preinscripcion');
 Route::post('/add/prospectacion', [ApiConsumoController::class, 'addProspectacion'])->name('add.prospectacion');
 
-//* envio de formularios
-Route::post('/contacto/prospecto', [FormController::class, 'contactoProspecto'])->name('contacto.prospecto');
 //* resultados de examen
 Route::post('/obtener/resultados/examen', [FormController::class, 'getResultadosExamen'])->name('obtener.resultdos.examen');
 Route::post('/form/servicio/alumno', [FormController::class, 'servicioAlumnos'])->name('form.servicio.alumno');

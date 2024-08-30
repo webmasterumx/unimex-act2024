@@ -262,13 +262,13 @@ $("#form_contacto").validate({
         }
         else {
 
-             $('#envio_contacto').prop("disabled", true);
+            $('#envio_contacto').prop("disabled", true);
             $('#envio_contacto').html(`
                  <div class="spinner-border" style="width: 20px; height: 20px;" role="status">
                      <span class="visually-hidden">Loading...</span>
                  </div>
                  &nbsp;Enviando Datos..
-             `); 
+             `);
 
             //* creacion de variable form data para envio de datos
             let formData = new FormData(form);
