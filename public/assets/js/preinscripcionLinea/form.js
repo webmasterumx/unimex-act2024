@@ -4,6 +4,7 @@ $("#formPreincripcion").validate({
         correo: {
             required: true,
             email: true,
+            maxlength: 50,
         },
         telefono: {
             required: true,
@@ -14,12 +15,14 @@ $("#formPreincripcion").validate({
     messages: {
         correo: {
             required: "Correo obligatorio.",
-            email: "Ingresa un formato valido de correo."
+            email: "Ingresa un formato valido de correo.",
+            maxlength: "El número de caracteres máximo es 50.",
+
         },
         telefono: {
             required: "Teléfono obligatorio.",
             minlength: "El teléfono celular debe tener mínimo 10 digitos.",
-            maxlength: "El teléfono celular debe tener máximo 10 digitos."
+            maxlength: "El teléfono celular debe tener máximo 10 digitos.",
         }
     },
     submitHandler: function (form) {
@@ -97,12 +100,15 @@ $("#formPromoPreinscripcion").validate({
     rules: {
         nombreInscripcion: {
             required: true,
+            maxlength: 50,
         },
         apellidoPatInscripcion: {
             required: true,
+            maxlength: 30,
         },
         apellidoMatInscripcion: {
             required: true,
+            maxlength: 30,
         },
         diaNacimiento: {
             required: true,
@@ -125,12 +131,15 @@ $("#formPromoPreinscripcion").validate({
         },
         calleInscripcion: {
             required: true,
+            maxlength: 50,
         },
         numeroInscripcion: {
             required: true,
+            maxlength: 15,
         },
         coloniaInscripcion: {
             required: true,
+            maxlength: 50,
         },
         estadoInscripcion: {
             required: true,
@@ -157,12 +166,15 @@ $("#formPromoPreinscripcion").validate({
     messages: {
         nombreInscripcion: {
             required: "Nombre(s) obligatorio(s)",
+            maxlength: "El número de caracteres máximo es 50.",
         },
         apellidoPatInscripcion: {
             required: "Apellido paterno obligatorio.",
+            maxlength: "El número de caracteres máximo es 30.",
         },
         apellidoMatInscripcion: {
             required: "Apellido materno obligatorio.",
+            maxlength: "El número de caracteres máximo es 30.",
         },
         diaNacimiento: {
             required: "Día obligatorio.",
@@ -185,12 +197,15 @@ $("#formPromoPreinscripcion").validate({
         },
         calleInscripcion: {
             required: "Calle obligatoria.",
+            maxlength: "El número de caracteres máximo es 50.",
         },
         numeroInscripcion: {
             required: "Número obligatorio.",
+            maxlength: "El número de caracteres máximo es 15.",
         },
         coloniaInscripcion: {
             required: "Colonia obligatoria.",
+            maxlength: "El número de caracteres máximo es 50.",
         },
         estadoInscripcion: {
             required: "Estado obligatorio.",
