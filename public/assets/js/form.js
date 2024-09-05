@@ -65,7 +65,7 @@ $("#servicio_alumnos").validate({
             required: "Mensaje obligatorio.",
         },
         operacion_service: {
-            required: "Resultado de la operación requerido.",
+            required: "Resultado de la operación obligatorio.",
             maxlength: "Solo se permiten resultados de dos dígitos.",
         }
     },
@@ -228,19 +228,19 @@ $("#form_contacto").validate({
             maxlength: "Número teléfonico de 10 dig. máximo."
         },
         plantelSelect: {
-            required: "Selecciona un plantel.",
+            required: "",
         },
         periodoSelect: {
-            required: "Por favor, dinos cuando quieres empezar.",
+            required: "",
         },
         nivelSelect: {
-            required: "Selecciona un nivel",
+            required: "",
         },
         carreraSelect: {
-            required: "Selecciona una carrera",
+            required: "",
         },
         horarioSelect: {
-            required: "Selecciona un horario",
+            required: "",
         }
     },
     submitHandler: function (form) {
