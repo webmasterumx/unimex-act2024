@@ -126,6 +126,8 @@ class ExtrasUnimexController extends Controller
 
         $respuesta['estado'] = true;
         $respuesta['mensaje'] = "variables establecidas con exito";
+        $respuesta['nivel_calculadora'] = session("nivel_calculadora");
+        $respuesta['carrera_calculadora'] = session("carrera_calculadora");
 
         return response()->json($respuesta);
     }
