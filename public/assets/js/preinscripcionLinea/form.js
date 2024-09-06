@@ -177,13 +177,13 @@ $("#formPromoPreinscripcion").validate({
             maxlength: "El número de caracteres máximo es 30.",
         },
         diaNacimiento: {
-            required: "Día obligatorio.",
+            required: "",
         },
         mesNacimiento: {
-            required: "Mes obligatorio.",
+            required: "",
         },
         yearNacimiento: {
-            required: "Año obligatorio.",
+            required: "",
         },
         telefonoInscripcion: {
             required: "Número de teléfono obligatorio.",
@@ -208,29 +208,30 @@ $("#formPromoPreinscripcion").validate({
             maxlength: "El número de caracteres máximo es 50.",
         },
         estadoInscripcion: {
-            required: "Estado obligatorio.",
+            required: "",
         },
         municipioInscripcion: {
-            required: "Municipio obligatorio.",
+            required: "",
         },
         plantelSelect: {
-            required: "Plantel obligatorio.",
+            required: "",
         },
         periodoSelect: {
-            required: "Periodo obligatorio.",
+            required: "",
         },
         nivelSelect: {
-            required: "Nivel obligatorio.",
+            required: "",
         },
         carreraSelect: {
-            required: "Carrera obligatoria.",
+            required: "",
         },
         horarioSelect: {
-            required: "Horario obligatorio.",
+            required: "",
         }
     },
     submitHandler: function (form) {
 
+        $("#calcularPromo").prop("disabled", true);
         $('#calcularPromo').html(`
         <div class="spinner-border me-1" style="width: 20px; height: 20px;" role="status">
             <span class="visually-hidden">Loading...</span>

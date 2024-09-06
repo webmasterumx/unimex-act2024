@@ -95,8 +95,9 @@ function agregarProspecto() {
 }
 
 function correccionDatos() {
-    estadoCampos(false)
+    estadoCampos(false);
 
+    $("#calcularPromo").prop("disabled", false);
     $('#continuarProceso').addClass('d-none');
     $('#corregirDatos').addClass('d-none');
     $("#respuestaSuccess").addClass('d-none');
@@ -358,6 +359,7 @@ function rechazoAgendar() {
 
 function registrarProspectoPreinscripcionEnLinea() {
 
+    $("#corregirDatos").prop("disabled", true);
     $("#continuarProceso").prop("disabled", true);
     $('#continuarProceso').html(`
         <div style="width: 20px !important; height: 20px !important;"

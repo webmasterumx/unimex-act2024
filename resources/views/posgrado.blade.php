@@ -61,6 +61,11 @@
         border: 3px solid orange;
         /* creates padding around scroll thumb */
     }
+
+    #peridoSelectFolleto-error,
+    #plantelSelectFolleto-error {
+        display: none !important;
+    }
 </style>
 
 @section('content')
@@ -465,8 +470,8 @@
             slidesToScroll: 1,
             arrows: true,
             autoplaySpeed: 2000,
-            prevArrow: '<button type="button" class="slick-prev-requisitos"><i class="bi bi-arrow-left-circle-fill"></i></button>',
-            nextArrow: '<button type="button" class="slick-next-requisitos"><i class="bi bi-arrow-right-circle-fill"></i></button>',
+            prevArrow: '<button type="button" class="slick-prev-tema"><i class="bi bi-chevron-compact-left"></i></button>',
+            nextArrow: '<button type="button" class="slick-next-tema"><i class="bi bi-chevron-compact-right"></i></button>',
         });
 
         const enlaceCalculadora = document.getElementById("redireccionCTCL");

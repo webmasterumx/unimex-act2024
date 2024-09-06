@@ -54,13 +54,13 @@ $(document).ready(function () {
         }).done(function (data) {
 
             $("#nivelSelect").empty();
-            $("#nivelSelect").append(`<option value="" selected disabled>Selecciona un nivel</option>`);
+            $("#nivelSelect").append(`<option value="" selected disabled> - Selecciona un nivel -</option>`);
             $('#periodoSelect').empty();
-            $("#periodoSelect").append(`<option value="" selected disabled>¿Cuándo deseas iniciar?  </option>`);
+            $("#periodoSelect").append(`<option value="" selected disabled>- Selecciona un periodo - </option>`);
             $('#carreraSelect').empty();
-            $("#carreraSelect").append(`<option value="" selected disabled>Selecciona una carrera</option>`);
+            $("#carreraSelect").append(`<option value="" selected disabled> - Selecciona una carrera - </option>`);
             $('#horarioSelect').empty();
-            $("#horarioSelect").append(`<option value="" selected disabled>Selecciona un horario</option>`);
+            $("#horarioSelect").append(`<option value="" selected disabled> - Selecciona un horario - </option>`);
 
             if (data.error == undefined || data.error == null) {
                 if (data.clave == undefined || data.clave == null) {

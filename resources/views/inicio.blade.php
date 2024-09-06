@@ -249,8 +249,8 @@
                 nextArrow: '<button type="button" class="slick-next-banner"><i class="bi bi-chevron-compact-right"></i></button>',
             });
 
-            $("#nivelSelect").append(`<option value="">Nivel</option>`);
-            $("#carreraSelect").append(`<option value="">Carrera</option>`);
+            $("#nivelSelect").append(`<option value="">- Selecciona un nivel -</option>`);
+            $("#carreraSelect").append(`<option value="">- Selecciona una carrera -</option>`);
 
             $(document).ready(function() {
                 $('#exampleModal').modal('show')

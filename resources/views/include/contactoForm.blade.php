@@ -1,3 +1,12 @@
+<style>
+    #plantelSelect-error,
+    #periodoSelect-error,
+    #nivelSelect-error,
+    #carreraSelect-error,
+    #horarioSelect-error {
+        display: none !important;
+    }
+</style>
 <!-- Inicio de Formulario de Contacto -->
 <section class="py-3" style="background-color: #de951b;">
     <div class="container p-2">
@@ -48,8 +57,8 @@
                         ¡Estamos para ayudarte! <br>
                         Deja tus datos y nos pondremos en contacto.
                     </p>
-                    <label class="border p-1 w-100 fw-light mb-0" style="font-size: 15px !important; color: black;" for="nombre_prospecto"><i
-                            class="bi bi-person-fill color-unimex"></i> NOMBRE *</label>
+                    <label class="border p-1 w-100 fw-light mb-0" style="font-size: 15px !important; color: black;"
+                        for="nombre_prospecto"><i class="bi bi-person-fill color-unimex"></i> NOMBRE *</label>
                     <div class="w-100 d-flex">
                         <div class="w-50">
                             <input class="w-100 rounded-0 form-control" type="text" name="nombre_prospecto"
@@ -61,14 +70,16 @@
                         </div>
                     </div>
 
-                    <label class="border p-1 w-100 fw-light mt-2 mb-0" style="font-size: 15px !important; color: black;" for="mail_prospecto">
+                    <label class="border p-1 w-100 fw-light mt-2 mb-0" style="font-size: 15px !important; color: black;"
+                        for="mail_prospecto">
                         <i class="bi bi-envelope-fill color-unimex"></i> EMAIL *</label>
                     <div class="w-100">
                         <input class="rounded-0 form-control" type="email" name="mail_prospecto" id="mail_prospecto"
                             placeholder="nombre@email.com" maxlength="50">
                     </div>
 
-                    <label class="border p-1 w-100 fw-light mt-2 mb-0" style="font-size: 15px !important; color: black;" for="celular_prospecto">
+                    <label class="border p-1 w-100 fw-light mt-2 mb-0" style="font-size: 15px !important; color: black;"
+                        for="celular_prospecto">
                         <i class="bi bi-telephone-fill color-unimex"></i> TELÉFONOS DE CONTACTO *</label>
                     <div class="w-100 d-flex">
                         <div class="w-50">
@@ -81,24 +92,22 @@
                         </div>
                     </div>
 
-                    <label class="border p-1 w-100 fw-light mt-2 mb-0" style="font-size: 15px !important; color: black;" for="plantelSelect">
+                    <label class="border p-1 w-100 fw-light mt-2 mb-0" style="font-size: 15px !important; color: black;"
+                        for="plantelSelect">
                         <i class="bi bi-bookmark-fill color-unimex"></i> QUIERO ESTUDIAR EN:</label>
                     <div class="w-100 d-flex">
                         <div class="w-50">
-                            <select class="form-select rounded-0" aria-label="Default select example" id="plantelSelect"
-                                name="plantelSelect">
-                                <option value="" selected disabled> -Selecciona Plantel- </option>
+                            <select class="form-select rounded-0" id="plantelSelect" name="plantelSelect">
+                                <option value="" selected disabled> - Selecciona un plantel - </option>
 
                             </select>
-                            <select class="form-select rounded-0" aria-label="Default select example" id="periodoSelect"
-                                name="periodoSelect">
-                                <option value="" selected>Iniciar clases en: </option>
+                            <select class="form-select rounded-0" id="periodoSelect" name="periodoSelect">
+                                <option value="" selected>- Selecciona un periodo -</option>
                             </select>
                         </div>
                         <div class="w-50">
 
-                            <select class="form-select rounded-0" aria-label="Default select example" id="nivelSelect"
-                                name="nivelSelect">
+                            <select class="form-select rounded-0" id="nivelSelect" name="nivelSelect">
                                 @isset($licenciatura)
                                     <option value="Licenciatura" selected>Licenciatura</option>
                                 @endisset
@@ -109,8 +118,7 @@
                                     <option value="Especialidad" selected>Especialidad</option>
                                 @endisset
                             </select>
-                            <select class="form-select rounded-0" aria-label="Default select example"
-                                id="carreraSelect" name="carreraSelect">
+                            <select class="form-select rounded-0" id="carreraSelect" name="carreraSelect">
                                 @isset($licenciatura)
                                     <option value="{{ $licenciatura->subtitulo }}"> {{ $licenciatura->subtitulo }}
                                     </option>
@@ -129,9 +137,8 @@
                         </div>
                     </div>
                     <div class="w-100">
-                        <select class="form-select rounded-0" aria-label="Default select example" id="horarioSelect"
-                            name="horarioSelect">
-                            <option value="" selected> Horario </option>
+                        <select class="form-select rounded-0" id="horarioSelect" name="horarioSelect">
+                            <option value="" selected> - Selecciona un horario - </option>
                         </select>
                     </div>
                     <div class="form-check mt-2">
@@ -142,7 +149,7 @@
                             He leído y acepto el <a href="javascript:void(0);"
                                 onclick="window.open('{{ route('aviso_de_privacidad') }}','Privacidad','scrollbars=yes,width=1000,height=700')">
                                 aviso de privacidad.
-                                </a>
+                            </a>
                         </label>
                     </div>
                     <div class="w-100 text-center mt-4">

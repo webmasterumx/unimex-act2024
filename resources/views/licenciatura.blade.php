@@ -29,6 +29,11 @@
             background-position: center;
             background-size: cover;
         }
+        
+        #peridoSelectFolleto-error,
+        #plantelSelectFolleto-error {
+            display: none !important;
+        }
     </style>
 @endsection
 

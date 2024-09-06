@@ -44,12 +44,12 @@ $("#servicio_alumnos").validate({
             email: "Ingrese una dirección de E-mail correcta.",
         },
         phone_casa_service: {
-            required: "Teléfono requerido.",
+            required: "Teléfono obligatorio.",
             minlength: "Debes ingresar el número a 10 dígitos..",
             maxlength: "Debes ingresar el número a 10 dígitos."
         },
         movil_service: {
-            required: "Celular requerido.",
+            required: "Celular obligatorio.",
             minlength: "Debes ingresar el número a 10 dígitos.",
             maxlength: "Debes ingresar el número a 10 dígitos."
         },
@@ -384,10 +384,10 @@ $("#form_trabaja").validate({
             maxlength: "El teléfono celular debe tener máximo 10 dígitos."
         },
         plantel_trabaja: {
-            required: "Seleccione un plantel para continuar.",
+            required: "",
         },
         nivel_est_trabaja: {
-            required: "Seleccione un nivel escolar para continuar.",
+            required: "",
         },
         cv_trabaja: {
             required: "CV obligatorio.",
@@ -399,7 +399,7 @@ $("#form_trabaja").validate({
             required: "Experiencia laboral obligatoria.",
         },
         operacion_trabaja: {
-            required: "Resultado de la operación requerido.",
+            required: "Resultado de la operación obligatoria.",
             maxlength: "Solo se permiten resultados de dos dígitos.",
         }
     },
@@ -558,7 +558,7 @@ $("#form_quejaSugerencia").validate({
             required: "Mensaje obligatorio.",
         },
         operacion_qys: {
-            required: "Resultado de la operación requerido.",
+            required: "Resultado de la operación obligatorio.",
             maxlength: "Solo se permiten resultados de dos dígitos.",
         }
     },
@@ -719,7 +719,7 @@ $("#form_empresasOCC").validate({
             required: "Comentarios obligatorios.",
         },
         operacion_empresaOCC: {
-            required: "Resultado de la operación requerido.",
+            required: "Resultado de la operación obligatorio.",
             maxlength: "Solo se permiten resultados de dos dígitos.",
         }
     },
