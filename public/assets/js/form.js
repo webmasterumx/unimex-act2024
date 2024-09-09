@@ -19,6 +19,9 @@ $("#servicio_alumnos").validate({
             minlength: 10,
             maxlength: 10
         },
+        select_plantel: {
+            required: true,
+        },
         asunto_service: {
             required: true,
         },
@@ -52,6 +55,9 @@ $("#servicio_alumnos").validate({
             required: "Celular obligatorio.",
             minlength: "Debes ingresar el número a 10 dígitos.",
             maxlength: "Debes ingresar el número a 10 dígitos."
+        },
+        select_plantel: {
+            required: "",
         },
         asunto_service: {
             required: "Asunto obligatorio.",

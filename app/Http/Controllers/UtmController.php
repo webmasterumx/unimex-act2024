@@ -150,4 +150,8 @@ class UtmController extends Controller
         $this->dataUTM["utm_content"] = session('utm_content');
         $this->dataUTM["gad_source"] = session('gad_source');
     }
+
+    public function comprobacionUtmSource(){
+        
+    }
 }

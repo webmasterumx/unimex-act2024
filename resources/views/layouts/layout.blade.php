@@ -682,7 +682,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-12 left-gray-border">
+                            <!--<div class="col-xl-2 col-lg-2 col-md-3 col-sm-12 left-gray-border">
                                 <h5 class="hide"> <a id="modal-protocolo-click">Protocolo para el regreso a clases
                                         presenciales</a></h5>
                                 <div class="card" style="min-height: 150px;">
@@ -700,7 +700,7 @@
                                         </p>
                                     </div>
                                 </div>
-                            </div>
+                            </div>-->
                         </div>
                     </div>
                 </nav>
