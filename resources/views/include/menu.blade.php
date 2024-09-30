@@ -54,7 +54,7 @@
                 '&utm_content=' .
                 $dataUTM['utm_content'];
         }
-
+        
     @endphp
 @endif
 

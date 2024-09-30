@@ -72,11 +72,13 @@ class UtmController extends Controller
         if (isset($_REQUEST['utm_source'])) { //*determina si la url contiene la variable
             if (!empty($_REQUEST['utm_source'])) { //! determina si la variable esta vacia
                 $dataUTM["utm_source"]  = $_REQUEST["utm_source"];
+                session(["utm_source" => $_REQUEST['utm_source']]);
             } else {
                 if (session()->has("utm_source") == true) {
                     $dataUTM['utm_source'] = session("utm_source");
                 } else {
-                    $dataUTM["utm_source"] = null;
+                    $dataUTM["utm_source"] = $_REQUEST['utm_source'];
+                    session(["utm_source" => $_REQUEST['utm_source']]);
                 }
             }
         } else { //? decision si la variable no se encuentra en la cadena
@@ -91,11 +93,13 @@ class UtmController extends Controller
         if (isset($_REQUEST['utm_medium'])) { //*determina si la url contiene la variable
             if (!empty($_REQUEST['utm_medium'])) { //! determina si la variable esta vacia
                 $dataUTM["utm_medium"]  = $_REQUEST["utm_medium"];
+                session(["utm_medium" => $_REQUEST['utm_medium']]);
             } else {
                 if (session()->has("utm_medium") == true) {
                     $dataUTM['utm_medium'] = session("utm_medium");
                 } else {
-                    $dataUTM["utm_medium"] = null;
+                    $dataUTM["utm_medium"] = $_REQUEST['utm_medium'];
+                    session(["utm_medium" => $_REQUEST['utm_medium']]);
                 }
             }
         } else { //? decision si la variable no se encuentra en la cadena de la url
@@ -109,11 +113,13 @@ class UtmController extends Controller
         if (isset($_REQUEST['utm_campaign'])) { //*determina si la url contiene la variable
             if (!empty($_REQUEST['utm_campaign'])) { //! determina si la variable esta vacia
                 $dataUTM["utm_campaign"]  = $_REQUEST["utm_campaign"];
+                session(["utm_campaign" => $_REQUEST['utm_campaign']]);
             } else {
                 if (session()->has("utm_campaign") == true) {
                     $dataUTM['utm_campaign'] = session("utm_campaign");
                 } else {
-                    $dataUTM["utm_campaign"] = null;
+                    $dataUTM["utm_campaign"] = $_REQUEST['utm_campaign'];
+                    session(["utm_campaign" => $_REQUEST['utm_campaign']]);
                 }
             }
         } else { //? decision si la variable no se encuentra en la cadena de la url
@@ -127,11 +133,13 @@ class UtmController extends Controller
         if (isset($_REQUEST['utm_term'])) { //*determina si la url contiene la variable
             if (!empty($_REQUEST['utm_term'])) { //! determina si la variable esta vacia
                 $dataUTM["utm_term"]  = $_REQUEST["utm_term"];
+                session(["utm_term" => $_REQUEST['utm_term']]);
             } else {
                 if (session()->has("utm_term") == true) {
                     $dataUTM['utm_term'] = session("utm_term");
                 } else {
-                    $dataUTM["utm_term"] = null;
+                    $dataUTM["utm_term"] = $_REQUEST['utm_term'];
+                    session(["utm_term" => $_REQUEST['utm_term']]);
                 }
             }
         } else { //? decision si la variable no se encuentra en la cadena de la url
@@ -146,11 +154,13 @@ class UtmController extends Controller
             if (!empty($_REQUEST['utm_content'])) { //! determina si la variable esta vacia
 
                 $dataUTM["utm_content"]  = $_REQUEST["utm_content"];
+                session(["utm_content" => $_REQUEST['utm_content']]);
             } else {
                 if (session()->has("utm_content") == true) {
                     $dataUTM['utm_content'] = session("utm_content");
                 } else {
-                    $dataUTM["utm_content"] = null;
+                    $dataUTM["utm_content"] = $_REQUEST['utm_content'];
+                    session(["utm_content" => $_REQUEST['utm_content']]);
                 }
             }
         } else { //? decision si la variable no se encuentra en la cadena de la url
@@ -164,11 +174,13 @@ class UtmController extends Controller
         if (isset($_REQUEST['gad_source'])) { //*determina si la url contiene la variable
             if (!empty($_REQUEST['gad_source'])) { //! determina si la variable esta vacia
                 $dataUTM["gad_source"]  = $_REQUEST["gad_source"];
+                session(["gad_source" => $_REQUEST['gad_source']]);
             } else {
                 if (session()->has("gad_source") == true) {
                     $dataUTM['gad_source'] = session("gad_source");
                 } else {
-                    $dataUTM["gad_source"] = null;
+                    $dataUTM["gad_source"] = $_REQUEST['gad_source'];
+                    session(["gad_source" => $_REQUEST['gad_source']]);
                 }
             }
         } else { //? decision si la variable no se encuentra en la cadena de la url

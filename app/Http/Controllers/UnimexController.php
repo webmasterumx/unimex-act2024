@@ -47,6 +47,9 @@ class UnimexController extends Controller
 
     public function getPlanteles($slug): View
     {
+        $this->utm_recurso = new UtmController();
+        $dataUTM = $this->utm_recurso->iniciarUtmSource();
+
         $plantel = Plantel::where('nombre', $slug)->first();
         if ($plantel != null) {
             $galeria = json_decode($plantel->galeria);
@@ -55,7 +58,8 @@ class UnimexController extends Controller
             return view('plantel', [
                 "plantel" => $plantel,
                 "galeria" => $galeria,
-                "plantelesInNot" => $plantelesInNot
+                "plantelesInNot" => $plantelesInNot,
+                "dataUTM" => $dataUTM
             ]);
         } else {
             return view('errors.404');
@@ -66,12 +70,16 @@ class UnimexController extends Controller
     {
         $acercadeFirst = Acercade::where('slug', $slug)->first();
 
+        $this->utm_recurso = new UtmController();
+        $dataUTM = $this->utm_recurso->iniciarUtmSource();
+
         if ($acercadeFirst != null) {
             $recomendaciones = Acercade::where('slug', '!=', $slug)->get();
 
             return view('acercade', [
                 'acercadeFirst' => $acercadeFirst,
-                "recomendaciones" => $recomendaciones
+                "recomendaciones" => $recomendaciones,
+                "dataUTM" => $dataUTM
             ]);
         } else {
             return view('errors.404');
@@ -175,6 +183,7 @@ class UnimexController extends Controller
     public function preguntasFrecuentes(): View
     {
 
+
         $preguntasFrecuentes = PreguntasFrecuentes::all();
 
         return view('preguntasFrecuentes', [
@@ -210,7 +219,12 @@ class UnimexController extends Controller
     public function contacto(): View
     {
 
-        return view('contacto');
+        $this->utm_recurso = new UtmController();
+        $dataUTM = $this->utm_recurso->iniciarUtmSource();
+
+        return view('contacto', [
+            "dataUTM" => $dataUTM
+        ]);
     }
 
     public function cartaResultados($matricula): View
