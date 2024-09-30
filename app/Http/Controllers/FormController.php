@@ -15,6 +15,8 @@ use Spatie\FlareClient\Api;
 class FormController extends Controller
 {
 
+    private $utm_recurso;
+
     /** Anterior codigo de procesamiento de datos para formulario de contacto */
     public function contactoProspecto(Request $request)
     {
@@ -27,8 +29,13 @@ class FormController extends Controller
          * gad_source
          */
 
-        $source = session("utm_source");
         $medium = session("utm_medium");
+
+        if ($medium == "Organico" || $medium == "organico" || $medium == "ORGANICO") {
+            # code...
+        }
+
+        $source = session("utm_source");
         $content = session("utm_content");
         $campaign = session("utm_campaign");
         $term = session("utm_term");
@@ -86,16 +93,69 @@ class FormController extends Controller
     }
 
     /** nueva funcion de procesamiento de datos para formulario de contacto */
+    /**
+     * Aqui se debe validar que las utm que estan llegando sean organicas o no, si hay variables de session o no
+     * Primero se debe aplicar la validacion si existe algun a variable de sesion activa si es asi se debe validar la utm_medium
+     * si es organica se deben optener la abreviatura del lugar donde viene para forzar la utm correspondiente
+     * si no es organica simplemente se pasan las variables de session ya que viene de campaña
+     * si no hay variables de session se asume que es organica 
+     */
     public function procesaFormularioContacto(Request $request)
     {
 
+        $origen = $request->origen;
+        $abreviatura = $request->abreviatura;
+        $utmMedium = $request->utm_medium;
+
+        //var_dump($origen);
+        //var_dump($abreviatura);
+
+
+        $this->utm_recurso = new UtmController();
+
+        //! se conservan las variables de session
+
+        if ($utmMedium == "organico" || $utmMedium  == "ORGANICO" || $utmMedium == "Organico" || $utmMedium == null) { // la utm en session no es organica
+
+            if ($origen == "slider") {
+                $source = "Website+Metro";
+                $campaign = "Home+body";
+                $content = "Slider" . $abreviatura . "+Oacademica+form";
+            } else if ($origen == "menu") {
+                $source = "Website+Metro";
+                $campaign = "Home+header";
+                $content = "Oacademica+" . $abreviatura . "+body+form";
+            } else if ($origen == "Home") {
+                $source = "Website+Metro";
+                $campaign = "Home+body";
+                $content = "Form+Informes";
+            } else if ($origen == "Info") {
+                $source = "Website+Metro";
+                $campaign = "Home+header";
+                $content = "Botón+informes";
+            } else {
+                $source = "Fuente+origen";
+                $campaign = " Fuente+origen";
+                $content = "Form+" . $abreviatura . "+Informes";
+            }
+
+            $medium = "Organico";
+            $term = "Informes";
+        } else {
+            $source = session("utm_source");
+            $medium = session("utm_medium");
+            $content = session("utm_content");
+            $campaign = session("utm_campaign");
+            $term = session("utm_term");
+        }
+
+
+
+        //https://unimex.edu.mx/calcula-tu-cuota/?utm_source=El+Universal+secciones&utm_medium=Universaldxd&utm_campaign=2024+1&utm_term=universidad+mexicana&utm_content=metro
+
+
         //! establecimiento de variables para utm
         $baseUrl = env('APP_URL');
-        $source = session("utm_source");
-        $medium = session("utm_medium");
-        $content = session("utm_content");
-        $campaign = session("utm_campaign");
-        $term = session("utm_term");
 
         //! creando array de datos a procesar
         $valores = array(
@@ -123,7 +183,7 @@ class FormController extends Controller
         //var_dump($valores);
 
         //! envio de datos al WS
-        $respuesta = app(ApiConsumoController::class)->agregarProspectoCRM($valores); //! envio de datos al WS
+        $respuesta = app(ApiConsumoController::class)->agregarProspectoCRM($valores); //! envio de datos al WS 
 
         /**
          * Evalua la respuesta del web service 
@@ -169,13 +229,11 @@ class FormController extends Controller
             $respuestaFinal['estado'] = true;
             $respuestaFinal['estadoCorreo'] = $resultCorreo;
             $respuestaFinal['ruta'] = "registro_exitoso";
-
         } else {
 
             $respuestaFinal['estado'] = false;
             $respuestaFinal['estadoCorreo'] = false;
             $respuestaFinal['ruta'] = "error_de_registro";
-
         }
 
         return response()->json($respuestaFinal);

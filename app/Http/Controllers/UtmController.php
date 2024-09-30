@@ -3,100 +3,24 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use PhpParser\Node\Stmt\Else_;
 
 class UtmController extends Controller
 {
 
     public $dataUTM = [];
 
+    /**
+     * esta funcion determina una por una cada utm 
+     */
     public function initUtmSource()
     {
-        if (isset($_REQUEST['utm_source'])) { //*determina si la ur contiene la variable
+        if (isset($_REQUEST['utm_source'])) { //*determina si la url contiene la variable
             if (!empty($_REQUEST['utm_source'])) { //! determina si la variable esta vacia
                 session(["utm_source" => $_REQUEST['utm_source']]);
             }
         } else { //? decision si la variable no se encuentra en la cadena
-            session(["utm_source" => "organico"]);
-        }
-
-
-        if (isset($_REQUEST['utm_medium'])) { //*determina si la url contiene la variable
-            if (!empty($_REQUEST['utm_medium'])) { //! determina si la variable esta vacia
-                session(["utm_medium" => $_REQUEST['utm_medium']]);
-            }
-        } else { //? decision si la variable no se encuentra en la cadena de la url
-            session(["utm_medium" => 0]);
-        }
-
-        if (isset($_REQUEST['utm_campaign'])) { //*determina si la url contiene la variable
-            if (!empty($_REQUEST['utm_campaign'])) { //! determina si la variable esta vacia
-                session(["utm_campaign" => $_REQUEST['utm_campaign']]);
-            }
-        } else { //? decision si la variable no se encuentra en la cadena de la url
-            session(["utm_campaign" => 0]);
-        }
-
-        if (isset($_REQUEST['utm_term'])) { //*determina si la url contiene la variable
-            if (!empty($_REQUEST['utm_term'])) { //! determina si la variable esta vacia
-                session(["utm_term" => $_REQUEST['utm_term']]);
-            }
-        } else { //? decision si la variable no se encuentra en la cadena de la url
-            session(["utm_term" => 0]);
-        }
-
-        if (isset($_REQUEST['utm_content'])) { //*determina si la url contiene la variable
-            if (!empty($_REQUEST['utm_content'])) { //! determina si la variable esta vacia
-                session(["utm_content" => $_REQUEST['utm_content']]);
-            }
-        } else { //? decision si la variable no se encuentra en la cadena de la url
-            session(["utm_content" => 0]);
-        }
-
-        if (isset($_REQUEST['gad_source'])) { //*determina si la url contiene la variable
-            if (!empty($_REQUEST['gad_source'])) { //! determina si la variable esta vacia
-                session(["gad_source" => $_REQUEST['gad_source']]);
-            }
-        } else { //? decision si la variable no se encuentra en la cadena de la url
-            session(["gad_source" => 0]);
-        }
-    }
-
-    public function initUtmSourceOferta($abreviatura)
-    {
-
-        if (isset($_REQUEST['origen'])) {
-            if ($_REQUEST['origen'] == "menu") {
-
-                $campaignCalculadora = "Home+header";
-                $contentCalculadora = "Oacademica+" . $abreviatura . "+body+boton+calculadora";
-                $contentPreinscripcion = "Oacademica+" . $abreviatura . "+body+boton+preinscrip";
-
-            } else if ($_REQUEST['origen'] == "slider") {
-
-                $campaignCalculadora = "Home+body";
-                $contentCalculadora = "Slider" . $abreviatura . "+boton+calculadora";
-                $contentPreinscripcion = "Slider" . $abreviatura . "+boton+preinscrip";
-
-            }
-        } else {
-
-            $campaignCalculadora = "Oacademica+body";
-            $contentCalculadora = $abreviatura . "+boton+calculadora";
-            $contentPreinscripcion = $abreviatura . "+boton+preinscrip";
-
-        }
-
-        session(["utm_campaign" => $campaignCalculadora]);
-        session(["utm_content" => $contentCalculadora]);
-        session(["utm_contentPreinscripcion" => $contentPreinscripcion]);
-        
-
-        if (isset($_REQUEST['utm_source'])) { //*determina si la ur contiene la variable
-            if (!empty($_REQUEST['utm_source'])) { //! determina si la variable esta vacia
-                session(["utm_source" => $_REQUEST['utm_source']]);
-            }
-        } else { //? decision si la variable no se encuentra en la cadena
-            session(["utm_source" => "Website+Metro"]);
+            session(["utm_source" => null]);
         }
 
 
@@ -108,29 +32,29 @@ class UtmController extends Controller
             session(["utm_medium" => "Organico"]);
         }
 
-        /*    if (isset($_REQUEST['utm_campaign'])) { //*determina si la url contiene la variable
+        if (isset($_REQUEST['utm_campaign'])) { //*determina si la url contiene la variable
             if (!empty($_REQUEST['utm_campaign'])) { //! determina si la variable esta vacia
                 session(["utm_campaign" => $_REQUEST['utm_campaign']]);
             }
         } else { //? decision si la variable no se encuentra en la cadena de la url
-            session(["utm_campaign" => 0]);
-        } */
+            session(["utm_campaign" => null]);
+        }
 
         if (isset($_REQUEST['utm_term'])) { //*determina si la url contiene la variable
             if (!empty($_REQUEST['utm_term'])) { //! determina si la variable esta vacia
                 session(["utm_term" => $_REQUEST['utm_term']]);
             }
         } else { //? decision si la variable no se encuentra en la cadena de la url
-            session(["utm_term" => "Calculadora"]);
+            session(["utm_term" => null]);
         }
 
-        /* if (isset($_REQUEST['utm_content'])) { //*determina si la url contiene la variable
+        if (isset($_REQUEST['utm_content'])) { //*determina si la url contiene la variable
             if (!empty($_REQUEST['utm_content'])) { //! determina si la variable esta vacia
                 session(["utm_content" => $_REQUEST['utm_content']]);
             }
         } else { //? decision si la variable no se encuentra en la cadena de la url
-            session(["utm_content" => 0]);
-        } */
+            session(["utm_content" => null]);
+        }
 
         if (isset($_REQUEST['gad_source'])) { //*determina si la url contiene la variable
             if (!empty($_REQUEST['gad_source'])) { //! determina si la variable esta vacia
@@ -141,17 +65,166 @@ class UtmController extends Controller
         }
     }
 
-    public function getUtmSource()
+    public function iniciarUtmSource()
     {
-        $this->dataUTM["utm_source"] = session('utm_source');
-        $this->dataUTM["utm_medium"] = session('utm_medium');
-        $this->dataUTM["utm_campaign"] = session('utm_campaign');
-        $this->dataUTM["utm_term"] = session('utm_term');
-        $this->dataUTM["utm_content"] = session('utm_content');
-        $this->dataUTM["gad_source"] = session('gad_source');
+        $dataUTM = [];
+
+        if (isset($_REQUEST['utm_source'])) { //*determina si la url contiene la variable
+            if (!empty($_REQUEST['utm_source'])) { //! determina si la variable esta vacia
+                $dataUTM["utm_source"]  = $_REQUEST["utm_source"];
+            } else {
+                if (session()->has("utm_source") == true) {
+                    $dataUTM['utm_source'] = session("utm_source");
+                } else {
+                    $dataUTM["utm_source"] = null;
+                }
+            }
+        } else { //? decision si la variable no se encuentra en la cadena
+            if (session()->has("utm_source") == true) {
+                $dataUTM['utm_source'] = session("utm_source");
+            } else {
+                $dataUTM["utm_source"] = null;
+            }
+        }
+
+
+        if (isset($_REQUEST['utm_medium'])) { //*determina si la url contiene la variable
+            if (!empty($_REQUEST['utm_medium'])) { //! determina si la variable esta vacia
+                $dataUTM["utm_medium"]  = $_REQUEST["utm_medium"];
+            } else {
+                if (session()->has("utm_medium") == true) {
+                    $dataUTM['utm_medium'] = session("utm_medium");
+                } else {
+                    $dataUTM["utm_medium"] = null;
+                }
+            }
+        } else { //? decision si la variable no se encuentra en la cadena de la url
+            if (session()->has("utm_medium") == true) {
+                $dataUTM['utm_medium'] = session("utm_medium");
+            } else {
+                $dataUTM["utm_medium"] = null;
+            }
+        }
+
+        if (isset($_REQUEST['utm_campaign'])) { //*determina si la url contiene la variable
+            if (!empty($_REQUEST['utm_campaign'])) { //! determina si la variable esta vacia
+                $dataUTM["utm_campaign"]  = $_REQUEST["utm_campaign"];
+            } else {
+                if (session()->has("utm_campaign") == true) {
+                    $dataUTM['utm_campaign'] = session("utm_campaign");
+                } else {
+                    $dataUTM["utm_campaign"] = null;
+                }
+            }
+        } else { //? decision si la variable no se encuentra en la cadena de la url
+            if (session()->has("utm_campaign") == true) {
+                $dataUTM['utm_campaign'] = session("utm_campaign");
+            } else {
+                $dataUTM["utm_campaign"] = null;
+            }
+        }
+
+        if (isset($_REQUEST['utm_term'])) { //*determina si la url contiene la variable
+            if (!empty($_REQUEST['utm_term'])) { //! determina si la variable esta vacia
+                $dataUTM["utm_term"]  = $_REQUEST["utm_term"];
+            } else {
+                if (session()->has("utm_term") == true) {
+                    $dataUTM['utm_term'] = session("utm_term");
+                } else {
+                    $dataUTM["utm_term"] = null;
+                }
+            }
+        } else { //? decision si la variable no se encuentra en la cadena de la url
+            if (session()->has("utm_term") == true) {
+                $dataUTM['utm_term'] = session("utm_term");
+            } else {
+                $dataUTM["utm_term"] = null;
+            }
+        }
+
+        if (isset($_REQUEST['utm_content'])) { //*determina si la url contiene la variable
+            if (!empty($_REQUEST['utm_content'])) { //! determina si la variable esta vacia
+
+                $dataUTM["utm_content"]  = $_REQUEST["utm_content"];
+            } else {
+                if (session()->has("utm_content") == true) {
+                    $dataUTM['utm_content'] = session("utm_content");
+                } else {
+                    $dataUTM["utm_content"] = null;
+                }
+            }
+        } else { //? decision si la variable no se encuentra en la cadena de la url
+            if (session()->has("utm_content") == true) {
+                $dataUTM['utm_content'] = session("utm_content");
+            } else {
+                $dataUTM["utm_content"] = null;
+            }
+        }
+
+        if (isset($_REQUEST['gad_source'])) { //*determina si la url contiene la variable
+            if (!empty($_REQUEST['gad_source'])) { //! determina si la variable esta vacia
+                $dataUTM["gad_source"]  = $_REQUEST["gad_source"];
+            } else {
+                if (session()->has("gad_source") == true) {
+                    $dataUTM['gad_source'] = session("gad_source");
+                } else {
+                    $dataUTM["gad_source"] = null;
+                }
+            }
+        } else { //? decision si la variable no se encuentra en la cadena de la url
+
+            if (session()->has("gad_source") == true) {
+                $dataUTM['gad_source'] = session("gad_source");
+            } else {
+                $dataUTM["gad_source"] = null;
+            }
+        }
+
+        return $dataUTM;
     }
 
-    public function comprobacionUtmSource(){
-        
+    public function comprobarSessiones()
+    {
+
+        $arraySessiones = [
+            "utm_source",
+            "utm_medium",
+            "utm_campaign",
+            "utm_term",
+            "utm_content"
+        ];
+
+        for ($i = 0; $i < sizeof($arraySessiones); $i++) {
+            if (session()->has($arraySessiones[$i]) == true) {
+                return true;
+                break;
+            } else {
+                return false;
+            }
+        }
+    }
+
+    public function comprobacionUtmMedium()
+    {
+        if (session("utm_medium") == "organico" || session("utm_medium") == "ORGANICO" || session("utm_medium") == "Organico") {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    public function comprovacionOrigen()
+    {
+        if (isset($_REQUEST['origen'])) {
+            if (!empty($_REQUEST['origen'])) {
+                $origenObtenido = $_REQUEST['origen'];
+            } else {
+                $origenObtenido = null;
+            }
+        } else {
+            $origenObtenido = null;
+        }
+
+        return $origenObtenido;
     }
 }

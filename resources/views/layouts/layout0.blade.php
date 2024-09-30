@@ -164,7 +164,7 @@
         <header class="border-bottom lh-1 py-3">
             <div class="row flex-nowrap justify-content-between align-items-center">
                 <div class="col-4 pt-1">
-                    <a href="{{ route('inicio') }}"><img class="ms-4"
+                    <a href="{{ env('APP_URL') }}?utm_source={{ session('utm_source') }}&utm_medium={{ session('utm_medium') }}&utm_campaign={{ session('utm_campaign') }}&utm_term={{ session('utm_term') }}&utm_content={{ session('utm_content') }}"><img class="ms-4"
                             src="{{ asset('assets/img/header/logo-2020.webp') }}" alt=""
                             style="width: 200px;"></a>
                 </div>

@@ -29,7 +29,7 @@
             background-position: center;
             background-size: cover;
         }
-        
+
         #peridoSelectFolleto-error,
         #plantelSelectFolleto-error {
             display: none !important;
@@ -67,7 +67,7 @@
                 <div class="row">
                     <div class="col-12 col-md-4">
                         <div class="d-grid gap-2">
-                            <a id="redireccionCTCL" href="javascript:calculadoraHeader()"
+                            <a id="redireccionCTCL" href="javascript:calculadoraHeader('{{$licenciatura->abreviatura}}')"
                                 class="btn btn-outline-primary mt-2 mt-mb-0">
                                 Calculadora de Becas
                             </a>
@@ -83,7 +83,7 @@
                     </div>
                     <div class="col-12 col-md-4">
                         <div class="d-grid gap-2">
-                            <a id="redireccionPELL" href="#" class="btn text-white mt-2 mt-mb-0"
+                            <a id="redireccionPELL" href="javascript:preinscripcionHeader('{{$licenciatura->abreviatura}}')" class="btn text-white mt-2 mt-mb-0"
                                 style="background-color: #de951b;">
                                 Preinscripción En Línea
                             </a>
@@ -395,31 +395,6 @@
             nextArrow: '<button type="button" class="slick-next-requisitos"><i class="bi bi-arrow-right-circle-fill"></i></button>',
         });
 
-        const enlacePreinscripcion = document.getElementById("redireccionPELL");
-        enlacePreinscripcion.addEventListener('click', function() {
-            let nivel = "Licenciatura";
-            let carrera = "{{ $licenciatura->subtitulo }}";
-            let carreraFinal = carrera.replace(/ /g, "_");
-            let utm_source = "{{ session('utm_source') }}";
-            let utm_medium = "{{ session('utm_medium') }}";
-            let utm_campaign = "{{ session('utm_campaign') }}";
-            let utm_term = "Preinscrip";
-            let utm_content = "{{ session('utm_contentPreinscripcion') }}";
-            let rutaRedireccionPreinscripcion = setUrlBase() +
-                `App/Preinscripcion-online?utm_source=${utm_source}&utm_medium=${utm_medium}&utm_campaign=${utm_campaign}&utm_term=${utm_term}&utm_content=${utm_content}`;
-
-            $.ajax({
-                method: "GET",
-                url: setUrlBase() + "set/variables/preinscripcion/" + nivel + "/" + carreraFinal,
-            }).done(function(data) {
-                console.log(data);
-
-            }).fail(function() {
-                console.log("Algo salió mal");
-            });
-            window.open(rutaRedireccionPreinscripcion, '_blank');
-        });
-
         function getCarreraPosicion() {
             let carreraPosicionado = "{{ $licenciatura->subtitulo }}";
 
@@ -440,7 +415,6 @@
 
         var nivelPosicionado = "Licenciatura";
         var carreraPosicionado = "{{ $licenciatura->subtitulo }}";
-
 
         $('#aceptarAvisoPrivacidadFolleto').on('click', function() {
             if ($(this).is(':checked')) {

@@ -22,28 +22,26 @@ use Illuminate\Support\Facades\DB;
 
 class UnimexController extends Controller
 {
+    private $utm_recurso;
 
     public function inicio(): View
     {
+        $this->utm_recurso = new UtmController();
+        $dataUTM = $this->utm_recurso->iniciarUtmSource();
 
-        $_REQUEST['utm_source'] = "Website Metro";
-        $_REQUEST['utm_medium'] = "Organico";
-        $_REQUEST['utm_campaign'] = "Home body";
-        $_REQUEST['utm_term'] = "Informes";
-        $_REQUEST['utm_content'] = "Form Informes";
-
-        SELF::setUtmCookies();
+        //dd(session('utm_medium'));
 
         $listaCarreras = CCarreras::all();
         $banners = Banner::where('ubicacion', 0)->orWhere('ubicacion', 1)->orderBy('orden', 'ASC')->get();
         $ventajas_unimex = VentajasUnimex::all();
 
-        //dd(session('utm_source'));
+        //dd($banderaComplemento);
 
         return view('inicio', [
             "listaCarreras" => $listaCarreras,
             "banners" => $banners,
             "ventajas_unimex" => $ventajas_unimex,
+            "dataUTM" => $dataUTM
         ]);
     }
 
@@ -80,14 +78,18 @@ class UnimexController extends Controller
         }
     }
 
+    /**
+     * 
+     */
+
     public function getLicenciatura($slug): View
     {
 
-        $utmSource = new UtmController();
+        $this->utm_recurso = new UtmController();
+        $origen = $this->utm_recurso->comprovacionOrigen();
+        $dataUTM = $this->utm_recurso->iniciarUtmSource();
 
         $licenciatura = CLicenciaturas::where('slug', $slug)->first();
-
-        $utmSource->initUtmSourceOferta($licenciatura->abreviatura);
 
         if ($licenciatura != null) {
 
@@ -95,12 +97,16 @@ class UnimexController extends Controller
             $temario  = $extras['extras']['temario'];
             $campo_laboral = $extras['extras']['campo_laboral'];
             $disponibilidad = $extras['extras']['disponibilidad'];
+            $abreviatura = $licenciatura->abreviatura;
 
             return view('licenciatura', [
                 "licenciatura" => $licenciatura,
                 "temario" => $temario,
                 "campo_laboral" => $campo_laboral,
                 "disponibilidad" => $disponibilidad,
+                "origen" => $origen,
+                "dataUTM" => $dataUTM,
+                "abreviatura" => $abreviatura
             ]);
         } else {
             return view('errors.404');
@@ -109,21 +115,25 @@ class UnimexController extends Controller
 
     public function getLicenciaturaSua($slug): View
     {
-        $utmSource = new UtmController();
+        $this->utm_recurso = new UtmController();
+        $origen = $this->utm_recurso->comprovacionOrigen();
+        $dataUTM = $this->utm_recurso->iniciarUtmSource();
 
         $licenciatura_sua = LicenciaturaSua::where('slug', $slug)->first();
 
-        $utmSource->initUtmSourceOferta($licenciatura_sua->abreviatura);
-        
         if ($licenciatura_sua != null) {
             $extras = json_decode($licenciatura_sua->extras, true);
             $temario = $extras['extras']['temario'];
             $campo_laboral = $extras['extras']['campo_laboral'];
+            $abreviatura = $licenciatura_sua->abreviatura;
 
             return view('licenciaturasua', [
                 "licenciatura_sua" => $licenciatura_sua,
                 "temario" => $temario,
-                "campo_laboral" => $campo_laboral
+                "campo_laboral" => $campo_laboral,
+                "dataUTM" => $dataUTM,
+                "origen" => $origen,
+                "abreviatura" => $abreviatura
             ]);
         } else {
             return view('errors.404');
@@ -133,11 +143,11 @@ class UnimexController extends Controller
     public function getPosgrado($slug): View
     {
 
-        $utmSource = new UtmController();
+        $this->utm_recurso = new UtmController();
+        $origen = $this->utm_recurso->comprovacionOrigen();
+        $dataUTM = $this->utm_recurso->iniciarUtmSource();
 
         $posgrado = Posgrado::where('slug', $slug)->first();
-
-        $utmSource->initUtmSourceOferta($posgrado->abreviatura);
 
         if ($posgrado != null) {
             $extras = json_decode($posgrado->temario, true);
@@ -145,6 +155,7 @@ class UnimexController extends Controller
             $temario_maestria = $extras['extras']['temario_maestria'];
             $rvoe_especialidad = $extras['extras']['rvoe_especialidad'];
             $rvoe_maestria = $extras['extras']['rvoe_maestria'];
+            $abreviatura = $posgrado->abreviatura;
 
             return view('posgrado', [
                 "posgrado" => $posgrado,
@@ -152,6 +163,9 @@ class UnimexController extends Controller
                 "temario_maestria" => $temario_maestria,
                 "rvoe_especialidad" => $rvoe_especialidad,
                 "rvoe_maestria" => $rvoe_maestria,
+                "dataUTM" => $dataUTM,
+                "origen" => $origen,
+                "abreviatura" => $abreviatura
             ]);
         } else {
             return view('errors.404');
@@ -187,21 +201,14 @@ class UnimexController extends Controller
     public function calculaTuCuota(): View
     {
 
-        SELF::setUtmCookies();
+        $utm_recurso = new UtmController();
+        $utm_recurso->initUtmSource();
 
         return view('calculaTuCuota');
     }
 
     public function contacto(): View
     {
-
-        $_REQUEST['utm_source'] = "Website+Metro";
-        $_REQUEST['utm_medium'] = "Organico";
-        $_REQUEST['utm_campaign'] = "Contacto+body";
-        $_REQUEST['utm_term'] = "Informes";
-        $_REQUEST['utm_content'] = "Form+Informes";
-
-        SELF::setUtmCookies();
 
         return view('contacto');
     }
@@ -226,69 +233,5 @@ class UnimexController extends Controller
     {
 
         return view('bolsa_de_trabajo');
-    }
-
-    public function setUtmCookies()
-    {
-
-
-        if (isset($_REQUEST['utm_source'])) { //*determina si la ur contiene la variable
-            if (!empty($_REQUEST['utm_source'])) { //! determina si la variable esta vacia
-                session(["utm_source" => $_REQUEST['utm_source']]);
-            }
-        } else { //? decision si la variable no se encuentra en la cadena
-            session(["utm_source" => "organico"]);
-        }
-
-
-        if (isset($_REQUEST['utm_medium'])) { //*determina si la url contiene la variable
-            if (!empty($_REQUEST['utm_medium'])) { //! determina si la variable esta vacia
-                session(["utm_medium" => $_REQUEST['utm_medium']]);
-            }
-        } else { //? decision si la variable no se encuentra en la cadena de la url
-            session(["utm_medium" => 0]);
-        }
-
-        if (isset($_REQUEST['utm_campaign'])) { //*determina si la url contiene la variable
-            if (!empty($_REQUEST['utm_campaign'])) { //! determina si la variable esta vacia
-                session(["utm_campaign" => $_REQUEST['utm_campaign']]);
-            }
-        } else { //? decision si la variable no se encuentra en la cadena de la url
-            session(["utm_campaign" => 0]);
-        }
-
-        if (isset($_REQUEST['utm_term'])) { //*determina si la url contiene la variable
-            if (!empty($_REQUEST['utm_term'])) { //! determina si la variable esta vacia
-                session(["utm_term" => $_REQUEST['utm_term']]);
-            }
-        } else { //? decision si la variable no se encuentra en la cadena de la url
-            session(["utm_term" => 0]);
-        }
-
-        if (isset($_REQUEST['utm_content'])) { //*determina si la url contiene la variable
-            if (!empty($_REQUEST['utm_content'])) { //! determina si la variable esta vacia
-                session(["utm_content" => $_REQUEST['utm_content']]);
-            }
-        } else { //? decision si la variable no se encuentra en la cadena de la url
-            session(["utm_content" => 0]);
-        }
-
-        if (isset($_REQUEST['gad_source'])) { //*determina si la url contiene la variable
-            if (!empty($_REQUEST['gad_source'])) { //! determina si la variable esta vacia
-                session(["gad_source" => $_REQUEST['gad_source']]);
-            }
-        } else { //? decision si la variable no se encuentra en la cadena de la url
-            session(["gad_source" => 0]);
-        }
-
-        $dataUTM["utm_source"] = session('utm_source');
-        $dataUTM["utm_medium"] = session('utm_medium');
-        $dataUTM["utm_campaign"] = session('utm_campaign');
-        $dataUTM["utm_term"] = session('utm_term');
-        $dataUTM["utm_content"] = session('utm_content');
-        $dataUTM["gad_source"] = session('gad_source');
-
-        //dd($dataUTM);
-
     }
 }

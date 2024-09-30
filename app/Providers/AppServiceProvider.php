@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Http\Controllers\UtmController;
 use App\Models\Acercade;
 use App\Models\Menu;
 use App\Models\Plantel;
@@ -23,6 +24,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        $utmRecurso = new UtmController();
+        $dataUtm = $utmRecurso->iniciarUtmSource();
         $planteles = Plantel::all();
         $acercade = Acercade::all();
         $menus = Menu::all();
@@ -31,6 +34,7 @@ class AppServiceProvider extends ServiceProvider
             "planteles" => $planteles,
             "acercade" => $acercade, 
             "menus" => $menus,
+            "dataUTM" => $dataUtm
         );
 
         View::share('data', $data); 

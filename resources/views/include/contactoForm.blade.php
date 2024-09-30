@@ -152,6 +152,42 @@
                             </a>
                         </label>
                     </div>
+                    @if (isset($origen))
+                        @php
+                            $origen = $origen;
+                        @endphp
+                    @else
+                        @php
+                            $origen = null;
+                        @endphp
+                    @endif
+                    @if (isset($abreviatura))
+                        @php
+                            $abreviatura = $abreviatura;
+                        @endphp
+                    @else
+                        @php
+                            $abreviatura = null;
+                        @endphp
+                    @endif
+                    @if (isset($dataUTM))
+                        @php
+                            $dataUTM = $dataUTM;
+                        @endphp
+                    @else
+                        @php
+                            $dataUTM = null;
+                        @endphp
+                    @endif
+                    <input type="hidden" name="origen" id="origen" value="{{ $origen }}">
+                    <input type="hidden" name="abreviatura" id="abreviatura" value="{{ $abreviatura }}">
+                    <input type="hidden" name="utm_source" id="utm_source" @if ($dataUTM != null) value="{{ $dataUTM['utm_source'] }}" @else value="0" @endif>
+                    <input type="hidden" name="utm_medium" id="utm_medium" @if ($dataUTM != null) value="{{ $dataUTM['utm_medium'] }}" @else value="0" @endif>
+                    <input type="hidden" name="utm_campaign" id="utm_campaign"
+                        @if ($dataUTM != null) value="{{ $dataUTM['utm_campaign'] }}" @else value="0" @endif>
+                    <input type="hidden" name="utm_term" id="utm_term" @if ($dataUTM != null) value="{{ $dataUTM['utm_term'] }}" @else value="0" @endif>
+                    <input type="hidden" name="utm_content" id="utm_content"
+                        @if ($dataUTM != null) value="{{ $dataUTM['utm_content'] }}" @else value="0" @endif>
                     <div class="w-100 text-center mt-4">
                         <button id="envio_contacto" type="submit" class="btn btn-primary">Enviar</button>
                     </div>
