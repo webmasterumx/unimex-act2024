@@ -4,17 +4,14 @@
         let carrera = carreraPosicionado;
         let carreraFinal = carrera.replace(/ /g, "_");
         let coplementoParaUtm = abreviaturaUtm;
-        let utmMedium = " {{ $dataUTM['utm_medium'] }} ";
+        let utmMedium = "{{ $dataUTM['utm_medium'] }}";
 
-        if (utmMedium != "Organico" || utmMedium != "organico" || utmMedium !=
+        console.log(utmMedium);
+
+        if (utmMedium == "Organico" || utmMedium == "organico" || utmMedium ==
             "ORGANICO") { // las utm declaradas en la session no son organicas
-            utm_source = "{{ $dataUTM['utm_source'] }}";
-            utm_medium = "{{ $dataUTM['utm_medium'] }}";
-            utm_campaign = "{{ $dataUTM['utm_campaign'] }}";
-            utm_term = "{{ $dataUTM['utm_term'] }}";
-            utm_content = "{{ $dataUTM['utm_content'] }}";
+            console.log("las utm declaradas en session son organicas se deben forzar");
 
-        } else { // las utm declaradas en session son organicas se deben forzar
             origen = "{{ $origen }}";
 
             utm_source = "Website+Metro";
@@ -35,6 +32,17 @@
 
             }
 
+
+
+        } else { // las utm declaradas en session son organicas se deben forzar
+
+            console.log("las utm declaradas en la session no son organicas");
+
+            utm_source = "{{ $dataUTM['utm_source'] }}";
+            utm_medium = "{{ $dataUTM['utm_medium'] }}";
+            utm_campaign = "{{ $dataUTM['utm_campaign'] }}";
+            utm_term = "{{ $dataUTM['utm_term'] }}";
+            utm_content = "{{ $dataUTM['utm_content'] }}";
 
         }
 
@@ -68,13 +76,7 @@
 
         if (utmMedium != "Organico" || utmMedium != "organico" || utmMedium !=
             "ORGANICO") { // las utm declaradas en la session no son organicas
-            utm_source = "{{ $dataUTM['utm_source'] }}";
-            utm_medium = "{{ $dataUTM['utm_medium'] }}";
-            utm_campaign = "{{ $dataUTM['utm_campaign'] }}";
-            utm_term = "{{ $dataUTM['utm_term'] }}";
-            utm_content = "{{ $dataUTM['utm_content'] }}";
 
-        } else { // las utm declaradas en session son organicas se deben forzar
             origen = "{{ $origen }}";
 
             utm_source = "Website+Metro";
@@ -94,6 +96,15 @@
                 utm_content = `${coplementoParaUtm}+boton+preinscrip`;
 
             }
+
+        } else { // las utm declaradas en session son organicas se deben forzar
+
+            utm_source = "{{ $dataUTM['utm_source'] }}";
+            utm_medium = "{{ $dataUTM['utm_medium'] }}";
+            utm_campaign = "{{ $dataUTM['utm_campaign'] }}";
+            utm_term = "{{ $dataUTM['utm_term'] }}";
+            utm_content = "{{ $dataUTM['utm_content'] }}";
+
         }
 
         let rutaRedireccionPreinscripcion = setUrlBase() +
