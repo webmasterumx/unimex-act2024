@@ -82,7 +82,7 @@
                                     $dataUTM['utm_medium'] == 'Organico' ||
                                     $dataUTM['utm_medium'] == null)
                                 @php
-                                    $ruta = $ventaja_unimex->link; //! pendiente colocar complemento organico en la base de datos
+                                    $ruta = $ventaja_unimex->link . $ventaja_unimex->utmOrganica; //! pendiente colocar complemento organico en la base de datos
                                 @endphp
                             @else
                                 @php
