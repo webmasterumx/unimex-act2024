@@ -118,25 +118,25 @@ class FormController extends Controller
         if ($utmMedium == "organico" || $utmMedium  == "ORGANICO" || $utmMedium == "Organico" || $utmMedium == null) { // la utm en session no es organica
 
             if ($origen == "slider") {
-                $source = "Website+Metro";
-                $campaign = "Home+body";
-                $content = "Slider" . $abreviatura . "+Oacademica+form";
+                $source = "Website Metro";
+                $campaign = "Home body";
+                $content = "Slider" . $abreviatura . " Oacademica form";
             } else if ($origen == "menu") {
-                $source = "Website+Metro";
-                $campaign = "Home+header";
-                $content = "Oacademica+" . $abreviatura . "+body+form";
+                $source = "Website Metro";
+                $campaign = "Home header";
+                $content = "Oacademica " . $abreviatura . " body form";
             } else if ($origen == "Home") {
-                $source = "Website+Metro";
-                $campaign = "Home+body";
-                $content = "Form+Informes";
+                $source = "Website Metro";
+                $campaign = "Home body";
+                $content = "Form Informes";
             } else if ($origen == "Info") {
-                $source = "Website+Metro";
-                $campaign = "Home+header";
-                $content = "Botón+informes";
+                $source = "Website Metro";
+                $campaign = "Home header";
+                $content = "Botón informes";
             } else {
-                $source = "Fuente+origen";
-                $campaign = " Fuente+origen";
-                $content = "Form+" . $abreviatura . "+Informes";
+                $source = "Fuente origen";
+                $campaign = " Fuente origen";
+                $content = "Form " . $abreviatura . " Informes";
             }
 
             $medium = "Organico";
