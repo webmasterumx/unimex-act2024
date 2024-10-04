@@ -211,9 +211,11 @@ class UnimexController extends Controller
     {
 
         $utm_recurso = new UtmController();
-        $utm_recurso->initUtmSource();
+        $listUtm = $utm_recurso->iniciarUtmSource();
 
-        return view('calculaTuCuota');
+        return view('calculaTuCuota', [
+            "listUtm" => $listUtm
+        ]);
     }
 
     public function contacto(): View

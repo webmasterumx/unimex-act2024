@@ -14,22 +14,8 @@ class PreinscripcionEnLineaController extends Controller
     public function index()
     {
 
-        if (isset($_REQUEST['utm_source']) && isset($_REQUEST['utm_medium']) && isset($_REQUEST['utm_campaign']) && isset($_REQUEST['utm_term']) && isset($_REQUEST['utm_content']) && isset($_REQUEST['gad_source'])) {
-            session(["utm_source" => $_REQUEST['utm_source']]);
-            session(["utm_medium" => $_REQUEST['utm_medium']]);
-            session(["utm_campaign" => $_REQUEST['utm_campaign']]);
-            session(["utm_term" => $_REQUEST['utm_term']]);
-            session(["utm_content" => $_REQUEST['utm_content']]);
-            session(["gad_source" => $_REQUEST['gad_source']]);
-        } else {
-
-            session(["utm_source" => "organico"]);
-            session(["utm_medium" => 0]);
-            session(["utm_campaign" => 0]);
-            session(["utm_term" => 0]);
-            session(["utm_content" => 0]);
-            session(["gad_source" => 0]);
-        }
+        $utm_recurso = new UtmController();
+        $listUtm = $utm_recurso->iniciarUtmSource();
 
         return view('preinscripcionEnLinea.inicio');
     }
@@ -211,7 +197,6 @@ class PreinscripcionEnLineaController extends Controller
 
                     $response['estado'] = false;
                     $response['mensaje'] = "Lo sentimos, ocurro un error inesperado, favor de verificar los datos introducidos";
-
                 } else {
                     //echo "matriculacion exitosa";
 
@@ -236,8 +221,7 @@ class PreinscripcionEnLineaController extends Controller
             $response['mensaje'] = "Lo sentimos, ocurro un error inesperado, favor de verificar los datos introducidos";
         }
 
-        return response()->json($response);  
-
+        return response()->json($response);
     }
 
     public function fichaPDFGenerar()
