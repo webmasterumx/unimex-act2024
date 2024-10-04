@@ -134,7 +134,7 @@ class PreinscripcionEnLineaController extends Controller
         session(['CampaignMedium' => ""]);
         session(['CampaignTerm' => ""]);
         session(['CampaignContent' => ""]);
-        session(['WebSiteURL' => "https://unimex.edu.mx"]);
+        session(['WebSiteURL' =>  env('APP_URL')]);
         session(['FechaDeNacimiento' => $request->diaNacimiento . '-' . $request->mesNacimiento . '-' . $request->yearNacimiento]);
         session(['precio' => $promo['Importe']]);
         session(['fechaLimite' => $promo['FechaFinalPromocion']]);
