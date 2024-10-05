@@ -11,7 +11,7 @@
 
         if (utmMediumFor == "Organico" || utmMediumFor == "organico" || utmMediumFor ==
             "ORGANICO" || utmMediumFor == null || utmMediumFor == ""
-            ) { // las utm declaradas en la session no son organicas
+        ) { // las utm declaradas en la session no son organicas
             console.log("las utm declaradas en session son organicas se deben forzar");
 
             origen = "{{ $origen }}";
@@ -121,19 +121,18 @@
 
         console.log(rutaRedireccionPreinscripcion);
 
-        /* 
-                $.ajax({
-                    method: "GET",
-                    url: setUrlBase() + "set/variables/preinscripcion/" + nivel + "/" + carreraFinal,
-                }).done(function(data) {
-                    console.log(data);
 
-                }).fail(function() {
-                    console.log("Algo salió mal");
-                });
-                window.open(rutaRedireccionPreinscripcion, '_blank'); */
+        $.ajax({
+            method: "GET",
+            url: setUrlBase() + "set/variables/preinscripcion/" + nivel + "/" + carreraFinal,
+        }).done(function(data) {
+            console.log(data);
+
+        }).fail(function() {
+            console.log("Algo salió mal");
+        });
+        window.open(rutaRedireccionPreinscripcion, '_blank');
     }
-
 
     function generarUtm() {
 
