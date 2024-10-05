@@ -167,6 +167,9 @@
     @include('include.folletoForm')
 
     <!-- Inicio de la Sección de Contacto -->
+    @php
+        $nivel = "licenciatura";
+    @endphp
     @include('include.contactoForm')
     <!-- Fin de la Sección de Contacto -->
 

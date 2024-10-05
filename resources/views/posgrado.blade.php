@@ -94,7 +94,8 @@
                 <div class="row">
                     <div class="col-12 col-md-6 mb-2 mb-md-0">
                         <div class="d-grid gap-2">
-                            <a id="redireccionCTCL" href="javascript:calculadoraHeader('{{$posgrado->abreviatura}}')" class="btn btn-outline-primary">
+                            <a id="redireccionCTCL" href="javascript:calculadoraHeader('{{ $posgrado->abreviatura }}')"
+                                class="btn btn-outline-primary">
                                 Calculadora de Becas
                             </a>
                         </div>
@@ -109,8 +110,8 @@
                     </div> --}}
                     <div class="col-12 col-md-6 mb-2 mb-md-0">
                         <div class="d-grid gap-2">
-                            <a id="redireccionPELL" href="javascript:preinscripcionHeader('{{$posgrado->abreviatura}}')" class="btn text-white"
-                                style="background-color: #de951b;">
+                            <a id="redireccionPELL" href="javascript:preinscripcionHeader('{{ $posgrado->abreviatura }}')"
+                                class="btn text-white" style="background-color: #de951b;">
                                 Preinscripción En Línea
                             </a>
                         </div>
@@ -282,6 +283,9 @@
     @include('include.folletoForm')
 
     <!-- Inicio de la Sección de Contacto -->
+    @php
+        $nivel = 'posgrado';
+    @endphp
     @include('include.contactoForm')
     <!-- Fin de la Sección de Contacto -->
 

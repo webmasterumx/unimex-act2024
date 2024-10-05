@@ -19,6 +19,7 @@ use Illuminate\Http\Request;
 use Barryvdh\DomPDF\PDF as PDF;
 use Dompdf\Dompdf;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\URL;
 
 class UnimexController extends Controller
 {
@@ -28,8 +29,8 @@ class UnimexController extends Controller
     {
         $this->utm_recurso = new UtmController();
         $dataUTM = $this->utm_recurso->iniciarUtmSource();
-
-        //dd(session('utm_medium'));
+        $urlVisitada = URL::full();
+        
 
         $listaCarreras = CCarreras::all();
         $banners = Banner::where('ubicacion', 0)->orWhere('ubicacion', 1)->orderBy('orden', 'ASC')->get();
@@ -41,7 +42,8 @@ class UnimexController extends Controller
             "listaCarreras" => $listaCarreras,
             "banners" => $banners,
             "ventajas_unimex" => $ventajas_unimex,
-            "dataUTM" => $dataUTM
+            "dataUTM" => $dataUTM,
+            "urlVisitada" => $urlVisitada
         ]);
     }
 
@@ -96,6 +98,8 @@ class UnimexController extends Controller
         $this->utm_recurso = new UtmController();
         $origen = $this->utm_recurso->comprovacionOrigen();
         $dataUTM = $this->utm_recurso->iniciarUtmSource();
+        $urlVisitada = URL::full();
+        //dd($urlVisitada);
 
         $licenciatura = CLicenciaturas::where('slug', $slug)->first();
 
@@ -114,7 +118,8 @@ class UnimexController extends Controller
                 "disponibilidad" => $disponibilidad,
                 "origen" => $origen,
                 "dataUTM" => $dataUTM,
-                "abreviatura" => $abreviatura
+                "abreviatura" => $abreviatura,
+                "urlVisitada" => $urlVisitada
             ]);
         } else {
             return view('errors.404');
@@ -126,6 +131,7 @@ class UnimexController extends Controller
         $this->utm_recurso = new UtmController();
         $origen = $this->utm_recurso->comprovacionOrigen();
         $dataUTM = $this->utm_recurso->iniciarUtmSource();
+        $urlVisitada = URL::full();
 
         $licenciatura_sua = LicenciaturaSua::where('slug', $slug)->first();
 
@@ -141,7 +147,8 @@ class UnimexController extends Controller
                 "campo_laboral" => $campo_laboral,
                 "dataUTM" => $dataUTM,
                 "origen" => $origen,
-                "abreviatura" => $abreviatura
+                "abreviatura" => $abreviatura,
+                "urlVisitada" => $urlVisitada
             ]);
         } else {
             return view('errors.404');
@@ -154,6 +161,7 @@ class UnimexController extends Controller
         $this->utm_recurso = new UtmController();
         $origen = $this->utm_recurso->comprovacionOrigen();
         $dataUTM = $this->utm_recurso->iniciarUtmSource();
+        $urlVisitada = URL::full();
 
         $posgrado = Posgrado::where('slug', $slug)->first();
 
@@ -173,7 +181,8 @@ class UnimexController extends Controller
                 "rvoe_maestria" => $rvoe_maestria,
                 "dataUTM" => $dataUTM,
                 "origen" => $origen,
-                "abreviatura" => $abreviatura
+                "abreviatura" => $abreviatura,
+                "urlVisitada" => $urlVisitada
             ]);
         } else {
             return view('errors.404');
@@ -212,9 +221,11 @@ class UnimexController extends Controller
 
         $utm_recurso = new UtmController();
         $dataUTM = $utm_recurso->iniciarUtmSource();
+        $urlVisitada = URL::full();
 
         return view('calculaTuCuota', [
-            "dataUTM" => $dataUTM
+            "dataUTM" => $dataUTM,
+            "urlVisitada" => $urlVisitada
         ]);
     }
 
@@ -223,9 +234,11 @@ class UnimexController extends Controller
 
         $this->utm_recurso = new UtmController();
         $dataUTM = $this->utm_recurso->iniciarUtmSource();
+        $urlVisitada = URL::full();
 
         return view('contacto', [
-            "dataUTM" => $dataUTM
+            "dataUTM" => $dataUTM,
+            "urlVisitada" => $urlVisitada
         ]);
     }
 

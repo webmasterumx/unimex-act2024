@@ -74,15 +74,18 @@
                 <div class="row">
                     <div class="col-12 col-md-6 mb-3 mb-md-0">
                         <div class="d-grid gap-2">
-                            <a id="redireccionCTCL" href="javascript:calculadoraHeader('{{$licenciatura_sua->abreviatura}}')" class="btn btn-outline-primary">
+                            <a id="redireccionCTCL"
+                                href="javascript:calculadoraHeader('{{ $licenciatura_sua->abreviatura }}')"
+                                class="btn btn-outline-primary">
                                 Calculadora de Becas
                             </a>
                         </div>
                     </div>
                     <div class="col-12 col-md-6 mb-3 mb-md-0">
                         <div class="d-grid gap-2">
-                            <a id="redireccionPELL" href="javascript:preinscripcionHeader('{{$licenciatura_sua->abreviatura}}')" class="btn text-white"
-                                style="background-color: #de951b;">
+                            <a id="redireccionPELL"
+                                href="javascript:preinscripcionHeader('{{ $licenciatura_sua->abreviatura }}')"
+                                class="btn text-white" style="background-color: #de951b;">
                                 Preinscripción En Línea
                             </a>
                         </div>
@@ -250,6 +253,9 @@
     @include('include.folletoForm')
 
     <!-- Inicio de la Sección de Contacto -->
+    @php
+        $nivel = 'licenciatura/sua';
+    @endphp
     @include('include.contactoForm')
     <!-- Fin de la Sección de Contacto -->
 

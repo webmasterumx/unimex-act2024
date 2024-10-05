@@ -104,18 +104,40 @@ $("select[name=periodoSelect]").change(function () {
         },
         url: setUrlBase() + "get/variables/preinscripcion",
     }).done(function (info) {
-        $('#nivelSelect').empty();
-        $("#nivelSelect").append(`<option value="" selected disabled>Selecciona el Nivel</option>`);
-        $('#carreraSelect').empty();
-        $("#carreraSelect").append(`<option value="" selected disabled>Selecciona Carrera</option>`);
-        $('#horarioSelect').empty();
-        $("#horarioSelect").append(`<option value="" selected disabled>Selecciona un horario</option>`);
+
         if (info.carrera_preinscripcion != null) {
             recalculoDeComboNivel(ruta, data, element, info)
         }
         else {
 
-            postAjaxPeticionContact(ruta, data, element);
+            $.ajax({
+                method: "POST",
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                url: ruta,
+                data: data
+            }).done(function (data) {
+                console.log(data);
+                $('#nivelSelect').empty();
+                $("#nivelSelect").append(`<option value="" selected>Seleciona un Nivel</option>`);
+                if (data.error == undefined || data.error == null) {
+                    if (data.clave == undefined || data.clave == null) {
+                        $.each(data, function (index, value) {
+                            let option = `<option value="${value.clave}">${value.descrip}</option>`;
+                            $(element).append(option);
+                        });
+                    } else {
+                        let option = `<option value="${data.clave}">${data.descrip}</option>`;
+                        $(element).append(option);
+                    }
+                } else {
+
+                }
+
+            }).fail(function () {
+                console.log("Algo salió mal");
+            });
         }
 
     }).fail(function () {

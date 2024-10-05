@@ -106,6 +106,7 @@ class FormController extends Controller
         $origen = $request->origen;
         $abreviatura = $request->abreviatura;
         $utmMedium = $request->utm_medium;
+        $urlEnvioForm = $request->urlVisitada;
 
         //var_dump($origen);
         //var_dump($abreviatura);
@@ -117,19 +118,21 @@ class FormController extends Controller
 
         if ($utmMedium == "organico" || $utmMedium  == "ORGANICO" || $utmMedium == "Organico" || $utmMedium == null) { // la utm en session no es organica
 
-            if ($origen == "slider") {
+            if ($origen == "slider") { //! si osi vienen desde una oferta academica
                 $source = "Website Metro";
                 $campaign = "Home body";
                 $content = "Slider" . $abreviatura . " Oacademica form";
-            } else if ($origen == "menu") {
+
+            } else if ($origen == "menu") { //! si osi vienen desde una oferta academica
                 $source = "Website Metro";
                 $campaign = "Home header";
                 $content = "Oacademica " . $abreviatura . " body form";
-            } else if ($origen == "Home") {
+
+            } else if ($origen == "Home") { // viene desde la pagina home 
                 $source = "Website Metro";
                 $campaign = "Home body";
                 $content = "Form Informes";
-            } else if ($origen == "Info") {
+            } else if ($origen == "Info") { // viene desde la pagina contacto
                 $source = "Website Metro";
                 $campaign = "Home header";
                 $content = "Botón informes";
@@ -150,12 +153,11 @@ class FormController extends Controller
         }
 
 
-
         //https://unimex.edu.mx/calcula-tu-cuota/?utm_source=El+Universal+secciones&utm_medium=Universaldxd&utm_campaign=2024+1&utm_term=universidad+mexicana&utm_content=metro
 
 
         //! establecimiento de variables para utm
-        $baseUrl = env('APP_URL');
+        //$baseUrl = env('APP_URL');
 
         //! creando array de datos a procesar
         $valores = array(
@@ -176,7 +178,7 @@ class FormController extends Controller
             "campaignMedium" => $medium,
             "campaignTerm" => $term,
             "campaignContent" => $content,
-            "websiteURL" => $baseUrl,
+            "websiteURL" => $urlEnvioForm,
             "folioReferido" => "0"
         );
 

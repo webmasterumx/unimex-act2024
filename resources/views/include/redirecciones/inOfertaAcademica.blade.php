@@ -4,12 +4,14 @@
         let carrera = carreraPosicionado;
         let carreraFinal = carrera.replace(/ /g, "_");
         let coplementoParaUtm = abreviaturaUtm;
-        let utmMedium = "{{ $dataUTM['utm_medium'] }}";
+        let utmMediumSinFor = " {{ $dataUTM['utm_medium'] }} ";
+        let utmMediumFor = utmMediumSinFor.trim();
 
-        console.log(utmMedium);
+        console.log(utmMediumFor);
 
-        if (utmMedium == "Organico" || utmMedium == "organico" || utmMedium ==
-            "ORGANICO") { // las utm declaradas en la session no son organicas
+        if (utmMediumFor == "Organico" || utmMediumFor == "organico" || utmMediumFor ==
+            "ORGANICO" || utmMediumFor == null || utmMediumFor == ""
+            ) { // las utm declaradas en la session no son organicas
             console.log("las utm declaradas en session son organicas se deben forzar");
 
             origen = "{{ $origen }}";
@@ -72,10 +74,17 @@
         let carrera = carreraPosicionado;
         let carreraFinal = carrera.replace(/ /g, "_");
         let coplementoParaUtm = abreviaturaUtm;
-        let utmMedium = " {{ $dataUTM['utm_medium'] }} ";
+        let utmMediumSinFor = " {{ $dataUTM['utm_medium'] }} ";
+        let utmMediumFor = utmMediumSinFor.trim();
 
-        if (utmMedium != "Organico" || utmMedium != "organico" || utmMedium !=
-            "ORGANICO") { // las utm declaradas en la session no son organicas
+        console.log(utmMediumFor);
+
+        if (utmMediumFor == "Organico" || utmMediumFor == "organico" || utmMediumFor ==
+            "ORGANICO" || utmMediumFor == null || utmMediumFor == ""
+        ) { // las utm declaradas en la session no son organicas
+
+            console.log("utm de tipo organico");
+
 
             origen = "{{ $origen }}";
 
@@ -110,16 +119,19 @@
         let rutaRedireccionPreinscripcion = setUrlBase() +
             `App/Preinscripcion-online?utm_source=${utm_source}&utm_medium=${utm_medium}&utm_campaign=${utm_campaign}&utm_term=${utm_term}&utm_content=${utm_content}`;
 
-        $.ajax({
-            method: "GET",
-            url: setUrlBase() + "set/variables/preinscripcion/" + nivel + "/" + carreraFinal,
-        }).done(function(data) {
-            console.log(data);
+        console.log(rutaRedireccionPreinscripcion);
 
-        }).fail(function() {
-            console.log("Algo salió mal");
-        });
-        window.open(rutaRedireccionPreinscripcion, '_blank');
+        /* 
+                $.ajax({
+                    method: "GET",
+                    url: setUrlBase() + "set/variables/preinscripcion/" + nivel + "/" + carreraFinal,
+                }).done(function(data) {
+                    console.log(data);
+
+                }).fail(function() {
+                    console.log("Algo salió mal");
+                });
+                window.open(rutaRedireccionPreinscripcion, '_blank'); */
     }
 
 
