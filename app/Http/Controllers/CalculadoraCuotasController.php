@@ -24,11 +24,18 @@ class CalculadoraCuotasController extends Controller
     public function insertarProspecto(Request $request)
     {
 
-        $source = session("utm_source");
+        /*    $source = session("utm_source");
         $medium = session("utm_medium");
         $content = session("utm_content");
         $campaign = session("utm_campaign");
-        $term = session("utm_term");
+        $term = session("utm_term"); */
+
+        $source = $request->utm_source;
+        $medium = $request->utm_medium;
+        $campaign = $request->utm_campaign;
+        $term = $request->utm_term;
+        $content = $request->utm_content;
+
         session(['nombreNivel' => $request->nombreNivel]);
         session(['nombrePlantel' => $request->nombrePlantel]);
         session(['nombrePeriodo' => $request->nombrePeriodo]);
@@ -76,7 +83,7 @@ class CalculadoraCuotasController extends Controller
         //var_dump($valores);
         $respuesta = app(ApiConsumoController::class)->agregarProspectoCRM($valores);
         //var_dump($respuesta);
-        
+
         if ($respuesta['FolioCRM'] != 0) {
 
             SELF::establecerVariablesCorreo($request, $respuesta);
@@ -105,14 +112,12 @@ class CalculadoraCuotasController extends Controller
             $respuesta['legales'] = $legales;
             $respuesta['estadoCorreo'] = $this->result;
             $respuesta['mensajeCorreo'] =  $this->message;
-        }
-        else
-        {
+        } else {
             $respuesta['estadoCorreo'] = false;
             $respuesta['mensajeCorreo'] =  "Correo no enviado";
         }
 
-        return response()->json($respuesta); 
+        return response()->json($respuesta);
     }
 
     public function enviarCorreoCalculadoraDetalleBeca()
@@ -160,7 +165,7 @@ class CalculadoraCuotasController extends Controller
 
         //$recive = "lishanxime201099@gmail.com";
 
-       try {
+        try {
             $nombreNivel = $request->nombreNivel;
             $carrera = $request->nombreCarrera;
             $nombrePlantel = $request->nombrePlantel;
@@ -176,19 +181,19 @@ class CalculadoraCuotasController extends Controller
 
             $statusCode     = 200;
             $this->message  = "Correo enviado correctamente.";
-            $this->result   = true; 
+            $this->result   = true;
         } catch (\Throwable $th) {
             $statusCode     = 200;
             $this->message  = $th->getMessage();
             //$this->message  = "Error al enviar correo.";
         } finally {
-             $response = [
+            $response = [
                 'message'   => $this->message,
                 'result'    => $this->result,
                 'records'   => $this->records
             ];
 
-            return response()->json($response); 
+            return response()->json($response);
 
             //dd($response);
         }

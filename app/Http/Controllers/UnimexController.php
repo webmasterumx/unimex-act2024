@@ -211,10 +211,10 @@ class UnimexController extends Controller
     {
 
         $utm_recurso = new UtmController();
-        $listUtm = $utm_recurso->iniciarUtmSource();
+        $dataUTM = $utm_recurso->iniciarUtmSource();
 
         return view('calculaTuCuota', [
-            "listUtm" => $listUtm
+            "dataUTM" => $dataUTM
         ]);
     }
 

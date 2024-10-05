@@ -16,7 +16,7 @@ $(document).ready(function () {
      */
     $.ajax({
         method: "GET",
-        url: setUrlBase() + "getPlanteles       ",
+        url: setUrlBase() + "getPlanteles",
     }).done(function (data) {
         $.each(data, function (index, value) {
             let option = `<option value="${value.clave}">${value.descrip}</option>`;
@@ -37,10 +37,6 @@ $(document).ready(function () {
 $("select[name=plantelSelect]").change(function () {
 
     setVariablesPrecargadas();
-    $('#periodoSelect').empty();
-    $("#periodoSelect").append(`<option value="" selected disabled>¿Cuándo deseas iniciar? </option>`);
-    $('#horarioSelect').empty();
-    $("#horarioSelect").append(`<option value="" selected disabled>Selecciona un horario</option>`);
     let plantel = $('select[name=plantelSelect]').val();
     let ruta = setUrlBase() + "getPeriodos";
     let data = {
@@ -48,7 +44,37 @@ $("select[name=plantelSelect]").change(function () {
     };
     let element = '#periodoSelect';
 
-    postAjaxPeticionContact(ruta, data, element);
+    $.ajax({
+        method: "POST",
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        url: ruta,
+        data: data
+    }).done(function (data) {
+        $('#periodoSelect').empty();
+        $("#periodoSelect").append(`<option value="" selected disabled>¿Cuándo deseas iniciar? </option>`);
+        $('#horarioSelect').empty();
+        $("#horarioSelect").append(`<option value="" selected disabled>Selecciona un horario</option>`);
+        console.log(data);
+
+        if (data.error == undefined || data.error == null) {
+            if (data.clave == undefined || data.clave == null) {
+                $.each(data, function (index, value) {
+                    let option = `<option value="${value.clave}">${value.descrip}</option>`;
+                    $(element).append(option);
+                });
+            } else {
+                let option = `<option value="${data.clave}">${data.descrip}</option>`;
+                $(element).append(option);
+            }
+        } else {
+
+        }
+
+    }).fail(function () {
+        console.log("Algo salió mal");
+    });
 
     $("select[name=periodoSelect]").prop("disabled", false);
 
@@ -63,12 +89,6 @@ $("select[name=plantelSelect]").change(function () {
  */
 $("select[name=periodoSelect]").change(function () {
 
-    $('#nivelSelect').empty();
-    $("#nivelSelect").append(`<option value="" selected disabled>Selecciona el Nivel</option>`);
-    $('#carreraSelect').empty();
-    $("#carreraSelect").append(`<option value="" selected disabled>Selecciona Carrera</option>`);
-    $('#horarioSelect').empty();
-    $("#horarioSelect").append(`<option value="" selected disabled>Selecciona un horario</option>`);
     let nivel = $('select[name=nivelSelect]').val();
     let ruta = setUrlBase() + "getNiveles";
     let plantel = $('select[name=plantelSelect]').val();
@@ -84,6 +104,12 @@ $("select[name=periodoSelect]").change(function () {
         },
         url: setUrlBase() + "get/variables/preinscripcion",
     }).done(function (info) {
+        $('#nivelSelect').empty();
+        $("#nivelSelect").append(`<option value="" selected disabled>Selecciona el Nivel</option>`);
+        $('#carreraSelect').empty();
+        $("#carreraSelect").append(`<option value="" selected disabled>Selecciona Carrera</option>`);
+        $('#horarioSelect').empty();
+        $("#horarioSelect").append(`<option value="" selected disabled>Selecciona un horario</option>`);
         if (info.carrera_preinscripcion != null) {
             recalculoDeComboNivel(ruta, data, element, info)
         }
@@ -112,11 +138,6 @@ $("select[name=periodoSelect]").change(function () {
  */
 $("select[name=nivelSelect]").change(function () {
 
-    $('#carreraSelect').empty();
-    $("#carreraSelect").append(`<option value="" selected disabled>Selecciona una carrera</option>`);
-    $('#horarioSelect').empty();
-    $("#horarioSelect").append(`<option value="" selected disabled>Selecciona un horario</option>`);
-
     let plantel = $('select[name=plantelSelect]').val();
     let nivel = $('select[name=nivelSelect]').val();
     let periodo = $('select[name=periodoSelect]').val();
@@ -129,7 +150,37 @@ $("select[name=nivelSelect]").change(function () {
     };
     let element = '#carreraSelect';
 
-    postAjaxPeticionContact(ruta, data, element);
+    $.ajax({
+        method: "POST",
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        url: ruta,
+        data: data
+    }).done(function (data) {
+        $('#carreraSelect').empty();
+        $("#carreraSelect").append(`<option value="" selected disabled>Selecciona una carrera</option>`);
+        $('#horarioSelect').empty();
+        $("#horarioSelect").append(`<option value="" selected disabled>Selecciona un horario</option>`);
+        console.log(data);
+
+        if (data.error == undefined || data.error == null) {
+            if (data.clave == undefined || data.clave == null) {
+                $.each(data, function (index, value) {
+                    let option = `<option value="${value.clave}">${value.descrip}</option>`;
+                    $(element).append(option);
+                });
+            } else {
+                let option = `<option value="${data.clave}">${data.descrip}</option>`;
+                $(element).append(option);
+            }
+        } else {
+
+        }
+
+    }).fail(function () {
+        console.log("Algo salió mal");
+    });
 
     $("select[name=carreraSelect]").prop("disabled", false);
 
@@ -142,8 +193,6 @@ $("select[name=nivelSelect]").change(function () {
  */
 $("select[name=carreraSelect]").change(function () {
 
-    $('#horarioSelect').empty();
-    $("#horarioSelect").append(`<option value="" selected disabled>Selecciona un horario</option>`);
     let plantel = $('select[name=plantelSelect]').val();
     let nivel = $('select[name=nivelSelect]').val();
     let periodo = $('select[name=periodoSelect]').val();
@@ -158,7 +207,35 @@ $("select[name=carreraSelect]").change(function () {
     };
     let element = '#horarioSelect';
 
-    postAjaxPeticionContact(ruta, data, element);
+    $.ajax({
+        method: "POST",
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        url: ruta,
+        data: data
+    }).done(function (data) {
+        $('#horarioSelect').empty();
+        $("#horarioSelect").append(`<option value="" selected disabled>Selecciona un horario</option>`);
+        console.log(data);
+
+        if (data.error == undefined || data.error == null) {
+            if (data.clave == undefined || data.clave == null) {
+                $.each(data, function (index, value) {
+                    let option = `<option value="${value.clave}">${value.descrip}</option>`;
+                    $(element).append(option);
+                });
+            } else {
+                let option = `<option value="${data.clave}">${data.descrip}</option>`;
+                $(element).append(option);
+            }
+        } else {
+
+        }
+
+    }).fail(function () {
+        console.log("Algo salió mal");
+    });
 
     $("select[name=horarioSelect]").prop("disabled", false);
 
@@ -225,8 +302,6 @@ function postAjaxPeticionContact(ruta, data, element) {
         } else {
 
         }
-
-
 
     }).fail(function () {
         console.log("Algo salió mal");

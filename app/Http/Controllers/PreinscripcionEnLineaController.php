@@ -15,9 +15,9 @@ class PreinscripcionEnLineaController extends Controller
     {
 
         $utm_recurso = new UtmController();
-        $listUtm = $utm_recurso->iniciarUtmSource();
+        $dataUTM = $utm_recurso->iniciarUtmSource();
 
-        return view('preinscripcionEnLinea.inicio');
+        return view('preinscripcionEnLinea.inicio', ["dataUTM" => $dataUTM]);
     }
 
     /**
@@ -34,6 +34,12 @@ class PreinscripcionEnLineaController extends Controller
     {
         session(['email' => $request->correo]);
         session(['telefono' => $request->telefono]);
+
+        session(["preins_utm_source" => $request->utm_source]);
+        session(["preins_utm_medium" => $request->utm_medium]);
+        session(["preins_utm_campaign" => $request->utm_campaign]);
+        session(["preins_utm_term" => $request->utm_term]);
+        session(["preins_utm_content" => $request->utm_content]);
 
         $valores = array(
             "correoElectronico" => $request->correo,
@@ -105,6 +111,12 @@ class PreinscripcionEnLineaController extends Controller
     public function obtenerPromocion(Request $request)
     {
 
+        $source = session("preins_utm_source");
+        $medium = session("preins_utm_medium");
+        $campaign = session("preins_utm_campaign");
+        $term = session("preins_utm_term");
+        $content = session("preins_utm_content");
+
         $valores = array(
             "clavePlantel" => $request->plantelSelect,
             "clavePeriodo" => $request->periodoSelect,
@@ -134,7 +146,7 @@ class PreinscripcionEnLineaController extends Controller
         session(['CampaignMedium' => ""]);
         session(['CampaignTerm' => ""]);
         session(['CampaignContent' => ""]);
-        session(['WebSiteURL' =>  env('APP_URL')]);
+        session(['WebSiteURL' =>  env('APP_URL') . "App/Preinscripcion-online?utm_source=" . $source . "&utm_medium=" . $medium . "&utm_campaign=" . $campaign . "&utm_term=" . $term . "&utm_content=" . $content,]);
         session(['FechaDeNacimiento' => $request->diaNacimiento . '-' . $request->mesNacimiento . '-' . $request->yearNacimiento]);
         session(['precio' => $promo['Importe']]);
         session(['fechaLimite' => $promo['FechaFinalPromocion']]);
@@ -163,11 +175,11 @@ class PreinscripcionEnLineaController extends Controller
             "ClaveNivel" => session("ClaveNivel"),
             "ClaveCarrera" => session("ClaveCarrera"),
             "ClaveTurno" => session("ClaveTurno"),
-            "UtpSource" => session("utm_source"),
-            "DescripCampPublicidad" => session("utm_campaign"),
-            "CampaignMedium" => session("utm_medium"),
-            "CampaignTerm" => session("utm_term"),
-            "CampaignContent" => session("utm_content"),
+            "UtpSource" => session("preins_utm_source"),
+            "DescripCampPublicidad" => session("preins_utm_campaign"),
+            "CampaignMedium" => session("preins_utm_medium"),
+            "CampaignTerm" => session("preins_utm_term"),
+            "CampaignContent" => session("preins_utm_content"),
             "WebSiteURL" => session("WebSiteURL"),
             "FechaDeNacimiento" => session("FechaDeNacimiento"),
         );

@@ -89,7 +89,7 @@
 
             } else if (origen == "menu") { // el origen por dodne llego a la oferta academica fue el fue el menu
                 utm_campaign = "Home+header";
-                utm_content = `Oacademica+${coplementoParaUtm}+body+boton+preinscrip`;
+                utm_content = `Oacademica+${coplementoParaUtm}+boton+preinscrip`;
 
             } else { // el origen por dodne llego a la oferta academica conecta con ninguno de los origenes precargados
                 utm_campaign = "Oacademica+body";
