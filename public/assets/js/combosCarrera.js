@@ -284,10 +284,16 @@ $(document).ready(function () {
             $('#horarioSelect').empty();
             $("#horarioSelect").append(`<option value="" selected disabled>Selecciona un horario</option>`);
             console.log(data);
-            $.each(data, function (index, value) {
-                let option = `<option value="${value.clave}">${value.descrip}</option>`;
+            if (data.clave == undefined || data.clave == null) {
+                $.each(data, function (index, value) {
+                    option = `<option value="${value.clave}">${value.descrip}</option>`;
+                    $(element).append(option);
+                });
+            } else {
+                option = `<option value="${data.clave}">${data.descrip}</option>`;
                 $(element).append(option);
-            });
+            }
+
 
         }).fail(function () {
             console.log("Algo salió mal");
