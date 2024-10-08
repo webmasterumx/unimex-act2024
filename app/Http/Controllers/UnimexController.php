@@ -30,7 +30,7 @@ class UnimexController extends Controller
         $this->utm_recurso = new UtmController();
         $dataUTM = $this->utm_recurso->iniciarUtmSource();
         $urlVisitada = URL::full();
-        
+         
 
         $listaCarreras = CCarreras::all();
         $banners = Banner::where('ubicacion', 0)->orWhere('ubicacion', 1)->orderBy('orden', 'ASC')->get();

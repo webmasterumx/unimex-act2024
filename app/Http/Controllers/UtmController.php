@@ -75,7 +75,7 @@ class UtmController extends Controller
                 session(["utm_source" => $_REQUEST['utm_source']]);
             } else {
                 if (session()->has("utm_source") == true) {
-                    $dataUTM['utm_source'] = session("utm_source");
+                    //$dataUTM['utm_source'] = session("utm_source");
                 } else {
                     $dataUTM["utm_source"] = $_REQUEST['utm_source'];
                     session(["utm_source" => $_REQUEST['utm_source']]);
@@ -83,7 +83,8 @@ class UtmController extends Controller
             }
         } else { //? decision si la variable no se encuentra en la cadena
             if (session()->has("utm_source") == true) {
-                $dataUTM['utm_source'] = session("utm_source");
+                //$dataUTM['utm_source'] = session("utm_source");
+                $dataUTM['utm_source'] = null;
             } else {
                 $dataUTM["utm_source"] = null;
             }
@@ -96,7 +97,7 @@ class UtmController extends Controller
                 session(["utm_medium" => $_REQUEST['utm_medium']]);
             } else {
                 if (session()->has("utm_medium") == true) {
-                    $dataUTM['utm_medium'] = session("utm_medium");
+                    //$dataUTM['utm_medium'] = session("utm_medium");
                 } else {
                     $dataUTM["utm_medium"] = $_REQUEST['utm_medium'];
                     session(["utm_medium" => $_REQUEST['utm_medium']]);
@@ -104,7 +105,8 @@ class UtmController extends Controller
             }
         } else { //? decision si la variable no se encuentra en la cadena de la url
             if (session()->has("utm_medium") == true) {
-                $dataUTM['utm_medium'] = session("utm_medium");
+                //$dataUTM['utm_medium'] = session("utm_medium");
+                $dataUTM['utm_medium'] = null;
             } else {
                 $dataUTM["utm_medium"] = null;
             }
@@ -116,7 +118,7 @@ class UtmController extends Controller
                 session(["utm_campaign" => $_REQUEST['utm_campaign']]);
             } else {
                 if (session()->has("utm_campaign") == true) {
-                    $dataUTM['utm_campaign'] = session("utm_campaign");
+                    //$dataUTM['utm_campaign'] = session("utm_campaign");
                 } else {
                     $dataUTM["utm_campaign"] = $_REQUEST['utm_campaign'];
                     session(["utm_campaign" => $_REQUEST['utm_campaign']]);
@@ -124,7 +126,8 @@ class UtmController extends Controller
             }
         } else { //? decision si la variable no se encuentra en la cadena de la url
             if (session()->has("utm_campaign") == true) {
-                $dataUTM['utm_campaign'] = session("utm_campaign");
+                //$dataUTM['utm_campaign'] = session("utm_campaign");
+                $dataUTM['utm_campaign'] = null;
             } else {
                 $dataUTM["utm_campaign"] = null;
             }
@@ -136,7 +139,7 @@ class UtmController extends Controller
                 session(["utm_term" => $_REQUEST['utm_term']]);
             } else {
                 if (session()->has("utm_term") == true) {
-                    $dataUTM['utm_term'] = session("utm_term");
+                    //$dataUTM['utm_term'] = session("utm_term");
                 } else {
                     $dataUTM["utm_term"] = $_REQUEST['utm_term'];
                     session(["utm_term" => $_REQUEST['utm_term']]);
@@ -144,7 +147,8 @@ class UtmController extends Controller
             }
         } else { //? decision si la variable no se encuentra en la cadena de la url
             if (session()->has("utm_term") == true) {
-                $dataUTM['utm_term'] = session("utm_term");
+                //$dataUTM['utm_term'] = session("utm_term");
+                $dataUTM['utm_term'] = null;
             } else {
                 $dataUTM["utm_term"] = null;
             }
@@ -157,7 +161,7 @@ class UtmController extends Controller
                 session(["utm_content" => $_REQUEST['utm_content']]);
             } else {
                 if (session()->has("utm_content") == true) {
-                    $dataUTM['utm_content'] = session("utm_content");
+                    //$dataUTM['utm_content'] = session("utm_content");
                 } else {
                     $dataUTM["utm_content"] = $_REQUEST['utm_content'];
                     session(["utm_content" => $_REQUEST['utm_content']]);
@@ -165,7 +169,8 @@ class UtmController extends Controller
             }
         } else { //? decision si la variable no se encuentra en la cadena de la url
             if (session()->has("utm_content") == true) {
-                $dataUTM['utm_content'] = session("utm_content");
+                //$dataUTM['utm_content'] = session("utm_content");
+                $dataUTM['utm_content'] = null;
             } else {
                 $dataUTM["utm_content"] = null;
             }
@@ -177,7 +182,7 @@ class UtmController extends Controller
                 session(["gad_source" => $_REQUEST['gad_source']]);
             } else {
                 if (session()->has("gad_source") == true) {
-                    $dataUTM['gad_source'] = session("gad_source");
+                    //$dataUTM['gad_source'] = session("gad_source");
                 } else {
                     $dataUTM["gad_source"] = $_REQUEST['gad_source'];
                     session(["gad_source" => $_REQUEST['gad_source']]);
@@ -186,7 +191,8 @@ class UtmController extends Controller
         } else { //? decision si la variable no se encuentra en la cadena de la url
 
             if (session()->has("gad_source") == true) {
-                $dataUTM['gad_source'] = session("gad_source");
+                //$dataUTM['gad_source'] = session("gad_source");
+                $dataUTM['gad_source'] = null;
             } else {
                 $dataUTM["gad_source"] = null;
             }

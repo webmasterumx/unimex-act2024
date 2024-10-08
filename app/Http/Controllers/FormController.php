@@ -138,7 +138,7 @@ class FormController extends Controller
                 $content = "Botón informes";
             } else {
                 $source = "Fuente origen";
-                $campaign = " Fuente origen";
+                $campaign = "Oacademica body";
                 $content = "Form " . $abreviatura . " Informes";
             }
 
