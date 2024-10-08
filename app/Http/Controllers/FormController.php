@@ -105,6 +105,7 @@ class FormController extends Controller
 
         $origen = $request->origen;
         $abreviatura = $request->abreviatura;
+        $abreviaturaFormateada = str_replace("+", " ", $abreviatura);
         $utmMedium = $request->utm_medium;
         $urlEnvioForm = $request->urlVisitada;
 
@@ -121,12 +122,12 @@ class FormController extends Controller
             if ($origen == "slider") { //! si osi vienen desde una oferta academica
                 $source = "Website Metro";
                 $campaign = "Home body";
-                $content = "Slider" . $abreviatura . " Oacademica form";
+                $content = "Slider" . $abreviaturaFormateada . " Oacademica form";
 
             } else if ($origen == "menu") { //! si osi vienen desde una oferta academica
                 $source = "Website Metro";
                 $campaign = "Home header";
-                $content = "Oacademica " . $abreviatura . " body form";
+                $content = "Oacademica " . $abreviaturaFormateada . " body form";
 
             } else if ($origen == "Home") { // viene desde la pagina home 
                 $source = "Website Metro";
@@ -139,7 +140,7 @@ class FormController extends Controller
             } else {
                 $source = "Fuente origen";
                 $campaign = "Oacademica body";
-                $content = "Form " . $abreviatura . " Informes";
+                $content = "Form " . $abreviaturaFormateada . " Informes";
             }
 
             $medium = "Organico";
