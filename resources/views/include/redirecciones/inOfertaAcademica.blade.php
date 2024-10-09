@@ -38,7 +38,7 @@
         } else if (utmMediumFor == null || utmMediumFor == "") {
             console.log("entro directamente a la carrera sin pasar por web site");
 
-            utm_source = "Fuente+origen";
+            utm_source = "Website+Metro";
             utm_medium = "Organico";
             utm_term = "Calculadora";
             utm_campaign = "Oacademica+body";
@@ -109,14 +109,14 @@
                 utm_content = `Oacademica+${coplementoParaUtm}+boton+preinscrip`;
 
             } else { // el origen por dodne llego a la oferta academica conecta con ninguno de los origenes precargados
-                utm_source = "Fuente+origen";
+                utm_source = "Website+Metro";
                 utm_campaign = "Oacademica+body";
                 utm_content = `${coplementoParaUtm}+boton+preinscrip`;
 
             }
 
         } else if (utmMediumFor == null || utmMediumFor == "") {
-            utm_source = "Fuente+origen";
+            utm_source = "Website+Metro";
             utm_medium = "Organico";
             utm_term = "Preinscrip";
             utm_campaign = "Oacademica+body";
