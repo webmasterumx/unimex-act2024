@@ -243,7 +243,7 @@ class UtmController extends Controller
         }
     }
 
-    public function comprovacionOrigen()
+    /*  public function comprovacionOrigen()
     {
         //var_dump(session('utm_medium'));
         //var_dump($_REQUEST['utm_medium']);
@@ -290,5 +290,19 @@ class UtmController extends Controller
             //var_dump("la utm_medium no existe");
             return 0;
         }
+    } */
+
+    public function comprovacionOrigen()
+    {
+        if (isset($_REQUEST['origen'])) {
+            if (!empty($_REQUEST['origen'])) {
+                $origenObtenido = $_REQUEST['origen'];
+            } else {
+                $origenObtenido = null;
+            }
+        } else {
+            $origenObtenido = null;
+        }
+        return $origenObtenido;
     }
 }
