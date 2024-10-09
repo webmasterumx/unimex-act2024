@@ -7,7 +7,11 @@
         utm_term = "{{ session('utm_term') }}";
         utm_content = "{{ session('utm_content') }}";
 
-        if (utm_medium != null || utm_medium == "") {
+        console.log(utm_medium);
+        
+
+
+        if (utm_medium == null || utm_medium == "") {
             utm_source = "Website Metro";
             utm_medium = "Organico";
             utm_campaign = "Home+header";
@@ -19,9 +23,9 @@
         let rutaRedireccionCalculadora = setUrlBase() +
             `calcula-tu-cuota?utm_source=${utm_source}&utm_medium=${utm_medium}&utm_campaign=${utm_campaign}&utm_term=${utm_term}&utm_content=${utm_content}`;
 
-        console.log(utm_source);
+        console.log(rutaRedireccionCalculadora);
 
-        window.open(rutaRedireccionCalculadora, '_blank');
+        window.open(rutaRedireccionCalculadora, '_blank'); 
     }
 
     function preinscripcionHeader() {
@@ -32,7 +36,7 @@
         utm_term = "{{ session('utm_term') }}";
         utm_content = "{{ session('utm_content') }}";
 
-        if (utm_medium != null || utm_medium == "") {
+        if (utm_medium == null || utm_medium == "") {
             utm_source = "Website Metro";
             utm_medium = "Organico";
             utm_campaign = "Home+header";

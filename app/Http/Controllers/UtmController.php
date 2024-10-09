@@ -85,8 +85,10 @@ class UtmController extends Controller
             if (session()->has("utm_source") == true) {
                 //$dataUTM['utm_source'] = session("utm_source");
                 $dataUTM['utm_source'] = null;
+                session(["utm_source" => null]);
             } else {
                 $dataUTM["utm_source"] = null;
+                session(["utm_source" => null]);
             }
         }
 
@@ -107,8 +109,10 @@ class UtmController extends Controller
             if (session()->has("utm_medium") == true) {
                 //$dataUTM['utm_medium'] = session("utm_medium");
                 $dataUTM['utm_medium'] = null;
+                session(["utm_medium" => null]);
             } else {
                 $dataUTM["utm_medium"] = null;
+                session(["utm_medium" => null]);
             }
         }
 
@@ -128,8 +132,10 @@ class UtmController extends Controller
             if (session()->has("utm_campaign") == true) {
                 //$dataUTM['utm_campaign'] = session("utm_campaign");
                 $dataUTM['utm_campaign'] = null;
+                session(["utm_campaign" => null]);
             } else {
                 $dataUTM["utm_campaign"] = null;
+                session(["utm_campaign" => null]);
             }
         }
 
@@ -149,8 +155,10 @@ class UtmController extends Controller
             if (session()->has("utm_term") == true) {
                 //$dataUTM['utm_term'] = session("utm_term");
                 $dataUTM['utm_term'] = null;
+                session(["utm_term" => null]);
             } else {
                 $dataUTM["utm_term"] = null;
+                session(["utm_term" => null]);
             }
         }
 
@@ -171,8 +179,10 @@ class UtmController extends Controller
             if (session()->has("utm_content") == true) {
                 //$dataUTM['utm_content'] = session("utm_content");
                 $dataUTM['utm_content'] = null;
+                session(["utm_content" => null]);
             } else {
                 $dataUTM["utm_content"] = null;
+                session(["utm_content" => null]);
             }
         }
 
@@ -193,8 +203,10 @@ class UtmController extends Controller
             if (session()->has("gad_source") == true) {
                 //$dataUTM['gad_source'] = session("gad_source");
                 $dataUTM['gad_source'] = null;
+                session(["gad_source" => null]);
             } else {
                 $dataUTM["gad_source"] = null;
+                session(["gad_source" => null]);
             }
         }
 
@@ -233,16 +245,50 @@ class UtmController extends Controller
 
     public function comprovacionOrigen()
     {
-        if (isset($_REQUEST['origen'])) {
-            if (!empty($_REQUEST['origen'])) {
-                $origenObtenido = $_REQUEST['origen'];
+        //var_dump(session('utm_medium'));
+        //var_dump($_REQUEST['utm_medium']);
+
+        if (isset($_REQUEST['utm_medium'])) {
+            if (!empty($_REQUEST['utm_medium'])) {
+
+                //var_dump(session('utm_medium'));
+                //var_dump($_REQUEST['utm_medium']);
+
+                if (session()->has("utm_medium") == true) {
+                    $utm_sourceRequestFormat1 = strtolower($_REQUEST['utm_medium']);
+                    $utm_sourceRequestFormat2 = str_replace(" ", "", $utm_sourceRequestFormat1);
+
+                    $utm_sourceSessionFormat1 = strtolower(session('utm_medium'));
+                    $utm_sourceSessionFormat2 = str_replace(" ", "", $utm_sourceSessionFormat1);
+
+                    if ($utm_sourceRequestFormat2 == $utm_sourceSessionFormat2) {
+                        //var_dump("la utm_medium de request es igual a la que se tiene guardada en session");
+                        if ($utm_sourceRequestFormat2 == "organico") {
+                            // todo se mantiene organico
+                            return 1;
+                        } else {
+                            // todo son utm de campaña
+                            return 2;
+                        }
+                    } else {
+                        //var_dump("la utm_medium de request es diferente a la que se tiene guardada en session");
+                        if ($utm_sourceRequestFormat2 == "organico") {
+                            // todo se mantiene organico
+                            return 1;
+                        } else {
+                            // todo son utm de campaña
+                            return 2;
+                        }
+                    }
+                } else {
+                    //var_dump("no existe una utm_medium en session guardada");
+                }
             } else {
-                $origenObtenido = null;
+                //var_dump("la utm_medium existe pero esta vacia");
             }
         } else {
-            $origenObtenido = null;
+            //var_dump("la utm_medium no existe");
+            return 0;
         }
-
-        return $origenObtenido;
     }
 }
