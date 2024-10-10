@@ -7,6 +7,8 @@ $(document).ready(function () {
     $("select[name=carreraSelect]").prop("disabled", true);
     $("select[name=horarioSelect]").prop("disabled", true);
 
+    setVariablesPrecargadas();
+
     /*
      * obtiene los planteles para el formulario de contacto.
      * Paginas :
@@ -53,9 +55,9 @@ $("select[name=plantelSelect]").change(function () {
         data: data
     }).done(function (data) {
         $('#periodoSelect').empty();
-        $("#periodoSelect").append(`<option value="" selected disabled>¿Cuándo deseas iniciar? </option>`);
+        $("#periodoSelect").append(`<option value="" selected disabled>Seleccionar periodo </option>`);
         $('#horarioSelect').empty();
-        $("#horarioSelect").append(`<option value="" selected disabled>Selecciona un horario</option>`);
+        $("#horarioSelect").append(`<option value="" selected disabled>Seleccionar horario</option>`);
         console.log(data);
 
         if (data.error == undefined || data.error == null) {
@@ -89,6 +91,9 @@ $("select[name=plantelSelect]").change(function () {
  */
 $("select[name=periodoSelect]").change(function () {
 
+    $('#horarioSelect').empty();
+    $("#horarioSelect").append(`<option value="" selected disabled>Seleccionar horario</option>`);
+
     let nivel = $('select[name=nivelSelect]').val();
     let ruta = setUrlBase() + "getNiveles";
     let plantel = $('select[name=plantelSelect]').val();
@@ -120,7 +125,7 @@ $("select[name=periodoSelect]").change(function () {
             }).done(function (data) {
                 console.log(data);
                 $('#nivelSelect').empty();
-                $("#nivelSelect").append(`<option value="" selected>Seleciona un Nivel</option>`);
+                $("#nivelSelect").append(`<option value="" selected>Selecionar nivel</option>`);
                 if (data.error == undefined || data.error == null) {
                     if (data.clave == undefined || data.clave == null) {
                         $.each(data, function (index, value) {
@@ -181,9 +186,9 @@ $("select[name=nivelSelect]").change(function () {
         data: data
     }).done(function (data) {
         $('#carreraSelect').empty();
-        $("#carreraSelect").append(`<option value="" selected disabled>Selecciona una carrera</option>`);
+        $("#carreraSelect").append(`<option value="" selected disabled>Seleccionar carrera</option>`);
         $('#horarioSelect').empty();
-        $("#horarioSelect").append(`<option value="" selected disabled>Selecciona un horario</option>`);
+        $("#horarioSelect").append(`<option value="" selected disabled>Seleccionar horario</option>`);
         console.log(data);
 
         if (data.error == undefined || data.error == null) {
@@ -238,7 +243,7 @@ $("select[name=carreraSelect]").change(function () {
         data: data
     }).done(function (data) {
         $('#horarioSelect').empty();
-        $("#horarioSelect").append(`<option value="" selected disabled>Selecciona un horario</option>`);
+        $("#horarioSelect").append(`<option value="" selected disabled>Seleccionar horario</option>`);
         console.log(data);
 
         if (data.error == undefined || data.error == null) {

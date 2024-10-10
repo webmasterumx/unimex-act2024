@@ -78,7 +78,7 @@ $("select[name=selectPeriodo]").change(function () {
                 }).done(function (info) {
 
                     $("#selectNivel").empty();
-                    $("#selectNivel").append(`<option>Selecciona el nivel</option>`);
+                    $("#selectNivel").append(`<option>Seleccionar nivel</option>`);
                     console.log(info);
                     $.each(info, function (index, value) {
                         console.log(value.descrip);

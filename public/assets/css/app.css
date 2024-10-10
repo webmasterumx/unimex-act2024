@@ -491,3 +491,20 @@ body {
     color: #004b93 !important;
 }
 
+/* #plantelSelect,
+#nivelSelect,
+#periodoSelect,
+#carreraSelect,
+#horarioSelect
+{
+    box-shadow: none;
+}
+
+#plantelSelect:focus,
+#nivelSelect:focus,
+#periodoSelect:focus,
+#carreraSelect:focus,
+#horarioSelect:focus{
+    border: 1px solid #003e7a;
+}
+ */

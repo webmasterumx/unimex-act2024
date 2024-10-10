@@ -166,7 +166,7 @@
                                     style="color: red !important;">*</span> Plantel:</label>
                             <select id="plantelSelect" name="plantelSelect" class="form-select"
                                 aria-label="Default select example">
-                                <option value="" selected>Seleccionar Plantel</option>
+                                <option value="" selected disabled>Seleccionar Plantel</option>
                             </select>
                         </div>
                         <div class="col-12 col-lg-2">
@@ -174,7 +174,7 @@
                                     style="color: red !important;">*</span> Ciclo Escolar:</label>
                             <select id="periodoSelect" name="periodoSelect" class="form-select"
                                 aria-label="Default select example">
-                                <option value="" selected>Seleccionar Ciclo</option>
+                                <option value="" selected>Seleccionar un periodo</option>
                             </select>
                         </div>
                         <div class="col-12 col-lg-2">
@@ -182,7 +182,7 @@
                                     style="color: red !important;">*</span> Nivel:</label>
                             <select id="nivelSelect" name="nivelSelect" class="form-select"
                                 aria-label="Default select example">
-                                <option value="" selected>Seleccionar Nivel</option>
+                                <option value="" selected>Seleccionar un nivel</option>
                             </select>
                         </div>
                         <div class="col-12 col-lg-3">

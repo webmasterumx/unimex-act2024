@@ -95,22 +95,16 @@
                     <label class="border p-1 w-100 fw-light mt-2 mb-0" style="font-size: 15px !important; color: black;"
                         for="plantelSelect">
                         <i class="bi bi-bookmark-fill color-unimex"></i> QUIERO ESTUDIAR EN:</label>
-                    <div class="w-100 d-flex">
-                        <div class="w-50">
+                    <div class="row">
+                        <div class="col-12 col-md-6 col-lg-6 pe-0">
                             <select class="form-select rounded-0" id="plantelSelect" name="plantelSelect"
-                                tabindex="1">
-                                <option value="" selected disabled> - Selecciona un plantel - </option>
+                                tabindex="0">
+                                <option value="" selected disabled> - Seleccionar plantel - </option>
 
-                            </select>
-                            <select class="form-select rounded-0" id="periodoSelect" name="periodoSelect"
-                                tabindex="3">
-                                <option value="" selected>- Selecciona un periodo -</option>
                             </select>
                         </div>
-                        <div class="w-50">
-
-                            <select class="form-select rounded-0" id="nivelSelect" name="nivelSelect"
-                                tabindex="2">
+                        <div class="col-12 col-md-6 col-lg-6 ps-0">
+                            <select class="form-select rounded-0" id="nivelSelect" name="nivelSelect" tabindex="">
                                 @isset($licenciatura)
                                     <option value="Licenciatura" selected>Licenciatura</option>
                                 @endisset
@@ -121,8 +115,17 @@
                                     <option value="Especialidad" selected>Especialidad</option>
                                 @endisset
                             </select>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-6 pe-0">
+                            <select class="form-select rounded-0" id="periodoSelect" name="periodoSelect"
+                                tabindex="">
+                                <option value="" selected>- Seleccionar periodo -</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-6 ps-0">
+
                             <select class="form-select rounded-0" id="carreraSelect" name="carreraSelect"
-                                tabindex="4">
+                                tabindex="">
                                 @isset($licenciatura)
                                     <option value="{{ $licenciatura->subtitulo }}"> {{ $licenciatura->subtitulo }}
                                     </option>
@@ -139,12 +142,16 @@
 
                             </select>
                         </div>
+                        <div class="col-12 co-md-12">
+                            <select class="form-select rounded-0" id="horarioSelect" name="horarioSelect"
+                                tabindex="">
+                                <option value="" selected> - Seleccionar horario - </option>
+                            </select>
+                        </div>
                     </div>
-                    <div class="w-100">
-                        <select class="form-select rounded-0" id="horarioSelect" name="horarioSelect"
-                            tabindex="5">
-                            <option value="" selected> - Selecciona un horario - </option>
-                        </select>
+                    <div class="row d-none" id="contenedorAlerta">
+                        <div id="alertasErrorCombos" class="col-12">
+                        </div>
                     </div>
                     <div class="form-check mt-2">
                         <input class="form-check-input" type="checkbox" id="aceptar_contacto"
@@ -197,7 +204,7 @@
                     @endif
                     <input type="hidden" name="origen" id="origen" value="{{ $origen }}">
                     <input type="hidden" name="nivel" id="nivel" value="{{ $nivel }}">
-                    <input type="hidden" name="urlVisitada" id="urlVisitada" value="{{$urlVisitada}}">
+                    <input type="hidden" name="urlVisitada" id="urlVisitada" value="{{ $urlVisitada }}">
                     <input type="hidden" name="abreviatura" id="abreviatura" value="{{ $abreviatura }}">
                     <input type="hidden" name="utm_source" id="utm_source"
                         @if ($dataUTM != null) value="{{ $dataUTM['utm_source'] }}" @else value="0" @endif>

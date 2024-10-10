@@ -125,6 +125,10 @@
             if (data.nivel_preinscripcion != null) {
                 console.log('hay variable de session para este modulo');
             }
+            else{
+                console.log("no hay variables precargadas");
+                
+            }
 
         }).fail(function() {
             console.log("Algo salió mal");

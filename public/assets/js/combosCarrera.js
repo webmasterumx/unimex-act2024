@@ -65,11 +65,11 @@ $(document).ready(function () {
         }).done(function (data) {
 
             $('#nivelSelect').empty();
-            $("#nivelSelect").append(`<option value="" selected disabled>Nivel</option>`);
+            $("#nivelSelect").append(`<option value="" selected disabled>Seleccionar nivel</option>`);
             $('#periodoSelect').empty();
-            $("#periodoSelect").append(`<option value="" selected disabled>¿Cuándo deseas iniciar?  </option>`);
+            $("#periodoSelect").append(`<option value="" selected disabled>Seleccionar periodo</option>`);
             $('#horarioSelect').empty();
-            $("#horarioSelect").append(`<option value="" selected disabled>Selecciona un horario</option>`);
+            $("#horarioSelect").append(`<option value="" selected disabled>Seleccionar horario</option>`);
             $("select[name=horarioSelect]").prop("disabled", true);
             $("select[name=carreraSelect]").prop("disabled", true);
 
@@ -155,9 +155,9 @@ $(document).ready(function () {
         }).done(function (data) {
 
             $('#periodoSelect').empty();
-            $("#periodoSelect").append(`<option value="" selected disabled>¿Cuándo deseas iniciar?</option>`);
+            $("#periodoSelect").append(`<option value="" selected disabled>Seleccionar periodo</option>`);
             $('#horarioSelect').empty();
-            $("#horarioSelect").append(`<option value="" selected disabled>Selecciona un horario</option>`);
+            $("#horarioSelect").append(`<option value="" selected disabled>Seleccionar horario</option>`);
 
             console.log(data);
             if (data.clave == undefined || data.clave == null) {
@@ -185,7 +185,7 @@ $(document).ready(function () {
     $("select[name=periodoSelect]").change(function () {
         let carreraInicialSelect = sessionStorage.getItem("carreraPrecargada");
         $('#horarioSelect').empty();
-        $("#horarioSelect").append(`<option value="" selected disabled>Horario</option>`);
+        $("#horarioSelect").append(`<option value="" selected disabled>Seleccionar horario</option>`);
 
         let plantel = $('select[name=plantelSelect]').val();
         let nivel = $('select[name=nivelSelect]').val();
@@ -212,7 +212,7 @@ $(document).ready(function () {
             console.log(data);
 
             $('#carreraSelect').empty();
-            $("#carreraSelect").append(`<option value="" selected disabled>Selecciona una carrera</option>`);
+            $("#carreraSelect").append(`<option value="" selected disabled>Seleccionar carrera</option>`);
 
             $.each(data, function (index, value) {
 
@@ -282,7 +282,7 @@ $(document).ready(function () {
             data: data
         }).done(function (data) {
             $('#horarioSelect').empty();
-            $("#horarioSelect").append(`<option value="" selected disabled>Selecciona un horario</option>`);
+            $("#horarioSelect").append(`<option value="" selected disabled>Seleccionar horario</option>`);
             console.log(data);
             if (data.clave == undefined || data.clave == null) {
                 $.each(data, function (index, value) {
