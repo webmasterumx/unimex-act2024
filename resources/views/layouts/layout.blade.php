@@ -282,7 +282,7 @@
             utm_term = "{{ session('utm_term') }}";
             utm_content = "{{ session('utm_content') }}";
 
-            if (utm_medium != null || utm_medium == "" || utm_medium == "organico" || utm_medium == "Organico" || utm_medium == "ORGANICO") {
+            if (utm_medium == null || utm_medium == "" || utm_medium == "organico" || utm_medium == "Organico" || utm_medium == "ORGANICO") {
                 utm_source = "Website+Metro";
                 utm_medium = "Organico";
                 utm_campaign = "Home+header";

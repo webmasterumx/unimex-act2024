@@ -131,6 +131,9 @@ function envioFormularioCalculadora(form) {
     }
 }
 
+//https://unimex.edu.mx/calcula-tu-cuota/?utm_source=Reforma+Especial+Resultados+UNAM&utm_medium=ReformaUNAM&utm_campaign=2024+1&utm_term=universidad+mexicana&utm_content=metro
+
+
 function selectHorario(turno, beca, element) {
 
     $("#redireccionPEL").prop("disabled", false);
