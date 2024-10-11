@@ -127,10 +127,10 @@ function setVariablesPrecargadas() {
         }
         else {
             $("#nivelSelect").empty();
-            $('#nivelSelect').append(`<option value="" selected disabled>Selecciona un nivel</option>`);
+            $('#nivelSelect').append(`<option value="" selected disabled>Seleccionar nivel</option>`);
 
             $("#carreraSelect").empty();
-            $('#carreraSelect').append(`<option value="" selected disabled>Selecciona una carrera</option>`);
+            $('#carreraSelect').append(`<option value="" selected disabled>Seleccionar carrera</option>`);
         }
 
     }).fail(function () {
@@ -157,7 +157,7 @@ function recalculoDeComboNivel(ruta, data, element, info) {
     }).done(function (data) {
         console.log(data);
         $('#nivelSelect').empty();
-        $("#nivelSelect").append(`<option value="" disabled>Selecciona un nivel</option>`);
+        $("#nivelSelect").append(`<option value="" disabled>Seleccionar nivel</option>`);
         $('#carreraSelect').empty();
         $("#carreraSelect").append(`<option value="" selected disabled>${info.carrera_preinscripcion.replaceAll("_", " ")}</option>`);
         $.each(data, function (index, value) {
@@ -193,7 +193,7 @@ function recalculoDeComboNivel(ruta, data, element, info) {
         }).done(function (result) {
 
             $('#carreraSelect').empty();
-            $("#carreraSelect").append(`<option value="" selected disabled>Selecciona una carrera</option>`);
+            $("#carreraSelect").append(`<option value="" selected disabled>Seleccionar carrera</option>`);
 
             console.log(result);
 
