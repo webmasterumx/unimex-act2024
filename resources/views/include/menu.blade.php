@@ -41,7 +41,6 @@
             $utmOrganico = true;
         } else {
             $utmOrganico = false;
-
         }
 
         $complemento =
@@ -92,6 +91,13 @@
         <div class="menu" id="navigation">
             <a class="btn-close-nav" onclick="nav.hide()"></a>
             <ul>
+
+                <!-- parte del menu para celulares y tabletas, menu lateral -->
+                <li class="d-block d-md-block d-lg-block text-center">
+                    <a class="mt-1" style="display: inline-block" onclick="subnav.show('subnavAbout')"
+                        title="">Acerca de unimex</a>
+                </li>
+
                 <li class="text-center">
                     <a class="mt-1" style="display: inline-block" onclick="subnav.show('subnavAcademicOffer')"
                         title="Conoce nuestras Licenciaturas, Maestrías y Posgrados">Oferta Académica</a>
@@ -117,17 +123,33 @@
                         $abreviatura = '';
                     @endphp
                 @endif
-                <li>
+
+                <li class="d-none d-md-none d-lg-block">
                     <button onclick="calculadoraHeader('{{ $abreviatura }}')" id="linkCalculaTuBeca"
                         class="btn btn-outline-warning text-uppercase" rel="noopener"
                         title="Calcula tu Cuota">Calculadora de becas</button>
                 </li>
-                <li>
+                <li class="d-none d-md-none d-lg-block">
                     <button id="linkPreinscripcionEnLinea" class="btn btn-outline-warning text-uppercase"
                         onclick="preinscripcionHeader('{{ $abreviatura }}')" rel="noopener"
                         title="Preinscripción
                         en línea">Preinscripción
                         en línea</button>
+                </li>
+                <li class="d-block d-md-block d-lg-none text-center">
+                    <a class="mt-1" style="display: inline-block" href="javascript:redirigirContactoHeader()"
+                        title="">Contacto</a>
+                </li>
+
+                <li class="d-block d-md-block d-lg-none text-center">
+                    <a class="mt-1" style="display: inline-block"
+                        href="javascript:calculadoraHeader('{{ $abreviatura }}')" title="">Calculadora de
+                        becas</a>
+                </li>
+                <li class="d-block d-md-block d-lg-none text-center">
+                    <a class="mt-1" style="display: inline-block"
+                        href="javascript:preinscripcionHeader('{{ $abreviatura }}')" title="">Preinscripción
+                        en línea </a>
                 </li>
             </ul>
         </div>
@@ -142,7 +164,8 @@
                 @foreach ($data['acercade'] as $acerca)
                     <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 left-gray-border">
                         <h5 class="hide">
-                            <a href="{{ env('APP_URL') . 'acerca-de-unimex/' . $acerca->slug . $complemento }}"> {{ $acerca->nombre }} </a>
+                            <a href="{{ env('APP_URL') . 'acerca-de-unimex/' . $acerca->slug . $complemento }}">
+                                {{ $acerca->nombre }} </a>
                         </h5>
                         <div class="card">
                             <a href="{{ env('APP_URL') . 'acerca-de-unimex/' . $acerca->slug . $complemento }}">
@@ -156,7 +179,8 @@
                                 <p class="card-text">
                                     {!! $acerca->descripcion !!}
                                 </p>
-                                <a href="{{ env('APP_URL') . 'acerca-de-unimex/' . $acerca->slug . $complemento }}" class="btn btn-primary btn-arrow-go">
+                                <a href="{{ env('APP_URL') . 'acerca-de-unimex/' . $acerca->slug . $complemento }}"
+                                    class="btn btn-primary btn-arrow-go">
                                     {{ $acerca->nombre }} </a>
                             </div>
                         </div>
