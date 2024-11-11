@@ -28,7 +28,7 @@ class AppServiceProvider extends ServiceProvider
         $dataUtm = $utmRecurso->iniciarUtmSource();
         $planteles = Plantel::all();
         $acercade = Acercade::all();
-        $menus = Menu::all();
+        $menus = Menu::all()->sortBy('nombre');
 
         $data = array(
             "planteles" => $planteles,
