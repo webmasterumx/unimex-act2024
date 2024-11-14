@@ -39,9 +39,9 @@
                 </b>
                 <div class="table-responsive">
                     <table class="table">
-                        <tbody>
+                        <thead>
                             <tr>
-                                <th style="width: 40%; background: #004b93; color: #ffff;">
+                                <th class="" style="background: #004b93; color: #ffff;">
                                     Programas que
                                     aplican para Equivalencia en Maestría
                                 </th>
@@ -55,42 +55,43 @@
                                     Izcalli
                                 </th>
                             </tr>
+                        </thead>
+                        <tbody>
                             <tr>
-                                <td width="10%"></td>
-                                <td width="10%">Especialidad</td>
-                                <td width="10%">Maestría</td>
-                                <td width="10%">Especialidad</td>
-                                <td width="10%">Maestría</td>
-                                <td width="10%">Especialidad</td>
-                                <td width="10%">Maestría</td>
+                                <td></td>
+                                <td>Especialidad</td>
+                                <td>Maestría</td>
+                                <td>Especialidad</td>
+                                <td>Maestría</td>
+                                <td>Especialidad</td>
+                                <td>Maestría</td>
                             </tr>
                             <tr>
                                 <td>
                                     Administración
                                 </td>
                                 <td class="text-center">
-                                    <img src="{{ asset('assets/img/extras/unchecked.png') }}" alt=""
-                                        srcset="{{ asset('assets/img/extras/unchecked.png') }}">
+
                                 </td>
                                 <td class="text-center">
-                                    <img src="{{ asset('assets/img/extras/unchecked.png') }}" alt=""
-                                        srcset="{{ asset('assets/img/extras/unchecked.png') }}">
+
+
                                 </td>
                                 <td class="text-center">
-                                    <img src="{{ asset('assets/img/extras/unchecked.png') }}" alt=""
-                                        srcset="{{ asset('assets/img/extras/unchecked.png') }}">
+
+
                                 </td>
                                 <td class="text-center">
-                                    <img src="{{ asset('assets/img/extras/unchecked.png') }}" alt=""
-                                        srcset="{{ asset('assets/img/extras/unchecked.png') }}">
+
+
                                 </td>
                                 <td class="text-center">
-                                    <img src="{{ asset('assets/img/extras/unchecked.png') }}" alt=""
-                                        srcset="{{ asset('assets/img/extras/unchecked.png') }}">
+
+
                                 </td>
                                 <td class="text-center">
-                                    <img src="{{ asset('assets/img/extras/unchecked.png') }}" alt=""
-                                        srcset="{{ asset('assets/img/extras/unchecked.png') }}">
+
+
                                 </td>
                             </tr>
                             <tr>
@@ -98,28 +99,26 @@
                                     Comunicación Visual
                                 </td>
                                 <td class="text-center">
-                                    <img src="{{ asset('assets/img/extras/unchecked.png') }}" alt=""
-                                        srcset="{{ asset('assets/img/extras/unchecked.png') }}">
+
+
                                 </td>
                                 <td class="text-center">
-                                    <img src="{{ asset('assets/img/extras/unchecked.png') }}" alt=""
-                                        srcset="{{ asset('assets/img/extras/unchecked.png') }}">
+
+
                                 </td>
                                 <td class="text-center">
-                                    <img src="{{ asset('assets/img/extras/unchecked.png') }}" alt=""
-                                        srcset="{{ asset('assets/img/extras/unchecked.png') }}">
+
+
                                 </td>
                                 <td class="text-center">
-                                    <img src="{{ asset('assets/img/extras/unchecked.png') }}" alt=""
-                                        srcset="{{ asset('assets/img/extras/unchecked.png') }}">
+
+
                                 </td>
                                 <td class="text-center">
-                                    <img src="{{ asset('assets/img/extras/unchecked.png') }}" alt=""
-                                        srcset="{{ asset('assets/img/extras/checked.png') }}">
+                                    <i class="bi bi-check-lg"></i>
                                 </td>
                                 <td class="text-center">
-                                    <img src="{{ asset('assets/img/extras/unchecked.png') }}" alt=""
-                                        srcset="{{ asset('assets/img/extras/checked.png') }}">
+                                    <i class="bi bi-check-lg"></i>
                                 </td>
                             </tr>
                             <tr>
@@ -127,28 +126,28 @@
                                     Derecho Penal
                                 </td>
                                 <td class="text-center">
-                                    <img src="{{ asset('assets/img/extras/unchecked.png') }}" alt=""
-                                        srcset="{{ asset('assets/img/extras/unchecked.png') }}">
+
+
                                 </td>
                                 <td class="text-center">
-                                    <img src="{{ asset('assets/img/extras/unchecked.png') }}" alt=""
-                                        srcset="{{ asset('assets/img/extras/unchecked.png') }}">
+
+
                                 </td>
                                 <td class="text-center">
-                                    <img src="{{ asset('assets/img/extras/unchecked.png') }}" alt=""
-                                        srcset="{{ asset('assets/img/extras/unchecked.png') }}">
+
+
                                 </td>
                                 <td class="text-center">
-                                    <img src="{{ asset('assets/img/extras/unchecked.png') }}" alt=""
-                                        srcset="{{ asset('assets/img/extras/unchecked.png') }}">
+
+
                                 </td>
                                 <td class="text-center">
-                                    <img src="{{ asset('assets/img/extras/unchecked.png') }}" alt=""
-                                        srcset="{{ asset('assets/img/extras/unchecked.png') }}">
+
+
                                 </td>
                                 <td class="text-center">
-                                    <img src="{{ asset('assets/img/extras/unchecked.png') }}" alt=""
-                                        srcset="{{ asset('assets/img/extras/unchecked.png') }}">
+
+
                                 </td>
                             </tr>
                             <tr>
@@ -156,28 +155,28 @@
                                     Educación
                                 </td>
                                 <td class="text-center">
-                                    <img src="{{ asset('assets/img/extras/unchecked.png') }}" alt=""
-                                        srcset="{{ asset('assets/img/extras/unchecked.png') }}">
+
+
                                 </td>
                                 <td class="text-center">
-                                    <img src="{{ asset('assets/img/extras/unchecked.png') }}" alt=""
-                                        srcset="{{ asset('assets/img/extras/unchecked.png') }}">
+
+
                                 </td>
                                 <td class="text-center">
-                                    <img src="{{ asset('assets/img/extras/unchecked.png') }}" alt=""
-                                        srcset="{{ asset('assets/img/extras/unchecked.png') }}">
+
+
                                 </td>
                                 <td class="text-center">
-                                    <img src="{{ asset('assets/img/extras/unchecked.png') }}" alt=""
-                                        srcset="{{ asset('assets/img/extras/unchecked.png') }}">
+
+
                                 </td>
                                 <td class="text-center">
-                                    <img src="{{ asset('assets/img/extras/unchecked.png') }}" alt=""
-                                        srcset="{{ asset('assets/img/extras/unchecked.png') }}">
+
+
                                 </td>
                                 <td class="text-center">
-                                    <img src="{{ asset('assets/img/extras/unchecked.png') }}" alt=""
-                                        srcset="{{ asset('assets/img/extras/unchecked.png') }}">
+
+
                                 </td>
                             </tr>
                             <tr>
@@ -185,28 +184,28 @@
                                     Habilidades Directivas
                                 </td>
                                 <td class="text-center">
-                                    <img src="{{ asset('assets/img/extras/unchecked.png') }}" alt=""
-                                        srcset="{{ asset('assets/img/extras/unchecked.png') }}">
+
+
                                 </td>
                                 <td class="text-center">
-                                    <img src="{{ asset('assets/img/extras/unchecked.png') }}" alt=""
-                                        srcset="{{ asset('assets/img/extras/unchecked.png') }}">
+
+
                                 </td>
                                 <td class="text-center">
-                                    <img src="{{ asset('assets/img/extras/unchecked.png') }}" alt=""
-                                        srcset="{{ asset('assets/img/extras/unchecked.png') }}">
+
+
                                 </td>
                                 <td class="text-center">
-                                    <img src="{{ asset('assets/img/extras/unchecked.png') }}" alt=""
-                                        srcset="{{ asset('assets/img/extras/unchecked.png') }}">
+
+
                                 </td>
                                 <td class="text-center">
-                                    <img src="{{ asset('assets/img/extras/unchecked.png') }}" alt=""
-                                        srcset="{{ asset('assets/img/extras/unchecked.png') }}">
+
+
                                 </td>
                                 <td class="text-center">
-                                    <img src="{{ asset('assets/img/extras/unchecked.png') }}" alt=""
-                                        srcset="{{ asset('assets/img/extras/unchecked.png') }}">
+
+
                                 </td>
                             </tr>
                             <tr>
@@ -214,28 +213,26 @@
                                     Impuestos
                                 </td>
                                 <td class="text-center">
-                                    <img src="{{ asset('assets/img/extras/unchecked.png') }}" alt=""
-                                        srcset="{{ asset('assets/img/extras/unchecked.png') }}">
+
+
                                 </td>
                                 <td class="text-center">
-                                    <img src="{{ asset('assets/img/extras/unchecked.png') }}" alt=""
-                                        srcset="{{ asset('assets/img/extras/unchecked.png') }}">
+
+
                                 </td>
                                 <td class="text-center">
-                                    <img src="{{ asset('assets/img/extras/unchecked.png') }}" alt=""
-                                        srcset="{{ asset('assets/img/extras/checked.png') }}">
+                                    <i class="bi bi-check-lg"></i>
                                 </td>
                                 <td class="text-center">
-                                    <img src="{{ asset('assets/img/extras/unchecked.png') }}" alt=""
-                                        srcset="{{ asset('assets/img/extras/checked.png') }}">
+                                    <i class="bi bi-check-lg"></i>
                                 </td>
                                 <td class="text-center">
-                                    <img src="{{ asset('assets/img/extras/unchecked.png') }}" alt=""
-                                        srcset="{{ asset('assets/img/extras/unchecked.png') }}">
+
+
                                 </td>
                                 <td class="text-center">
-                                    <img src="{{ asset('assets/img/extras/unchecked.png') }}" alt=""
-                                        srcset="{{ asset('assets/img/extras/unchecked.png') }}">
+
+
                                 </td>
                             </tr>
                             <tr>
@@ -243,28 +240,26 @@
                                     Mercadotecnia
                                 </td>
                                 <td class="text-center">
-                                    <img src="{{ asset('assets/img/extras/unchecked.png') }}" alt=""
-                                        srcset="{{ asset('assets/img/extras/unchecked.png') }}">
+
+
                                 </td>
                                 <td class="text-center">
-                                    <img src="{{ asset('assets/img/extras/unchecked.png') }}" alt=""
-                                        srcset="{{ asset('assets/img/extras/unchecked.png') }}">
+
+
                                 </td>
                                 <td class="text-center">
-                                    <img src="{{ asset('assets/img/extras/unchecked.png') }}" alt=""
-                                        srcset="{{ asset('assets/img/extras/checked.png') }}">
+                                    <i class="bi bi-check-lg"></i>
                                 </td>
                                 <td class="text-center">
-                                    <img src="{{ asset('assets/img/extras/unchecked.png') }}" alt=""
-                                        srcset="{{ asset('assets/img/extras/checked.png') }}">
+                                    <i class="bi bi-check-lg"></i>
                                 </td>
                                 <td class="text-center">
-                                    <img src="{{ asset('assets/img/extras/unchecked.png') }}" alt=""
-                                        srcset="{{ asset('assets/img/extras/unchecked.png') }}">
+
+
                                 </td>
                                 <td class="text-center">
-                                    <img src="{{ asset('assets/img/extras/unchecked.png') }}" alt=""
-                                        srcset="{{ asset('assets/img/extras/unchecked.png') }}">
+
+
                                 </td>
                             </tr>
                             <tr>
@@ -272,28 +267,28 @@
                                     Terapias Psicosociales
                                 </td>
                                 <td class="text-center">
-                                    <img src="{{ asset('assets/img/extras/unchecked.png') }}" alt=""
-                                        srcset="{{ asset('assets/img/extras/unchecked.png') }}">
+
+
                                 </td>
                                 <td class="text-center">
-                                    <img src="{{ asset('assets/img/extras/unchecked.png') }}" alt=""
-                                        srcset="{{ asset('assets/img/extras/unchecked.png') }}">
+
+
                                 </td>
                                 <td class="text-center">
-                                    <img src="{{ asset('assets/img/extras/unchecked.png') }}" alt=""
-                                        srcset="{{ asset('assets/img/extras/unchecked.png') }}">
+
+
                                 </td>
                                 <td class="text-center">
-                                    <img src="{{ asset('assets/img/extras/unchecked.png') }}" alt=""
-                                        srcset="{{ asset('assets/img/extras/unchecked.png') }}">
+
+
                                 </td>
                                 <td class="text-center">
-                                    <img src="{{ asset('assets/img/extras/unchecked.png') }}" alt=""
-                                        srcset="{{ asset('assets/img/extras/unchecked.png') }}">
+
+
                                 </td>
                                 <td class="text-center">
-                                    <img src="{{ asset('assets/img/extras/unchecked.png') }}" alt=""
-                                        srcset="{{ asset('assets/img/extras/unchecked.png') }}">
+
+
                                 </td>
                             </tr>
                         </tbody>

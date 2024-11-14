@@ -71,7 +71,7 @@
 @section('content')
     <!-- Inicio de portada -->
     <section id="portada" style="background-image: url({{ asset($posgrado->portada) }}); position: relative;">
-        <h1 class="etiqueta-titulo p-3 text-uppercase" style="font-size: 30px;"> {{ $posgrado->titulo }} </h1>
+        <h1 class="etiqueta-titulo p-3 text-uppercase" style="font-size: 30px;"> {{ $posgrado->titulo }} a distancia </h1>
     </section>
     <!-- Fin de portada -->
 
@@ -222,7 +222,13 @@
                     Duración de la Maestría: 6 ciclos (2 años) <br><br>
                     Nota: La duración mencionada está sujeta al curso continuo de los estudios; consulta la programación de
                     aperturas en el plantel de tu elección.
-
+                    <br><br>
+                </p>
+                <p class="text-center">
+                    <button data-bs-toggle="modal" data-bs-target="#continuaConTuMaestria" type="button"
+                        class="btn btn-primary mb-2 mb-md-0">Continúa con tu maestría en UNIMEX</button>
+                    <button data-bs-toggle="modal" data-bs-target="#titulacionEstudiosPosgrado" type="button"
+                        class="btn btn-primary mb-2 mb-md-0">Titulación vía estudios de posgrados</button>
                 </p>
             </div>
         </div>
@@ -313,35 +319,6 @@
         </div>
     </section>
     <!-- Fin de la Sección de Requisitos -->
-
-    <!-- Inicio de la Sección de disponibilidad -->
-    <section class="container-fluid px-5 py-5 bg_planteles_dis">
-        <div class="row">
-            <div class="col-12 text-center p-0 mb-3">
-                <h1 class="fw-light" style="font-size: 1.438rem; color: #ffff;">HORARIOS:</h1>
-                <p class="text-white">
-                    En Universidad Mexicana estamos conscientes de la necesidad de contar con opciones de estudio que
-                    permitan al alumno estudiar <br>
-                    y trabajar, por lo que ofrecemos los siguientes horarios: <br>
-                </p>
-                <table class="table table-borderless">
-                    <tbody>
-                        <tr>
-                            <td class="text-center bg_planteles_dis text-white">
-                                SABATINO <br>
-                                Sólo sábados de 8:00 a 13:00 h.
-                            </td>
-                            <td class="text-center bg_planteles_dis text-white">
-                                VESPERTINO <br>
-                                Sólo 2 tardes entre semana de 19:30 a 22:00 h.
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
-    <!-- Fin de la Sección de disponibilidad -->
 
     @include('modales.continuaConTuMaestria')
     @include('modales.titulacionViaEstudiosPosgrado')

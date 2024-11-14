@@ -270,6 +270,8 @@
                     Nota: La duración mencionada está sujeta al curso continuo de los estudios; consulta la programación de
                     aperturas en el plantel de tu elección.
                     <br><br>
+                </p>
+                <p class="text-center">
                     <button data-bs-toggle="modal" data-bs-target="#continuaConTuMaestria" type="button"
                         class="btn btn-primary mb-2 mb-md-0">Continúa con tu maestría en UNIMEX</button>
                     <button data-bs-toggle="modal" data-bs-target="#titulacionEstudiosPosgrado" type="button"
