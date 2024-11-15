@@ -601,7 +601,7 @@
                                 <span class="txtpequeno">DISPONIBLE SOLO EN PLANTELES METROPOLITANOS </span>
                             </li>
                             @foreach ($data['menus'] as $menu)
-                                @if ($menu->estado == 6)
+                                @if ($menu->estado == 6 && $menu->mostrar == 1)
                                     <li>
                                         @if ($utmOrganico == true)
                                             @php
