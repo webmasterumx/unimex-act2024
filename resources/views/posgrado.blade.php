@@ -13,7 +13,7 @@
     #contraportada {
         background-position: center;
         background-size: cover;
-        background-image: url("{{ asset($posgrado->contraportada) }}");
+        background-image: url("{{ asset($contraportada) }}");
     }
 
     .bg_campo_laboral {
@@ -71,7 +71,7 @@
 @section('content')
     <!-- Inicio de portada -->
     <section id="portada" style="background-image: url({{ asset($posgrado->portada) }}); position: relative;">
-        <h1 class="etiqueta-titulo p-3 text-uppercase" style="font-size: 30px;"> {{ $posgrado->titulo }} </h1>
+        <h1 class="etiqueta-titulo p-3 text-uppercase" style="font-size: 30px;"> {{ $posgrado->nombre }} </h1>
     </section>
     <!-- Fin de portada -->
 
@@ -80,10 +80,10 @@
         <div class="row">
             <div class="col-12">
                 <h2 class="underlined_head_obj text-center text-uppercase fw-normal" style="font-size: 1.438rem;">
-                    @if ($posgrado->titulo == 'Docencia')
-                        especialidad en {{ $posgrado->titulo }}
+                    @if ($posgrado->nombre == 'Docencia')
+                        especialidad en {{ $posgrado->nombre }}
                     @else
-                        especialidad y maestría en {{ $posgrado->titulo }}
+                        especialidad y maestría en {{ $posgrado->nombre }}
                     @endif
                 </h2>
             </div>
@@ -100,14 +100,6 @@
                             </a>
                         </div>
                     </div>
-                    {{--  <div class="col-4">
-                        <div class="d-grid gap-2">
-                            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
-                                data-bs-target="#comoObtengoMiBecaModal">
-                                Más información
-                            </button>
-                        </div>
-                    </div> --}}
                     <div class="col-12 col-md-6 mb-2 mb-md-0">
                         <div class="d-grid gap-2">
                             <a id="redireccionPELL" href="javascript:preinscripcionHeader('{{ $posgrado->abreviatura }}')"
@@ -127,10 +119,10 @@
         <div class="row">
             <div id="contraportada" class="col-12 col-md-6 col-lg-6">
             </div>
-            @if ($posgrado->titulo == 'Docencia' || $posgrado->titulo == 'Impuestos')
+            @if ($posgrado->nombre == 'Docencia' || $posgrado->nombre == 'Impuestos')
                 <div id="text_ventajas" class="col-12 col-md-6 col-lg-6 bg-articule p-5">
                     <h1 style="font-size: 1.25rem;" class="underlined-head text-uppercase fw-normal">
-                        Ventajas de estudiar el posgrado en {{ $posgrado->titulo }}
+                        Ventajas de estudiar el posgrado en {{ $posgrado->nombre }}
                     </h1>
                     <p>
                         Obtienes un nivel de preparación profesional superior que te permitirá alcanzar mejores
@@ -148,7 +140,7 @@
             @else
                 <div id="text_ventajas" class="col-12 col-md-6 col-lg-6 bg-articule p-5">
                     <h1 style="font-size: 1.25rem;" class="underlined-head text-uppercase fw-normal">
-                        Ventajas de estudiar el posgrado en {{ $posgrado->titulo }}
+                        Ventajas de estudiar el posgrado en {{ $posgrado->nombre }}
                     </h1>
                     <p>
                         Obtienes un nivel de preparación profesional superior que puede facilitarte alcanzar las mejores
@@ -228,7 +220,7 @@
                 @endfor
             </div>
 
-            @if ($posgrado->titulo != 'Docencia')
+            @if ($posgrado->nombre != 'Docencia')
                 <div class="col-12">
                     <p>
                         <b>
@@ -264,7 +256,7 @@
                 <p>
                     <b>Duración:</b> <br>
                     Duración de la Especialidad: 3 Ciclos (1 año) <br>
-                    @if ($posgrado->titulo != 'Docencia')
+                    @if ($posgrado->nombre != 'Docencia')
                         Duración de la Maestría: 5 ciclos (1 año 8 meses) <br>
                     @endif
                     Nota: La duración mencionada está sujeta al curso continuo de los estudios; consulta la programación de
@@ -481,7 +473,7 @@
         });
 
         function getCarreraPosicion() {
-            let carreraPosicionado = "{{ $posgrado->titulo }}";
+            let carreraPosicionado = "{{ $posgrado->nombre }}";
 
             return carreraPosicionado;
         }
@@ -499,7 +491,7 @@
         }
 
         var nivelPosicionado = "Especialidad";
-        var carreraPosicionado = "{{ $posgrado->titulo }}";
+        var carreraPosicionado = "{{ $posgrado->nombre }}";
 
         $('#aceptarAvisoPrivacidadFolleto').on('click', function() {
             if ($(this).is(':checked')) {

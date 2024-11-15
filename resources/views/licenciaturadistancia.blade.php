@@ -20,7 +20,7 @@
     <!-- Inicio de portada -->
     <section id="portada" style="background-image: url({{ asset($licenciatura_distancia->portada) }}); position: relative;">
         <h1 class="etiqueta-titulo p-3 text-uppercase">
-            licenciatura a distancia {{ $licenciatura_distancia->titulo }}
+            licenciatura a distancia {{ $licenciatura_distancia->nombre }}
         </h1>
     </section>
     <!-- Fin de portada -->
@@ -42,15 +42,11 @@
                         NO ESCOLARIZADO
                     </div>
                     <div class="col-12 col-md-6 mb-3" style="font-size: 15px !important; color: #014B94 !important;">
-                        {!! $licenciatura_distancia->rvoe !!}
+                        {!! $rvoe!!}
                     </div>
                     <div class="col-12">
-                        <b>
-                            {!! $licenciatura_distancia->descripcion !!}
-                        </b>
-                        <br>
-                        {!! $licenciatura_distancia->subDescripcion !!}
-                        <br>
+                        {!! $licenciatura_distancia->objetivo !!}
+
                         <ul>
                             <li>
                                 Plan cuatrimestral modular.
@@ -120,7 +116,7 @@
             </div>
             <div id="text_ventajas" class="col-12 col-md-6 col-lg-6 bg-articule px-4">
                 <h2 style="font-size: 1.438rem;" class="underlined-head text-uppercase fw-normal mt-4">
-                    VENTAJAS DE ESTUDIAR LA LICENCIATURA A DISTANCIA EN {{ $licenciatura_distancia->titulo }}
+                    VENTAJAS DE ESTUDIAR LA LICENCIATURA A DISTANCIA EN {{ $licenciatura_distancia->nombre }}
                 </h2>
                 <p>
                     <b>
@@ -268,13 +264,13 @@
         <div class="row">
             <div class="col-12 col-md-6 col-lg-6">
                 <h2 style="font-size: 1.50rem;" class="underlined-head text-uppercase text-white">
-                    LICENCIATURA A DISTANCIA EN {{ $licenciatura_distancia->titulo }}
+                    LICENCIATURA A DISTANCIA EN {{ $licenciatura_distancia->nombre }}
                 </h2>
                 <p>
                     Campo Laboral
                 </p>
                 <p class="text-justify">
-                    {{ $licenciatura_distancia->campoLaboral }}
+                    {{ $licenciatura_distancia->campo_laboral }}
                 </p>
             </div>
             <div class="col-12 col-md-6 col-lg-6 px-3">
