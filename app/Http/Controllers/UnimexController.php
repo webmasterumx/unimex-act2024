@@ -161,6 +161,11 @@ class UnimexController extends Controller
     public function getLicenciaturaDistancia($slug): View
     {
 
+        $this->utm_recurso = new UtmController();
+        $origen = $this->utm_recurso->comprovacionOrigen();
+        $dataUTM = $this->utm_recurso->iniciarUtmSource();
+        $urlVisitada = URL::full();
+
         $licenciatura_distancia = OfertaAcademica::where('slug', $slug)->where("id_tipo", 2)->first();
 
         //dd($licenciatura_distancia);
@@ -168,6 +173,7 @@ class UnimexController extends Controller
         $temario = json_decode($licenciatura_distancia->extras, true);
         $campo_laboral = $temario["campoLaboral"];
         $rvoe = $temario["RVOE"];
+        $abreviatura = $licenciatura_distancia->abreviatura;
 
         //dd($temario);
 
@@ -175,7 +181,11 @@ class UnimexController extends Controller
             "licenciatura_distancia" => $licenciatura_distancia,
             "temario" => $temario["temario"],
             "campo_laboral" => $campo_laboral,
-            "rvoe" => $rvoe
+            "rvoe" => $rvoe,
+            "dataUTM" => $dataUTM,
+            "origen" => $origen,
+            "abreviatura" => $abreviatura,
+            "urlVisitada" => $urlVisitada
         ]);
     }
 
