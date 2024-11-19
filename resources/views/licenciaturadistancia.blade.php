@@ -1,5 +1,9 @@
 @extends('layouts.layout')
 
+@section('metas')
+    @include('metas.licenciaturasDistancia.condicional')
+@endsection
+
 @section('styles')
     <style>
         .bg_contacto {
@@ -20,7 +24,7 @@
     <!-- Inicio de portada -->
     <section id="portada" style="background-image: url({{ asset($licenciatura_distancia->portada) }}); position: relative;">
         <h1 class="etiqueta-titulo p-3 text-uppercase">
-            licenciatura a distancia {{ $licenciatura_distancia->nombre }}
+            licenciatura a distancia en {{ $licenciatura_distancia->nombre }}
         </h1>
     </section>
     <!-- Fin de portada -->
@@ -42,7 +46,7 @@
                         NO ESCOLARIZADO
                     </div>
                     <div class="col-12 col-md-6 mb-3" style="font-size: 15px !important; color: #014B94 !important;">
-                        {!! $rvoe!!}
+                        {!! $rvoe !!}
                     </div>
                     <div class="col-12">
                         {!! $licenciatura_distancia->objetivo !!}
@@ -384,5 +388,51 @@
             prevArrow: '<button type="button" class="slick-prev-campo"><i class="bi bi-chevron-compact-left"></i></button>',
             nextArrow: '<button type="button" class="slick-next-campo"><i class="bi bi-chevron-compact-right"></i></button>',
         });
+
+        function getCarreraPosicion() {
+            let carreraPosicionado = "{{ $licenciatura_sua->titulo }}";
+
+            return carreraPosicionado;
+        }
+
+        function getNivelPosicion() {
+            let nivelPosicionado = 1;
+
+            return nivelPosicionado;
+        }
+
+        function getNivelPagina() {
+            let nivelPosicionado = 2;
+
+            return nivelPosicionado;
+        }
+
+        var nivelPosicionado = "Licenciatura";
+        var carreraPosicionado = "{{ $licenciatura_sua->titulo }}";
+        var turnoPosicionado = 5;
+
+        $('#carrucelVentajas').slick({
+            autoplay: true,
+            autoplaySpeed: 1000,
+            dots: false,
+            arrows: false,
+        });
+
+        $('#aceptarAvisoPrivacidadFolleto').on('click', function() {
+            if ($(this).is(':checked')) {
+                // Hacer algo si el checkbox ha sido seleccionado
+                //console.log("El checkbox con valor " + $(this).val() + " ha sido seleccionado");
+                $('#descargaFolleto').attr('disabled', false);
+            } else {
+                // Hacer algo si el checkbox ha sido deseleccionado
+                //console.log("El checkbox con valor " + $(this).val() + " ha sido deseleccionado");
+                $('#descargaFolleto').attr('disabled', true);
+            }
+        });
     </script>
+
+    <script src="{{ asset('assets/js/folletoUnimex/combos.js') }}"></script>
+    <script src="{{ asset('assets/js/folletoUnimex/form.js') }}"></script>
+
+    @include('include.redirecciones.inOfertaAcademica')
 @endsection

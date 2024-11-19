@@ -36,7 +36,7 @@ class UnimexController extends Controller
 
 
         $listaCarreras = CCarreras::all();
-        $banners = Banner::where('ubicacion', 0)->orWhere('ubicacion', 1)->orderBy('orden', 'ASC')->get();
+        $banners = Banner::orderBy('orden', 'ASC')->get();
         $ventajas_unimex = VentajasUnimex::all();
 
         //dd($banderaComplemento);
@@ -90,10 +90,6 @@ class UnimexController extends Controller
             return view('errors.404');
         }
     }
-
-    /**
-     * 
-     */
 
     public function getLicenciatura($slug)
     {
