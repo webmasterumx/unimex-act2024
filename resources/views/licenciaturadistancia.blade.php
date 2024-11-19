@@ -79,7 +79,7 @@
                     <div class="col-12 col-md-6 mb-3 mb-md-0">
                         <div class="d-grid gap-2">
                             <a id="redireccionPELL"
-                                href="javascript:preinscripcionHeader('{{ $licenciatura_sua->abreviatura }}')"
+                                href="javascript:preinscripcionHeader('{{ $licenciatura_distancia->abreviatura }}')"
                                 class="btn text-white" style="background-color: #de951b;">
                                 Preinscripción En Línea
                             </a>
@@ -390,7 +390,7 @@
         });
 
         function getCarreraPosicion() {
-            let carreraPosicionado = "{{ $licenciatura_sua->titulo }}";
+            let carreraPosicionado = "{{ $licenciatura_distancia->titulo }}";
 
             return carreraPosicionado;
         }
@@ -408,7 +408,7 @@
         }
 
         var nivelPosicionado = "Licenciatura";
-        var carreraPosicionado = "{{ $licenciatura_sua->titulo }}";
+        var carreraPosicionado = "{{ $licenciatura_distancia->titulo }}";
         var turnoPosicionado = 5;
 
         $('#carrucelVentajas').slick({
