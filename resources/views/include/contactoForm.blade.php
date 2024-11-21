@@ -108,7 +108,7 @@
                                 @isset($licenciatura)
                                     <option value="Licenciatura" selected>Licenciatura</option>
                                 @endisset
-                                @isset($licenciatura_sua)
+                                @isset($licenciatura_distancia)
                                     <option value="Licenciatura" selected>Licenciatura</option>
                                 @endisset
                                 @isset($posgrado)
@@ -127,16 +127,16 @@
                             <select class="form-select rounded-0" id="carreraSelect" name="carreraSelect"
                                 tabindex="">
                                 @isset($licenciatura)
-                                    <option value="{{ $licenciatura->subtitulo }}"> {{ $licenciatura->subtitulo }}
+                                    <option value="{{ $licenciatura->nombre }}"> {{ $licenciatura->nombre }}
                                     </option>
                                 @endisset
-                                @isset($licenciatura_sua)
-                                    <option value="{{ $licenciatura_sua->titulo }}" selected>
-                                        {{ $licenciatura_sua->titulo }}
+                                @isset($licenciatura_distancia)
+                                    <option value="{{ $licenciatura_distancia->nombre }}" selected>
+                                        {{ $licenciatura_distancia->nombre }}
                                     </option>
                                 @endisset
                                 @isset($posgrado)
-                                    <option value="{{ $posgrado->titulo }}"> {{ $posgrado->titulo }} </option>
+                                    <option value="{{ $posgrado->nombre }}"> {{ $posgrado->nombre }} </option>
                                 @endisset
 
 

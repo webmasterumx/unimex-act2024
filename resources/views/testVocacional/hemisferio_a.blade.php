@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Test Vocacional | UNIMEX</title>
 
     <link async rel="stylesheet" href="{{ asset('assets/petry/bootstrap.min.css') }}">
     <link async rel="stylesheet" href="{{ asset('assets/petry/prettify.css') }}">
@@ -128,60 +128,7 @@
                                         </ul>
                                     </div>
                                     <div class="col-sm-12">
-                                        <form id="insertar">
-                                            @csrf
-                                            <div class="form-row">
-                                                <h1 class="title-answer" align="center">Por favor selecciona tu
-                                                    carrera y turno
-                                                    de interés:</h1>
-                                                <div class="form-group col-md-6">
-                                                    <select name="plantel" id="plantel" class="form-control"
-                                                        required>
-                                                        <option value="" selected disabled>Selecciona Plantel
-                                                        </option>
-                                                    </select>
-                                                </div>
-                                                <div class="form-group col-md-6">
-                                                    <select name="nivel" id="nivel" class="form-control"
-                                                        required>
-                                                        <option value="" selected disabled>Selecciona Nivel
-                                                        </option>
-                                                    </select>
-                                                </div>
-                                                <div class="form-group col-md-12">
-                                                    <select name="periodo" id="periodo" class="form-control"
-                                                        required>
-                                                        <option value="" selected disabled>¿Cuándo deseas iniciar
-                                                            tu licenciatura?
-                                                        </option>
-                                                    </select>
-                                                </div>
-                                                <div class="form-group col-md-6">
-                                                    <select name="carrera" id="carrera" class="form-control"
-                                                        required>
-                                                        <option value="" selected disabled>Selecciona Carrera
-                                                        </option>
-                                                    </select>
-                                                </div>
-                                                <div class="form-group col-md-6">
-                                                    <select name="horario" id="horario" class="form-control"
-                                                        required>
-                                                        <option value="" selected disabled>Selecciona Horario
-                                                        </option>
-                                                    </select>
-                                                </div>
-                                                <input type="hidden" name="source" id="source"
-                                                    value="15" />
-                                                <input type="hidden" id="calificacion" name="calificacion"
-                                                    class="textbox" value='Derecho'>
-                                                <input type="hidden" name="ulrVisitada" id="urlVisitada" value="{{ URL::full() }}">
-                                                <div class="form-group col-md-6">
-                                                    <input type="submit" class="btn btn-secondary" id="send"
-                                                        value="Finalizar">
-                                                </div>
-
-                                            </div>
-                                        </form>
+                                       @include('testVocacional.formInsertar')
                                     </div>
                                 </div>
                             </div>

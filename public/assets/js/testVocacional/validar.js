@@ -191,19 +191,24 @@ $("#insertar").validate({
             contentType: false,
             processData: false,
         }).done(function (data) {
+
+            $('#finalizar').html(`
+                <div class="spinner-border me-1" style="width: 20px; height: 20px;" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                Terminando el Registro
+            `);
+
             console.log(data);
 
-            /* if (data == 1 || data == true) {
+            if (data == 1 || data == true) {
 
                 Swal.fire({
                     icon: "success",
-                    title: "Registro Exitoso",
+                    title: "Registro Exitoso.",
                     showConfirmButton: false,
                 });
 
-                let rutaRedireccion = setUrlBase() + "TestVocacional/App";
-
-                $("#envioDatos").prop("disabled", false);
                 $('#envioDatos').html(`
                     <div class="spinner-border me-1" style="width: 20px; height: 20px;" role="status">
                         <span class="visually-hidden">Loading...</span>
@@ -211,12 +216,41 @@ $("#insertar").validate({
                     Redirigiendo al Test
                 `);
 
-                setTimeout("location.href='" + rutaRedireccion + "'", 2000);
+
+            }
+            else if (data == 0 || data == false) {
+                Swal.fire({
+                    icon: "error",
+                    title: "Error al enviar el correo.",
+                    showConfirmButton: false,
+                });
+
+                $("#envioDatos").prop("disabled", true);
+                $('#envioDatos').html(`
+                    <div class="spinner-border me-1" style="width: 20px; height: 20px;" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    Finalizar
+                `);
             }
             else {
 
+                Swal.fire({
+                    icon: "error",
+                    title: "Error al finalizar el registro.",
+                    showConfirmButton: false,
+                });
+
+                $("#envioDatos").prop("disabled", true);
+                $('#envioDatos').html(`
+                    <div class="spinner-border me-1" style="width: 20px; height: 20px;" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    Finalizar
+                `);
+
             }
- */
+
 
 
         }).fail(function () {

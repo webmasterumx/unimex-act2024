@@ -113,8 +113,6 @@ class TestVocacionalController extends Controller
 
             $respuesta = app(ApiConsumoController::class)->agregarProspectoCRM($valores);
 
-            var_dump($respuesta);
-
             if ($respuesta["FolioCRM"] == 0 || $respuesta["FolioCRM"] == '0') {
 
                 try {
@@ -127,9 +125,9 @@ class TestVocacionalController extends Controller
                     return false;
                 }
             } else {
+
+                return 2;
             }
-
-
            
         }
     }

@@ -86,7 +86,7 @@
                         </div>
                     </div>
                 </div>
-            </div> 
+            </div>
         </div>
     </section>
     <!-- Fin de la sección de objetivo -->
@@ -255,6 +255,8 @@
         </div>
     </section>
     <!-- Fin de temario -->
+
+    @include('include.folletoForm')
 
     <!-- Inicio de la Sección de Contacto -->
     @php
