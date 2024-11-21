@@ -393,7 +393,7 @@
         });
 
         function getCarreraPosicion() {
-            let carreraPosicionado = "{{ $licenciatura_distancia->titulo }}";
+            let carreraPosicionado = "{{ $licenciatura_distancia->nombre }}";
 
             return carreraPosicionado;
         }
@@ -411,7 +411,7 @@
         }
 
         var nivelPosicionado = "Licenciatura";
-        var carreraPosicionado = "{{ $licenciatura_distancia->titulo }}";
+        var carreraPosicionado = "{{ $licenciatura_distancia->nombre }}";
         var turnoPosicionado = 5;
 
         $('#carrucelVentajas').slick({
