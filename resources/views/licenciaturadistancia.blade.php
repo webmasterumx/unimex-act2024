@@ -65,7 +65,7 @@
                     </div>
                 </div>
             </div>
-            {{-- <div class="col-12 mt-3">
+            <div class="col-12 mt-3">
                 <div class="row">
                     <div class="col-12 col-md-6 mb-3 mb-md-0">
                         <div class="d-grid gap-2">
@@ -86,7 +86,7 @@
                         </div>
                     </div>
                 </div>
-            </div> --}}
+            </div> 
         </div>
     </section>
     <!-- Fin de la sección de objetivo -->

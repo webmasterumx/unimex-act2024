@@ -59,6 +59,16 @@ class ApiConsumoController extends Controller
         return $response->json();
     }
 
+    public function verificarProspecto($email, $idMicroSitio)
+    {
+        $response = Http::post($this->base_url . 'verifica-prospecto', [
+            'correoElectronico' => $email,
+            'idMicroSitio' => $idMicroSitio
+        ]);
+
+        return $response->json();
+    }
+
     // optimizar metodos
 
     public function getCarrerasMethod($valores)
@@ -243,7 +253,7 @@ class ApiConsumoController extends Controller
     }
 
     //? obtiene la ruta del documento para los folletos
-    public function getDocumentosFolleto($valores)  
+    public function getDocumentosFolleto($valores)
     {
         $response = Http::post($this->baseUrlProduccion . 'kontux/obtener-documentos', $valores);
 

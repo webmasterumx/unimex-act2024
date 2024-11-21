@@ -13,83 +13,194 @@ $(document).ready(function () {
 
 
 				$('#tab4 input').on('change', function () {
-					var res4 = ($('input[name=rp4]:checked', '#tab4').val());
+					var res4 = ($('input[name=rp4]:checked', '#tab4')
+						.val());
 
 
 					$('#tab5 input').on('change', function () {
-						var res5 = ($('input[name=rp5]:checked', '#tab5').val());
+						var res5 = ($('input[name=rp5]:checked',
+							'#tab5').val());
 
 
 						$('#tab6 input').on('change', function () {
-							var res6 = ($('input[name=rp6]:checked', '#tab6').val());
+							var res6 = ($(
+								'input[name=rp6]:checked',
+								'#tab6').val());
 
-							$('#tab7 input').on('change', function () {
-								var res7 = ($('input[name=rp7]:checked', '#tab7').val());
-
-
-								$('#tab8 input').on('change', function () {
-									var res8 = ($('input[name=rp8]:checked', '#tab8').val());
-
-									$('#tab9 input').on('change', function () {
-										var res9 = ($('input[name=rp9]:checked', '#tab9').val());
-
-										$('#tab10 input').on('change', function () {
-											var res10 = ($('input[name=rp10]:checked', '#tab10').val());
-
-											$('#tab11 input').on('change', function () {
-												var res11 = ($('input[name=rp11]:checked', '#tab11').val());
-
-												$('#tab12 input').on('change', function () {
-													var res12 = ($('input[name=rp12]:checked', '#tab12').val());
-
-													$('#tab13 input').on('change', function () {
-														var res13 = ($('input[name=rp13]:checked', '#tab13').val());
+							$('#tab7 input').on('change',
+								function () {
+									var res7 = ($(
+										'input[name=rp7]:checked',
+										'#tab7')
+										.val());
 
 
-														var vegetales = [res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13];
+									$('#tab8 input').on(
+										'change',
+										function () {
+											var res8 =
+												($('input[name=rp8]:checked',
+													'#tab8'
+												)
+													.val()
+												);
 
-														var Searcha = "a"
-														var ia = 0;
-														var countera = 0;
-														while (ia != -1) {
-															var ia = vegetales.indexOf(Searcha, ia);
-															if (ia != -1) {
-																ia++;
-																countera++;
-															}
-														}
-														console.log(countera);
+											$('#tab9 input')
+												.on('change',
+													function () {
+														var res9 =
+															($('input[name=rp9]:checked',
+																'#tab9'
+															)
+																.val()
+															);
 
-														var Searchb = "b"
-														var ib = 0;
-														var counterb = 0;
-														while (ib != -1) {
-															var ib = vegetales.indexOf(Searchb, ib);
-															if (ib != -1) {
-																ib++;
-																counterb++;
-															}
-														}
-														console.log(counterb);
+														$('#tab10 input')
+															.on('change',
+																function () {
+																	var res10 =
+																		($('input[name=rp10]:checked',
+																			'#tab10'
+																		)
+																			.val()
+																		);
 
-														if (countera > counterb) {
-															location.href = "hemisferio-a.php";
-														} else {
-															location.href = "hemisferio-b.php";
+																	$('#tab11 input')
+																		.on('change',
+																			function () {
+																				var res11 =
+																					($('input[name=rp11]:checked',
+																						'#tab11'
+																					)
+																						.val()
+																					);
 
-														}
+																				$('#tab12 input')
+																					.on('change',
+																						function () {
+																							var res12 =
+																								($('input[name=rp12]:checked',
+																									'#tab12'
+																								)
+																									.val()
+																								);
+
+																							$('#tab13 input')
+																								.on('change',
+																									function () {
+																										var res13 =
+																											($('input[name=rp13]:checked',
+																												'#tab13'
+																											)
+																												.val()
+																											);
+
+
+																										var vegetales = [
+																											res1,
+																											res2,
+																											res3,
+																											res4,
+																											res5,
+																											res6,
+																											res7,
+																											res8,
+																											res9,
+																											res10,
+																											res11,
+																											res12,
+																											res13
+																										];
+
+																										var Searcha =
+																											"a"
+																										var ia =
+																											0;
+																										var countera =
+																											0;
+																										while (
+																											ia !=
+																											-
+																											1
+																										) {
+																											var ia =
+																												vegetales
+																													.indexOf(
+																														Searcha,
+																														ia
+																													);
+																											if (ia !=
+																												-
+																												1
+																											) {
+																												ia++;
+																												countera++;
+																											}
+																										}
+																										console
+																											.log(
+																												countera
+																											);
+
+																										var Searchb =
+																											"b"
+																										var ib =
+																											0;
+																										var counterb =
+																											0;
+																										while (
+																											ib !=
+																											-
+																											1
+																										) {
+																											var ib =
+																												vegetales
+																													.indexOf(
+																														Searchb,
+																														ib
+																													);
+																											if (ib !=
+																												-
+																												1
+																											) {
+																												ib++;
+																												counterb++;
+																											}
+																										}
+																										console
+																											.log(
+																												counterb
+																											);
+
+																										if (countera >
+																											counterb
+																										) {
+																											location
+																												.href =
+																												"App/hemisferio_a";
+																										} else {
+																											location
+																												.href =
+																												"App/hemisferio_b";
+
+																										}
 
 
 
 
 
-													});
-												});
-											});
+																									}
+																								);
+																						}
+																					);
+																			}
+																		);
+																}
+															);
+													}
+												);
 										});
-									});
 								});
-							});
 						});
 					});
 				});
@@ -103,97 +214,185 @@ $(document).ready(function () {
 		onNext: function (tab, navigation, index) {
 			if (index == 1) {
 				// Make sure we entered the name
-				if (!$('#tab1').find("input[type='checkbox'],input[type='radio']").is(":checked")) {
-					alertify.alert('Pregunta1: Seleciona una respuesta');
+				if (!$('#tab1').find("input[type='checkbox'],input[type='radio']").is(
+					":checked")) {
+
+					Swal.fire({
+						title: "Pregunta 1: Seleciona una respuesta",
+						icon: "error"
+					});
+
 					return false;
 				}
 
 			}
-
 
 
 			if (index == 2) {
 				// Make sure we entered the name
-				if (!$('#tab2').find("input[type='checkbox'],input[type='radio']").is(":checked")) {
-					alertify.alert('Pregunta2: Seleciona una respuesta');
+				if (!$('#tab2').find("input[type='checkbox'],input[type='radio']").is(
+					":checked")) {
+
+					Swal.fire({
+						title: "Pregunta 2: Seleciona una respuesta",
+						icon: "error"
+					});
+
 					return false;
+
 				}
 			}
 			if (index == 3) {
 				// Make sure we entered the name
-				if (!$('#tab3').find("input[type='checkbox'],input[type='radio']").is(":checked")) {
-					alertify.alert('Pregunta3: Seleciona una respuesta');
+				if (!$('#tab3').find("input[type='checkbox'],input[type='radio']").is(
+					":checked")) {
+
+					Swal.fire({
+						title: "Pregunta 3: Seleciona una respuesta",
+						icon: "error"
+					});
+
 					return false;
+
 				}
 			}
 			if (index == 4) {
 				// Make sure we entered the name
-				if (!$('#tab4').find("input[type='checkbox'],input[type='radio']").is(":checked")) {
-					alertify.alert('Pregunta 4: Seleciona una respuesta');
+				if (!$('#tab4').find("input[type='checkbox'],input[type='radio']").is(
+					":checked")) {
+
+					Swal.fire({
+						title: "Pregunta 4: Seleciona una respuesta",
+						icon: "error"
+					});
+
 					return false;
+
 				}
 			}
 			if (index == 5) {
 				// Make sure we entered the name
-				if (!$('#tab5').find("input[type='checkbox'],input[type='radio']").is(":checked")) {
-					alertify.alert('Pregunta5: Seleciona una respuesta');
+				if (!$('#tab5').find("input[type='checkbox'],input[type='radio']").is(
+					":checked")) {
+
+					Swal.fire({
+						title: "Pregunta 5: Seleciona una respuesta",
+						icon: "error"
+					});
+
 					return false;
+
 				}
 			}
 			if (index == 6) {
 				// Make sure we entered the name
-				if (!$('#tab6').find("input[type='checkbox'],input[type='radio']").is(":checked")) {
-					alertify.alert('Pregunta6: Seleciona una respuesta');
+				if (!$('#tab6').find("input[type='checkbox'],input[type='radio']").is(
+					":checked")) {
+
+					Swal.fire({
+						title: "Pregunta 6: Seleciona una respuesta",
+						icon: "error"
+					});
+
 					return false;
+
 				}
 			}
 			if (index == 7) {
 				// Make sure we entered the name
-				if (!$('#tab7').find("input[type='checkbox'],input[type='radio']").is(":checked")) {
-					alertify.alert('Pregunta7: Seleciona una respuesta');
+				if (!$('#tab7').find("input[type='checkbox'],input[type='radio']").is(
+					":checked")) {
+
+					Swal.fire({
+						title: "Pregunta 7: Seleciona una respuesta",
+						icon: "error"
+					});
+
 					return false;
+
 				}
 			}
 			if (index == 8) {
 				// Make sure we entered the name
-				if (!$('#tab8').find("input[type='checkbox'],input[type='radio']").is(":checked")) {
-					alertify.alert('Pregunta8: Seleciona una respuesta');
+				if (!$('#tab8').find("input[type='checkbox'],input[type='radio']").is(
+					":checked")) {
+					Swal.fire({
+						title: "Pregunta 8: Seleciona una respuesta",
+						icon: "error"
+					});
+
 					return false;
+
 				}
 			}
 			if (index == 9) {
 				// Make sure we entered the name
-				if (!$('#tab9').find("input[type='checkbox'],input[type='radio']").is(":checked")) {
-					alertify.alert('Pregunta9: Seleciona una respuesta');
+				if (!$('#tab9').find("input[type='checkbox'],input[type='radio']").is(
+					":checked")) {
+
+					Swal.fire({
+						title: "Pregunta 9: Seleciona una respuesta",
+						icon: "error"
+					});
+
 					return false;
+
 				}
 			}
 			if (index == 10) {
 				// Make sure we entered the name
-				if (!$('#tab10').find("input[type='checkbox'],input[type='radio']").is(":checked")) {
-					alertify.alert('Pregunta10: Seleciona una respuesta');
+				if (!$('#tab10').find("input[type='checkbox'],input[type='radio']").is(
+					":checked")) {
+
+					Swal.fire({
+						title: "Pregunta 10: Seleciona una respuesta",
+						icon: "error"
+					});
+
 					return false;
+
 				}
 			}
 			if (index == 11) {
 				// Make sure we entered the name
-				if (!$('#tab11').find("input[type='checkbox'],input[type='radio']").is(":checked")) {
-					alertify.alert('Pregunta11: Seleciona una respuesta');
+				if (!$('#tab11').find("input[type='checkbox'],input[type='radio']").is(
+					":checked")) {
+
+					Swal.fire({
+						title: "Pregunta 11: Seleciona una respuesta",
+						icon: "error"
+					});
+
 					return false;
+
 				}
 			}
 			if (index == 12) {
 				// Make sure we entered the name
-				if (!$('#tab12').find("input[type='checkbox'],input[type='radio']").is(":checked")) {
-					alertify.alert('Pregunta12: Seleciona una respuesta');
+				if (!$('#tab12').find("input[type='checkbox'],input[type='radio']").is(
+					":checked")) {
+
+					Swal.fire({
+						title: "Pregunta 12: Seleciona una respuesta",
+						icon: "error"
+					});
+
 					return false;
+
 				}
 			}
 			if (index == 13) {
 				// Make sure we entered the name
-				if (!$('#tab13').find("input[type='checkbox'],input[type='radio']").is(":checked")) {
-					alertify.alert('Pregunta13: Seleciona una respuesta');
+				if (!$('#tab13').find("input[type='checkbox'],input[type='radio']").is(
+					":checked")) {
+
+					Swal.fire({
+						title: "Pregunta 13: Seleciona una respuesta",
+						icon: "error"
+					});
+
 					return false;
+
 				}
 			}
 
@@ -204,7 +403,9 @@ $(document).ready(function () {
 			var $total = navigation.find('li').length;
 			var $current = index + 1;
 			var $percent = ($current / $total) * 100;
-			$('#rootwizard .progress-bar').css({ width: $percent + '%' });
+			$('#rootwizard .progress-bar').css({
+				width: $percent + '%'
+			});
 		}
 	});
 

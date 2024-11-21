@@ -74,7 +74,11 @@ Route::get("/proyeccion-profesional", [ProyeccionProfesionalController::class, '
 
 //* TestVocacional
 Route::get("/TestVocacional", [TestVocacionalController::class, 'index'])->name('test.vocacional.index');
+Route::post("/TestVocacional/establecer/datos", [TestVocacionalController::class, 'establecerDatosPersonales'])->name("test.vocacional.establecer.datos");
 Route::get("/TestVocacional/App", [TestVocacionalController::class, 'iniciarTest']);
+Route::view("/TestVocacional/App/hemisferio_a", "testVocacional.hemisferio_a");
+Route::view("/TestVocacional/App/hemisferio_b", "testVocacional.hemisferio_b");
+Route::post('/TestVocacional/terminar/registro', [TestVocacionalController::class, 'terminarRegistro'])->name('test.vocacional.terminar.registro');
 
 //!modulo de preinscripcion en linea
 Route::get('/App/Preinscripcion-online', [PreinscripcionEnLineaController::class, 'index'])->name('preinscripcion.linea');

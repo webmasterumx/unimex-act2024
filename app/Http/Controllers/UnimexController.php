@@ -175,6 +175,7 @@ class UnimexController extends Controller
         $rvoe = $temario["RVOE"];
         $abreviatura = $licenciatura_distancia->abreviatura;
 
+        //dd($abreviatura);
         //dd($temario);
 
         return view('licenciaturadistancia', [

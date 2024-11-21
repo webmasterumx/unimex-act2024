@@ -121,8 +121,12 @@ class ExtrasUnimexController extends Controller
     //? funciones de establecimiento de variables de posicionamiento por nivel y carrera
     public function setVariablesPosicionamientoCalculadora($nivel, $carrera)
     {
-        session(['nivel_calculadora' => $nivel]);
-        session(['carrera_calculadora' => $carrera]);
+
+        $nivelFinal = str_replace("_", " ", $nivel);
+        $carreraFinal = str_replace("_", " ", $carrera);
+
+        session(['nivel_calculadora' => $nivelFinal]);
+        session(['carrera_calculadora' => $carreraFinal]);
 
         $respuesta['estado'] = true;
         $respuesta['mensaje'] = "variables establecidas con exito";
@@ -134,8 +138,12 @@ class ExtrasUnimexController extends Controller
 
     public function setVariablesPosicionamientoPreinscripcion($nivel, $carrera)
     {
-        session(['nivel_preinscripcion' => $nivel]);
-        session(['carrera_preinscripcion' => $carrera]);
+
+        $nivelFinal = str_replace("_", " ", $nivel);
+        $carreraFinal = str_replace("_", " ", $carrera);
+
+        session(['nivel_preinscripcion' => $nivelFinal]);
+        session(['carrera_preinscripcion' => $carreraFinal]);
 
         $respuesta['estado'] = true;
         $respuesta['mensaje'] = "variables establecidas con exito";
