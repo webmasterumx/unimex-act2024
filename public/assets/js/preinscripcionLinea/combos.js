@@ -125,7 +125,7 @@ $("select[name=periodoSelect]").change(function () {
             }).done(function (data) {
                 console.log(data);
                 $('#nivelSelect').empty();
-                $("#nivelSelect").append(`<option value="" selected>Selecionar nivel</option>`);
+                $("#nivelSelect").append(`<option value="" selected disabled>Selecionar nivel</option>`);
                 if (data.error == undefined || data.error == null) {
                     if (data.clave == undefined || data.clave == null) {
                         $.each(data, function (index, value) {

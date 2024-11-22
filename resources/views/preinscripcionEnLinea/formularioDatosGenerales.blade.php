@@ -265,7 +265,7 @@
                 $('#modalCarga').modal('show');
 
                 let ruta = setUrlBase() + "get/info/prospecto"
-                console.log(ruta);
+                
                 $.ajax({
                     method: "GET",
                     url: ruta,

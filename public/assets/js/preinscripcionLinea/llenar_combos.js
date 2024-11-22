@@ -49,12 +49,12 @@ function llenarComboCampañas(claveCampana, clavePlantel) {
         const campañas = data;
         console.log(campañas);
         let option_default = `<option value="" disabled>Seleccionar periodo</option>`;
+        $("#periodoSelect").append(option_default); //se establece la campaña por defecto
         if (campañas != undefined) {
             console.log(campañas.clave);
 
             if (campañas.clave == undefined || campañas.clave == null) {
 
-                $("#periodoSelect").append(option_default); //se establece la campaña por defecto
                 for (let index = 0; index < campañas.length; index++) { //recorrer el array de campañas
                     const element = campañas[index]; // se establece un elemento por campaña optenida
                     let option = `<option value="${element.clave}">${element.descrip}</option>`; //se establece la opcion por campaña
@@ -62,10 +62,10 @@ function llenarComboCampañas(claveCampana, clavePlantel) {
                 }
 
             } else {
-                
+
                 let option = `<option value="${campañas.clave}">${campañas.descrip}</option>`; //se establece la opcion por campaña
                 $("#periodoSelect").append(option); // se inserta la campaña de cada elemen  to
-                
+
             }
 
 
@@ -188,11 +188,19 @@ function llenarComboHorarios(claveCampana, clavePlantel, claveNivel, claveCarrer
         let option_default = `<option value="" disabled>Selecionar horario</option>`;
         if (horarios != undefined) {
             $("#horarioSelect").append(option_default); //se establece la campaña por defecto
-            for (let index = 0; index < horarios.length; index++) { //recorrer el array de campañas
-                const element = horarios[index]; // se establece un elemento por campaña optenida
-                let option = `<option value="${element.clave}">${element.descrip}</option>`; //se establece la opcion por campaña
+            if (horarios.clave == undefined) {
+
+                for (let index = 0; index < horarios.length; index++) { //recorrer el array de campañas
+                    const element = horarios[index]; // se establece un elemento por campaña optenida
+                    option = `<option value="${element.clave}">${element.descrip}</option>`; //se establece la opcion por campaña
+                    $("#horarioSelect").append(option); // se inserta la campaña de cada elemen  to
+                }
+            }
+            else {
+                option = `<option value="${horarios.clave}">${horarios.descrip}</option>`; //se establece la opcion por campaña
                 $("#horarioSelect").append(option); // se inserta la campaña de cada elemen  to
             }
+
         }
         else {
             $("#horarioSelect").append(option_default);
