@@ -218,7 +218,7 @@
                 <h2 class="underlined-head fw-normal" style="font-size: 1.438rem;">
                     REQUISITOS
                 </h2>
-                @if ($licenciatura->id == 18 || $licenciatura->id == 19)
+                @if ($licenciatura->id == 21 || $licenciatura->id == 22)
                     @include('components.requisitos.requisitosv2')
                 @else
                     @include('components.requisitos.requisitosv1')
