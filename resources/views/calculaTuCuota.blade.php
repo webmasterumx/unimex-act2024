@@ -19,7 +19,12 @@
                         <option value="" selected disabled>¿Cuándo deseas iniciar?</option>
                     </select>
                     <select class="form-select form-select-sm col-12 mb-2" name="selectNivel" id="selectNivel">
-                        <option value="" selected disabled>Selecciona el Nivel</option>
+                        @if ($nivel == null)
+                            <option value="" selected disabled>Selecciona el Nivel</option>
+                        @else
+                            <option value="" selected disabled>{{ $nivel }}</option>
+                        @endif
+
                     </select>
                     <div class="col-12 row mb-5 d-none" id="selectEgresado">
                         <div class="col-7 p-0">
@@ -127,7 +132,7 @@
                         <span class="visually-hidden">Next</span>
                     </button>
                 </div>
-                
+
                 <div id="informacionCRM" class="row mt-3 d-none">
                     <h2 class="text-center mb-3" style="color: #004b93">¡Estás a un paso de ser UNIMEXITARIO!</h2>
                     <div class="col-12 col-md-3">
@@ -308,23 +313,16 @@
     </script>
     <script src="{{ asset('assets/js/validarCampos.js') }}"></script>
     <script>
-        $.ajax({
-            method: "GET",
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            },
-            url: setUrlBase() + "get/variables/calculadora",
-        }).done(function(data) {
-            console.log(data);
-            if (data.nivel_calculadora != null) {
-                console.log('hay variable de session para este modulo');
-                $("#selectNivel").empty();
-                $('#selectNivel').append("<option selected value=''>" + data.nivel_calculadora + "</option>");
-            }
+        function getCarreraSelect() {
+            let carreraSelect = "{{ $carrera }}";
+            console.log(carreraSelect);
+            
 
-        }).fail(function() {
-            console.log("Algo salió mal");
-        });
+            return carreraSelect;
+        }
+
+        var carreraSelect = "{{ $carrera }}";
+        var nivelSelect = "{{ $nivel }}";
 
         function setUrlBase() {
             let urlBase = "{{ env('APP_URL') }}";

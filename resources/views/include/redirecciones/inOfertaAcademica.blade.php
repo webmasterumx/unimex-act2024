@@ -57,7 +57,7 @@
         }
 
         let rutaRedireccionCalculadora = setUrlBase() +
-            `calcula-tu-cuota?utm_source=${utm_source}&utm_medium=${utm_medium}&utm_campaign=${utm_campaign}&utm_term=${utm_term}&utm_content=${utm_content}`;
+            `calcula-tu-cuota?utm_source=${utm_source}&utm_medium=${utm_medium}&utm_campaign=${utm_campaign}&utm_term=${utm_term}&utm_content=${utm_content}&carrera=${carrera}&nivel=${nivel}`;
 
         console.log(rutaRedireccionCalculadora);
 

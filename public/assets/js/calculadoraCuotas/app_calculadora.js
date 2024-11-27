@@ -77,36 +77,26 @@ function envioFormularioCalculadora(form) {
                 $('#nivelCrm').val(nivelProspecto);
                 establecerTextoComboCarrera();
 
-                $.ajax({
-                    method: "GET",
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    },
-                    url: setUrlBase() + "get/variables/calculadora",
-                }).done(function (data) {
-                    console.log(data);
-                    if (data.carrera_calculadora != null) {
-                        getCarrerasWithVariableEstablecida(data.carrera_calculadora);
-                    }
-                    else {
-                        getCarreras();
-                    }
+                carreraSelect = getCarreraSelect();
 
-                    $("#nombreProspecto").prop("disabled", true);
-                    $("#apellidosProspecto").prop("disabled", true);
-                    $("#telefonoProspecto").prop("disabled", true);
-                    $("#emailProspecto").prop("disabled", true);
-                    $("#terminosYcondiciones").prop("disabled", true);
-                    $("#telefono_celular").prop("disabled", true);
-                    $("#telefono_fijo").prop("disabled", true);
+                if (carreraSelect != null) {
+                    getCarrerasWithVariableEstablecida(carreraSelect);
+                }
+                else {
+                    getCarreras();
+                }
 
-                    $('#terminosCondicionesText').html(respuesta.legales);
-                    $('#terminosCondiciones').removeClass('d-none');
-                    $('#separacionTerminosCondiciones').removeClass('d-none');
+                $("#nombreProspecto").prop("disabled", true);
+                $("#apellidosProspecto").prop("disabled", true);
+                $("#telefonoProspecto").prop("disabled", true);
+                $("#emailProspecto").prop("disabled", true);
+                $("#terminosYcondiciones").prop("disabled", true);
+                $("#telefono_celular").prop("disabled", true);
+                $("#telefono_fijo").prop("disabled", true);
 
-                }).fail(function () {
-                    console.log("Algo salió mal");
-                });
+                $('#terminosCondicionesText').html(respuesta.legales);
+                $('#terminosCondiciones').removeClass('d-none');
+                $('#separacionTerminosCondiciones').removeClass('d-none');
 
                 $('#envio_caluladora').html(`Calcular`);
 
@@ -614,7 +604,7 @@ function enviarDetallesHorarioBeca() {
 
 function getCarrerasWithVariableEstablecida(carreraEnVariable) {
 
-    carreraFinal = carreraEnVariable.replaceAll("_", " ");
+    carreraFinal = carreraEnVariable;
     console.log(carreraFinal);
 
     $("#selectCarrera").empty();

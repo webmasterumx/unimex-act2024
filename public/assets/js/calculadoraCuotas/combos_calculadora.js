@@ -53,61 +53,49 @@ $("select[name=selectPeriodo]").change(function () {
     if ($('#folioCrm').val() == "" || $('#folioCrm').val() == null) {
         console.log('es elprimer calculo, verificar si no hay variables de sesion para evitar perder la informacion');
 
-        $.ajax({
-            method: "GET",
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            },
-            url: setUrlBase() + "get/variables/calculadora",
-        }).done(function (data) {
-            console.log(data);
-            if (data.nivel_calculadora != null) {
+        if (nivelSelect != null) {
+            $("#selectNivel").empty();
+            $("#selectNivel").append(`<option>Recalculado...</option>`);
+
+            let plantel = $('select[name=selectPlantel]').val();
+            $.ajax({
+                method: "POST",
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                url: setUrlBase() + "getNiveles",
+                data: {
+                    plantel: plantel
+                }
+            }).done(function (info) {
+
                 $("#selectNivel").empty();
-                $("#selectNivel").append(`<option>Recalculado...</option>`);
-
-                let plantel = $('select[name=selectPlantel]').val();
-                $.ajax({
-                    method: "POST",
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    },
-                    url: setUrlBase() + "getNiveles",
-                    data: {
-                        plantel: plantel
-                    }
-                }).done(function (info) {
-
-                    $("#selectNivel").empty();
-                    $("#selectNivel").append(`<option>Seleccionar nivel</option>`);
-                    console.log(info);
-                    $.each(info, function (index, value) {
-                        console.log(value.descrip);
-                        console.log(data.nivel_calculadora);
-                        if (value.descrip == data.nivel_calculadora) {
-                            estado = "selected";
-                            if (value.clave > 1) {
-                                if ($("#selectEgresado").hasClass("d-none") === true) {
-                                    $('#selectEgresado').removeClass('d-none');
-                                }
+                $("#selectNivel").append(`<option>Seleccionar nivel</option>`);
+                console.log(info);
+                $.each(info, function (index, value) {
+                    console.log(value.descrip);
+                    console.log(nivelSelect);
+                    if (value.descrip == nivelSelect) {
+                        estado = "selected";
+                        if (value.clave > 1) {
+                            if ($("#selectEgresado").hasClass("d-none") === true) {
+                                $('#selectEgresado').removeClass('d-none');
                             }
-                        } else {
-                            estado = "";
                         }
-                        $('#selectNivel').append("<option value='" + value.clave + "' " + estado + ">" + value
-                            .descrip + "</option>");
-                    });
-
-                }).fail(function () {
-                    console.log("Algo salió mal");
+                    } else {
+                        estado = "";
+                    }
+                    $('#selectNivel').append("<option value='" + value.clave + "' " + estado + ">" + value
+                        .descrip + "</option>");
                 });
-            }
-            else {
-                getNiveles();
-            }
 
-        }).fail(function () {
-            console.log("Algo salió mal");
-        });
+            }).fail(function () {
+                console.log("Algo salió mal");
+            });
+        }
+        else {
+            getNiveles();
+        }
     }
     else {
         /* console.log('se hizo ya un calculo');
@@ -124,7 +112,7 @@ $("select[name=selectPeriodo]").change(function () {
 });
 
 $("select[name=selectNivel]").change(function () {
-    
+
     establecerTextoComboCarrera();
     let nombreNivel = $('select[name="selectNivel"] option:selected').text();
     $('#nivelCrm').val(`${nombreNivel}`);

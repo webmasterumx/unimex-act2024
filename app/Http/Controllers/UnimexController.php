@@ -296,7 +296,22 @@ class UnimexController extends Controller
     public function calculaTuCuota(): View
     {
 
-        dd(session("carrera_calculadora"));
+        if (isset($_REQUEST['carrera'])) {
+            if (!empty($_REQUEST['carrera'])) {
+                $carrera = $_REQUEST['carrera'];
+            }
+        } else { //? decision si la variable no se encuentra en la cadena
+            $carrera = null;
+        }
+
+        if (isset($_REQUEST['nivel'])) {
+            if (!empty($_REQUEST['nivel'])) {
+                $nivel = $_REQUEST['nivel'];
+            }
+        } else { //? decision si la variable no se encuentra en la cadena
+            $nivel = null;
+        }
+
 
         $utm_recurso = new UtmController();
         $dataUTM = $utm_recurso->iniciarUtmSource();
@@ -304,7 +319,9 @@ class UnimexController extends Controller
 
         return view('calculaTuCuota', [
             "dataUTM" => $dataUTM,
-            "urlVisitada" => $urlVisitada
+            "urlVisitada" => $urlVisitada,
+            "carrera" => $carrera,
+            "nivel" => $nivel
         ]);
     }
 
