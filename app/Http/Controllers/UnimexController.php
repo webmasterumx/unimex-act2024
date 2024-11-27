@@ -296,6 +296,8 @@ class UnimexController extends Controller
     public function calculaTuCuota(): View
     {
 
+        dd(session("carrera_calculadora"));
+
         $utm_recurso = new UtmController();
         $dataUTM = $utm_recurso->iniciarUtmSource();
         $urlVisitada = URL::full();
