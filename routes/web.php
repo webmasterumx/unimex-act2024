@@ -71,6 +71,7 @@ Route::get('/prospectacion', [ProspectacionController::class, 'index'])->name('p
 
 //? proyeccion profesional
 Route::get("/proyeccion-profesional", [ProyeccionProfesionalController::class, 'index'])->name('proyeccion.profesional');
+Route::post("/proyeccion-profesional/registro", [ProyeccionProfesionalController::class, 'registrarDatos'])->name('guardar.datos.proyeccion');
 
 //* TestVocacional
 Route::get("/TestVocacional", [TestVocacionalController::class, 'index'])->name('test.vocacional.index');

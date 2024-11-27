@@ -242,6 +242,7 @@
                     <div class="card p-0 border-0 bg-transparent text-white">
                         <div class="card-body p-0">
                             <p class="card-text" style="font-size: 0.9rem !important;">
+                                {{ $disponibilidad[$d]['palantel'] }} <br>
                                 @if ($licenciatura->id == 16 || $licenciatura->id == 17)
                                     {{ $disponibilidad[$d]['escolarizado'] }} <br>
                                     {{ $disponibilidad[$d]['mixto'] }} <br>
