@@ -132,12 +132,12 @@
         }
 
         let rutaRedireccionPreinscripcion = setUrlBase() +
-            `App/Preinscripcion-online?utm_source=${utm_source}&utm_medium=${utm_medium}&utm_campaign=${utm_campaign}&utm_term=${utm_term}&utm_content=${utm_content}`;
+            `App/Preinscripcion-online?utm_source=${utm_source}&utm_medium=${utm_medium}&utm_campaign=${utm_campaign}&utm_term=${utm_term}&utm_content=${utm_content}&nivel=${nivel}&carrera=${carrera}`;
 
         console.log(rutaRedireccionPreinscripcion);
 
 
-        $.ajax({
+      /*   $.ajax({
             method: "GET",
             url: setUrlBase() + "set/variables/preinscripcion/" + nivel + "/" + carreraFinal,
         }).done(function(data) {
@@ -145,7 +145,7 @@
 
         }).fail(function() {
             console.log("Algo salió mal");
-        });
-        window.open(rutaRedireccionPreinscripcion, '_blank');
+        });*/
+        window.open(rutaRedireccionPreinscripcion, '_blank'); 
     }
 </script>

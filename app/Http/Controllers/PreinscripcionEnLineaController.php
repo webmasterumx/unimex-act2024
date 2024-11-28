@@ -13,6 +13,10 @@ class PreinscripcionEnLineaController extends Controller
 
     public function index()
     {
+        //dd($_REQUEST['nivel']);
+
+        session(['nivel_preinscripcion' => $_REQUEST['nivel']]);
+        session(['carrera_preinscripcion' => $_REQUEST['carrera']]);
 
         $utm_recurso = new UtmController();
         $dataUTM = $utm_recurso->iniciarUtmSource();
