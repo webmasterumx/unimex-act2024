@@ -28,8 +28,8 @@ $(document).ready(function () {
             $('#plantelSelect').append(option);
         });
 
-    }).fail(function () {
-        console.log("Algo salió mal");
+    }).fail(function (jqXHR, textStatus, errorThrown) {
+        errorPeticionesCombos(jqXHR, textStatus)
     });
 
 
@@ -105,8 +105,8 @@ $(document).ready(function () {
                             $(element).append(option);
                         }
 
-                    }).fail(function () {
-                        console.log("Algo salió mal");
+                    }).fail(function (jqXHR, textStatus, errorThrown) {
+                        errorPeticionesCombos(jqXHR, textStatus)
                     });
 
                     $("select[name=periodoSelect]").prop("disabled", false);
@@ -118,8 +118,8 @@ $(document).ready(function () {
                 $(element).append(option);
             });
 
-        }).fail(function () {
-            console.log("Algo salió mal");
+        }).fail(function (jqXHR, textStatus, errorThrown) {
+            errorPeticionesCombos(jqXHR, textStatus)
         });
 
         if (nivel != '' || nivel !== '' || nivel != null) {
@@ -170,8 +170,8 @@ $(document).ready(function () {
                 $(element).append(option);
             }
 
-        }).fail(function () {
-            console.log("Algo salió mal");
+        }).fail(function (jqXHR, textStatus, errorThrown) {
+            errorPeticionesCombos(jqXHR, textStatus)
         });
 
         $("select[name=periodoSelect]").prop("disabled", false);
@@ -244,8 +244,8 @@ $(document).ready(function () {
 
             postAjaxPeticionContact(ruta, campos, element);
 
-        }).fail(function () {
-            console.log("Algo salió mal");
+        }).fail(function (jqXHR, textStatus, errorThrown) {
+            errorPeticionesCombos(jqXHR, textStatus)
         });
 
         $("select[name=horarioSelect]").prop("disabled", false);
@@ -295,8 +295,8 @@ $(document).ready(function () {
             }
 
 
-        }).fail(function () {
-            console.log("Algo salió mal");
+        }).fail(function (jqXHR, textStatus, errorThrown) {
+            errorPeticionesCombos(jqXHR, textStatus)
         });
 
         $("select[name=horarioSelect]").prop("disabled", false);
@@ -338,7 +338,91 @@ function postAjaxPeticionContact(ruta, data, element) {
             }
         }
 
-    }).fail(function () {
-        console.log("Algo salió mal");
+    }).fail(function (jqXHR, textStatus, errorThrown) {
+        errorPeticionesCombos(jqXHR, textStatus)
     });
 }
+
+function errorPeticionesCombos(jqXHR, textStatus) {
+    let mensaje = "";
+    let typeAlert = "";
+
+    if (jqXHR.status === 0) {
+
+        mensaje = `No tienes conexión a internet.
+        <br>
+        Codigo: ${jqXHR.status}`;
+        typeAlert = "warning";
+
+    } else if (jqXHR.status == 404) {
+
+        mensaje = `Ups! <br> Ocurrio un error en el servidor! <br> Intenta de nuevo recargando la pagina.
+        <br>
+        Codigo: ${jqXHR.status}`;
+        typeAlert = "danger";
+
+    } else if (jqXHR.status == 500) {
+
+        mensaje = `Ups! <br> Ocurrio un error en el servidor! <br> Intenta de nuevo recargando la pagina.
+        <br>
+        Codigo: ${jqXHR.status}`;
+        typeAlert = "danger";
+
+    }
+    else if (jqXHR.status == 503) {
+
+        mensaje = `Sitio en mantenimiento intenta mas tarde.
+        <br>
+        Codigo: ${jqXHR.status}`;
+        typeAlert = "info";
+
+    }
+    else if (textStatus === 'parsererror') {
+
+        console.log('Requested JSON parse failed.');
+
+        mensaje = `Ups! <br> Ocurrio un error en el servidor! <br> Intenta de nuevo recargando la pagina.
+        <br>
+        Codigo: ${jqXHR.status}`;
+        typeAlert = "danger";
+
+    } else if (textStatus === 'timeout') {
+
+        console.log('Time out error.');
+
+        mensaje = `Ups! <br> Ocurrio un error en el servidor! <br> Intenta de nuevo recargando la pagina.
+        <br>
+        Codigo: ${jqXHR.status}`;
+        typeAlert = "danger";
+
+    } else if (textStatus === 'abort') {
+
+        console.log('Ajax request aborted.');
+
+        mensaje = `Ups! <br> Ocurrio un error en el servidor! <br> Intenta de nuevo recargando la pagina.
+        <br>
+        Codigo: ${jqXHR.status}`;
+        typeAlert = "danger";
+
+    } else {
+
+        console.log('Uncaught Error: ' + jqXHR.responseText);
+
+        mensaje = `Ups! <br> Ocurrio un error en el servidor! <br> Intenta de nuevo recargando la pagina.
+        <br>
+        Codigo: ${jqXHR.status}`;
+        typeAlert = "danger";
+
+    }
+
+    let alerta = `
+        <div class="alert alert-${typeAlert} alert-dismissible fade show mt-2" role="alert">
+            ${mensaje}
+            <button type="button" class="btn-close" data-bs-dismiss="alert"
+                aria-label="Close"></button>
+        </div>
+    `;
+
+    $("#alertasErrorCombos").append(alerta);
+    $("#contenedorAlerta").removeClass("d-none");
+} 

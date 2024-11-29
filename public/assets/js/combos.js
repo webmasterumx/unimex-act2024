@@ -192,23 +192,31 @@ function errorPeticionesCombos(jqXHR, textStatus) {
 
     if (jqXHR.status === 0) {
 
-        mensaje = `No tienes conexión a internet.`;
+        mensaje = `No tienes conexión a internet.
+        <br>
+        Codigo: ${jqXHR.status}`;
         typeAlert = "warning";
 
     } else if (jqXHR.status == 404) {
 
-        mensaje = `Ups! <br> Ocurrio un error en el servidor! <br> Intenta de nuevo recargando la pagina.`;
+        mensaje = `Ups! <br> Ocurrio un error en el servidor! <br> Intenta de nuevo recargando la pagina.
+        <br>
+        Codigo: ${jqXHR.status}`;
         typeAlert = "danger";
 
     } else if (jqXHR.status == 500) {
 
-        mensaje = `Ups! <br> Ocurrio un error en el servidor! <br> Intenta de nuevo recargando la pagina.`;
+        mensaje = `Ups! <br> Ocurrio un error en el servidor! <br> Intenta de nuevo recargando la pagina.
+        <br>
+        Codigo: ${jqXHR.status}`;
         typeAlert = "danger";
 
     }
     else if (jqXHR.status == 503) {
 
-        mensaje = `Sitio en mantenimiento intenta mas tarde.`;
+        mensaje = `Sitio en mantenimiento intenta mas tarde.
+        <br>
+        Codigo: ${jqXHR.status}`;
         typeAlert = "info";
 
     }
@@ -216,28 +224,36 @@ function errorPeticionesCombos(jqXHR, textStatus) {
 
         console.log('Requested JSON parse failed.');
 
-        mensaje = `Ups! <br> Ocurrio un error en el servidor! <br> Intenta de nuevo recargando la pagina.`;
+        mensaje = `Ups! <br> Ocurrio un error en el servidor! <br> Intenta de nuevo recargando la pagina.
+        <br>
+        Codigo: ${jqXHR.status}`;
         typeAlert = "danger";
 
     } else if (textStatus === 'timeout') {
 
         console.log('Time out error.');
 
-        mensaje = `Ups! <br> Ocurrio un error en el servidor! <br> Intenta de nuevo recargando la pagina.`;
+        mensaje = `Ups! <br> Ocurrio un error en el servidor! <br> Intenta de nuevo recargando la pagina.
+        <br>
+        Codigo: ${jqXHR.status}`;
         typeAlert = "danger";
 
     } else if (textStatus === 'abort') {
 
         console.log('Ajax request aborted.');
 
-        mensaje = `Ups! <br> Ocurrio un error en el servidor! <br> Intenta de nuevo recargando la pagina.`;
+        mensaje = `Ups! <br> Ocurrio un error en el servidor! <br> Intenta de nuevo recargando la pagina.
+        <br>
+        Codigo: ${jqXHR.status}`;
         typeAlert = "danger";
 
     } else {
 
         console.log('Uncaught Error: ' + jqXHR.responseText);
 
-        mensaje = `Ups! <br> Ocurrio un error en el servidor! <br> Intenta de nuevo recargando la pagina.`;
+        mensaje = `Ups! <br> Ocurrio un error en el servidor! <br> Intenta de nuevo recargando la pagina.
+        <br>
+        Codigo: ${jqXHR.status}`;
         typeAlert = "danger";
 
     }
