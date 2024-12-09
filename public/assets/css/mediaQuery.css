@@ -160,6 +160,23 @@
     #number8 {
         width: 100%;
     }
+
+    #carrucelInit,
+    .slick-slide {
+        height: 150px !important;
+    }
+
+    .slick-prev-calculadora {
+        top: 29%;
+        left: 16%;
+        font-size: 38px;
+    }
+
+    .slick-next-calculadora {
+        top: 30%;
+        right: 4%;
+        font-size: 38px;
+    }
 }
 
 /*
@@ -188,6 +205,22 @@
     .slick-next {
         top: 50%;
         right: 2%;
+    }
+
+
+    #carrucelInit,
+    .slick-slide {
+        height: 200px !important;
+    }
+
+    .slick-prev-calculadora {
+        top: 24%;
+        left: 14%;
+    }
+
+    .slick-next-calculadora {
+        top: 50%;
+        right: 5%;
     }
 
     /*
@@ -501,7 +534,7 @@
         height: 28rem;
     }
 
-    #fondoServiciosSm{
+    #fondoServiciosSm {
         display: block;
         height: 200px;
     }
