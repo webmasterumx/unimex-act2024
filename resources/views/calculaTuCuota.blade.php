@@ -366,12 +366,12 @@
         $('#apellidosProspecto').validCampoFranz(' abcdefghijklmnñopqrstuvwxyzáéiíoóuú');
 
         $('#carrucelInit').slick({
-            infinite: false,
-            autoplay: false,
+            infinite: true,
+            autoplay: true,
             slidesToShow: 1,
-            slidesToScroll: 1,
+            slidesToScroll: 1, 
             arrows: true,
-            autoplaySpeed: 3000,
+            autoplaySpeed: 8000,
             prevArrow: '<button type="button" class="slick-prev-calculadora"><i class="bi bi-chevron-compact-left"></i></button>',
             nextArrow: '<button type="button" class="slick-next-calculadora"><i class="bi bi-chevron-compact-right"></i></button>',
         });
