@@ -101,6 +101,8 @@
         href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
 
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
     <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
     <style>
@@ -223,9 +225,8 @@
         <header class="border-bottom lh-1 py-3">
             <div class="row flex-nowrap justify-content-between align-items-center">
                 <div class="col-4 pt-1">
-                    <a
-                        href="{{ env('APP_URL') . $complemento}}"><img
-                            class="ms-4" src="{{ asset('assets/img/header/logo-2020.webp') }}" alt=""
+                    <a href="{{ env('APP_URL') . $complemento }}"><img class="ms-4"
+                            src="{{ asset('assets/img/header/logo-2020.webp') }}" alt=""
                             style="width: 200px;"></a>
                 </div>
                 <div class="col-4 text-center">

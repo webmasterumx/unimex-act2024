@@ -109,15 +109,23 @@
                 <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active" data-bs-interval="20000">
-                            <img src="{{ asset('assets/img/calculadora_de_cuotas/2024/2024_1.jpg') }}"
+                            <img src="{{ asset('assets/img/calculadora_de_cuotas/2025/calculadora2025_1.png') }}"
                                 class="d-block w-100" alt="...">
                         </div>
                         <div class="carousel-item" data-bs-interval="20000">
-                            <img src="{{ asset('assets/img/calculadora_de_cuotas/2024/2024_2.jpg') }}"
+                            <img src="{{ asset('assets/img/calculadora_de_cuotas/2025/calculadora2025_2.png') }}"
                                 class="d-block w-100" alt="...">
                         </div>
                         <div class="carousel-item" data-bs-interval="20000">
-                            <img src="{{ asset('assets/img/calculadora_de_cuotas/2024/2024_3.jpg') }}"
+                            <img src="{{ asset('assets/img/calculadora_de_cuotas/2025/calculadora2025_3.png') }}"
+                                class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item" data-bs-interval="20000">
+                            <img src="{{ asset('assets/img/calculadora_de_cuotas/2025/calculadora2025_4.png') }}"
+                                class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item" data-bs-interval="20000">
+                            <img src="{{ asset('assets/img/calculadora_de_cuotas/2025/calculadora2025_5.png') }}"
                                 class="d-block w-100" alt="...">
                         </div>
                     </div>
@@ -316,8 +324,7 @@
         function getCarreraSelect() {
             let carreraSelect = "{{ $carrera }}";
             console.log(carreraSelect);
-            
-
+        
             return carreraSelect;
         }
 
