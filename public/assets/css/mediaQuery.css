@@ -162,7 +162,8 @@
     }
 
     #carrucelInit,
-    .slick-slide {
+    .slick-slide,
+    .slick-list {
         height: 150px !important;
     }
 
@@ -209,7 +210,8 @@
 
 
     #carrucelInit,
-    .slick-slide {
+    .slick-slide,
+    .slick-list {
         height: 200px !important;
     }
 
@@ -395,6 +397,23 @@
         height: 15rem;
     }
 
+    #carrucelInit,
+    .slick-slide,
+    .slick-list {
+        height: 280px !important;
+    }
+
+    .slick-prev-calculadora {
+        top: 33%;
+        left: 10%;
+        font-size: 50px;
+    }
+
+    .slick-next-calculadora {
+        top: 33%;
+        right: 5%;
+        font-size: 50px;
+    }
 
     /*
 
@@ -469,6 +488,23 @@
         height: 20rem;
     }
 
+    #carrucelInit,
+    .slick-slide,
+    .slick-list {
+        height: 320px !important;
+    }
+
+    .slick-prev-calculadora {
+        top: 40%;
+        left: 7%;
+        font-size: 60px;
+    }
+
+    .slick-next-calculadora {
+        top: 40%;
+        right: 5%;
+        font-size: 60px;
+    }
 
     /*
 
@@ -575,6 +611,24 @@
 
     .itemBannerInit {
         height: 24rem;
+    }
+
+    #carrucelInit,
+    .slick-slide,
+    .slick-list {
+        height: 400px !important;
+    }
+
+    .slick-prev-calculadora {
+        top: 45%;
+        left: 6%;
+        font-size: 60px;
+    }
+
+    .slick-next-calculadora {
+        top: 45%;
+        right: 5%;
+        font-size: 60px;
     }
 
     /*

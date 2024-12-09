@@ -6,7 +6,7 @@
             <div class="col-12 col-md-8"></div>
             <div id="mensajeCorrreo" class="col-12 col-md-4">
             </div>
-            <div class="col-12 col-md-3 col-lg-3 px-3 order-2 order-sm-2 order-md-1 order-lg-1 oirder-xl-1" style="background-color: rgba(0, 75, 174, 30%);">
+            <div class="col-12 col-md-12 col-lg-3 col-xl-3 px-3 order-2 order-sm-2 order-md-2 order-lg-1 oirder-xl-1" style="background-color: rgba(0, 75, 174, 30%);">
                 <form id="form_calculadora" class="row p-3">
                     @method('PUT')
                     @csrf
@@ -105,7 +105,7 @@
                     </button>
                 </form>
             </div>
-            <div class="col-12 col-md-9 col-lg-9 mt-2 order-1 order-sm-1 order-md-2 order-lg-2 oirder-xl-2 mt-md-0 p-0 px-md-3">
+            <div class="col-12 col-md-12 col-lg-9 col-xl-9 mt-2 order-1 order-sm-1 order-md-1 order-lg-2 oirder-xl-2 mt-md-0 p-0 px-md-3">
                 <div id="carrucelInit">
                     <div>
                         <img src="{{ asset('assets/img/calculadora_de_cuotas/2025/calculadora2025_1.png') }}"
