@@ -100,7 +100,7 @@ function envioFormularioCalculadora(form) {
 
                 $('#envio_caluladora').html(`Calcular`);
 
-                $('#carouselExampleInterval').addClass('d-none');
+                $('#carrucelInit').addClass('d-none');
                 $('#informacionCRM').removeClass('d-none');
             } else {
                 Swal.fire({

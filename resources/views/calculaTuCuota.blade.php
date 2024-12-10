@@ -277,9 +277,9 @@
                     </div>
                 </div>
             </div>
-            <hr id="separacionTerminosCondiciones" class="mt-3 d-none"
+            <hr id="separacionTerminosCondiciones" class="mt-3 d-none order-3"
                 style="border-top: 1px solid #DC9A00; opacity: 1;">
-            <div id="terminosCondiciones" class="col-12 d-none">
+            <div id="terminosCondiciones" class="col-12 d-none  order-3">
                 <div class="accordion" id="accordionExample">
                     <div class="accordion-item border-0">
                         <h2 class="accordion-header">
