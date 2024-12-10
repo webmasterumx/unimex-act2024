@@ -281,7 +281,7 @@ function getNiveles() {
     }).done(function (data) {
 
         $("#selectNivel").empty();
-        $("#selectNivel").append(`<option>Selecciona el nivel</option>`);
+        $("#selectNivel").append(`<option value="" selected disabled>Selecciona el nivel</option>`);
 
         console.log(data);
         $.each(data, function (index, value) {
@@ -495,7 +495,7 @@ function getPeriodos() {
         }
     }).done(function (data) {
         $("#selectPeriodo").empty();
-        $("#selectPeriodo").append(`<option>¿Cuándo deseas iniciar?</option>`);
+        $("#selectPeriodo").append(`<option value="" selected disabled>¿Cuándo deseas iniciar?</option>`);
 
         console.log(data);
         if (data.clave == undefined || data.clave == null) {

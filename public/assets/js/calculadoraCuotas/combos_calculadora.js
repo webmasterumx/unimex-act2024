@@ -55,7 +55,7 @@ $("select[name=selectPeriodo]").change(function () {
 
         if (nivelSelect != null) {
             $("#selectNivel").empty();
-            $("#selectNivel").append(`<option>Recalculado...</option>`);
+            $("#selectNivel").append(`<option value="" selected disabled>Recalculado...</option>`);
 
             let plantel = $('select[name=selectPlantel]').val();
             $.ajax({
@@ -70,7 +70,7 @@ $("select[name=selectPeriodo]").change(function () {
             }).done(function (info) {
 
                 $("#selectNivel").empty();
-                $("#selectNivel").append(`<option>Seleccionar nivel</option>`);
+                $("#selectNivel").append(`<option value="" selected disabled>Seleccionar nivel</option>`);
                 console.log(info);
                 $.each(info, function (index, value) {
                     console.log(value.descrip);
