@@ -83,6 +83,8 @@
                             @if ($dataUTM != null) value="{{ $dataUTM['utm_term'] }}" @else value="0" @endif>
                         <input type="hidden" name="utm_content" id="utm_content"
                             @if ($dataUTM != null) value="{{ $dataUTM['utm_content'] }}" @else value="0" @endif>
+                        <input type="hidden" id="carreraPrecargado" name="carreraPrecargado" value="{{ $carrera }}">
+                        <input type="hidden" name="nivelPrecargado" id="nivelPrecargado" value="{{ $nivel }}">
                         <div class="col-12  d-flex">
                             <!-- Button trigger modal -->
                             <input type="checkbox" id="avisoPrivacidad" name="avisoPrivacidad" checked>
