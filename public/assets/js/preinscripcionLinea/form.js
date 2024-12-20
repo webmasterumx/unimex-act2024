@@ -66,7 +66,7 @@ $("#formPreincripcion").validate({
                 $('#validarCorreo').html(`
                     <i class="bi bi-box-arrow-right"></i>
                     Continuar
-                `);
+                `); 
                 $("#validarCorreo").prop("disabled", false);
 
                 $("#correo").val("");
