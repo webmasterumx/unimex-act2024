@@ -271,6 +271,7 @@
 @section('scripts')
     <script src="{{ asset('assets/js/combosCarrera.js') }}"></script>
     <script>
+        // slick del carrucel de temario
         $('#temario').slick({
             infinite: false,
             autoplay: false,
@@ -311,6 +312,7 @@
             nextArrow: '<button type="button" class="slick-next-tema"><i class="bi bi-chevron-compact-right"></i></button>',
         });
 
+        // slick de carrucel de campo laboral
         $('#campo_laboral').slick({
             infinite: false,
             autoplay: false,
@@ -344,6 +346,7 @@
             nextArrow: '<button type="button" class="slick-next-campo"><i class="bi bi-chevron-compact-right"></i></button>',
         });
 
+        // slick de requesitos
         $('#requisitos').slick({
             infinite: false,
             autoplay: false,
