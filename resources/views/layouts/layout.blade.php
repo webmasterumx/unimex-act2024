@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('titulo')</title>
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Last-Modified" content="0">
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+    <meta http-equiv="Pragma" content="no-cache">
     <link rel="shortcut icon" href="{{ asset('assets/img/favicon.png') }}" type="image/x-icon">
 
     <!-- METAS -->
@@ -282,7 +286,8 @@
             utm_term = "{{ session('utm_term') }}";
             utm_content = "{{ session('utm_content') }}";
 
-            if (utm_medium == null || utm_medium == "" || utm_medium == "organico" || utm_medium == "Organico" || utm_medium == "ORGANICO") {
+            if (utm_medium == null || utm_medium == "" || utm_medium == "organico" || utm_medium == "Organico" ||
+                utm_medium == "ORGANICO") {
                 utm_source = "Website+Metro";
                 utm_medium = "Organico";
                 utm_campaign = "Home+header";
