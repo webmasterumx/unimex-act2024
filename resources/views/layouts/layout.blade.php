@@ -208,6 +208,8 @@
             return urlBase;
         }
 
+        console.log(setUrlBase());
+        
         const obtenHover = document.getElementById('f-boton'),
             mensajeW = document.getElementById('f-msj'),
             btnCerrar = document.getElementById('boton-cerrar');
