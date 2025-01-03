@@ -18,6 +18,7 @@ $(document).ready(function () {
         method: "GET",
         url: setUrlBase() + "getPlanteles",
     }).done(function (data) {
+        console.log(data);
         $.each(data, function (index, value) {
             let option = `<option value="${value.clave}">${value.descrip}</option>`;
             $('#plantelSelect').append(option);
