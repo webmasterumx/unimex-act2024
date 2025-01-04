@@ -211,15 +211,15 @@ $("#form_contacto").validate({
     },
     messages: {
         nombre_prospecto: {
-            required: "Nombre obligatorio v2.",
+            required: "Nombre obligatorio.",
             maxlength: "El número de caracteres máximo es 50."
         },
         apellidos_prospecto: {
-            required: "Apellidos obligatorios v2.",
+            required: "Apellidos obligatorios.",
             maxlength: "El número de caracteres máximo es 60."
         },
         mail_prospecto: {
-            required: "Correo obligatorio v2.",
+            required: "Correo obligatorio.",
             email: "Ingresa un formato válido de correo.",
             maxlength: "El número de caracteres máximo es 60."
         },
