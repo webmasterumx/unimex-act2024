@@ -272,14 +272,19 @@
     </section>
 
     @php
-        $origen = "Home";
+        $origen = 'Home';
     @endphp
     @include('include.contactoForm')
     @include('modales.modalCalculaTuCuota')
 @endsection
 
 @section('scripts')
-    <script src="{{ asset('assets/js/combos.js?') }}"></script>
+
+    @php
+        $comple = filemtime("assets/js/combos.js"); 
+        $ruta = "assets/js/combos.js?" . $comple;
+    @endphp
+    <script src="{{ asset($ruta) }}"></script>
     <script>
         $(document).ready(function() {
             $('#listCarreras').slick({
