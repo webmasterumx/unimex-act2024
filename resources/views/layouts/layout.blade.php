@@ -111,6 +111,9 @@
     </footer>
     <!-- Fin de Footer -->
 
+    <!-- modales generales -->
+    @include('modales.alertErrorMessage')
+
     <span class="flotante-whats">
         <button id="f-boton">
             <img class=" lazyloaded" width="80" height="70" id="f-whats-boton" alt="iamgen-whats"
@@ -148,10 +151,14 @@
     </script>
 
     <!-- Template Main JS File -->
+    @php
+        $comple = filemtime('assets/js/form.js');
+        $ruta = 'assets/js/form.js?' . $comple;
+    @endphp
     <script src="{{ asset('assets/js/app.js') }}"></script>
     <script src="{{ asset('assets/js/main.js') }}"></script>
     <script src="{{ asset('assets/js/custom.js') }}"></script>
-    <script src="{{ asset('assets/js/form.js') }}"></script>
+    <script src="{{ $ruta }}"></script>
 
     @if (isset($dataUTM))
         @if (
@@ -207,7 +214,7 @@
             let urlBase = "{{ env('APP_URL') }}";
             return urlBase;
         }
-        
+
         const obtenHover = document.getElementById('f-boton'),
             mensajeW = document.getElementById('f-msj'),
             btnCerrar = document.getElementById('boton-cerrar');

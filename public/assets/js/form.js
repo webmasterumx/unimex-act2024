@@ -255,10 +255,13 @@ $("#form_contacto").validate({
         let apellidosProspecto = $('#apellidos_prospecto').val().replace(/ /g, "");
 
         if (nombreProspecto == "") {
-            Swal.fire({
-                icon: "error",
-                text: "El campo de nombre no puede estar vacío",
-            });
+            $("#contenidoModalErrorForm").html(`
+            <i class="bi bi-x-circle"></i>
+            El campo de <b>Nombre</b> no puede estar vacío<br>
+            `)
+            $('#errorModalForm').modal('show');
+
+
         }
         else if (apellidosProspecto == "") {
             Swal.fire({

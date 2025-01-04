@@ -164,6 +164,7 @@ function peticionInfoCamboPosterior(element, ruta, data, listaCombos, listaNombr
 }
 
 function limpiarComboParaCalculo(element) {
+    $(`#` + element).prop("disabled", false);
     $(`#` + element).empty();
     $(`#` + element).append(`<option value="" selected disabled> Calculando.. </option>`);
 }
