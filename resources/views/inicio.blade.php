@@ -279,7 +279,7 @@
 @endsection
 
 @section('scripts')
-    <script src="{{ asset('assets/js/combos.js?<?php echo filemtime('ruta-hacia-style.css'); ?>') }}"></script>
+    <script src="{{ asset('assets/js/combos.js?') }}"></script>
     <script>
         $(document).ready(function() {
             $('#listCarreras').slick({
