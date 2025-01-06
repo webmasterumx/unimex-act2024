@@ -64,7 +64,7 @@ $("#form_calculadora").validate({
         if (nombreProspecto == "") {
             Swal.fire({
                 icon: "error",
-                text: "El campo de nombre no puede estar vacío v1",
+                text: "El campo de nombre no puede estar vacío",
             });
         }
         else if (apellidosProspecto == "") {
