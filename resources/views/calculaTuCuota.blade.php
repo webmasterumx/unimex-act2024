@@ -6,7 +6,8 @@
             <div class="col-12 col-md-8"></div>
             <div id="mensajeCorrreo" class="col-12 col-md-4">
             </div>
-            <div class="col-12 col-md-12 col-lg-3 col-xl-3 px-3 order-2 order-sm-2 order-md-2 order-lg-1 oirder-xl-1" style="background-color: rgba(0, 75, 174, 30%);">
+            <div class="col-12 col-md-12 col-lg-3 col-xl-3 px-3 order-2 order-sm-2 order-md-2 order-lg-1 oirder-xl-1"
+                style="background-color: rgba(0, 75, 174, 30%);">
                 <form id="form_calculadora" class="row p-3">
                     @method('PUT')
                     @csrf
@@ -105,7 +106,8 @@
                     </button>
                 </form>
             </div>
-            <div class="col-12 col-md-12 col-lg-9 col-xl-9 mt-2 order-1 order-sm-1 order-md-1 order-lg-2 oirder-xl-2 mt-md-0 p-0 px-md-3">
+            <div
+                class="col-12 col-md-12 col-lg-9 col-xl-9 mt-2 order-1 order-sm-1 order-md-1 order-lg-2 oirder-xl-2 mt-md-0 p-0 px-md-3">
                 <div id="carrucelInit">
                     <div class="contenedorBannerCal">
                         <img src="{{ asset('assets/img/calculadora_de_cuotas/2025/calculadora2025_1.png') }}"
@@ -369,14 +371,25 @@
             infinite: true,
             autoplay: true,
             slidesToShow: 1,
-            slidesToScroll: 1, 
+            slidesToScroll: 1,
             arrows: true,
             autoplaySpeed: 8000,
             prevArrow: '<button type="button" class="slick-prev-calculadora"><i class="bi bi-chevron-compact-left"></i></button>',
             nextArrow: '<button type="button" class="slick-next-calculadora"><i class="bi bi-chevron-compact-right"></i></button>',
         });
     </script>
-    <script src="{{ asset('assets/js/calculadoraCuotas/app_calculadora.js') }}"></script>
-    <script src="{{ asset('assets/js/calculadoraCuotas/combos_calculadora.js') }}"></script>
-    <script src="{{ asset('assets/js/calculadoraCuotas/validacion.js') }}"></script>
+    @php
+        $compCalJs = filemtime('assets/js/calculadoraCuotas/app_calculadora.js');
+        $rutaCalJs = 'assets/js/calculadoraCuotas/app_calculadora.js?' . $compCalJs;
+
+        $compCalJs1 = filemtime('assets/js/calculadoraCuotas/combos_calculadora.js');
+        $rutaCalJs1 = 'assets/js/calculadoraCuotas/combos_calculadora.js?' . $compCalJs1;
+
+        $compCalJs2 = filemtime('assets/js/calculadoraCuotas/validacion.js');
+        $rutaCalJs2 = 'assets/js/calculadoraCuotas/validacion.js?' . $compCalJs2;
+    @endphp
+
+    <script src="{{ asset($rutaCalJs) }}"></script>
+    <script src="{{ asset($rutaCalJs1) }}"></script>
+    <script src="{{ asset($rutaCalJs2) }}"></script>
 @endsection

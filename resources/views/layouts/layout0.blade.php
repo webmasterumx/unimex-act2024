@@ -103,8 +103,16 @@
 
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
 
-    <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/mediaQuery.css') }}">
+    @php
+        $complemento = filemtime('assets/css/app.css');
+        $rutaCss = 'assets/css/app.css?' . $complemento;
+
+        $complemento1 = filemtime('assets/css/mediaQuery.css');
+        $rutaCss1 = 'assets/css/mediaQuery.css?' . $complemento1;
+    @endphp
+
+    <link rel="stylesheet" href="{{ asset($rutaCss) }}">
+    <link rel="stylesheet" href="{{ asset($rutaCss1) }}">
     <style>
         .style_prevu_kit {
             -webkit-transition: all 200ms ease-in;
@@ -157,7 +165,6 @@
             background-color: #ffffff !important;
             box-shadow: none;
         }
-
     </style>
 </head>
 
@@ -262,7 +269,13 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script src="{{ asset('assets/js/JQuery.print.js') }}"></script>
+
+    @php
+        $complementoJSCal = filemtime('assets/js/JQuery.print.js');
+        $rutaJSCal = 'assets/js/JQuery.print.js?' . $complementoJSCal;
+    @endphp
+
+    <script src="{{ asset($rutaJSCal) }}"></script>
     <script>
         function setUrlBase() {
             let urlBase = "{{ env('APP_URL') }}";

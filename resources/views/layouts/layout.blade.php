@@ -39,10 +39,24 @@
     <!---  DateTable --->
     <link rel="stylesheet" href="//cdn.datatables.net/2.0.1/css/dataTables.dataTables.min.css">
 
-    <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/mediaQuery.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/non-critical-styles10062022.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/flotante.min.css') }}">
+    @php
+        $complemento = filemtime('assets/css/app.css');
+        $rutaCss = 'assets/css/app.css?' . $complemento;
+
+        $complemento1 = filemtime('assets/css/mediaQuery.css');
+        $rutaCss1 = 'assets/css/mediaQuery.css?' . $complemento1;
+
+        $complemento2 = filemtime('assets/css/non-critical-styles10062022.min.css');
+        $rutaCss2 = 'assets/css/non-critical-styles10062022.min.css?' . $complemento2;
+
+        $complemento3 = filemtime('assets/css/flotante.min.css');
+        $rutaCss3 = 'assets/css/flotante.min.css?' . $complemento3;
+    @endphp
+
+    <link rel="stylesheet" href="{{ asset($rutaCss) }}">
+    <link rel="stylesheet" href="{{ asset($rutaCss1) }}">
+    <link rel="stylesheet" href="{{ asset($rutaCss2) }}">
+    <link rel="stylesheet" href="{{ asset($rutaCss3) }}">
 
     @yield('styles')
 
@@ -152,13 +166,22 @@
 
     <!-- Template Main JS File -->
     @php
-        $comple = filemtime('assets/js/form.js');
-        $ruta = 'assets/js/form.js?' . $comple;
+        $comple = filemtime('assets/js/app.js');
+        $ruta = 'assets/js/app.js?' . $comple;
+
+        $comple1 = filemtime('assets/js/main.js');
+        $ruta1 = 'assets/js/main.js?' . $comple1;
+
+        $comple2 = filemtime('assets/js/custom.js');
+        $ruta2 = 'assets/js/custom.js?' . $comple2;
+
+        $comple3 = filemtime('assets/js/form.js');
+        $ruta3 = 'assets/js/form.js?' . $comple3;
     @endphp
-    <script src="{{ asset('assets/js/app.js') }}"></script>
-    <script src="{{ asset('assets/js/main.js') }}"></script>
-    <script src="{{ asset('assets/js/custom.js') }}"></script>
-    <script src="{{ $ruta }}"></script>
+    <script src="{{ asset($ruta) }}"></script>
+    <script src="{{ asset($ruta1) }}"></script>
+    <script src="{{ asset($ruta2) }}"></script>
+    <script src="{{ asset($ruta3) }}"></script>
 
     @if (isset($dataUTM))
         @if (

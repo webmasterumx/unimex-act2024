@@ -2,7 +2,7 @@ function envioFormularioCalculadora(form) {
     if ($('input:radio[name=typeTelefono]:checked').val() == undefined) {
         Swal.fire({
             icon: "error",
-            title: "Campo obligatorio",
+            title: "Campo obligatorio v1",
             text: "Por favor indica de que tipo es tu teléfono",
             showConfirmButton: true,
         });
