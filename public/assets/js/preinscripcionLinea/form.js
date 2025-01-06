@@ -14,13 +14,13 @@ $("#formPreincripcion").validate({
     },
     messages: {
         correo: {
-            required: "Correo obligatorio.",
+            required: "Correo obligatorio v1.",
             email: "Ingresa un formato valido de correo.",
             maxlength: "El número de caracteres máximo es 50.",
 
         },
         telefono: {
-            required: "Teléfono obligatorio.",
+            required: "Teléfono obligatorio v1.",
             minlength: "El teléfono celular debe tener mínimo 10 digitos.",
             maxlength: "El teléfono celular debe tener máximo 10 digitos.",
         }

@@ -61,9 +61,19 @@
             return urlBase;
         }
     </script>
-    <script src="{{ asset('assets/js/preinscripcionLinea/app.js') }}"></script>
-    <script src="{{ asset('assets/js/preinscripcionLinea/form.js') }}"></script>
-    <script src="{{ asset('assets/js/preinscripcionLinea/combos.js') }}"></script>
+    @php
+        $compJsPre = filemtime('assets/js/preinscripcionLinea/app.js');
+        $rutaJsPre = 'assets/js/preinscripcionLinea/app.js?' . $compJsPre;
+
+        $compJsPre1 = filemtime('assets/js/preinscripcionLinea/form.js');
+        $rutaJsPre1 = 'assets/js/preinscripcionLinea/form.js?' . $compJsPre1;
+
+        $compJsPre2 = filemtime('assets/js/preinscripcionLinea/combos.js');
+        $rutaJsPre2 = 'assets/js/preinscripcionLinea/combos.js?' . $compJsPre2;
+    @endphp
+    <script src="{{ asset($rutaJsPre) }}"></script>
+    <script src="{{ asset($rutaJsPre1) }}"></script>
+    <script src="{{ asset($rutaJsPre2) }}"></script>
     @yield('scripts')
 </body>
 
