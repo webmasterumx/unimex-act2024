@@ -14,13 +14,13 @@ $("#formPreincripcion").validate({
     },
     messages: {
         correo: {
-            required: "Correo obligatorio v1.",
+            required: "Correo obligatorio.",
             email: "Ingresa un formato valido de correo.",
             maxlength: "El número de caracteres máximo es 50.",
 
         },
         telefono: {
-            required: "Teléfono obligatorio v1.",
+            required: "Teléfono obligatorio.",
             minlength: "El teléfono celular debe tener mínimo 10 digitos.",
             maxlength: "El teléfono celular debe tener máximo 10 digitos.",
         }
@@ -165,11 +165,11 @@ $("#formPromoPreinscripcion").validate({
     },
     messages: {
         nombreInscripcion: {
-            required: "Nombre(s) obligatorio(s)",
+            required: "Nombre(s) obligatorio(s) v1",
             maxlength: "El número de caracteres máximo es 50.",
         },
         apellidoPatInscripcion: {
-            required: "Apellido paterno obligatorio.",
+            required: "Apellido paterno obligatorio v1.",
             maxlength: "El número de caracteres máximo es 30.",
         },
         apellidoMatInscripcion: {
