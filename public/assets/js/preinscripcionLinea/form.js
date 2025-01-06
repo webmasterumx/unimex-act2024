@@ -165,11 +165,11 @@ $("#formPromoPreinscripcion").validate({
     },
     messages: {
         nombreInscripcion: {
-            required: "Nombre(s) obligatorio(s) v1",
+            required: "Nombre(s) obligatorio(s).",
             maxlength: "El número de caracteres máximo es 50.",
         },
         apellidoPatInscripcion: {
-            required: "Apellido paterno obligatorio v1.",
+            required: "Apellido paterno obligatorio.",
             maxlength: "El número de caracteres máximo es 30.",
         },
         apellidoMatInscripcion: {
