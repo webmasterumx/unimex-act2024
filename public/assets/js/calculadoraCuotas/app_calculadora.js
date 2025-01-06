@@ -2,7 +2,7 @@ function envioFormularioCalculadora(form) {
     if ($('input:radio[name=typeTelefono]:checked').val() == undefined) {
         Swal.fire({
             icon: "error",
-            title: "Campo obligatorio v1",
+            title: "Campo obligatorio",
             text: "Por favor indica de que tipo es tu teléfono",
             showConfirmButton: true,
         });
@@ -13,7 +13,7 @@ function envioFormularioCalculadora(form) {
             <div class="spinner-border me-1" style="width: 20px; height: 20px;" role="status">
                 <span class="visually-hidden">Loading...</span>
             </div>
-            Calculando v1
+            Calculando 
         `);
 
         let nombreNivel = $('select[name="selectNivel"] option:selected').text();
