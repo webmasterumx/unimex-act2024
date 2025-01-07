@@ -325,7 +325,11 @@
 @endsection
 
 @section('scripts')
-    <script src="{{ asset('assets/js/combosCarrera.js') }}"></script>
+    @php
+        $compCalJs2 = filemtime('assets/js/combosCarrera.js');
+        $rutaCalJs2 = 'assets/js/combosCarrera.js?' . $compCalJs2;
+    @endphp
+    <script src="{{ asset($rutaCalJs2) }}"></script>
     <script>
         $('#temario_especialidad').slick({
             infinite: false,
@@ -438,8 +442,15 @@
         });
     </script>
 
-    <script src="{{ asset('assets/js/folletoUnimex/combos.js') }}"></script>
-    <script src="{{ asset('assets/js/folletoUnimex/form.js') }}"></script>
+    @php
+        $compCalJs = filemtime('assets/js/folletoUnimex/combos.js');
+        $rutaCalJs = 'assets/js/folletoUnimex/combos.js?' . $compCalJs;
+
+        $compCalJs1 = filemtime('assets/js/folletoUnimex/form.js');
+        $rutaCalJs1 = 'assets/js/folletoUnimex/form.js?' . $compCalJs1;
+    @endphp
+    <script src="{{ asset($rutaCalJs) }}"></script>
+    <script src="{{ asset($rutaCalJs1) }}"></script>
 
     @include('include.redirecciones.inOfertaAcademica')
 @endsection

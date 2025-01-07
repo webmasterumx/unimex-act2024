@@ -152,7 +152,12 @@
 @include('modales.empresasOCC')
 
 @section('scripts')
-    <script src="{{ asset('assets/js/combos.js') }}"></script>
+    @php
+        $compCalJs = filemtime('assets/js/combos.js');
+        $rutaCalJs = 'assets/js/combos.js?' . $compCalJs;
+    @endphp
+
+    <script src="{{ asset($rutaCalJs) }}"></script>
     <script
         src="https://rawcdn.githack.com/franz1628/validacionKeyCampo/bce0e442ee71a4cf8e5954c27b44bc88ff0a8eeb/validCampoFranz.js">
     </script>

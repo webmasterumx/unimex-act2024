@@ -98,7 +98,8 @@
     <!-- Inicio de la sección de ventajas -->
     <section class="container-fluid">
         <div class="row">
-            <div style="background-image: url('{{ asset($contraportada) }}')" id="contraportada" class="col-12 col-md-6 col-lg-6">
+            <div style="background-image: url('{{ asset($contraportada) }}')" id="contraportada"
+                class="col-12 col-md-6 col-lg-6">
             </div>
             <div class="col-12 col-md-6 col-lg-6 bg-articule p-5">
                 <h2 style="font-size: 1.438rem;" class="underlined-head fw-normal">
@@ -269,7 +270,11 @@
 @endsection
 
 @section('scripts')
-    <script src="{{ asset('assets/js/combosCarrera.js') }}"></script>
+    @php
+        $compCalJs2 = filemtime('assets/js/combosCarrera.js');
+        $rutaCalJs2 = 'assets/js/combosCarrera.js?' . $compCalJs2;
+    @endphp
+    <script src="{{ asset($rutaCalJs2) }}"></script>
     <script>
         // slick del carrucel de temario
         $('#temario').slick({
@@ -391,8 +396,16 @@
             }
         });
     </script>
-    <script src="{{ asset('assets/js/folletoUnimex/combos.js') }}"></script>
-    <script src="{{ asset('assets/js/folletoUnimex/form.js') }}"></script>
+
+    @php
+        $compCalJs = filemtime('assets/js/folletoUnimex/combos.js');
+        $rutaCalJs = 'assets/js/folletoUnimex/combos.js?' . $compCalJs;
+
+        $compCalJs1 = filemtime('assets/js/folletoUnimex/form.js');
+        $rutaCalJs1 = 'assets/js/folletoUnimex/form.js?' . $compCalJs1;
+    @endphp
+    <script src="{{ asset($rutaCalJs) }}"></script>
+    <script src="{{ asset($rutaCalJs1) }}"></script>
 
     @include('include.redirecciones.inOfertaAcademica')
 @endsection
