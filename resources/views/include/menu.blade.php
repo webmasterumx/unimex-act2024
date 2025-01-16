@@ -95,11 +95,6 @@
                 <ul>
 
                     <!-- parte del menu para celulares y tabletas, menu lateral -->
-                    <li class="d-block d-md-block d-lg-block text-center">
-                        <a class="mt-1" style="display: inline-block" onclick="subnav.show('subnavAbout')"
-                            title="">Acerca de unimex</a>
-                    </li>
-
                     <li class="text-center">
                         <a class="mt-1" style="display: inline-block" onclick="subnav.show('subnavAcademicOffer')"
                             title="Conoce nuestras Licenciaturas, Maestrías y Posgrados">Oferta Académica</a>
