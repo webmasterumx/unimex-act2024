@@ -260,9 +260,6 @@
 
         $complemento1 = filemtime('assets/js/preinscripcionLinea/llenar_combos.js');
         $rutaCss1 = 'assets/js/preinscripcionLinea/llenar_combos.js?' . $complemento1;
-
-        $complemento2 = filemtime('assets/js/preinscripcionLinea/combos.js');
-        $rutaCss2 = 'assets/js/preinscripcionLinea/combos.js?' . $complemento2;
     @endphp
     <script type="text/javascript"
         src="https://rawcdn.githack.com/franz1628/validacionKeyCampo/bce0e442ee71a4cf8e5954c27b44bc88ff0a8eeb/validCampoFranz.js">
@@ -326,7 +323,6 @@
         </script>
         <script src="{{ asset($rutaCss1) }}"></script>
     @else
-        <script src="{{ asset($rutaCss2) }}"></script>
         <script>
             let correoGuardado = "{{ session('email') }}";
             let telefonoGuardado = "{{ session('telefono') }}";
