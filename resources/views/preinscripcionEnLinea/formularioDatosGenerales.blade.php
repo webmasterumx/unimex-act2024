@@ -120,8 +120,8 @@
                             <div class="mb-3">
                                 <label style="color: #00539a !important;" for="calleInscripcion" class="form-label">
                                     <span style="color: red !important;">*</span> Calle</label>
-                                <input type="text" class="form-control" id="calleInscripcion"
-                                    name="calleInscripcion" maxlength="50">
+                                <input type="text" class="form-control" id="calleInscripcion" name="calleInscripcion"
+                                    maxlength="50">
                             </div>
                         </div>
                         <div class="col-12 col-lg-1">
@@ -254,10 +254,20 @@
 @include('modales.modalCargaPreinscripcion')
 
 @section('scripts')
+    @php
+        $complemento = filemtime('assets/js/validarCampos.js');
+        $rutaCss = 'assets/js/validarCampos.js?' . $complemento;
+
+        $complemento1 = filemtime('assets/js/preinscripcionLinea/llenar_combos.js');
+        $rutaCss1 = 'assets/js/preinscripcionLinea/llenar_combos.js?' . $complemento1;
+
+        $complemento2 = filemtime('assets/js/preinscripcionLinea/combos.js');
+        $rutaCss2 = 'assets/js/preinscripcionLinea/combos.js?' . $complemento2;
+    @endphp
     <script type="text/javascript"
         src="https://rawcdn.githack.com/franz1628/validacionKeyCampo/bce0e442ee71a4cf8e5954c27b44bc88ff0a8eeb/validCampoFranz.js">
     </script>
-    <script src="{{ asset('assets/js/validarCampos.js') }}"></script>
+    <script src="{{ asset($rutaCss) }}"></script>
     @if (session('estadoCRM') == 1 || session()->has('foliocrm') == true)
         <script>
             $(document).ready(function() {
@@ -265,7 +275,7 @@
                 $('#modalCarga').modal('show');
 
                 let ruta = setUrlBase() + "get/info/prospecto"
-                
+
                 $.ajax({
                     method: "GET",
                     url: ruta,
@@ -314,8 +324,9 @@
 
             });
         </script>
-        <script src="{{ asset('assets/js/preinscripcionLinea/llenar_combos.js') }}"></script>
+        <script src="{{ asset($rutaCss1) }}"></script>
     @else
+        <script src="{{ asset($rutaCss2) }}"></script>
         <script>
             let correoGuardado = "{{ session('email') }}";
             let telefonoGuardado = "{{ session('telefono') }}";

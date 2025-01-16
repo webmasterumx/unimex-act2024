@@ -121,7 +121,7 @@ function llenarComboNivel(clavePlantel, claveNivel) {
 }
 
 function llenarCombosCarrera(claveCampana, clavePlantel, claveNivel, claveCarrera) {
-    let ruta = setUrlBase() + 'preinscripcion/get/carreras';
+    let ruta = setUrlBase() + 'getCarreras';
 
     let data = {
         plantel: clavePlantel,
