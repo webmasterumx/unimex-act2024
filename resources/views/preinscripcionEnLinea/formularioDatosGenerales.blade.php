@@ -288,6 +288,12 @@
                     let claveCarrera = data.clave_carrera;
                     let claveHorario = data.clave_turno;
 
+                    console.log(clavePlantel);
+                    console.log(claveCampana);
+                    console.log(claveNivel);
+                    console.log(claveCarrera);
+                    console.log(claveHorario);
+
                     llenaComboPlantel(clavePlantel);
                     llenarComboCampañas(claveCampana, clavePlantel);
                     llenarComboNivel(clavePlantel, claveNivel);
