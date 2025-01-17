@@ -45,7 +45,12 @@
                             </div>
                         </div>
                     </div>
-
+                    <div id="mensajeErrorCalcula" class="alert alert-danger alert-dismissible fade show d-none"
+                        role="alert">
+                        <span id="textoMensajeErrorCalculadora" style="font-size: 14px !important;"></span>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    <br>
                     <h5>Personaliza Tu Beca</h5>
                     <hr>
                     <div class="mb-2 p-0 col-6">
@@ -387,9 +392,13 @@
 
         $compCalJs2 = filemtime('assets/js/calculadoraCuotas/validacion.js');
         $rutaCalJs2 = 'assets/js/calculadoraCuotas/validacion.js?' . $compCalJs2;
+
+        $compCalJs3 = filemtime('assets/js/calculadoraCuotas/validacion.js');
+        $rutaCalJs3 = 'assets/js/calculadoraCuotas/error.js?' . $compCalJs3;
     @endphp
 
     <script src="{{ asset($rutaCalJs) }}"></script>
     <script src="{{ asset($rutaCalJs1) }}"></script>
     <script src="{{ asset($rutaCalJs2) }}"></script>
+    <script src="{{ asset($rutaCalJs3) }}"></script>
 @endsection

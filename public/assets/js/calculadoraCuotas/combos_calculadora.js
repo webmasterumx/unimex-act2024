@@ -13,8 +13,8 @@ $(document).ready(function () {
                 .descrip + "</option>");
         });
 
-    }).fail(function () {
-        console.log("Algo salió mal");
+    }).fail(function (jqXHR, textStatus, errorThrown) {
+        mostarMensajeErrorParaCombos(jqXHR, textStatus);
     });
 
 });
@@ -89,8 +89,8 @@ $("select[name=selectPeriodo]").change(function () {
                         .descrip + "</option>");
                 });
 
-            }).fail(function () {
-                console.log("Algo salió mal");
+            }).fail(function (jqXHR, textStatus, errorThrown) {
+                mostarMensajeErrorParaCombos(jqXHR, textStatus);
             });
         }
         else {
@@ -136,7 +136,7 @@ $("select[name=selectNivel]").change(function () {
         $('#grupoInformacion').addClass('d-none');
 
 
-        getCarreras();
+        //getCarreras();
     }
     else {
 
@@ -167,4 +167,6 @@ $("select[name=selectCarrera]").change(function () {
 
     obtenerHorariosBeca();
 });
+
+
 

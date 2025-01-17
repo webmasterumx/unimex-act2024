@@ -79,7 +79,9 @@ function envioFormularioCalculadora(form) {
 
                 carreraSelect = getCarreraSelect();
 
-                if (carreraSelect != null) {
+                console.log(carreraSelect);
+
+                if (carreraSelect != "" || carreraSelect == null) {
                     getCarrerasWithVariableEstablecida(carreraSelect);
                 }
                 else {
@@ -115,8 +117,19 @@ function envioFormularioCalculadora(form) {
             }
 
 
-        }).fail(function () {
-            console.log("Algo salió mal");
+        }).fail(function (jqXHR, textStatus, errorThrown) {
+
+            let elemento = "#envio_caluladora";
+            let htmlText = `
+                <i class="bi bi-x-circle"></i>
+                Cálculo cancelado
+            `;
+            let htmlTextV2 = `
+                Calcular
+            `;
+
+
+            generadorMensajesError(jqXHR, textStatus, elemento, htmlText, htmlTextV2)
         });
     }
 }
@@ -261,8 +274,8 @@ function getCarreras() {
             $("#selectCarrera").append(option); // se inserta la carrera de cada elemento
         }
 
-    }).fail(function () {
-        console.log("Algo salió mal");
+    }).fail(function (jqXHR, textStatus, errorThrown) {
+        mostarMensajeErrorParaCombos(jqXHR, textStatus);
     });
 }
 
@@ -289,8 +302,8 @@ function getNiveles() {
                 .descrip + "</option>");
         });
 
-    }).fail(function () {
-        console.log("Algo salió mal");
+    }).fail(function (jqXHR, textStatus, errorThrown) {
+        mostarMensajeErrorParaCombos(jqXHR, textStatus);
     });
 }
 
@@ -402,10 +415,9 @@ function recalculoDeCombos(carreraResguardo, nombreCarreraRes) {
         }
 
 
-    }).fail(function () {
-        console.log("Algo salió mal");
+    }).fail(function (jqXHR, textStatus, errorThrown) {
+        mostarMensajeErrorParaCombos(jqXHR, textStatus);
     });
-
 }
 
 function obtenerHorariosBeca() {
@@ -476,8 +488,18 @@ function obtenerHorariosBeca() {
 
         $('#cargador_horarios').addClass('d-none');
 
-    }).fail(function () {
-        console.log("Algo salió mal");
+    }).fail(function (jqXHR, textStatus, errorThrown) {
+        $('#cargador_horarios').addClass('d-none');
+        let option = `
+        <div class="col-3 mt-3">
+            <p class="text-danger">
+                Error al consultar los horarios <br>
+                Inténtalo más tarde <br>
+                Código de error: ${jqXHR.status}
+            </p>
+        </div>
+        `;
+        $('#grupoBotones').append(option);
     });
 }
 
@@ -509,8 +531,8 @@ function getPeriodos() {
         }
 
 
-    }).fail(function () {
-        console.log("Algo salió mal");
+    }).fail(function (jqXHR, textStatus, errorThrown) {
+        mostarMensajeErrorParaCombos(jqXHR, textStatus);
     });
 }
 
@@ -650,8 +672,8 @@ function getCarrerasWithVariableEstablecida(carreraEnVariable) {
         setVariablesCombosReguardadas(0, carreraFinal);
         obtenerHorariosBeca();
 
-    }).fail(function () {
-        console.log("Algo salió mal");
+    }).fail(function (jqXHR, textStatus, errorThrown) {
+        mostarMensajeErrorParaCombos(jqXHR, textStatus);
     });
 }
 
@@ -732,8 +754,16 @@ function redireccionPreinscripcionEnLinea() {
         }
 
 
-    }).fail(function () {
-        console.log("Algo salió mal");
+    }).fail(function (jqXHR, textStatus, errorThrown) {
+        let elemento = "#redireccionPEL";
+        let htmlText = `
+            <i class="bi bi-x-circle"></i>
+            Redirección cancelada
+        `;
+        let htmlText2 = `
+            PREINSCRIPCIÓN EN LINEA
+        `;
+        generadorMensajesError(jqXHR, textStatus, elemento, htmlText, htmlText2);
     });
 
 
@@ -890,3 +920,5 @@ function establecerTextoComboCarrera() {
     $('#textComboCarreras').html(text);
 
 }
+
+

@@ -264,7 +264,7 @@ class ApiConsumoController extends Controller
 
     public function añadirProyeccionProfesional($valores)
     {
-        $response = Http::post($this->baseUrlProduccion . 'proyeccion', $valores);
+        $response = Http::post($this->base_url . 'proyeccion', $valores);
 
         return $response->json();
     }
