@@ -413,6 +413,7 @@ function registrarProspectoPreinscripcionEnLinea() {
                 text: response.mensaje,
             });
 
+            $("#corregirDatos").prop("disabled", false);
             $("#continuarProceso").prop("disabled", false);
             $('#continuarProceso').html(`
                 Continuar
