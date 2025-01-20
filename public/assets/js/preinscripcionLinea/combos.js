@@ -90,7 +90,9 @@ $("select[name=plantelSelect]").change(function () {
  * y muestra las carreras segun: plantel, nivel y periodo
  */
 $("select[name=periodoSelect]").change(function () {
-    
+
+    $('#nivelSelect').empty();
+    $("#nivelSelect").append(`<option value="" selected disabled>Selecionar nivel</option>`);
     $('#carreraSelect').empty();
     $("#carreraSelect").append(`<option value="" selected disabled>Seleccionar carrera</option>`);
     $('#horarioSelect').empty();
