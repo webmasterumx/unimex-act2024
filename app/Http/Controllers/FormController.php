@@ -418,12 +418,14 @@ class FormController extends Controller
         if ($claveCarrera == 0) {
 
             $respuesta['estado'] = false;
+            $respuesta["mensaje"] = "";
             $respuesta['ruta'] = "";
         } else {
 
             $archivo = SELF::getRutaFolleto($plantel, $nivel, $horario, $claveCarrera);
 
             $respuesta['estado'] = true;
+            $respuesta["mensaje"] = "";
             $respuesta['ruta'] = $archivo['ruta_archivo'];
         }
 
