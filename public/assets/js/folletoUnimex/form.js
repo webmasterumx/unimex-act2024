@@ -113,7 +113,7 @@ $("#form_folleto").validate({
                     `);
                     $("#warningMensajeFolleto").modal("show");
                 }
-                else if (respuesta.url == "" || respuesta.url == " ") {
+                else if (respuesta.ruta == "" || respuesta.ruta == " ") {
                     $("#iconContentModalFolleto").addClass("bi bi-x-circle-fill text-danger");
                     $("#contenidoModalWarningMensajeFo").html(`
                         Lo sentimos, pero por el momento el folleto no está disponible. <br> Agradecemos tu comprensión.
