@@ -59,7 +59,7 @@
     </div>
     <div class="col-12">
         <label class="form-label">Conoce nuestras vacantes: <a target="_blank"
-                href="https://www.occ.com.mx/empleos-en-mexico-y-el-mundo/para-trabajar-en-Universidad-Mexicana">Aqui</a></label>
+                href="https://www.occ.com.mx/empleos-en-mexico-y-el-mundo/para-trabajar-en-Universidad-Mexicana">Aquí</a></label>
     </div>
     <div class="mb-3 col-12">
         <div class="mb-3">
