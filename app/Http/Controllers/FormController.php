@@ -123,12 +123,10 @@ class FormController extends Controller
                 $source = "Website Metro";
                 $campaign = "Home body";
                 $content = "Slider" . $abreviaturaFormateada . " Oacademica form";
-
             } else if ($origen == "menu") { //! si osi vienen desde una oferta academica
                 $source = "Website Metro";
                 $campaign = "Home header";
                 $content = "Oacademica " . $abreviaturaFormateada . " body form";
-
             } else if ($origen == "Home") { // viene desde la pagina home 
                 $source = "Website Metro";
                 $campaign = "Home body";
@@ -425,7 +423,6 @@ class FormController extends Controller
             $archivo = SELF::getRutaFolleto($plantel, $nivel, $horario, $claveCarrera);
 
             $respuesta['estado'] = true;
-            $respuesta["mensaje"] = "";
             $respuesta['ruta'] = $archivo['ruta_archivo'];
         }
 
@@ -475,7 +472,11 @@ class FormController extends Controller
 
         //var_dump($catalogoCarreras);
 
-        if (isset($catalogoCarreras["error"])) {
+        if (isset($catalogoCarreras["clave"])) {
+            if ($licenciatura == $catalogoCarreras['descrip']) {
+                $claveCarrera = $catalogoCarreras['clave'];
+            }
+        } else if (isset($catalogoCarreras["error"])) {
             //echo "no hay carreras disponibles";
             $claveCarrera = 0;
         } else {
