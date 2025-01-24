@@ -408,9 +408,13 @@
 
         $compCalJs1 = filemtime('assets/js/folletoUnimex/form.js');
         $rutaCalJs1 = 'assets/js/folletoUnimex/form.js?' . $compCalJs1;
+
+        $compCalJs3 = filemtime('assets/js/folletoUnimex/form.js');
+        $rutaCalJs3 = 'assets/js/folletoUnimex/errores.js?' . $compCalJs3;
     @endphp
     <script src="{{ asset($rutaCalJs) }}"></script>
     <script src="{{ asset($rutaCalJs1) }}"></script>
+    <script src="{{ asset($rutaCalJs3) }}"></script>
 
     @include('include.redirecciones.inOfertaAcademica')
 @endsection

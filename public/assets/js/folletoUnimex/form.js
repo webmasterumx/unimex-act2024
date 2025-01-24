@@ -135,8 +135,7 @@ $("#form_folleto").validate({
                    `);
 
             }).fail(function (error) {
-                console.log(error);
-                console.log("Algo salió mal");
+                
             });
         }
 

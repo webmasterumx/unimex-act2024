@@ -43,6 +43,10 @@
                             </a>
                         </label>
                     </div>
+                    <div id="alertaCombosFolletoForm" class="alert alert-dismissible fade show d-none" role="alert">
+                        <p id="textoalertaCombosFolletoFormdora"></p>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
                     @if ($origen)
                         @php
                             $origen = $origen;

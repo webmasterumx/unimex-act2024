@@ -26,8 +26,8 @@ $(document).ready(function () {
             $(element).append(option);
         }
 
-    }).fail(function () {
-        console.log("Algo salió mal");
+    }).fail(function (jqXHR, textStatus, errorThrown) {
+        mensajesDeError(jqXHR, textStatus);
     });
 
     $("select[name=peridoSelectFolleto]").prop("disabled", false);
@@ -44,7 +44,7 @@ $("select[name=peridoSelectFolleto]").change(function () {
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         },
-        url: setUrlBase() + "getPlanteles",
+        url: setUrlBase() + "getPlantelels",
     }).done(function (data) {
 
         $('#plantelSelectFolleto').empty();
@@ -56,8 +56,8 @@ $("select[name=peridoSelectFolleto]").change(function () {
                 .descrip + "</option>");
         });
 
-    }).fail(function () {
-        console.log("Algo salió mal");
+    }).fail(function (jqXHR, textStatus, errorThrown) {
+        mensajesDeError(jqXHR, textStatus);
     });
 
 });
