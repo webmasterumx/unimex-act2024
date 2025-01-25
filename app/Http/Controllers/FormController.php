@@ -401,6 +401,7 @@ class FormController extends Controller
         return response()->json($resultados);
     }
 
+    //! funcion anterior de procesamiento de folleto
     public function procesaFormularioFolletos(Request $request)
     {
 
@@ -454,6 +455,23 @@ class FormController extends Controller
 
         return response()->json($respuesta);
     }
+
+    //? nueva funcion de procesamiento de folleto
+    public function procesarFormularioFolleto(Request $request)
+    {
+        $licenciatura = $request->carreraPosicion;
+        $plantel = $request->plantelSelectFolleto;
+        $periodo = $request->peridoSelectFolleto;
+        $nivel  = $request->nivelPosicion;
+
+        var_dump([
+            $licenciatura,
+            $plantel,
+            $periodo,
+            $nivel
+        ]);
+    }
+
 
     public function getIdentificarCarrera($licenciatura, $plantel, $periodo, $nivel)
     {

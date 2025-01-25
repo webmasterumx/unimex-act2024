@@ -109,7 +109,7 @@ $("#form_folleto").validate({
             }).done(function (data) {
                 console.log(data);
                 let respuesta = JSON.parse(data);
-                console.log(respuesta);
+                //console.log(respuesta);
 
                 if (respuesta.estado == false) { // no se encontro la oferta academica en la configuracion
                     $("#iconContentModalFolleto").addClass("bi bi-exclamation-circle text-warning");
@@ -135,7 +135,7 @@ $("#form_folleto").validate({
                    `);
 
             }).fail(function (error) {
-                
+
             });
         }
 

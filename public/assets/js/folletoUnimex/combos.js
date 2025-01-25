@@ -44,7 +44,7 @@ $("select[name=peridoSelectFolleto]").change(function () {
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         },
-        url: setUrlBase() + "getPlantelels",
+        url: setUrlBase() + "getPlanteles",
     }).done(function (data) {
 
         $('#plantelSelectFolleto').empty();
