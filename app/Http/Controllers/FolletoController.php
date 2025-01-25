@@ -15,8 +15,14 @@ class FolletoController extends Controller
 
         foreach ($contents as $key) {
             if (($id_empresa == $key['id_empresa']) && ($clave_nivel == $key['clave_nivel']) && ($descrip_ofi == $key['descrip_ofi'])) {
-                return $key['ruta_archivo'];
+                $rutaRedireccion = $key['ruta_archivo'];
+                break;
+            }
+            else{
+                $rutaRedireccion = false;
             }
         }
+
+        return $rutaRedireccion;
     }
 }

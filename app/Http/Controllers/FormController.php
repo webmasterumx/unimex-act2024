@@ -464,12 +464,33 @@ class FormController extends Controller
         $periodo = $request->peridoSelectFolleto;
         $nivel  = $request->nivelPosicion;
 
-        var_dump([
-            $licenciatura,
-            $plantel,
-            $periodo,
-            $nivel
-        ]);
+        $ruta = app(FolletoController::class)->leerExcelFolletos($plantel, $nivel, $licenciatura);
+
+        $valores = array(
+            "campaingContent" => "",
+            "campaignMedium" => "",
+            "campaignTerm" => "",
+            "descripPublicidad" => "",
+            "folioReferido" => "0",
+            "pApMaterno" => "",
+            "pApPaterno" => "",
+            "pCarrera" => 0,
+            "pCelular" => $request->celularFolleto,
+            "pCorreo" => $request->correoFolleto,
+            "pHorario" => 0,
+            "pNivel_Estudio" => $nivel,
+            "pNombre" => $request->nombreFolleto,
+            "pOrigen" => 11,
+            "pPeriodoEscolar" => $request->peridoSelectFolleto,
+            "pPlantel" => $request->plantelSelectFolleto,
+            "pTelefono" => "",
+            "utpsource" => "",
+            "websiteURL" => "",
+        );
+
+        $agregarProspecto = app(ApiConsumoController::class)->agregarProspectoCRM($valores);
+
+        return $ruta;
     }
 
 
