@@ -63,7 +63,7 @@ $("#form_folleto").validate({
             let carrera = getCarreraPosicion();
             let nivelPagina = getNivelPagina();
             var plantelSelectFolleto = $('select[name=plantelSelectFolleto]').val();
-            console.log(plantelSelectFolleto);
+            console.log(carrera);
 
             switch (nivelPagina) {
                 case 1: //licenciatura
@@ -72,31 +72,38 @@ $("#form_folleto").validate({
                     } else {
                         turnoPosicionado = 5;
                     }
+
+
+                    indentificadorEs = 0;
                     break;
                 case 2: //! licenciatura online
                     matriz = ["", "", "54", "49", "59", "50"];
                     turnoPosicionado = matriz[plantelSelectFolleto];
 
+                    indentificadorEs = 1;
                     break;
                 case 3: //? posgrado
                     matriz = ["", "", "31", "20", "30", "27"];
                     turnoPosicionado = matriz[plantelSelectFolleto];
 
+                    indentificadorEs = 0;
                     break;
-                case 4: //? posgrado
+                case 4: //? posgrado en linea
                     matriz = ["", "", "55", "50", "60", "51"];
                     turnoPosicionado = matriz[plantelSelectFolleto];
 
+                    indentificadorEs = 1;
                     break;
                 default:
                     break;
             }
 
-            console.log(turnoPosicionado);
+            console.log(indentificadorEs);
 
             formData.append("nivelPosicion", nivel);
             formData.append("carreraPosicion", carrera);
             formData.append("turnoPosicionado", turnoPosicionado);
+            formData.append("identificadorEsp", indentificadorEs);
 
             $.ajax({
                 method: "POST",

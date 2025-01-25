@@ -463,8 +463,16 @@ class FormController extends Controller
         $plantel = $request->plantelSelectFolleto;
         $periodo = $request->peridoSelectFolleto;
         $nivel  = $request->nivelPosicion;
+        $indentificadorEs = $request->identificadorEsp;
 
-        $ruta = app(FolletoController::class)->leerExcelFolletos($plantel, $nivel, $licenciatura);
+       /*  var_dump([
+            $plantel,
+            $nivel,
+            $licenciatura,
+            $indentificadorEs,
+        ]); */
+
+        $ruta = app(FolletoController::class)->leerExcelFolletos($plantel, $nivel, $licenciatura, $indentificadorEs);
 
         $valores = array(
             "campaingContent" => "",
