@@ -17,7 +17,7 @@ class FolletoController extends Controller
             $descrip_ofi,
             $indentificadorEs,
         ]); */
-
+        
         $contents = File::json("assets/json/folletos.json");
 
         foreach ($contents as $key) {
