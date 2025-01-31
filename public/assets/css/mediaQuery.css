@@ -1,4 +1,4 @@
-#bannerInicial,
+/* #bannerInicial,
 #carrucelInit {
     height: auto !important;
 }
@@ -7,7 +7,7 @@
 .contenedorBannerCal {
     height: auto !important;
 }
-
+ */
 @media (min-width: 200px) and (max-width: 400px) {
 
     /*
