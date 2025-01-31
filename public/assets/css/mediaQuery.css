@@ -20,6 +20,11 @@
         height: 10rem;
     }
 
+    #carrucelCalBeca,
+    #carrucelCalBeca>.slick-list {
+        height: 10rem;
+    }
+
     /*
         Estilos de flechas para carrucel de carreras en pagina de incio
     */
@@ -212,6 +217,11 @@
         height: 12rem;
     }
 
+    #carrucelCalBeca,
+    #carrucelCalBeca>.slick-list {
+        height: 12rem;
+    }
+
     /*
         Estilos de flechas para carrucel de carreras en pagina de incio
     */
@@ -227,13 +237,13 @@
 
 
     .slick-prev-calculadora {
-        top: 24%;
-        left: 14%;
+        top: 40%;
+        left: 9%;
     }
 
     .slick-next-calculadora {
-        top: 50%;
-        right: 5%;
+        top: 44%;
+        right: 8%;
     }
 
     /*
@@ -689,7 +699,9 @@
 
 @media (min-width: 900.98px) and (max-width: 1199.98px) {
 
-
+    #contraportada {
+        height: 30rem;
+    }
 
     #closeModalCalculadora {
         position: relative;
@@ -766,6 +778,9 @@
 
 @media (min-width: 1199.98px) and (max-width: 1399.98px) {
 
+    #contraportada {
+        height: 89vh !important;
+    }
 
     #closeModalCalculadora {
         position: relative;
@@ -847,6 +862,11 @@
     #number8 {
         width: 40%;
     }
+
+    #carrucelInit,
+    .contenedorBannerCal {
+        height: auto !important;
+    }
 }
 
 @media (min-width: 1399.98px) {
@@ -924,4 +944,14 @@
     #number8 {
         width: 40%;
     }
+
+    #carrucelInit,
+    .contenedorBannerCal {
+        height: auto !important;
+    }
+
+    #contraportada {
+        height: 89vh !important;
+    }
+
 }

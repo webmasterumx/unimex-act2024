@@ -113,7 +113,7 @@
             </div>
             <div
                 class="col-12 col-md-12 col-lg-9 col-xl-9 mt-2 order-1 order-sm-1 order-md-1 order-lg-2 oirder-xl-2 mt-md-0 p-0 px-md-3">
-                <div id="carrucelInit">
+                <div id="carrucelCalBeca">
                     <div class="contenedorBannerCal">
                         <img src="{{ asset('assets/img/calculadora_de_cuotas/2025/calculadora2025_1.png') }}"
                             class="d-block w-100" alt="...">
@@ -372,9 +372,9 @@
         $('#nombreProspecto').validCampoFranz(' abcdefghijklmnñopqrstuvwxyzáéiíoóuú');
         $('#apellidosProspecto').validCampoFranz(' abcdefghijklmnñopqrstuvwxyzáéiíoóuú');
 
-        $('#carrucelInit').slick({
-            infinite: true,
-            autoplay: true,
+        $('#carrucelCalBeca').slick({
+            infinite: false,
+            autoplay: false,
             slidesToShow: 1,
             slidesToScroll: 1,
             arrows: true,
