@@ -354,9 +354,8 @@ $("#formPromoPreinscripcion").validate({
             }
 
 
-
-        }).fail(function () {
-            console.log("Algo salió mal");
+        }).fail(function (jqXHR, textStatus, errorThrown) {
+            
         });
 
 

@@ -138,7 +138,7 @@
                         Licenciaturas Universidad Mexicana
                     </h2>
                     <p class="fs-unimex1 text-center">
-                        Estudia con nosotros tu #LicenciaturaUNIMEX en: {{ var_dump($dataUTM['utm_medium']) }}
+                        Estudia con nosotros tu #LicenciaturaUNIMEX en:
                     </p>
                 </div>
                 <div class="col-12">
@@ -321,7 +321,7 @@
             });
 
             $('#bannerInicial').slick({
-                infinite: true,
+                infinite: true  ,
                 autoplay: true,
                 slidesToShow: 1,
                 slidesToScroll: 1,

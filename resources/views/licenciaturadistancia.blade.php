@@ -422,12 +422,7 @@
         var carreraPosicionado = "{{ $licenciatura_distancia->nombre }}";
         var turnoPosicionado = 5;
 
-        $('#carrucelVentajas').slick({
-            autoplay: true,
-            autoplaySpeed: 1000,
-            dots: false,
-            arrows: false,
-        });
+        
 
         $('#aceptarAvisoPrivacidadFolleto').on('click', function() {
             if ($(this).is(':checked')) {

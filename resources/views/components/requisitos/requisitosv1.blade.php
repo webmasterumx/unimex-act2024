@@ -1,5 +1,5 @@
 <div class="p-0" id="requisitos">
-    <div class="card border-0">
+    <div id="requesito1" class="card border-0">
         <div class="card-body p-0">
             <p>
                 <b>
@@ -21,7 +21,7 @@
             </p>
         </div>
     </div>
-    <div class="card border-0">
+    <div id="requesito2" class="card border-0">
         <div class="card-body p-0">
             <p>
                 <b>

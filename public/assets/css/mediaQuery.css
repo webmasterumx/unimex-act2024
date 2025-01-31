@@ -1,3 +1,13 @@
+#bannerInicial,
+#carrucelInit {
+    height: auto !important;
+}
+
+.itemBannerInit,
+.contenedorBannerCal {
+    height: auto !important;
+}
+
 @media (min-width: 200px) and (max-width: 400px) {
 
     /*
@@ -97,10 +107,6 @@
         text-align: center;
     }
 
-    #requisitos {
-        height: 60rem;
-    }
-
     /*
 
         ========================> Estilos para oferta licenciatura Sua <========================
@@ -161,11 +167,6 @@
         width: 100%;
     }
 
-    #carrucelInit,
-    .slick-slide,
-    .slick-list {
-        height: 150px !important;
-    }
 
     .slick-prev-calculadora {
         top: 29%;
@@ -178,6 +179,22 @@
         right: 4%;
         font-size: 38px;
     }
+
+    #listCarreras>.slick-list,
+    #temario>.slick-list {
+        height: 24rem !important;
+    }
+
+    #campo_laboral>.slick-list {
+        height: 16rem;
+    }
+
+    #requisitos,
+    #requesito2>.slick-list>.slick-active {
+        height: 45rem;
+    }
+
+
 }
 
 /*
@@ -208,12 +225,6 @@
         right: 2%;
     }
 
-
-    #carrucelInit,
-    .slick-slide,
-    .slick-list {
-        height: 200px !important;
-    }
 
     .slick-prev-calculadora {
         top: 24%;
@@ -298,10 +309,6 @@
         text-align: center;
     }
 
-    #requisitos {
-        height: 50rem;
-    }
-
     /*
 
         ========================> Estilos para oferta licenciatura Sua <========================
@@ -359,6 +366,20 @@
     #number7,
     #number8 {
         width: 100%;
+    }
+
+    #listCarreras>.slick-list,
+    #temario>.slick-list {
+        height: 24rem !important;
+    }
+
+    #campo_laboral>.slick-list {
+        height: 16rem !important;
+    }
+
+    #requisitos,
+    #requesito2>.slick-list>.slick-active {
+        height: 40rem;
     }
 
 }
@@ -668,9 +689,7 @@
 
 @media (min-width: 900.98px) and (max-width: 1199.98px) {
 
-    #bannerInicial {
-        height: 26rem;
-    }
+
 
     #closeModalCalculadora {
         position: relative;
@@ -747,9 +766,6 @@
 
 @media (min-width: 1199.98px) and (max-width: 1399.98px) {
 
-    #bannerInicial {
-        height: 34rem;
-    }
 
     #closeModalCalculadora {
         position: relative;
@@ -835,8 +851,8 @@
 
 @media (min-width: 1399.98px) {
 
-    #bannerInicial {
-        height: 32rem;
+    body {
+        font-size: 140% !important;
     }
 
     #closeModalCalculadora {
@@ -856,7 +872,8 @@
     }
 
     .itemBannerInit {
-        height: 32rem !important;
+        /* height: 36rem !important; */
+        height: auto;
     }
 
     #historia {

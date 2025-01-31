@@ -37,6 +37,7 @@
     #text_ventajas {
         height: 550px;
         overflow-y: scroll;
+        margin: auto;
     }
 
     .slick-list {
@@ -115,7 +116,7 @@
     <!-- Fin de la sección de objetivo -->
 
     <!-- Inicio de la sección de ventajas -->
-    <section class="container-fluid">
+    <section class="container-fluid bg-articule">
         <div class="row">
             <div id="contraportada" class="col-12 col-md-6 col-lg-6">
             </div>
