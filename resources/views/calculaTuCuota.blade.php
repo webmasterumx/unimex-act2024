@@ -373,8 +373,8 @@
         $('#apellidosProspecto').validCampoFranz(' abcdefghijklmnñopqrstuvwxyzáéiíoóuú');
 
         $('#carrucelCalBeca').slick({
-            infinite: false,
-            autoplay: false,
+            infinite: true,
+            autoplay: true,
             slidesToShow: 1,
             slidesToScroll: 1,
             arrows: true,
