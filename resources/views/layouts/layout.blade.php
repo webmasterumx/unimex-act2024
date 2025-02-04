@@ -289,7 +289,7 @@
             window.open("{{ route('contacto') }}", '_blank');
         });
 
-        $('#contactoBolsaTrabajo').click(function(event) {
+     /*    $('#contactoBolsaTrabajo').click(function(event) {
             console.log("entra al formulario desde la parte de bolsa de trabajo");
 
             let elementForm = "formularioTrabajaUnimex";
@@ -304,7 +304,7 @@
                 console.log("Algo salió mal");
             });
             window.open("{{ route('contacto') }}", '_blank');
-        });
+        }); */
 
         function redirigirContactoHeader() {
             console.log("entra al formulario desde la parte de contacto");
@@ -358,7 +358,7 @@
             }).fail(function() {
                 console.log("Algo salió mal");
             });
-            window.open("{{ route('contacto') }}", '_self');
+            window.open("{{ route('contacto') }}", '_blank');
         }
 
         $('#nombre_prospecto').validCampoFranz(' abcdefghijklmnñopqrstuvwxyzáéiíoóuú');

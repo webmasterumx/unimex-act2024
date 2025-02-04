@@ -102,7 +102,7 @@ function envioFormularioCalculadora(form) {
 
                 $('#envio_caluladora').html(`Calcular`);
 
-                $('#carrucelInit').addClass('d-none');
+                $('#carrucelCalBeca').addClass('d-none');
                 $('#informacionCRM').removeClass('d-none');
             } else {
                 Swal.fire({
