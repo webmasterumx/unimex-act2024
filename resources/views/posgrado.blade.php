@@ -34,9 +34,6 @@
         background-size: cover;
     }
 
-    .slick-list {
-        max-height: 4800px !important;
-    }
 
     .text_ventajas::-webkit-scrollbar {
         width: 12px;
@@ -314,9 +311,9 @@
                 <h2 class="underlined-head fw-normal" style="font-size: 1.438rem;">
                     REQUISITOS
                 </h2>
-                <div id="requisitos" style="height: 480px;">
+                <div id="requisitos">
                     <div class="card border-0">
-                        <div class="card-body" style="height: 480px">
+                        <div class="card-body">
                             <p>
                                 <b>
                                     Si cuentas con Título de Licenciatura
@@ -332,7 +329,7 @@
                         </div>
                     </div>
                     <div class="card border-0">
-                        <div class="card-body" style="height: 480px">
+                        <div class="card-body">
                             <p>
                                 <b>Si deseas titularte de Licenciatura mediante estudios de Posgrado</b> <br><br>
                                 Original o copia certificada del Acta de Nacimiento y una fotocopia. <br>
