@@ -699,6 +699,12 @@
 
 @media (min-width: 900.98px) and (max-width: 1199.98px) {
 
+    #cardTemarioLicenciatura,
+    #cardTemarioBodyLicenciatura {
+        min-height: 400px;
+        max-height: 400px;
+    }
+
     #contraportada {
         height: 30rem;
     }
@@ -782,6 +788,12 @@
 }
 
 @media (min-width: 1199.98px) and (max-width: 1399.98px) {
+
+    #cardTemarioLicenciatura,
+    #cardTemarioBodyLicenciatura {
+        min-height: 320px;
+        max-height: 320px;
+    }
 
     #carrucelVentajas {
         height: 90vh;
@@ -884,6 +896,11 @@
 
 @media (min-width: 1399.98px) {
 
+    #cardTemarioLicenciatura,
+    #cardTemarioBodyLicenciatura {
+        min-height: 400px;
+        max-height: 400px;
+    }
 
     #carrucelVentajas {
         height: 90vh;
