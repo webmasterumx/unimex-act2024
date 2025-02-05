@@ -633,6 +633,11 @@
 
 @media (min-width: 800.98px) and (max-width: 900.98px) {
 
+    #temario_especialidad>.slick-list,
+    #temario_maestria>.slick-list{
+        height: 300px !important;
+    }
+
     #requisitos,
     #requisitos>.slick-list{
         height: 320px !important;
@@ -727,6 +732,11 @@
 }
 
 @media (min-width: 900.98px) and (max-width: 1199.98px) {
+
+    #temario_especialidad>.slick-list,
+    #temario_maestria>.slick-list{
+        height: 300px !important;
+    }
 
     #requisitos,
     #requisitos>.slick-list{
@@ -828,6 +838,12 @@
 }
 
 @media (min-width: 1199.98px) and (max-width: 1399.98px) {
+
+    
+    #temario_especialidad>.slick-list,
+    #temario_maestria>.slick-list{
+        height: 300px !important;
+    }
 
     #requisitos,
     #requisitos>.slick-list{
@@ -946,6 +962,11 @@
 }
 
 @media (min-width: 1399.98px) {
+
+    #temario_especialidad>.slick-list,
+    #temario_maestria>.slick-list{
+        height: 300px !important;
+    }
 
     #requisitos,
     #requisitos>.slick-list{
