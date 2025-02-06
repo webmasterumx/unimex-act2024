@@ -210,7 +210,7 @@
     <!-- Fin de Campo Laboral -->
 
     <!-- Inicio de la Sección de Requisitos -->
-    <section class="container-fluid px-5 py-5">
+    <section id="requesitos_licenciatura" class="container-fluid px-5 py-5">
         <div class="row">
             <div class="col-12 col-md-4 col-lg-3 bg_requisitos">
 
