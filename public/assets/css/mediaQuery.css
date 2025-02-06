@@ -10,6 +10,11 @@
 
 @media (min-width: 200px) and (max-width: 400px) {
 
+    #listCarreras,
+    .itemsCarrucelCarreras {
+        height: 450px !important;
+    }
+
     #requesitos_licenciatura{
         height: 750px !important;
     }
@@ -237,6 +242,10 @@
 */
 @media (min-width: 400px) and (max-width: 500.98px) {
 
+    .itemsCarrucelCarreras {
+        height: 450px !important;
+    }
+
     #requesitos_licenciatura{
         height: 680px !important;
     }
@@ -452,6 +461,11 @@
 }
 
 @media (min-width: 500px) and (max-width: 600.98px) {
+
+    .itemsCarrucelCarreras {
+        height: 450px !important;
+    }
+
     #requesitos_licenciatura{
         height: 600px !important;
     }
@@ -582,6 +596,10 @@
 }
 
 @media (min-width: 600px) and (max-width: 800.98px) {
+
+    .itemsCarrucelCarreras {
+        height: 450px !important;
+    }
 
     #requesitos_licenciatura{
         height: 600px !important;
@@ -723,6 +741,10 @@
 }
 
 @media (min-width: 800.98px) and (max-width: 900.98px) {
+
+    .itemsCarrucelCarreras {
+        height: 420px !important;
+    }
 
     #requesitos_licenciatura{
         height: 600px !important;
@@ -962,6 +984,10 @@
 
 @media (min-width: 1199.98px) and (max-width: 1399.98px) {
 
+    .itemsCarrucelCarreras {
+        height: 400px !important;
+    }
+
     #temario_distancia{
         height: 300px !important;
     }
@@ -1095,6 +1121,10 @@
 }
 
 @media (min-width: 1399.98px) {
+
+    .itemsCarrucelCarreras {
+        height: 512px !important;
+    }
 
     #temario_distancia{
         height: 450px !important;
