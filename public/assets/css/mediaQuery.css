@@ -1,30 +1,25 @@
-/* #bannerInicial,
-#carrucelInit {
-    height: auto !important;
-}
-
-.itemBannerInit,
-.contenedorBannerCal {
-    height: auto !important;
-} */
 
 @media (min-width: 200px) and (max-width: 400px) {
+
+    #listCarreras>.slick-list {
+        height: 28rem !important;
+    }
 
     #listCarreras,
     .itemsCarrucelCarreras {
         height: 450px !important;
     }
 
-    #requesitos_licenciatura{
+    #requesitos_licenciatura {
         height: 750px !important;
     }
 
 
-    #temario_distancia{
+    #temario_distancia {
         height: 450px !important;
     }
 
-    .cardTemarioLicdistant, 
+    .cardTemarioLicdistant,
     .cardBodyTemarioLicdistant {
         min-height: 410px !important;
         max-height: 410px !important;
@@ -220,7 +215,6 @@
         font-size: 38px;
     }
 
-    #listCarreras>.slick-list,
     #temario>.slick-list {
         height: 24rem !important;
     }
@@ -242,20 +236,24 @@
 */
 @media (min-width: 400px) and (max-width: 500.98px) {
 
+    #listCarreras>.slick-list {
+        height: 25rem !important;
+    }
+
     .itemsCarrucelCarreras {
         height: 450px !important;
     }
 
-    #requesitos_licenciatura{
+    #requesitos_licenciatura {
         height: 680px !important;
     }
-    
 
-    #temario_distancia{
+
+    #temario_distancia {
         height: 450px !important;
     }
 
-    .cardTemarioLicdistant, 
+    .cardTemarioLicdistant,
     .cardBodyTemarioLicdistant {
         min-height: 410px !important;
         max-height: 410px !important;
@@ -444,7 +442,7 @@
         width: 100%;
     }
 
-    #listCarreras>.slick-list,
+
     #temario>.slick-list {
         height: 24rem !important;
     }
@@ -461,24 +459,32 @@
 }
 
 @media (min-width: 500px) and (max-width: 600.98px) {
+    #listCarreras>.slick-list {
+        height: 25rem !important;
+    }
+
+    #listCarreras,
+    .itemsCarrucelCarreras {
+        height: 400px !important;
+    }
 
     .itemsCarrucelCarreras {
         height: 450px !important;
     }
 
-    #requesitos_licenciatura{
+    #requesitos_licenciatura {
         height: 600px !important;
     }
-    
-    #requisitos>.slick-list{
+
+    #requisitos>.slick-list {
         height: 450px !important;
     }
 
-    #temario_distancia{
+    #temario_distancia {
         height: 310px !important;
     }
 
-    .cardTemarioLicdistant, 
+    .cardTemarioLicdistant,
     .cardBodyTemarioLicdistant {
         min-height: 410px !important;
         max-height: 410px !important;
@@ -497,7 +503,7 @@
     }
 
     #bannerInicial {
-        height: 11rem;
+        height: 14rem;
     }
 
     .slick-prev {
@@ -529,11 +535,6 @@
         height: 15rem;
     }
 
-    #carrucelInit,
-    .slick-slide,
-    .slick-list {
-        height: 280px !important;
-    }
 
     .slick-prev-calculadora {
         top: 33%;
@@ -601,7 +602,7 @@
         height: 450px !important;
     }
 
-    #requesitos_licenciatura{
+    #requesitos_licenciatura {
         height: 600px !important;
     }
 
@@ -610,11 +611,11 @@
     }
 
 
-    #temario_distancia{
+    #temario_distancia {
         height: 330px !important;
     }
 
-    .cardTemarioLicdistant, 
+    .cardTemarioLicdistant,
     .cardBodyTemarioLicdistant {
         min-height: 410px !important;
         max-height: 410px !important;
@@ -628,7 +629,7 @@
     }
 
     #bannerInicial {
-        height: 20rem;
+        height: 17rem;
     }
 
     #closeModalCalculadora {
@@ -651,11 +652,6 @@
         height: 20rem;
     }
 
-    #carrucelInit,
-    .slick-slide,
-    .slick-list {
-        height: 320px !important;
-    }
 
     .slick-prev-calculadora {
         top: 40%;
@@ -746,7 +742,7 @@
         height: 420px !important;
     }
 
-    #requesitos_licenciatura{
+    #requesitos_licenciatura {
         height: 600px !important;
     }
 
@@ -754,11 +750,11 @@
         height: 420px !important;
     }
 
-    #temario_distancia{
+    #temario_distancia {
         height: 450px !important;
     }
 
-    .cardTemarioLicdistant, 
+    .cardTemarioLicdistant,
     .cardBodyTemarioLicdistant {
         min-height: 410px !important;
         max-height: 410px !important;
@@ -778,7 +774,7 @@
 
 
     #bannerInicial {
-        height: 24rem;
+        height: 22rem;
     }
 
     #closeModalCalculadora {
@@ -809,12 +805,6 @@
 
     .itemBannerInit {
         height: 24rem;
-    }
-
-    #carrucelInit,
-    .slick-slide,
-    .slick-list {
-        height: 400px !important;
     }
 
     .slick-prev-calculadora {
@@ -869,7 +859,7 @@
         height: 430px !important;
     }
 
-    #requesitos_licenciatura{
+    #requesitos_licenciatura {
         height: 590px !important;
     }
 
@@ -877,11 +867,11 @@
         height: 420px !important;
     }
 
-    #temario_distancia{
+    #temario_distancia {
         height: 330px !important;
     }
 
-    .cardTemarioLicdistant, 
+    .cardTemarioLicdistant,
     .cardBodyTemarioLicdistant {
         min-height: 260px !important;
         max-height: 260px !important;
@@ -992,11 +982,11 @@
         height: 400px !important;
     }
 
-    #temario_distancia{
+    #temario_distancia {
         height: 300px !important;
     }
 
-    .cardTemarioLicdistant, 
+    .cardTemarioLicdistant,
     .cardBodyTemarioLicdistant {
         min-height: 250px !important;
         max-height: 250px !important;
@@ -1130,11 +1120,11 @@
         height: 512px !important;
     }
 
-    #temario_distancia{
+    #temario_distancia {
         height: 450px !important;
     }
 
-    .cardTemarioLicdistant, 
+    .cardTemarioLicdistant,
     .cardBodyTemarioLicdistant {
         min-height: 410px !important;
         max-height: 410px !important;
