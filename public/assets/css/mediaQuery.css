@@ -1,5 +1,8 @@
-
 @media (min-width: 200px) and (max-width: 400px) {
+
+    .cardTemarioPosDistancia {
+        height: 20rem !important;
+    }
 
     #listCarreras>.slick-list {
         height: 28rem !important;
@@ -236,6 +239,10 @@
 */
 @media (min-width: 400px) and (max-width: 500.98px) {
 
+    .cardTemarioPosDistancia {
+        height: 16rem !important;
+    }
+
     #listCarreras>.slick-list {
         height: 25rem !important;
     }
@@ -459,6 +466,16 @@
 }
 
 @media (min-width: 500px) and (max-width: 600.98px) {
+
+    #temario_especialidad>.slick-list,
+    #temario_maestria>.slick-list {
+        height: 16rem !important;
+    }
+
+    .cardTemarioPosDistancia {
+        height: 16rem !important;
+    }
+
     #listCarreras>.slick-list {
         height: 25rem !important;
     }
@@ -597,6 +614,15 @@
 }
 
 @media (min-width: 600px) and (max-width: 800.98px) {
+
+    .cardTemarioPosDistancia {
+        height: 24rem !important;
+    }
+
+    #temario_especialidad>.slick-list,
+    #temario_maestria>.slick-list {
+        height: 24rem !important;
+    }
 
     .itemsCarrucelCarreras {
         height: 450px !important;
@@ -737,6 +763,11 @@
 }
 
 @media (min-width: 800.98px) and (max-width: 900.98px) {
+
+    .cardTemarioPosDistancia {
+        height: 300px !important;
+    }
+
 
     .itemsCarrucelCarreras {
         height: 420px !important;
@@ -883,6 +914,11 @@
         height: 300px !important;
     }
 
+    .cardTemarioPosDistancia {
+        height: 300px !important;
+    }
+
+
     #text_ventajas {
         height: 550px;
         overflow-y: scroll;
@@ -977,6 +1013,10 @@
 }
 
 @media (min-width: 1199.98px) and (max-width: 1399.98px) {
+    .cardTemarioPosDistancia {
+        height: 300px !important;
+    }
+
 
     .itemsCarrucelCarreras {
         height: 400px !important;
@@ -1000,8 +1040,8 @@
 
     #requisitos,
     #requisitos>.slick-list {
-        height: 320px !important;
-        max-height: 320px !important;
+        height: 325px !important;
+        max-height: 325px !important;
     }
 
     #text_ventajas {
@@ -1115,6 +1155,11 @@
 }
 
 @media (min-width: 1399.98px) {
+
+    .cardTemarioPosDistancia {
+        height: 300px !important;
+    }
+
 
     .itemsCarrucelCarreras {
         height: 512px !important;
