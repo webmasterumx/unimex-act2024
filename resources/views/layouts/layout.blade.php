@@ -364,6 +364,8 @@
         $('#nombre_prospecto').validCampoFranz(' abcdefghijklmnñopqrstuvwxyzáéiíoóuú');
         $('#apellidos_prospecto').validCampoFranz(' abcdefghijklmnñopqrstuvwxyzáéiíoóuú');
         $('#nombreFolleto').validCampoFranz(' abcdefghijklmnñopqrstuvwxyzáéiíoóuú');
+
+        $("#celular_prospecto").validCampoFranz("1234567890");
     </script>
 
     @yield('scripts')
