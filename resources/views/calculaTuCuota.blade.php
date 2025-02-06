@@ -75,7 +75,7 @@
                                 Fijo
                             </label>
                         </div>
-                        <input type="text" class="form-control form-control-sm" id="telefonoProspecto"
+                        <input type="tel" class="form-control form-control-sm" id="telefonoProspecto"
                             name="telefonoProspecto" placeholder="Teléfono (Obligatorio)" minlength="10" maxlength="10">
                     </div>
                     <div class="input-group mb-2 col-12 p-0 mb-1">
