@@ -60,7 +60,7 @@
 
 <noscript>Por favor habilita JavaScript para usar este sitio</noscript>
 <header class="sticky-top">
-    <nav class="navigation" style="background-color: #013F7A !important; padding: 8px 0px !important;">
+    <nav class="navigation d-none d-md-none d-lg-block d-xl-block" style="background-color: #013F7A !important; padding: 8px 0px !important;">
         <div class="wrapper d-flex">
             <a href="{{ env('APP_URL') . $complemento }}" rel="noopener noreferrer">
             </a>
@@ -93,7 +93,15 @@
             <div class="menu" id="navigation">
                 <a class="btn-close-nav" onclick="nav.hide()"></a>
                 <ul>
-
+                    <li class="d-block d-md-block d-lg-none d-xl-none text-center">
+                        <a onclick="subnav.show('subnavAbout')"
+                            title="Conoce la hisotria de Universidad Mexicana">Acerca
+                            de UNIMEX </a>
+                    </li>
+                    <li class="d-block d-md-block d-lg-none d-xl-none text-center">
+                        <a onclick="subnav.show('alumnosegresados')"
+                            title="Servicios para nuestos Alumnos y Egresados">Alumnos Y Egresados</a>
+                    </li>
                     <!-- parte del menu para celulares y tabletas, menu lateral -->
                     <li class="text-center">
                         <a class="mt-1" style="display: inline-block" onclick="subnav.show('subnavAcademicOffer')"

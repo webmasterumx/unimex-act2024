@@ -119,10 +119,10 @@
                 </div>
             </div>
             <div id="text_ventajas" class="col-12 col-md-6 col-lg-6 bg-articule px-4">
-                <h3 class="underlined-head text-uppercase fw-normal mt-4">
+                <h3 id="tituloVentajasLicDistancia" class="underlined-head text-uppercase fw-normal mt-4">
                     VENTAJAS DE ESTUDIAR LA LICENCIATURA ONLINE EN {{ $licenciatura_distancia->nombre }}
                 </h3>
-                <p style="font-size: 120% !important;">
+                <p id="textVentajasLicdistancia">
                     <b>
                         Enfoque
                     </b>

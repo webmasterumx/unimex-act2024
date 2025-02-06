@@ -10,6 +10,10 @@
 
 @media (min-width: 200px) and (max-width: 400px) {
 
+    #tituloVentajasLicDistancia{
+        font-size: 1.438rem !important;
+    }
+
     #text_ventajas {
         height: 350px;
         overflow-y: scroll;
