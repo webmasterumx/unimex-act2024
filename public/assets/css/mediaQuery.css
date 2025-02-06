@@ -865,6 +865,10 @@
 }
 
 @media (min-width: 900.98px) and (max-width: 1199.98px) {
+    .itemsCarrucelCarreras {
+        height: 430px !important;
+    }
+
     #requesitos_licenciatura{
         height: 590px !important;
     }
