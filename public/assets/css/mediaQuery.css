@@ -10,7 +10,14 @@
 
 @media (min-width: 200px) and (max-width: 400px) {
 
-    #tituloVentajasLicDistancia{
+
+    #cardTemarioLicenciatura,
+    #cardTemarioBodyLicenciatura {
+        min-height: 360px;
+        max-height: 360px;
+    }
+
+    #tituloVentajasLicDistancia {
         font-size: 1.438rem !important;
     }
 
@@ -216,6 +223,12 @@
 */
 @media (min-width: 400px) and (max-width: 500.98px) {
 
+    #cardTemarioLicenciatura,
+    #cardTemarioBodyLicenciatura {
+        min-height: 360px;
+        max-height: 360px;
+    }
+
     #text_ventajas {
         height: 350px;
         overflow-y: scroll;
@@ -410,6 +423,12 @@
 
 @media (min-width: 500px) and (max-width: 600.98px) {
 
+    #cardTemarioLicenciatura,
+    #cardTemarioBodyLicenciatura {
+        min-height: 390px;
+        max-height: 390px;
+    }
+
     #text_ventajas {
         height: 450px;
         overflow-y: scroll;
@@ -516,12 +535,18 @@
 
 @media (min-width: 600px) and (max-width: 800.98px) {
 
+    #cardTemarioLicenciatura,
+    #cardTemarioBodyLicenciatura {
+        min-height: 360px;
+        max-height: 360px;
+    }
+
     #requisitos,
-    #requisitos>.slick-list{
+    #requisitos>.slick-list {
         height: 320px !important;
         max-height: 320px !important;
     }
-    
+
     #bannerInicial {
         height: 20rem;
     }
@@ -637,13 +662,19 @@
 
 @media (min-width: 800.98px) and (max-width: 900.98px) {
 
+    #cardTemarioLicenciatura,
+    #cardTemarioBodyLicenciatura {
+        min-height: 360px;
+        max-height: 360px;
+    }
+
     #temario_especialidad>.slick-list,
-    #temario_maestria>.slick-list{
+    #temario_maestria>.slick-list {
         height: 300px !important;
     }
 
     #requisitos,
-    #requisitos>.slick-list{
+    #requisitos>.slick-list {
         height: 320px !important;
         max-height: 320px !important;
     }
@@ -738,12 +769,12 @@
 @media (min-width: 900.98px) and (max-width: 1199.98px) {
 
     #temario_especialidad>.slick-list,
-    #temario_maestria>.slick-list{
+    #temario_maestria>.slick-list {
         height: 300px !important;
     }
 
     #requisitos,
-    #requisitos>.slick-list{
+    #requisitos>.slick-list {
         height: 320px !important;
         max-height: 320px !important;
     }
@@ -843,14 +874,14 @@
 
 @media (min-width: 1199.98px) and (max-width: 1399.98px) {
 
-    
+
     #temario_especialidad>.slick-list,
-    #temario_maestria>.slick-list{
+    #temario_maestria>.slick-list {
         height: 300px !important;
     }
 
     #requisitos,
-    #requisitos>.slick-list{
+    #requisitos>.slick-list {
         height: 320px !important;
         max-height: 320px !important;
     }
@@ -968,12 +999,12 @@
 @media (min-width: 1399.98px) {
 
     #temario_especialidad>.slick-list,
-    #temario_maestria>.slick-list{
+    #temario_maestria>.slick-list {
         height: 300px !important;
     }
 
     #requisitos,
-    #requisitos>.slick-list{
+    #requisitos>.slick-list {
         height: 480px !important;
         max-height: 480px !important;
     }
