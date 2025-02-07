@@ -1,8 +1,12 @@
 @media (min-width: 200px) and (max-width: 400px) {
 
+    .cardBodyPosgradosMet{
+        height: 20rem !important;
+    }
+
     #temario_especialidad>.slick-list,
     #temario_maestria>.slick-list {
-        height: 16rem !important;
+        height: 24rem !important;
     }
 
     .cardTemarioPosDistancia {
@@ -243,10 +247,13 @@
     Pendientes --------- =P
 */
 @media (min-width: 400px) and (max-width: 500.98px) {
+    .cardBodyPosgradosMet{
+        height: 20rem !important;
+    }
 
     #temario_especialidad>.slick-list,
     #temario_maestria>.slick-list {
-        height: 16rem !important;
+        height: 17rem !important;
     }
 
     .cardTemarioPosDistancia {
@@ -482,6 +489,9 @@
         height: 14rem;
     }
 
+    .cardBodyPosgradosMet{
+        height: 12rem !important;
+    }
 
     #temario_especialidad>.slick-list,
     #temario_maestria>.slick-list {
@@ -644,6 +654,10 @@
     #temario_especialidad>.slick-list,
     #temario_maestria>.slick-list {
         height: 24rem !important;
+    }
+
+    .cardBodyPosgradosMet{
+        height: 20rem !important;
     }
 
     .itemsCarrucelCarreras {
@@ -828,7 +842,12 @@
 
     #temario_especialidad>.slick-list,
     #temario_maestria>.slick-list {
-        height: 300px !important;
+        height: 17rem !important;
+    }
+
+    
+    .cardBodyPosgradosMet{
+        height: 13rem !important;
     }
 
 
@@ -939,7 +958,11 @@
 
     #temario_especialidad>.slick-list,
     #temario_maestria>.slick-list {
-        height: 300px !important;
+        height: 18rem !important;
+    }
+
+    .cardBodyPosgradosMet{
+        height: 14rem !important;
     }
 
     .cardTemarioPosDistancia {
@@ -1063,7 +1086,11 @@
 
     #temario_especialidad>.slick-list,
     #temario_maestria>.slick-list {
-        height: 300px !important;
+        height: 18rem !important;
+    }
+
+    .cardBodyPosgradosMet{
+        height: 13rem !important;
     }
 
     #requisitos,
@@ -1206,8 +1233,13 @@
 
     #temario_especialidad>.slick-list,
     #temario_maestria>.slick-list {
-        height: 300px !important;
+        height: 25rem !important;
     }
+
+    .cardBodyPosgradosMet{
+        height: 19rem !important;
+    }
+
 
     #requisitos,
     #requisitos>.slick-list {
