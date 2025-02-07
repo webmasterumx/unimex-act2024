@@ -1,6 +1,22 @@
 @media (min-width: 200px) and (max-width: 400px) {
 
-    .cardBodyPosgradosMet{
+    #formularioContactanos,
+    #formularioServicioAlumnos,
+    #formularioContrataAlumnos,
+    #formularioTrabajaUnimex,
+    #formularioQuejasYSugerencias {
+        width: 100% !important;
+    }
+
+    #seccionFormContactanos,
+    #seccionServiciosAlumnos,
+    #seccionContrataAlumnos,
+    #seccionTrabajaUnimex,
+    #seccionQuejasySugerencias {
+        width: 100% !important;
+    }
+
+    .cardBodyPosgradosMet {
         height: 20rem !important;
     }
 
@@ -247,7 +263,24 @@
     Pendientes --------- =P
 */
 @media (min-width: 400px) and (max-width: 500.98px) {
-    .cardBodyPosgradosMet{
+    
+    #formularioContactanos,
+    #formularioServicioAlumnos,
+    #formularioContrataAlumnos,
+    #formularioTrabajaUnimex,
+    #formularioQuejasYSugerencias {
+        width: 100% !important;
+    }
+
+    #seccionFormContactanos,
+    #seccionServiciosAlumnos,
+    #seccionContrataAlumnos,
+    #seccionTrabajaUnimex,
+    #seccionQuejasySugerencias {
+        width: 100% !important;
+    }
+
+    .cardBodyPosgradosMet {
         height: 20rem !important;
     }
 
@@ -489,7 +522,7 @@
         height: 14rem;
     }
 
-    .cardBodyPosgradosMet{
+    .cardBodyPosgradosMet {
         height: 12rem !important;
     }
 
@@ -656,7 +689,7 @@
         height: 24rem !important;
     }
 
-    .cardBodyPosgradosMet{
+    .cardBodyPosgradosMet {
         height: 20rem !important;
     }
 
@@ -845,8 +878,8 @@
         height: 17rem !important;
     }
 
-    
-    .cardBodyPosgradosMet{
+
+    .cardBodyPosgradosMet {
         height: 13rem !important;
     }
 
@@ -961,7 +994,7 @@
         height: 18rem !important;
     }
 
-    .cardBodyPosgradosMet{
+    .cardBodyPosgradosMet {
         height: 14rem !important;
     }
 
@@ -1089,7 +1122,7 @@
         height: 18rem !important;
     }
 
-    .cardBodyPosgradosMet{
+    .cardBodyPosgradosMet {
         height: 13rem !important;
     }
 
@@ -1236,7 +1269,7 @@
         height: 25rem !important;
     }
 
-    .cardBodyPosgradosMet{
+    .cardBodyPosgradosMet {
         height: 19rem !important;
     }
 
