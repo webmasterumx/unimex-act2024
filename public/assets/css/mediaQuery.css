@@ -232,7 +232,7 @@
 
     #requisitos,
     #requesito2>.slick-list>.slick-active {
-        height: 42rem;
+        height: 44rem;
     }
 
 
@@ -469,7 +469,7 @@
 
     #requisitos,
     #requesito2>.slick-list>.slick-active {
-        height: 37rem  !important;
+        height: 40rem;
     }
 
 }
