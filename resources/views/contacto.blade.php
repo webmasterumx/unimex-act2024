@@ -126,7 +126,7 @@
                                     SÍ, YA TENEMOS UNA <br> CUENTA EN OCC
                                 </button>
                             </div>
-                            <div class="col-12 col-md-6" text-center>
+                            <div class="col-12 col-md-6 mt-3 text-center">
                                 <button onclick="establecerTipoDeEmpresaOCC(0)" type="button" class="btn btn-primary"
                                     data-bs-toggle="modal" data-bs-target="#empresasOCC">
                                     AÚN NO, QUEREMOS OBTENER <br> UNA CUENTA GRATUITA PARA <br> PUBLICAR VACANTES PARA <br>
