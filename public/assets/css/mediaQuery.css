@@ -1,5 +1,9 @@
 @media (min-width: 200px) and (max-width: 400px) {
 
+    #contenedorTexto{
+        padding: 10%; font-size: 120%;
+    }
+
     #formularioContactanos,
     #formularioServicioAlumnos,
     #formularioContrataAlumnos,
@@ -263,6 +267,11 @@
     Pendientes --------- =P
 */
 @media (min-width: 400px) and (max-width: 500.98px) {
+
+    #contenedorTexto{
+        padding: 10%; font-size: 120%;
+    }
+
     
     #formularioContactanos,
     #formularioServicioAlumnos,
@@ -517,6 +526,11 @@
 
 @media (min-width: 500px) and (max-width: 600.98px) {
 
+    #contenedorTexto{
+        padding: 10%; font-size: 120%;
+    }
+
+
     #carrucelCalBeca,
     #carrucelCalBeca>.slick-list {
         height: 14rem;
@@ -673,6 +687,10 @@
 }
 
 @media (min-width: 600px) and (max-width: 800.98px) {
+
+    #contenedorTexto{
+        padding: 10%; font-size: 120%;
+    }
 
     #carrucelCalBeca,
     #carrucelCalBeca>.slick-list {
@@ -833,6 +851,10 @@
 
 @media (min-width: 800.98px) and (max-width: 900.98px) {
 
+    #contenedorTexto{
+        padding: 10%; font-size: 120%;
+    }
+
     #carrucelCalBeca,
     #carrucelCalBeca>.slick-list {
         height: 26rem;
@@ -966,6 +988,11 @@
 }
 
 @media (min-width: 900.98px) and (max-width: 1199.98px) {
+
+    #contenedorTexto{
+        padding: 10%; font-size: 120%;
+    }
+
     .itemsCarrucelCarreras {
         height: 430px !important;
     }
@@ -1097,6 +1124,11 @@
 }
 
 @media (min-width: 1199.98px) and (max-width: 1399.98px) {
+
+    #contenedorTexto{
+        padding: 10%; font-size: 120%;
+    }
+
     .cardTemarioPosDistancia {
         height: 300px !important;
     }
@@ -1243,6 +1275,11 @@
 }
 
 @media (min-width: 1399.98px) {
+
+    #contenedorTexto{
+        padding: 10%;
+    }
+
 
     .cardTemarioPosDistancia {
         height: 300px !important;
