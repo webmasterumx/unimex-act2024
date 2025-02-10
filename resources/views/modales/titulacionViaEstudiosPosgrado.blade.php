@@ -3,18 +3,13 @@
     aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
+            <div class="modal-header">
+                <h5 style="color: #004b93;" class="modal-title"> TITULACIÓN VÍA ESTUDIOS DE
+                    POSGRADO</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
             <div class="modal-body">
                 <div class="row">
-                    <div class="col-12 col-md-11 text-center">
-                        <h1 style="color: #004b93; font-size: 1.5em;">
-                            TITULACIÓN VÍA ESTUDIOS DE <br>
-                            POSGRADO
-                        </h1>
-                    </div>
-                    <div class="col-12 col-md-1">
-                        <button type="button" class="btn-close text-end" data-bs-dismiss="modal"
-                            aria-label="Close"></button>
-                    </div>
                     <div class="col-12">
                         <h4>
                             Proceso de Titulación
