@@ -1,5 +1,9 @@
 @media (min-width: 200px) and (max-width: 400px) {
 
+    body{
+        font-size: 100%;
+    }
+
     .itemImgCarrucelVentajasDis {
         height: 20rem !important;
     }
