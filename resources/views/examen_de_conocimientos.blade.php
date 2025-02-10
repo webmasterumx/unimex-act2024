@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-12 col-md-3 col-lg-2">
                 <h2 class="underlined-head fw-normal text-uppercase">
-                    EXAMEN DE <br>
+                    EXAMEN <br> DE <br>
                     CONOCIMIENTOS
                 </h2>
             </div>
