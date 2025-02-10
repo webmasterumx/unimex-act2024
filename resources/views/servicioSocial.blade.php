@@ -8,7 +8,7 @@
                     SERVICIO SOCIAL
                 </h2>
             </div>
-            <div class="col-12 col-md-9 fs-5" >
+            <div id="textServicioSocialSecc" class="col-12 col-md-9 fs-5" >
                 <h4>
                     Objetivo
                 </h4>
