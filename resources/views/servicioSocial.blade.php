@@ -8,7 +8,7 @@
                     SERVICIO SOCIAL
                 </h2>
             </div>
-            <div class="col-12 col-md-9" >
+            <div class="col-12 col-md-9"  style="text-align: justify;">
                 <h4>
                     Objetivo
                 </h4>
