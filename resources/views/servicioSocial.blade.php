@@ -1,5 +1,9 @@
 @extends('layouts.layout')
 
+@section('titulo')
+    Servicio Social | UNIMEX
+@endsection
+
 @section('content')
     <section class="container-fluid py-4">
         <div class="row">
@@ -8,7 +12,7 @@
                     SERVICIO SOCIAL
                 </h2>
             </div>
-            <div class="col-12 col-md-9"  style="text-align: justify;">
+            <div class="col-12 col-md-9" style="text-align: justify;">
                 <h4>
                     Objetivo
                 </h4>
