@@ -1,5 +1,5 @@
 @media (min-width: 200px) and (max-width: 400px) {
-    #textServicioSocialSecc{
+    #textServicioSocialSecc {
         font-size: 100% !important;
     }
 
@@ -7,8 +7,9 @@
         height: 20rem !important;
     }
 
-    #contenedorTexto{
-        padding: 10%; font-size: 120%;
+    #contenedorTexto {
+        padding: 10%;
+        font-size: 120%;
     }
 
     #formularioContactanos,
@@ -275,11 +276,12 @@
 */
 @media (min-width: 400px) and (max-width: 500.98px) {
 
-    #contenedorTexto{
-        padding: 10%; font-size: 120%;
+    #contenedorTexto {
+        padding: 10%;
+        font-size: 120%;
     }
 
-    
+
     #formularioContactanos,
     #formularioServicioAlumnos,
     #formularioContrataAlumnos,
@@ -462,7 +464,7 @@
 
     */
 
-    
+
     #carrucelVentajas>.slick-list {
         height: 21rem;
     }
@@ -548,8 +550,9 @@
     }
 
 
-    #contenedorTexto{
-        padding: 10%; font-size: 120%;
+    #contenedorTexto {
+        padding: 10%;
+        font-size: 120%;
     }
 
 
@@ -710,8 +713,9 @@
 
 @media (min-width: 600px) and (max-width: 800.98px) {
 
-    #contenedorTexto{
-        padding: 10%; font-size: 120%;
+    #contenedorTexto {
+        padding: 10%;
+        font-size: 120%;
     }
 
     #carrucelCalBeca,
@@ -877,8 +881,9 @@
 
 @media (min-width: 800.98px) and (max-width: 900.98px) {
 
-    #contenedorTexto{
-        padding: 10%; font-size: 120%;
+    #contenedorTexto {
+        padding: 10%;
+        font-size: 120%;
     }
 
     #carrucelCalBeca,
@@ -1012,7 +1017,7 @@
         height: 28rem;
     }
 
-    
+
     #carrucelVentajas>.slick-list {
         height: 25rem;
     }
@@ -1029,8 +1034,9 @@
 
 @media (min-width: 900.98px) and (max-width: 1199.98px) {
 
-    #contenedorTexto{
-        padding: 10%; font-size: 120%;
+    #contenedorTexto {
+        padding: 10%;
+        font-size: 120%;
     }
 
     .itemsCarrucelCarreras {
@@ -1126,6 +1132,7 @@
     #text_ventajas {
         height: 23.3rem !important;
     }
+
     #carrucelVentajas>.slick-list {
         height: 25rem;
     }
@@ -1169,8 +1176,13 @@
 
 @media (min-width: 1199.98px) and (max-width: 1399.98px) {
 
-    #contenedorTexto{
-        padding: 10%; font-size: 120%;
+    #carrucelVentajas>.slick-list {
+        height: 32rem;
+    }
+
+    #contenedorTexto {
+        padding: 10%;
+        font-size: 120%;
     }
 
     .cardTemarioPosDistancia {
@@ -1209,8 +1221,9 @@
     }
 
     #text_ventajas {
-        height: 550px;
+        height: 32rem !important;
         overflow-y: scroll;
+        padding: 2rem !important;
     }
 
     #cardTemarioLicenciatura,
@@ -1219,12 +1232,8 @@
         max-height: 320px;
     }
 
-    #carrucelVentajas {
-        height: 90vh;
-    }
-
     .itemImgCarrucelVentajasDis {
-        height: 90vh !important;
+        height: 32rem !important;
     }
 
     #contraportada {
@@ -1320,7 +1329,11 @@
 
 @media (min-width: 1399.98px) {
 
-    #contenedorTexto{
+    #carrucelVentajas>.slick-list {
+        height: 43rem;
+    }
+
+    #contenedorTexto {
         padding: 10%;
     }
 
@@ -1362,8 +1375,13 @@
     }
 
     #text_ventajas {
-        height: 720px;
+        height: 43rem;
         overflow-y: scroll;
+        padding: 3rem !important;
+    }
+
+    #tituloVentajasLicDistancia{
+        margin-bottom: 1rem !important;
     }
 
     #cardTemarioLicenciatura,
@@ -1372,12 +1390,8 @@
         max-height: 420px;
     }
 
-    #carrucelVentajas {
-        height: 90vh;
-    }
-
     .itemImgCarrucelVentajasDis {
-        height: 90vh !important;
+        height: 43rem !important;
     }
 
 
