@@ -203,13 +203,13 @@
                         <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 left-gray-border">
                             <h5 class="hide">
                                 <a href="{{ env('APP_URL') . 'planteles/' . $plantel->nombre . $complemento }}">
-                                    {{ $plantel->nombre }}</a>
+                                    {{ $plantel->titulo }}</a>
                             </h5>
                             <div class="card" style="min-height: 1px;">
                                 <a href="{{ env('APP_URL') . 'planteles/' . $plantel->nombre . $complemento }}">
                                     <div class="parent">
                                         <div class="child {{ $plantel->clase_img }}">
-                                            <span class="linka text-capitalize">{{ $plantel->nombre }}</span>
+                                            <span class="linka text-capitalize">{{ $plantel->titulo }}</span>
                                         </div>
                                     </div>
                                 </a>
@@ -217,8 +217,8 @@
                                     <p class="card-text">
                                         <br>
                                     </p>
-                                    <a href="{{ env('APP_URL') . 'planteles/' . $plantel->nombre . $complemento }}"
-                                        class="btn btn-primary btn-arrow-go">Plantel {{ $plantel->nombre }} </a>
+                                    <a href="{{ env('APP_URL') . 'planteles/' . $plantel->titulo . $complemento }}"
+                                        class="btn btn-primary btn-arrow-go">Plantel {{ $plantel->titulo }} </a>
                                 </div>
                             </div>
                         </div>
