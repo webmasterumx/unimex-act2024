@@ -80,6 +80,11 @@
         overflow-y: scroll;
     }
 
+    #text_ventajasPosDistancia {
+        height: 350px;
+        overflow-y: scroll;
+    }
+
     /*
         ==========> PAGINA INICIAL <============
 
@@ -342,6 +347,11 @@
     }
 
     #text_ventajas {
+        height: 350px;
+        overflow-y: scroll;
+    }
+
+    #text_ventajasPosDistancia {
         height: 350px;
         overflow-y: scroll;
     }
@@ -613,6 +623,11 @@
     }
 
     #text_ventajas {
+        height: 450px;
+        overflow-y: scroll;
+    }
+
+    #text_ventajasPosDistancia {
         height: 450px;
         overflow-y: scroll;
     }
@@ -1028,6 +1043,10 @@
 
     #text_ventajas {
         height: 25rem !important;
+    }
+
+    #text_ventajasPosDistancia {
+        height: 25rem !important;
         overflow-y: scroll;
     }
 }
@@ -1134,9 +1153,12 @@
 
     #text_ventajas {
         height: 30rem !important;
+    }
+    
+    #text_ventajasPosDistancia {
+        height: 30rem !important;
         overflow-y: scroll;
     }
-
 
     #campo_laboral {
         height: 5rem !important;
@@ -1213,8 +1235,12 @@
 
     #text_ventajas {
         height: 32rem !important;
-        overflow-y: scroll;
         padding: 2rem !important;
+    }
+
+    #text_ventajasPosDistancia {
+        height: 32rem !important;
+        overflow-y: scroll;
     }
 
     #cardTemarioLicenciatura,
@@ -1320,7 +1346,7 @@
 
 @media (min-width: 1399.98px) {
 
-    #subportadaPosDis{
+    #subportadaPosDis {
         height: 43rem !important;
     }
 
@@ -1371,11 +1397,15 @@
 
     #text_ventajas {
         height: 43rem;
-        overflow-y: scroll;
         padding: 3rem !important;
     }
 
-    #tituloVentajasLicDistancia{
+    #text_ventajasPosDistancia {
+        height: 43rem;
+        overflow-y: scroll;
+    }
+
+    #tituloVentajasLicDistancia {
         margin-bottom: 1rem !important;
     }
 

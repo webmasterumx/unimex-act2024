@@ -113,7 +113,7 @@
                 <img src="{{ asset($contraportada) }}" alt="" style="width: 100%; height:100%;">
             </div>
             @if ($posgrado->nombre == 'Docencia' || $posgrado->nombre == 'Impuestos')
-                <div id="text_ventajas" class="col-12 col-md-6 col-lg-6 bg-articule p-5">
+                <div id="text_ventajasPosDistancia" class="col-12 col-md-6 col-lg-6 bg-articule p-5">
                     <h3 style="font-size: 1.25rem;" class="underlined-head text-uppercase fw-normal">
                         Ventajas de estudiar el posgrado en {{ $posgrado->nombre }}
                     </h3>
@@ -131,7 +131,7 @@
                     </p>
                 </div>
             @else
-                <div id="text_ventajas" class="col-12 col-md-6 col-lg-6 bg-articule p-5">
+                <div id="text_ventajasPosDistancia" class="col-12 col-md-6 col-lg-6 bg-articule p-5">
                     <h3 class="underlined-head text-uppercase fw-normal">
                         Ventajas de estudiar el posgrado en {{ $posgrado->nombre }}
                     </h3>
