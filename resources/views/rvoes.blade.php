@@ -1,5 +1,10 @@
 @extends('layouts.layout')
 
+
+@section('titulo')
+    RVOES Reconocimiento de Validez Oficial | UNIMEX®
+@endsection
+
 @section('content')
     <section class="container py-5">
         <div class="row">

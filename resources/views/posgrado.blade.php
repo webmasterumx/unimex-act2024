@@ -139,9 +139,9 @@
                         Obtienes un nivel de preparación profesional superior que puede facilitarte alcanzar las mejores
                         oportunidades.
                         <br><br>
-                        Beca UNIMEX para Especialidades hasta del 35% y para Maestrías hasta del 20%.
+                        Beca UNIMEX<sup>®</sup> para Especialidades hasta del 35% y para Maestrías hasta del 20%.
                         <br><br>
-                        Nota: Para conocer más acerca de las Becas UNIMEX consulta la sección Beca Posgrado.
+                        Nota: Para conocer más acerca de las Becas UNIMEX<sup>®</sup> consulta la sección Beca Posgrado.
                         <br><br>
                         Puedes aplicar el Programa “Continúa con tu Maestría en UNIMEX<sup>®</sup>”:
                         En Universidad Mexicana puedes estudiar tu Maestría como continuación de tu Especialidad UNIMEX<sup>®</sup>. Al

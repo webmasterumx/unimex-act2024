@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('titulo')
-    Servicio Social | UNIMEX
+    Servicio Social | UNIMEX®
 @endsection
 
 @section('content')
