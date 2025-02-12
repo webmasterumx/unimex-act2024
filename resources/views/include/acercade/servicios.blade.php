@@ -84,7 +84,7 @@
             </h2>
             <p class="text-justify">
                 Tu <b>espacio de esparcimiento</b> en la universidad. Más que un expendio de alimentos, queremos que la
-                cafetería de UNIMEX®, sea un lugar donde los estudiantes realicen actividades como foros, círculos de
+                cafetería de UNIMEX<sup>®</sup>, sea un lugar donde los estudiantes realicen actividades como foros, círculos de
                 lectura u otros eventos que tú mismo sugieras. Recuerda, el estilo de vida universitaria en UNIMEX<sup>®</sup>, lo
                 haces tú.
             </p>
@@ -119,7 +119,7 @@
                 Está prohibido introducir alimentos y bebidas <br>
                 Se prohíbe introducir teléfonos celulares y radiolocalizadores encendidos <br>
                 Prohibido fumar y subir los pies al mobiliario en general <br>
-                Se tienen convenios para que usuarios externos utilicen el acervo cultural que se tiene en UNIMEX. <br>
+                Se tienen convenios para que usuarios externos utilicen el acervo cultural que se tiene en UNIMEX<sup>®</sup>. <br>
                 Horario de Atención Lunes a viernes: de 7:00 a 22:00 h, sábados: de 7:00 a 16:00 h.
             </p>
         </div>

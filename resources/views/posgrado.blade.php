@@ -258,7 +258,7 @@
                 </p>
                 <p class="text-center">
                     <button data-bs-toggle="modal" data-bs-target="#continuaConTuMaestria" type="button"
-                        class="btn btn-primary mb-2 mb-md-0">Continúa con tu maestría en UNIMEX</button>
+                        class="btn btn-primary mb-2 mb-md-0">Continúa con tu maestría en UNIMEX<sup>®</sup></button>
                     <button data-bs-toggle="modal" data-bs-target="#titulacionEstudiosPosgrado" type="button"
                         class="btn btn-primary mb-2 mb-md-0">Titulación vía estudios de posgrados</button>
                 </p>
@@ -294,7 +294,7 @@
                     <a target="_blank" href="https://unimex.occ.com.mx/Bolsa_Trabajo">
                         <i class="fas fa-briefcase fa-5x text-white"></i>
                     </a><br>
-                    Consulta la Bolsa de Trabajo OCC-UNIMEX
+                    Consulta la Bolsa de Trabajo OCC-UNIMEX<sup>®</sup>
                 </p>
             </div>
         </div>
