@@ -1329,6 +1329,10 @@
 
 @media (min-width: 1399.98px) {
 
+    #subportadaPosDis{
+        height: 43rem !important;
+    }
+
     #carrucelVentajas>.slick-list {
         height: 43rem;
     }

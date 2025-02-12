@@ -114,9 +114,9 @@
             </div>
             @if ($posgrado->nombre == 'Docencia' || $posgrado->nombre == 'Impuestos')
                 <div id="text_ventajas" class="col-12 col-md-6 col-lg-6 bg-articule p-5">
-                    <h1 style="font-size: 1.25rem;" class="underlined-head text-uppercase fw-normal">
+                    <h3 style="font-size: 1.25rem;" class="underlined-head text-uppercase fw-normal">
                         Ventajas de estudiar el posgrado en {{ $posgrado->nombre }}
-                    </h1>
+                    </h3>
                     <p>
                         Obtienes un nivel de preparación profesional superior que te permitirá alcanzar mejores
                         oportunidades.
@@ -132,9 +132,9 @@
                 </div>
             @else
                 <div id="text_ventajas" class="col-12 col-md-6 col-lg-6 bg-articule p-5">
-                    <h1 style="font-size: 1.25rem;" class="underlined-head text-uppercase fw-normal">
+                    <h3 class="underlined-head text-uppercase fw-normal">
                         Ventajas de estudiar el posgrado en {{ $posgrado->nombre }}
-                    </h1>
+                    </h3>
                     <p>
                         Obtienes un nivel de preparación profesional superior que puede facilitarte alcanzar las mejores
                         oportunidades.
