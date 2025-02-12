@@ -1076,11 +1076,6 @@
     }
 
 
-    #text_ventajas {
-        height: 550px;
-        overflow-y: scroll;
-    }
-
     #cardTemarioLicenciatura,
     #cardTemarioBodyLicenciatura {
         min-height: 400px;
@@ -1129,20 +1124,16 @@
         height: 50vh;
     }
 
-    #text_ventajas {
-        height: 23.3rem !important;
-    }
-
     #carrucelVentajas>.slick-list {
-        height: 25rem;
+        height: 30rem;
     }
 
     .itemImgCarrucelVentajasDis {
-        height: 25rem !important;
+        height: 30rem !important;
     }
 
     #text_ventajas {
-        height: 25rem !important;
+        height: 30rem !important;
         overflow-y: scroll;
     }
 
