@@ -16,7 +16,7 @@
                 promovemos y premiamos la excelencia académica de los alumnos con buen promedio, a través del apoyo
                 económico de nuestro Programa de Becas:
                 <br><br>
-                Al inscribirse en UNIMEX® todos nuestros alumnos obtienen una BECA desde <span style="color: #004b93">25% hasta 60%</span> en
+                Al inscribirse en UNIMEX<sup>®</sup> todos nuestros alumnos obtienen una BECA desde <span style="color: #004b93">25% hasta 60%</span> en
                 cualquiera de
                 nuestras 15 Licenciaturas.
                 <br><br>

@@ -265,7 +265,7 @@
                                 *En caso de no contar con este documento presentar una Constancia de Terminación con el 100%
                                 de las materias acreditadas. Si su título está en trámite en su Universidad de origen,
                                 presentar la constancia del trámite de Titulación y/o Cédula Profesional, especificando la
-                                fecha de obtención del mismo (deberá presentarlo dentro del plazo señalado por UNIMEX®).
+                                fecha de obtención del mismo (deberá presentarlo dentro del plazo señalado por UNIMEX<sup>®</sup>).
                             </p>
                         </div>
                     </div>
@@ -282,7 +282,7 @@
                                 <br><br>
                                 * Legalizado, en caso de Universidades no incorporadas a la S.E.P. <br>
                                 ** únicamente para egresados de otras instituciones que desean estudiar un Posgrado en
-                                UNIMEX® como opción de titulación.
+                                UNIMEX<sup>®</sup> como opción de titulación.
 
                             </p>
                         </div>
