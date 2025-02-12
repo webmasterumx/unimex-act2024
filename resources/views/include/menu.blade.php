@@ -350,7 +350,7 @@
                         <h5 class="hide">
                             <a href="javascript:void(0);"
                                 onClick="window.open('http://www.facebook.com/sharer.php?u=http://www.unimex.edu.mx','Compartir','scrollbars=no,width=600,height=450')">Recomienda
-                                UNIMEX®</a>
+                                UNIMEX<sup>®</sup></a>
                         </h5>
                         <div class="card" style="min-height: 150px;">
                             <a href="javascript:void(0);"
@@ -365,7 +365,7 @@
                                 <p class="card-text" style="text-align: center;">
                                     <a href="javascript:void(0);"
                                         onClick="window.open('http://www.facebook.com/sharer.php?u=http://www.unimex.edu.mx','Compartir','scrollbars=no,width=600,height=450')"><span
-                                            class="blue-text">Recomienda UNIMEX®</span></a>
+                                            class="blue-text">Recomienda UNIMEX<sup>®</sup></span></a>
 
                                 </p>
 
@@ -419,7 +419,7 @@
                         <h5 class="hide">
                             <a href="javascript:void(0);"
                                 onClick="window.open('{{ asset('assets/pdf/reglamentoum.pdf') }}','Reglamento UNIMEX','scrollbars=no,width=580,height=600')">Reglamento
-                                UNIMEX®</a>
+                                UNIMEX<sup>®</sup></a>
                         </h5>
                         <div class="card" style="min-height: 150px;">
                             <a href="javascript:void(0);"
@@ -434,7 +434,7 @@
                                 <p class="card-text" style="text-align: center;">
                                     <a href="javascript:void(0);"
                                         onClick="window.open('{{ asset('assets/pdf/reglamentoum.pdf') }}','Reglamento UNIMEX','scrollbars=no,width=580,height=600')"><span
-                                            class="blue-text">Reglamento UNIMEX®</span></a>
+                                            class="blue-text">Reglamento UNIMEX<sup>®</sup></span></a>
 
                                 </p>
 
