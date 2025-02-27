@@ -219,7 +219,7 @@ class PreinscripcionEnLineaController extends Controller
 
         $registro = app(ApiConsumoController::class)->registraProspectoCRMDesdePreinscripcionEnLinea($valores);
 
-        //var_dump($registro);
+        var_dump($registro);
 
         /**
          *   "FolioCrm": 1083468,

@@ -361,4 +361,9 @@ class UnimexController extends Controller
 
         return view('bolsa_de_trabajo');
     }
+
+    function redirigirBlog()  
+    {
+        header("Location: https://blog.unimex.edu.mx/");
+    }
 }

@@ -44,6 +44,7 @@ Route::get('/carta/resutado/{matricula}', [UnimexController::class, 'cartaResult
 Route::get('/forma/pago/preinscripcion/{folio}', [FormController::class, 'buscarProspectoForFolio'])->name('forma.pago.preinscripcion');
 Route::get('/bolsa-de-trabajo', [UnimexController::class, 'bolsaDeTrabajo'])->name('bolsa_de_trabajo');
 Route::get('/buscar/folleto/json/{id_empresa}/{clave_nivel}/{descrip_ofi}', [FolletoController::class, 'leerExcelFolletos'])->name('buscar.folleto.json');
+Route::get('/soyUNIMEX', [UnimexController::class, "redirigirBlog"]);
 Route::view('/opciones-de-titulacion', 'opciones_titulacion')->name('opciones_de_titulacion');
 Route::view('/examen-de-conocimientos', 'examen_de_conocimientos')->name('examen_de_conocimientos');
 Route::view('/resutados-examen', 'resultadosExamenConocimientos')->name('resultados_examen_conocimientos');

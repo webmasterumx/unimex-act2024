@@ -76,7 +76,7 @@
                         </button>
                         <a href="{{ env('APP_URL') }}calcula-tu-cuota{{$complemento}}"
                             target="_blank">
-                            <img class="img-fluid" src="{{ asset('assets/img/popup/pop_up_unimex_texto.png') }}"
+                            <img class="img-fluid" src="https://testing.nuevo.unimex.edu.mx/assets/img/popup/pop_up_unimex_texto.png"
                                 alt="">
                         </a>
                     </div>
