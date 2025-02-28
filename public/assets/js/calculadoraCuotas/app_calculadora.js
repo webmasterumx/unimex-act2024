@@ -225,9 +225,20 @@ function establecerValoresCosto(data) {
 
     //datos de informacion
     $('#carreraInfo').html(`${nombreNivel} en ${nombreCarrera}`);
-    $('#plantelInfo').html(`${nombrePlantel}`);
-    $('#turnoInfo').html(`${data.Turno}`);
-    $('#horarioInfo').html(`${data.Horario}`);
+
+    if (nombrePlantel == "ONLINE") {
+        $('#plantelInfo').html(`${nombrePlantel}`);
+        $("#parte1").addClass("d-none");
+        $("#parte2").addClass("d-none");
+       
+    } else {
+        $('#plantelInfo').html(`${nombrePlantel}`);
+        $('#turnoInfo').html(`${data.Turno}`);
+        $('#horarioInfo').html(`${data.Horario}`);
+    }
+
+ 
+    
     $('#infoBeca').html(`${data.Beca}%`);
     $('#incioInfo').html(`${data.DescripPer}`);
     $('#vigenciaInfo').html(`${data.Vigencia}`);

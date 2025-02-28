@@ -258,8 +258,8 @@
                                         Tu selección ha sido: <span class="fw-bold" id="carreraInfo"
                                             style="color: #004b93;"></span> <br>
                                         Plantel: <span class="fw-bold" id="plantelInfo" style="color: #004b93;"></span>
-                                        en
-                                        horario: <span class="fw-bold" id="turnoInfo" style="color: #004b93"></span> de
+                                       <span id="parte1"> en
+                                        horario: </span><span class="fw-bold" id="turnoInfo" style="color: #004b93"></span> <span id="parte2">de</span>
                                         <span class="fw-bold" id="horarioInfo" style="color: #004b93"></span>
                                         <br>
                                         Inicio de clases: <span class="fw-bold" id="incioInfo"
