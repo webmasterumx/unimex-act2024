@@ -226,7 +226,15 @@ function establecerValoresCosto(data) {
     //datos de informacion
     $('#carreraInfo').html(`${nombreNivel} en ${nombreCarrera}`);
 
-    if (nombrePlantel == "ONLINE" || data.Turno == "ONLINE" || data.Turno == "OnLine") {
+    if (nombrePlantel == "ONLINE") {
+        $('#plantelInfo').html(`${nombrePlantel}`);
+        $('#turnoInfo').html(`${data.Turno}`);
+        $("#parte1").addClass("d-none");
+        $("#turnoInfo").addClass("d-none");
+        $("#parte2").addClass("d-none");
+        $("#horarioInfo").addClass("d-none");
+    }
+    else if (data.Turno == "ONLINE" || data.Turno == "OnLine") {
         $('#plantelInfo').html(`${nombrePlantel}`);
         $('#turnoInfo').html(`${data.Turno}`);
         $("#parte2").addClass("d-none");
