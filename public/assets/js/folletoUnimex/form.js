@@ -135,37 +135,13 @@ $("#form_folleto").validate({
                 else {
                     window.open(data, '_blank');
                 }
+                
+                document.getElementById("form_folleto").reset();
 
                 $("#descargaFolleto").prop("disabled", false);
                 $('#descargaFolleto').html(`
                      ¡DESCARGAR!
                  `);
-
-                /*  let respuesta = JSON.parse(data);
-                 //console.log(respuesta);
- 
-                 if (respuesta.estado == false) { // no se encontro la oferta academica en la configuracion
-                     $("#iconContentModalFolleto").addClass("bi bi-exclamation-circle text-warning");
-                     $("#contenidoModalMensajeFolleto").html(`
-                         Actualmente, la carrera no está disponible en el plantel seleccionado.
-                     `);
-                     $("#warningMensajeFolleto").modal("show");
-                 }
-                 else if (respuesta.ruta == "" || respuesta.ruta == " ") {
-                     $("#iconContentModalFolleto").addClass("bi bi-x-circle-fill text-danger");
-                     $("#contenidoModalMensajeFolleto").html(`
-                         Lo sentimos, pero por el momento el folleto no está disponible. <br> Agradecemos tu comprensión.
-                     `);
-                     $("#warningMensajeFolleto").modal("show");
-                 }
-                 else {
-                     window.open(respuesta.ruta, '_blank');
-                 }
- 
-                 $("#descargaFolleto").prop("disabled", false);
-                 $('#descargaFolleto').html(`
-                     ¡DESCARGAR!
-                 `); */
 
             }).fail(function (error) {
 

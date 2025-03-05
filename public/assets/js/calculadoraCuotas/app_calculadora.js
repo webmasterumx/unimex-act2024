@@ -226,7 +226,7 @@ function establecerValoresCosto(data) {
     //datos de informacion
     $('#carreraInfo').html(`${nombreNivel} en ${nombreCarrera}`);
 
-    if (nombrePlantel == "ONLINE") {
+    if (nombrePlantel == "ONLINE" || data.Turno == "ONLINE" || data.Turno == "OnLine") {
         $('#plantelInfo').html(`${nombrePlantel}`);
         $("#parte1").addClass("d-none");
         $("#parte2").addClass("d-none");
