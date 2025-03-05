@@ -228,23 +228,22 @@ function establecerValoresCosto(data) {
 
     if (nombrePlantel == "ONLINE" || data.Turno == "ONLINE" || data.Turno == "OnLine") {
         $('#plantelInfo').html(`${nombrePlantel}`);
-        $("#parte1").addClass("d-none");
+        $('#turnoInfo').html(`${data.Turno}`);
         $("#parte2").addClass("d-none");
-        $("#turnoInfo").addClass("d-none");
         $("#horarioInfo").addClass("d-none");
-       
+
     } else {
         $('#plantelInfo').html(`${nombrePlantel}`);
         $('#turnoInfo').html(`${data.Turno}`);
         $('#horarioInfo').html(`${data.Horario}`);
+
         $("#parte1").removeClass("d-none");
         $("#parte2").removeClass("d-none");
         $("#turnoInfo").removeClass("d-none");
         $("#horarioInfo").removeClass("d-none");
     }
 
- 
-    
+
     $('#infoBeca').html(`${data.Beca}%`);
     $('#incioInfo').html(`${data.DescripPer}`);
     $('#vigenciaInfo').html(`${data.Vigencia}`);
