@@ -16,6 +16,38 @@
     @yield('metas')
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8W3ET6H34Y"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            window.dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-8W3ET6H34Y');
+    </script>
+    <!--Metro-->
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-TDWNMQ');
+    </script>
+    <!-- End Google Tag Manager -->
+
     <!-- FONTS -->
     <link
         href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
@@ -104,7 +136,8 @@
                     <br> PROFESIONISTAS</a>
             </div>
             <div class="col-12 col-md-2 col-lg-2 mt-2">
-                <a class="text-white" href="https://unimex.edu.mx/soyUNIMEX/" target="_blank">BLOG SOY UNIMEX<sup>®</sup></a>
+                <a class="text-white" href="https://unimex.edu.mx/soyUNIMEX/" target="_blank">BLOG SOY
+                    UNIMEX<sup>®</sup></a>
             </div>
             <div class="col-12 col-md-2 col-lg-2 mt-2">
                 <a class="text-white" href="{{ route('aviso_de_privacidad') }}" target="_blank">AVISO DE <br>
@@ -289,22 +322,22 @@
             window.open("{{ route('contacto') }}", '_blank');
         });
 
-     /*    $('#contactoBolsaTrabajo').click(function(event) {
-            console.log("entra al formulario desde la parte de bolsa de trabajo");
+        /*    $('#contactoBolsaTrabajo').click(function(event) {
+               console.log("entra al formulario desde la parte de bolsa de trabajo");
 
-            let elementForm = "formularioTrabajaUnimex";
+               let elementForm = "formularioTrabajaUnimex";
 
-            $.ajax({
-                method: "GET",
-                url: setUrlBase() + "set/variables/contactForm/" + elementForm,
-            }).done(function(data) {
-                console.log(data);
+               $.ajax({
+                   method: "GET",
+                   url: setUrlBase() + "set/variables/contactForm/" + elementForm,
+               }).done(function(data) {
+                   console.log(data);
 
-            }).fail(function() {
-                console.log("Algo salió mal");
-            });
-            window.open("{{ route('contacto') }}", '_blank');
-        }); */
+               }).fail(function() {
+                   console.log("Algo salió mal");
+               });
+               window.open("{{ route('contacto') }}", '_blank');
+           }); */
 
         function redirigirContactoHeader() {
             console.log("entra al formulario desde la parte de contacto");

@@ -278,6 +278,8 @@ $("#form_contacto").validate({
                  &nbsp;Enviando Datos..
              `);
 
+            gtag('event', 'adw_formulario_contacto');
+
             //* creacion de variable form data para envio de datos
             let formData = new FormData(form);
             let ruta = setUrlBase() + "procesa/datos/form/contacto";
